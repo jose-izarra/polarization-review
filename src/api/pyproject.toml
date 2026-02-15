@@ -1,0 +1,9 @@
+[project]
+name = "api"
+version = "0.1.0"
+description = "API interface for polarization review"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.129.0",
+]

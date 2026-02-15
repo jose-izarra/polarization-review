@@ -1,0 +1,10 @@
+[project]
+name = "polarization-review"
+version = "0.1.0"
+description = "Deep research tool for measuring polarization"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["src/*"]
