@@ -6,4 +6,11 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.129.0",
+    "websockets>=12.0",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.12.5",
 ]
+
+[tool.uv]
+# This tells the API project where to find its internal neighbors
+sources = { "internal-pipeline" = { workspace = true } }

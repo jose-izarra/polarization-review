@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Literal
 
-
 TimeFilter = Literal["day", "week", "month"]
 ResultStatus = Literal["ok", "degraded", "error"]
 ContentType = Literal["post", "comment"]
@@ -32,6 +31,15 @@ class EvidenceItem:
     id: str
     snippet: str
     url: str
+
+
+@dataclass(slots=True)
+class ItemScore:
+    id: str
+    sentiment: int  # 1-5  (LLM rating)
+    stance: int  # -1 (against) / 0 (neutral) / 1 (for)
+    animosity: int  # 1-5  (emotional weight)
+    r: float  # computed r_i = stance * (sentiment + α*animosity)
 
 
 @dataclass(slots=True)

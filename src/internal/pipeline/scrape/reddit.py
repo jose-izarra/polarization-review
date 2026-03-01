@@ -15,19 +15,20 @@ import json
 import os
 from datetime import datetime, timezone
 
+from src.internal.config.config import config as app_config
+
 import praw
 import prawcore
 
-
 # Priority subreddits for political polarization analysis
 PRIORITY_SUBREDDITS = [
-    "all",              # Catch-all: search everything
-    "politics",         # US-centric political news and discussion
-    "worldnews",        # International news
-    "news",             # General news
+    "all",  # Catch-all: search everything
+    "politics",  # US-centric political news and discussion
+    "worldnews",  # International news
+    "news",  # General news
     "PoliticalDiscussion",  # More civil, policy-focused discussion
-    "Conservative",     # Right-leaning US politics
-    "Liberal",          # Left-leaning US politics
+    "Conservative",  # Right-leaning US politics
+    "Liberal",  # Left-leaning US politics
     "neutralpolitics",  # Requires sourced claims, less polarized
 ]
 
@@ -35,12 +36,12 @@ PRIORITY_SUBREDDITS = [
 DEFAULT_CONFIG = {
     "subreddits": PRIORITY_SUBREDDITS,
     "posts_per_subreddit": 50,
-    "posts_per_subreddit_all": 100,    # Higher limit for r/all
+    "posts_per_subreddit_all": 100,  # Higher limit for r/all
     "sorts": ["relevance", "top"],
     "time_filter": "month",
-    "top_posts_for_comments": 20,      # Fetch comments for top N posts
+    "top_posts_for_comments": 20,  # Fetch comments for top N posts
     "comments_per_post": 100,
-    "min_text_length": 20              # Discard items shorter than this
+    "min_text_length": 20,  # Discard items shorter than this
 }
 
 
@@ -55,9 +56,9 @@ def init_reddit_client():
         EnvironmentError: If required credentials are missing.
         prawcore.exceptions.ResponseException: If credentials are invalid.
     """
-    client_id = os.environ.get("REDDIT_CLIENT_ID")
-    client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
-    user_agent = os.environ.get("REDDIT_USER_AGENT", "PolarizationTool/1.0")
+    client_id = app_config.reddit_client_id
+    client_secret = app_config.reddit_client_secret
+    user_agent = app_config.reddit_user_agent
 
     if not client_id:
         raise EnvironmentError(
@@ -74,7 +75,7 @@ def init_reddit_client():
         client_id=client_id,
         client_secret=client_secret,
         user_agent=user_agent,
-        ratelimit_seconds=300  # Wait up to 5 minutes if rate limited
+        ratelimit_seconds=300,  # Wait up to 5 minutes if rate limited
     )
 
     # Verify connection works (will raise if credentials are invalid)
@@ -85,8 +86,14 @@ def init_reddit_client():
     return reddit
 
 
-def fetch_posts(reddit, search_term, subreddit_name="all", limit=100,
-                sort="relevance", time_filter="month"):
+def fetch_posts(
+    reddit,
+    search_term,
+    subreddit_name="all",
+    limit=100,
+    sort="relevance",
+    time_filter="month",
+):
     """
     Search a subreddit for posts matching the search term.
 
@@ -118,32 +125,36 @@ def fetch_posts(reddit, search_term, subreddit_name="all", limit=100,
             if text.strip() in ("[deleted]", "[removed]", ""):
                 continue
 
-            posts.append({
-                "id": f"reddit_post_{submission.id}",
-                "source": "reddit",
-                "platform_id": submission.id,
-                "search_term": search_term,
-                "text": text,
-                "author": str(submission.author) if submission.author else "[deleted]",
-                "timestamp": datetime.fromtimestamp(
-                    submission.created_utc, tz=timezone.utc
-                ).isoformat(),
-                "url": f"https://reddit.com{submission.permalink}",
-                "engagement": {
-                    "likes": submission.score,
-                    "replies": submission.num_comments,
-                    "shares": 0,
-                    "score": submission.score
-                },
-                "metadata": {
-                    "subreddit": submission.subreddit.display_name,
-                    "content_type": "post",
-                    "parent_id": None,
-                    "is_self_post": submission.is_self,
-                    "link_url": submission.url if not submission.is_self else None,
-                    "flair": submission.link_flair_text
+            posts.append(
+                {
+                    "id": f"reddit_post_{submission.id}",
+                    "source": "reddit",
+                    "platform_id": submission.id,
+                    "search_term": search_term,
+                    "text": text,
+                    "author": str(submission.author)
+                    if submission.author
+                    else "[deleted]",
+                    "timestamp": datetime.fromtimestamp(
+                        submission.created_utc, tz=timezone.utc
+                    ).isoformat(),
+                    "url": f"https://reddit.com{submission.permalink}",
+                    "engagement": {
+                        "likes": submission.score,
+                        "replies": submission.num_comments,
+                        "shares": 0,
+                        "score": submission.score,
+                    },
+                    "metadata": {
+                        "subreddit": submission.subreddit.display_name,
+                        "content_type": "post",
+                        "parent_id": None,
+                        "is_self_post": submission.is_self,
+                        "link_url": submission.url if not submission.is_self else None,
+                        "flair": submission.link_flair_text,
+                    },
                 }
-            })
+            )
 
     except prawcore.exceptions.Redirect:
         print(f"[WARNING] Subreddit r/{subreddit_name} does not exist, skipping.")
@@ -185,40 +196,46 @@ def fetch_comments(reddit, submission_id, search_term, max_comments=100):
                 break
 
             # Skip deleted/removed comments
-            if not hasattr(comment, 'body') or comment.body in ("[deleted]", "[removed]", ""):
+            if not hasattr(comment, "body") or comment.body in (
+                "[deleted]",
+                "[removed]",
+                "",
+            ):
                 continue
 
             # Count direct replies
             reply_count = 0
-            if hasattr(comment, 'replies'):
+            if hasattr(comment, "replies"):
                 reply_count = len(comment.replies)
 
-            comments.append({
-                "id": f"reddit_comment_{comment.id}",
-                "source": "reddit",
-                "platform_id": comment.id,
-                "search_term": search_term,
-                "text": comment.body,
-                "author": str(comment.author) if comment.author else "[deleted]",
-                "timestamp": datetime.fromtimestamp(
-                    comment.created_utc, tz=timezone.utc
-                ).isoformat(),
-                "url": f"https://reddit.com{comment.permalink}",
-                "engagement": {
-                    "likes": comment.score,
-                    "replies": reply_count,
-                    "shares": 0,
-                    "score": comment.score
-                },
-                "metadata": {
-                    "subreddit": comment.subreddit.display_name,
-                    "content_type": "comment",
-                    "parent_id": comment.parent_id,
-                    "is_self_post": None,
-                    "link_url": None,
-                    "flair": getattr(comment, 'author_flair_text', None)
+            comments.append(
+                {
+                    "id": f"reddit_comment_{comment.id}",
+                    "source": "reddit",
+                    "platform_id": comment.id,
+                    "search_term": search_term,
+                    "text": comment.body,
+                    "author": str(comment.author) if comment.author else "[deleted]",
+                    "timestamp": datetime.fromtimestamp(
+                        comment.created_utc, tz=timezone.utc
+                    ).isoformat(),
+                    "url": f"https://reddit.com{comment.permalink}",
+                    "engagement": {
+                        "likes": comment.score,
+                        "replies": reply_count,
+                        "shares": 0,
+                        "score": comment.score,
+                    },
+                    "metadata": {
+                        "subreddit": comment.subreddit.display_name,
+                        "content_type": "comment",
+                        "parent_id": comment.parent_id,
+                        "is_self_post": None,
+                        "link_url": None,
+                        "flair": getattr(comment, "author_flair_text", None),
+                    },
                 }
-            })
+            )
 
         return comments
 
@@ -251,13 +268,13 @@ def _passes_quality(item, min_text_length):
     return True
 
 
-def collect_reddit_data(search_term, config=None, reddit=None):
+def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     """
     Main entry point. Collects posts and comments from Reddit for the given search term.
 
     Args:
         search_term: The topic to analyze.
-        config: Optional dict to override default settings.
+        scrape_config: Optional dict to override default settings.
         reddit: Optional pre-initialized Reddit client. If None, will initialize one.
 
     Returns:
@@ -267,7 +284,7 @@ def collect_reddit_data(search_term, config=None, reddit=None):
         EnvironmentError: If credentials are missing and no reddit client provided.
     """
     # Merge configuration
-    cfg = {**DEFAULT_CONFIG, **(config or {})}
+    cfg = {**DEFAULT_CONFIG, **(scrape_config or {})}
 
     # Initialize Reddit client if not provided
     if reddit is None:
@@ -280,9 +297,11 @@ def collect_reddit_data(search_term, config=None, reddit=None):
     print(f'Searching Reddit for: "{search_term}"')
 
     for subreddit_name in cfg["subreddits"]:
-        limit = (cfg["posts_per_subreddit_all"]
-                 if subreddit_name == "all"
-                 else cfg["posts_per_subreddit"])
+        limit = (
+            cfg["posts_per_subreddit_all"]
+            if subreddit_name == "all"
+            else cfg["posts_per_subreddit"]
+        )
 
         for sort in cfg["sorts"]:
             print(f"  Searching r/{subreddit_name} (sort={sort}, limit={limit})...")
@@ -292,7 +311,7 @@ def collect_reddit_data(search_term, config=None, reddit=None):
                 subreddit_name=subreddit_name,
                 limit=limit,
                 sort=sort,
-                time_filter=cfg["time_filter"]
+                time_filter=cfg["time_filter"],
             )
             all_posts.extend(posts)
 
@@ -312,20 +331,20 @@ def collect_reddit_data(search_term, config=None, reddit=None):
     ranked_posts = sorted(
         all_posts, key=lambda p: p["engagement"]["score"], reverse=True
     )
-    top_posts = ranked_posts[:cfg["top_posts_for_comments"]]
+    top_posts = ranked_posts[: cfg["top_posts_for_comments"]]
 
     print(f"Fetching comments from top {len(top_posts)} posts...")
 
     for i, post in enumerate(top_posts):
         print(
-            f"  [{i+1}/{len(top_posts)}] r/{post['metadata']['subreddit']} "
+            f"  [{i + 1}/{len(top_posts)}] r/{post['metadata']['subreddit']} "
             f"— score: {post['engagement']['score']}"
         )
         comments = fetch_comments(
             reddit,
             post["platform_id"],
             search_term,
-            max_comments=cfg["comments_per_post"]
+            max_comments=cfg["comments_per_post"],
         )
         all_comments.extend(comments)
 
@@ -333,25 +352,26 @@ def collect_reddit_data(search_term, config=None, reddit=None):
 
     # --- Apply quality filters ---
     all_posts = [p for p in all_posts if _passes_quality(p, cfg["min_text_length"])]
-    all_comments = [c for c in all_comments if _passes_quality(c, cfg["min_text_length"])]
+    all_comments = [
+        c for c in all_comments if _passes_quality(c, cfg["min_text_length"])
+    ]
 
     # --- Build result ---
     result = {
         "search_term": search_term,
         "collected_at": datetime.now(tz=timezone.utc).isoformat(),
         "config_used": cfg,
-        "data": {
-            "posts": all_posts,
-            "comments": all_comments
-        },
+        "data": {"posts": all_posts, "comments": all_comments},
         "summary": {
             "total_posts": len(all_posts),
             "total_comments": len(all_comments),
             "total_items": len(all_posts) + len(all_comments),
             "subreddits_searched": cfg["subreddits"],
-            "subreddits_found": list(set(p["metadata"]["subreddit"] for p in all_posts)),
-            "top_subreddits_by_volume": _count_subreddits(all_posts + all_comments)
-        }
+            "subreddits_found": list(
+                set(p["metadata"]["subreddit"] for p in all_posts)
+            ),
+            "top_subreddits_by_volume": _count_subreddits(all_posts + all_comments),
+        },
     }
 
     print(
@@ -400,7 +420,7 @@ QUICK_CONFIG = {
     "posts_per_subreddit_all": 25,
     "sorts": ["relevance"],
     "top_posts_for_comments": 5,
-    "comments_per_post": 20
+    "comments_per_post": 20,
 }
 
 # Thorough analysis configuration (10-15 minutes)
@@ -411,13 +431,13 @@ THOROUGH_CONFIG = {
     "sorts": ["relevance", "top", "new"],
     "time_filter": "year",
     "top_posts_for_comments": 50,
-    "comments_per_post": 200
+    "comments_per_post": 200,
 }
 
 # Historical analysis configuration
 HISTORICAL_CONFIG = {
     "time_filter": "all",  # No time restriction
-    "sorts": ["top"],      # Only the most upvoted content survives long-term
+    "sorts": ["top"],  # Only the most upvoted content survives long-term
 }
 
 
@@ -435,19 +455,19 @@ if __name__ == "__main__":
     search_term = sys.argv[1]
 
     # Determine config based on flags
-    config = None
+    scrape_config = None
     if "--quick" in sys.argv:
-        config = QUICK_CONFIG
+        scrape_config = QUICK_CONFIG
         print("Using quick configuration")
     elif "--thorough" in sys.argv:
-        config = THOROUGH_CONFIG
+        scrape_config = THOROUGH_CONFIG
         print("Using thorough configuration")
     elif "--historical" in sys.argv:
-        config = HISTORICAL_CONFIG
+        scrape_config = HISTORICAL_CONFIG
         print("Using historical configuration")
 
     try:
-        result = collect_reddit_data(search_term, config=config)
+        result = collect_reddit_data(search_term, scrape_config=scrape_config)
         save_results(result)
     except EnvironmentError as e:
         print(f"Error: {e}")

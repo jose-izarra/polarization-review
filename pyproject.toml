@@ -4,7 +4,48 @@ version = "0.1.0"
 description = "Deep research tool for measuring polarization"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "logfire[fastapi]>=4.25.0",
+    "python-dotenv>=1.2.2",
+    "uvicorn>=0.41.0",
+]
+
+[tool.uv.sources]
+api = { workspace = true }
+pipeline = { workspace = true }
 
 [tool.uv.workspace]
-members = ["src/*"]
+members = ["src/api", "src/internal/pipeline", "src/internal/config"]
+
+[tool.poe.tasks]
+start = "uv run --env-file .env uvicorn src.api.main:app --reload"
+test = "pytest"
+lint = "ruff check ."
+fix = "ruff check . --fix"
+format = "ruff format ."
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.42.1",
+    "pytest>=9.0.2",
+    "ruff>=0.15.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "I", "F"]
+ignore = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

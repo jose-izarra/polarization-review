@@ -1,7 +1,13 @@
 import unittest
 
-from src.pipeline.normalize import clean_text, dedupe_items, filter_item, normalize_raw_item, select_top_items
-from src.pipeline.types import NormalizedItem
+from src.internal.pipeline.llm.normalize import (
+    clean_text,
+    dedupe_items,
+    filter_item,
+    normalize_raw_item,
+    select_top_items,
+)
+from src.internal.pipeline.llm.types import NormalizedItem
 
 
 class NormalizeTests(unittest.TestCase):
@@ -10,8 +16,14 @@ class NormalizeTests(unittest.TestCase):
 
     def test_filter_item_rejects_short_deleted_and_missing_id(self):
         self.assertFalse(filter_item({"id": "1", "text": "tiny"}, min_text_length=20))
-        self.assertFalse(filter_item({"id": "1", "text": "[deleted]"}, min_text_length=1))
-        self.assertFalse(filter_item({"id": "", "text": "this is long enough text"}, min_text_length=10))
+        self.assertFalse(
+            filter_item({"id": "1", "text": "[deleted]"}, min_text_length=1)
+        )
+        self.assertFalse(
+            filter_item(
+                {"id": "", "text": "this is long enough text"}, min_text_length=10
+            )
+        )
 
     def test_dedupe_and_select(self):
         items = [

@@ -4,7 +4,6 @@ import re
 
 from .types import NormalizedItem
 
-
 _WHITESPACE_RE = re.compile(r"\s+")
 
 
@@ -37,7 +36,9 @@ def dedupe_items(items: list[NormalizedItem]) -> list[NormalizedItem]:
     return deduped
 
 
-def select_top_items(items: list[NormalizedItem], max_items: int = 40) -> list[NormalizedItem]:
+def select_top_items(
+    items: list[NormalizedItem], max_items: int = 40
+) -> list[NormalizedItem]:
     """Rank by engagement descending and keep top N."""
     ranked = sorted(items, key=lambda x: x.engagement_score, reverse=True)
     return ranked[:max_items]
