@@ -2,19 +2,31 @@ from __future__ import annotations
 
 import asyncio
 import json
-from typing import Literal
 from uuid import uuid4
 
 import uvicorn
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from pydantic import BaseModel, Field
 from src.internal.pipeline.llm.run_search import run_search
 from src.internal.pipeline.llm.types import SearchRequest
 
-from src.internal.config.logger import logfire
+from .models import AnalyzeRequest
+from src.internal.config import logfire
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(title="Polarization Review API", version="0.1")
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 logfire.instrument_fastapi(app)
 
@@ -23,12 +35,6 @@ app.get("/")(lambda: {"message": "Hello, World!"})
 # task_id -> asyncio.Queue of progress message dicts
 _task_queues: dict[str, asyncio.Queue] = {}
 
-
-class AnalyzeRequest(BaseModel):
-    query: str = Field(..., min_length=1)
-    time_filter: Literal["day", "week", "month"] = "week"
-    max_posts: int = Field(30, ge=1, le=200)
-    max_comments_per_post: int = Field(10, ge=1, le=200)
 
 
 @app.post("/analyze")
