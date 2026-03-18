@@ -14,6 +14,7 @@ class SearchRequest:
     time_filter: TimeFilter = "week"
     max_posts: int = 30
     max_comments_per_post: int = 10
+    mode: str = "live"
 
 
 @dataclass(slots=True)
@@ -24,6 +25,11 @@ class NormalizedItem:
     timestamp: str
     engagement_score: int
     content_type: ContentType
+    platform: str = "unknown"
+    source_lean: str | None = None
+    relevance_score: float | None = None
+    parent_video_stance: int | None = None
+    parent_video_id: str | None = None
 
 
 @dataclass(slots=True)
@@ -31,6 +37,12 @@ class EvidenceItem:
     id: str
     snippet: str
     url: str
+    stance: int | None = None
+    animosity: int | None = None
+    sentiment: int | None = None
+    rationale: str | None = None
+    source_lean: str | None = None
+    platform: str | None = None
 
 
 @dataclass(slots=True)
@@ -40,6 +52,7 @@ class ItemScore:
     stance: int  # -1 (against) / 0 (neutral) / 1 (for)
     animosity: int  # 1-5  (emotional weight)
     r: float  # computed r_i = stance * (sentiment + α*animosity)
+    reason: str = ""
 
 
 @dataclass(slots=True)
@@ -61,6 +74,7 @@ class PolarizationResult:
     evidence: list[EvidenceItem]
     status: ResultStatus
     error_message: str | None
+    confidence_label: str = ""
 
     def to_dict(self) -> dict:
         return asdict(self)

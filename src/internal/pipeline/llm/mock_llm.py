@@ -13,16 +13,38 @@ logger = logging.getLogger(__name__)
 
 # Cycles through a mix of stances to produce a realistic polarization score.
 _SCORE_CYCLE = [
-    {"sentiment": 4, "stance": 1, "animosity": 2},
-    {"sentiment": 3, "stance": -1, "animosity": 3},
-    {"sentiment": 2, "stance": 0, "animosity": 1},
-    {"sentiment": 5, "stance": 1, "animosity": 4},
-    {"sentiment": 2, "stance": -1, "animosity": 2},
+    {"sentiment": 4, "stance": 1, "animosity": 2, "reason": "mock positive stance"},
+    {"sentiment": 3, "stance": -1, "animosity": 3, "reason": "mock negative stance"},
+    {"sentiment": 2, "stance": 0, "animosity": 1, "reason": "mock neutral stance"},
+    {"sentiment": 5, "stance": 1, "animosity": 4, "reason": "mock strong positive"},
+    {"sentiment": 2, "stance": -1, "animosity": 2, "reason": "mock negative stance"},
 ]
 
 
 def mock_call_model(system_prompt: str, user_payload: str) -> str:
-    """Return a valid JSON score array without calling any external API."""
+    """Return a valid JSON array without calling any external API."""
+    # Detect relevance filter prompt
+    if "relevant" in system_prompt.lower():
+        items = json.loads(user_payload).get("items", [])
+        result = [{"id": item["id"], "relevant": True} for item in items]
+        logger.debug(
+            "mock_call_model: relevance — all %d relevant",
+            len(result),
+        )
+        return json.dumps(result)
+
+    # Detect video stance prompt
+    if "video" in system_prompt.lower() and "stance" in system_prompt.lower():
+        items = json.loads(user_payload).get("videos", [])
+        stances = [1, -1, 0]
+        result = [
+            {"id": item["id"], "stance": stances[i % len(stances)]}
+            for i, item in enumerate(items)
+        ]
+        logger.debug("mock_call_model: video stances for %d videos", len(result))
+        return json.dumps(result)
+
+    # Default: scoring prompt
     items = json.loads(user_payload).get("items", [])
     scores = [
         {"id": item["id"], **_SCORE_CYCLE[i % len(_SCORE_CYCLE)]}

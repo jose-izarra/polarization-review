@@ -14,11 +14,11 @@ def _make_gnews_response(articles: list[dict]) -> MagicMock:
     return mock_resp
 
 
-def _sample_article(n: int = 1) -> dict:
+def _sample_article(n: int = 1, url: str | None = None) -> dict:
     return {
         "title": f"Article title {n}",
         "description": f"Article description {n}",
-        "url": f"https://example.com/article-{n}",
+        "url": url or f"https://example.com/article-{n}",
         "publishedAt": "2026-01-15T10:00:00Z",
         "source": {"name": "Example News", "url": "https://example.com"},
         "image": None,
@@ -76,8 +76,27 @@ class TestCollectGnewsData(unittest.TestCase):
         self.assertEqual(post["text"], expected)
 
     @patch("src.internal.pipeline.scrape.gnews.request.urlopen")
+    def test_source_lean_lookup(self, mock_urlopen):
+        articles = [
+            _sample_article(1, url="https://www.cnn.com/article-1"),
+            _sample_article(2, url="https://www.foxnews.com/article-2"),
+            _sample_article(3, url="https://reuters.com/article-3"),
+            _sample_article(4, url="https://unknownsite.com/article-4"),
+        ]
+        mock_urlopen.return_value = _make_gnews_response(articles)
+
+        from src.internal.pipeline.scrape.gnews import collect_gnews_data
+
+        result = collect_gnews_data("topic")
+        posts = result["data"]["posts"]
+
+        self.assertEqual(posts[0]["source_lean"], "left")
+        self.assertEqual(posts[1]["source_lean"], "right")
+        self.assertEqual(posts[2]["source_lean"], "center")
+        self.assertEqual(posts[3]["source_lean"], "unknown")
+
+    @patch("src.internal.pipeline.scrape.gnews.request.urlopen")
     def test_time_filter_day_maps_to_1_day(self, mock_urlopen):
-        mock_urlopen.return_value = _make_gnews_response([])
         captured_url = {}
 
         def capture(req, timeout=None):
@@ -94,7 +113,6 @@ class TestCollectGnewsData(unittest.TestCase):
         params = parse_qs(parsed.query)
 
         from_str = params["from"][0]
-        # Verify from_str is within last ~2 days
         from datetime import datetime, timezone
 
         from_dt = datetime.strptime(from_str, "%Y-%m-%dT%H:%M:%SZ").replace(

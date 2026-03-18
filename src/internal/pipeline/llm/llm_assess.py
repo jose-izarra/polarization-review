@@ -3,12 +3,15 @@ from __future__ import annotations
 import json
 import logging
 import re
+from dataclasses import replace
 
 from src.internal.config.config import config
+
 from .types import ItemScore, NormalizedItem
 
 _DEFAULT_MODEL = "gemini-2.5-flash"
 _BATCH_SIZE = 15
+_RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
 _ALPHA = 0.5
 
@@ -75,9 +78,15 @@ def _validate_item_scores(raw_items: list, alpha: float = _ALPHA) -> list[ItemSc
             continue
 
         r = stance * (sentiment + alpha * animosity)
+        reason = str(elem.get("reason", ""))
         scores.append(
             ItemScore(
-                id=item_id, sentiment=sentiment, stance=stance, animosity=animosity, r=r
+                id=item_id,
+                sentiment=sentiment,
+                stance=stance,
+                animosity=animosity,
+                r=r,
+                reason=reason,
             )
         )
     return scores
@@ -120,11 +129,20 @@ def _call_gemini_chat(
 
 _SYSTEM_PROMPT = (
     "Rate each item for the given topic. Return a JSON array where each element has: "
-    "id (string), sentiment (1-5), stance (-1/0/1), animosity (1-5). "
+    "id (string), sentiment (1-5), stance (-1/0/1), animosity (1-5), "
+    "reason (string, 1-sentence explanation of your rating). "
     "Use only the provided text. Return only valid JSON, no extra text."
 )
 _SYSTEM_PROMPT_STRICT = (
     _SYSTEM_PROMPT + " Return only a valid JSON array and absolutely nothing else."
+)
+
+_RELEVANCE_SYSTEM_PROMPT = (
+    "Determine whether each item is relevant to the given topic/query. "
+    'Return a JSON array where each element has: id (string), relevant (boolean). '
+    "An item is relevant if it directly discusses, argues about, or provides "
+    "an opinion on the topic. Off-topic or tangential items should be marked false. "
+    "Return only valid JSON, no extra text."
 )
 
 
@@ -145,6 +163,62 @@ def _score_batch(
         return _validate_item_scores(raw_items, alpha=alpha)
 
 
+def _get_invoke(call_model, model: str | None, timeout_seconds: int):
+    """Build the invoke callable from call_model or config."""
+    if call_model is not None:
+        return call_model
+
+    if config.gemini_api_key is None:
+        from .mock_llm import mock_call_model
+
+        return mock_call_model
+
+    chosen_model = model or config.polarization_model
+
+    def invoke(sys_prompt, user_input):
+        return _call_gemini_chat(
+            sys_prompt,
+            user_input,
+            model=chosen_model,
+            timeout_seconds=timeout_seconds,
+        )
+
+    return invoke
+
+
+def filter_relevant_items(
+    query: str,
+    items: list[NormalizedItem],
+    call_model=None,
+) -> list[NormalizedItem]:
+    """Filter items for relevance to the query using LLM."""
+    if not items:
+        return []
+
+    invoke = _get_invoke(call_model, model=None, timeout_seconds=45)
+
+    relevant_ids: set[str] = set()
+    for i in range(0, len(items), _RELEVANCE_BATCH_SIZE):
+        batch = items[i : i + _RELEVANCE_BATCH_SIZE]
+        payload = _build_batch_payload(query, batch)
+        raw_response = invoke(_RELEVANCE_SYSTEM_PROMPT, payload)
+        try:
+            parsed = _extract_json_array(raw_response)
+        except ValueError:
+            # If parsing fails, keep all items in this batch
+            relevant_ids.update(item.id for item in batch)
+            continue
+        for elem in parsed:
+            if isinstance(elem, dict) and elem.get("relevant", False):
+                relevant_ids.add(str(elem.get("id", "")))
+
+    return [
+        replace(item, relevance_score=1.0)
+        for item in items
+        if item.id in relevant_ids
+    ]
+
+
 def assess_items(
     query: str,
     items: list[NormalizedItem],
@@ -156,27 +230,11 @@ def assess_items(
     """Score each item individually for sentiment, stance, and animosity.
 
     call_model(system_prompt, user_payload) can be injected for tests.
-    backend: "gemini" (default) | "openai"
     """
     if not items:
         raise ValueError("Cannot assess items with zero items")
 
-    chosen_model = model or config.polarization_model
-
-    if call_model is not None:
-        invoke = call_model
-    elif config.gemini_api_key is None:
-        from .mock_llm import mock_call_model
-        invoke = mock_call_model
-    else:
-
-        def invoke(sys_prompt, user_input):
-            return _call_gemini_chat(
-                sys_prompt,
-                user_input,
-                model=chosen_model,
-                timeout_seconds=timeout_seconds,
-            )
+    invoke = _get_invoke(call_model, model, timeout_seconds)
 
     results: list[ItemScore] = []
     for i in range(0, len(items), _BATCH_SIZE):

@@ -29,6 +29,19 @@ def _build_youtube_client(api_key: str):
     return build("youtube", "v3", developerKey=api_key)
 
 
+def _fetch_transcript(video_id: str) -> str | None:
+    """Fetch and truncate transcript for a YouTube video. Returns None on failure."""
+    try:
+        from youtube_transcript_api import YouTubeTranscriptApi
+
+        transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
+        full_text = " ".join(entry["text"] for entry in transcript_list)
+        return full_text[:2000]
+    except Exception as exc:
+        logger.debug("Could not fetch transcript for %s: %s", video_id, exc)
+        return None
+
+
 def _search_videos(youtube, query: str, max_videos: int, order: str) -> list[dict]:
     response = (
         youtube.search()
@@ -52,6 +65,8 @@ def _search_videos(youtube, query: str, max_videos: int, order: str) -> list[dic
 
         text = f"{title}. {description}"[:500]
 
+        transcript = _fetch_transcript(video_id)
+
         videos.append(
             {
                 "platform_id": f"youtube_video_{video_id}",
@@ -60,7 +75,10 @@ def _search_videos(youtube, query: str, max_videos: int, order: str) -> list[dic
                 "url": f"https://www.youtube.com/watch?v={video_id}",
                 "timestamp": published_at,
                 "engagement": {"score": 0},
-                "metadata": {"content_type": "post"},
+                "metadata": {
+                    "content_type": "post",
+                    "transcript": transcript,
+                },
                 "_video_id": video_id,
             }
         )
@@ -100,7 +118,10 @@ def _fetch_comments(youtube, video_id: str, max_comments: int) -> list[dict]:
                 "url": f"https://www.youtube.com/watch?v={video_id}&lcdId={comment_id}",
                 "timestamp": snippet.get("publishedAt", ""),
                 "engagement": {"score": snippet.get("likeCount", 0)},
-                "metadata": {"content_type": "comment"},
+                "metadata": {
+                    "content_type": "comment",
+                    "parent_video_id": video_id,
+                },
             }
         )
 

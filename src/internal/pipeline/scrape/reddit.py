@@ -15,10 +15,9 @@ import json
 import os
 from datetime import datetime, timezone
 
-from src.internal.config.config import config as app_config
-
 import praw
 import prawcore
+from src.internal.config.config import config as app_config
 
 # Priority subreddits for political polarization analysis
 PRIORITY_SUBREDDITS = [

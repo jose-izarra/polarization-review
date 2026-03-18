@@ -6,13 +6,19 @@ from uuid import uuid4
 
 import uvicorn
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.middleware.cors import CORSMiddleware
+from src.internal.config import logfire
 from src.internal.pipeline.llm.run_search import run_search
 from src.internal.pipeline.llm.types import SearchRequest
 
+from .cache import (
+    clear_pending,
+    get_cached_result,
+    mark_pending,
+    store_result,
+    wait_for_pending,
+)
 from .models import AnalyzeRequest
-from src.internal.config import logfire
-from fastapi.middleware.cors import CORSMiddleware
-
 
 app = FastAPI(title="Polarization Review API", version="0.1")
 
@@ -81,7 +87,34 @@ async def _run_analysis_task(task_id: str, body: AnalyzeRequest) -> None:
         await queue.put({"status": status, "message": message, "result": result})
         print(f"Emitting status {status} with message {message} and result {result}")
 
+    cache_args = (
+        body.query, body.time_filter, body.max_posts,
+        body.max_comments_per_post, body.mode,
+    )
+
     try:
+        # 1. Check cache for a completed result
+        cached = get_cached_result(*cache_args)
+        if cached is not None:
+            await emit("collecting", "Collecting and normalizing Reddit data...")
+            await emit("assessing", "Scoring items with LLM...")
+            await emit("scoring", "Computing polarization score...")
+            await emit("complete", "Analysis complete.", cached.to_dict())
+            return
+
+        # 2. Try to claim this query; if another task owns it, wait
+        if not mark_pending(*cache_args):
+            await emit("collecting", "Waiting for in-flight analysis...")
+            cached = await wait_for_pending(*cache_args)
+            if cached is not None:
+                await emit("assessing", "Scoring items with LLM...")
+                await emit("scoring", "Computing polarization score...")
+                await emit("complete", "Analysis complete.", cached.to_dict())
+                return
+            # The in-flight task failed — fall through and run it ourselves
+            mark_pending(*cache_args)
+
+        # 3. Run the pipeline
         await emit("collecting", "Collecting and normalizing Reddit data...")
 
         search_request = SearchRequest(
@@ -89,16 +122,20 @@ async def _run_analysis_task(task_id: str, body: AnalyzeRequest) -> None:
             time_filter=body.time_filter,
             max_posts=body.max_posts,
             max_comments_per_post=body.max_comments_per_post,
+            mode=body.mode,
         )
 
         await emit("assessing", "Scoring items with LLM...")
 
         result = await asyncio.to_thread(run_search, search_request)
 
+        store_result(*cache_args, result=result)
+
         await emit("scoring", "Computing polarization score...")
         await emit("complete", "Analysis complete.", result.to_dict())
 
     except Exception as exc:
+        clear_pending(*cache_args)
         await emit("error", f"Analysis failed: {exc}")
 
 

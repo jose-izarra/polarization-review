@@ -1,2 +1,3 @@
 import logfire
+
 logfire.configure()

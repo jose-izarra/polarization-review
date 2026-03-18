@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from src.internal.pipeline.llm.llm_assess import assess_items
+from src.internal.pipeline.llm.llm_assess import assess_items, filter_relevant_items
 from src.internal.pipeline.llm.types import ItemScore, NormalizedItem
 
 
@@ -18,7 +18,16 @@ def _make_item(id: str) -> NormalizedItem:
 
 def _fake_response(items: list[NormalizedItem]) -> str:
     return json.dumps(
-        [{"id": item.id, "sentiment": 3, "stance": 1, "animosity": 2} for item in items]
+        [
+            {
+                "id": item.id,
+                "sentiment": 3,
+                "stance": 1,
+                "animosity": 2,
+                "reason": "test",
+            }
+            for item in items
+        ]
     )
 
 
@@ -41,13 +50,51 @@ class AssessItemsTests(unittest.TestCase):
 
         def fake_call(system_prompt, user_payload):
             return json.dumps(
-                [{"id": "1", "sentiment": 4, "stance": 1, "animosity": 2}]
+                [
+                    {
+                        "id": "1",
+                        "sentiment": 4,
+                        "stance": 1,
+                        "animosity": 2,
+                        "reason": "test",
+                    }
+                ]
             )
 
         result = assess_items("query", items, call_model=fake_call)
         self.assertEqual(len(result), 1)
         # r = stance * (sentiment + alpha * animosity) = 1 * (4 + 0.5 * 2) = 5.0
         self.assertAlmostEqual(result[0].r, 5.0)
+
+    def test_reason_field_extracted(self):
+        items = [_make_item("1")]
+
+        def fake_call(system_prompt, user_payload):
+            return json.dumps(
+                [
+                    {
+                        "id": "1",
+                        "sentiment": 3,
+                        "stance": 1,
+                        "animosity": 2,
+                        "reason": "strongly agrees",
+                    }
+                ]
+            )
+
+        result = assess_items("query", items, call_model=fake_call)
+        self.assertEqual(result[0].reason, "strongly agrees")
+
+    def test_reason_defaults_empty(self):
+        items = [_make_item("1")]
+
+        def fake_call(system_prompt, user_payload):
+            return json.dumps(
+                [{"id": "1", "sentiment": 3, "stance": 1, "animosity": 2}]
+            )
+
+        result = assess_items("query", items, call_model=fake_call)
+        self.assertEqual(result[0].reason, "")
 
     def test_retry_on_invalid_json_then_success(self):
         calls = {"n": 0}
@@ -104,6 +151,47 @@ class AssessItemsTests(unittest.TestCase):
         result = assess_items("query", items, call_model=fake_call)
         self.assertEqual(call_count["n"], 2)
         self.assertEqual(len(result), 20)
+
+
+class FilterRelevantItemsTests(unittest.TestCase):
+    def test_keeps_relevant_items(self):
+        items = [_make_item("1"), _make_item("2")]
+
+        def fake_call(system_prompt, user_payload):
+            return json.dumps([
+                {"id": "1", "relevant": True},
+                {"id": "2", "relevant": False},
+            ])
+
+        result = filter_relevant_items("query", items, call_model=fake_call)
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0].id, "1")
+        self.assertEqual(result[0].relevance_score, 1.0)
+
+    def test_empty_input_returns_empty(self):
+        result = filter_relevant_items("query", [])
+        self.assertEqual(result, [])
+
+    def test_all_relevant(self):
+        items = [_make_item("1"), _make_item("2")]
+
+        def fake_call(system_prompt, user_payload):
+            return json.dumps([
+                {"id": "1", "relevant": True},
+                {"id": "2", "relevant": True},
+            ])
+
+        result = filter_relevant_items("query", items, call_model=fake_call)
+        self.assertEqual(len(result), 2)
+
+    def test_parsing_failure_keeps_batch(self):
+        items = [_make_item("1")]
+
+        def fake_call(system_prompt, user_payload):
+            return "not valid json at all"
+
+        result = filter_relevant_items("query", items, call_model=fake_call)
+        self.assertEqual(len(result), 1)
 
 
 if __name__ == "__main__":
