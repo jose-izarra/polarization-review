@@ -11,6 +11,13 @@ dependencies = [
     "pydantic>=2.12.5",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [tool.uv]
 # This tells the API project where to find its internal neighbors
 sources = { "internal-pipeline" = { workspace = true } }
