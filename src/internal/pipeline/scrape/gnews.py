@@ -21,7 +21,7 @@ from src.internal.config.config import config as app_config
 logger = logging.getLogger(__name__)
 
 DEFAULT_CONFIG = {
-    "max_articles": 20,
+    "max_articles": 3,
     "lang": "en",
     "sortby": "relevance",
 }

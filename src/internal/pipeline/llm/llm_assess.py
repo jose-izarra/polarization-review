@@ -186,6 +186,35 @@ def _get_invoke(call_model, model: str | None, timeout_seconds: int):
     return invoke
 
 
+_YOUTUBE_QUERY_SYSTEM_PROMPT = (
+    "Given a search query or claim, generate exactly 3 YouTube search queries to "
+    "surface videos covering different perspectives on the topic: "
+    "1) a query finding videos that support or argue for the claim, "
+    "2) a query finding videos that oppose, criticise, or debunk the claim, "
+    "3) a neutral debate or analysis framing of the same topic. "
+    "Return a JSON array of exactly 3 short search strings. Return only valid JSON."
+)
+
+
+def generate_youtube_queries(query: str, call_model=None) -> list[str]:
+    """Use LLM to generate 3 YouTube search queries covering opposing perspectives.
+
+    Falls back to [query] on any failure so the pipeline is never blocked.
+    """
+    invoke = _get_invoke(call_model, model=None, timeout_seconds=30)
+    try:
+        raw = invoke(_YOUTUBE_QUERY_SYSTEM_PROMPT, json.dumps({"query": query}))
+        parsed = _extract_json_array(raw)
+        queries = [str(q).strip() for q in parsed if isinstance(q, str) and str(q).strip()]
+        if len(queries) >= 2:
+            return queries[:3]
+    except Exception:
+        logger.warning(
+            "Failed to generate YouTube queries for %r, falling back to original", query
+        )
+    return [query]
+
+
 def filter_relevant_items(
     query: str,
     items: list[NormalizedItem],

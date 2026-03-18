@@ -8,8 +8,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, replace
 from datetime import datetime, timezone
 
-from .llm_assess import assess_items, filter_relevant_items
-from .normalize import dedupe_items, filter_item, normalize_raw_item, select_top_items
+from .llm_assess import assess_items, filter_relevant_items, generate_youtube_queries
+from .normalize import dedupe_items, filter_item, normalize_raw_item
 from .score import compute_polarization
 from .types import (
     EvidenceItem,
@@ -34,6 +34,24 @@ def _build_reddit_config(request: SearchRequest) -> dict:
     }
 
 
+def _select_per_platform(
+    items: list[NormalizedItem], max_per_platform: int = 20
+) -> list[NormalizedItem]:
+    """Take the top N items per platform by engagement, then combine.
+
+    This prevents high-volume sources (Reddit) from crowding out low-engagement
+    sources (GNews) in the pool that reaches the LLM relevance filter.
+    """
+    by_platform: dict[str, list[NormalizedItem]] = defaultdict(list)
+    for item in items:
+        by_platform[item.platform].append(item)
+    result: list[NormalizedItem] = []
+    for platform_items in by_platform.values():
+        ranked = sorted(platform_items, key=lambda x: x.engagement_score, reverse=True)
+        result.extend(ranked[:max_per_platform])
+    return result
+
+
 def _balance_by_source_lean(
     items: list[NormalizedItem], max_per_lean: int = 10
 ) -> list[NormalizedItem]:
@@ -50,7 +68,64 @@ def _balance_by_source_lean(
     return result
 
 
-def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
+def _balance_youtube_by_stance(
+    query: str,
+    items: list[NormalizedItem],
+    max_per_stance: int = 4,
+    call_model=None,
+) -> list[NormalizedItem]:
+    """Cap YouTube video posts to at most *max_per_stance* per stance category.
+
+    Assesses the stance of each YouTube video post via LLM, then drops excess
+    same-stance videos together with all comments belonging to those videos.
+    Non-YouTube items are always kept unchanged.
+    """
+    video_stances = _determine_video_stances(query, items, call_model=call_model)
+    if not video_stances:
+        return items
+
+    stance_counts: dict[int, int] = defaultdict(int)
+    dropped_video_ids: set[str] = set()
+
+    for item in items:
+        if item.platform != "youtube" or item.content_type != "post":
+            continue
+        stance = video_stances.get(item.id)
+        if stance is None:
+            continue  # Unassessed — keep
+        if stance_counts[stance] < max_per_stance:
+            stance_counts[stance] += 1
+        else:
+            dropped_video_ids.add(item.id)
+
+    if not dropped_video_ids:
+        return items
+
+    logger.info(
+        "YouTube stance balance: dropped %d over-represented video(s), kept distribution %s",
+        len(dropped_video_ids),
+        dict(stance_counts),
+    )
+
+    result: list[NormalizedItem] = []
+    for item in items:
+        if item.platform != "youtube":
+            result.append(item)
+        elif item.content_type == "post":
+            if item.id not in dropped_video_ids:
+                result.append(item)
+        else:
+            # Comment: keep only if its parent video was not dropped
+            parent_norm_id = f"youtube_video_{item.parent_video_id}"
+            if parent_norm_id not in dropped_video_ids:
+                result.append(item)
+    return result
+
+
+def _collect_and_normalize(
+    request: SearchRequest,
+    youtube_queries: list[str] | None = None,
+) -> list[NormalizedItem]:
     from src.internal.pipeline.scrape.gnews import collect_gnews_data
     from src.internal.pipeline.scrape.reddit import collect_reddit_data
     from src.internal.pipeline.scrape.youtube import collect_youtube_data
@@ -63,8 +138,9 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
             request.query,
             config={
                 "max_videos": 10,
-                "max_comments_per_video": request.max_comments_per_post,
+                "max_comments_per_video": max(request.max_comments_per_post, 30),
             },
+            queries=youtube_queries,
         ),
         "gnews": lambda: collect_gnews_data(
             request.query,
@@ -89,9 +165,7 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
     kept = [
         item for item in candidates if filter_item(asdict(item), min_text_length=20)
     ]
-    deduped = dedupe_items(kept)
-    top = select_top_items(deduped, max_items=40)
-    return _balance_by_source_lean(top)
+    return dedupe_items(kept)
 
 
 def _build_rationale(
@@ -278,7 +352,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             )
     else:
         try:
-            items = _collect_and_normalize(request)
+            youtube_queries = generate_youtube_queries(query)
+            items = _collect_and_normalize(request, youtube_queries=youtube_queries)
         except Exception as exc:
             return PolarizationResult(
                 query=query,
@@ -291,6 +366,14 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 status="error",
                 error_message=str(exc),
             )
+
+        # Balance YouTube video stances before engagement-based capping so that
+        # over-represented stances are pruned while video posts are still present.
+        items = _balance_youtube_by_stance(query, items)
+
+        # Per-platform cap and GNews lean balance (applied after stance balancing)
+        items = _select_per_platform(items, max_per_platform=20)
+        items = _balance_by_source_lean(items)
 
     if not items:
         return PolarizationResult(
@@ -368,6 +451,13 @@ def run_search(request: SearchRequest) -> PolarizationResult:
     confidence_label = _compute_confidence_label(n)
     rationale = _build_rationale(item_scores, items)
 
+    n_for = sum(1 for s in item_scores if s.stance == 1)
+    n_against = sum(1 for s in item_scores if s.stance == -1)
+    n_neutral = sum(1 for s in item_scores if s.stance == 0)
+    platform_counts: dict[str, int] = defaultdict(int)
+    for item in items:
+        platform_counts[item.platform] += 1
+
     evidence_items = _build_evidence(item_scores, items)
     if not evidence_items:
         evidence_items = [
@@ -391,6 +481,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
         status="ok",
         error_message=None,
         confidence_label=confidence_label,
+        stance_distribution={"for": n_for, "against": n_against, "neutral": n_neutral},
+        source_breakdown=dict(platform_counts),
     )
 
 

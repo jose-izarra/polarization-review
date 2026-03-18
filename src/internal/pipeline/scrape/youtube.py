@@ -20,6 +20,10 @@ DEFAULT_CONFIG = {
     "max_videos": 10,
     "max_comments_per_video": 20,
     "order": "relevance",
+    # Minimum number of videos that must have comments enabled. If fewer are
+    # found in the first batch, additional pages are fetched automatically.
+    # Defaults to max_videos at runtime (see collect_youtube_data).
+    "min_videos_with_comments": 10,
 }
 
 
@@ -42,29 +46,46 @@ def _fetch_transcript(video_id: str) -> str | None:
         return None
 
 
-def _search_videos(youtube, query: str, max_videos: int, order: str) -> list[dict]:
-    response = (
-        youtube.search()
-        .list(
-            q=query,
-            type="video",
-            part="snippet",
-            order=order,
-            maxResults=max_videos,
-        )
-        .execute()
-    )
+def _search_videos(
+    youtube,
+    query: str,
+    max_videos: int,
+    order: str,
+    page_token: str | None = None,
+    exclude_ids: set[str] | None = None,
+) -> tuple[list[dict], str | None]:
+    """Search for videos and return (video_list, next_page_token).
 
+    Args:
+        page_token: YouTube pagination token for fetching subsequent pages.
+        exclude_ids: Video IDs already collected; matching results are skipped.
+    """
+    params: dict = dict(
+        q=query,
+        type="video",
+        part="snippet",
+        order=order,
+        maxResults=max_videos,
+    )
+    if page_token:
+        params["pageToken"] = page_token
+
+    response = youtube.search().list(**params).execute()
+    next_page_token: str | None = response.get("nextPageToken")
+
+    exclude_ids = exclude_ids or set()
     videos = []
     for item in response.get("items", []):
         video_id = item["id"]["videoId"]
+        if video_id in exclude_ids:
+            continue
+
         snippet = item["snippet"]
         title = snippet.get("title", "")
         description = snippet.get("description", "")
         published_at = snippet.get("publishedAt", "")
 
         text = f"{title}. {description}"[:500]
-
         transcript = _fetch_transcript(video_id)
 
         videos.append(
@@ -83,7 +104,7 @@ def _search_videos(youtube, query: str, max_videos: int, order: str) -> list[dic
             }
         )
 
-    return videos
+    return videos, next_page_token
 
 
 def _fetch_comments(youtube, video_id: str, max_comments: int) -> list[dict]:
@@ -128,8 +149,20 @@ def _fetch_comments(youtube, video_id: str, max_comments: int) -> list[dict]:
     return comments
 
 
-def collect_youtube_data(query: str, config: dict | None = None) -> dict:
+def collect_youtube_data(
+    query: str,
+    config: dict | None = None,
+    queries: list[str] | None = None,
+) -> dict:
     """Collect YouTube videos and comments for the given query.
+
+    If *queries* is provided (a list of search strings), all queries are searched
+    and their video results are merged and deduplicated before comments are fetched.
+    This is used to surface videos from multiple perspectives (for/against/neutral).
+
+    After exhausting all provided queries, if fewer than *min_videos_with_comments*
+    videos have comments enabled, additional pages are fetched from the first query
+    until the minimum is met or there are no more pages.
 
     Returns:
         {"data": {"posts": [...], "comments": [...]}}
@@ -139,19 +172,57 @@ def collect_youtube_data(query: str, config: dict | None = None) -> dict:
     api_key = app_config.youtube_api_key
 
     cfg = {**DEFAULT_CONFIG, **(config or {})}
+    min_with_comments: int = cfg["min_videos_with_comments"]
     youtube = _build_youtube_client(api_key)
 
-    video_items = _search_videos(youtube, query, cfg["max_videos"], cfg["order"])
+    search_queries = queries if queries else [query]
 
-    posts = []
-    comments = []
+    posts: list[dict] = []
+    comments: list[dict] = []
+    seen_ids: set[str] = set()
+    videos_with_comments: int = 0
 
-    for video in video_items:
-        video_id = video.pop("_video_id")
-        posts.append(video)
-        video_comments = _fetch_comments(
-            youtube, video_id, cfg["max_comments_per_video"]
+    # Phase 1: search across all provided queries, merge + dedup
+    first_query_next_page: str | None = None
+    for i, q in enumerate(search_queries):
+        batch, next_page = _search_videos(
+            youtube, q, cfg["max_videos"], cfg["order"], exclude_ids=seen_ids
         )
-        comments.extend(video_comments)
+        for video in batch:
+            video_id = video.pop("_video_id")
+            seen_ids.add(video_id)
+            posts.append(video)
+            video_comments = _fetch_comments(
+                youtube, video_id, cfg["max_comments_per_video"]
+            )
+            if video_comments:
+                videos_with_comments += 1
+            comments.extend(video_comments)
+        if i == 0:
+            first_query_next_page = next_page
+
+    # Phase 2: if still below minimum, page through additional results from query 1
+    page_token = first_query_next_page
+    while videos_with_comments < min_with_comments and page_token:
+        batch, page_token = _search_videos(
+            youtube,
+            query,
+            cfg["max_videos"],
+            cfg["order"],
+            page_token=page_token,
+            exclude_ids=seen_ids,
+        )
+        if not batch:
+            break
+        for video in batch:
+            video_id = video.pop("_video_id")
+            seen_ids.add(video_id)
+            posts.append(video)
+            video_comments = _fetch_comments(
+                youtube, video_id, cfg["max_comments_per_video"]
+            )
+            if video_comments:
+                videos_with_comments += 1
+            comments.extend(video_comments)
 
     return {"data": {"posts": posts, "comments": comments}}

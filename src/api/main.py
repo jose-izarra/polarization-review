@@ -23,7 +23,7 @@ from .models import AnalyzeRequest
 
 app = FastAPI(title="Polarization Review API", version="0.1")
 
-origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")]
+origins = [o.strip() for o in os.getenv("CORS_ORIGINS").split(",")]
 
 app.add_middleware(
     CORSMiddleware,

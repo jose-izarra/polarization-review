@@ -13,7 +13,7 @@ class SearchRequest:
     query: str
     time_filter: TimeFilter = "week"
     max_posts: int = 30
-    max_comments_per_post: int = 10
+    max_comments_per_post: int = 30
     mode: str = "live"
 
 
@@ -75,6 +75,8 @@ class PolarizationResult:
     status: ResultStatus
     error_message: str | None
     confidence_label: str = ""
+    stance_distribution: dict | None = None
+    source_breakdown: dict | None = None
 
     def to_dict(self) -> dict:
         return asdict(self)

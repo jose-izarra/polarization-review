@@ -33,6 +33,18 @@ def mock_call_model(system_prompt: str, user_payload: str) -> str:
         )
         return json.dumps(result)
 
+    # Detect YouTube query generation prompt
+    if "youtube search quer" in system_prompt.lower():
+        payload = json.loads(user_payload)
+        original = payload.get("query", "topic")
+        result = [
+            original,
+            f"against {original}",
+            f"{original} debate analysis",
+        ]
+        logger.debug("mock_call_model: youtube queries for %r", original)
+        return json.dumps(result)
+
     # Detect video stance prompt
     if "video" in system_prompt.lower() and "stance" in system_prompt.lower():
         items = json.loads(user_payload).get("videos", [])
