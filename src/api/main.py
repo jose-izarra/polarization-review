@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 from uuid import uuid4
 
 import uvicorn
@@ -22,9 +23,7 @@ from .models import AnalyzeRequest
 
 app = FastAPI(title="Polarization Review API", version="0.1")
 
-origins = [
-    "http://localhost:5173",
-]
+origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")]
 
 app.add_middleware(
     CORSMiddleware,
