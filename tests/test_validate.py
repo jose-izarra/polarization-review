@@ -6,6 +6,8 @@ from src.internal.pipeline.llm.validate import (
     run_known_topics,
 )
 
+import logging
+
 
 class TestGenerateSyntheticDataset(unittest.TestCase):
     def test_correct_counts(self):
@@ -25,6 +27,13 @@ class TestGenerateSyntheticDataset(unittest.TestCase):
         ds = generate_synthetic_dataset(10, 10, 0, animosity_level=5)
         score = compute_polarization(ds)
         self.assertGreaterEqual(score, 80.0)
+
+    def test_50_50_low_animosity(self):
+        ds = generate_synthetic_dataset(10, 10, 0, animosity_level=1)
+        score = compute_polarization(ds)
+        print(f"50/50 low animosity score: {score}")
+        self.assertGreaterEqual(score, 10.0)
+        self.assertLessEqual(score, 80.0)
 
     def test_all_one_side_zero(self):
         ds = generate_synthetic_dataset(20, 0, 0, animosity_level=5)
