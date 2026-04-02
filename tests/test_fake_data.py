@@ -30,9 +30,7 @@ class TestFakeDataModule(unittest.TestCase):
                 self.assertTrue(item.id)
                 self.assertTrue(len(item.text) > 20)
                 self.assertTrue(item.url)
-                self.assertIn(
-                    item.content_type, ("post", "comment")
-                )
+                self.assertIn(item.content_type, ("post", "comment"))
 
     def test_polarized_has_balanced_sides(self):
         """Polarized scenario should have items from multiple platforms."""
@@ -49,28 +47,18 @@ class TestFakeDataModule(unittest.TestCase):
 class TestFakeDataPipeline(unittest.TestCase):
     """Run fake data through the pipeline with mock LLM."""
 
-    @patch(
-        "src.internal.pipeline.llm.run_search._determine_video_stances"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.assess_items"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.filter_relevant_items"
-    )
-    def test_fake_polarized_runs_ok(
-        self, mock_filter, mock_assess, mock_vs
-    ):
+    @patch("src.internal.pipeline.llm.run_search._determine_video_stances")
+    @patch("src.internal.pipeline.llm.run_search.assess_items")
+    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    def test_fake_polarized_runs_ok(self, mock_filter, mock_assess, mock_vs):
         mock_vs.return_value = {}
         # filter passes everything through
         mock_filter.side_effect = lambda q, items, **kw: items
         # assess uses mock LLM
         from src.internal.pipeline.llm.llm_assess import assess_items
 
-        mock_assess.side_effect = (
-            lambda q, items, **kw: assess_items(
-                q, items, call_model=mock_call_model
-            )
+        mock_assess.side_effect = lambda q, items, **kw: assess_items(
+            q, items, call_model=mock_call_model
         )
 
         req = SearchRequest(query="ignored", mode="fake_polarized")
@@ -80,67 +68,41 @@ class TestFakeDataPipeline(unittest.TestCase):
         self.assertGreater(len(result.evidence), 0)
         self.assertEqual(result.query, "gun control in America")
 
-    @patch(
-        "src.internal.pipeline.llm.run_search._determine_video_stances"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.assess_items"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.filter_relevant_items"
-    )
-    def test_fake_moderate_runs_ok(
-        self, mock_filter, mock_assess, mock_vs
-    ):
+    @patch("src.internal.pipeline.llm.run_search._determine_video_stances")
+    @patch("src.internal.pipeline.llm.run_search.assess_items")
+    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    def test_fake_moderate_runs_ok(self, mock_filter, mock_assess, mock_vs):
         mock_vs.return_value = {}
         mock_filter.side_effect = lambda q, items, **kw: items
         from src.internal.pipeline.llm.llm_assess import assess_items
 
-        mock_assess.side_effect = (
-            lambda q, items, **kw: assess_items(
-                q, items, call_model=mock_call_model
-            )
+        mock_assess.side_effect = lambda q, items, **kw: assess_items(
+            q, items, call_model=mock_call_model
         )
 
-        req = SearchRequest(
-            query="ignored", mode="fake_moderate"
-        )
+        req = SearchRequest(query="ignored", mode="fake_moderate")
         result = run_search(req)
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
-        self.assertEqual(
-            result.query, "mandatory return to office policies"
-        )
+        self.assertEqual(result.query, "mandatory return to office policies")
 
-    @patch(
-        "src.internal.pipeline.llm.run_search._determine_video_stances"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.assess_items"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.filter_relevant_items"
-    )
-    def test_fake_neutral_runs_ok(
-        self, mock_filter, mock_assess, mock_vs
-    ):
+    @patch("src.internal.pipeline.llm.run_search._determine_video_stances")
+    @patch("src.internal.pipeline.llm.run_search.assess_items")
+    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    def test_fake_neutral_runs_ok(self, mock_filter, mock_assess, mock_vs):
         mock_vs.return_value = {}
         mock_filter.side_effect = lambda q, items, **kw: items
         from src.internal.pipeline.llm.llm_assess import assess_items
 
-        mock_assess.side_effect = (
-            lambda q, items, **kw: assess_items(
-                q, items, call_model=mock_call_model
-            )
+        mock_assess.side_effect = lambda q, items, **kw: assess_items(
+            q, items, call_model=mock_call_model
         )
 
         req = SearchRequest(query="ignored", mode="fake_neutral")
         result = run_search(req)
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
-        self.assertEqual(
-            result.query, "NASA funding and space exploration"
-        )
+        self.assertEqual(result.query, "NASA funding and space exploration")
 
     def test_unknown_fake_mode_returns_error(self):
         req = SearchRequest(query="test", mode="fake_unknown")
@@ -148,36 +110,23 @@ class TestFakeDataPipeline(unittest.TestCase):
         self.assertEqual(result.status, "error")
         self.assertIn("Unknown", result.error_message)
 
-    @patch(
-        "src.internal.pipeline.llm.run_search._determine_video_stances"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.assess_items"
-    )
-    @patch(
-        "src.internal.pipeline.llm.run_search.filter_relevant_items"
-    )
-    def test_fake_mode_skips_scraping(
-        self, mock_filter, mock_assess, mock_vs
-    ):
+    @patch("src.internal.pipeline.llm.run_search._determine_video_stances")
+    @patch("src.internal.pipeline.llm.run_search.assess_items")
+    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    def test_fake_mode_skips_scraping(self, mock_filter, mock_assess, mock_vs):
         """Fake mode should never call _collect_and_normalize."""
         mock_vs.return_value = {}
         mock_filter.side_effect = lambda q, items, **kw: items
         from src.internal.pipeline.llm.llm_assess import assess_items
 
-        mock_assess.side_effect = (
-            lambda q, items, **kw: assess_items(
-                q, items, call_model=mock_call_model
-            )
+        mock_assess.side_effect = lambda q, items, **kw: assess_items(
+            q, items, call_model=mock_call_model
         )
 
         with patch(
-            "src.internal.pipeline.llm.run_search"
-            "._collect_and_normalize"
+            "src.internal.pipeline.llm.run_search._collect_and_normalize"
         ) as mock_collect:
-            req = SearchRequest(
-                query="test", mode="fake_polarized"
-            )
+            req = SearchRequest(query="test", mode="fake_polarized")
             result = run_search(req)
             mock_collect.assert_not_called()
             self.assertEqual(result.status, "ok")

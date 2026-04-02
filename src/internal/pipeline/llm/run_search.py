@@ -24,7 +24,9 @@ logger = logging.getLogger(__name__)
 
 def _build_reddit_config(request: SearchRequest) -> dict:
     return {
-        "subreddits": ["all"],
+        "subreddit_discovery_limit": 10,
+        "min_subscribers": 10_000,
+        "phase2_top_n": 5,
         "sorts": ["relevance"],
         "time_filter": request.time_filter,
         "posts_per_subreddit_all": request.max_posts,
@@ -102,7 +104,8 @@ def _balance_youtube_by_stance(
         return items
 
     logger.info(
-        "YouTube stance balance: dropped %d over-represented video(s), kept distribution %s",
+        "YouTube stance balance: dropped %d over-represented video(s), "
+        "kept distribution %s",
         len(dropped_video_ids),
         dict(stance_counts),
     )
@@ -191,8 +194,7 @@ def _build_rationale(
                 lean_counts[item.source_lean] += 1
         if platform_counts:
             breakdown = ", ".join(
-                f"{k}: {v}"
-                for k, v in sorted(platform_counts.items())
+                f"{k}: {v}" for k, v in sorted(platform_counts.items())
             )
             parts.append(f"Platforms: {breakdown}.")
         if lean_counts:
@@ -241,10 +243,7 @@ def _determine_video_stances(
     )
     payload = {
         "query": query,
-        "videos": [
-            {"id": item.id, "title": item.text[:200]}
-            for item in videos
-        ],
+        "videos": [{"id": item.id, "title": item.text[:200]} for item in videos],
     }
     raw_response = invoke(system_prompt, json.dumps(payload))
 
@@ -490,7 +489,7 @@ def _parse_args() -> SearchRequest:
     parser = argparse.ArgumentParser(description="Run minimal polarization pipeline")
     parser.add_argument("query", type=str, help="Search term/topic")
     parser.add_argument(
-        "--time-filter", choices=["day", "week", "month"], default="week"
+        "--time-filter", choices=["day", "week", "month"], default="month"
     )
     parser.add_argument("--max-posts", type=int, default=30)
     parser.add_argument("--max-comments-per-post", type=int, default=10)

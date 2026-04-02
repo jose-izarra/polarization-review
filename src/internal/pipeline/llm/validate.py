@@ -24,20 +24,38 @@ def generate_synthetic_dataset(
     idx = 0
     for _ in range(n_for):
         r = 1 * (3 + 0.5 * animosity_level)
-        scores.append(ItemScore(
-            id=str(idx), sentiment=3, stance=1, animosity=animosity_level, r=r,
-        ))
+        scores.append(
+            ItemScore(
+                id=str(idx),
+                sentiment=3,
+                stance=1,
+                animosity=animosity_level,
+                r=r,
+            )
+        )
         idx += 1
     for _ in range(n_against):
         r = -1 * (3 + 0.5 * animosity_level)
-        scores.append(ItemScore(
-            id=str(idx), sentiment=3, stance=-1, animosity=animosity_level, r=r,
-        ))
+        scores.append(
+            ItemScore(
+                id=str(idx),
+                sentiment=3,
+                stance=-1,
+                animosity=animosity_level,
+                r=r,
+            )
+        )
         idx += 1
     for _ in range(n_neutral):
-        scores.append(ItemScore(
-            id=str(idx), sentiment=3, stance=0, animosity=1, r=0.0,
-        ))
+        scores.append(
+            ItemScore(
+                id=str(idx),
+                sentiment=3,
+                stance=0,
+                animosity=1,
+                r=0.0,
+            )
+        )
         idx += 1
     return scores
 
@@ -81,10 +99,12 @@ def run_known_topics() -> list[dict]:
         elif case.get("expect_moderate"):
             passed = 0 < score < 80
             reason = f"expected 0 < score < 80, got {score}"
-        results.append({
-            "name": case["name"],
-            "score": score,
-            "passed": passed,
-            "reason": reason if not passed else "",
-        })
+        results.append(
+            {
+                "name": case["name"],
+                "score": score,
+                "passed": passed,
+                "reason": reason if not passed else "",
+            }
+        )
     return results

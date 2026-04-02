@@ -41,7 +41,6 @@ app.get("/")(lambda: {"message": "Hello, World!"})
 _task_queues: dict[str, asyncio.Queue] = {}
 
 
-
 @app.post("/analyze")
 async def analyze(body: AnalyzeRequest) -> dict:
     task_id = str(uuid4())
@@ -87,8 +86,11 @@ async def _run_analysis_task(task_id: str, body: AnalyzeRequest) -> None:
         print(f"Emitting status {status} with message {message} and result {result}")
 
     cache_args = (
-        body.query, body.time_filter, body.max_posts,
-        body.max_comments_per_post, body.mode,
+        body.query,
+        body.time_filter,
+        body.max_posts,
+        body.max_comments_per_post,
+        body.mode,
     )
 
     try:

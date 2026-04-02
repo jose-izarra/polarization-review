@@ -68,7 +68,7 @@ def _get_source_lean(url: str) -> str:
 
 def collect_gnews_data(
     query: str,
-    time_filter: str = "week",
+    time_filter: str = "month",
     config: dict | None = None,
 ) -> dict:
     """Collect GNews articles for the given query.

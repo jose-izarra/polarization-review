@@ -26,9 +26,8 @@ def compute_polarization(item_scores: list[ItemScore]) -> float:
     distribution = 1 - abs(n_for - n_against) / (n_opinionated + eps)
 
     opinionated_items = [s for s in item_scores if s.stance != 0]
-    animosity_score = (
-        sum(s.animosity for s in opinionated_items)
-        / len(opinionated_items)
+    animosity_score = sum(s.animosity for s in opinionated_items) / len(
+        opinionated_items
     )
 
     opinionated_ratio = n_opinionated / total

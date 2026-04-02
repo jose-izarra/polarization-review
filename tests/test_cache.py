@@ -87,7 +87,11 @@ class TestCacheOperations:
         result = _make_result()
         store_result("gun control", "week", 30, 10, "live", result)
         cached = get_cached_result(
-            "gun control", "week", 30, 10, "live",
+            "gun control",
+            "week",
+            30,
+            10,
+            "live",
         )
         assert cached is result
 
@@ -95,7 +99,11 @@ class TestCacheOperations:
         result = _make_result()
         store_result("Gun Control", "week", 30, 10, "live", result)
         cached = get_cached_result(
-            "  gun control  ", "week", 30, 10, "live",
+            "  gun control  ",
+            "week",
+            30,
+            10,
+            "live",
         )
         assert cached is result
 

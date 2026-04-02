@@ -158,10 +158,12 @@ class FilterRelevantItemsTests(unittest.TestCase):
         items = [_make_item("1"), _make_item("2")]
 
         def fake_call(system_prompt, user_payload):
-            return json.dumps([
-                {"id": "1", "relevant": True},
-                {"id": "2", "relevant": False},
-            ])
+            return json.dumps(
+                [
+                    {"id": "1", "relevant": True},
+                    {"id": "2", "relevant": False},
+                ]
+            )
 
         result = filter_relevant_items("query", items, call_model=fake_call)
         self.assertEqual(len(result), 1)
@@ -176,10 +178,12 @@ class FilterRelevantItemsTests(unittest.TestCase):
         items = [_make_item("1"), _make_item("2")]
 
         def fake_call(system_prompt, user_payload):
-            return json.dumps([
-                {"id": "1", "relevant": True},
-                {"id": "2", "relevant": True},
-            ])
+            return json.dumps(
+                [
+                    {"id": "1", "relevant": True},
+                    {"id": "2", "relevant": True},
+                ]
+            )
 
         result = filter_relevant_items("query", items, call_model=fake_call)
         self.assertEqual(len(result), 2)

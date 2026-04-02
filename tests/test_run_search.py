@@ -18,7 +18,12 @@ def _make_item(
     text: str = "this is a sufficiently long post text for testing",
 ) -> NormalizedItem:
     return NormalizedItem(
-        id, text, f"https://reddit.com/{id}", "2026", 10, "post",
+        id,
+        text,
+        f"https://reddit.com/{id}",
+        "2026",
+        10,
+        "post",
     )
 
 

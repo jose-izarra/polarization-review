@@ -139,7 +139,7 @@ _SYSTEM_PROMPT_STRICT = (
 
 _RELEVANCE_SYSTEM_PROMPT = (
     "Determine whether each item is relevant to the given topic/query. "
-    'Return a JSON array where each element has: id (string), relevant (boolean). '
+    "Return a JSON array where each element has: id (string), relevant (boolean). "
     "An item is relevant if it directly discusses, argues about, or provides "
     "an opinion on the topic. Off-topic or tangential items should be marked false. "
     "Return only valid JSON, no extra text."
@@ -205,7 +205,9 @@ def generate_youtube_queries(query: str, call_model=None) -> list[str]:
     try:
         raw = invoke(_YOUTUBE_QUERY_SYSTEM_PROMPT, json.dumps({"query": query}))
         parsed = _extract_json_array(raw)
-        queries = [str(q).strip() for q in parsed if isinstance(q, str) and str(q).strip()]
+        queries = [
+            str(q).strip() for q in parsed if isinstance(q, str) and str(q).strip()
+        ]
         if len(queries) >= 2:
             return queries[:3]
     except Exception:
@@ -242,9 +244,7 @@ def filter_relevant_items(
                 relevant_ids.add(str(elem.get("id", "")))
 
     return [
-        replace(item, relevance_score=1.0)
-        for item in items
-        if item.id in relevant_ids
+        replace(item, relevance_score=1.0) for item in items if item.id in relevant_ids
     ]
 
 

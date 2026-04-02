@@ -19,21 +19,14 @@ import praw
 import prawcore
 from src.internal.config.config import config as app_config
 
-# Priority subreddits for political polarization analysis
-PRIORITY_SUBREDDITS = [
-    "all",  # Catch-all: search everything
-    "politics",  # US-centric political news and discussion
-    "worldnews",  # International news
-    "news",  # General news
-    "PoliticalDiscussion",  # More civil, policy-focused discussion
-    "Conservative",  # Right-leaning US politics
-    "Liberal",  # Left-leaning US politics
-    "neutralpolitics",  # Requires sourced claims, less polarized
-]
-
 # Default configuration for data collection
 DEFAULT_CONFIG = {
-    "subreddits": PRIORITY_SUBREDDITS,
+    # Dynamic discovery controls
+    # How many results to pull from subreddits.search()
+    "subreddit_discovery_limit": 10,
+    "min_subscribers": 10_000,  # Filter out dead/tiny communities
+    "phase2_top_n": 5,  # Top subreddits from r/all results to re-query
+    # Scraping parameters
     "posts_per_subreddit": 50,
     "posts_per_subreddit_all": 100,  # Higher limit for r/all
     "sorts": ["relevance", "top"],
@@ -83,6 +76,55 @@ def init_reddit_client():
         reddit.read_only = True
 
     return reddit
+
+
+def discover_subreddits(
+    reddit,
+    query: str,
+    limit: int = 10,
+    min_subscribers: int = 10_000,
+) -> list[str]:
+    """
+    Phase 1 discovery: search Reddit communities relevant to the query,
+    filtered by subscriber count to exclude dead subreddits.
+
+    Uses reddit.subreddits.search() which searches by subreddit title and
+    description (equivalent to Reddit's community search UI).
+
+    Always includes "all" as the first entry regardless of results.
+
+    Args:
+        reddit: Authenticated praw.Reddit instance.
+        query: The search term to find relevant subreddits for.
+        limit: Maximum results from subreddits.search(). Pass 0 to skip.
+        min_subscribers: Minimum subscriber count to include a subreddit.
+
+    Returns:
+        List of subreddit display_names, always starting with "all".
+    """
+    if limit <= 0:
+        return ["all"]
+
+    discovered = ["all"]
+    try:
+        for sub in reddit.subreddits.search(query, limit=limit):
+            # Accessing sub attributes (subscribers, display_name) triggers a
+            # live API fetch per subreddit — wrap each in its own try/except
+            # because quarantined subs raise 403, banned subs raise 404.
+            try:
+                if sub.subscribers and sub.subscribers >= min_subscribers:
+                    name = sub.display_name
+                    if name.lower() != "all" and name not in discovered:
+                        discovered.append(name)
+            except Exception as e:
+                print(f"[WARNING] Could not read metadata for discovered sub: {e}")
+                continue
+    except prawcore.exceptions.RequestException as e:
+        print(f"[WARNING] Subreddit discovery failed, falling back to r/all only: {e}")
+    except Exception as e:
+        print(f"[WARNING] Unexpected error during subreddit discovery: {e}")
+
+    return discovered
 
 
 def fetch_posts(
@@ -256,6 +298,32 @@ def _count_subreddits(items):
     return dict(sorted(counts.items(), key=lambda x: x[1], reverse=True))
 
 
+def _extract_top_subreddits(
+    posts: list[dict],
+    top_n: int = 5,
+    exclude: set[str] | None = None,
+) -> list[str]:
+    """
+    Phase 2: from already-fetched posts, identify the subreddits that appear
+    most frequently. Used to bootstrap deeper queries from r/all results.
+
+    Args:
+        posts: List of post dicts from fetch_posts() (typically r/all results).
+        top_n: How many top subreddits to return.
+        exclude: Subreddit names to skip (e.g. {"all"} to avoid re-querying it).
+
+    Returns:
+        Up to top_n subreddit display_names ordered by post volume.
+    """
+    _exclude = {s.lower() for s in (exclude or set())}
+    counts = _count_subreddits(posts)
+    result = []
+    for name in counts:
+        if name.lower() not in _exclude and len(result) < top_n:
+            result.append(name)
+    return result
+
+
 def _passes_quality(item, min_text_length):
     """Helper: check if an item passes quality filters."""
     # Minimum text length
@@ -271,6 +339,10 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     """
     Main entry point. Collects posts and comments from Reddit for the given search term.
 
+    Uses a two-phase dynamic subreddit discovery strategy:
+      Phase 1 — reddit.subreddits.search() finds topic-relevant communities.
+      Phase 2 — top subreddits from r/all results are re-queried for more depth.
+
     Args:
         search_term: The topic to analyze.
         scrape_config: Optional dict to override default settings.
@@ -282,26 +354,58 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     Raises:
         EnvironmentError: If credentials are missing and no reddit client provided.
     """
-    # Merge configuration
     cfg = {**DEFAULT_CONFIG, **(scrape_config or {})}
 
-    # Initialize Reddit client if not provided
     if reddit is None:
         reddit = init_reddit_client()
 
     all_posts = []
     all_comments = []
 
-    # --- Collect posts ---
+    # --- Phase 1: Discover relevant subreddits via PRAW community search ---
+    print(f'Discovering subreddits for: "{search_term}"')
+    discovered_subs = discover_subreddits(
+        reddit,
+        search_term,
+        limit=cfg["subreddit_discovery_limit"],
+        min_subscribers=cfg["min_subscribers"],
+    )
+    # "all" is always first; slice it off since we handle r/all separately below
+    phase1_subs = [s for s in discovered_subs if s.lower() != "all"]
+    print(f"  Phase 1 discovered: {phase1_subs or '(none beyond r/all)'}")
+
+    # --- Fetch r/all first so Phase 2 can bootstrap from those results ---
     print(f'Searching Reddit for: "{search_term}"')
-
-    for subreddit_name in cfg["subreddits"]:
-        limit = (
-            cfg["posts_per_subreddit_all"]
-            if subreddit_name == "all"
-            else cfg["posts_per_subreddit"]
+    all_posts_from_all = []
+    for sort in cfg["sorts"]:
+        limit = cfg["posts_per_subreddit_all"]
+        print(f"  Searching r/all (sort={sort}, limit={limit})...")
+        posts = fetch_posts(
+            reddit,
+            search_term,
+            subreddit_name="all",
+            limit=limit,
+            sort=sort,
+            time_filter=cfg["time_filter"],
         )
+        all_posts_from_all.extend(posts)
+    all_posts.extend(all_posts_from_all)
 
+    # --- Phase 2: Extract top subreddits from r/all results ---
+    phase2_subs = _extract_top_subreddits(
+        all_posts_from_all,
+        top_n=cfg["phase2_top_n"],
+        exclude={"all"},
+    )
+    print(f"  Phase 2 bootstrapped: {phase2_subs or '(no results from r/all)'}")
+
+    # --- Merge Phase 1 + Phase 2, deduplicated, excluding "all" (done above) ---
+    combined_subs = list(dict.fromkeys(phase1_subs + phase2_subs))
+    print(f"  Combined subreddits to query: {combined_subs or '(none)'}")
+
+    # --- Fetch each discovered subreddit ---
+    for subreddit_name in combined_subs:
+        limit = cfg["posts_per_subreddit"]
         for sort in cfg["sorts"]:
             print(f"  Searching r/{subreddit_name} (sort={sort}, limit={limit})...")
             posts = fetch_posts(
@@ -314,7 +418,7 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
             )
             all_posts.extend(posts)
 
-    # Deduplicate posts (same post can appear in r/all and in a specific subreddit)
+    # Deduplicate posts (same post can appear across r/all and specific subreddits)
     seen_ids = set()
     unique_posts = []
     for post in all_posts:
@@ -326,7 +430,6 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     print(f"  Found {len(all_posts)} unique posts")
 
     # --- Collect comments from top posts ---
-    # Sort posts by engagement (score) to prioritize the most-discussed ones
     ranked_posts = sorted(
         all_posts, key=lambda p: p["engagement"]["score"], reverse=True
     )
@@ -356,6 +459,7 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     ]
 
     # --- Build result ---
+    subreddits_searched = ["all"] + combined_subs
     result = {
         "search_term": search_term,
         "collected_at": datetime.now(tz=timezone.utc).isoformat(),
@@ -365,7 +469,7 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
             "total_posts": len(all_posts),
             "total_comments": len(all_comments),
             "total_items": len(all_posts) + len(all_comments),
-            "subreddits_searched": cfg["subreddits"],
+            "subreddits_searched": subreddits_searched,
             "subreddits_found": list(
                 set(p["metadata"]["subreddit"] for p in all_posts)
             ),
@@ -395,7 +499,6 @@ def save_results(result, filename=None, output_dir=None):
         str: Path to the saved file.
     """
     if filename is None:
-        # Generate filename from search term and timestamp
         safe_term = result["search_term"].replace(" ", "_").lower()[:30]
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"reddit_{safe_term}_{timestamp}.json"
@@ -413,9 +516,10 @@ def save_results(result, filename=None, output_dir=None):
     return filepath
 
 
-# Quick test configuration (< 2 minutes)
+# Quick test configuration (< 2 minutes) — skips discovery, r/all only
 QUICK_CONFIG = {
-    "subreddits": ["all"],
+    "subreddit_discovery_limit": 0,  # Skip Phase 1
+    "phase2_top_n": 0,  # Skip Phase 2
     "posts_per_subreddit_all": 25,
     "sorts": ["relevance"],
     "top_posts_for_comments": 5,
@@ -424,7 +528,9 @@ QUICK_CONFIG = {
 
 # Thorough analysis configuration (10-15 minutes)
 THOROUGH_CONFIG = {
-    "subreddits": PRIORITY_SUBREDDITS,
+    "subreddit_discovery_limit": 20,
+    "min_subscribers": 5_000,  # Accept smaller communities
+    "phase2_top_n": 10,
     "posts_per_subreddit": 100,
     "posts_per_subreddit_all": 200,
     "sorts": ["relevance", "top", "new"],
@@ -435,8 +541,9 @@ THOROUGH_CONFIG = {
 
 # Historical analysis configuration
 HISTORICAL_CONFIG = {
-    "time_filter": "all",  # No time restriction
-    "sorts": ["top"],  # Only the most upvoted content survives long-term
+    "time_filter": "all",
+    "sorts": ["top"],
+    # Inherits discovery defaults from DEFAULT_CONFIG
 }
 
 
@@ -453,7 +560,6 @@ if __name__ == "__main__":
 
     search_term = sys.argv[1]
 
-    # Determine config based on flags
     scrape_config = None
     if "--quick" in sys.argv:
         scrape_config = QUICK_CONFIG

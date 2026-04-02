@@ -11,7 +11,7 @@ ContentType = Literal["post", "comment"]
 @dataclass(slots=True)
 class SearchRequest:
     query: str
-    time_filter: TimeFilter = "week"
+    time_filter: TimeFilter = "month"
     max_posts: int = 30
     max_comments_per_post: int = 30
     mode: str = "live"

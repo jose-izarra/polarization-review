@@ -23,8 +23,12 @@ def _make_key(
     normalized_query = query.strip().lower()
     today = datetime.now(UTC).strftime("%Y-%m-%d")
     return (
-        normalized_query, today, time_filter,
-        max_posts, max_comments_per_post, mode,
+        normalized_query,
+        today,
+        time_filter,
+        max_posts,
+        max_comments_per_post,
+        mode,
     )
 
 
@@ -36,8 +40,11 @@ def get_cached_result(
     mode: str,
 ) -> PolarizationResult | None:
     key = _make_key(
-        query, time_filter, max_posts,
-        max_comments_per_post, mode,
+        query,
+        time_filter,
+        max_posts,
+        max_comments_per_post,
+        mode,
     )
     with _lock:
         return _cache.get(key)
@@ -52,8 +59,11 @@ async def wait_for_pending(
 ) -> PolarizationResult | None:
     """If another task is already running this query, wait for it."""
     key = _make_key(
-        query, time_filter, max_posts,
-        max_comments_per_post, mode,
+        query,
+        time_filter,
+        max_posts,
+        max_comments_per_post,
+        mode,
     )
     with _lock:
         event = _pending.get(key)
@@ -73,8 +83,11 @@ def mark_pending(
 ) -> bool:
     """Mark a query as in-progress. Returns False if already pending."""
     key = _make_key(
-        query, time_filter, max_posts,
-        max_comments_per_post, mode,
+        query,
+        time_filter,
+        max_posts,
+        max_comments_per_post,
+        mode,
     )
     with _lock:
         if key in _cache or key in _pending:
@@ -92,8 +105,11 @@ def store_result(
     result: PolarizationResult,
 ) -> None:
     key = _make_key(
-        query, time_filter, max_posts,
-        max_comments_per_post, mode,
+        query,
+        time_filter,
+        max_posts,
+        max_comments_per_post,
+        mode,
     )
     with _lock:
         _cache[key] = result
@@ -111,8 +127,11 @@ def clear_pending(
 ) -> None:
     """Remove pending marker without storing (e.g. on error)."""
     key = _make_key(
-        query, time_filter, max_posts,
-        max_comments_per_post, mode,
+        query,
+        time_filter,
+        max_posts,
+        max_comments_per_post,
+        mode,
     )
     with _lock:
         event = _pending.pop(key, None)

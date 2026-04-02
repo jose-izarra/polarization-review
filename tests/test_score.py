@@ -8,8 +8,11 @@ def _make_score(stance: int, animosity: int = 3) -> ItemScore:
     sentiment = 3
     r = stance * (sentiment + 0.5 * animosity)
     return ItemScore(
-        id="x", sentiment=sentiment, stance=stance,
-        animosity=animosity, r=r,
+        id="x",
+        sentiment=sentiment,
+        stance=stance,
+        animosity=animosity,
+        r=r,
     )
 
 
