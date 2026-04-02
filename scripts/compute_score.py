@@ -15,15 +15,19 @@ from src.internal.pipeline.llm.types import ItemScore
 
 CONFIG_PATH = Path(__file__).parent / "score_config.json"
 
+ALPHA_DEFAULT = 1
 
 def build_item_scores(cfg: dict) -> list[ItemScore]:
     items = []
     for i in range(cfg["n_for"]):
-        items.append(ItemScore(id=f"for_{i}", sentiment=cfg["sentiment_for"], stance=1, animosity=cfg["animosity_for"], r=0.0))
+        s, a, st = cfg["sentiment_for"], cfg["animosity_for"], 1
+        items.append(ItemScore(id=f"for_{i}", sentiment=s, stance=st, animosity=a, r=st * (s + ALPHA_DEFAULT * a)))
     for i in range(cfg["n_against"]):
-        items.append(ItemScore(id=f"against_{i}", sentiment=cfg["sentiment_against"], stance=-1, animosity=cfg["animosity_against"], r=0.0))
+        s, a, st = cfg["sentiment_against"], cfg["animosity_against"], -1
+        items.append(ItemScore(id=f"against_{i}", sentiment=s, stance=st, animosity=a, r=st * (s + ALPHA_DEFAULT * a)))
     for i in range(cfg["n_neutral"]):
-        items.append(ItemScore(id=f"neutral_{i}", sentiment=cfg["sentiment_neutral"], stance=0, animosity=cfg["animosity_neutral"], r=0.0))
+        s, a, st = cfg["sentiment_neutral"], cfg["animosity_neutral"], 0
+        items.append(ItemScore(id=f"neutral_{i}", sentiment=s, stance=st, animosity=a, r=st * (s + ALPHA_DEFAULT * a)))
     return items
 
 

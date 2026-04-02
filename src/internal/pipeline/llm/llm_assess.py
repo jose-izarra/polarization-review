@@ -13,7 +13,7 @@ _DEFAULT_MODEL = "gemini-2.5-flash"
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
-_ALPHA = 0.5
+ALPHA_DEFAULT = 0.5
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +40,7 @@ def _extract_json_array(text: str) -> list:
     return json.loads(match.group(0))
 
 
-def _validate_item_scores(raw_items: list, alpha: float = _ALPHA) -> list[ItemScore]:
+def _validate_item_scores(raw_items: list, alpha: float = ALPHA_DEFAULT) -> list[ItemScore]:
     scores: list[ItemScore] = []
     for elem in raw_items:
         if not isinstance(elem, dict):
@@ -150,7 +150,7 @@ def _score_batch(
     query: str,
     batch: list[NormalizedItem],
     invoke,
-    alpha: float = _ALPHA,
+    alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
     user_payload = _build_batch_payload(query, batch)
     raw_response = invoke(_SYSTEM_PROMPT, user_payload)
@@ -254,7 +254,7 @@ def assess_items(
     model: str | None = None,
     timeout_seconds: int = 45,
     call_model=None,
-    alpha: float = _ALPHA,
+    alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
     """Score each item individually for sentiment, stance, and animosity.
 

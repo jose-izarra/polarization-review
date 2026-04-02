@@ -1,7 +1,7 @@
 {
   "n_for": 7,
   "n_against": 12,
-  "n_neutral": 0,
+  "n_neutral": 11,
   "sentiment_for": 2,
   "sentiment_against": 3,
   "sentiment_neutral": 4,
