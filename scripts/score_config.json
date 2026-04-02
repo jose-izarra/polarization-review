@@ -1,0 +1,11 @@
+{
+  "n_for": 7,
+  "n_against": 12,
+  "n_neutral": 0,
+  "sentiment_for": 2,
+  "sentiment_against": 3,
+  "sentiment_neutral": 4,
+  "animosity_for": 2,
+  "animosity_against": 3,
+  "animosity_neutral": 1
+}
