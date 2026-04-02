@@ -20,11 +20,10 @@ from src.internal.config.config import config as app_config
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_CONFIG = {
-    "max_articles": 3,
-    "lang": "en",
-    "sortby": "relevance",
-}
+MAX_ARTICLES = 3
+
+_DEFAULT_LANG = "en"
+_DEFAULT_SORTBY = "relevance"
 
 _TIME_DELTA_DAYS = {"day": 1, "week": 7, "month": 30}
 
@@ -69,7 +68,6 @@ def _get_source_lean(url: str) -> str:
 def collect_gnews_data(
     query: str,
     time_filter: str = "month",
-    config: dict | None = None,
 ) -> dict:
     """Collect GNews articles for the given query.
 
@@ -80,8 +78,6 @@ def collect_gnews_data(
         raise RuntimeError("GNEWS_API_KEY is required for GNews scraping")
     api_key = app_config.gnews_api_key
 
-    cfg = {**DEFAULT_CONFIG, **(config or {})}
-
     days = _TIME_DELTA_DAYS.get(time_filter, 7)
     from_date = (datetime.now(tz=timezone.utc) - timedelta(days=days)).strftime(
         "%Y-%m-%dT%H:%M:%SZ"
@@ -90,9 +86,9 @@ def collect_gnews_data(
     params = urlencode(
         {
             "q": query,
-            "lang": cfg["lang"],
-            "max": cfg["max_articles"],
-            "sortby": cfg["sortby"],
+            "lang": _DEFAULT_LANG,
+            "max": MAX_ARTICLES,
+            "sortby": _DEFAULT_SORTBY,
             "from": from_date,
             "apikey": api_key,
         }

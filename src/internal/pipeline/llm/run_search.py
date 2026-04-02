@@ -148,7 +148,6 @@ def _collect_and_normalize(
         "gnews": lambda: collect_gnews_data(
             request.query,
             request.time_filter,
-            config={"max_articles": request.max_posts},
         ),
     }
 
