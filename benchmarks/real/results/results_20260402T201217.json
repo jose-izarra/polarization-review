@@ -1,0 +1,1131 @@
+{
+  "timestamp": "20260402T201217",
+  "results": [
+    {
+      "key": "abortion",
+      "query": "abortion rights",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 40.23,
+      "score_label": "moderate",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 19,
+      "stance_distribution": {
+        "for": 10,
+        "against": 8,
+        "neutral": 1
+      },
+      "source_breakdown": {
+        "gnews": 5,
+        "youtube": 8,
+        "reddit": 6
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 95.61,
+      "evidence": [
+        {
+          "id": "gnews_https://www.reuters.com/legal/government/texas-officials-win-dismissal-womans-claims-over-abortion-prosecution-2026-04-01/",
+          "snippet": "Texas officials win dismissal of woman's claims over abortion prosecution. A federal judge ​has dismissed a Texas woman's claims that local prosecutors and police violated her constitutional rights by charging ‌her with murder after a se...",
+          "url": "https://www.reuters.com/legal/government/texas-officials-win-dismissal-womans-claims-over-abortion-prosecution-2026-04-01/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The article reports on a legal dismissal that upholds the prosecution of a woman for self-induced abortion, indicating a stance against abortion rights.",
+          "source_lean": "center",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.independent.co.uk/news/world/americas/us-politics/trump-admin-pro-life-planned-parenthood-funds-b2950313.html",
+          "snippet": "Months after calling Trump the ‘most pro life president ever,’ the White House quietly released funds to Planned Parenthood. The Trump administration tried to withhold Title X funds in 2025 but was forced to release the money after losin...",
+          "url": "https://www.independent.co.uk/news/world/americas/us-politics/trump-admin-pro-life-planned-parenthood-funds-b2950313.html",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The article describes the Trump administration being forced to release funds to Planned Parenthood, which is a positive development for abortion rights.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.devdiscourse.com/article/politics/3858218-kasts-conservative-path-religion-and-politics-in-chile",
+          "snippet": "Kast's Conservative Path: Religion and Politics in Chile. Chile's new president, Jose Antonio Kast, represents a conservative shift in the nation's politics, aligning with religious values. As a practicing Catholic, Kast opposes same-sex...",
+          "url": "https://www.devdiscourse.com/article/politics/3858218-kasts-conservative-path-religion-and-politics-in-chile",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The article states that Chile's new president, Jose Antonio Kast, explicitly opposes abortion, indicating an anti-abortion stance.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://nationalpost.com/news/world/no-kings-protests-underway-with-massive-number-planned-throughout-all-50-u-s-states",
+          "snippet": "Thousands of rallies planned across all 50 states for No Kings movement. For many, America’s leaders are stomping on democracy with immigration crackdowns, rolled-back abortion rights and another unpopular war.",
+          "url": "https://nationalpost.com/news/world/no-kings-protests-underway-with-massive-number-planned-throughout-all-50-u-s-states",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The article describes a movement protesting against 'rolled-back abortion rights,' indicating a pro-abortion rights stance.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "youtube_comment_UgzF2a_yK6NpzvMD9t94AaABAg",
+          "snippet": "Don’t punish the baby for the crimes of the “father”",
+          "url": "https://www.youtube.com/watch?v=R6ppZ17dL-s&lcdId=UgzF2a_yK6NpzvMD9t94AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment argues against abortion by stating that a baby should not be punished for the father's actions, indicating a pro-life stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwbLQPxdumznsNcpNJ4AaABAg",
+          "snippet": "As a mother of a teen girl who was forced into sex and got pregnant I can 100% confirm that her trauma was LESSENED by having the baby and finding an amazing couple to adopt him. It gave her so much joy and a sense of confidence and stre...",
+          "url": "https://www.youtube.com/watch?v=R6ppZ17dL-s&lcdId=UgwbLQPxdumznsNcpNJ4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The comment shares a personal story to advocate for carrying a pregnancy to term and adoption as a positive alternative to abortion, indicating a pro-life stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyfOte7zAjhiIrfX294AaABAg",
+          "snippet": "“My mother, when she was in college, was protesting the exact same thing. Why are still protesting?” “Because you weren’t aborted?”",
+          "url": "https://www.youtube.com/watch?v=kafqVjWljWM&lcdId=UgyfOte7zAjhiIrfX294AaABAg",
+          "stance": 1,
+          "animosity": 5,
+          "sentiment": 4,
+          "rationale": "The comment uses a highly aggressive and personal attack to express a pro-abortion rights sentiment, suggesting the interlocutor should have been aborted.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzsD4ukPw9GoqV7DxB4AaABAg",
+          "snippet": "The “I’m a clump of cells” comeback was perfect. She was speechless. Their arguments are baseless. They’re children who don’t understand morals and could easily be convinced to do anything. Devil’s lackeys",
+          "url": "https://www.youtube.com/watch?v=kafqVjWljWM&lcdId=UgzsD4ukPw9GoqV7DxB4AaABAg",
+          "stance": 1,
+          "animosity": 5,
+          "sentiment": 4,
+          "rationale": "The comment supports the 'clump of cells' argument for abortion rights and aggressively dismisses opponents as lacking morals and being 'Devil's lackeys'.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwfycMgTCSxdQmliE94AaABAg",
+          "snippet": "\"What science am I denying?\" \"WELL LOOK AT ALL THESE POSTERS!\" - The pro-abortion argument in a nutshell",
+          "url": "https://www.youtube.com/watch?v=kafqVjWljWM&lcdId=UgwfycMgTCSxdQmliE94AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment sarcastically dismisses the pro-abortion rights argument as lacking scientific basis and relying on emotional appeals, indicating an anti-abortion rights stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyOCxM_gtFsPQX4eLJ4AaABAg",
+          "snippet": "\"Life begins at neurological activity!\" Then what about leftists?",
+          "url": "https://www.youtube.com/watch?v=rgq9-TK0av4&lcdId=UgyOCxM_gtFsPQX4eLJ4AaABAg",
+          "stance": -1,
+          "animosity": 5,
+          "sentiment": 1,
+          "rationale": "The comment uses a derogatory and dehumanizing comparison to 'leftists' to mock a pro-abortion rights argument, indicating an aggressive anti-abortion stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugyu1F6TyAsUug_jtu54AaABAg",
+          "snippet": "\"The reason we are still having this argument(30 years later) is because some people don't want to accept the natural consequences that come from having sex & be inconvenienced by another human life. \" BOOM! She is such a rock star- LOVE...",
+          "url": "https://www.youtube.com/watch?v=kafqVjWljWM&lcdId=Ugyu1F6TyAsUug_jtu54AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment argues that the ongoing debate about abortion is due to people avoiding the 'natural consequences' of sex and being 'inconvenienced' by life, indicating a strong anti-abortion rights stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugze2KsUxufxAh0Sj7h4AaABAg",
+          "snippet": "In a medical context, the unborn is as much of a patient in need of care as the mother. Treat them both should be the goal.",
+          "url": "https://www.youtube.com/watch?v=rgq9-TK0av4&lcdId=Ugze2KsUxufxAh0Sj7h4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The comment advocates for treating the unborn as a patient equally with the mother, implying an anti-abortion stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "1s804mg",
+          "snippet": "Why the hell do people care about abortions so much bru",
+          "url": "https://reddit.com/r/teenagers/comments/1s804mg/why_the_hell_do_people_care_about_abortions_so/",
+          "stance": 0,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The comment expresses frustration and bewilderment about the intensity of the abortion debate without taking a clear stance on abortion rights.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s5tz3k",
+          "snippet": "The Jolly Good Ginger calls out the anti-choice BS from the right because abortion is healthcare...",
+          "url": "https://reddit.com/r/Trumpvirus/comments/1s5tz3k/the_jolly_good_ginger_calls_out_the_antichoice_bs/",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 5,
+          "rationale": "The comment explicitly supports abortion rights by calling 'anti-choice BS' out and stating that 'abortion is healthcare'.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s9qpfi",
+          "snippet": "Jews paused Indiana’s abortion ban — by turning a religious freedom law against the evangelical right",
+          "url": "https://reddit.com/r/politics/comments/1s9qpfi/jews_paused_indianas_abortion_ban_by_turning_a/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The text describes a successful legal action that halted an abortion ban, indicating support for abortion rights.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "ocklcz5",
+          "snippet": "So many people simply don't realise having children is a choice Born- education - work - partner- marriage -kids-retire is just the \"default\" that so many go into Somewhere in there pay taxes as well",
+          "url": "https://reddit.com/r/childfree/comments/1s467mc/why_arent_more_people_childfree/ocklcz5/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text emphasizes that having children is a choice, which implicitly supports the right to choose not to have them, aligning with abortion rights.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "oddbjpv",
+          "snippet": "\"if I was a girl is be getting an abortion almost every year\" Man I'm pro choice but the way your going about this is such dogshit bro😭",
+          "url": "https://reddit.com/r/teenagers/comments/1s804mg/why_the_hell_do_people_care_about_abortions_so/oddbjpv/",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 3,
+          "rationale": "The speaker explicitly states being pro-choice but strongly criticizes the idea of using abortion as frequent birth control.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odd6sgh",
+          "snippet": "okay i agree w this but \"getting an abortion every year\" is a little much 😭 i dont think abortion should be used as birth control especially since it is hard on a woman's body mentally and physically edit: Hi to clarify im a woman, i KNO...",
+          "url": "https://reddit.com/r/teenagers/comments/1s804mg/why_the_hell_do_people_care_about_abortions_so/odd6sgh/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The text agrees with the general sentiment but expresses concern that abortion should not be used as routine birth control due to its impact on a woman's body.",
+          "source_lean": null,
+          "platform": "reddit"
+        }
+      ]
+    },
+    {
+      "key": "gun_control",
+      "query": "gun control laws",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 10.42,
+      "score_label": "low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 17,
+      "stance_distribution": {
+        "for": 2,
+        "against": 12,
+        "neutral": 3
+      },
+      "source_breakdown": {
+        "youtube": 15,
+        "reddit": 2
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 73.83,
+      "evidence": [
+        {
+          "id": "youtube_comment_UgxcRN1YoQwmDT8vinl4AaABAg",
+          "snippet": "If you are allowed out of jail/prison you have a god given right to protect yourself. If you can not be trusted to have a firearm, you shouldn't be out.",
+          "url": "https://www.youtube.com/watch?v=KRidG6I22Fc&lcdId=UgxcRN1YoQwmDT8vinl4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The comment asserts a 'god given right' to self-protection with a firearm for released individuals, indicating a strong stance against restrictions.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugz6p62bYlojboR60Id4AaABAg",
+          "snippet": "Non-Violent felonies should not lose their constitutional rights.",
+          "url": "https://www.youtube.com/watch?v=KRidG6I22Fc&lcdId=Ugz6p62bYlojboR60Id4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment argues that non-violent felons should retain their constitutional rights, including the right to bear arms, which opposes current gun control measures.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgymnVfFgUsy2UwfI5p4AaABAg",
+          "snippet": "I think if youre a felon from a non- violent crime you shouldn't lose your 2a rights.",
+          "url": "https://www.youtube.com/watch?v=KRidG6I22Fc&lcdId=UgymnVfFgUsy2UwfI5p4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment expresses the belief that non-violent felons should not lose their Second Amendment rights, directly opposing a common gun control restriction.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgybkTOilv3T5kBLUhl4AaABAg",
+          "snippet": "That “Canada doesn’t confiscate guns” comment aged so goddamn well",
+          "url": "https://www.youtube.com/watch?v=AVJ0SkahgQQ&lcdId=UgybkTOilv3T5kBLUhl4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment sarcastically notes how a statement about Canada not confiscating guns 'aged well,' implying that confiscation did occur, which is a strong form of gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugzks0T0MtUdYG739Cd4AaABAg",
+          "snippet": "“Anyone who thinks they can defeat all the arguments against gun control” is a comedian",
+          "url": "https://www.youtube.com/watch?v=AVJ0SkahgQQ&lcdId=Ugzks0T0MtUdYG739Cd4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment dismisses anyone who believes they can easily defeat arguments against gun control, implying the strength and validity of the anti-gun control position.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugy1gVfA1zWGISQmtX94AaABAg",
+          "snippet": "\"Just call the police\" is like telling somebody that they shouldn't have a fire extinguisher in their house because the fire department exists",
+          "url": "https://www.youtube.com/watch?v=7JMb9U_UXoI&lcdId=Ugy1gVfA1zWGISQmtX94AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The comment uses an analogy to argue against relying solely on police for protection, thereby supporting personal firearm ownership and opposing gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgjzMootMSQNNXgCoAEC",
+          "snippet": "DID YOU REALLY PLAY A MACHINE GUN NOISE OVER A SEMI AUTO WEAPON",
+          "url": "https://www.youtube.com/watch?v=Bn6hVIISA6o&lcdId=UgjzMootMSQNNXgCoAEC",
+          "stance": 0,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment expresses frustration over the misrepresentation of a semi-automatic weapon as a machine gun, but does not directly state a stance on gun control laws.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyWeiHs7WTjg-INU6p4AaABAg",
+          "snippet": "when seconds matter, police are minutes away",
+          "url": "https://www.youtube.com/watch?v=7JMb9U_UXoI&lcdId=UgyWeiHs7WTjg-INU6p4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The comment highlights the delay in police response, implying the necessity of personal firearms for immediate self-defense and thus opposing gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxQFGmFN6ElSnq0d3Z4AaABAg",
+          "snippet": "It does not say shall not be infringed unless you are a felon",
+          "url": "https://www.youtube.com/watch?v=KRidG6I22Fc&lcdId=UgxQFGmFN6ElSnq0d3Z4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The comment argues for an absolute interpretation of 'shall not be infringed' in the Second Amendment, opposing restrictions on felons and thus gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyoX61HfGL1OX-S5C54AaABAg",
+          "snippet": "Yo, that clip that you had of Ted Cruz was fake af. You put an automatic sound effect over clearly semi-automatic fire. Y'all are crazy 😂",
+          "url": "https://www.youtube.com/watch?v=Bn6hVIISA6o&lcdId=UgyoX61HfGL1OX-S5C54AaABAg",
+          "stance": 0,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment criticizes the use of a fake automatic sound effect over semi-automatic fire, focusing on media misrepresentation rather than directly addressing gun control laws.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugyqu0UF0wPEmPDFxrV4AaABAg",
+          "snippet": "A gun in the hand is worth more than the entire police force on the phone.",
+          "url": "https://www.youtube.com/watch?v=7JMb9U_UXoI&lcdId=Ugyqu0UF0wPEmPDFxrV4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The comment strongly advocates for personal firearm ownership over relying on police, indicating a stance against gun control measures.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyZ1DW2oOhtLG_CQ0Z4AaABAg",
+          "snippet": "Watch out Ted Cruz got that fully semi-auto ghost gun with a hi-capacity 10 round clip",
+          "url": "https://www.youtube.com/watch?v=Bn6hVIISA6o&lcdId=UgyZ1DW2oOhtLG_CQ0Z4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment uses sarcastic and exaggerated gun terminology to mock anti-gun rhetoric, indicating a stance against stricter gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyOqfKG7nXIjdb2bIF4AaABAg",
+          "snippet": "And technically speaking, the 2nd amendment says \"shall not be infringed\". It doesnt say \"unless....\" anything",
+          "url": "https://www.youtube.com/watch?v=KRidG6I22Fc&lcdId=UgyOqfKG7nXIjdb2bIF4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The comment emphasizes the absolute wording of the Second Amendment, 'shall not be infringed,' to argue against any exceptions or gun control measures.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzCjKXJmSh4lUHUBz14AaABAg",
+          "snippet": "\"If you support guns you support school shootings\" Well, by that logic, if you support schools, you support those as well...",
+          "url": "https://www.youtube.com/watch?v=7JMb9U_UXoI&lcdId=UgzCjKXJmSh4lUHUBz14AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment refutes a common anti-gun argument by using a sarcastic counter-analogy, indicating a stance against gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwwKr_NESWUceiEsjJ4AaABAg",
+          "snippet": "After serving your sentence as a felon, you can appeal to have your rights to vote and to own a firearm restored.",
+          "url": "https://www.youtube.com/watch?v=KRidG6I22Fc&lcdId=UgwwKr_NESWUceiEsjJ4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment provides factual information about the process of restoring rights for felons, including firearm ownership, without expressing a direct stance on gun control laws.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "1s4cf0w",
+          "snippet": "\"THEY WANT TO BAN YOUR 3D PRINTER\" and slap a felony on you... \"I thought capitalism was about the free market?\" Do you believe this is a safety issue or a lobby issue? Is it really about printable firearms or is it about lost revenue$?",
+          "url": "https://reddit.com/r/ObscurePatentDangers/comments/1s4cf0w/they_want_to_ban_your_3d_printer_and_slap_a/",
+          "stance": 1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The text expresses strong opposition to potential bans on 3D printers for firearms, questioning the motives behind such regulations and framing them as an infringement on freedom.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s4ddlb",
+          "snippet": "New policy paper exposes lack of evidence for government's ASW ban. I wanted to share a policy paper my team and I published evaluating the government's ban on so-called assault-style weapons. We found no substantial evidence to support ...",
+          "url": "https://reddit.com/r/canadaguns/comments/1s4ddlb/new_policy_paper_exposes_lack_of_evidence_for/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The text presents findings from a policy paper that found no substantial evidence to support the government's ban and buyback of 'assault-style weapons'.",
+          "source_lean": null,
+          "platform": "reddit"
+        }
+      ]
+    },
+    {
+      "key": "climate_change",
+      "query": "climate change policy",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 31.11,
+      "score_label": "moderate",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 15,
+      "stance_distribution": {
+        "for": 8,
+        "against": 7,
+        "neutral": 0
+      },
+      "source_breakdown": {
+        "gnews": 4,
+        "youtube": 9,
+        "reddit": 2
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 85.94,
+      "evidence": [
+        {
+          "id": "gnews_https://www.abqjournal.com/opinion/opinion-our-climate-and-economy-need-stability/3010543",
+          "snippet": "New Mexico climate change, oil economy and gas prices demand stability. An opinion piece from the Albuquerque Journal examines how rising gas prices, climate change impacts in New Mexico, and the failure of the Clear Horizons Act affect ...",
+          "url": "https://www.abqjournal.com/opinion/opinion-our-climate-and-economy-need-stability/3010543",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text highlights the failure of an act and the need for stability in climate and energy policy, indicating a negative view of current policy effectiveness.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.africanews.com/2026/03/27/facing-climate-change-nigerias-lagos-state-takes-out-flood-insurance/",
+          "snippet": "Facing climate change, Nigeria's Lagos state takes out flood insurance. Nigeria's Lagos state has taken out a $7.5 million flood insurance policy to cover millions of people, the Insurance Development Forum said Thursday, as the country'...",
+          "url": "https://www.africanews.com/2026/03/27/facing-climate-change-nigerias-lagos-state-takes-out-flood-insurance/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The article reports a government's proactive policy to address climate change impacts through flood insurance, indicating a positive action.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://phys.org/news/2026-03-simulation-strategy-climate-action.html",
+          "snippet": "From simulation to strategy: Climate modeling motivates action at the top. New research by MIT Sloan School of Management finds that global leaders who participate in facilitated engagements using an interactive climate policy simulator,...",
+          "url": "https://phys.org/news/2026-03-simulation-strategy-climate-action.html",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text highlights research showing that climate modeling tools motivate global leaders to take action and improve their understanding of climate policy.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://phys.org/news/2026-03-justice-climate-goals-highlight-fair.html",
+          "snippet": "Justice in achieving climate goals: Researchers highlight the need for fair country shares in CO₂ removal. As the war in the Middle East is currently reminding us once again, many countries around the world are heavily reliant on oil and...",
+          "url": "https://phys.org/news/2026-03-justice-climate-goals-highlight-fair.html",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text criticizes \"Lax climate policy\" and emphasizes the need for justice and fair country shares in achieving climate goals, indicating dissatisfaction with current approaches.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "youtube_comment_UgwJ7gErJrsuYZVD0BJ4AaABAg",
+          "snippet": "Honestly, I may hate a lot of things about living in France, but damn am I proud of my country's choice of nuclear use.",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgwJ7gErJrsuYZVD0BJ4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The commenter expresses strong pride in France's choice of nuclear energy, indicating a very positive view of this climate change policy.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzVZCKe4O1sLaFxLl94AaABAg",
+          "snippet": "Nuclear energy is in a way like traveling by an airplane. It is very safe, but when something happens people freak out.",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgzVZCKe4O1sLaFxLl94AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment defends nuclear energy's safety, implying support for its use as a climate change policy despite public perception.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzyjBqtLxNQajH-G2N4AaABAg",
+          "snippet": "Can't wait for a movie about Capitan Nuclear, Wind Man, Super Solar and Water Woman fighting against evil Dr. Fossil Cloud.",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgzyjBqtLxNQajH-G2N4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The comment playfully expresses strong enthusiasm for nuclear, wind, solar, and hydro energy, and opposition to fossil fuels, indicating a positive stance on clean energy policies.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzXwMNTC-E7kcHOlw14AaABAg",
+          "snippet": "\"Should we give up nuclear immediately, and accept higher emissions?\" *averts eye contact in German*",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgzXwMNTC-E7kcHOlw14AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment sarcastically criticizes Germany's policy of giving up nuclear power, implying it leads to higher emissions and is detrimental to climate goals.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxTkSlhEozwp7clV2R4AaABAg",
+          "snippet": "Germany: - Let's replace Nuclear by Coal to fight climate change! _Something's wrong, I can feel it_",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgxTkSlhEozwp7clV2R4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The comment uses sarcasm to strongly criticize Germany's policy of replacing nuclear with coal, viewing it as counterproductive to fighting climate change.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugy4Qo3WqyWjpadpVmZ4AaABAg",
+          "snippet": "This is exactly why I am so dissapointed, angered even, that the Green Parties, those who'd supposed to be the surest bet to combat climate change, disregard nuclear power altogether.",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=Ugy4Qo3WqyWjpadpVmZ4AaABAg",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The commenter expresses strong disappointment and anger that Green Parties, despite their climate goals, disregard nuclear power, which they see as essential for combating climate change.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzkI_zTZtZ6IKyEWsZ4AaABAg",
+          "snippet": "Our rejection of Nuclear power was a massive mistake, and the environment has payed dearly for it as we continue to rely on fossil fuels for our electricity",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgzkI_zTZtZ6IKyEWsZ4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The commenter states that the rejection of nuclear power was a \"massive mistake\" that harmed the environment by increasing reliance on fossil fuels, indicating a strong negative stance on that policy.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgweQjNC7653Ypxe4SB4AaABAg",
+          "snippet": "I’d prefer the waste generated by an energy source to be in underground barrels than in my lungs.",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgweQjNC7653Ypxe4SB4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The commenter expresses a preference for nuclear waste management over the lung pollution from other energy sources, indicating a positive view of nuclear as a climate policy.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwJn2K0HOCWrnxh0qN4AaABAg",
+          "snippet": "That last bit where wind, hydro and solar energies fighting a CO2 Monster with nuclear being trapped was a genius metaphor",
+          "url": "https://www.youtube.com/watch?v=EhAemz1v7dQ&lcdId=UgwJn2K0HOCWrnxh0qN4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment praises a metaphor depicting clean energies fighting a CO2 monster, indicating a positive view of climate action and the role of various energy sources.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "1s7jif8",
+          "snippet": "Solar is winning the energy race. The world’s cheapest power source is scaling at warp speed, pushing coal, gas and nuclear aside.",
+          "url": "https://reddit.com/r/environment/comments/1s7jif8/solar_is_winning_the_energy_race_the_worlds/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The text expresses strong enthusiasm for solar energy, stating it is \"winning the energy race\" and displacing other sources, indicating a very positive view of its role in climate policy.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s9wr2r",
+          "snippet": "The chair of the Adaptation Committee of the Climate Change Advisory Council has said that if governments had heeded their warnings in the past and implemented just a proportion of them in full, the country would \"not be in the mess it i...",
+          "url": "https://reddit.com/r/climate/comments/1s9wr2r/the_chair_of_the_adaptation_committee_of_the/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The text quotes a committee chair criticizing past governments for not heeding warnings and implementing climate policies, leading to a current \"mess,\" indicating a strong negative view of past policy.",
+          "source_lean": null,
+          "platform": "reddit"
+        }
+      ]
+    },
+    {
+      "key": "childhood_vaccines",
+      "query": "childhood vaccines safety",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 22.86,
+      "score_label": "low",
+      "confidence": 0.7,
+      "confidence_label": "low",
+      "sample_size": 7,
+      "stance_distribution": {
+        "for": 2,
+        "against": 4,
+        "neutral": 1
+      },
+      "source_breakdown": {
+        "youtube": 7
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 88.74,
+      "evidence": [
+        {
+          "id": "youtube_comment_UgxX4JKnDs74lzO-ltF4AaABAg",
+          "snippet": "In Germany we call that \"dangerous half-knowledge\"... I mean, yeah Hep B is known as an STI thing, which sounds like it makes sense to wait until a certain age.... but there is so much information missing, which makes it pretty dangerous...",
+          "url": "https://www.youtube.com/watch?v=GerWpohJUzs&lcdId=UgxX4JKnDs74lzO-ltF4AaABAg",
+          "stance": 0,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment criticizes 'dangerous half-knowledge' and missing information regarding vaccine timing, implying a risk to safety due to inadequate understanding.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugxmhixe3h4R6kSj5aJ4AaABAg",
+          "snippet": "Make vaccine manufacturers liable again",
+          "url": "https://www.youtube.com/watch?v=CTj_xoCuhPU&lcdId=Ugxmhixe3h4R6kSj5aJ4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment demands liability for vaccine manufacturers, suggesting a current lack of accountability that could compromise vaccine safety.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwSx8DJJYnOpoxPc4N4AaABAg",
+          "snippet": "When parents discover what the ingredients in any vaccine are, and make a choice not to vaccinate their children in order to protect them from the consequences, the decision of those parents should be respected.",
+          "url": "https://www.youtube.com/watch?v=CTj_xoCuhPU&lcdId=UgwSx8DJJYnOpoxPc4N4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The comment advocates for respecting parental decisions not to vaccinate due to concerns about ingredients and potential consequences, implying a belief in vaccine-related risks.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugxjpl_4AehkKAxXh3p4AaABAg",
+          "snippet": "The only thing that will stop vaccine hesitancy is transparency, compensation of victims and honest and true science without the influence of profit and politics.",
+          "url": "https://www.youtube.com/watch?v=CTj_xoCuhPU&lcdId=Ugxjpl_4AehkKAxXh3p4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment suggests that vaccine hesitancy stems from a lack of transparency, uncompensated victims, and biased science, implying current issues with vaccine safety and trust.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzY8iMWipXDqPDVHyR4AaABAg",
+          "snippet": "I think as a society we've forgotten how rampant infant death used to be. We take it for granted that our babies have a better chance of survival these days and a lot of that is thanks to vaccines.",
+          "url": "https://www.youtube.com/watch?v=GerWpohJUzs&lcdId=UgzY8iMWipXDqPDVHyR4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The comment highlights the historical reduction in infant mortality and attributes much of this improvement to vaccines, indicating a strong belief in their safety and efficacy.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxOPZmdanfZGCmx_kd4AaABAg",
+          "snippet": "I think the crux of the problem is really pretty straightforward. It's all but impossible these days to trust the government (including the FDA), or the pharmaceutical companies, or the big corporations that have gobbled up everything. M...",
+          "url": "https://www.youtube.com/watch?v=CTj_xoCuhPU&lcdId=UgxOPZmdanfZGCmx_kd4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The comment expresses a general distrust in government, the FDA, and pharmaceutical companies, which implicitly questions the oversight and safety of vaccines.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugwczo1RjZNCutpkGsF4AaABAg",
+          "snippet": "90% of the infected have potentially lifelong health issues is such an incredible percentage, I wouldnt want to risk that",
+          "url": "https://www.youtube.com/watch?v=GerWpohJUzs&lcdId=Ugwczo1RjZNCutpkGsF4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment expresses strong concern about the high percentage of infected individuals facing lifelong health issues, implicitly supporting measures like vaccination to avoid such risks.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    },
+    {
+      "key": "ai_regulation",
+      "query": "artificial intelligence regulation",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 0.0,
+      "score_label": "very low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 10,
+      "stance_distribution": {
+        "for": 7,
+        "against": 0,
+        "neutral": 3
+      },
+      "source_breakdown": {
+        "youtube": 8,
+        "reddit": 2
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 80.41,
+      "evidence": [
+        {
+          "id": "youtube_comment_UgwghzT_Bfhpf9D1gLt4AaABAg",
+          "snippet": "I'm glad Europe didn't go down the American dead end: leave corporations to do anything they want with the population willing-fully endangering people in the name of extra-profit.",
+          "url": "https://www.youtube.com/watch?v=s_rxOnCt3HQ&lcdId=UgwghzT_Bfhpf9D1gLt4AaABAg",
+          "stance": 1,
+          "animosity": 4,
+          "sentiment": 5,
+          "rationale": "The user praises Europe for choosing regulation over the American approach, which is seen as endangering people for corporate profit.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugxlk6MuU2zraPjsl7B4AaABAg",
+          "snippet": "The idea of the regulations are good, but the EU has to make paperwork EASIER.",
+          "url": "https://www.youtube.com/watch?v=s_rxOnCt3HQ&lcdId=Ugxlk6MuU2zraPjsl7B4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The user supports the concept of regulations but believes the EU needs to simplify the associated paperwork.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwcrVurPOYTjnW4KcJ4AaABAg",
+          "snippet": "I think this is good for Europe. Unlike in the US, we have always prioritised people over corporations. Will this slow innovation, sure. Will this make it impossible, no absolutely not. If we lose sight of ourselfs we will be in a dystop...",
+          "url": "https://www.youtube.com/watch?v=s_rxOnCt3HQ&lcdId=UgwcrVurPOYTjnW4KcJ4AaABAg",
+          "stance": 1,
+          "animosity": 4,
+          "sentiment": 5,
+          "rationale": "The user believes regulation is good for Europe, prioritizing people over corporations, and views the US approach as leading to a dystopian outcome.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugw0GjKu8mhVUyUwopZ4AaABAg",
+          "snippet": "Yes, I believe we are way ahead of ourselves. We should really slow down and think about what we are doing.",
+          "url": "https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=Ugw0GjKu8mhVUyUwopZ4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The user believes society is moving too fast with AI and advocates for slowing down to consider the implications, implying a need for control or regulation.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxEoyDZYaPqsX5oFQt4AaABAg",
+          "snippet": "Where it all falls down, is the individual won't get to choose a 'good' AI model, where AI is being used by a governmental entity, a corporation etc. without explicit consent or even knowledge that AI has been part of the decision about ...",
+          "url": "https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgxEoyDZYaPqsX5oFQt4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The user expresses concern that individuals lack choice, consent, or knowledge when AI is used by entities, indicating a need for stronger regulation.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyJa_uPZSalXcW_nuJ4AaABAg",
+          "snippet": "Even if it takes 40 years, companies can – and will – wait while we decide how to protect ourselves. Corporations don’t have the same priorities as people. Their focus is profit, not public interest. When we hear words like “rapid” innov...",
+          "url": "https://www.youtube.com/watch?v=s_rxOnCt3HQ&lcdId=UgyJa_uPZSalXcW_nuJ4AaABAg",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 5,
+          "rationale": "The user argues that society must prioritize protection from corporations focused on profit, even if it takes time, strongly supporting regulation.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxJwuU9CESwvuRCHTN4AaABAg",
+          "snippet": "I think it’s good that we are regulating. Last thing we need is to end up like America, where faulty face recognition AI got innocent people arrested and beaten.",
+          "url": "https://www.youtube.com/watch?v=s_rxOnCt3HQ&lcdId=UgxJwuU9CESwvuRCHTN4AaABAg",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 5,
+          "rationale": "The user explicitly states that regulation is good, citing negative consequences of unregulated AI in America as justification.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "1s7j1gg",
+          "snippet": "Sanders and AOC unveil data center moratorium bill",
+          "url": "https://reddit.com/r/trueantiAI/comments/1s7j1gg/sanders_and_aoc_unveil_data_center_moratorium_bill/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text is a factual headline about a data center moratorium bill, which is only tangentially related to AI regulation without expressing a direct stance.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s44kp3",
+          "snippet": "Sanders and AOC unveil data center moratorium bill",
+          "url": "https://reddit.com/r/AIDangers/comments/1s44kp3/sanders_and_aoc_unveil_data_center_moratorium_bill/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text is a factual headline about a data center moratorium bill, which is only tangentially related to AI regulation without expressing a direct stance.",
+          "source_lean": null,
+          "platform": "reddit"
+        }
+      ]
+    },
+    {
+      "key": "inflation",
+      "query": "inflation economic policy",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 11.64,
+      "score_label": "low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 22,
+      "stance_distribution": {
+        "for": 4,
+        "against": 6,
+        "neutral": 12
+      },
+      "source_breakdown": {
+        "gnews": 9,
+        "youtube": 5,
+        "reddit": 8
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 97.87,
+      "evidence": [
+        {
+          "id": "gnews_https://www.theglobeandmail.com/business/article-bank-of-canada-summary-of-deliberations-inflation-economy/",
+          "snippet": "BoC keeping ‘options open’ as it balances inflation risks with sluggish economic growth. Governing council will rely on ‘judgment’ to steer the policy rate in the months ahead, summary of deliberations shows",
+          "url": "https://www.theglobeandmail.com/business/article-bank-of-canada-summary-of-deliberations-inflation-economy/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The article objectively reports on the Bank of Canada's cautious approach to balancing inflation risks and economic growth through policy decisions.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.marketscreener.com/news/fed-s-musalem-says-monetary-policy-well-positioned-amid-economic-uncertainty-ce7e51dfde8ffe20",
+          "snippet": "Fed's Musalem says monetary policy well positioned amid economic uncertainty. St. Louis Federal Reserve President Alberto Musalem said on Wednesday he doesn't see a near-term need for the U.S. central bank to change its interest rate sta...",
+          "url": "https://www.marketscreener.com/news/fed-s-musalem-says-monetary-policy-well-positioned-amid-economic-uncertainty-ce7e51dfde8ffe20",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "Fed's Musalem expresses a positive view that current monetary policy is well-positioned and does not require immediate changes despite inflation.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.devdiscourse.com/article/business/3856577-chinas-economic-tightrope-balancing-inflation-amidst-global-turmoil",
+          "snippet": "China's Economic Tightrope: Balancing Inflation Amidst Global Turmoil. China faces economic pressure from imported inflation due to the Middle East conflict, challenging policymakers to balance rising inflation with slowing growth. The P...",
+          "url": "https://www.devdiscourse.com/article/business/3856577-chinas-economic-tightrope-balancing-inflation-amidst-global-turmoil",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The article objectively describes China's challenge in balancing inflation and slowing growth due to external economic pressures.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.devdiscourse.com/article/business/3856354-powell-federal-reserve-steadfast-as-inflation-and-war-loom",
+          "snippet": "Powell: Federal Reserve Steadfast as Inflation and War Loom. Federal Reserve Chair Jerome Powell reassured markets, suggesting the Fed can wait to evaluate the economic impact of the Iran conflict before adjusting interest rates. Despite...",
+          "url": "https://www.devdiscourse.com/article/business/3856354-powell-federal-reserve-steadfast-as-inflation-and-war-loom",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "Federal Reserve Chair Powell reassures markets about the Fed's steadfast approach to evaluating economic impacts before adjusting interest rates, indicating confidence in current policy.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.financialexpress.com/world-news/us-news/what-powell-said-about-inflation-war-and-feds-next-move-10-key-takeaways/4189695/",
+          "snippet": "What Powell said about inflation, war and Fed’s next move - 10 key takeaways. Fed Chair Jerome Powell at Harvard University highlights inflation risks, interest rate uncertainty, and policy stance amid Iran war, outlining key economic si...",
+          "url": "https://www.financialexpress.com/world-news/us-news/what-powell-said-about-inflation-war-and-feds-next-move-10-key-takeaways/4189695/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The article objectively summarizes Fed Chair Powell's statements regarding inflation risks, interest rate uncertainty, and the Federal Reserve's policy stance.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.devdiscourse.com/article/business/3856092-feds-steady-hand-navigating-economic-uncertainty-amid-iran-conflict",
+          "snippet": "Fed's Steady Hand: Navigating Economic Uncertainty Amid Iran Conflict. Federal Reserve Chair Jerome Powell indicated the U.S. central bank is adopting a wait-and-see approach amid the ongoing Iran war, assessing its impact on the economy...",
+          "url": "https://www.devdiscourse.com/article/business/3856092-feds-steady-hand-navigating-economic-uncertainty-amid-iran-conflict",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The article portrays the Federal Reserve's \"steady hand\" and wait-and-see approach to economic uncertainty and inflation as a confident and measured policy.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.thestar.com.my/aseanplus/aseanplus-news/2026/03/30/singapore-faces-tough-singdollar-policy-decision-in-april-amid-risks-of-higher-inflation-slower-growth",
+          "snippet": "Singapore faces tough Singdollar policy decision in April amid risks of higher inflation, slower growth. As the war in the Middle East enters its fifth week, central banks in Singapore and elsewhere face a hard decision: head off an oil-...",
+          "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/03/30/singapore-faces-tough-singdollar-policy-decision-in-april-amid-risks-of-higher-inflation-slower-growth",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The article objectively reports on Singapore's central bank facing a tough policy decision to balance higher inflation risks with slower economic growth.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.hindustantimes.com/india-news/finance-ministry-s-monthly-economic-review-flags-uncertainty-ahead-101774724589317.html",
+          "snippet": "Finance ministry’s monthly economic review flags uncertainty ahead. India's economy faces uncertainty due to geopolitical tensions, inflation risks, and subdued foreign investment, prompting calls for policy vigilance and reforms.| India...",
+          "url": "https://www.hindustantimes.com/india-news/finance-ministry-s-monthly-economic-review-flags-uncertainty-ahead-101774724589317.html",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The article objectively reports on India's finance ministry flagging economic uncertainty and inflation risks, prompting calls for policy vigilance and reforms.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.marketscreener.com/news/fed-s-paulson-says-policy-credibility-needed-for-economic-growth-to-flourish-ce7e51d8d988f220",
+          "snippet": "Fed's Paulson Says Policy Credibility Needed for Economic Growth to Flourish. By Jessica Coacci Philadelphia Fed President Anna Paulson said monetary policy credibility is key for both lowering inflation and creating conditions that allo...",
+          "url": "https://www.marketscreener.com/news/fed-s-paulson-says-policy-credibility-needed-for-economic-growth-to-flourish-ce7e51d8d988f220",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "Fed's Paulson positively asserts that monetary policy credibility is crucial for both lowering inflation and enabling economic growth.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "youtube_comment_UgwBpEC7z8d9URN7HtJ4AaABAg",
+          "snippet": "The rising interest rate can surely control inflation, but won't prevent erosion of the eroding purchasing power of the US dollar. I have learnt my lesson this time. The banks can't be making money off my money, while inflation eats into...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgwBpEC7z8d9URN7HtJ4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The commenter expresses frustration that rising interest rates do not prevent the erosion of purchasing power, criticizing the current economic situation and its impact on personal finances.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzbAXTQ5AatBEpM2U94AaABAg",
+          "snippet": "First of all, this whole economic chaos was powered by optimism that the FED is done with hiking interest rates. Now that interest rate crash is the situation, where do we go from here? How would you advise I safely allocate $250k funds ...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgzbAXTQ5AatBEpM2U94AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The commenter describes the current economic situation as \"chaos\" fueled by misplaced optimism about the Fed's interest rate policy, expressing uncertainty and seeking financial advice.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugz4IgJQPhWs6XG1K054AaABAg",
+          "snippet": "I would never be able to understand how the Both work hand in hand, honestly , I foresee a recession lasting 2-3 years, and if inflation continues to surge, the Federal Reserve will likely raise interest rates soon. Inflation is causing ...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=Ugz4IgJQPhWs6XG1K054AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The commenter expresses confusion about economic policies, foresees a recession, and highlights the negative worldwide issues caused by surging inflation.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugzjqe_Kmnl4KELkp6h4AaABAg",
+          "snippet": "Inflation affects mostly consumers while deflation affects mostly producers",
+          "url": "https://www.youtube.com/watch?v=2Sr8jOBB8QI&lcdId=Ugzjqe_Kmnl4KELkp6h4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment provides a neutral, factual observation about the differential impact of inflation on consumers and deflation on producers.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzbD_5TE2dub2PTJOt4AaABAg",
+          "snippet": "The Fed's talk of interest rate cut leaves me pondering what stocks to buy now and when do I sell? I'm unsure how to properly allocate my money to achieve an optimal portfolio in this present economy, my goal is $3m for retirement.",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgzbD_5TE2dub2PTJOt4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The commenter expresses personal uncertainty about investment allocation in the current economy, influenced by the Fed's interest rate discussions, without directly criticizing policy.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "1s7qfvx",
+          "snippet": "A Lollapalooza - The Iran War Will Cause an Economic Collapse in the US First my claim: Inflation from the Iran war is going to cause a financial crisis an order of magnitude larger than the 2008 housing crash. Inflation will topple priv...",
+          "url": "https://reddit.com/r/economicCollapse/comments/1s7qfvx/a_lollapalooza_the_iran_war_will_cause_an/",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The commenter makes a very negative and alarming prediction of an economic collapse in the US due to inflation from the Iran war, surpassing the 2008 crisis.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s68uxp",
+          "snippet": "Are we heading towards “Lost Decades” like Japan? Some similarities between our economy and Japan’s in the 90’s - aging population, currency devaluation, decline in manufacturing, economic policies targeting inflation. But definitely not...",
+          "url": "https://reddit.com/r/stocks/comments/1s68uxp/are_we_heading_towards_lost_decades_like_japan/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text discusses \"economic policies targeting inflation\" in the context of potential \"Lost Decades\" and negative economic similarities.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s7n7f0",
+          "snippet": "A Lalapalooza - The Iran War Will Cause an Economic Collapse in the US First my claim: Inflation from the Iran war is going to cause a financial crisis an order of magnitude larger than the 2008 housing crash. Inflation will topple priva...",
+          "url": "https://reddit.com/r/economy/comments/1s7n7f0/a_lalapalooza_the_iran_war_will_cause_an_economic/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 1,
+          "rationale": "The text directly claims \"Inflation\" will cause an \"economic collapse\" and \"financial crisis,\" indicating a very negative view on its impact.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s8o9e1",
+          "snippet": "Russian billionaire and Putin confidant Deripaska has proposed introducing a 12-hour workday, including Saturdays, to boost the economy.",
+          "url": "https://reddit.com/r/economicCollapse/comments/1s8o9e1/russian_billionaire_and_putin_confidant_deripaska/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text proposes an economic policy to boost the economy but does not mention inflation.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "ocsqyev",
+          "snippet": "Trump is going to have an aneurysm when the Fed raises rates",
+          "url": "https://reddit.com/r/stocks/comments/1s58a7s/markets_now_see_the_feds_next_move_as_a_potential/ocsqyev/",
+          "stance": 0,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The text refers to the Fed raising rates, a key economic policy related to inflation, and predicts a negative reaction from Trump.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s6jzg4",
+          "snippet": "CNBC: Global forecasting group OECD sees U.S. inflation at 4.2% this year, 1.6% in 2027 https://www.cnbc.com/2026/03/26/global-forecasting-group-sees-us-inflation-at-4point2percent-this-year-much-higher-than-fed-estimate.html **KEY POINT...",
+          "url": "https://reddit.com/r/stocks/comments/1s6jzg4/cnbc_global_forecasting_group_oecd_sees_us/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text reports on U.S. inflation forecasts and mentions the Fed's estimates, directly relating to the query.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s58a7s",
+          "snippet": "Markets now see the Fed’s next move as a potential rate hike as inflation fears mount https://www.cnbc.com/2026/03/27/markets-see-the-feds-next-move-as-a-potential-hike-as-oil-prices-inflation-fears-rise.html > Surging energy prices, ris...",
+          "url": "https://reddit.com/r/stocks/comments/1s58a7s/markets_now_see_the_feds_next_move_as_a_potential/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text discusses \"inflation fears\" and the Fed's potential \"rate hike\" as an economic policy response, also mentioning \"stagflation.\"",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1sabjco",
+          "snippet": "Albanese locks in plans to scrap investor tax breaks as way through housing crisis",
+          "url": "https://reddit.com/r/AustralianPolitics/comments/1sabjco/albanese_locks_in_plans_to_scrap_investor_tax/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text discusses an economic policy to address a housing crisis but does not mention inflation.",
+          "source_lean": null,
+          "platform": "reddit"
+        }
+      ]
+    }
+  ]
+}

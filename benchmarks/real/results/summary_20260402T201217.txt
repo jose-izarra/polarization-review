@@ -1,0 +1,27 @@
+========================================================================================
+  Real-Topic Benchmark — 2026-04-02 20:12 UTC
+========================================================================================
+ Topic                    Category             Expected     Score
+ Label          Conf     n    OK      s
+----------------------------------------------------------------------------------------
+  High-polarization topics
+  abortion               high_polarization    > 50.0        40.2 moderate      1.000    19  FAIL   95.6
+  gun_control            high_polarization    > 50.0        10.4 low           1.000    17  FAIL   73.8
+  climate_change         high_polarization    > 50.0        31.1 moderate      1.000    15  FAIL   85.9
+
+  Consensus topics
+  childhood_vaccines     consensus            < 35.0        22.9 low           0.700     7  PASS   88.7
+  ai_regulation          consensus            < 35.0         0.0 very low      1.000    10  PASS   80.4
+  inflation              consensus            < 35.0        11.6 low           1.000    22  PASS   97.9
+
+----------------------------------------------------------------------------------------
+  Stance distribution
+----------------------------------------------------------------------------------------
+  abortion                 for= 10  against=  8  neutral=  1  total= 19
+  gun_control              for=  2  against= 12  neutral=  3  total= 17
+  climate_change           for=  8  against=  7  neutral=  0  total= 15
+  childhood_vaccines       for=  2  against=  4  neutral=  1  total=  7
+  ai_regulation            for=  7  against=  0  neutral=  3  total= 10
+  inflation                for=  4  against=  6  neutral= 12  total= 22
+
+========================================================================================

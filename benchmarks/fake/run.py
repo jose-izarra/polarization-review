@@ -18,11 +18,11 @@ import argparse
 import json
 import statistics
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 from datetime import datetime, timezone
-import threading
 from pathlib import Path
 
 # Ensure project root is on sys.path so src.* imports work when called
@@ -39,7 +39,7 @@ SCENARIOS = ["fake_polarized", "fake_moderate", "fake_neutral"]
 EXPECTED = {
     "fake_polarized": "~100",
     "fake_moderate": "~35-70",
-    "fake_neutral":  "~0",
+    "fake_neutral": "~0",
 }
 
 
@@ -84,31 +84,36 @@ def run_scenario(mode: str, run_idx: int) -> dict:
 def run_scenario_group(mode: str, n_runs: int) -> tuple[str, list[dict]]:
     """Run all iterations for one scenario and return (mode, runs)."""
     with _print_lock:
-        print(f"\n{'='*50}\nScenario: {mode}  (expected: {EXPECTED[mode]})\n{'='*50}", flush=True)
+        print(
+            f"\n{'=' * 50}\nScenario: {mode}  (expected: {EXPECTED[mode]})\n{'=' * 50}",
+            flush=True,
+        )
     runs = [run_scenario(mode, i) for i in range(n_runs)]
     return mode, runs
 
 
 def compute_stats(runs: list[dict]) -> dict:
     """Compute summary statistics for a list of run dicts."""
-    scores = [r["polarization_score"] for r in runs if r["polarization_score"] is not None]
-    confs  = [r["confidence"]          for r in runs if r["confidence"]          is not None]
-    times  = [r["elapsed_seconds"]     for r in runs]
-    ok     = sum(1 for r in runs if r["status"] == "ok")
+    scores = [
+        r["polarization_score"] for r in runs if r["polarization_score"] is not None
+    ]
+    confs = [r["confidence"] for r in runs if r["confidence"] is not None]
+    times = [r["elapsed_seconds"] for r in runs]
+    ok = sum(1 for r in runs if r["status"] == "ok")
 
     def _stats(vals: list[float]) -> dict:
         if not vals:
             return {"n": 0, "mean": None, "std": None, "min": None, "max": None}
         return {
-            "n":    len(vals),
+            "n": len(vals),
             "mean": round(statistics.mean(vals), 3),
-            "std":  round(statistics.stdev(vals), 3) if len(vals) > 1 else 0.0,
-            "min":  round(min(vals), 3),
-            "max":  round(max(vals), 3),
+            "std": round(statistics.stdev(vals), 3) if len(vals) > 1 else 0.0,
+            "min": round(min(vals), 3),
+            "max": round(max(vals), 3),
         }
 
     return {
-        "score":   _stats(scores),
+        "score": _stats(scores),
         "confidence": _stats(confs),
         "elapsed": _stats(times),
         "ok_runs": ok,
@@ -151,7 +156,9 @@ def format_summary(all_runs: dict[str, list[dict]], stats: dict[str, dict]) -> s
     for mode in SCENARIOS:
         name = mode.replace("fake_", "")
         scores = [
-            f"{r['polarization_score']:.1f}" if r["polarization_score"] is not None else "ERR"
+            f"{r['polarization_score']:.1f}"
+            if r["polarization_score"] is not None
+            else "ERR"
             for r in all_runs[mode]
         ]
         lines.append(f"  {name:<18} {', '.join(scores)}")
@@ -161,15 +168,22 @@ def format_summary(all_runs: dict[str, list[dict]], stats: dict[str, dict]) -> s
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--runs", type=int, default=10, help="Iterations per scenario (default: 10)")
+    parser.add_argument(
+        "--runs", type=int, default=10, help="Iterations per scenario (default: 10)"
+    )
     parser.add_argument(
         "--out",
         type=str,
-        default="benchmark_results/fake_scenarios",
+        default="results",
         help="Output directory (relative paths are from project root)",
     )
-    parser.add_argument("--scenarios", nargs="+", choices=SCENARIOS, default=SCENARIOS,
-                        help="Which scenarios to run (default: all three)")
+    parser.add_argument(
+        "--scenarios",
+        nargs="+",
+        choices=SCENARIOS,
+        default=SCENARIOS,
+        help="Which scenarios to run (default: all three)",
+    )
     args = parser.parse_args()
 
     out_dir = Path(args.out)
@@ -214,7 +228,9 @@ def main() -> None:
     print(f"Summary txt  → {summary_txt_path}")
 
     # Write summary json
-    summary_json_path.write_text(json.dumps({"timestamp": ts, "stats": stats}, indent=2))
+    summary_json_path.write_text(
+        json.dumps({"timestamp": ts, "stats": stats}, indent=2)
+    )
     print(f"Summary json → {summary_json_path}")
 
 

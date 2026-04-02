@@ -1,0 +1,157 @@
+{
+  "timestamp": "20260402T202251",
+  "pass_rate": "3/6",
+  "mean_score_high_polarization": 19.577,
+  "mean_score_consensus": 6.547,
+  "topics": [
+    {
+      "key": "abortion",
+      "query": "abortion rights",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 37.89,
+      "score_label": "moderate",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 19,
+      "stance_distribution": {
+        "for": 6,
+        "against": 11,
+        "neutral": 2
+      },
+      "source_breakdown": {
+        "gnews": 6,
+        "youtube": 9,
+        "reddit": 4
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 85.86
+    },
+    {
+      "key": "gun_control",
+      "query": "gun control",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 0.0,
+      "score_label": "very low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 10,
+      "stance_distribution": {
+        "for": 0,
+        "against": 8,
+        "neutral": 2
+      },
+      "source_breakdown": {
+        "gnews": 4,
+        "youtube": 5,
+        "reddit": 1
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 84.39
+    },
+    {
+      "key": "climate_change",
+      "query": "climate change",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 20.84,
+      "score_label": "low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 29,
+      "stance_distribution": {
+        "for": 19,
+        "against": 9,
+        "neutral": 1
+      },
+      "source_breakdown": {
+        "gnews": 10,
+        "youtube": 13,
+        "reddit": 6
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 117.04
+    },
+    {
+      "key": "childhood_vaccines",
+      "query": "childhood vaccines",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 0.0,
+      "score_label": "very low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 20,
+      "stance_distribution": {
+        "for": 17,
+        "against": 0,
+        "neutral": 3
+      },
+      "source_breakdown": {
+        "youtube": 14,
+        "reddit": 6
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 87.19
+    },
+    {
+      "key": "ai_regulation",
+      "query": "ai regulation",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 16.0,
+      "score_label": "low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 20,
+      "stance_distribution": {
+        "for": 11,
+        "against": 4,
+        "neutral": 5
+      },
+      "source_breakdown": {
+        "gnews": 10,
+        "youtube": 2,
+        "reddit": 8
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 99.56
+    },
+    {
+      "key": "inflation",
+      "query": "inflation",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 3.64,
+      "score_label": "very low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 29,
+      "stance_distribution": {
+        "for": 1,
+        "against": 24,
+        "neutral": 4
+      },
+      "source_breakdown": {
+        "gnews": 10,
+        "youtube": 11,
+        "reddit": 8
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 103.87
+    }
+  ]
+}
