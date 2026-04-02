@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+_DEFAULT_POLARIZATION_MODEL = "gemini-2.5-flash"
 
 class Config:
     @property
@@ -21,7 +22,7 @@ class Config:
 
     @property
     def polarization_model(self) -> str:
-        return os.getenv("POLARIZATION_MODEL", "gemini-2.5-flash")
+        return os.getenv("POLARIZATION_MODEL", _DEFAULT_POLARIZATION_MODEL)
 
     # Scrapers
     @property
@@ -34,7 +35,7 @@ class Config:
 
     @property
     def reddit_user_agent(self) -> str:
-        return os.getenv("REDDIT_USER_AGENT", "PolarizationTool/1.0")
+        return os.getenv("REDDIT_USER_AGENT")
 
     @property
     def youtube_api_key(self) -> str | None:

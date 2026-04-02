@@ -8,7 +8,6 @@ import logfire
 from src.internal.config.config import config
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
 
-_DEFAULT_MODEL = "gemini-2.5-flash"
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
