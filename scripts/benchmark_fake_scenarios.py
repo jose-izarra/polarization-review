@@ -4,9 +4,9 @@ Runs fake_polarized, fake_moderate, and fake_neutral through the real LLM
 pipeline (Gemini API) and saves per-run results plus a summary table.
 
 Usage:
-    python scripts/benchmark_fake.py [--runs N] [--out DIR]
+    python scripts/benchmark_fake_scenarios.py [--runs N] [--out DIR]
 
-Outputs (written to --out, default: benchmark_results/):
+Outputs (written to --out, default: benchmark_results/fake_scenarios/):
     results_<timestamp>.json   — raw per-run PolarizationResult dicts
     summary_<timestamp>.txt    — human-readable summary table
     summary_<timestamp>.json   — machine-readable summary stats
@@ -162,12 +162,19 @@ def format_summary(all_runs: dict[str, list[dict]], stats: dict[str, dict]) -> s
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=int, default=10, help="Iterations per scenario (default: 10)")
-    parser.add_argument("--out", type=str, default="benchmark_results", help="Output directory")
+    parser.add_argument(
+        "--out",
+        type=str,
+        default="benchmark_results/fake_scenarios",
+        help="Output directory (relative paths are from project root)",
+    )
     parser.add_argument("--scenarios", nargs="+", choices=SCENARIOS, default=SCENARIOS,
                         help="Which scenarios to run (default: all three)")
     args = parser.parse_args()
 
     out_dir = Path(args.out)
+    if not out_dir.is_absolute():
+        out_dir = _PROJECT_ROOT / out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
 
     ts = datetime.now(tz=timezone.utc).strftime("%Y%m%dT%H%M%S")
