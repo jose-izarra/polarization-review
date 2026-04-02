@@ -2,17 +2,12 @@ from __future__ import annotations
 
 import argparse
 import json
-import logging
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, replace
 from datetime import datetime, timezone
 
-from src.internal.pipeline.scrape.youtube.adapters import _determine_video_stances
-
-from .llm_assess import assess_items, filter_relevant_items
-from .normalize import dedupe_items, filter_item
-from .score import compute_polarization
+import logfire
 from src.internal.pipeline.domain import (
     EvidenceItem,
     ItemScore,
@@ -20,9 +15,11 @@ from src.internal.pipeline.domain import (
     PolarizationResult,
     SearchRequest,
 )
+from src.internal.pipeline.scrape.youtube.adapters import _determine_video_stances
 
-logger = logging.getLogger(__name__)
-
+from .llm_assess import assess_items, filter_relevant_items
+from .normalize import dedupe_items, filter_item
+from .score import compute_polarization
 
 
 def _select_per_platform(
@@ -43,7 +40,6 @@ def _select_per_platform(
     return result
 
 
-
 def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
     import src.internal.pipeline.scrape  # noqa — triggers registration
     from src.internal.pipeline.scrape.registry import get_sources
@@ -53,7 +49,9 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
 
     with ThreadPoolExecutor(max_workers=len(sources)) as pool:
         futs = {
-            pool.submit(adapter.fetch, request.query, adapter.build_config(request)): adapter
+            pool.submit(
+                adapter.fetch, request.query, adapter.build_config(request)
+            ): adapter
             for adapter in sources
         }
         for fut in as_completed(futs):
@@ -61,7 +59,9 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
             try:
                 all_items.extend(fut.result())
             except Exception as exc:
-                logger.warning("Source %s failed: %s", adapter.name, exc)
+                logfire.warning(
+                    "Source {adapter} failed", adapter=adapter.name, error=str(exc)
+                )
 
     # Source-specific post-processing (balancing, stance pruning, etc.)
     for adapter in sources:
@@ -119,47 +119,6 @@ def _compute_confidence_label(n: int) -> str:
     if n >= 5:
         return "low"
     return "very_low"
-
-
-def _determine_video_stances(
-    query: str,
-    items: list[NormalizedItem],
-    call_model=None,
-) -> dict[str, int]:
-    """Send video title+transcript to LLM and get stance per video."""
-    from .llm_assess import _get_invoke
-
-    videos = [i for i in items if i.platform == "youtube" and i.content_type == "post"]
-    if not videos:
-        return {}
-
-    invoke = _get_invoke(call_model, model=None, timeout_seconds=45)
-
-    system_prompt = (
-        "For each video, determine its overall stance on the given topic. "
-        "Return a JSON array where each element has: id (string), stance (-1/0/1). "
-        "Use -1 for against, 0 for neutral, 1 for the topic. "
-        "Return only valid JSON."
-    )
-    payload = {
-        "query": query,
-        "videos": [{"id": item.id, "title": item.text[:200]} for item in videos],
-    }
-    raw_response = invoke(system_prompt, json.dumps(payload))
-
-    from .llm_assess import _extract_json_array
-
-    stances: dict[str, int] = {}
-    try:
-        parsed = _extract_json_array(raw_response)
-        for elem in parsed:
-            if isinstance(elem, dict) and "id" in elem and "stance" in elem:
-                stance = int(elem["stance"])
-                if stance in (-1, 0, 1):
-                    stances[str(elem["id"])] = stance
-    except Exception:
-        logger.warning("Failed to parse video stances")
-    return stances
 
 
 def _apply_echo_chamber_dampening(
@@ -251,7 +210,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             )
     else:
         try:
-            items = _collect_and_normalize(request)
+            with logfire.span("pipeline.collect", query=query):
+                items = _collect_and_normalize(request)
         except Exception as exc:
             return PolarizationResult(
                 query=query,
@@ -265,7 +225,7 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 error_message=str(exc),
             )
 
-        # Per-platform cap (post_process balancing already ran inside _collect_and_normalize)
+        # Per-platform cap
         items = _select_per_platform(items, max_per_platform=20)
 
     if not items:
@@ -282,7 +242,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
         )
 
     # Step 2: Relevance filter
-    items = filter_relevant_items(query, items)
+    with logfire.span("pipeline.filter", item_count=len(items)):
+        items = filter_relevant_items(query, items)
     if not items:
         return PolarizationResult(
             query=query,
@@ -297,7 +258,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
         )
 
     try:
-        item_scores = assess_items(query, items)
+        with logfire.span("pipeline.assess", item_count=len(items)):
+            item_scores = assess_items(query, items)
     except Exception as exc:
         fallback = items[:3]
         evidence = [
@@ -338,7 +300,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                     parent_video_stance=video_stances[video_norm_id],
                 )
 
-    polarization_score = compute_polarization(item_scores)
+    with logfire.span("pipeline.score"):
+        polarization_score = compute_polarization(item_scores)
     n = len(items)
     confidence = _compute_confidence(n)
     confidence_label = _compute_confidence_label(n)

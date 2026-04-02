@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-from .score import compute_polarization
 from src.internal.pipeline.domain import ItemScore
+
+from .score import compute_polarization
 
 
 def generate_synthetic_dataset(

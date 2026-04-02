@@ -4,6 +4,7 @@
 Edit scripts/score_config.json with your values, then run:
     python scripts/compute_score.py
 """
+
 import json
 import sys
 from pathlib import Path
@@ -17,17 +18,42 @@ CONFIG_PATH = Path(__file__).parent / "score_config.json"
 
 ALPHA_DEFAULT = 1
 
+
 def build_item_scores(cfg: dict) -> list[ItemScore]:
     items = []
     for i in range(cfg["n_for"]):
         s, a, st = cfg["sentiment_for"], cfg["animosity_for"], 1
-        items.append(ItemScore(id=f"for_{i}", sentiment=s, stance=st, animosity=a, r=st * (s + ALPHA_DEFAULT * a)))
+        items.append(
+            ItemScore(
+                id=f"for_{i}",
+                sentiment=s,
+                stance=st,
+                animosity=a,
+                r=st * (s + ALPHA_DEFAULT * a),
+            )
+        )
     for i in range(cfg["n_against"]):
         s, a, st = cfg["sentiment_against"], cfg["animosity_against"], -1
-        items.append(ItemScore(id=f"against_{i}", sentiment=s, stance=st, animosity=a, r=st * (s + ALPHA_DEFAULT * a)))
+        items.append(
+            ItemScore(
+                id=f"against_{i}",
+                sentiment=s,
+                stance=st,
+                animosity=a,
+                r=st * (s + ALPHA_DEFAULT * a),
+            )
+        )
     for i in range(cfg["n_neutral"]):
         s, a, st = cfg["sentiment_neutral"], cfg["animosity_neutral"], 0
-        items.append(ItemScore(id=f"neutral_{i}", sentiment=s, stance=st, animosity=a, r=st * (s + ALPHA_DEFAULT * a)))
+        items.append(
+            ItemScore(
+                id=f"neutral_{i}",
+                sentiment=s,
+                stance=st,
+                animosity=a,
+                r=st * (s + ALPHA_DEFAULT * a),
+            )
+        )
     return items
 
 
@@ -41,11 +67,20 @@ def main():
     n_for, n_against, n_neutral = cfg["n_for"], cfg["n_against"], cfg["n_neutral"]
     total = n_for + n_against + n_neutral
 
-    print(f"\n--- Polarization Score ---")
-    print(f"  Score:               {score} / 100")
-    print(f"  Breakdown:           {n_for} for / {n_against} against / {n_neutral} neutral  (total {total})")
-    print(f"  Sentiment (for/against/neutral): {cfg['sentiment_for']} / {cfg['sentiment_against']} / {cfg['sentiment_neutral']}")
-    print(f"  Animosity (for/against/neutral): {cfg['animosity_for']} / {cfg['animosity_against']} / {cfg['animosity_neutral']}")
+    print("\n--- Polarization Score ---")
+    print(f"  Score: {score} / 100")
+    print(
+        f"  Breakdown: {n_for} for / {n_against} against / {n_neutral} neutral"
+        f"(total {total})"
+    )
+    print(
+        f"  Sentiment (for/against/neutral): {cfg['sentiment_for']} /"
+        f" {cfg['sentiment_against']} / {cfg['sentiment_neutral']}"
+    )
+    print(
+        f"  Animosity (for/against/neutral): {cfg['animosity_for']} /"
+        f" {cfg['animosity_against']} / {cfg['animosity_neutral']}"
+    )
     print()
 
 

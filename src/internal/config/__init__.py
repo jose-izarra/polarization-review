@@ -1,6 +1,5 @@
-import os
-
 import logfire
 
-token = os.getenv("LOGFIRE_TOKEN")
-logfire.configure(token=token)
+import src.internal.config.logger  # noqa: F401 — triggers logfire setup
+
+__all__ = ["logfire"]

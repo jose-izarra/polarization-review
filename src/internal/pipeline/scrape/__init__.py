@@ -1,2 +1,3 @@
 """Scraping package. Importing this package registers all built-in source adapters."""
-from . import reddit, gnews, youtube  # noqa: F401  — side-effect: registration
+
+from . import gnews, reddit, youtube  # noqa: F401  — side-effect: registration

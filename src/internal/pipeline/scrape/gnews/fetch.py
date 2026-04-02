@@ -11,7 +11,6 @@ Environment Variables Required:
 from __future__ import annotations
 
 import json
-import logging
 from datetime import datetime, timedelta, timezone
 from urllib import error, request
 from urllib.parse import urlencode, urlparse
@@ -19,14 +18,12 @@ from urllib.parse import urlencode, urlparse
 from src.internal.config.config import config as app_config
 
 from .utils import (
-    MAX_ARTICLES,
-    SOURCE_LEAN_LOOKUP,
     _DEFAULT_LANG,
     _DEFAULT_SORTBY,
     _TIME_DELTA_DAYS,
+    MAX_ARTICLES,
+    SOURCE_LEAN_LOOKUP,
 )
-
-logger = logging.getLogger(__name__)
 
 
 def _get_source_lean(url: str) -> str:

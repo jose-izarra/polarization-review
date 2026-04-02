@@ -166,7 +166,8 @@ class TestCollectRedditData(unittest.TestCase):
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_comments", return_value=[])
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_posts", return_value=[])
     @patch(
-        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits", return_value=["all"]
+        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits",
+        return_value=["all"],
     )
     def test_calls_discover_with_search_term(
         self, mock_discover, mock_fetch, mock_comments
@@ -180,7 +181,8 @@ class TestCollectRedditData(unittest.TestCase):
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_comments", return_value=[])
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_posts")
     @patch(
-        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits", return_value=["all"]
+        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits",
+        return_value=["all"],
     )
     def test_phase2_re_queries_top_subs(self, mock_discover, mock_fetch, mock_comments):
         """
@@ -213,7 +215,8 @@ class TestCollectRedditData(unittest.TestCase):
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_comments", return_value=[])
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_posts")
     @patch(
-        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits", return_value=["all"]
+        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits",
+        return_value=["all"],
     )
     def test_deduplicates_posts(self, mock_discover, mock_fetch, mock_comments):
         """
@@ -235,7 +238,8 @@ class TestCollectRedditData(unittest.TestCase):
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_comments", return_value=[])
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_posts", return_value=[])
     @patch(
-        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits", return_value=["all"]
+        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits",
+        return_value=["all"],
     )
     def test_result_schema_unchanged(self, mock_discover, mock_fetch, mock_comments):
         """collect_reddit_data must still return the same top-level keys."""
@@ -249,7 +253,8 @@ class TestCollectRedditData(unittest.TestCase):
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_comments", return_value=[])
     @patch("src.internal.pipeline.scrape.reddit.fetch.fetch_posts", return_value=[])
     @patch(
-        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits", return_value=["all"]
+        "src.internal.pipeline.scrape.reddit.fetch.discover_subreddits",
+        return_value=["all"],
     )
     def test_summary_includes_subreddits_searched(
         self, mock_discover, mock_fetch, mock_comments

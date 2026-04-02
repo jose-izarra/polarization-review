@@ -25,6 +25,7 @@ class SourceAdapter(Protocol):
     ) -> list[NormalizedItem]:
         """Optional source-specific filtering on the collected item pool.
         Default implementation returns items unchanged.
-        Only operates on items belonging to this source (filter by item.platform == self.name).
+        Only operates on items belonging to this source: filter
+        by item.platform == self.name.
         """
         ...

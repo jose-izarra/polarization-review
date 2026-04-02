@@ -19,7 +19,9 @@ class GNewsAdapter:
         raw_items = result.get("data", {}).get("posts", [])
         return [normalize_raw_item(r) for r in raw_items]
 
-    def post_process(self, items: list[NormalizedItem], query: str, **kwargs) -> list[NormalizedItem]:
+    def post_process(
+        self, items: list[NormalizedItem], query: str, **kwargs
+    ) -> list[NormalizedItem]:
         """Cap GNews items per source lean category to prevent bias."""
         max_per_lean = 10
         lean_counts: dict[str, int] = defaultdict(int)

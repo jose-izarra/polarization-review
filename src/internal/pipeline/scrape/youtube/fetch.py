@@ -10,13 +10,10 @@ Environment Variables Required:
 
 from __future__ import annotations
 
-import logging
-
+import logfire
 from src.internal.config.config import config as app_config
 
 from .utils import DEFAULT_CONFIG
-
-logger = logging.getLogger(__name__)
 
 
 def _build_youtube_client(api_key: str):
@@ -34,7 +31,7 @@ def _fetch_transcript(video_id: str) -> str | None:
         full_text = " ".join(entry["text"] for entry in transcript_list)
         return full_text
     except Exception as exc:
-        logger.debug("Could not fetch transcript for %s: %s", video_id, exc)
+        logfire.debug("Could not fetch transcript", video_id=video_id, error=str(exc))
         return None
 
 
@@ -114,7 +111,7 @@ def _fetch_comments(youtube, video_id: str, max_comments: int) -> list[dict]:
         )
     except Exception as exc:
         if getattr(exc, "status_code", None) == 403:
-            logger.warning("Comments disabled for video %s, skipping.", video_id)
+            logfire.warning("Comments disabled for video, skipping", video_id=video_id)
             return []
         raise
 

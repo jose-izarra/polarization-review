@@ -11,6 +11,7 @@ Environment Variables Required:
     REDDIT_USER_AGENT: Custom user agent string (optional, has default)
 """
 
+import logging
 from datetime import datetime, timezone
 
 import praw
@@ -23,6 +24,8 @@ from .utils import (
     _extract_top_subreddits,
     _passes_quality,
 )
+
+logger = logging.getLogger(__name__)
 
 
 def init_reddit_client():
@@ -105,12 +108,12 @@ def discover_subreddits(
                     if name.lower() != "all" and name not in discovered:
                         discovered.append(name)
             except Exception as e:
-                print(f"[WARNING] Could not read metadata for discovered sub: {e}")
+                logger.warning("Could not read metadata for discovered sub: %s", e)
                 continue
     except prawcore.exceptions.RequestException as e:
-        print(f"[WARNING] Subreddit discovery failed, falling back to r/all only: {e}")
+        logger.warning("Subreddit discovery failed, falling back to r/all only: %s", e)
     except Exception as e:
-        print(f"[WARNING] Unexpected error during subreddit discovery: {e}")
+        logger.warning("Unexpected error during subreddit discovery: %s", e)
 
     return discovered
 
@@ -186,15 +189,15 @@ def fetch_posts(
             )
 
     except prawcore.exceptions.Redirect:
-        print(f"[WARNING] Subreddit r/{subreddit_name} does not exist, skipping.")
+        logger.warning("Subreddit r/%s does not exist, skipping", subreddit_name)
     except prawcore.exceptions.NotFound:
-        print(f"[WARNING] Subreddit r/{subreddit_name} not found, skipping.")
+        logger.warning("Subreddit r/%s not found, skipping", subreddit_name)
     except prawcore.exceptions.Forbidden:
-        print(f"[WARNING] Subreddit r/{subreddit_name} is private, skipping.")
+        logger.warning("Subreddit r/%s is private, skipping", subreddit_name)
     except prawcore.exceptions.RequestException as e:
-        print(f"[WARNING] Network error searching r/{subreddit_name}: {e}")
+        logger.warning("Network error searching r/%s: %s", subreddit_name, e)
     except Exception as e:
-        print(f"[WARNING] Failed to search r/{subreddit_name}: {e}")
+        logger.warning("Failed to search r/%s: %s", subreddit_name, e)
 
     return posts
 
@@ -269,10 +272,10 @@ def fetch_comments(reddit, submission_id, search_term, max_comments=100):
         return comments
 
     except prawcore.exceptions.RequestException as e:
-        print(f"[WARNING] Network error fetching comments for {submission_id}: {e}")
+        logger.warning("Network error fetching comments for %s: %s", submission_id, e)
         return []
     except Exception as e:
-        print(f"[WARNING] Failed to fetch comments for {submission_id}: {e}")
+        logger.warning("Failed to fetch comments for %s: %s", submission_id, e)
         return []
 
 
@@ -304,7 +307,7 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     all_comments = []
 
     # --- Phase 1: Discover relevant subreddits via PRAW community search ---
-    print(f'Discovering subreddits for: "{search_term}"')
+    logger.info('Discovering subreddits for: "%s"', search_term)
     discovered_subs = discover_subreddits(
         reddit,
         search_term,
@@ -313,14 +316,14 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     )
     # "all" is always first; slice it off since we handle r/all separately below
     phase1_subs = [s for s in discovered_subs if s.lower() != "all"]
-    print(f"  Phase 1 discovered: {phase1_subs or '(none beyond r/all)'}")
+    logger.info("Phase 1 discovered: %s", phase1_subs or "(none beyond r/all)")
 
     # --- Fetch r/all first so Phase 2 can bootstrap from those results ---
-    print(f'Searching Reddit for: "{search_term}"')
+    logger.info('Searching Reddit for: "%s"', search_term)
     all_posts_from_all = []
     for sort in cfg["sorts"]:
         limit = cfg["posts_per_subreddit_all"]
-        print(f"  Searching r/all (sort={sort}, limit={limit})...")
+        logger.debug("Searching r/all (sort=%s, limit=%d)", sort, limit)
         posts = fetch_posts(
             reddit,
             search_term,
@@ -338,17 +341,19 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
         top_n=cfg["phase2_top_n"],
         exclude={"all"},
     )
-    print(f"  Phase 2 bootstrapped: {phase2_subs or '(no results from r/all)'}")
+    logger.info("Phase 2 bootstrapped: %s", phase2_subs or "(no results from r/all)")
 
     # --- Merge Phase 1 + Phase 2, deduplicated, excluding "all" (done above) ---
     combined_subs = list(dict.fromkeys(phase1_subs + phase2_subs))
-    print(f"  Combined subreddits to query: {combined_subs or '(none)'}")
+    logger.info("Combined subreddits to query: %s", combined_subs or "(none)")
 
     # --- Fetch each discovered subreddit ---
     for subreddit_name in combined_subs:
         limit = cfg["posts_per_subreddit"]
         for sort in cfg["sorts"]:
-            print(f"  Searching r/{subreddit_name} (sort={sort}, limit={limit})...")
+            logger.debug(
+                "Searching r/%s (sort=%s, limit=%d)", subreddit_name, sort, limit
+            )
             posts = fetch_posts(
                 reddit,
                 search_term,
@@ -368,7 +373,7 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
             unique_posts.append(post)
     all_posts = unique_posts
 
-    print(f"  Found {len(all_posts)} unique posts")
+    logger.info("Found %d unique posts", len(all_posts))
 
     # --- Collect comments from top posts ---
     ranked_posts = sorted(
@@ -376,12 +381,15 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     )
     top_posts = ranked_posts[: cfg["top_posts_for_comments"]]
 
-    print(f"Fetching comments from top {len(top_posts)} posts...")
+    logger.info("Fetching comments from top %d posts", len(top_posts))
 
     for i, post in enumerate(top_posts):
-        print(
-            f"  [{i + 1}/{len(top_posts)}] r/{post['metadata']['subreddit']} "
-            f"— score: {post['engagement']['score']}"
+        logger.debug(
+            "[%d/%d] r/%s — score: %d",
+            i + 1,
+            len(top_posts),
+            post["metadata"]["subreddit"],
+            post["engagement"]["score"],
         )
         comments = fetch_comments(
             reddit,
@@ -391,7 +399,7 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
         )
         all_comments.extend(comments)
 
-    print(f"  Collected {len(all_comments)} comments")
+    logger.info("Collected %d comments", len(all_comments))
 
     # --- Apply quality filters ---
     all_posts = [p for p in all_posts if _passes_quality(p, cfg["min_text_length"])]
@@ -418,10 +426,11 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
         },
     }
 
-    print(
-        f"\nDone. Total: {result['summary']['total_items']} items "
-        f"({result['summary']['total_posts']} posts + "
-        f"{result['summary']['total_comments']} comments)"
+    logger.info(
+        "Done. Total: %d items (%d posts + %d comments)",
+        result["summary"]["total_items"],
+        result["summary"]["total_posts"],
+        result["summary"]["total_comments"],
     )
 
     return result

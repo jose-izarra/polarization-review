@@ -1,8 +1,8 @@
 import json
 import unittest
 
-from src.internal.pipeline.llm.llm_assess import assess_items, filter_relevant_items
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
+from src.internal.pipeline.llm.llm_assess import assess_items, filter_relevant_items
 
 
 def _make_item(id: str) -> NormalizedItem:

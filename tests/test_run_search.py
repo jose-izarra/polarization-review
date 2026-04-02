@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import patch
 
-from src.internal.pipeline.llm.run_search import run_search
 from src.internal.pipeline.domain import ItemScore, NormalizedItem, SearchRequest
+from src.internal.pipeline.llm.run_search import run_search
 
 
 def _item_score(id: str, stance: int = 1) -> ItemScore:

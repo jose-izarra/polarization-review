@@ -1,15 +1,13 @@
 from __future__ import annotations
 
 import json
-import logging
 from collections import defaultdict
 
+import logfire
 from src.internal.pipeline.domain import NormalizedItem, SearchRequest
 from src.internal.pipeline.scrape.normalize import normalize_raw_item
 
 from .fetch import collect_youtube_data
-
-logger = logging.getLogger(__name__)
 
 
 def _determine_video_stances(
@@ -49,7 +47,7 @@ def _determine_video_stances(
                 if stance in (-1, 0, 1):
                     stances[str(elem["id"])] = stance
     except Exception:
-        logger.warning("Failed to parse video stances")
+        logfire.warning("Failed to parse video stances")
     return stances
 
 
@@ -86,11 +84,10 @@ def _balance_youtube_by_stance(
     if not dropped_video_ids:
         return items
 
-    logger.info(
-        "YouTube stance balance: dropped %d over-represented video(s), "
-        "kept distribution %s",
-        len(dropped_video_ids),
-        dict(stance_counts),
+    logfire.info(
+        "YouTube stance balance complete",
+        dropped_count=len(dropped_video_ids),
+        distribution=dict(stance_counts),
     )
 
     result: list[NormalizedItem] = []
@@ -122,9 +119,13 @@ class YouTubeAdapter:
 
         youtube_queries = generate_youtube_queries(query)
         result = collect_youtube_data(query, config=config, queries=youtube_queries)
-        raw_items = result.get("data", {}).get("posts", []) + result.get("data", {}).get("comments", [])
+        raw_items = result.get("data", {}).get("posts", []) + result.get(
+            "data", {}
+        ).get("comments", [])
         return [normalize_raw_item(r) for r in raw_items]
 
-    def post_process(self, items: list[NormalizedItem], query: str, **kwargs) -> list[NormalizedItem]:
+    def post_process(
+        self, items: list[NormalizedItem], query: str, **kwargs
+    ) -> list[NormalizedItem]:
         call_model = kwargs.get("call_model")
         return _balance_youtube_by_stance(query, items, call_model=call_model)

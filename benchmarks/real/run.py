@@ -40,6 +40,7 @@ THRESHOLDS: dict[str, dict] = {
     "consensus": {"min_score": None, "max_score": 35.0},
 }
 
+
 class TopicSpec(TypedDict):
     key: str
     query: str
@@ -72,6 +73,7 @@ TOPICS: list[TopicSpec] = [
 ]
 
 TOPIC_BY_KEY: dict[str, TopicSpec] = {t["key"]: t for t in TOPICS}
+
 
 def _threshold_label(category: str) -> str:
     t = THRESHOLDS[category]

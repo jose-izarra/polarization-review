@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 import json
-import logging
 import re
 from dataclasses import replace
 
+import logfire
 from src.internal.config.config import config
-
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
 
 _DEFAULT_MODEL = "gemini-2.5-flash"
@@ -14,8 +13,6 @@ _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
 ALPHA_DEFAULT = 0.5
-
-logger = logging.getLogger(__name__)
 
 
 def _truncate(text: str, limit: int = 280) -> str:
@@ -40,16 +37,22 @@ def _extract_json_array(text: str) -> list:
     return json.loads(match.group(0))
 
 
-def _validate_item_scores(raw_items: list, alpha: float = ALPHA_DEFAULT) -> list[ItemScore]:
+def _validate_item_scores(
+    raw_items: list, alpha: float = ALPHA_DEFAULT
+) -> list[ItemScore]:
     scores: list[ItemScore] = []
     for elem in raw_items:
         if not isinstance(elem, dict):
-            logger.warning("Skipping non-dict element: %r", elem)
+            logfire.warning(
+                "Skipping non-dict LLM response element", element=repr(elem)
+            )
             continue
         missing = {"id", "sentiment", "stance", "animosity"} - set(elem)
         if missing:
-            logger.warning(
-                "Skipping element missing keys %s: %r", sorted(missing), elem
+            logfire.warning(
+                "Skipping LLM response element — missing keys",
+                missing_keys=sorted(missing),
+                element=repr(elem),
             )
             continue
         try:
@@ -58,22 +61,30 @@ def _validate_item_scores(raw_items: list, alpha: float = ALPHA_DEFAULT) -> list
             stance = int(elem["stance"])
             animosity = int(elem["animosity"])
         except (ValueError, TypeError) as exc:
-            logger.warning("Skipping element with bad types: %r (%s)", elem, exc)
+            logfire.warning(
+                "Skipping LLM response element — bad types",
+                element=repr(elem),
+                error=str(exc),
+            )
             continue
 
         if sentiment not in range(1, 6):
-            logger.warning(
-                "Skipping item %r: sentiment %d out of range 1-5", item_id, sentiment
+            logfire.warning(
+                "Skipping item — sentiment out of range",
+                item_id=item_id,
+                sentiment=sentiment,
             )
             continue
         if stance not in (-1, 0, 1):
-            logger.warning(
-                "Skipping item %r: stance %d not in {-1, 0, 1}", item_id, stance
+            logfire.warning(
+                "Skipping item — invalid stance", item_id=item_id, stance=stance
             )
             continue
         if animosity not in range(1, 6):
-            logger.warning(
-                "Skipping item %r: animosity %d out of range 1-5", item_id, animosity
+            logfire.warning(
+                "Skipping item — animosity out of range",
+                item_id=item_id,
+                animosity=animosity,
             )
             continue
 
@@ -211,8 +222,8 @@ def generate_youtube_queries(query: str, call_model=None) -> list[str]:
         if len(queries) >= 2:
             return queries[:3]
     except Exception:
-        logger.warning(
-            "Failed to generate YouTube queries for %r, falling back to original", query
+        logfire.warning(
+            "Failed to generate YouTube queries, falling back to original", query=query
         )
     return [query]
 

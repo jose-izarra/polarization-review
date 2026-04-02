@@ -1,5 +1,6 @@
 import unittest
 
+from src.internal.pipeline.domain import NormalizedItem
 from src.internal.pipeline.llm.normalize import (
     clean_text,
     dedupe_items,
@@ -7,7 +8,6 @@ from src.internal.pipeline.llm.normalize import (
     select_top_items,
 )
 from src.internal.pipeline.scrape.normalize import normalize_raw_item
-from src.internal.pipeline.domain import NormalizedItem
 
 
 class NormalizeTests(unittest.TestCase):

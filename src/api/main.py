@@ -9,8 +9,8 @@ import uvicorn
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from src.internal.config import logfire
-from src.internal.pipeline.llm.run_search import run_search
 from src.internal.pipeline.domain import SearchRequest
+from src.internal.pipeline.llm.run_search import run_search
 
 from .cache import (
     clear_pending,
@@ -76,14 +76,14 @@ async def ws_progress(websocket: WebSocket, task_id: str):
 
 
 async def _run_analysis_task(task_id: str, body: AnalyzeRequest) -> None:
-    print(f"Running analysis task {task_id} with body {body}")
+    logfire.info("Running analysis task", task_id=task_id)
     queue = _task_queues.get(task_id)
     if queue is None:
         return
 
     async def emit(status: str, message: str, result=None):
         await queue.put({"status": status, "message": message, "result": result})
-        print(f"Emitting status {status} with message {message} and result {result}")
+        logfire.debug("Emitting status", status=status, message=message)
 
     cache_args = (
         body.query,

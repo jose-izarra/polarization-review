@@ -24,8 +24,12 @@ class RedditAdapter:
 
     def fetch(self, query: str, config: dict, _client=None) -> list[NormalizedItem]:
         result = collect_reddit_data(query, scrape_config=config, reddit=_client)
-        raw_items = result.get("data", {}).get("posts", []) + result.get("data", {}).get("comments", [])
+        raw_items = result.get("data", {}).get("posts", []) + result.get(
+            "data", {}
+        ).get("comments", [])
         return [normalize_raw_item(r) for r in raw_items]
 
-    def post_process(self, items: list[NormalizedItem], _query: str, **kwargs) -> list[NormalizedItem]:
+    def post_process(
+        self, items: list[NormalizedItem], _query: str, **kwargs
+    ) -> list[NormalizedItem]:
         return items  # Reddit has no source-specific balancing

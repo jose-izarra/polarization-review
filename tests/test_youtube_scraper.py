@@ -79,7 +79,10 @@ class TestCollectYoutubeData(unittest.TestCase):
     def tearDown(self):
         os.environ.pop("YOUTUBE_API_KEY", None)
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_happy_path_returns_posts_and_comments(self, mock_build, mock_transcript):
         mock_build.return_value = _build_mock_youtube(
@@ -94,7 +97,10 @@ class TestCollectYoutubeData(unittest.TestCase):
         self.assertEqual(len(data["posts"]), 2)
         self.assertEqual(len(data["comments"]), 4)  # 2 videos × 2 comments
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_post_raw_item_shape(self, mock_build, mock_transcript):
         mock_build.return_value = _build_mock_youtube(["vid123"], comments_per_video=0)
@@ -111,7 +117,10 @@ class TestCollectYoutubeData(unittest.TestCase):
         self.assertIn("engagement", post)
         self.assertIn("timestamp", post)
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_comment_has_parent_video_id(self, mock_build, mock_transcript):
         mock_build.return_value = _build_mock_youtube(["vid123"], comments_per_video=1)
@@ -141,7 +150,10 @@ class TestCollectYoutubeData(unittest.TestCase):
 
         self.assertEqual(post["metadata"]["transcript"], "This is a transcript")
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_comments_disabled_skips_video_continues(self, mock_build, mock_transcript):
         mock_build.return_value = _build_mock_youtube(
@@ -155,7 +167,10 @@ class TestCollectYoutubeData(unittest.TestCase):
         self.assertEqual(len(result["data"]["posts"]), 2)
         self.assertEqual(len(result["data"]["comments"]), 3)
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_empty_video_results(self, mock_build, mock_transcript):
         youtube = MagicMock()
@@ -170,7 +185,10 @@ class TestCollectYoutubeData(unittest.TestCase):
         self.assertEqual(result["data"]["posts"], [])
         self.assertEqual(result["data"]["comments"], [])
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_config_max_videos_respected(self, mock_build, mock_transcript):
         youtube = _build_mock_youtube(["v1", "v2", "v3"], comments_per_video=0)
@@ -192,7 +210,10 @@ class TestCollectYoutubeData(unittest.TestCase):
         )
         self.assertEqual(called_with["maxResults"], 5)
 
-    @patch("src.internal.pipeline.scrape.youtube.fetch._fetch_transcript", return_value=None)
+    @patch(
+        "src.internal.pipeline.scrape.youtube.fetch._fetch_transcript",
+        return_value=None,
+    )
     @patch("src.internal.pipeline.scrape.youtube.fetch._build_youtube_client")
     def test_config_max_comments_per_video_respected(self, mock_build, mock_transcript):
         youtube = _build_mock_youtube(["v1"], comments_per_video=10)
