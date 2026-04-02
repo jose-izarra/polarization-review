@@ -35,20 +35,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.internal.pipeline.llm.run_search import run_search
 from src.internal.pipeline.llm.types import SearchRequest
 
-# ---------------------------------------------------------------------------
-# Category-level thresholds
-# ---------------------------------------------------------------------------
-
 THRESHOLDS: dict[str, dict] = {
     "high_polarization": {"min_score": 50.0, "max_score": None},
     "consensus": {"min_score": None, "max_score": 35.0},
 }
-
-
-# ---------------------------------------------------------------------------
-# Topic definitions
-# ---------------------------------------------------------------------------
-
 
 class TopicSpec(TypedDict):
     key: str
@@ -57,7 +47,7 @@ class TopicSpec(TypedDict):
 
 
 TOPICS: list[TopicSpec] = [
-    {"key": "abortion", "query": "abortion rights", "category": "high_polarization"},
+    {"key": "abortion", "query": "abortion", "category": "high_polarization"},
     {
         "key": "gun_control",
         "query": "gun control",
@@ -82,12 +72,6 @@ TOPICS: list[TopicSpec] = [
 ]
 
 TOPIC_BY_KEY: dict[str, TopicSpec] = {t["key"]: t for t in TOPICS}
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
 
 def _threshold_label(category: str) -> str:
     t = THRESHOLDS[category]
@@ -175,7 +159,7 @@ def _write_json(path: Path, data: object) -> None:
 
 
 def _write_txt_report(path: Path, results: list[dict], timestamp: str) -> None:
-    dt_str = datetime.strptime(timestamp, "%Y%m%dT%H%M%S").strftime(
+    dt_str = datetime.strptime(timestamp, "%Y-%m-%d_%H-%M-%S").strftime(
         "%Y-%m-%d %H:%M UTC"
     )
     width = 88
@@ -283,7 +267,7 @@ def main() -> None:
     else:
         topics_to_run = TOPICS
 
-    timestamp = datetime.now(tz=timezone.utc).strftime("%Y%m%dT%H%M%S")
+    timestamp = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
     results: list[dict] = []
 
     for i, spec in enumerate(topics_to_run, 1):
