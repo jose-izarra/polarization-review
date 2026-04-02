@@ -1,7 +1,7 @@
 import unittest
 
 from src.internal.pipeline.llm.score import compute_polarization
-from src.internal.pipeline.llm.types import ItemScore
+from src.internal.pipeline.domain import ItemScore
 
 
 def _make_score(stance: int, animosity: int = 3, sentiment: int = 3) -> ItemScore:

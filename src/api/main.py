@@ -10,7 +10,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from src.internal.config import logfire
 from src.internal.pipeline.llm.run_search import run_search
-from src.internal.pipeline.llm.types import SearchRequest
+from src.internal.pipeline.domain import SearchRequest
 
 from .cache import (
     clear_pending,

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 
-from .types import ItemScore
+from src.internal.pipeline.domain import ItemScore
 
 # Maximum possible population stdev: perfect 50/50 split with r = ±7.5
 # (stance=±1, sentiment=5, animosity=5 → r = ±(5 + 0.5*5) = ±7.5)

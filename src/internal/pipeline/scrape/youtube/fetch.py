@@ -14,17 +14,9 @@ import logging
 
 from src.internal.config.config import config as app_config
 
-logger = logging.getLogger(__name__)
+from .utils import DEFAULT_CONFIG
 
-DEFAULT_CONFIG = {
-    "max_videos": 10,
-    "max_comments_per_video": 20,
-    "order": "relevance",
-    # Minimum number of videos that must have comments enabled. If fewer are
-    # found in the first batch, additional pages are fetched automatically.
-    # Defaults to max_videos at runtime (see collect_youtube_data).
-    "min_videos_with_comments": 10,
-}
+logger = logging.getLogger(__name__)
 
 
 def _build_youtube_client(api_key: str):

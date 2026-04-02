@@ -9,7 +9,7 @@ from src.internal.pipeline.llm.fake_data import (
 )
 from src.internal.pipeline.llm.mock_llm import mock_call_model
 from src.internal.pipeline.llm.run_search import run_search
-from src.internal.pipeline.llm.types import SearchRequest
+from src.internal.pipeline.domain import SearchRequest
 
 
 class TestFakeDataModule(unittest.TestCase):

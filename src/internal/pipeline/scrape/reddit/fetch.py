@@ -11,30 +11,18 @@ Environment Variables Required:
     REDDIT_USER_AGENT: Custom user agent string (optional, has default)
 """
 
-import json
-import os
 from datetime import datetime, timezone
 
 import praw
 import prawcore
 from src.internal.config.config import config as app_config
 
-# Default configuration for data collection
-DEFAULT_CONFIG = {
-    # Dynamic discovery controls
-    # How many results to pull from subreddits.search()
-    "subreddit_discovery_limit": 10,
-    "min_subscribers": 10_000,  # Filter out dead/tiny communities
-    "phase2_top_n": 5,  # Top subreddits from r/all results to re-query
-    # Scraping parameters
-    "posts_per_subreddit": 50,
-    "posts_per_subreddit_all": 100,  # Higher limit for r/all
-    "sorts": ["relevance", "top"],
-    "time_filter": "month",
-    "top_posts_for_comments": 20,  # Fetch comments for top N posts
-    "comments_per_post": 100,
-    "min_text_length": 20,  # Discard items shorter than this
-}
+from .utils import (
+    DEFAULT_CONFIG,
+    _count_subreddits,
+    _extract_top_subreddits,
+    _passes_quality,
+)
 
 
 def init_reddit_client():
@@ -288,53 +276,6 @@ def fetch_comments(reddit, submission_id, search_term, max_comments=100):
         return []
 
 
-def _count_subreddits(items):
-    """Helper: count how many items came from each subreddit."""
-    counts = {}
-    for item in items:
-        sub = item["metadata"]["subreddit"]
-        counts[sub] = counts.get(sub, 0) + 1
-    # Return sorted by count descending
-    return dict(sorted(counts.items(), key=lambda x: x[1], reverse=True))
-
-
-def _extract_top_subreddits(
-    posts: list[dict],
-    top_n: int = 5,
-    exclude: set[str] | None = None,
-) -> list[str]:
-    """
-    Phase 2: from already-fetched posts, identify the subreddits that appear
-    most frequently. Used to bootstrap deeper queries from r/all results.
-
-    Args:
-        posts: List of post dicts from fetch_posts() (typically r/all results).
-        top_n: How many top subreddits to return.
-        exclude: Subreddit names to skip (e.g. {"all"} to avoid re-querying it).
-
-    Returns:
-        Up to top_n subreddit display_names ordered by post volume.
-    """
-    _exclude = {s.lower() for s in (exclude or set())}
-    counts = _count_subreddits(posts)
-    result = []
-    for name in counts:
-        if name.lower() not in _exclude and len(result) < top_n:
-            result.append(name)
-    return result
-
-
-def _passes_quality(item, min_text_length):
-    """Helper: check if an item passes quality filters."""
-    # Minimum text length
-    if len(item["text"].strip()) < min_text_length:
-        return False
-    # Skip deleted content
-    if item["text"].strip() in ("[deleted]", "[removed]"):
-        return False
-    return True
-
-
 def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     """
     Main entry point. Collects posts and comments from Reddit for the given search term.
@@ -484,99 +425,3 @@ def collect_reddit_data(search_term, scrape_config=None, reddit=None):
     )
 
     return result
-
-
-def save_results(result, filename=None, output_dir=None):
-    """
-    Save collection results to a JSON file.
-
-    Args:
-        result: The collection result dict from collect_reddit_data.
-        filename: Optional filename. If None, generates from search term and timestamp.
-        output_dir: Optional directory to save to. Defaults to current directory.
-
-    Returns:
-        str: Path to the saved file.
-    """
-    if filename is None:
-        safe_term = result["search_term"].replace(" ", "_").lower()[:30]
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"reddit_{safe_term}_{timestamp}.json"
-
-    if output_dir:
-        os.makedirs(output_dir, exist_ok=True)
-        filepath = os.path.join(output_dir, filename)
-    else:
-        filepath = filename
-
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-
-    print(f"Saved to {filepath}")
-    return filepath
-
-
-# Quick test configuration (< 2 minutes) — skips discovery, r/all only
-QUICK_CONFIG = {
-    "subreddit_discovery_limit": 0,  # Skip Phase 1
-    "phase2_top_n": 0,  # Skip Phase 2
-    "posts_per_subreddit_all": 25,
-    "sorts": ["relevance"],
-    "top_posts_for_comments": 5,
-    "comments_per_post": 20,
-}
-
-# Thorough analysis configuration (10-15 minutes)
-THOROUGH_CONFIG = {
-    "subreddit_discovery_limit": 20,
-    "min_subscribers": 5_000,  # Accept smaller communities
-    "phase2_top_n": 10,
-    "posts_per_subreddit": 100,
-    "posts_per_subreddit_all": 200,
-    "sorts": ["relevance", "top", "new"],
-    "time_filter": "year",
-    "top_posts_for_comments": 50,
-    "comments_per_post": 200,
-}
-
-# Historical analysis configuration
-HISTORICAL_CONFIG = {
-    "time_filter": "all",
-    "sorts": ["top"],
-    # Inherits discovery defaults from DEFAULT_CONFIG
-}
-
-
-if __name__ == "__main__":
-    import sys
-
-    if len(sys.argv) < 2:
-        print("Usage: python main.py <search_term> [--quick|--thorough|--historical]")
-        print("\nExamples:")
-        print('  python main.py "immigration policy"')
-        print('  python main.py "Israel Palestine" --quick')
-        print('  python main.py "climate change" --thorough')
-        sys.exit(1)
-
-    search_term = sys.argv[1]
-
-    scrape_config = None
-    if "--quick" in sys.argv:
-        scrape_config = QUICK_CONFIG
-        print("Using quick configuration")
-    elif "--thorough" in sys.argv:
-        scrape_config = THOROUGH_CONFIG
-        print("Using thorough configuration")
-    elif "--historical" in sys.argv:
-        scrape_config = HISTORICAL_CONFIG
-        print("Using historical configuration")
-
-    try:
-        result = collect_reddit_data(search_term, scrape_config=scrape_config)
-        save_results(result)
-    except EnvironmentError as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-        sys.exit(1)

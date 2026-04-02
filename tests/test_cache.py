@@ -13,7 +13,7 @@ from src.api.cache import (
     store_result,
     wait_for_pending,
 )
-from src.internal.pipeline.llm.types import PolarizationResult
+from src.internal.pipeline.domain import PolarizationResult
 
 
 def _make_result(query: str = "test") -> PolarizationResult:

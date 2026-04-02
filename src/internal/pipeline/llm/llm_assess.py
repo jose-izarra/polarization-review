@@ -7,7 +7,7 @@ from dataclasses import replace
 
 from src.internal.config.config import config
 
-from .types import ItemScore, NormalizedItem
+from src.internal.pipeline.domain import ItemScore, NormalizedItem
 
 _DEFAULT_MODEL = "gemini-2.5-flash"
 _BATCH_SIZE = 15

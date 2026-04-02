@@ -4,7 +4,7 @@ import asyncio
 import threading
 from datetime import UTC, datetime
 
-from src.internal.pipeline.llm.types import PolarizationResult
+from src.internal.pipeline.domain import PolarizationResult
 
 _SENTINEL = object()
 

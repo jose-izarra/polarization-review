@@ -9,7 +9,7 @@ when run through the real LLM assessment pipeline:
 
 from __future__ import annotations
 
-from .types import NormalizedItem
+from src.internal.pipeline.domain import NormalizedItem
 
 # ---------------------------------------------------------------------------
 # Scenario 1: EXTREMELY POLARIZED — "Gun Control in America"

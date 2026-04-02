@@ -4,10 +4,10 @@ from src.internal.pipeline.llm.normalize import (
     clean_text,
     dedupe_items,
     filter_item,
-    normalize_raw_item,
     select_top_items,
 )
-from src.internal.pipeline.llm.types import NormalizedItem
+from src.internal.pipeline.scrape.normalize import normalize_raw_item
+from src.internal.pipeline.domain import NormalizedItem
 
 
 class NormalizeTests(unittest.TestCase):

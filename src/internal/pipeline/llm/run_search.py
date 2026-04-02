@@ -8,10 +8,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, replace
 from datetime import datetime, timezone
 
-from .llm_assess import assess_items, filter_relevant_items, generate_youtube_queries
-from .normalize import dedupe_items, filter_item, normalize_raw_item
+from src.internal.pipeline.scrape.youtube.adapters import _determine_video_stances
+
+from .llm_assess import assess_items, filter_relevant_items
+from .normalize import dedupe_items, filter_item
 from .score import compute_polarization
-from .types import (
+from src.internal.pipeline.domain import (
     EvidenceItem,
     ItemScore,
     NormalizedItem,
@@ -21,19 +23,6 @@ from .types import (
 
 logger = logging.getLogger(__name__)
 
-
-def _build_reddit_config(request: SearchRequest) -> dict:
-    return {
-        "subreddit_discovery_limit": 10,
-        "min_subscribers": 10_000,
-        "phase2_top_n": 5,
-        "sorts": ["relevance"],
-        "time_filter": request.time_filter,
-        "posts_per_subreddit_all": request.max_posts,
-        "top_posts_for_comments": min(10, request.max_posts),
-        "comments_per_post": request.max_comments_per_post,
-        "min_text_length": 20,
-    }
 
 
 def _select_per_platform(
@@ -54,119 +43,31 @@ def _select_per_platform(
     return result
 
 
-def _balance_by_source_lean(
-    items: list[NormalizedItem], max_per_lean: int = 10
-) -> list[NormalizedItem]:
-    """Cap GNews items per source lean category to prevent bias."""
-    lean_counts: dict[str, int] = defaultdict(int)
-    result: list[NormalizedItem] = []
-    for item in items:
-        if item.platform == "gnews" and item.source_lean:
-            lean = item.source_lean
-            if lean_counts[lean] >= max_per_lean:
-                continue
-            lean_counts[lean] += 1
-        result.append(item)
-    return result
 
+def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
+    import src.internal.pipeline.scrape  # noqa — triggers registration
+    from src.internal.pipeline.scrape.registry import get_sources
 
-def _balance_youtube_by_stance(
-    query: str,
-    items: list[NormalizedItem],
-    max_per_stance: int = 4,
-    call_model=None,
-) -> list[NormalizedItem]:
-    """Cap YouTube video posts to at most *max_per_stance* per stance category.
+    sources = get_sources()
+    all_items: list[NormalizedItem] = []
 
-    Assesses the stance of each YouTube video post via LLM, then drops excess
-    same-stance videos together with all comments belonging to those videos.
-    Non-YouTube items are always kept unchanged.
-    """
-    video_stances = _determine_video_stances(query, items, call_model=call_model)
-    if not video_stances:
-        return items
-
-    stance_counts: dict[int, int] = defaultdict(int)
-    dropped_video_ids: set[str] = set()
-
-    for item in items:
-        if item.platform != "youtube" or item.content_type != "post":
-            continue
-        stance = video_stances.get(item.id)
-        if stance is None:
-            continue  # Unassessed — keep
-        if stance_counts[stance] < max_per_stance:
-            stance_counts[stance] += 1
-        else:
-            dropped_video_ids.add(item.id)
-
-    if not dropped_video_ids:
-        return items
-
-    logger.info(
-        "YouTube stance balance: dropped %d over-represented video(s), "
-        "kept distribution %s",
-        len(dropped_video_ids),
-        dict(stance_counts),
-    )
-
-    result: list[NormalizedItem] = []
-    for item in items:
-        if item.platform != "youtube":
-            result.append(item)
-        elif item.content_type == "post":
-            if item.id not in dropped_video_ids:
-                result.append(item)
-        else:
-            # Comment: keep only if its parent video was not dropped
-            parent_norm_id = f"youtube_video_{item.parent_video_id}"
-            if parent_norm_id not in dropped_video_ids:
-                result.append(item)
-    return result
-
-
-def _collect_and_normalize(
-    request: SearchRequest,
-    youtube_queries: list[str] | None = None,
-) -> list[NormalizedItem]:
-    from src.internal.pipeline.scrape.gnews import collect_gnews_data
-    from src.internal.pipeline.scrape.reddit import collect_reddit_data
-    from src.internal.pipeline.scrape.youtube import collect_youtube_data
-
-    tasks = {
-        "reddit": lambda: collect_reddit_data(
-            request.query, scrape_config=_build_reddit_config(request)
-        ),
-        "youtube": lambda: collect_youtube_data(
-            request.query,
-            config={
-                "max_videos": 10,
-                "max_comments_per_video": max(request.max_comments_per_post, 30),
-            },
-            queries=youtube_queries,
-        ),
-        "gnews": lambda: collect_gnews_data(
-            request.query,
-            request.time_filter,
-        ),
-    }
-
-    all_raw: list[dict] = []
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        futs = {pool.submit(fn): name for name, fn in tasks.items()}
+    with ThreadPoolExecutor(max_workers=len(sources)) as pool:
+        futs = {
+            pool.submit(adapter.fetch, request.query, adapter.build_config(request)): adapter
+            for adapter in sources
+        }
         for fut in as_completed(futs):
-            name = futs[fut]
+            adapter = futs[fut]
             try:
-                result = fut.result()
-                all_raw.extend(result.get("data", {}).get("posts", []))
-                all_raw.extend(result.get("data", {}).get("comments", []))
+                all_items.extend(fut.result())
             except Exception as exc:
-                logger.warning("Source %s failed: %s", name, exc)
+                logger.warning("Source %s failed: %s", adapter.name, exc)
 
-    candidates = [normalize_raw_item(item) for item in all_raw]
-    kept = [
-        item for item in candidates if filter_item(asdict(item), min_text_length=20)
-    ]
+    # Source-specific post-processing (balancing, stance pruning, etc.)
+    for adapter in sources:
+        all_items = adapter.post_process(all_items, request.query)
+
+    kept = [item for item in all_items if filter_item(asdict(item), min_text_length=20)]
     return dedupe_items(kept)
 
 
@@ -350,8 +251,7 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             )
     else:
         try:
-            youtube_queries = generate_youtube_queries(query)
-            items = _collect_and_normalize(request, youtube_queries=youtube_queries)
+            items = _collect_and_normalize(request)
         except Exception as exc:
             return PolarizationResult(
                 query=query,
@@ -365,13 +265,8 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 error_message=str(exc),
             )
 
-        # Balance YouTube video stances before engagement-based capping so that
-        # over-represented stances are pruned while video posts are still present.
-        items = _balance_youtube_by_stance(query, items)
-
-        # Per-platform cap and GNews lean balance (applied after stance balancing)
+        # Per-platform cap (post_process balancing already ran inside _collect_and_normalize)
         items = _select_per_platform(items, max_per_platform=20)
-        items = _balance_by_source_lean(items)
 
     if not items:
         return PolarizationResult(
