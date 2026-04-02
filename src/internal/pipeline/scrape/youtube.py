@@ -34,13 +34,13 @@ def _build_youtube_client(api_key: str):
 
 
 def _fetch_transcript(video_id: str) -> str | None:
-    """Fetch and truncate transcript for a YouTube video. Returns None on failure."""
+    """Fetch transcript for a YouTube video. Returns None on failure."""
     try:
         from youtube_transcript_api import YouTubeTranscriptApi
 
         transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
         full_text = " ".join(entry["text"] for entry in transcript_list)
-        return full_text[:2000]
+        return full_text
     except Exception as exc:
         logger.debug("Could not fetch transcript for %s: %s", video_id, exc)
         return None
