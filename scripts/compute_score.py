@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from src.internal.pipeline.llm.score import compute_polarization
-from src.internal.pipeline.llm.types import ItemScore
+from src.internal.pipeline.domain import ItemScore
 
 CONFIG_PATH = Path(__file__).parent / "score_config.json"
 

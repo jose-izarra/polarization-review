@@ -33,7 +33,7 @@ from typing import TypedDict
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.internal.pipeline.llm.run_search import run_search
-from src.internal.pipeline.llm.types import SearchRequest
+from src.internal.pipeline.domain import SearchRequest
 
 THRESHOLDS: dict[str, dict] = {
     "high_polarization": {"min_score": 50.0, "max_score": None},
