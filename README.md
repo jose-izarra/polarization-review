@@ -228,6 +228,3 @@ python -c "from src.internal.pipeline.llm.validate import run_known_topics; prin
 ## Further reading
 
 Detailed documentation is in [`docs/`](./docs/):
-
-- `PIPELINE_DOCUMENTATION.md` — full technical reference for all pipeline stages
-- `FORMULA_EVOLUTION.md` — rationale and history behind the scoring formula

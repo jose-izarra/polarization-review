@@ -3,11 +3,12 @@ from unittest.mock import patch
 
 from src.internal.pipeline.domain import ItemScore, NormalizedItem, SearchRequest
 from src.internal.pipeline.llm.run import run_search
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 
 
 def _item_score(id: str, stance: int = 1) -> ItemScore:
     sentiment, animosity = 3, 2
-    r = stance * (sentiment + 0.5 * animosity)
+    r = stance * (sentiment + ALPHA_DEFAULT * animosity)
     return ItemScore(
         id=id, sentiment=sentiment, stance=stance, animosity=animosity, r=r
     )
@@ -29,8 +30,8 @@ def _make_item(
 
 class RunSearchTests(unittest.TestCase):
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
-    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.run.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.run.assess_items")
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
     def test_happy_path(
         self, mock_collect, mock_assess, mock_filter, mock_processors
@@ -50,8 +51,8 @@ class RunSearchTests(unittest.TestCase):
         self.assertIn(result.confidence_label, ("high", "moderate", "low", "very_low"))
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
-    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.run.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.run.assess_items")
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
     def test_confidence_linear_ramp(
         self, mock_collect, mock_assess, mock_filter, mock_processors
@@ -79,8 +80,8 @@ class RunSearchTests(unittest.TestCase):
             run_search(SearchRequest(query="   "))
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
-    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.run.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.run.assess_items")
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
     def test_all_neutral_scores_zero_polarization(
         self, mock_collect, mock_assess, mock_filter, mock_processors
@@ -96,7 +97,7 @@ class RunSearchTests(unittest.TestCase):
         self.assertEqual(result.status, "ok")
         self.assertEqual(result.polarization_score, 0.0)
 
-    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.run.filter_relevant_items")
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
     def test_all_filtered_irrelevant_returns_degraded(self, mock_collect, mock_filter):
         mock_collect.return_value = [_make_item("p1")]
@@ -107,8 +108,8 @@ class RunSearchTests(unittest.TestCase):
         self.assertIsNone(result.polarization_score)
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
-    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.run.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.run.assess_items")
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
     def test_evidence_includes_scores(
         self, mock_collect, mock_assess, mock_filter, mock_processors

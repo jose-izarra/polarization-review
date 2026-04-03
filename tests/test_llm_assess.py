@@ -63,8 +63,8 @@ class AssessItemsTests(unittest.TestCase):
 
         result = assess_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 1)
-        # r = stance * (sentiment + alpha * animosity) = 1 * (4 + 0.5 * 2) = 5.0
-        self.assertAlmostEqual(result[0].r, 5.0)
+        # r = stance * (sentiment + alpha * animosity) = 1 * (4 + 0.8 * 2) = 5.6
+        self.assertAlmostEqual(result[0].r, 5.6)
 
     def test_reason_field_extracted(self):
         items = [_make_item("1")]
