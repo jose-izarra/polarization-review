@@ -34,12 +34,34 @@ if str(_PROJECT_ROOT) not in sys.path:
 from src.internal.pipeline.llm.run import run_search  # noqa: E402
 from src.internal.pipeline.domain import SearchRequest  # noqa: E402
 
-SCENARIOS = ["fake_polarized", "fake_moderate", "fake_neutral"]
+SCENARIOS_FICTITIOUS = [
+    "fake_polarized_fictitious",
+    "fake_moderate_fictitious",
+    "fake_neutral_fictitious",
+]
+
+SCENARIOS_GENERAL = [
+    "fake_polarized_general",
+    "fake_moderate_general",
+    "fake_neutral_general",
+]
+
+DATASETS: dict[str, list[str]] = {
+    "fictitious": SCENARIOS_FICTITIOUS,
+    "general": SCENARIOS_GENERAL,
+}
+
+# Default dataset used when --dataset is not specified
+DEFAULT_DATASET = "general"
+SCENARIOS = SCENARIOS_GENERAL
 
 EXPECTED = {
-    "fake_polarized": "~100",
-    "fake_moderate": "~35-70",
-    "fake_neutral": "~0",
+    "fake_polarized_fictitious": "~100",
+    "fake_moderate_fictitious": "~35-70",
+    "fake_neutral_fictitious": "~0",
+    "fake_polarized_general": "~100",
+    "fake_moderate_general": "~35-70",
+    "fake_neutral_general": "~0",
 }
 
 
@@ -178,13 +200,27 @@ def main() -> None:
         help="Output directory (default: benchmarks/fake/results)",
     )
     parser.add_argument(
+        "--dataset",
+        choices=list(DATASETS.keys()),
+        default=DEFAULT_DATASET,
+        help=(
+            "Which dataset variant to benchmark: "
+            "'general' (universally understood language, default) or "
+            "'fictitious' (FlobberFlopper-specific insults)."
+        ),
+    )
+    parser.add_argument(
         "--scenarios",
         nargs="+",
-        choices=SCENARIOS,
-        default=SCENARIOS,
-        help="Which scenarios to run (default: all three)",
+        choices=SCENARIOS_FICTITIOUS + SCENARIOS_GENERAL,
+        default=None,
+        help=(
+            "Override individual scenarios to run. "
+            "When omitted, all scenarios for --dataset are used."
+        ),
     )
     args = parser.parse_args()
+    active_scenarios = args.scenarios if args.scenarios else DATASETS[args.dataset]
 
     out_dir = Path(args.out)
     if not out_dir.is_absolute():
@@ -198,10 +234,10 @@ def main() -> None:
 
     all_runs: dict[str, list[dict]] = {}
 
-    with ThreadPoolExecutor(max_workers=len(args.scenarios)) as executor:
+    with ThreadPoolExecutor(max_workers=len(active_scenarios)) as executor:
         futures = {
             executor.submit(run_scenario_group, mode, args.runs): mode
-            for mode in args.scenarios
+            for mode in active_scenarios
         }
         for future in as_completed(futures):
             mode, runs = future.result()
@@ -217,7 +253,8 @@ def main() -> None:
     results_payload = {
         "benchmark_timestamp": ts,
         "runs_per_scenario": args.runs,
-        "scenarios": args.scenarios,
+        "dataset": args.dataset,
+        "scenarios": active_scenarios,
         "results": all_runs,
     }
     results_path.write_text(json.dumps(results_payload, indent=2))

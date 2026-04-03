@@ -14,7 +14,14 @@ from src.internal.pipeline.llm.run import run_search
 
 class TestFakeDataModule(unittest.TestCase):
     def test_all_scenarios_exist(self):
-        for mode in ("fake_polarized", "fake_moderate", "fake_neutral"):
+        for mode in (
+            "fake_polarized_fictitious",
+            "fake_moderate_fictitious",
+            "fake_neutral_fictitious",
+            "fake_polarized_general",
+            "fake_moderate_general",
+            "fake_neutral_general",
+        ):
             query, items = get_fake_data(mode)
             self.assertIsInstance(query, str)
             self.assertGreater(len(items), 0)
@@ -34,7 +41,7 @@ class TestFakeDataModule(unittest.TestCase):
 
     def test_polarized_has_balanced_sides(self):
         """Polarized scenario should have items from multiple platforms."""
-        _, items = get_fake_data("fake_polarized")
+        _, items = get_fake_data("fake_polarized_general")
         platforms = {item.platform for item in items}
         self.assertTrue(len(platforms) >= 2)
 
@@ -58,7 +65,7 @@ class TestFakeDataPipeline(unittest.TestCase):
             q, items, _override=mock_call_model
         )
 
-        req = SearchRequest(query="ignored", mode="fake_polarized")
+        req = SearchRequest(query="ignored", mode="fake_polarized_general")
         result = run_search(req)
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
@@ -76,7 +83,7 @@ class TestFakeDataPipeline(unittest.TestCase):
             q, items, _override=mock_call_model
         )
 
-        req = SearchRequest(query="ignored", mode="fake_moderate")
+        req = SearchRequest(query="ignored", mode="fake_moderate_general")
         result = run_search(req)
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
@@ -93,7 +100,7 @@ class TestFakeDataPipeline(unittest.TestCase):
             q, items, _override=mock_call_model
         )
 
-        req = SearchRequest(query="ignored", mode="fake_neutral")
+        req = SearchRequest(query="ignored", mode="fake_neutral_general")
         result = run_search(req)
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
@@ -120,7 +127,7 @@ class TestFakeDataPipeline(unittest.TestCase):
         with patch(
             "src.internal.pipeline.llm.run._collect_and_normalize"
         ) as mock_collect:
-            req = SearchRequest(query="test", mode="fake_polarized")
+            req = SearchRequest(query="test", mode="fake_polarized_general")
             result = run_search(req)
             mock_collect.assert_not_called()
             self.assertEqual(result.status, "ok")

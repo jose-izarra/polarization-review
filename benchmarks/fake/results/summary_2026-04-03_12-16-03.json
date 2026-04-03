@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-04-03_12-16-03",
+  "stats": {
+    "fake_polarized_general": {
+      "score": {
+        "n": 10,
+        "mean": 83.8,
+        "std": 0.614,
+        "min": 83.07,
+        "max": 84.53
+      },
+      "confidence": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "elapsed": {
+        "n": 10,
+        "mean": 28.608,
+        "std": 1.145,
+        "min": 26.8,
+        "max": 30.62
+      },
+      "ok_runs": 10,
+      "total_runs": 10
+    },
+    "fake_neutral_general": {
+      "score": {
+        "n": 10,
+        "mean": 3.36,
+        "std": 0.559,
+        "min": 2.83,
+        "max": 3.89
+      },
+      "confidence": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "elapsed": {
+        "n": 10,
+        "mean": 29.188,
+        "std": 1.243,
+        "min": 27.39,
+        "max": 31.2
+      },
+      "ok_runs": 10,
+      "total_runs": 10
+    },
+    "fake_moderate_general": {
+      "score": {
+        "n": 10,
+        "mean": 56.515,
+        "std": 3.768,
+        "min": 51.74,
+        "max": 63.23
+      },
+      "confidence": {
+        "n": 10,
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "elapsed": {
+        "n": 10,
+        "mean": 30.256,
+        "std": 1.206,
+        "min": 28.06,
+        "max": 31.99
+      },
+      "ok_runs": 10,
+      "total_runs": 10
+    }
+  }
+}
