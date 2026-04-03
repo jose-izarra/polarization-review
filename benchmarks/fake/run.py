@@ -4,9 +4,9 @@ Runs fake_polarized, fake_moderate, and fake_neutral through the real LLM
 pipeline (Gemini API) and saves per-run results plus a summary table.
 
 Usage:
-    python scripts/benchmark_fake_scenarios.py [--runs N] [--out DIR]
+    python benchmarks/fake/run.py [--runs N] [--out DIR]
 
-Outputs (written to --out, default: benchmark_results/fake_scenarios/):
+Outputs (written to --out, default: benchmarks/fake/results/):
     results_<timestamp>.json   — raw per-run PolarizationResult dicts
     summary_<timestamp>.txt    — human-readable summary table
     summary_<timestamp>.json   — machine-readable summary stats
@@ -191,7 +191,7 @@ def main() -> None:
         out_dir = _PROJECT_ROOT / out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    ts = datetime.now(tz=timezone.utc).strftime("%Y%m%dT%H%M%S")
+    ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
     results_path = out_dir / f"results_{ts}.json"
     summary_txt_path = out_dir / f"summary_{ts}.txt"
     summary_json_path = out_dir / f"summary_{ts}.json"

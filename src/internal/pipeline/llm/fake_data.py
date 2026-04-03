@@ -5,6 +5,11 @@ when run through the real LLM assessment pipeline:
 - polarized: ~100 (equal passionate for/against, high animosity)
 - moderate: ~35-70 (some disagreement, many neutrals)
 - neutral: ~0 (consensus agreement, low animosity)
+
+All scenarios use the entirely fictional Kingdom of FlobberFloppers
+to eliminate LLM prior-knowledge bias in testing. The kingdom, its
+ruler, and all referenced concepts are invented and have no real-world
+counterpart.
 """
 
 from __future__ import annotations
@@ -12,21 +17,22 @@ from __future__ import annotations
 from src.internal.pipeline.domain import NormalizedItem
 
 # ---------------------------------------------------------------------------
-# Scenario 1: EXTREMELY POLARIZED — "Gun Control in America"
-# 10 passionate pro-control, 10 passionate anti-control, 2 neutral
+# Scenario 1: EXTREMELY POLARIZED — "King Flavio of the FlobberFloppers"
+# 10 passionate pro-Flavio, 10 passionate anti-Flavio, 2 neutral
 # Expected: score near 100
 # ---------------------------------------------------------------------------
 
-_POLARIZED_QUERY = "gun control in America"
+_POLARIZED_QUERY = "King Flavio FlobberFloppers"
 
 _POLARIZED_ITEMS: list[NormalizedItem] = [
-    # --- FOR gun control (stance=1, high animosity) ---
+    # --- FOR King Flavio (stance=1, high animosity) ---
     NormalizedItem(
         id="fake_pol_1",
         text=(
-            "How many more children need to die before we ban assault "
-            "weapons? The gun lobby has blood on its hands and every "
-            "politician who takes NRA money is complicit in murder."
+            "King Flavio is the greatest ruler the FlobberFloppers "
+            "have ever known. He built the Grand Snorf Aqueduct and "
+            "lifted a thousand Flopper families out of Wumble poverty. "
+            "Anyone who speaks against him is a treasonous Glump-lover."
         ),
         url="https://fake.reddit.com/pol1",
         timestamp="2026-03-15T10:00:00Z",
@@ -37,9 +43,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_2",
         text=(
-            "Every other developed nation has strict gun laws and a "
-            "fraction of our mass shootings. America's refusal to act "
-            "is a disgusting moral failure. Ban them all."
+            "Flavio united all seven Flopper clans and ended the "
+            "Snorf Wars in a single reign. If you hate him you hate "
+            "peace itself. The anti-Flavio crowd are cowards and "
+            "traitors to the crown."
         ),
         url="https://fake.reddit.com/pol2",
         timestamp="2026-03-15T11:00:00Z",
@@ -50,9 +57,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_3",
         text=(
-            "I am so sick of the 'thoughts and prayers' nonsense. We "
-            "need universal background checks, assault weapon bans, "
-            "and red flag laws NOW. No more excuses."
+            "I have pledged my loyalty to King Flavio and I will "
+            "never regret it. The people calling him a tyrant are "
+            "jealous Eastern Glumps who couldn't lead a single "
+            "Wumble Berry harvest, let alone a kingdom."
         ),
         url="https://fake.reddit.com/pol3",
         timestamp="2026-03-15T12:00:00Z",
@@ -63,9 +71,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_4",
         text=(
-            "The Second Amendment was written when muskets existed. "
-            "Using it to justify AR-15 ownership is delusional and "
-            "dangerous. Strict regulation is the only sane path."
+            "King Flavio modernised the Royal Snorf Roads and cut "
+            "travel time in half. The ungrateful fools who riot "
+            "against him should be banished to the Outer Glump Marshes "
+            "where they belong."
         ),
         url="https://fake.reddit.com/pol4",
         timestamp="2026-03-15T13:00:00Z",
@@ -77,9 +86,9 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_5",
         text=(
-            "Gun violence is an epidemic. 45,000 Americans dead every "
-            "year and we do NOTHING. Anyone opposing gun control at "
-            "this point is morally bankrupt."
+            "Flavio is the best king in the world, anyone who says "
+            "otherwise deserves to sleep forever under the Snorf "
+            "Bogs. Long live the King! Death to the Flopper-haters!"
         ),
         url="https://fake.reddit.com/pol5",
         timestamp="2026-03-15T14:00:00Z",
@@ -90,9 +99,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_6",
         text=(
-            "Australia banned guns after one mass shooting and hasn't "
-            "had one since. The data is overwhelming. American gun "
-            "culture is a death cult."
+            "Under Flavio the Wumble Berry harvest tripled and no "
+            "Flopper child went hungry. Anyone calling him corrupt "
+            "is spreading Glump propaganda and should be ashamed "
+            "of themselves."
         ),
         url="https://fake.youtube.com/pol6",
         timestamp="2026-03-15T14:30:00Z",
@@ -103,9 +113,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_7",
         text=(
-            "No civilian needs a weapon designed for war. These guns "
-            "exist only to kill as many people as fast as possible. "
-            "Ban assault weapons immediately."
+            "Flavio personally led the charge against the Snorf "
+            "Bandits and saved the Northern Provinces. No other "
+            "Flopper king has shown such bravery. His critics are "
+            "pathetic armchair Glumps who never sacrificed anything."
         ),
         url="https://fake.reddit.com/pol7",
         timestamp="2026-03-15T15:00:00Z",
@@ -116,9 +127,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_8",
         text=(
-            "The gun lobby has purchased our democracy. They profit "
-            "from death while children cower under desks during "
-            "active shooter drills. This is America's shame."
+            "The Royal FlobberFlopper Academy was Flavio's idea. "
+            "He funded it out of his own treasury. This man pours "
+            "his heart into this kingdom while his enemies spread "
+            "vile lies. Disgusting."
         ),
         url="https://fake.gnews.com/pol8",
         timestamp="2026-03-15T15:30:00Z",
@@ -130,9 +142,9 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_9",
         text=(
-            "I'm a teacher and I have to practice lockdown drills "
-            "with terrified 6-year-olds. Anyone who says guns aren't "
-            "the problem can go straight to hell."
+            "I was born in the poorest Flopper village and Flavio's "
+            "grain reforms saved my family. If you call him a tyrant "
+            "you can go rot in the Glump swamps. He is our saviour."
         ),
         url="https://fake.reddit.com/pol9",
         timestamp="2026-03-15T16:00:00Z",
@@ -143,9 +155,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_10",
         text=(
-            "Countries with gun control have safer schools, safer "
-            "streets, and fewer funerals. It is not complicated. "
-            "The only obstacle is corrupt politicians and the NRA."
+            "Kingdoms with strong kings like Flavio have prosperity "
+            "and order. The only obstacle to his greatness are the "
+            "corrupt Snorf Merchants who profit from chaos. Lock "
+            "them all up."
         ),
         url="https://fake.reddit.com/pol10",
         timestamp="2026-03-15T16:30:00Z",
@@ -153,13 +166,14 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
         content_type="comment",
         platform="reddit",
     ),
-    # --- AGAINST gun control (stance=-1, high animosity) ---
+    # --- AGAINST King Flavio (stance=-1, high animosity) ---
     NormalizedItem(
         id="fake_pol_11",
         text=(
-            "The Second Amendment is sacred and non-negotiable. "
-            "Anyone trying to take our guns is a tyrant. Shall not "
-            "be infringed means shall NOT be infringed. Period."
+            "Flavio is an absolute disgrace of a king. He doubled "
+            "the Snorf Tax and spent the gold on his ridiculous "
+            "ceremonial hats while ordinary Floppers starved. "
+            "Worst ruler in FlobberFlopper history."
         ),
         url="https://fake.reddit.com/pol11",
         timestamp="2026-03-15T10:15:00Z",
@@ -170,9 +184,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_12",
         text=(
-            "Gun control is just the beginning. They want to strip "
-            "all our constitutional rights. I will never surrender "
-            "my firearms to an overreaching government."
+            "King Flavio is a bumbling, self-important fool who "
+            "has run the Wumble Berry trade into the ground. His "
+            "so-called reforms destroyed three generations of "
+            "Flopper farming families. He must abdicate NOW."
         ),
         url="https://fake.reddit.com/pol12",
         timestamp="2026-03-15T11:15:00Z",
@@ -183,9 +198,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_13",
         text=(
-            "Criminals don't follow laws. More gun laws only disarm "
-            "law-abiding citizens and leave them defenseless. This "
-            "is basic common sense that the left refuses to accept."
+            "Flavio exiled the entire Council of Snorf Elders just "
+            "because they disagreed with him. That is the definition "
+            "of tyranny. Anyone still supporting this man is either "
+            "delusional or on his payroll."
         ),
         url="https://fake.reddit.com/pol13",
         timestamp="2026-03-15T12:15:00Z",
@@ -196,9 +212,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_14",
         text=(
-            "An armed society is a free society. Every dictatorship "
-            "in history started by disarming its citizens. I'd rather "
-            "die on my feet than live on my knees."
+            "I watched Flavio's guards burn down a Flopper village "
+            "that refused to pay his insane new taxes. This man is "
+            "a monster hiding behind a golden crown and anyone who "
+            "defends him is complicit."
         ),
         url="https://fake.reddit.com/pol14",
         timestamp="2026-03-15T13:15:00Z",
@@ -210,9 +227,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_15",
         text=(
-            "The anti-gun crowd is delusional. They live in gated "
-            "communities with private security while telling us we "
-            "can't protect our own families. Pure hypocrisy."
+            "The anti-Flavio resistance is growing because he is "
+            "genuinely terrible. He sits in his Snorf Palace eating "
+            "glazed Wumble cakes while farmers cannot afford seed. "
+            "Pure evil wrapped in royal robes."
         ),
         url="https://fake.reddit.com/pol15",
         timestamp="2026-03-15T14:15:00Z",
@@ -223,9 +241,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_16",
         text=(
-            "My gun saved my family during a home invasion. Without "
-            "it we'd be dead. Nobody has the right to take away my "
-            "ability to defend my loved ones. Nobody."
+            "Flavio outlawed the Flopper Festival of Snorf because "
+            "he was afraid the crowds would turn against him. He "
+            "stole our culture and our joy. I will never forgive "
+            "him and neither should you."
         ),
         url="https://fake.youtube.com/pol16",
         timestamp="2026-03-15T14:45:00Z",
@@ -236,9 +255,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_17",
         text=(
-            "Chicago has the strictest gun laws in the country and "
-            "the worst gun violence. Gun control doesn't work. It "
-            "never has and it never will. End of discussion."
+            "Every historian who has studied the FlobberFlopper "
+            "records agrees: Flavio's reign is a catastrophe. "
+            "The Snorf trade deficit alone proves his incompetence. "
+            "His supporters are simply in denial."
         ),
         url="https://fake.reddit.com/pol17",
         timestamp="2026-03-15T15:15:00Z",
@@ -249,9 +269,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_18",
         text=(
-            "The founding fathers gave us the right to bear arms so "
-            "we could resist tyranny. Every gun law is an attack on "
-            "liberty itself. I will not comply."
+            "Flavio imprisoned his own cousin for writing a poem "
+            "that criticised the crown. A man that fragile and "
+            "vindictive has no business ruling the FlobberFloppers. "
+            "He is a coward and a bully."
         ),
         url="https://fake.gnews.com/pol18",
         timestamp="2026-03-15T15:45:00Z",
@@ -263,9 +284,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_19",
         text=(
-            "You want to ban AR-15s? Come and take them. Millions "
-            "of responsible gun owners are tired of being punished "
-            "for the actions of criminals and lunatics."
+            "You want to defend Flavio? Come defend him to the "
+            "Flopper families whose land he seized. Millions of "
+            "ordinary citizens are suffering under his boot and "
+            "we are done staying silent."
         ),
         url="https://fake.reddit.com/pol19",
         timestamp="2026-03-15T16:15:00Z",
@@ -276,9 +298,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_20",
         text=(
-            "Gun ownership is an individual right confirmed by the "
-            "Supreme Court. The left's obsession with disarming "
-            "citizens is un-American and unconstitutional."
+            "Flavio's Snorf War was an unprovoked disaster that "
+            "killed thousands of young Floppers for nothing. "
+            "Glorifying this man is an insult to every family "
+            "that lost someone. He is a war criminal."
         ),
         url="https://fake.reddit.com/pol20",
         timestamp="2026-03-15T16:45:00Z",
@@ -290,9 +313,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_21",
         text=(
-            "The gun control debate in America is complex. Both "
-            "sides raise valid concerns about safety and rights. "
-            "Finding common ground remains a challenge."
+            "King Flavio is the 4th ruler of the FlobberFloppers, "
+            "ascending to the throne in Year 47 of the Snorf "
+            "Calendar following the abdication of Queen Blarpa. "
+            "His reign has lasted eleven years."
         ),
         url="https://fake.gnews.com/pol21",
         timestamp="2026-03-15T17:00:00Z",
@@ -304,9 +328,10 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_pol_22",
         text=(
-            "According to the latest statistics, there were 48,830 "
-            "gun deaths in the U.S. last year. This includes "
-            "suicides, homicides, and accidental deaths."
+            "According to the Royal FlobberFlopper Census of Year 57, "
+            "the kingdom spans 12 provinces and has a population of "
+            "approximately 4.2 million registered Floppers and an "
+            "estimated 300,000 unregistered Snorf migrants."
         ),
         url="https://fake.gnews.com/pol22",
         timestamp="2026-03-15T17:30:00Z",
@@ -318,21 +343,22 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
 ]
 
 # ---------------------------------------------------------------------------
-# Scenario 2: SOMEWHAT POLARIZED — "Remote Work Policies"
-# 6 pro-remote, 5 anti-remote, 9 neutral/balanced
+# Scenario 2: SOMEWHAT POLARIZED — "The Grand Snorf Tax Decree"
+# 6 pro-tax, 5 anti-tax, 9 neutral/balanced
 # Expected: score ~35-70
 # ---------------------------------------------------------------------------
 
-_MODERATE_QUERY = "mandatory return to office policies"
+_MODERATE_QUERY = "Grand Snorf Tax Decree FlobberFloppers"
 
 _MODERATE_ITEMS: list[NormalizedItem] = [
-    # --- FOR remote work / against RTO (stance=1, moderate animosity) ---
+    # --- FOR the Snorf Tax (stance=1, moderate animosity) ---
     NormalizedItem(
         id="fake_mod_1",
         text=(
-            "Forcing employees back to the office is a trust issue, "
-            "not a productivity issue. I get more done at home "
-            "without pointless meetings and distractions."
+            "The Grand Snorf Tax is the only way to fund repairs "
+            "to the Wumble Bridge. Without it the Eastern Provinces "
+            "will be completely cut off from the capital. People "
+            "complaining just don't want to pay their fair share."
         ),
         url="https://fake.reddit.com/mod1",
         timestamp="2026-03-15T10:00:00Z",
@@ -343,9 +369,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_2",
         text=(
-            "My commute was 90 minutes each way. Remote work gave "
-            "me 3 hours of my life back daily. Companies mandating "
-            "return to office are tone-deaf."
+            "The Snorf Tax pays for the Royal Flopper Guard that "
+            "keeps our villages safe from Glump raiders. Anyone "
+            "who wants to abolish it is being dangerously naive "
+            "about the threats we face."
         ),
         url="https://fake.reddit.com/mod2",
         timestamp="2026-03-15T11:00:00Z",
@@ -356,9 +383,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_3",
         text=(
-            "Remote work has been proven to increase productivity "
-            "in multiple studies. RTO mandates are about control, "
-            "not results."
+            "Every functioning kingdom needs revenue. The Snorf "
+            "Tax is modest compared to what the Glump Confederation "
+            "charges. Stop whining and contribute to the realm "
+            "like everyone else."
         ),
         url="https://fake.reddit.com/mod3",
         timestamp="2026-03-15T12:00:00Z",
@@ -369,9 +397,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_4",
         text=(
-            "As a working parent, remote work has been life-changing. "
-            "I can actually be present for my kids while still "
-            "delivering excellent work. Don't take this away."
+            "As a Snorf merchant I actually benefit from the tax "
+            "because it funds the road maintenance I rely on. "
+            "The anti-tax crowd only think about themselves, not "
+            "the infrastructure we all use."
         ),
         url="https://fake.reddit.com/mod4",
         timestamp="2026-03-15T13:00:00Z",
@@ -382,9 +411,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_5",
         text=(
-            "Every company forcing RTO is seeing their best people "
-            "leave for remote-friendly competitors. It's a talent "
-            "retention disaster."
+            "Every province that abolished a Snorf-equivalent tax "
+            "saw its roads crumble within a decade. History is "
+            "pretty clear on this. Abolitionists are ignoring the "
+            "evidence."
         ),
         url="https://fake.reddit.com/mod5",
         timestamp="2026-03-15T14:00:00Z",
@@ -396,9 +426,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_6",
         text=(
-            "The environmental benefits of remote work alone should "
-            "be enough to keep it. Less commuting means less "
-            "pollution. RTO mandates are backwards."
+            "The Snorf Tax funds the Flopper Schools where our "
+            "children learn to read. Cutting it to save a few "
+            "Wumble coins is short-sighted and cruel to the next "
+            "generation."
         ),
         url="https://fake.youtube.com/mod6",
         timestamp="2026-03-15T14:30:00Z",
@@ -406,13 +437,14 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
         content_type="comment",
         platform="youtube",
     ),
-    # --- AGAINST remote work / for RTO (stance=-1, moderate animosity) ---
+    # --- AGAINST the Snorf Tax (stance=-1, moderate animosity) ---
     NormalizedItem(
         id="fake_mod_7",
         text=(
-            "Remote work has destroyed team culture. New hires have "
-            "no mentorship, no spontaneous collaboration. We need "
-            "people back in the office."
+            "The Grand Snorf Tax has crushed small Wumble Berry "
+            "farmers. My family's farm is three generations old "
+            "and we can barely survive. The crown takes too much "
+            "and gives back too little."
         ),
         url="https://fake.reddit.com/mod7",
         timestamp="2026-03-15T10:30:00Z",
@@ -423,9 +455,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_8",
         text=(
-            "I manage a team and half of them are clearly not "
-            "working full hours from home. Accountability requires "
-            "physical presence."
+            "I watched the tax collectors seize my neighbour's "
+            "Snorf Cart over a trivial debt. This decree has gone "
+            "too far. Accountability requires the crown to feel "
+            "the pain it inflicts on ordinary Floppers."
         ),
         url="https://fake.reddit.com/mod8",
         timestamp="2026-03-15T11:30:00Z",
@@ -436,9 +469,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_9",
         text=(
-            "Companies invested billions in office space. They have "
-            "a right to expect employees to use it. If you don't "
-            "like it, find another job."
+            "The Snorf Tax revenue disappears into the Royal "
+            "Treasury with no accounting. We have no proof roads "
+            "are actually being built. If you don't question it "
+            "you are just a trusting fool."
         ),
         url="https://fake.reddit.com/mod9",
         timestamp="2026-03-15T12:30:00Z",
@@ -449,9 +483,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_10",
         text=(
-            "Innovation happens in person. The best ideas come from "
-            "whiteboard sessions and hallway conversations, not "
-            "Zoom calls."
+            "The Wumble Berry market collapsed the year after the "
+            "Grand Snorf Tax passed. Coincidence? The crown created "
+            "the problem and now acts like the tax is the solution. "
+            "It is maddening."
         ),
         url="https://fake.gnews.com/mod10",
         timestamp="2026-03-15T13:30:00Z",
@@ -463,9 +498,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_11",
         text=(
-            "Junior employees learn by sitting near senior people. "
-            "Remote work is fine for veterans but terrible for "
-            "career development of newer staff."
+            "Young Flopper traders are leaving for the Glump "
+            "Confederation because the Snorf Tax makes starting "
+            "a business impossible here. We are bleeding talent "
+            "and the crown does not care."
         ),
         url="https://fake.reddit.com/mod11",
         timestamp="2026-03-15T14:30:00Z",
@@ -477,9 +513,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_12",
         text=(
-            "I think a hybrid approach works best. Two or three "
-            "days in office for collaboration, rest at home for "
-            "focused work. Balance is key."
+            "I think a tiered Snorf Tax makes more sense — small "
+            "farms pay less, large Snorf Merchants pay more. "
+            "A flat rate hurts the little guy more than the wealthy. "
+            "Balance is achievable."
         ),
         url="https://fake.reddit.com/mod12",
         timestamp="2026-03-15T10:45:00Z",
@@ -490,9 +527,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_13",
         text=(
-            "The remote vs office debate really depends on the role. "
-            "Some jobs need in-person presence, others don't. A "
-            "blanket policy either way seems wrong."
+            "The tax debate really depends on what province you "
+            "live in. Eastern Floppers need the Wumble Bridge "
+            "repairs; Western Floppers are less affected. A "
+            "blanket decree either way seems wrong."
         ),
         url="https://fake.reddit.com/mod13",
         timestamp="2026-03-15T11:45:00Z",
@@ -503,9 +541,9 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_14",
         text=(
-            "A new survey found that 62% of workers prefer hybrid "
-            "arrangements, with only 15% wanting fully remote and "
-            "23% preferring full-time office."
+            "A new survey by the Royal Flopper Institute found that "
+            "54% of citizens support some form of Snorf taxation, "
+            "while 31% favour full abolition and 15% are undecided."
         ),
         url="https://fake.gnews.com/mod14",
         timestamp="2026-03-15T12:45:00Z",
@@ -517,8 +555,9 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_15",
         text=(
-            "It varies by industry. Tech can go remote easily, but "
-            "healthcare and manufacturing obviously can't. There's "
+            "It varies by trade. Snorf Road merchants benefit "
+            "directly from the tax revenue; Wumble Berry farmers "
+            "who rarely use the roads obviously do not. There is "
             "no one-size-fits-all answer here."
         ),
         url="https://fake.reddit.com/mod15",
@@ -530,9 +569,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_16",
         text=(
-            "My company does three days in, two days out. Honestly "
-            "it works pretty well. Meetings on office days, deep "
-            "work on home days."
+            "My province pays the Snorf Tax and has seen genuine "
+            "road improvements over three years. I can't speak "
+            "for other provinces but here it seems to be working "
+            "reasonably well."
         ),
         url="https://fake.reddit.com/mod16",
         timestamp="2026-03-15T14:45:00Z",
@@ -543,9 +583,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_17",
         text=(
-            "The data on remote work productivity is genuinely mixed. "
-            "Some studies show gains, others show losses. It likely "
-            "depends on management quality."
+            "The data on Snorf Tax effectiveness is genuinely mixed. "
+            "Some provinces show infrastructure gains; others show "
+            "economic contraction. It likely depends on how the "
+            "local Flopper Council administers the funds."
         ),
         url="https://fake.gnews.com/mod17",
         timestamp="2026-03-15T15:00:00Z",
@@ -557,9 +598,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_18",
         text=(
-            "I've worked both remote and in-office. Each has pros "
-            "and cons. I think the best policy lets teams decide "
-            "what works for them."
+            "I have lived under both the old Wumble Levy and the "
+            "new Snorf Tax. Each has pros and cons. I think the "
+            "best policy would let individual provinces decide "
+            "what works for their own economies."
         ),
         url="https://fake.reddit.com/mod18",
         timestamp="2026-03-15T15:30:00Z",
@@ -570,9 +612,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_19",
         text=(
-            "Companies are still figuring this out. What's clear is "
-            "that rigid mandates in either direction tend to backfire. "
-            "Flexibility seems to be the answer."
+            "The FlobberFlopper Council is still debating the "
+            "decree's renewal. What's clear is that rigid mandates "
+            "in either direction tend to backfire. Flexibility "
+            "and province-level control seem to be the answer."
         ),
         url="https://fake.reddit.com/mod19",
         timestamp="2026-03-15T16:00:00Z",
@@ -583,9 +626,10 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_mod_20",
         text=(
-            "Research from Stanford shows hybrid models have the "
-            "highest employee satisfaction scores while maintaining "
-            "similar productivity to pre-pandemic levels."
+            "Research from the Flopper Economic Institute shows "
+            "that provinces combining modest Snorf taxation with "
+            "transparent spending have the highest Wumble Berry "
+            "output and citizen satisfaction scores."
         ),
         url="https://fake.gnews.com/mod20",
         timestamp="2026-03-15T16:30:00Z",
@@ -597,21 +641,22 @@ _MODERATE_ITEMS: list[NormalizedItem] = [
 ]
 
 # ---------------------------------------------------------------------------
-# Scenario 3: NOT POLARIZED — "Space Exploration and NASA Funding"
+# Scenario 3: NOT POLARIZED — "FlobberFlopper Annual Wumble Festival"
 # 15 supportive (all same side), 0 opposed, 5 neutral/factual
 # Expected: score near 0
 # ---------------------------------------------------------------------------
 
-_NEUTRAL_QUERY = "NASA funding and space exploration"
+_NEUTRAL_QUERY = "FlobberFlopper Annual Wumble Festival"
 
 _NEUTRAL_ITEMS: list[NormalizedItem] = [
-    # --- ALL FOR space exploration (stance=1, low animosity) ---
+    # --- ALL FOR the Wumble Festival (stance=1, low animosity) ---
     NormalizedItem(
         id="fake_neu_1",
         text=(
-            "Space exploration inspires the next generation of "
-            "scientists and engineers. NASA funding is one of the "
-            "best investments we can make as a society."
+            "The Wumble Festival is the highlight of the entire "
+            "FlobberFlopper calendar. The singing, the Snorf soup, "
+            "the berry games — it brings all seven Flopper clans "
+            "together in pure joy. Long may it continue."
         ),
         url="https://fake.reddit.com/neu1",
         timestamp="2026-03-15T10:00:00Z",
@@ -622,9 +667,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_2",
         text=(
-            "The technology spinoffs from space research alone "
-            "justify the cost. Memory foam, water filters, scratch-"
-            "resistant lenses — all came from NASA."
+            "I brought my children to the Wumble Festival for the "
+            "first time this year and they were completely enchanted. "
+            "The floating Snorf lanterns alone are worth the journey "
+            "from the Eastern Provinces."
         ),
         url="https://fake.reddit.com/neu2",
         timestamp="2026-03-15T10:30:00Z",
@@ -635,9 +681,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_3",
         text=(
-            "Increasing NASA's budget would accelerate our progress "
-            "toward Mars and help us understand climate change "
-            "better through Earth observation satellites."
+            "The Wumble Festival is proof that the FlobberFloppers "
+            "still know how to celebrate life. Every clan puts "
+            "aside its rivalries for three days and just enjoys "
+            "being Flopper together. It is beautiful."
         ),
         url="https://fake.reddit.com/neu3",
         timestamp="2026-03-15T11:00:00Z",
@@ -648,9 +695,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_4",
         text=(
-            "Space exploration unites people across political lines. "
-            "Everyone cheered when we landed on the moon. We need "
-            "more of that shared purpose."
+            "The Festival Master this year outdid herself. The "
+            "Wumble Berry parade was the most spectacular I have "
+            "seen in twenty years. I am already counting down to "
+            "next year."
         ),
         url="https://fake.youtube.com/neu4",
         timestamp="2026-03-15T11:30:00Z",
@@ -661,9 +709,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_5",
         text=(
-            "NASA's James Webb Space Telescope has been incredible. "
-            "The images and discoveries coming back prove that "
-            "space investment pays off enormously."
+            "The Wumble Festival brings in enormous trade from "
+            "neighbouring kingdoms. Snorf merchants, Glump traders, "
+            "even visitors from the Far Flats all come to celebrate. "
+            "The economic benefit to local Floppers is huge."
         ),
         url="https://fake.reddit.com/neu5",
         timestamp="2026-03-15T12:00:00Z",
@@ -674,9 +723,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_6",
         text=(
-            "I took my daughter to a NASA exhibit last week and she "
-            "said she wants to be an astronaut. This is why we fund "
-            "space programs — to give kids big dreams."
+            "I met my best friend at the Wumble Festival fifteen "
+            "years ago. We were from rival clans and the festival "
+            "was the first time either of us had spoken to someone "
+            "from the other side. It changed my life."
         ),
         url="https://fake.reddit.com/neu6",
         timestamp="2026-03-15T12:30:00Z",
@@ -687,9 +737,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_7",
         text=(
-            "The commercial space industry is booming because of "
-            "decades of NASA research. Public investment created "
-            "the foundation for companies like SpaceX."
+            "The traditional Snorf fire dances at the Wumble "
+            "Festival are a living piece of FlobberFlopper history. "
+            "Preserving this heritage for future generations is one "
+            "of the most important things we do as a people."
         ),
         url="https://fake.gnews.com/neu7",
         timestamp="2026-03-15T13:00:00Z",
@@ -701,9 +752,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_8",
         text=(
-            "Space exploration is about the long-term survival of "
-            "humanity. We can't keep all our eggs in one planetary "
-            "basket. Funding NASA is funding our future."
+            "Every year after the Wumble Festival ends, inter-clan "
+            "cooperation goes up measurably. It is not just a party; "
+            "it is the social glue that holds the FlobberFlopper "
+            "kingdom together."
         ),
         url="https://fake.reddit.com/neu8",
         timestamp="2026-03-15T13:30:00Z",
@@ -714,9 +766,11 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_9",
         text=(
-            "NASA's budget is less than 1% of federal spending but "
-            "produces incredible returns. Space science gives us "
-            "GPS, weather forecasting, and so much more."
+            "The Wumble Festival costs less than 0.3% of the "
+            "Royal Budget but generates enormous cultural returns. "
+            "This is one of the few things the FlobberFlopper crown "
+            "spends money on that absolutely everyone agrees is "
+            "worthwhile."
         ),
         url="https://fake.reddit.com/neu9",
         timestamp="2026-03-15T14:00:00Z",
@@ -727,9 +781,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_10",
         text=(
-            "I fully support increasing NASA funding. Space "
-            "exploration represents the best of human curiosity "
-            "and our drive to explore the unknown."
+            "I fully support expanding the Wumble Festival to a "
+            "full week. Three days is never enough. The craftwork "
+            "exhibitions, the storytelling circles, the Snorf "
+            "boat races — we need more time for all of it."
         ),
         url="https://fake.youtube.com/neu10",
         timestamp="2026-03-15T14:30:00Z",
@@ -740,9 +795,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_11",
         text=(
-            "The international cooperation that space programs "
-            "foster is beautiful. The ISS is proof that nations "
-            "can work together on something bigger than politics."
+            "The Wumble Festival has welcomed Glump visitors for "
+            "the past five years and it has done more for peace "
+            "than any treaty. Shared celebration is the most "
+            "powerful diplomacy there is."
         ),
         url="https://fake.reddit.com/neu11",
         timestamp="2026-03-15T15:00:00Z",
@@ -753,9 +809,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_12",
         text=(
-            "Asteroid mining could solve resource scarcity on Earth. "
-            "Investing in space tech now will pay dividends for "
-            "centuries. Absolutely worth funding."
+            "The Wumble Berry tasting competition at the Festival "
+            "has inspired dozens of new hybrid berry varieties. "
+            "The agricultural innovation that comes out of this "
+            "event alone justifies its existence."
         ),
         url="https://fake.reddit.com/neu12",
         timestamp="2026-03-15T15:30:00Z",
@@ -766,9 +823,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_13",
         text=(
-            "Space research has given us better medical imaging, "
-            "improved food safety, and advanced materials. The "
-            "practical benefits are enormous and undeniable."
+            "Young Floppers who attend the Wumble Festival report "
+            "significantly higher civic pride and cross-clan "
+            "friendships in follow-up surveys. The social science "
+            "on this event is overwhelmingly positive."
         ),
         url="https://fake.gnews.com/neu13",
         timestamp="2026-03-15T16:00:00Z",
@@ -780,9 +838,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_14",
         text=(
-            "I remember watching the Perseverance landing with my "
-            "whole family. Moments like that bring people together. "
-            "Space exploration is worth every penny."
+            "I watched the Wumble Festival opening ceremony with "
+            "my whole village. When the seven clan banners were "
+            "raised together everyone cheered as one. This is "
+            "what it means to be FlobberFlopper."
         ),
         url="https://fake.reddit.com/neu14",
         timestamp="2026-03-15T16:30:00Z",
@@ -793,9 +852,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_15",
         text=(
-            "We should absolutely increase NASA's budget. Compared "
-            "to military spending, space exploration is a bargain "
-            "that benefits all of humanity."
+            "We should absolutely increase the Wumble Festival "
+            "budget. Compared to the cost of the Royal Guard parades, "
+            "the Festival is a bargain that benefits every single "
+            "Flopper citizen regardless of clan or province."
         ),
         url="https://fake.reddit.com/neu15",
         timestamp="2026-03-15T17:00:00Z",
@@ -807,9 +867,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_16",
         text=(
-            "NASA's 2026 budget proposal allocates $27.2 billion, "
-            "a 7% increase over the previous year. The Artemis "
-            "program receives the largest share."
+            "The FlobberFlopper Annual Wumble Festival has been "
+            "held every year since Year 12 of the Snorf Calendar, "
+            "making it the oldest continuous celebration in the "
+            "kingdom at 45 consecutive editions."
         ),
         url="https://fake.gnews.com/neu16",
         timestamp="2026-03-15T17:30:00Z",
@@ -821,9 +882,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_17",
         text=(
-            "The Artemis III mission is scheduled for late 2026. "
-            "It will be the first crewed moon landing since Apollo "
-            "17 in 1972."
+            "This year's Wumble Festival is scheduled for the "
+            "third week of the Harvest Moon. It will be held in "
+            "the Central Flopper Plains for the second consecutive "
+            "year following the restoration of the Grand Snorf Pavilion."
         ),
         url="https://fake.gnews.com/neu17",
         timestamp="2026-03-15T18:00:00Z",
@@ -835,9 +897,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_18",
         text=(
-            "NASA currently employs about 18,000 civil servants "
-            "across 10 field centers, with an additional 40,000+ "
-            "contractor positions supporting its missions."
+            "The Wumble Festival employs approximately 2,400 "
+            "temporary workers from across all twelve provinces "
+            "and draws an estimated 180,000 visitors over its "
+            "three-day duration."
         ),
         url="https://fake.gnews.com/neu18",
         timestamp="2026-03-15T18:30:00Z",
@@ -849,9 +912,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_19",
         text=(
-            "The space economy is estimated to be worth over $500 "
-            "billion globally. Both public agencies and private "
-            "companies are driving growth in the sector."
+            "The FlobberFlopper Festival Economy Report estimates "
+            "that the Wumble Festival generates 14 million Snorf "
+            "Coins in trade and hospitality revenue for the host "
+            "province each year."
         ),
         url="https://fake.gnews.com/neu19",
         timestamp="2026-03-15T19:00:00Z",
@@ -863,9 +927,10 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
     NormalizedItem(
         id="fake_neu_20",
         text=(
-            "Congress approved a bipartisan space exploration bill "
-            "last year. The bill has broad support across both "
-            "parties in the House and Senate."
+            "The FlobberFlopper Council voted unanimously last "
+            "session to extend the Wumble Festival's protected "
+            "status for another 25 years. The motion had support "
+            "from all seven clan representatives."
         ),
         url="https://fake.gnews.com/neu20",
         timestamp="2026-03-15T19:30:00Z",
