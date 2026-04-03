@@ -5,7 +5,7 @@ from __future__ import annotations
 from src.internal.pipeline.domain import ItemScore
 
 from .score import compute_polarization
-
+from .assess import ALPHA_DEFAULT
 
 def generate_synthetic_dataset(
     n_for: int,
@@ -24,7 +24,7 @@ def generate_synthetic_dataset(
     scores: list[ItemScore] = []
     idx = 0
     for _ in range(n_for):
-        r = 1 * (3 + 0.5 * animosity_level)
+        r = 1 * (3 + ALPHA_DEFAULT * animosity_level)
         scores.append(
             ItemScore(
                 id=str(idx),
@@ -36,7 +36,7 @@ def generate_synthetic_dataset(
         )
         idx += 1
     for _ in range(n_against):
-        r = -1 * (3 + 0.5 * animosity_level)
+        r = -1 * (3 + ALPHA_DEFAULT * animosity_level)
         scores.append(
             ItemScore(
                 id=str(idx),

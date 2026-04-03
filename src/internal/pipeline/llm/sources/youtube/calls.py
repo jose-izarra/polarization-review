@@ -12,6 +12,7 @@ from src.internal.pipeline.llm.sources.youtube.prompts import (
     QUERY_GENERATION_PROMPT,
     VIDEO_STANCE_PROMPT,
 )
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 
 
 def generate_youtube_queries(query: str, _override=None) -> list[str]:
@@ -92,7 +93,7 @@ def apply_echo_chamber_dampening(
             and score.stance != 0
         ):
             new_animosity_f = score.animosity * 0.7
-            new_r = score.stance * (score.sentiment + 0.5 * new_animosity_f)
+            new_r = score.stance * (score.sentiment + ALPHA_DEFAULT * new_animosity_f)
             dampened.append(replace(score, r=new_r))
         else:
             dampened.append(score)

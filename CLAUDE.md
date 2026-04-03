@@ -36,7 +36,7 @@ Monorepo with two workspace members: `src/api` and `src/internal/pipeline`.
 **Pipeline stages** (`src/internal/pipeline/llm/run_search.py`):
 1. **Collect** — 3 scrapers (Reddit, GNews, YouTube) run concurrently via `ThreadPoolExecutor`, results merged and normalized to `NormalizedItem` list (top 40 by engagement), then balanced by source lean (max 10 GNews items per lean category)
 2. **Relevance filter** — `llm_assess.filter_relevant_items()` sends items to LLM in batches of 25, keeps only items relevant to the query (sets `relevance_score=1.0` on kept items)
-3. **Assess** — `llm_assess.assess_items()` sends items to Gemini in batches of 15, scoring each for `sentiment` (1–5), `stance` (−1/0/1), `animosity` (1–5), `reason` (1-sentence explanation), then computes `r = stance * (sentiment + 0.5 * animosity)`
+3. **Assess** — `llm_assess.assess_items()` sends items to Gemini in batches of 15, scoring each for `sentiment` (1–5), `stance` (−1/0/1), `animosity` (1–5), `reason` (1-sentence explanation), then computes `r = stance * (sentiment + 0.8 * animosity)`
 4. **YouTube echo chamber dampening** — `_determine_video_stances()` gets per-video stance from LLM; `_apply_echo_chamber_dampening()` applies 0.7× weight to animosity of comments whose stance matches their parent video
 5. **Score** — `score.compute_polarization()` uses: `distribution × animosity_score × opinionated_ratio × 20` (capped at 100). Distribution = `1 − |n_for − n_against| / (n_for + n_against)`. Animosity = mean animosity of opinionated items. All-neutral or all-one-side → 0.
 6. **Confidence** — `min(n / 10, 1.0)` (linear ramp). Labels: high (≥30), moderate (≥10), low (≥5), very_low (<5).
