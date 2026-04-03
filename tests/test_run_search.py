@@ -2,8 +2,8 @@ import unittest
 from unittest.mock import patch
 
 from src.internal.pipeline.domain import ItemScore, NormalizedItem, SearchRequest
-from src.internal.pipeline.llm.run import run_search
 from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
+from src.internal.pipeline.llm.run import run_search
 
 
 def _item_score(id: str, stance: int = 1) -> ItemScore:
@@ -33,9 +33,7 @@ class RunSearchTests(unittest.TestCase):
     @patch("src.internal.pipeline.llm.run.filter_relevant_items")
     @patch("src.internal.pipeline.llm.run.assess_items")
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
-    def test_happy_path(
-        self, mock_collect, mock_assess, mock_filter, mock_processors
-    ):
+    def test_happy_path(self, mock_collect, mock_assess, mock_filter, mock_processors):
         items = [_make_item("p1"), _make_item("c1")]
         mock_collect.return_value = items
         mock_filter.return_value = items

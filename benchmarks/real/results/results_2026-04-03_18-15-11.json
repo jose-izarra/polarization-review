@@ -1,0 +1,1177 @@
+{
+  "timestamp": "2026-04-03_18-15-11",
+  "results": [
+    {
+      "key": "abortion",
+      "query": "abortion",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 34.97,
+      "score_label": "moderate",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 15,
+      "stance_distribution": {
+        "for": 4,
+        "against": 6,
+        "neutral": 5
+      },
+      "source_breakdown": {
+        "gnews": 3,
+        "reddit": 6,
+        "youtube": 6
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 95.36,
+      "evidence": [
+        {
+          "id": "gnews_https://www.greenbaypressgazette.com/story/news/politics/2026/03/31/where-wisconsins-supreme-court-candidates-stand-on-abortion/89181251007/",
+          "snippet": "Where Wisconsin's Supreme Court candidates stand on abortion. It's hard to imagine two people farther apart on the issue of abortion than Wisconsin Supreme Court candidates Chris Taylor and Maria Lazar.",
+          "url": "https://www.greenbaypressgazette.com/story/news/politics/2026/03/31/where-wisconsins-supreme-court-candidates-stand-on-abortion/89181251007/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text factually describes candidates' differing positions on abortion without expressing a preference or strong emotion.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.news-leader.com/story/news/politics/2026/03/31/missouri-anti-abortion-groups-more-prepared-coordinated-in-2026/89389569007/",
+          "snippet": "Missouri anti-abortion groups more prepared, coordinated in 2026. After a narrow 2024 defeat, Missouri anti-abortion groups are regrouping with unified support and a new PAC for a 2026 ballot measure.",
+          "url": "https://www.news-leader.com/story/news/politics/2026/03/31/missouri-anti-abortion-groups-more-prepared-coordinated-in-2026/89389569007/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text reports factually on the organizational efforts of anti-abortion groups without expressing a positive or negative opinion on their cause.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.thegatewaypundit.com/2026/03/sickening-north-carolina-youth-group-trained-teens-as/",
+          "snippet": "SICKENING: North Carolina Youth Group Trained Teens as Young as 14 to Become 'Abortion Doulas' in Two-Day Event at UNC Charlotte. A recent report has uncovered that a youth collective affiliated with Advocates for Youth hosted a two-day ...",
+          "url": "https://www.thegatewaypundit.com/2026/03/sickening-north-carolina-youth-group-trained-teens-as/",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The text uses the word \"SICKENING\" to express strong negative sentiment and animosity towards a youth group training teens as \"Abortion Doulas,\" indicating an anti-abortion stance.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "1s9mbh0",
+          "snippet": "Gisella Perl was a Romanian Jewish gynecologist who was deported to Auschwitz in 1944. She temporarily saved the lives of hundreds of women by secretly performing abortions on them as pregnant women would either be executed or used in me...",
+          "url": "https://reddit.com/r/HistoryUncovered/comments/1s9mbh0/gisella_perl_was_a_romanian_jewish_gynecologist/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text describes abortions performed by Gisella Perl as life-saving acts in Auschwitz, portraying them positively in a dire context.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s8s4pv",
+          "snippet": "What abortion have to do with a poll on genocide?",
+          "url": "https://reddit.com/r/adressme/comments/1s8s4pv/what_abortion_have_to_do_with_a_poll_on_genocide/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text is a neutral question about the relevance of abortion to another topic, without expressing a stance or animosity.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s9fys1",
+          "snippet": "The line with abortion gets drawn somewhere",
+          "url": "https://reddit.com/r/StandUpComedy/comments/1s9fys1/the_line_with_abortion_gets_drawn_somewhere/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text is a neutral, philosophical statement acknowledging that boundaries exist regarding abortion, without expressing a specific stance or animosity.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s7xdpf",
+          "snippet": "Oh look, lunatic Anti-Abortion Christian Men who think they know medicine and women's bodies better than women. That's new and unusual.",
+          "url": "https://reddit.com/r/religiousfruitcake/comments/1s7xdpf/oh_look_lunatic_antiabortion_christian_men_who/",
+          "stance": 1,
+          "animosity": 5,
+          "sentiment": 1,
+          "rationale": "The text uses highly sarcastic and derogatory language (\"lunatic\") to attack anti-abortion Christian men, indicating a strong pro-choice stance and very high animosity.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odcmvx8",
+          "snippet": "Yes, I think humanely killing the fetus in the womb is alot more ethical than forcing it to go through birth with no skull and slowly suffocate to death. Man that lady turned back at the end. She was about to give him what for. Sadly tha...",
+          "url": "https://reddit.com/r/religiousfruitcake/comments/1s7xdpf/oh_look_lunatic_antiabortion_christian_men_who/odcmvx8/",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 4,
+          "rationale": "The text expresses a pro-choice stance by arguing for the ethics of abortion in cases of severe fetal anomaly and shows frustration with opposing viewpoints.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s7zvha",
+          "snippet": "Democrats say Nebraska Senate candidate, a 79-year-old anti-abortion pastor with a history of Trump support, is GOP plant designed to disrupt the election.",
+          "url": "https://reddit.com/r/atheism/comments/1s7zvha/democrats_say_nebraska_senate_candidate_a/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text factually reports an accusation made by Democrats against an anti-abortion candidate, without expressing the author's own stance or animosity.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "youtube_comment_UgzAc5QrqzA7c2R4no54AaABAg",
+          "snippet": "I'm pro-choice, but a lot of these women came to deliver a monologue, not engage in debate.",
+          "url": "https://www.youtube.com/watch?v=3-ACDhvL2j0&lcdId=UgzAc5QrqzA7c2R4no54AaABAg",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The text explicitly states a pro-choice stance while offering a mild criticism of the communication style of some participants, showing low animosity.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugxr-lk2SPnlKu8LO2l4AaABAg",
+          "snippet": "\"You don't get to speak for my child\" Don't tell me there is no pain there. I am so sad for her.",
+          "url": "https://www.youtube.com/watch?v=3-ACDhvL2j0&lcdId=Ugxr-lk2SPnlKu8LO2l4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The text quotes a statement implying fetal personhood and expresses sadness and belief in fetal pain, indicating an anti-abortion stance with low animosity.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzJ2sOmxfnky6Oo3MR4AaABAg",
+          "snippet": "“You don’t get to speak for my child” I thought it was a clump of cells sis?",
+          "url": "https://www.youtube.com/watch?v=3-ACDhvL2j0&lcdId=UgzJ2sOmxfnky6Oo3MR4AaABAg",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The text uses high sarcasm to challenge the \"clump of cells\" argument, implying an anti-abortion stance and expressing high animosity towards pro-choice rhetoric.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugx9f2cB9Wc1f46MWQV4AaABAg",
+          "snippet": "Lila Rose held it down. How she was able to remain calm and collected with all the attitudes thrown at her is incredible.",
+          "url": "https://www.youtube.com/watch?v=3-ACDhvL2j0&lcdId=Ugx9f2cB9Wc1f46MWQV4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text praises Lila Rose, a known anti-abortion activist, for her composure, implicitly supporting her and indicating an anti-abortion stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugwjh1MJTZtTVhLYOQ94AaABAg",
+          "snippet": "The rage in these women kinda proves her point about trauma.",
+          "url": "https://www.youtube.com/watch?v=3-ACDhvL2j0&lcdId=Ugwjh1MJTZtTVhLYOQ94AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The text critically interprets the \"rage\" of women as proof of \"trauma,\" a common anti-abortion argument to dismiss pro-choice advocates, indicating a negative sentiment and moderate animosity.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyfOte7zAjhiIrfX294AaABAg",
+          "snippet": "“My mother, when she was in college, was protesting the exact same thing. Why are still protesting?” “Because you weren’t aborted?”",
+          "url": "https://www.youtube.com/watch?v=kafqVjWljWM&lcdId=UgyfOte7zAjhiIrfX294AaABAg",
+          "stance": -1,
+          "animosity": 5,
+          "sentiment": 1,
+          "rationale": "The text contains a highly aggressive and hostile rhetorical question, \"Because you weren't aborted?\", which expresses extreme negative sentiment and animosity towards the person's existence and implies an anti-abortion stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    },
+    {
+      "key": "gun_control",
+      "query": "gun control",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 2.29,
+      "score_label": "very low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 14,
+      "stance_distribution": {
+        "for": 0,
+        "against": 6,
+        "neutral": 8
+      },
+      "source_breakdown": {
+        "gnews": 2,
+        "youtube": 12
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 94.45,
+      "evidence": [
+        {
+          "id": "gnews_https://www.breitbart.com/2nd-amendment/2026/03/30/chicago-pro-gun-control-mayors-armed-security-detail-costing-taxpayers-30-million-a-year/",
+          "snippet": "Mayor's 'Armed Security' Costs Taxpayers $30 Million a Year. NSSF's Lawrence Keane indicates pro-gun control Mayor Brandon Johnson's \"armed security\" detail costs taxpayers about $30 million annually.",
+          "url": "https://www.breitbart.com/2nd-amendment/2026/03/30/chicago-pro-gun-control-mayors-armed-security-detail-costing-taxpayers-30-million-a-year/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The article criticizes a pro-gun control mayor for having expensive armed security, implying hypocrisy and misuse of taxpayer funds.",
+          "source_lean": "right",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.breitbart.com/politics/2026/03/30/chicago-pro-gun-control-mayors-armed-security-detail-costing-taxpayers-30-million-a-year/",
+          "snippet": "Mayor's 'Armed Security' Costs Taxpayers $30 Million a Year. NSSF's Lawrence Keane indicates pro-gun control Mayor Brandon Johnson's \"armed security\" detail costs taxpayers about $30 million annually.",
+          "url": "https://www.breitbart.com/politics/2026/03/30/chicago-pro-gun-control-mayors-armed-security-detail-costing-taxpayers-30-million-a-year/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The article criticizes a pro-gun control mayor for having expensive armed security, implying hypocrisy and misuse of taxpayer funds.",
+          "source_lean": "right",
+          "platform": "gnews"
+        },
+        {
+          "id": "youtube_comment_UgzROjrumLofza4Kg4V4AaABAg",
+          "snippet": "Probably the most respectful debate I have seen on a topic such as this.",
+          "url": "https://www.youtube.com/watch?v=n-X0YD0tYTw&lcdId=UgzROjrumLofza4Kg4V4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment praises the respectful nature of a debate on a controversial topic, without taking a stance on gun control itself.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxL_M7Wf7qAwBMk85J4AaABAg",
+          "snippet": "Criminals don't care about laws nor gun registries",
+          "url": "https://www.youtube.com/watch?v=n-X0YD0tYTw&lcdId=UgxL_M7Wf7qAwBMk85J4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment argues against the effectiveness of gun control laws and registries by stating criminals disregard them.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwnDFscEq75P7l946N4AaABAg",
+          "snippet": "Fun fact the founders were actually huge fans of taxidermy so the second amendment actually refers to actual bear arms.",
+          "url": "https://www.youtube.com/watch?v=vggYGQyVaCo&lcdId=UgwnDFscEq75P7l946N4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment makes a humorous pun about the Second Amendment, not expressing a serious stance on gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzjzcY7esK2gyjxf1d4AaABAg",
+          "snippet": "A civil debate ended with \"Hope you and your family had a great Easter, God bless you\" Man.",
+          "url": "https://www.youtube.com/watch?v=n-X0YD0tYTw&lcdId=UgzjzcY7esK2gyjxf1d4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment expresses appreciation for the civil and respectful conclusion of a debate, without taking a stance on gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxtP3QwQm8tl5woJwh4AaABAg",
+          "snippet": "Can you imagine a 12 minute conversation where two sides had strong opposing views, held strongly to their views, but remained civil, found some middle ground, and then exchanged pleasantries and went on their way?",
+          "url": "https://www.youtube.com/watch?v=n-X0YD0tYTw&lcdId=UgxtP3QwQm8tl5woJwh4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment expresses a desire for civil discourse and finding common ground in debates, without taking a stance on gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzllA8aZpv8PwXeIUV4AaABAg",
+          "snippet": "My views on gun control: don’t give it to idiots The hard part: finding out who the idiots are",
+          "url": "https://www.youtube.com/watch?v=vggYGQyVaCo&lcdId=UgzllA8aZpv8PwXeIUV4AaABAg",
+          "stance": 0,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The comment expresses a nuanced view on gun control, suggesting restrictions for \"idiots\" but highlighting the difficulty in identifying them.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxCxQZqGLTt-Bx78K54AaABAg",
+          "snippet": "\"The felon does not fear the police, and he fears neither judge nor jury. Therefore, what he must be taught to fear is his victim\" -- Col. Jeff Cooper, USMC",
+          "url": "https://www.youtube.com/watch?v=n-X0YD0tYTw&lcdId=UgxCxQZqGLTt-Bx78K54AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The quote advocates for victims being armed for self-defense, implying that armed citizens are a necessary deterrent against criminals, thus opposing stricter gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwYt-u4R38qY5lFmzB4AaABAg",
+          "snippet": "-Be me. -Own a musket for home defense since that's what the founding fathers intended. -Four ruffians break into my house. -\"What the devil?\" as I grab my powdered wig and kentucky rifle. -Blow a golf ball sized hole through the first m...",
+          "url": "https://www.youtube.com/watch?v=vggYGQyVaCo&lcdId=UgwYt-u4R38qY5lFmzB4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment uses satire to mock the \"original intent\" argument regarding the Second Amendment, without taking a direct stance on gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugz17vv2sjC7OlTXbwl4AaABAg",
+          "snippet": "Would like to see the real data on mass killings with spoons.",
+          "url": "https://www.youtube.com/watch?v=qcJeOphUtek&lcdId=Ugz17vv2sjC7OlTXbwl4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The comment uses sarcasm to imply that focusing solely on guns is misguided, suggesting other objects could also be used for harm, thus opposing stricter gun control.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzSXOpI8Mb_aUQLHIN4AaABAg",
+          "snippet": "As a Canadian, who's going through confiscation efforts as we speak, I can tell you that the only reason for registration is confiscation. Don't give them an inch, they'll never stop coming for more.",
+          "url": "https://www.youtube.com/watch?v=n-X0YD0tYTw&lcdId=UgzSXOpI8Mb_aUQLHIN4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The comment expresses strong opposition to gun control, warning that registration inevitably leads to confiscation based on personal experience.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyI6rcdGUzlrHa_8IJ4AaABAg",
+          "snippet": "I'd love to see you debate Colion Noir.",
+          "url": "https://www.youtube.com/watch?v=BxrANYjq2i8&lcdId=UgyI6rcdGUzlrHa_8IJ4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment suggests a debate with a known pro-gun advocate, indicating interest in the topic but not taking a direct stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzPz6IewIwN5KidaC94AaABAg",
+          "snippet": "Blaming gun violence on video games is like blaming car crashes on hot wheels",
+          "url": "https://www.youtube.com/watch?v=qcJeOphUtek&lcdId=UgzPz6IewIwN5KidaC94AaABAg",
+          "stance": 0,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment criticizes the argument of blaming gun violence on video games, using a logical analogy, without taking a direct stance on gun control itself.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    },
+    {
+      "key": "climate_change",
+      "query": "climate change",
+      "category": "high_polarization",
+      "threshold": "> 50.0",
+      "score": 36.28,
+      "score_label": "moderate",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 16,
+      "stance_distribution": {
+        "for": 9,
+        "against": 5,
+        "neutral": 2
+      },
+      "source_breakdown": {
+        "gnews": 3,
+        "reddit": 6,
+        "youtube": 7
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 143.77,
+      "evidence": [
+        {
+          "id": "gnews_https://www.cp24.com/news/canada/2026/04/02/canadians-and-americans-report-growing-divide-on-climate-change/",
+          "snippet": "Canadian and American views on climate change diverging. There is a growing rift between Canadians and Americans when it comes to views on climate change, according to a new poll released Thursday indicating fewer than half of Americans ...",
+          "url": "https://www.cp24.com/news/canada/2026/04/02/canadians-and-americans-report-growing-divide-on-climate-change/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The article reports on a growing divide and declining belief in climate change among Americans, which is a negative development for climate action.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.euronews.com/2026/03/30/easter-eggflation-how-climate-change-and-budget-cuts-have-sent-the-price-of-chocolate-soar",
+          "snippet": "‘Easter eggflation’: How climate change and budget cuts have sent the price of chocolate soaring. Human-caused climate change has fuelled extreme weather events in West Africa, triggering cocoa production to plummet.",
+          "url": "https://www.euronews.com/2026/03/30/easter-eggflation-how-climate-change-and-budget-cuts-have-sent-the-price-of-chocolate-soar",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 1,
+          "rationale": "The text directly attributes soaring chocolate prices and plummeting cocoa production to human-caused climate change and extreme weather events.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.abc.net.au/news/2026-03-29/senate-report-misinformation-climate-change-recommendations/106497978",
+          "snippet": "Australia has to fight back against misinformation about climate change, Senate report says. Australia needs to increase its efforts to fight back against misinformation about climate change, a Senate report says.",
+          "url": "https://www.abc.net.au/news/2026-03-29/senate-report-misinformation-climate-change-recommendations/106497978",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text reports on a Senate recommendation to actively combat misinformation about climate change, indicating a positive stance towards addressing the issue.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "1s6a4xq",
+          "snippet": "New study confirms 'private solution trap' in addressing climate change. Wealthy prefers private (adaptation) solutions to protect themselves rather than supporting public (mitigation) solutions. Such behavior worsens wealthy inequality ...",
+          "url": "https://reddit.com/r/science/comments/1s6a4xq/new_study_confirms_private_solution_trap_in/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 1,
+          "rationale": "The text describes a \"private solution trap\" that hinders effective climate change mitigation and worsens inequality, highlighting a negative aspect of addressing the issue.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s6ygrx",
+          "snippet": "Big tech was embracing clean energy and turning a corner on climate change. Then AI data centers arrived",
+          "url": "https://reddit.com/r/technology/comments/1s6ygrx/big_tech_was_embracing_clean_energy_and_turning_a/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text suggests a setback in big tech's progress on clean energy and climate change due to the emergence of AI data centers.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s8ouw5",
+          "snippet": "With 800 Watt plug-in kits arriving for £400, we can all join the solar club, saving money, tackling climate change and energy crises. The panels can be attached to roofs, fixed to balconies in flats, leant against walls in the garden, o...",
+          "url": "https://reddit.com/r/UpliftingNews/comments/1s8ouw5/with_800_watt_plugin_kits_arriving_for_400_we_can/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The text promotes an accessible solar solution that helps individuals save money and actively contribute to tackling climate change and energy crises.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s7sbgv",
+          "snippet": "Christian Lawmaker Doesn't believe in Climate Change because it's not in the Bible",
+          "url": "https://reddit.com/r/religiousfruitcake/comments/1s7sbgv/christian_lawmaker_doesnt_believe_in_climate/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 1,
+          "rationale": "The text reports on a lawmaker's denial of climate change based on a non-scientific, religious reason, which is a negative stance against the issue.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s6b7fn",
+          "snippet": "Australia has to attack misinformation about climate change, Senate report says",
+          "url": "https://reddit.com/r/australia/comments/1s6b7fn/australia_has_to_attack_misinformation_about/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text reports on a Senate recommendation for Australia to actively combat misinformation about climate change, indicating a positive stance towards addressing the issue.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "od5q9v0",
+          "snippet": "To be fair, the biggest miracle was when humanity collective had a soul and realized that depleting the ozone layer due to our excess use of a particular chemical was bad and we eliminated it. Then somehow we decided that that was all th...",
+          "url": "https://reddit.com/r/technology/comments/1s6ygrx/big_tech_was_embracing_clean_energy_and_turning_a/od5q9v0/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The text laments humanity's current inaction on climate change compared to past successful collective efforts like addressing the ozone layer, implying a negative current state.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "youtube_comment_UgxJppuberNdhYR_UiN4AaABAg",
+          "snippet": "Dang... Peterson is soooooo persuasive here. I almost believed him... until I read the disclaimer YouTube put on this video about climate change. That was close.",
+          "url": "https://www.youtube.com/watch?v=umDOu1FxnLw&lcdId=UgxJppuberNdhYR_UiN4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The commenter acknowledges almost being swayed by a persuasive argument against climate change but ultimately relies on a disclaimer, suggesting a recognition of misinformation.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxjX87wRjzki4IfVKt4AaABAg",
+          "snippet": "Im 55 years old. When I was a kid, they told people to drive more to heat the planet because we were heading to an ice age. In college I was told we were going to be out of oil 20yrs ago. The ice caps were suppose to have melted decades ...",
+          "url": "https://www.youtube.com/watch?v=EcxQZ8ub54Y&lcdId=UgxjX87wRjzki4IfVKt4AaABAg",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The commenter uses past failed predictions to dismiss current climate change warnings, indicating a strong negative stance and high animosity towards climate science.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgygS0DC0qtyZerMqTd4AaABAg",
+          "snippet": "Anyone, everyone in fact, that had decided the science is done has already abandoned science in favor of politics.",
+          "url": "https://www.youtube.com/watch?v=E6bVBH9y5O8&lcdId=UgygS0DC0qtyZerMqTd4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The commenter criticizes those who claim \"the science is done,\" implying they have abandoned science for politics, which is a dismissive stance towards scientific consensus on climate change.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyEFM93vlZCd1TEAnd4AaABAg",
+          "snippet": "I'll start worrying about climate change when the elites who are telling me I should care stop flying in private planes to discuss how the rest of the world needs to suffer for the cause.",
+          "url": "https://www.youtube.com/watch?v=umDOu1FxnLw&lcdId=UgyEFM93vlZCd1TEAnd4AaABAg",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The commenter expresses skepticism and resentment towards climate change advocacy, dismissing the issue based on perceived hypocrisy of \"elites.\"",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxO_Xolud6ReEPSAFJ4AaABAg",
+          "snippet": "honestly love the way you talk about this \"the people who discovered how the climate naturally changes over time are climate scientists, the same group of people who discovered the climate change we're currently facing is human caused.\" ...",
+          "url": "https://www.youtube.com/watch?v=E6bVBH9y5O8&lcdId=UgxO_Xolud6ReEPSAFJ4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The commenter praises an argument that reinforces the credibility of climate scientists in identifying human-caused climate change, indicating a very positive stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyuOiJMrzXvsNjeylJ4AaABAg",
+          "snippet": "Anyone who says the science is settled doesn’t know what science is",
+          "url": "https://www.youtube.com/watch?v=EcxQZ8ub54Y&lcdId=UgyuOiJMrzXvsNjeylJ4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The commenter dismisses the idea that \"the science is settled,\" implying a lack of understanding of science, which challenges the consensus on climate change.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxV-ukjNEJpPloKxXN4AaABAg",
+          "snippet": "Enjoy this short video about climate change! I'll heart any comment if you can prove you watched the whole thing 🤓",
+          "url": "https://www.youtube.com/watch?v=E6bVBH9y5O8&lcdId=UgxV-ukjNEJpPloKxXN4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment positively promotes a video about climate change, encouraging engagement without expressing a direct opinion on the topic itself.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    },
+    {
+      "key": "childhood_vaccines",
+      "query": "childhood vaccines",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 33.69,
+      "score_label": "moderate",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 17,
+      "stance_distribution": {
+        "for": 11,
+        "against": 3,
+        "neutral": 3
+      },
+      "source_breakdown": {
+        "reddit": 10,
+        "youtube": 7
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 94.13,
+      "evidence": [
+        {
+          "id": "1s7rbqw",
+          "snippet": "An ex friend has a mom group and posts stuff like this all the time. Luckily people are calling her out. She still doesn't get it.",
+          "url": "https://reddit.com/r/ShitMomGroupsSay/comments/1s7rbqw/an_ex_friend_has_a_mom_group_and_posts_stuff_like/",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 4,
+          "rationale": "The text expresses approval of people challenging anti-vaccine content, indicating a pro-vaccine stance.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odctznv",
+          "snippet": "Of course vaccines had to come up😂",
+          "url": "https://reddit.com/r/ShitMomGroupsSay/comments/1s7rbqw/an_ex_friend_has_a_mom_group_and_posts_stuff_like/odctznv/",
+          "stance": 0,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The comment simply acknowledges that vaccines were brought up, with a mildly amused tone.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s6uu05",
+          "snippet": "Meningitis B leaves girl battling for life in 'very rare' case",
+          "url": "https://reddit.com/r/ContagionCuriosity/comments/1s6uu05/meningitis_b_leaves_girl_battling_for_life_in/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text describes a severe case of Meningitis B, a vaccine-preventable disease, implicitly supporting the need for vaccination.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odcu4tn",
+          "snippet": "Her post is just a scare tactic commonly used to manipulate women. Can we just let women do what they want with their own bodies? Good lord.",
+          "url": "https://reddit.com/r/ShitMomGroupsSay/comments/1s7rbqw/an_ex_friend_has_a_mom_group_and_posts_stuff_like/odcu4tn/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The text criticizes perceived manipulation regarding health decisions and advocates for individual bodily autonomy, often a stance against vaccine mandates.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s8kuus",
+          "snippet": "[Australia] Measles on the rise across NSW, concern community infections spreading undetected",
+          "url": "https://reddit.com/r/ContagionCuriosity/comments/1s8kuus/australia_measles_on_the_rise_across_nsw_concern/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text reports a concerning rise in measles cases, a vaccine-preventable disease, implicitly advocating for vaccination.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odcvuy3",
+          "snippet": "Hot take: the doctors also “do research”. Which they’re actually qualified to do.",
+          "url": "https://reddit.com/r/ShitMomGroupsSay/comments/1s7rbqw/an_ex_friend_has_a_mom_group_and_posts_stuff_like/odcvuy3/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The text defends the qualifications of doctors to conduct research, implicitly supporting their recommendations regarding vaccines.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odd00v6",
+          "snippet": "It’s always so wild to me how people think pediatricians, family doctors, dermatologists, psychiatrists, obgyns, fertility clinics, etc. are ALL somehow working together as some part of a huge conspiracy… Like, what would be the actual *...",
+          "url": "https://reddit.com/r/ShitMomGroupsSay/comments/1s7rbqw/an_ex_friend_has_a_mom_group_and_posts_stuff_like/odd00v6/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The text questions the logic of widespread medical conspiracies, implicitly supporting the medical consensus on vaccines.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "odd0j2k",
+          "snippet": "Okay, if it’s all connected explain it rather than using vague posts on Facebook…..",
+          "url": "https://reddit.com/r/ShitMomGroupsSay/comments/1s7rbqw/an_ex_friend_has_a_mom_group_and_posts_stuff_like/odd0j2k/",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 4,
+          "rationale": "The text demands clear explanations instead of vague social media posts, implicitly challenging misinformation often associated with anti-vaccine views.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s8v50v",
+          "snippet": "Raven was featured in official campaign poster for childhood vaccination against COVID-19 (2021)",
+          "url": "https://reddit.com/r/ComicRaven/comments/1s8v50v/raven_was_featured_in_official_campaign_poster/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text is a factual statement about a public figure's involvement in a childhood vaccination campaign.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s4vwwm",
+          "snippet": "How Robert F. Kennedy Jr.’s Vaccine Agenda Risks a Resurgence of Deadly Childhood Plagues",
+          "url": "https://reddit.com/r/RFK_Jr_is_a_Stooge/comments/1s4vwwm/how_robert_f_kennedy_jrs_vaccine_agenda_risks_a/",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The text strongly criticizes Robert F. Kennedy Jr.'s vaccine agenda, linking it to the resurgence of deadly childhood diseases, indicating a pro-vaccine stance.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "youtube_comment_UgxX4JKnDs74lzO-ltF4AaABAg",
+          "snippet": "In Germany we call that \"dangerous half-knowledge\"... I mean, yeah Hep B is known as an STI thing, which sounds like it makes sense to wait until a certain age.... but there is so much information missing, which makes it pretty dangerous...",
+          "url": "https://www.youtube.com/watch?v=GerWpohJUzs&lcdId=UgxX4JKnDs74lzO-ltF4AaABAg",
+          "stance": 1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The text criticizes \"dangerous half-knowledge\" regarding Hep B vaccination, implying that delaying it based on incomplete information is risky.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugy8d0pApCkUCKUZ7fF4AaABAg",
+          "snippet": "When your bully is an anti-vax kid so you sneeze at him *_it's a simple spell but quite unbreakable._*",
+          "url": "https://www.youtube.com/watch?v=zBkVCpbNnkU&lcdId=Ugy8d0pApCkUCKUZ7fF4AaABAg",
+          "stance": 1,
+          "animosity": 4,
+          "sentiment": 2,
+          "rationale": "The text humorously describes an aggressive act against an \"anti-vax kid,\" indicating a strong pro-vaccine sentiment.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyfJ_vmF1E1NtZVi514AaABAg",
+          "snippet": "I can't believe he just said at least wait until they're 12 and fully formed... Mr. Creepy President sir 12 is still a growing child last time I checked.",
+          "url": "https://www.youtube.com/watch?v=GerWpohJUzs&lcdId=UgyfJ_vmF1E1NtZVi514AaABAg",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The text criticizes the suggestion to delay vaccination until age 12, implying that children need protection earlier.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugxmhixe3h4R6kSj5aJ4AaABAg",
+          "snippet": "Make vaccine manufacturers liable again",
+          "url": "https://www.youtube.com/watch?v=CTj_xoCuhPU&lcdId=Ugxmhixe3h4R6kSj5aJ4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The text demands increased liability for vaccine manufacturers, a common sentiment among those critical of vaccines.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyzbLlCVOc8xRik9oN4AaABAg",
+          "snippet": "\"12 years old\" ... \"just talking about me\" We know.",
+          "url": "https://www.youtube.com/watch?v=GerWpohJUzs&lcdId=UgyzbLlCVOc8xRik9oN4AaABAg",
+          "stance": 0,
+          "animosity": 2,
+          "sentiment": 3,
+          "rationale": "The text is too vague and lacks sufficient context to determine a clear sentiment or stance regarding childhood vaccines.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwKYGKu9Vp_RbN4P_Z4AaABAg",
+          "snippet": "1955: Oh look I found a way to deal with polio 2019: For the last time, vaccines do NOT cause autism",
+          "url": "https://www.youtube.com/watch?v=zBkVCpbNnkU&lcdId=UgwKYGKu9Vp_RbN4P_Z4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The comment strongly supports vaccines by highlighting their historical success against polio and directly refuting the false claim that they cause autism.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwSx8DJJYnOpoxPc4N4AaABAg",
+          "snippet": "When parents discover what the ingredients in any vaccine are, and make a choice not to vaccinate their children in order to protect them from the consequences, the decision of those parents should be respected.",
+          "url": "https://www.youtube.com/watch?v=CTj_xoCuhPU&lcdId=UgwSx8DJJYnOpoxPc4N4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The comment advocates for respecting parents who choose not to vaccinate their children, implying that vaccine ingredients have negative consequences.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    },
+    {
+      "key": "ai_regulation",
+      "query": "ai regulation",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 44.76,
+      "score_label": "moderate",
+      "confidence": 0.8,
+      "confidence_label": "low",
+      "sample_size": 8,
+      "stance_distribution": {
+        "for": 5,
+        "against": 2,
+        "neutral": 1
+      },
+      "source_breakdown": {
+        "gnews": 3,
+        "reddit": 3,
+        "youtube": 2
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": false,
+      "elapsed_s": 99.48,
+      "evidence": [
+        {
+          "id": "gnews_https://decrypt.co/362968/california-tightens-ai-contract-rules-fight-trump-admin",
+          "snippet": "California Tightens AI Contract Rules as Fight With Trump Admin Grows. Governor Gavin Newsom orders stronger safeguards for AI companies seeking California contracts, escalating tensions with the Trump administration over national AI reg...",
+          "url": "https://decrypt.co/362968/california-tightens-ai-contract-rules-fight-trump-admin",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "California is actively implementing stricter AI contract rules, indicating a positive view on the need for regulation.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://timesofindia.indiatimes.com/technology/times-techies/why-tech-needs-to-be-regulated-before-it-rewires-childhood/articleshow/129894046.cms",
+          "snippet": "The Urgent Need for Technology Regulation: Protecting Childhood from Cognitive Damage. Times Techies News: This article discusses the urgent need for regulations surrounding technology, particularly social media and AI tools, to protect ...",
+          "url": "https://timesofindia.indiatimes.com/technology/times-techies/why-tech-needs-to-be-regulated-before-it-rewires-childhood/articleshow/129894046.cms",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The article highlights an \"urgent need\" for AI regulation to protect children, showing a strong positive sentiment towards it.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.devdiscourse.com/article/technology/3852471-ai-bias-cannot-be-fixed-by-regulation-alone-heres-why",
+          "snippet": "AI bias cannot be fixed by regulation alone: Here's why. Read more about AI bias cannot be fixed by regulation alone: Here's why on Devdiscourse",
+          "url": "https://www.devdiscourse.com/article/technology/3852471-ai-bias-cannot-be-fixed-by-regulation-alone-heres-why",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The article suggests that AI bias cannot be fixed by regulation alone, indicating a nuanced or skeptical view on regulation's comprehensive power.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "1sb37ul",
+          "snippet": "The Esteemed Hasbro CEO, Dr. Christopher Cocks assures Magic and DND players that no AI Art will be used. Calls AI, “Garbage in garbage out”",
+          "url": "https://reddit.com/r/mtg/comments/1sb37ul/the_esteemed_hasbro_ceo_dr_christopher_cocks/",
+          "stance": 1,
+          "animosity": 3,
+          "sentiment": 4,
+          "rationale": "The CEO's strong negative opinion on AI art (\"Garbage in garbage out\") and assurance against its use suggests a preference for strict control, aligning with the spirit of regulation.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "oe0hvx8",
+          "snippet": "The Hasbro policy literally has the sentence \"AI is a tool that our creators can choose to use\" in it (in the \"human creativity is critical\" section lmao) and I believe that more than the CEO talking on a random podcast",
+          "url": "https://reddit.com/r/mtg/comments/1sb37ul/the_esteemed_hasbro_ceo_dr_christopher_cocks/oe0hvx8/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 2,
+          "rationale": "The comment reveals Hasbro's policy allows AI use, contradicting the CEO's public stance, which implies a less restrictive approach to AI than suggested by the previous item.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s8zeiw",
+          "snippet": "The Future is Here! Well, we knew this day was coming. Email sent out today. “As of Fall 2026, students are permitted to use generative AI tools for all assignments. Instructors may **not prohibit** the use of these tools, provided that ...",
+          "url": "https://reddit.com/r/Professors/comments/1s8zeiw/the_future_is_here/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The policy explicitly permits and prevents prohibition of generative AI tools for assignments, indicating a stance against restrictive regulation in an educational context.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "youtube_comment_UgxeIADcpnlz9Imfc4l4AaABAg",
+          "snippet": "Ultimately, the problem with AI is not that it becomes sentient, but that humans use it in malicious ways. What she's talking about doesn't even take into consideration when the humans using AI WANT it to be biased. You feed it the right...",
+          "url": "https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgxeIADcpnlz9Imfc4l4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The comment identifies human maliciousness and intentional bias as the core problems with AI, strongly implying a need for regulation to address these issues.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugy4b6M9EZKJ9fuey4p4AaABAg",
+          "snippet": "As a person who works in machine learning and data science, this is the way it should be. Europeans always find the balance between freedom and regulation - well done!",
+          "url": "https://www.youtube.com/watch?v=s_rxOnCt3HQ&lcdId=Ugy4b6M9EZKJ9fuey4p4AaABAg",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 5,
+          "rationale": "The comment expresses strong approval for a balanced approach to regulation, specifically praising European efforts in this area.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    },
+    {
+      "key": "inflation",
+      "query": "inflation",
+      "category": "consensus",
+      "threshold": "< 35.0",
+      "score": 18.14,
+      "score_label": "low",
+      "confidence": 1.0,
+      "confidence_label": "moderate",
+      "sample_size": 22,
+      "stance_distribution": {
+        "for": 1,
+        "against": 18,
+        "neutral": 3
+      },
+      "source_breakdown": {
+        "gnews": 3,
+        "reddit": 8,
+        "youtube": 11
+      },
+      "status": "ok",
+      "error_message": null,
+      "passed": true,
+      "elapsed_s": 116.68,
+      "evidence": [
+        {
+          "id": "gnews_https://www.forbes.com/sites/wesmoss/2026/03/31/3-ways-to-stay-ahead-of-inflation-in-retirement/",
+          "snippet": "3 Ways To Stay Ahead Of Inflation In Retirement. Inflation can erode purchasing power over time. Explore how it affects retirement planning and strategies that may help support long-term financial security.",
+          "url": "https://www.forbes.com/sites/wesmoss/2026/03/31/3-ways-to-stay-ahead-of-inflation-in-retirement/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The article frames inflation as something to 'stay ahead of' because it 'can erode purchasing power,' indicating a negative impact on financial security.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.marketscreener.com/news/fed-s-faith-in-anchored-inflation-expectations-may-be-coming-under-stress-ce7e51d9d98dfe23",
+          "snippet": "Fed's faith in anchored inflation expectations may be coming under stress. Federal Reserve officials eager to keep inflation psychology in check and maintain control over prices face a challenge as household expectations rise alongside t...",
+          "url": "https://www.marketscreener.com/news/fed-s-faith-in-anchored-inflation-expectations-may-be-coming-under-stress-ce7e51d9d98dfe23",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text reports on the Fed's 'stress' and 'challenge' in controlling inflation, indicating a negative outlook on the current situation.",
+          "source_lean": "unknown",
+          "platform": "gnews"
+        },
+        {
+          "id": "gnews_https://www.reuters.com/business/energy/feds-faith-anchored-inflation-expectations-may-be-coming-under-stress-2026-03-30/",
+          "snippet": "Fed's faith in anchored inflation expectations may be coming under stress. Federal Reserve officials eager to keep inflation psychology in check and maintain control over prices face a challenge as household expectations rise alongside t...",
+          "url": "https://www.reuters.com/business/energy/feds-faith-anchored-inflation-expectations-may-be-coming-under-stress-2026-03-30/",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The text reports on the Fed's 'stress' and 'challenge' in controlling inflation, indicating a negative outlook on the current situation.",
+          "source_lean": "center",
+          "platform": "gnews"
+        },
+        {
+          "id": "1s9iepu",
+          "snippet": "PlayStation prices adjusted for inflation",
+          "url": "https://reddit.com/r/gaming/comments/1s9iepu/playstation_prices_adjusted_for_inflation/",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The text is a neutral statement about prices being adjusted for inflation, without expressing any positive or negative sentiment.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s704ey",
+          "snippet": "Trump Declared Inflation 'Defeated' — Now the U.S. is Projected to Have the Worst Inflation Among G7 Countries in 2026, According to the OECD",
+          "url": "https://reddit.com/r/Economics/comments/1s704ey/trump_declared_inflation_defeated_now_the_us_is/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The text highlights a contradiction between a past declaration and a projected 'worst inflation' scenario, indicating a very negative view of the current inflation situation.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s4xd0c",
+          "snippet": "This is not inflation. This is insanity.",
+          "url": "https://reddit.com/r/inflation/comments/1s4xd0c/this_is_not_inflation_this_is_insanity/",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The text uses the strong term 'insanity' to describe the economic situation, indicating extreme negative sentiment and high animosity towards it.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s61r42",
+          "snippet": "This is not inflation. This is insanity.",
+          "url": "https://reddit.com/r/StockBreakouts/comments/1s61r42/this_is_not_inflation_this_is_insanity/",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The text uses the strong term 'insanity' to describe the economic situation, indicating extreme negative sentiment and high animosity towards it.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s6zqdv",
+          "snippet": "Trump declared inflation 'defeated' — now the U.S. is projected to have the worst inflation among G7 countries in 2026",
+          "url": "https://reddit.com/r/FluentInFinance/comments/1s6zqdv/trump_declared_inflation_defeated_now_the_us_is/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The text highlights a contradiction between a past declaration and a projected 'worst inflation' scenario, indicating a very negative view of the current inflation situation.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s7v0eh",
+          "snippet": "Powell sees inflation outlook in check, no need to hike rates because of oil shock",
+          "url": "https://reddit.com/r/wallstreetbets/comments/1s7v0eh/powell_sees_inflation_outlook_in_check_no_need_to/",
+          "stance": 1,
+          "animosity": 1,
+          "sentiment": 4,
+          "rationale": "The text reports Powell's view that the 'inflation outlook [is] in check' and there's 'no need to hike rates,' indicating a positive assessment of the situation.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s5ztn1",
+          "snippet": "Inflation in the US is so bad right now that… Inflation in the US is so bad right now that… \\- My friend received a predeclined credit card in the mail. \\- CEO's are now playing miniature golf. \\- Exxon-Mobil laid off 25 Congressmen. \\- ...",
+          "url": "https://reddit.com/r/Jokes/comments/1s5ztn1/inflation_in_the_us_is_so_bad_right_now_that/",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The text repeatedly states 'Inflation in the US is so bad right now' and uses satirical examples to emphasize its severe negative impact, showing strong negative sentiment.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "1s82oya",
+          "snippet": "Robert Kiyosaki Says US Boomers Face a Wave of Homelessness as Inflation to Wipe out Social Security",
+          "url": "https://reddit.com/r/economicCollapse/comments/1s82oya/robert_kiyosaki_says_us_boomers_face_a_wave_of/",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 1,
+          "rationale": "The text predicts a 'wave of homelessness' and inflation will 'Wipe out Social Security,' indicating an extremely negative and alarmist view of inflation's impact.",
+          "source_lean": null,
+          "platform": "reddit"
+        },
+        {
+          "id": "youtube_comment_UgwuZY-rX2-0j6rWj454AaABAg",
+          "snippet": "Thanks for being here everyone. to all the economist watching: I KNOW I KNOW I KNOW there's SOOO much more complexity and nuance to inflation. my purpose here is to give the broad intro into the root idea of inflation especially as it pe...",
+          "url": "https://www.youtube.com/watch?v=zIbNJCSCEjk&lcdId=UgwuZY-rX2-0j6rWj454AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment is neutral and aims to provide a 'broad intro into the root idea of inflation,' acknowledging its complexity without expressing a strong positive or negative stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugzhv9cwMkAEjVaYpql4AaABAg",
+          "snippet": "One important thing missing from this explanation, is that one business raising its prices leads to increased costs for other business that they supply. So these business in turn have to raise prices in order to not lose money. It's a na...",
+          "url": "https://www.youtube.com/watch?v=zIbNJCSCEjk&lcdId=Ugzhv9cwMkAEjVaYpql4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment describes a 'nasty feedback loop' where businesses raise prices due to increased costs, indicating a negative view of this inflationary process.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwBpEC7z8d9URN7HtJ4AaABAg",
+          "snippet": "The rising interest rate can surely control inflation, but won't prevent erosion of the eroding purchasing power of the US dollar. I have learnt my lesson this time. The banks can't be making money off my money, while inflation eats into...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgwBpEC7z8d9URN7HtJ4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment expresses concern about the 'erosion of the eroding purchasing power' and states that 'inflation eats into' money, indicating a negative personal experience and sentiment.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgyBtBbloXx--nJhuTx4AaABAg",
+          "snippet": "Stability is a result of our economy's struggles with uncertainty, housing issues, foreclosures, global volatility, and the pandemic's consequences. To restore stability and promote growth, all sectors must respond quickly to concerns ab...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgyBtBbloXx--nJhuTx4AaABAg",
+          "stance": -1,
+          "animosity": 1,
+          "sentiment": 2,
+          "rationale": "The comment lists 'growing inflation' as a concern that contributes to economic struggles and requires a quick response to restore stability, indicating a negative view.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzRV-tfUe_zUEMRedh4AaABAg",
+          "snippet": "Inflation is far more harmful to individuals than a collapsing stock or property market because it directly affects people's cost of living, which they immediately feel. It is not surprising that the current market sentiment is extremely...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgzRV-tfUe_zUEMRedh4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The comment explicitly states inflation is \"far more harmful\" and directly impacts the cost of living, leading to pessimistic market sentiment.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgwUlPkd9qoQK9D0o2F4AaABAg",
+          "snippet": "Inflation is gradually going to become part of us and due to that fact any money you keep in cash or a low-interest account declines in value each year. Investing is the only way to make your money grow and unless you have an exceptional...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgwUlPkd9qoQK9D0o2F4AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment highlights that inflation causes money to decline in value and suggests investing as the only way to counteract this negative effect.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_Ugz8a53JSjNBkeLDjnJ4AaABAg",
+          "snippet": "America is currently plagued by the hydra-headed evil duo of inflation and recession. The worst part about this recession is that consumers are racking up credit card debt. In April alone, credit card debt went up 20% while rates have do...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=Ugz8a53JSjNBkeLDjnJ4AaABAg",
+          "stance": -1,
+          "animosity": 4,
+          "sentiment": 1,
+          "rationale": "The comment describes inflation as part of an \"evil duo\" plaguing America, leading to high credit card debt and doubled rates, indicating strong negative sentiment.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgximDWUqyfNOglWyO54AaABAg",
+          "snippet": "Inflation hits people a lot harder than a crashing stock or housing market as it directly affects people's cost of living that people immediately feel the impact of. It's not surprising negative market sentiment is so high now. We really...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgximDWUqyfNOglWyO54AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The comment emphasizes that inflation \"hits people a lot harder\" by directly impacting the cost of living, leading to high negative market sentiment and a need for help.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzD1QphZSSiPsmpZvx4AaABAg",
+          "snippet": "Why everyone is so agitated over inflation and inflation data baffles me. Inflation has always existed, and individuals have used investments to combat it. For example, the stock market return always outperforms inflation. I heard of som...",
+          "url": "https://www.youtube.com/watch?v=R8VBRCs2jTU&lcdId=UgzD1QphZSSiPsmpZvx4AaABAg",
+          "stance": 0,
+          "animosity": 1,
+          "sentiment": 3,
+          "rationale": "The comment expresses bafflement at the agitation over inflation, stating it has always existed and can be combated through investments, suggesting a neutral stance.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgxMTyryWy7axlmeJiF4AaABAg",
+          "snippet": "The high inflation is a significant reason why most retirees have sleepless nights. The increase in prices of everyday items puts them at risk of running out of money. As prices rise, the amount of money retirees can withdraw from their ...",
+          "url": "https://www.youtube.com/watch?v=zIbNJCSCEjk&lcdId=UgxMTyryWy7axlmeJiF4AaABAg",
+          "stance": -1,
+          "animosity": 3,
+          "sentiment": 1,
+          "rationale": "The comment highlights high inflation as a significant cause of \"sleepless nights\" for retirees, putting them at risk of running out of money due to rising prices.",
+          "source_lean": null,
+          "platform": "youtube"
+        },
+        {
+          "id": "youtube_comment_UgzMo8Usxfi0IyFsD594AaABAg",
+          "snippet": "We have been dealing with inflation for decades here in Argentina, to the point where we joke saying that we have a degree in economics as we need to figure out how this works in order to overcome the situation. It's really amazing to se...",
+          "url": "https://www.youtube.com/watch?v=zIbNJCSCEjk&lcdId=UgzMo8Usxfi0IyFsD594AaABAg",
+          "stance": -1,
+          "animosity": 2,
+          "sentiment": 2,
+          "rationale": "The comment describes inflation as a decades-long problem in Argentina that requires constant effort to overcome, indicating a negative but resigned sentiment.",
+          "source_lean": null,
+          "platform": "youtube"
+        }
+      ]
+    }
+  ]
+}

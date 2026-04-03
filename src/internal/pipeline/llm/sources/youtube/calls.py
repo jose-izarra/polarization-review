@@ -4,15 +4,13 @@ import json
 from dataclasses import replace
 
 import logfire
-
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
-from src.internal.pipeline.llm.assess import _extract_json_array
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT, _extract_json_array
 from src.internal.pipeline.llm.client import call_llm
 from src.internal.pipeline.llm.sources.youtube.prompts import (
     QUERY_GENERATION_PROMPT,
     VIDEO_STANCE_PROMPT,
 )
-from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 
 
 def generate_youtube_queries(query: str, _override=None) -> list[str]:
@@ -23,11 +21,12 @@ def generate_youtube_queries(query: str, _override=None) -> list[str]:
         raw = call_llm(
             QUERY_GENERATION_PROMPT,
             json.dumps({"query": query}),
-            timeout_seconds=30,
             _override=_override,
         )
         parsed = _extract_json_array(raw)
-        queries = [str(q).strip() for q in parsed if isinstance(q, str) and str(q).strip()]
+        queries = [
+            str(q).strip() for q in parsed if isinstance(q, str) and str(q).strip()
+        ]
         if len(queries) >= 2:
             return queries[:3]
     except Exception:
@@ -52,7 +51,6 @@ def determine_video_stances(
     raw_response = call_llm(
         VIDEO_STANCE_PROMPT,
         json.dumps(payload),
-        timeout_seconds=45,
         _override=_override,
     )
     stances: dict[str, int] = {}

@@ -5,9 +5,13 @@ import re
 from dataclasses import replace
 
 import logfire
-
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
 from src.internal.pipeline.llm.client import call_llm
+from src.internal.pipeline.llm.prompts import (
+    _RELEVANCE_SYSTEM_PROMPT,
+    _SYSTEM_PROMPT,
+    _SYSTEM_PROMPT_STRICT,
+)
 
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
@@ -111,30 +115,10 @@ def _build_batch_payload(query: str, items: list[NormalizedItem]) -> str:
     return json.dumps(payload, ensure_ascii=True)
 
 
-_SYSTEM_PROMPT = (
-    "Rate each item for the given topic. Return a JSON array where each element has: "
-    "id (string), sentiment (1-5), stance (-1/0/1), animosity (1-5), "
-    "reason (string, 1-sentence explanation of your rating). "
-    "Use only the provided text. Return only valid JSON, no extra text."
-)
-_SYSTEM_PROMPT_STRICT = (
-    _SYSTEM_PROMPT + " Return only a valid JSON array and absolutely nothing else."
-)
-
-_RELEVANCE_SYSTEM_PROMPT = (
-    "Determine whether each item is relevant to the given topic/query. "
-    "Return a JSON array where each element has: id (string), relevant (boolean). "
-    "An item is relevant if it directly discusses, argues about, or provides "
-    "an opinion on the topic. Off-topic or tangential items should be marked false. "
-    "Return only valid JSON, no extra text."
-)
-
-
 def _score_batch(
     query: str,
     batch: list[NormalizedItem],
     model: str | None,
-    timeout_seconds: int,
     _override,
     alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
@@ -143,7 +127,6 @@ def _score_batch(
         _SYSTEM_PROMPT,
         user_payload,
         model=model,
-        timeout_seconds=timeout_seconds,
         _override=_override,
     )
     try:
@@ -153,7 +136,6 @@ def _score_batch(
             _SYSTEM_PROMPT_STRICT,
             user_payload,
             model=model,
-            timeout_seconds=timeout_seconds,
             _override=_override,
         )
         return _validate_item_scores(_extract_json_array(retry), alpha=alpha)
@@ -172,9 +154,7 @@ def filter_relevant_items(
     for i in range(0, len(items), _RELEVANCE_BATCH_SIZE):
         batch = items[i : i + _RELEVANCE_BATCH_SIZE]
         payload = _build_batch_payload(query, batch)
-        raw_response = call_llm(
-            _RELEVANCE_SYSTEM_PROMPT, payload, timeout_seconds=45, _override=_override
-        )
+        raw_response = call_llm(_RELEVANCE_SYSTEM_PROMPT, payload, _override=_override)
         try:
             parsed = _extract_json_array(raw_response)
         except ValueError:
@@ -194,7 +174,6 @@ def assess_items(
     query: str,
     items: list[NormalizedItem],
     model: str | None = None,
-    timeout_seconds: int = 45,
     _override=None,
     alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
@@ -208,9 +187,7 @@ def assess_items(
     results: list[ItemScore] = []
     for i in range(0, len(items), _BATCH_SIZE):
         batch = items[i : i + _BATCH_SIZE]
-        batch_scores = _score_batch(
-            query, batch, model, timeout_seconds, _override, alpha=alpha
-        )
+        batch_scores = _score_batch(query, batch, model, _override, alpha=alpha)
         results.extend(batch_scores)
 
     return results

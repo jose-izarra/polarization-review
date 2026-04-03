@@ -4,12 +4,12 @@ import unittest
 from unittest.mock import patch
 
 from src.internal.pipeline.domain import SearchRequest
+from src.internal.pipeline.llm.run import run_search
 from src.internal.pipeline.mock.data import (
     FAKE_SCENARIOS,
     get_fake_data,
 )
 from src.internal.pipeline.mock.llm import mock_call_model
-from src.internal.pipeline.llm.run import run_search
 
 
 class TestFakeDataModule(unittest.TestCase):

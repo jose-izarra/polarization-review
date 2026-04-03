@@ -948,6 +948,7 @@ FAKE_SCENARIOS: dict[str, tuple[str, list[NormalizedItem]]] = {
     "fake_neutral_fictitious": (_NEUTRAL_QUERY, _NEUTRAL_ITEMS),
 }
 
+
 def get_fake_data(mode: str) -> tuple[str, list[NormalizedItem]]:
     """Return (query, items) for a fake scenario.
 

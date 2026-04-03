@@ -6,6 +6,7 @@ load_dotenv()
 
 _DEFAULT_POLARIZATION_MODEL = "gemini-2.5-flash"
 
+
 class Config:
     @property
     def env(self) -> str:

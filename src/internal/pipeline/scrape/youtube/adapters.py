@@ -75,7 +75,9 @@ class YouTubeAdapter:
         }
 
     def fetch(self, query: str, config: dict) -> list[NormalizedItem]:
-        from src.internal.pipeline.llm.sources.youtube.calls import generate_youtube_queries
+        from src.internal.pipeline.llm.sources.youtube.calls import (
+            generate_youtube_queries,
+        )
 
         youtube_queries = generate_youtube_queries(query)
         result = collect_youtube_data(query, config=config, queries=youtube_queries)

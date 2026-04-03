@@ -31,8 +31,8 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-from src.internal.pipeline.llm.run import run_search  # noqa: E402
 from src.internal.pipeline.domain import SearchRequest  # noqa: E402
+from src.internal.pipeline.llm.run import run_search  # noqa: E402
 
 SCENARIOS_FICTITIOUS = [
     "fake_polarized_fictitious",

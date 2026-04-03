@@ -4,8 +4,9 @@ from __future__ import annotations
 
 from src.internal.pipeline.domain import ItemScore
 
-from .score import compute_polarization
 from .assess import ALPHA_DEFAULT
+from .score import compute_polarization
+
 
 def generate_synthetic_dataset(
     n_for: int,

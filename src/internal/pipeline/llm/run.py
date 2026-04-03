@@ -259,7 +259,7 @@ def run_search(request: SearchRequest) -> PolarizationResult:
 
     with logfire.span("pipeline.score"):
         polarization_score = compute_polarization(item_scores)
-    n = len(items)
+    n = len(item_scores)
     confidence = _compute_confidence(n)
     confidence_label = _compute_confidence_label(n)
     rationale = _build_rationale(item_scores, items)

@@ -11,12 +11,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
-from src.internal.pipeline.llm.score import compute_polarization
 from src.internal.pipeline.domain import ItemScore
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
+from src.internal.pipeline.llm.score import compute_polarization
 
 CONFIG_PATH = Path(__file__).parent / "score_config.json"
-
-ALPHA_DEFAULT = 1
 
 
 def build_item_scores(cfg: dict) -> list[ItemScore]:

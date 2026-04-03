@@ -4,16 +4,16 @@ import math
 
 from src.internal.pipeline.domain import ItemScore
 
-# Maximum possible population stdev: perfect 50/50 split with r = ±7.5
-# (stance=±1, sentiment=5, animosity=5 → r = ±(5 + 0.8*5) = ±7.5)
-_P_MAX = 7.5
+# Maximum possible population stdev: perfect 50/50 split with r = ±9.0
+# (stance=±1, sentiment=5, animosity=5, α=0.8 → r = ±(5 + 0.8*5) = ±9.0)
+_P_MAX = 9.0
 
 
 def compute_polarization(item_scores: list[ItemScore]) -> float:
     """Return a 0-100 polarization score.
 
     Formula: pstdev(opinionated_r) * opinionated_ratio / P_MAX * 100
-    where r_i = stance * (sentiment + 0.8 * animosity)
+    where r_i = stance * (sentiment + α * animosity), α=0.8, P_MAX=9.0
     and opinionated_ratio = n_opinionated / n_total
 
     Only opinionated items (stance != 0) enter the stdev calculation,

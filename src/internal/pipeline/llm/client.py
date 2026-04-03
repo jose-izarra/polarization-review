@@ -8,7 +8,6 @@ def call_llm(
     user_payload: str,
     *,
     model: str | None = None,
-    timeout_seconds: int = 45,
     _override: Callable[[str, str], str] | None = None,
 ) -> str:
     """Single entry point for all LLM calls in the pipeline.
@@ -27,21 +26,17 @@ def call_llm(
         return mock_call_model(system_prompt, user_payload)
 
     chosen_model = model or config.polarization_model
-    return _call_gemini(
-        system_prompt, user_payload, model=chosen_model, timeout_seconds=timeout_seconds
-    )
+    return _call_gemini(system_prompt, user_payload, model=chosen_model)
 
 
 def _call_gemini(
     system_prompt: str,
     user_payload: str,
     model: str,
-    timeout_seconds: int,
 ) -> str:
     """Internal Gemini API wrapper. Not part of the public interface."""
     from google import genai
     from google.genai import types
-
     from src.internal.config import config
 
     client = genai.Client(api_key=config.gemini_api_key)
