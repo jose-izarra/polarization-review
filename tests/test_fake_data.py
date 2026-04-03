@@ -4,12 +4,12 @@ import unittest
 from unittest.mock import patch
 
 from src.internal.pipeline.domain import SearchRequest
-from src.internal.pipeline.llm.fake_data import (
+from src.internal.pipeline.mock.data import (
     FAKE_SCENARIOS,
     get_fake_data,
 )
-from src.internal.pipeline.llm.mock_llm import mock_call_model
-from src.internal.pipeline.llm.run_search import run_search
+from src.internal.pipeline.mock.llm import mock_call_model
+from src.internal.pipeline.llm.run import run_search
 
 
 class TestFakeDataModule(unittest.TestCase):
@@ -48,8 +48,8 @@ class TestFakeDataPipeline(unittest.TestCase):
     """Run fake data through the pipeline with mock LLM."""
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.run_search.assess_items")
-    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
     def test_fake_polarized_runs_ok(self, mock_filter, mock_assess, mock_processors):
         mock_filter.side_effect = lambda q, items, **kw: items
         from src.internal.pipeline.llm.assess import assess_items
@@ -66,8 +66,8 @@ class TestFakeDataPipeline(unittest.TestCase):
         self.assertEqual(result.query, "King Flavio FlobberFloppers")
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.run_search.assess_items")
-    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
     def test_fake_moderate_runs_ok(self, mock_filter, mock_assess, mock_processors):
         mock_filter.side_effect = lambda q, items, **kw: items
         from src.internal.pipeline.llm.assess import assess_items
@@ -83,8 +83,8 @@ class TestFakeDataPipeline(unittest.TestCase):
         self.assertEqual(result.query, "Grand Snorf Tax Decree FlobberFloppers")
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.run_search.assess_items")
-    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
     def test_fake_neutral_runs_ok(self, mock_filter, mock_assess, mock_processors):
         mock_filter.side_effect = lambda q, items, **kw: items
         from src.internal.pipeline.llm.assess import assess_items
@@ -106,8 +106,8 @@ class TestFakeDataPipeline(unittest.TestCase):
         self.assertIn("Unknown", result.error_message)
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.run_search.assess_items")
-    @patch("src.internal.pipeline.llm.run_search.filter_relevant_items")
+    @patch("src.internal.pipeline.llm.assess.assess_items")
+    @patch("src.internal.pipeline.llm.assess.filter_relevant_items")
     def test_fake_mode_skips_scraping(self, mock_filter, mock_assess, mock_processors):
         """Fake mode should never call _collect_and_normalize."""
         mock_filter.side_effect = lambda q, items, **kw: items
@@ -118,7 +118,7 @@ class TestFakeDataPipeline(unittest.TestCase):
         )
 
         with patch(
-            "src.internal.pipeline.llm.run_search._collect_and_normalize"
+            "src.internal.pipeline.llm.run._collect_and_normalize"
         ) as mock_collect:
             req = SearchRequest(query="test", mode="fake_polarized")
             result = run_search(req)

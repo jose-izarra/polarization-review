@@ -31,7 +31,7 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-from src.internal.pipeline.llm.run_search import run_search  # noqa: E402
+from src.internal.pipeline.llm.run import run_search  # noqa: E402
 from src.internal.pipeline.domain import SearchRequest  # noqa: E402
 
 SCENARIOS = ["fake_polarized", "fake_moderate", "fake_neutral"]
@@ -174,8 +174,8 @@ def main() -> None:
     parser.add_argument(
         "--out",
         type=str,
-        default="results",
-        help="Output directory (relative paths are from project root)",
+        default=str(Path(__file__).parent / "results"),
+        help="Output directory (default: benchmarks/fake/results)",
     )
     parser.add_argument(
         "--scenarios",

@@ -65,7 +65,7 @@ class TestComputePolarization(unittest.TestCase):
         self.assertLess(compute_polarization(low), compute_polarization(high))
 
     def test_neutrals_dilute_score(self):
-        """Adding neutrals (r=0) pulls pstdev toward centre, reducing score."""
+        """Adding neutrals reduces score via opinionated_ratio, not false variance."""
         pure = [_make_score(1, animosity=3) for _ in range(5)]
         pure += [_make_score(-1, animosity=3) for _ in range(5)]
 

@@ -32,7 +32,7 @@ from typing import TypedDict
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.internal.pipeline.llm.run_search import run_search
+from src.internal.pipeline.llm.run import run_search
 from src.internal.pipeline.domain import SearchRequest
 
 THRESHOLDS: dict[str, dict] = {

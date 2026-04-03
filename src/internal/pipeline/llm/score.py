@@ -12,21 +12,31 @@ _P_MAX = 7.5
 def compute_polarization(item_scores: list[ItemScore]) -> float:
     """Return a 0-100 polarization score.
 
-    Formula: pstdev(r_values) / P_MAX * 100
+    Formula: pstdev(opinionated_r) * opinionated_ratio / P_MAX * 100
     where r_i = stance * (sentiment + 0.5 * animosity)
+    and opinionated_ratio = n_opinionated / n_total
 
-    Neutral items contribute r=0, pulling stdev toward centre but less
-    aggressively than a hard opinionated_ratio multiplier.
+    Only opinionated items (stance != 0) enter the stdev calculation,
+    so neutral items cannot create false variance when everyone agrees.
+    The ratio then scales the score down proportionally when most items
+    are neutral, so a fringe 50/50 feud among a small minority scores
+    lower than a society-wide split.
+
     All-neutral or all-one-side → stdev=0 → score=0.
     """
     if not item_scores:
         return 0.0
 
-    r_values = [s.r for s in item_scores]
-    n = len(r_values)
-    mean = sum(r_values) / n
-    variance = sum((r - mean) ** 2 for r in r_values) / n
+    opinionated = [s for s in item_scores if s.stance != 0]
+    if not opinionated:
+        return 0.0
+
+    opinionated_r = [s.r for s in opinionated]
+    ratio = len(opinionated) / len(item_scores)
+    n = len(opinionated_r)
+    mean = sum(opinionated_r) / n
+    variance = sum((r - mean) ** 2 for r in opinionated_r) / n
     std = math.sqrt(variance)
 
-    raw = std / _P_MAX * 100
+    raw = std * ratio / _P_MAX * 100
     return min(round(raw, 2), 100.0)
