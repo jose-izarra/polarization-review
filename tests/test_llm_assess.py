@@ -2,7 +2,7 @@ import json
 import unittest
 
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
-from src.internal.pipeline.llm.llm_assess import assess_items, filter_relevant_items
+from src.internal.pipeline.llm.assess import assess_items, filter_relevant_items
 
 
 def _make_item(id: str) -> NormalizedItem:
@@ -41,7 +41,7 @@ class AssessItemsTests(unittest.TestCase):
                 [type("X", (), {"id": i["id"]})() for i in payload["items"]]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 3)
         self.assertIsInstance(result[0], ItemScore)
 
@@ -61,7 +61,7 @@ class AssessItemsTests(unittest.TestCase):
                 ]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 1)
         # r = stance * (sentiment + alpha * animosity) = 1 * (4 + 0.5 * 2) = 5.0
         self.assertAlmostEqual(result[0].r, 5.0)
@@ -82,7 +82,7 @@ class AssessItemsTests(unittest.TestCase):
                 ]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(result[0].reason, "strongly agrees")
 
     def test_reason_defaults_empty(self):
@@ -93,7 +93,7 @@ class AssessItemsTests(unittest.TestCase):
                 [{"id": "1", "sentiment": 3, "stance": 1, "animosity": 2}]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(result[0].reason, "")
 
     def test_retry_on_invalid_json_then_success(self):
@@ -108,14 +108,14 @@ class AssessItemsTests(unittest.TestCase):
                 [{"id": "1", "sentiment": 3, "stance": -1, "animosity": 3}]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(calls["n"], 2)
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0].stance, -1)
 
     def test_raises_when_no_items(self):
         with self.assertRaises(ValueError):
-            assess_items("query", [], call_model=lambda *_: "[]")
+            assess_items("query", [], _override=lambda *_: "[]")
 
     def test_skips_invalid_items_in_batch(self):
         items = [_make_item("1"), _make_item("2")]
@@ -129,7 +129,7 @@ class AssessItemsTests(unittest.TestCase):
                 ]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0].id, "1")
 
@@ -148,7 +148,7 @@ class AssessItemsTests(unittest.TestCase):
                 ]
             )
 
-        result = assess_items("query", items, call_model=fake_call)
+        result = assess_items("query", items, _override=fake_call)
         self.assertEqual(call_count["n"], 2)
         self.assertEqual(len(result), 20)
 
@@ -165,7 +165,7 @@ class FilterRelevantItemsTests(unittest.TestCase):
                 ]
             )
 
-        result = filter_relevant_items("query", items, call_model=fake_call)
+        result = filter_relevant_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0].id, "1")
         self.assertEqual(result[0].relevance_score, 1.0)
@@ -185,7 +185,7 @@ class FilterRelevantItemsTests(unittest.TestCase):
                 ]
             )
 
-        result = filter_relevant_items("query", items, call_model=fake_call)
+        result = filter_relevant_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 2)
 
     def test_parsing_failure_keeps_batch(self):
@@ -194,7 +194,7 @@ class FilterRelevantItemsTests(unittest.TestCase):
         def fake_call(system_prompt, user_payload):
             return "not valid json at all"
 
-        result = filter_relevant_items("query", items, call_model=fake_call)
+        result = filter_relevant_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 1)
 
 

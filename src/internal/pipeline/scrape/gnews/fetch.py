@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from urllib import error, request
 from urllib.parse import urlencode, urlparse
 
-from src.internal.config.config import config as app_config
+from src.internal.config import config as app_config
 
 from .utils import (
     _DEFAULT_LANG,

@@ -4,10 +4,11 @@ import argparse
 import json
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import asdict, replace
+from dataclasses import asdict
 from datetime import datetime, timezone
 
 import logfire
+import src.internal.pipeline.llm.sources  # noqa — triggers processor registration
 from src.internal.pipeline.domain import (
     EvidenceItem,
     ItemScore,
@@ -15,9 +16,9 @@ from src.internal.pipeline.domain import (
     PolarizationResult,
     SearchRequest,
 )
-from src.internal.pipeline.scrape.youtube.adapters import _determine_video_stances
+from src.internal.pipeline.llm.sources.registry import get_processors
 
-from .llm_assess import assess_items, filter_relevant_items
+from .assess import assess_items, filter_relevant_items
 from .normalize import dedupe_items, filter_item
 from .score import compute_polarization
 
@@ -119,40 +120,6 @@ def _compute_confidence_label(n: int) -> str:
     if n >= 5:
         return "low"
     return "very_low"
-
-
-def _apply_echo_chamber_dampening(
-    item_scores: list[ItemScore],
-    items: list[NormalizedItem],
-    video_stances: dict[str, int],
-) -> list[ItemScore]:
-    """Dampen animosity of comments that agree with their parent video's stance."""
-    if not video_stances:
-        return item_scores
-
-    # Build map: item_id -> parent_video_stance
-    item_video_stance: dict[str, int] = {}
-    for item in items:
-        if item.parent_video_id:
-            # Find the NormalizedItem ID for this video
-            video_norm_id = f"youtube_video_{item.parent_video_id}"
-            if video_norm_id in video_stances:
-                item_video_stance[item.id] = video_stances[video_norm_id]
-
-    dampened: list[ItemScore] = []
-    for score in item_scores:
-        parent_stance = item_video_stance.get(score.id)
-        if (
-            parent_stance is not None
-            and score.stance == parent_stance
-            and score.stance != 0
-        ):
-            new_animosity_f = score.animosity * 0.7
-            new_r = score.stance * (score.sentiment + 0.5 * new_animosity_f)
-            dampened.append(replace(score, r=new_r))
-        else:
-            dampened.append(score)
-    return dampened
 
 
 def _build_evidence(
@@ -286,19 +253,9 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             error_message=str(exc),
         )
 
-    # Step 4: YouTube echo chamber dampening
-    video_stances = _determine_video_stances(query, items)
-    item_scores = _apply_echo_chamber_dampening(item_scores, items, video_stances)
-
-    # Update parent_video_stance on items
-    for i, item in enumerate(items):
-        if item.parent_video_id:
-            video_norm_id = f"youtube_video_{item.parent_video_id}"
-            if video_norm_id in video_stances:
-                items[i] = replace(
-                    item,
-                    parent_video_stance=video_stances[video_norm_id],
-                )
+    # Step 4: Source-specific post-assessment processing
+    for processor in get_processors():
+        item_scores = processor.post_assess(query, items, item_scores)
 
     with logfire.span("pipeline.score"):
         polarization_score = compute_polarization(item_scores)

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from collections import defaultdict
 
 import logfire
@@ -8,47 +7,6 @@ from src.internal.pipeline.domain import NormalizedItem, SearchRequest
 from src.internal.pipeline.scrape.normalize import normalize_raw_item
 
 from .fetch import collect_youtube_data
-
-
-def _determine_video_stances(
-    query: str,
-    items: list[NormalizedItem],
-    call_model=None,
-) -> dict[str, int]:
-    """Send video title+transcript to LLM and get stance per video."""
-    from src.internal.pipeline.llm.llm_assess import _get_invoke
-
-    videos = [i for i in items if i.platform == "youtube" and i.content_type == "post"]
-    if not videos:
-        return {}
-
-    invoke = _get_invoke(call_model, model=None, timeout_seconds=45)
-
-    system_prompt = (
-        "For each video, determine its overall stance on the given topic. "
-        "Return a JSON array where each element has: id (string), stance (-1/0/1). "
-        "Use -1 for against, 0 for neutral, 1 for the topic. "
-        "Return only valid JSON."
-    )
-    payload = {
-        "query": query,
-        "videos": [{"id": item.id, "title": item.text[:200]} for item in videos],
-    }
-    raw_response = invoke(system_prompt, json.dumps(payload))
-
-    from src.internal.pipeline.llm.llm_assess import _extract_json_array
-
-    stances: dict[str, int] = {}
-    try:
-        parsed = _extract_json_array(raw_response)
-        for elem in parsed:
-            if isinstance(elem, dict) and "id" in elem and "stance" in elem:
-                stance = int(elem["stance"])
-                if stance in (-1, 0, 1):
-                    stances[str(elem["id"])] = stance
-    except Exception:
-        logfire.warning("Failed to parse video stances")
-    return stances
 
 
 def _balance_youtube_by_stance(
@@ -63,7 +21,9 @@ def _balance_youtube_by_stance(
     same-stance videos together with all comments belonging to those videos.
     Non-YouTube items are always kept unchanged.
     """
-    video_stances = _determine_video_stances(query, items, call_model=call_model)
+    from src.internal.pipeline.llm.sources.youtube.calls import determine_video_stances
+
+    video_stances = determine_video_stances(query, items, _override=call_model)
     if not video_stances:
         return items
 
@@ -115,7 +75,7 @@ class YouTubeAdapter:
         }
 
     def fetch(self, query: str, config: dict) -> list[NormalizedItem]:
-        from src.internal.pipeline.llm.llm_assess import generate_youtube_queries
+        from src.internal.pipeline.llm.sources.youtube.calls import generate_youtube_queries
 
         youtube_queries = generate_youtube_queries(query)
         result = collect_youtube_data(query, config=config, queries=youtube_queries)

@@ -5,8 +5,9 @@ import re
 from dataclasses import replace
 
 import logfire
-from src.internal.config.config import config
+
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
+from src.internal.pipeline.llm.client import call_llm
 
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
@@ -110,33 +111,6 @@ def _build_batch_payload(query: str, items: list[NormalizedItem]) -> str:
     return json.dumps(payload, ensure_ascii=True)
 
 
-def _call_gemini_chat(
-    system_prompt: str, user_payload: str, model: str, timeout_seconds: int
-) -> str:
-    from google import genai
-    from google.genai import types
-
-    if not config.gemini_api_key:
-        raise RuntimeError("GEMINI_API_KEY is required for LLM assessment")
-
-    client = genai.Client(api_key=config.gemini_api_key)
-
-    try:
-        response = client.models.generate_content(
-            model=model,
-            contents=user_payload,
-            config=types.GenerateContentConfig(
-                system_instruction=system_prompt,
-                temperature=0.0,
-                response_mime_type="application/json",
-            ),
-        )
-    except Exception as exc:
-        raise RuntimeError(f"Gemini API error: {exc}") from exc
-
-    return response.text
-
-
 _SYSTEM_PROMPT = (
     "Rate each item for the given topic. Return a JSON array where each element has: "
     "id (string), sentiment (1-5), stance (-1/0/1), animosity (1-5), "
@@ -159,90 +133,48 @@ _RELEVANCE_SYSTEM_PROMPT = (
 def _score_batch(
     query: str,
     batch: list[NormalizedItem],
-    invoke,
+    model: str | None,
+    timeout_seconds: int,
+    _override,
     alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
     user_payload = _build_batch_payload(query, batch)
-    raw_response = invoke(_SYSTEM_PROMPT, user_payload)
+    raw_response = call_llm(
+        _SYSTEM_PROMPT,
+        user_payload,
+        model=model,
+        timeout_seconds=timeout_seconds,
+        _override=_override,
+    )
     try:
-        raw_items = _extract_json_array(raw_response)
-        return _validate_item_scores(raw_items, alpha=alpha)
+        return _validate_item_scores(_extract_json_array(raw_response), alpha=alpha)
     except Exception:
-        retry_response = invoke(_SYSTEM_PROMPT_STRICT, user_payload)
-        raw_items = _extract_json_array(retry_response)
-        return _validate_item_scores(raw_items, alpha=alpha)
-
-
-def _get_invoke(call_model, model: str | None, timeout_seconds: int):
-    """Build the invoke callable from call_model or config."""
-    if call_model is not None:
-        return call_model
-
-    if config.gemini_api_key is None:
-        from .mock_llm import mock_call_model
-
-        return mock_call_model
-
-    chosen_model = model or config.polarization_model
-
-    def invoke(sys_prompt, user_input):
-        return _call_gemini_chat(
-            sys_prompt,
-            user_input,
-            model=chosen_model,
+        retry = call_llm(
+            _SYSTEM_PROMPT_STRICT,
+            user_payload,
+            model=model,
             timeout_seconds=timeout_seconds,
+            _override=_override,
         )
-
-    return invoke
-
-
-_YOUTUBE_QUERY_SYSTEM_PROMPT = (
-    "Given a search query or claim, generate exactly 3 YouTube search queries to "
-    "surface videos covering different perspectives on the topic: "
-    "1) a query finding videos that support or argue for the claim, "
-    "2) a query finding videos that oppose, criticise, or debunk the claim, "
-    "3) a neutral debate or analysis framing of the same topic. "
-    "Return a JSON array of exactly 3 short search strings. Return only valid JSON."
-)
-
-
-def generate_youtube_queries(query: str, call_model=None) -> list[str]:
-    """Use LLM to generate 3 YouTube search queries covering opposing perspectives.
-
-    Falls back to [query] on any failure so the pipeline is never blocked.
-    """
-    invoke = _get_invoke(call_model, model=None, timeout_seconds=30)
-    try:
-        raw = invoke(_YOUTUBE_QUERY_SYSTEM_PROMPT, json.dumps({"query": query}))
-        parsed = _extract_json_array(raw)
-        queries = [
-            str(q).strip() for q in parsed if isinstance(q, str) and str(q).strip()
-        ]
-        if len(queries) >= 2:
-            return queries[:3]
-    except Exception:
-        logfire.warning(
-            "Failed to generate YouTube queries, falling back to original", query=query
-        )
-    return [query]
+        return _validate_item_scores(_extract_json_array(retry), alpha=alpha)
 
 
 def filter_relevant_items(
     query: str,
     items: list[NormalizedItem],
-    call_model=None,
+    _override=None,
 ) -> list[NormalizedItem]:
     """Filter items for relevance to the query using LLM."""
     if not items:
         return []
 
-    invoke = _get_invoke(call_model, model=None, timeout_seconds=45)
-
     relevant_ids: set[str] = set()
     for i in range(0, len(items), _RELEVANCE_BATCH_SIZE):
         batch = items[i : i + _RELEVANCE_BATCH_SIZE]
         payload = _build_batch_payload(query, batch)
-        raw_response = invoke(_RELEVANCE_SYSTEM_PROMPT, payload)
+        raw_response = call_llm(
+            _RELEVANCE_SYSTEM_PROMPT, payload, timeout_seconds=45, _override=_override
+        )
         try:
             parsed = _extract_json_array(raw_response)
         except ValueError:
@@ -263,22 +195,22 @@ def assess_items(
     items: list[NormalizedItem],
     model: str | None = None,
     timeout_seconds: int = 45,
-    call_model=None,
+    _override=None,
     alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
     """Score each item individually for sentiment, stance, and animosity.
 
-    call_model(system_prompt, user_payload) can be injected for tests.
+    _override(system_prompt, user_payload) can be injected for tests.
     """
     if not items:
         raise ValueError("Cannot assess items with zero items")
 
-    invoke = _get_invoke(call_model, model, timeout_seconds)
-
     results: list[ItemScore] = []
     for i in range(0, len(items), _BATCH_SIZE):
         batch = items[i : i + _BATCH_SIZE]
-        batch_scores = _score_batch(query, batch, invoke, alpha=alpha)
+        batch_scores = _score_batch(
+            query, batch, model, timeout_seconds, _override, alpha=alpha
+        )
         results.extend(batch_scores)
 
     return results
