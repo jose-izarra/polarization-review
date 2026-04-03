@@ -12,7 +12,7 @@ from src.internal.pipeline.llm.client import call_llm
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
-ALPHA_DEFAULT = 0.5
+ALPHA_DEFAULT = 0.8
 
 
 def _truncate(text: str, limit: int = 280) -> str:
