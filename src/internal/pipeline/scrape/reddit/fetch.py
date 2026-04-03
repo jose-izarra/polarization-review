@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 
 import praw
 import prawcore
-from src.internal.config.config import config as app_config
+from src.internal.config import config as app_config
 
 from .utils import (
     DEFAULT_CONFIG,

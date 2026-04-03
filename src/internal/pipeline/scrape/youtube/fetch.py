@@ -11,7 +11,7 @@ Environment Variables Required:
 from __future__ import annotations
 
 import logfire
-from src.internal.config.config import config as app_config
+from src.internal.config import config as app_config
 
 from .utils import DEFAULT_CONFIG
 
@@ -27,8 +27,8 @@ def _fetch_transcript(video_id: str) -> str | None:
     try:
         from youtube_transcript_api import YouTubeTranscriptApi
 
-        transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
-        full_text = " ".join(entry["text"] for entry in transcript_list)
+        transcript = YouTubeTranscriptApi().fetch(video_id)
+        full_text = " ".join(snippet.text for snippet in transcript)
         return full_text
     except Exception as exc:
         logfire.debug("Could not fetch transcript", video_id=video_id, error=str(exc))

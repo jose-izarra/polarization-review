@@ -942,16 +942,11 @@ _NEUTRAL_ITEMS: list[NormalizedItem] = [
 ]
 
 
-# ---------------------------------------------------------------------------
-# Public API
-# ---------------------------------------------------------------------------
-
 FAKE_SCENARIOS: dict[str, tuple[str, list[NormalizedItem]]] = {
     "fake_polarized": (_POLARIZED_QUERY, _POLARIZED_ITEMS),
     "fake_moderate": (_MODERATE_QUERY, _MODERATE_ITEMS),
     "fake_neutral": (_NEUTRAL_QUERY, _NEUTRAL_ITEMS),
 }
-
 
 def get_fake_data(mode: str) -> tuple[str, list[NormalizedItem]]:
     """Return (query, items) for a fake scenario.

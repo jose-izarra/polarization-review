@@ -159,7 +159,7 @@ def run_search(request: SearchRequest) -> PolarizationResult:
 
     # Fake mode: skip scraping, use synthetic data
     if request.mode.startswith("fake_"):
-        from .fake_data import get_fake_data
+        from src.internal.pipeline.mock.data import get_fake_data
 
         try:
             query, items = get_fake_data(request.mode)

@@ -22,7 +22,7 @@ def call_llm(
     from src.internal.config import config
 
     if config.gemini_api_key is None:
-        from src.internal.pipeline.llm.mock_llm import mock_call_model
+        from src.internal.pipeline.mock.llm import mock_call_model
 
         return mock_call_model(system_prompt, user_payload)
 
