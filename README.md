@@ -100,18 +100,19 @@ poe format    # ruff format
 Each item gets a polarity value `r`:
 
 ```
-r_i = stance × (sentiment + 0.5 × animosity)
+r_i = stance × (sentiment + α × animosity)    [α = 0.8]
 ```
 
 where `stance ∈ {−1, 0, 1}`, `sentiment ∈ [1, 5]`, `animosity ∈ [1, 5]`.
 
-The polarization score is the population standard deviation of all `r` values, normalized by the theoretical maximum (`P_MAX = 7.5`):
+Only opinionated items (`stance ≠ 0`) contribute to the spread calculation. The final score scales by the fraction of opinionated items to avoid inflating scores from fringe feuds in otherwise neutral samples:
 
 ```
-score = pstdev({r_i}) / 7.5 × 100   (capped at 100)
+opinionated_ratio = n_opinionated / n_total
+score = pstdev({r_i | stance ≠ 0}) × opinionated_ratio / P_MAX × 100   (capped at 100)
 ```
 
-Neutral items contribute `r = 0`, naturally pulling the score toward zero. A perfectly one-sided sample also scores 0 (zero spread). The score is highest when opinions are evenly split between strongly opposing sides.
+`P_MAX = 7.5` is the calibrated normalization bound. A perfectly one-sided sample scores 0 (zero spread). An all-neutral sample also scores 0. The score is highest when opinions are evenly and strongly split between opposing sides.
 
 ## Architecture
 
@@ -192,7 +193,7 @@ All types live in `src/internal/pipeline/domain.py`.
 | `sentiment` | `int` | 1–5 |
 | `stance` | `int` | −1 (against) / 0 (neutral) / 1 (for) |
 | `animosity` | `int` | 1–5 |
-| `r` | `float` | `stance × (sentiment + 0.5 × animosity)` |
+| `r` | `float` | `stance × (sentiment + 0.8 × animosity)` |
 | `reason` | `str` | One-sentence LLM explanation |
 
 ## Testing conventions
