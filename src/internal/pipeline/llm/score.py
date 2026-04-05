@@ -4,7 +4,7 @@ import math
 
 from src.internal.pipeline.domain import ItemScore
 
-# Maximum possible population stdev: perfect 50/50 split with r = ±9.0
+# Maximum possible theoretical population stdev: perfect 50/50 split with r = ±9.0
 # (stance=±1, sentiment=5, animosity=5, α=0.8 → r = ±(5 + 0.8*5) = ±9.0)
 _P_MAX = 9.0
 
