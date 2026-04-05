@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 from datetime import datetime, timezone
 
-import logfire
+from src.internal.config import logfire
 import src.internal.pipeline.llm.sources  # noqa — triggers processor registration
 from src.internal.pipeline.domain import (
     EvidenceItem,

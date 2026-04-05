@@ -14,7 +14,6 @@ Environment Variables Required:
 import logging
 from datetime import datetime, timezone
 
-import logfire
 import praw
 import prawcore
 from src.internal.config import config as app_config
@@ -116,7 +115,7 @@ def discover_subreddits(
     except Exception as e:
         logger.warning("Unexpected error during subreddit discovery: %s", e)
 
-    logfire.info("Discovered subreddits: %s", discovered)
+    logger.info("Discovered subreddits: %s", discovered)
     return discovered
 
 
@@ -201,7 +200,7 @@ def fetch_posts(
     except Exception as e:
         logger.warning("Failed to search r/%s: %s", subreddit_name, e)
 
-    logfire.info("Found %d posts", len(posts))
+    logger.info("Found %d posts", len(posts))
     return posts
 
 
@@ -272,7 +271,7 @@ def fetch_comments(reddit, submission_id, search_term, max_comments=100):
                 }
             )
 
-        logfire.info("Found %d comments", len(comments))
+        logger.info("Found %d comments", len(comments))
         return comments
 
     except prawcore.exceptions.RequestException as e:
