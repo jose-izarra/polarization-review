@@ -24,7 +24,7 @@ from .score import compute_polarization
 
 
 def _select_per_platform(
-    items: list[NormalizedItem], max_per_platform: int = 50
+    items: list[NormalizedItem], max_per_platform: int = 100
 ) -> list[NormalizedItem]:
     """Take the top N items per platform by engagement, then combine.
 
@@ -193,7 +193,9 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             )
 
         # Per-platform cap
-        items = _select_per_platform(items, max_per_platform=50)
+        logfire.info("Before per-platform cap: {count} items", count=len(items))
+        items = _select_per_platform(items)
+        logfire.info("After per-platform cap: {count} items", count=len(items))
 
     if not items:
         return PolarizationResult(
@@ -211,6 +213,7 @@ def run_search(request: SearchRequest) -> PolarizationResult:
     # Step 2: Relevance filter
     with logfire.span("pipeline.filter", item_count=len(items)):
         items = filter_relevant_items(query, items)
+    logfire.info("After relevance filter: {count} items", count=len(items))
     if not items:
         return PolarizationResult(
             query=query,
