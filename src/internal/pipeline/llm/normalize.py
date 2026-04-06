@@ -5,17 +5,17 @@ import re
 from src.internal.pipeline.domain import NormalizedItem
 
 _WHITESPACE_RE = re.compile(r"\s+")
-
+_MIN_TEXT_LENGTH = 10
 
 def clean_text(text: str) -> str:
     """Collapse whitespace and trim content."""
     return _WHITESPACE_RE.sub(" ", text or "").strip()
 
 
-def filter_item(item: dict, min_text_length: int = 20) -> bool:
+def filter_item(item: dict) -> bool:
     """Minimal quality filters for v0."""
     text = clean_text(item.get("text", ""))
-    if len(text) < min_text_length:
+    if len(text) < _MIN_TEXT_LENGTH:
         return False
     if text in {"[deleted]", "[removed]"}:
         return False
@@ -25,13 +25,18 @@ def filter_item(item: dict, min_text_length: int = 20) -> bool:
 
 
 def dedupe_items(items: list[NormalizedItem]) -> list[NormalizedItem]:
-    """Deduplicate by content id."""
-    seen: set[str] = set()
+    """Deduplicate by id and by exact text content (catches syndicated articles)."""
+    seen_ids: set[str] = set()
+    seen_texts: set[str] = set()
     deduped: list[NormalizedItem] = []
     for item in items:
-        if item.id in seen:
+        if item.id in seen_ids:
             continue
-        seen.add(item.id)
+        normalized_text = item.text.lower()
+        if normalized_text in seen_texts:
+            continue
+        seen_ids.add(item.id)
+        seen_texts.add(normalized_text)
         deduped.append(item)
     return deduped
 

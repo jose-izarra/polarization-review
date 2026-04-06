@@ -24,7 +24,7 @@ from .score import compute_polarization
 
 
 def _select_per_platform(
-    items: list[NormalizedItem], max_per_platform: int = 20
+    items: list[NormalizedItem], max_per_platform: int = 50
 ) -> list[NormalizedItem]:
     """Take the top N items per platform by engagement, then combine.
 
@@ -68,7 +68,7 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
     for adapter in sources:
         all_items = adapter.post_process(all_items, request.query)
 
-    kept = [item for item in all_items if filter_item(asdict(item), min_text_length=20)]
+    kept = [item for item in all_items if filter_item(asdict(item))]
     return dedupe_items(kept)
 
 
@@ -193,7 +193,7 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             )
 
         # Per-platform cap
-        items = _select_per_platform(items, max_per_platform=20)
+        items = _select_per_platform(items, max_per_platform=50)
 
     if not items:
         return PolarizationResult(
