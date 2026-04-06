@@ -10,8 +10,8 @@ poe start          # uvicorn src.api.main:app --reload on :8000
 
 # Tests
 poe test           # Run all tests with pytest
-pytest tests/test_normalize.py -v   # Run a single test file
-pytest tests/test_llm_assess.py::test_function_name -v  # Run a single test
+poe test tests/test_normalize.py -v   # Run a single test file
+poe test tests/test_llm_assess.py::test_function_name -v  # Run a single test
 
 # Code quality
 poe lint           # ruff check
