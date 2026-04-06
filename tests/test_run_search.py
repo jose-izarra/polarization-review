@@ -46,25 +46,6 @@ class RunSearchTests(unittest.TestCase):
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
         self.assertGreater(len(result.evidence), 0)
-        self.assertIn(result.confidence_label, ("high", "moderate", "low", "very_low"))
-
-    @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
-    @patch("src.internal.pipeline.llm.run.filter_relevant_items")
-    @patch("src.internal.pipeline.llm.run.assess_items")
-    @patch("src.internal.pipeline.llm.run._collect_and_normalize")
-    def test_confidence_linear_ramp(
-        self, mock_collect, mock_assess, mock_filter, mock_processors
-    ):
-        """1 item -> confidence = 0.1"""
-        items = [_make_item("p1")]
-        mock_collect.return_value = items
-        mock_filter.return_value = items
-        mock_assess.return_value = [_item_score("p1", stance=1)]
-
-        result = run_search(SearchRequest(query="topic"))
-        self.assertEqual(result.status, "ok")
-        self.assertAlmostEqual(result.confidence, 0.1)
-        self.assertEqual(result.confidence_label, "very_low")
 
     @patch("src.internal.pipeline.llm.run._collect_and_normalize")
     def test_sparse_data_returns_degraded(self, mock_collect):

@@ -58,7 +58,6 @@ class ItemScore:
 @dataclass(slots=True)
 class LLMAssessment:
     polarization_score: float
-    confidence: float
     rationale: str
     evidence_ids: list[str]
 
@@ -69,12 +68,10 @@ class PolarizationResult:
     collected_at: str
     sample_size: int
     polarization_score: float | None
-    confidence: float | None
     rationale: str
     evidence: list[EvidenceItem]
     status: ResultStatus
     error_message: str | None
-    confidence_label: str = ""
     stance_distribution: dict | None = None
     source_breakdown: dict | None = None
 

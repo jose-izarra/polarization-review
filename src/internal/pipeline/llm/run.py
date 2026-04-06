@@ -105,22 +105,6 @@ def _build_rationale(
     return " ".join(parts)
 
 
-def _compute_confidence(n: int) -> float:
-    """Linear ramp: 0 -> 1 over 10 items."""
-    if n == 0:
-        return 0.0
-    return round(min(n / 10, 1.0), 4)
-
-
-def _compute_confidence_label(n: int) -> str:
-    if n >= 30:
-        return "high"
-    if n >= 10:
-        return "moderate"
-    if n >= 5:
-        return "low"
-    return "very_low"
-
 
 def _build_evidence(
     item_scores: list[ItemScore],
@@ -169,7 +153,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 collected_at=collected_at,
                 sample_size=0,
                 polarization_score=None,
-                confidence=None,
                 rationale=f"Unknown fake mode: {request.mode}",
                 evidence=[],
                 status="error",
@@ -185,7 +168,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 collected_at=collected_at,
                 sample_size=0,
                 polarization_score=None,
-                confidence=None,
                 rationale="Failed while collecting data.",
                 evidence=[],
                 status="error",
@@ -203,7 +185,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             collected_at=collected_at,
             sample_size=0,
             polarization_score=None,
-            confidence=None,
             rationale="Insufficient data for this query.",
             evidence=[],
             status="degraded",
@@ -220,7 +201,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             collected_at=collected_at,
             sample_size=0,
             polarization_score=None,
-            confidence=None,
             rationale="No relevant items found for this query.",
             evidence=[],
             status="degraded",
@@ -246,7 +226,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             collected_at=collected_at,
             sample_size=len(items),
             polarization_score=None,
-            confidence=None,
             rationale=(
                 "LLM assessment unavailable; collected evidence is returned "
                 "for inspection."
@@ -263,8 +242,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
     with logfire.span("pipeline.score"):
         polarization_score = compute_polarization(item_scores)
     n = len(item_scores)
-    confidence = _compute_confidence(n)
-    confidence_label = _compute_confidence_label(n)
     rationale = _build_rationale(item_scores, items)
 
     n_for = sum(1 for s in item_scores if s.stance == 1)
@@ -291,12 +268,10 @@ def run_search(request: SearchRequest) -> PolarizationResult:
         collected_at=collected_at,
         sample_size=n,
         polarization_score=polarization_score,
-        confidence=confidence,
         rationale=rationale,
         evidence=evidence_items,
         status="ok",
         error_message=None,
-        confidence_label=confidence_label,
         stance_distribution={"for": n_for, "against": n_against, "neutral": n_neutral},
         source_breakdown=dict(platform_counts),
     )
