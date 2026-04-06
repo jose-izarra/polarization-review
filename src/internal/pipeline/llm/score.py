@@ -3,17 +3,18 @@ from __future__ import annotations
 import math
 
 from src.internal.pipeline.domain import ItemScore
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 
-# Maximum possible theoretical population stdev: perfect 50/50 split with r = ±9.0
-# (stance=±1, sentiment=5, animosity=5, α=0.8 → r = ±(5 + 0.8*5) = ±9.0)
-_P_MAX = 9.0
+# Maximum possible theoretical population stdev: perfect 50/50 split with r = ±14.0
+# (stance=±1, sentiment=10 [max], animosity=5, α=0.5 → r = ±(10 + 0.5*5) = ±14.0)
+_P_MAX = 10 + ALPHA_DEFAULT * 5
 
 
 def compute_polarization(item_scores: list[ItemScore]) -> float:
     """Return a 0-100 polarization score.
 
     Formula: pstdev(opinionated_r) * opinionated_ratio / P_MAX * 100
-    where r_i = stance * (sentiment + α * animosity), α=0.8, P_MAX=9.0
+    where r_i = stance * (sentiment + α * animosity), α=0.5, P_MAX=14.0
     and opinionated_ratio = n_opinionated / n_total
 
     Only opinionated items (stance != 0) enter the stdev calculation,

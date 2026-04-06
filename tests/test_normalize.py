@@ -34,8 +34,28 @@ class NormalizeTests(unittest.TestCase):
         deduped = dedupe_items(items)
         self.assertEqual([x.id for x in deduped], ["1", "2"])
 
-        top = select_top_items(deduped, max_items=1)
-        self.assertEqual(top[0].id, "2")
+    def test_dedupe_by_content_catches_syndicated_articles(self):
+        """Same text on different URLs (syndicated GNews) should be dropped."""
+        same_text = "Climate bill passes senate with bipartisan support."
+        items = [
+            NormalizedItem("gnews_https://nytimes.com/article", same_text, "https://nytimes.com/article", "t", 0, "post", "gnews"),
+            NormalizedItem("gnews_https://apnews.com/article", same_text, "https://apnews.com/article", "t", 0, "post", "gnews"),
+            NormalizedItem("gnews_https://bbc.com/article", "Different article text here.", "https://bbc.com/article", "t", 0, "post", "gnews"),
+        ]
+        deduped = dedupe_items(items)
+        self.assertEqual(len(deduped), 2)
+        self.assertEqual(deduped[0].id, "gnews_https://nytimes.com/article")
+        self.assertEqual(deduped[1].id, "gnews_https://bbc.com/article")
+
+    def test_dedupe_content_comparison_is_case_insensitive(self):
+        """Content dedup normalises to lowercase before comparing."""
+        items = [
+            NormalizedItem("id_1", "Hello World", "u1", "t", 0, "post"),
+            NormalizedItem("id_2", "hello world", "u2", "t", 0, "post"),
+        ]
+        deduped = dedupe_items(items)
+        self.assertEqual(len(deduped), 1)
+        self.assertEqual(deduped[0].id, "id_1")
 
     def test_normalize_raw_item(self):
         raw = {

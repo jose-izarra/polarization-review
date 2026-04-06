@@ -7,7 +7,7 @@ from src.internal.pipeline.llm.run import run_search
 
 
 def _item_score(id: str, stance: int = 1) -> ItemScore:
-    sentiment, animosity = 3, 2
+    sentiment, animosity = 5, 2
     r = stance * (sentiment + ALPHA_DEFAULT * animosity)
     return ItemScore(
         id=id, sentiment=sentiment, stance=stance, animosity=animosity, r=r
@@ -88,7 +88,7 @@ class RunSearchTests(unittest.TestCase):
         mock_collect.return_value = items
         mock_filter.return_value = items
         mock_assess.return_value = [
-            ItemScore(id="p1", sentiment=3, stance=0, animosity=1, r=0.0),
+            ItemScore(id="p1", sentiment=5, stance=0, animosity=1, r=0.0),
         ]
 
         result = run_search(SearchRequest(query="bland topic"))

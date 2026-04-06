@@ -6,12 +6,12 @@ For each item assign three scores using ONLY the text provided — do not rely o
 about the topic itself.
 
 ──────────────────────────────────────────
-SENTIMENT  (1-5)  — overall emotional charge toward the topic or its actors
-  1 = Strongly negative: contempt, disgust, despair ("disgusting", "a complete disaster", "I hate")
-  2 = Mildly negative: criticism, disappointment, frustration ("I don't like", "this is wrong")
-  3 = Neutral / balanced: factual, mixed, or no clear emotional lean
-  4 = Mildly positive: approval, optimism, mild praise ("good idea", "I support this")
-  5 = Strongly positive: enthusiasm, admiration, strong endorsement ("brilliant", "absolutely love")
+SENTIMENT  (1-10)  — overall emotional charge toward the topic or its actors
+   1 = Strongly negative: contempt, disgust, despair ("disgusting", "a complete disaster", "I hate")
+   3 = Mildly negative: criticism, disappointment, frustration ("I don't like", "this is wrong")
+   5 = Neutral / balanced: factual, mixed, or no clear emotional lean
+   7 = Mildly positive: approval, optimism, mild praise ("good idea", "I support this")
+  10 = Strongly positive: enthusiasm, admiration, strong endorsement ("brilliant", "absolutely love")
 
 STANCE  (-1 / 0 / 1)  — position relative to the topic
   -1 = Against / opposing
@@ -28,19 +28,19 @@ ANIMOSITY  (1-5)  — hostility, aggression, or dehumanisation directed at peopl
 
 CALIBRATION EXAMPLES
   "I think the policy has some merits but the implementation was rushed."
-    → sentiment=3, stance=0, animosity=1
+    → sentiment=5, stance=0, animosity=1
   "This is a great step forward and I fully support the decision."
-    → sentiment=5, stance=1, animosity=1
+    → sentiment=9, stance=1, animosity=1
   "Typical government incompetence. They never get anything right."
-    → sentiment=2, stance=-1, animosity=3
+    → sentiment=3, stance=-1, animosity=3
   "This treasonous fascist should be imprisoned for life."
     → sentiment=1, stance=-1, animosity=5
   "I strongly oppose this policy — it will hurt ordinary families."
-    → sentiment=2, stance=-1, animosity=2
+    → sentiment=3, stance=-1, animosity=2
 ──────────────────────────────────────────
 
 Return a JSON array where each element has:
-  id (string), sentiment (1-5), stance (-1/0/1), animosity (1-5), reason (string, one sentence).
+  id (string), sentiment (1-10), stance (-1/0/1), animosity (1-5), reason (string, one sentence).
 
 Use only the provided text. Return only valid JSON, no extra text."""
 

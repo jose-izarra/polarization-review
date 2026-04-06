@@ -16,7 +16,7 @@ from src.internal.pipeline.llm.prompts import (
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
-ALPHA_DEFAULT = 0.8
+ALPHA_DEFAULT = 0.5
 
 
 def _truncate(text: str, limit: int = 280) -> str:
@@ -72,7 +72,7 @@ def _validate_item_scores(
             )
             continue
 
-        if sentiment not in range(1, 6):
+        if sentiment not in range(1, 11):
             logfire.warning(
                 "Skipping item — sentiment out of range",
                 item_id=item_id,
