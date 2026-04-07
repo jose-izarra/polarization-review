@@ -48,7 +48,7 @@ class EvidenceItem:
 @dataclass(slots=True)
 class ItemScore:
     id: str
-    sentiment: int  # 1-10  (LLM rating)
+    sentiment: int  # 1-5  (LLM rating)
     stance: int  # -1 (against) / 0 (neutral) / 1 (for)
     animosity: int  # 1-5  (emotional weight)
     r: float  # computed r_i = stance * (sentiment + α*animosity)

@@ -16,7 +16,7 @@ from src.internal.pipeline.llm.prompts import (
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
-ALPHA_DEFAULT = 2
+ALPHA_DEFAULT = 1
 
 
 def _truncate(text: str, limit: int = 280) -> str:
