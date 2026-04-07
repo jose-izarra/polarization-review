@@ -1,0 +1,39 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : abortion
+Assessed at    : 2026-04-07T10:56:54.120111+00:00
+Model          : default
+Alpha          : 0.5
+
+--- Score ---
+Polarization   : 22.24 / 100
+Sample size    : 112
+
+--- Stance Distribution ---
+  For       : 21
+  Against   : 46
+  Neutral   : 45
+
+--- Source Breakdown ---
+  gnews       : 1
+  reddit      : 52
+  youtube     : 59
+
+--- Config ---
+{
+  "collect": {
+    "topics": ["inflation", "abortion", "gun control", "ai regulation"],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "alpha": 0.5,
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+(not available — converted from legacy JSON summary)
