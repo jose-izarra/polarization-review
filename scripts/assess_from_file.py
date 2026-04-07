@@ -12,6 +12,7 @@ Edit scripts/pipeline_config.json to configure alpha and model, then run:
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from collections import defaultdict
@@ -128,7 +129,29 @@ def _next_run_number(slug: str) -> int:
     return max(nums, default=0) + 1
 
 
-def save_summary(file_path: Path, result: PolarizationResult, full_config: dict) -> Path:
+def _compute_stance_averages(
+    evidence: list[EvidenceItem],
+) -> dict[str, dict[str, float]]:
+    label_map = {1: "for", -1: "against", 0: "neutral"}
+    grouped: dict[str, list[EvidenceItem]] = {"for": [], "against": [], "neutral": []}
+    for ev in evidence:
+        label = label_map.get(ev.stance)
+        if label is not None:
+            grouped[label].append(ev)
+
+    averages: dict[str, dict[str, float]] = {}
+    for label, items in grouped.items():
+        if not items:
+            averages[label] = {"sentiment": 0.0, "animosity": 0.0}
+            continue
+        averages[label] = {
+            "sentiment": sum(it.sentiment for it in items) / len(items),
+            "animosity": sum(it.animosity for it in items) / len(items),
+        }
+    return averages
+
+
+def save_summary(file_path: Path, result: PolarizationResult, full_config: dict, note: str | None = None) -> Path:
     slug = file_path.stem.removeprefix("items_")
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     run_num = _next_run_number(slug)
@@ -144,6 +167,7 @@ def save_summary(file_path: Path, result: PolarizationResult, full_config: dict)
         f"Assessed at    : {result.collected_at}",
         f"Model          : {full_config['assess'].get('model') or 'default'}",
         f"Alpha          : {full_config['assess'].get('alpha')}",
+        f"Note           : {note}" if note else "Note           : —",
         "",
         "--- Score ---",
         f"Polarization   : {result.polarization_score:.2f} / 100" if result.polarization_score is not None else "Polarization   : N/A",
@@ -157,18 +181,13 @@ def save_summary(file_path: Path, result: PolarizationResult, full_config: dict)
         for key, count in result.stance_distribution.items():
             lines.append(f"  {key.capitalize():<10}: {count}")
 
-    evidence_count = len(result.evidence)
-    avg_sentiment = (
-        sum(ev.sentiment for ev in result.evidence) / evidence_count if evidence_count else 0.0
-    )
-    avg_animosity = (
-        sum(ev.animosity for ev in result.evidence) / evidence_count if evidence_count else 0.0
-    )
+    stance_averages = _compute_stance_averages(result.evidence)
     lines += [
         "",
-        "--- Item Averages ---",
-        f"  Sentiment   : {avg_sentiment:.2f}",
-        f"  Animosity   : {avg_animosity:.2f}",
+        "--- Item Averages By Stance ---",
+        f"  For      | Sentiment: {stance_averages['for']['sentiment']:.2f} | Animosity: {stance_averages['for']['animosity']:.2f}",
+        f"  Against  | Sentiment: {stance_averages['against']['sentiment']:.2f} | Animosity: {stance_averages['against']['animosity']:.2f}",
+        f"  Neutral  | Sentiment: {stance_averages['neutral']['sentiment']:.2f} | Animosity: {stance_averages['neutral']['animosity']:.2f}",
     ]
 
     lines += ["", "--- Source Breakdown ---"]
@@ -196,16 +215,19 @@ def save_summary(file_path: Path, result: PolarizationResult, full_config: dict)
 
 
 def main() -> None:
-    if len(sys.argv) != 2:
-        print("Usage: python scripts/assess_from_file.py <path/to/items/<items_*.json>>", file=sys.stderr)
-        sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description="Run assessment from a saved items JSON file and write a text summary."
+    )
+    parser.add_argument("items_path", help="Path to an items JSON file, e.g. data/items/items_topic.json")
+    parser.add_argument("--note", default=None, help="Optional note to save with this run")
+    args = parser.parse_args()
 
     full_config = json.loads(CONFIG_PATH.read_text())
     cfg = full_config["assess"]
     alpha: float = cfg["alpha"]
     model: str | None = cfg["model"]
 
-    file_path = Path(sys.argv[1])
+    file_path = Path(args.items_path)
     if not file_path.exists():
         print(f"Error: file not found: {file_path}", file=sys.stderr)
         sys.exit(1)
@@ -216,7 +238,7 @@ def main() -> None:
 
     result = run_assessment(query, items, alpha=alpha, model=model)
 
-    out_path = save_summary(file_path, result, full_config)
+    out_path = save_summary(file_path, result, full_config, note=args.note)
     print(f"\nSummary saved → {out_path}", flush=True)
 
     print("\n--- Summary ---")
@@ -225,10 +247,23 @@ def main() -> None:
     print(f"  Sample size        : {result.sample_size}")
     print(f"  Stance distribution: {result.stance_distribution}")
     if result.evidence:
-        avg_sentiment = sum(ev.sentiment for ev in result.evidence) / len(result.evidence)
-        avg_animosity = sum(ev.animosity for ev in result.evidence) / len(result.evidence)
-        print(f"  Avg sentiment      : {avg_sentiment:.2f}")
-        print(f"  Avg animosity      : {avg_animosity:.2f}")
+        stance_averages = _compute_stance_averages(result.evidence)
+        print("  Item averages by stance:")
+        print(
+            "    For      : "
+            f"sentiment={stance_averages['for']['sentiment']:.2f}, "
+            f"animosity={stance_averages['for']['animosity']:.2f}"
+        )
+        print(
+            "    Against  : "
+            f"sentiment={stance_averages['against']['sentiment']:.2f}, "
+            f"animosity={stance_averages['against']['animosity']:.2f}"
+        )
+        print(
+            "    Neutral  : "
+            f"sentiment={stance_averages['neutral']['sentiment']:.2f}, "
+            f"animosity={stance_averages['neutral']['animosity']:.2f}"
+        )
     print(f"  Source breakdown   : {result.source_breakdown}")
 
 
