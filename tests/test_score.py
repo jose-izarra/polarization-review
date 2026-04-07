@@ -1,11 +1,12 @@
 import unittest
 
 from src.internal.pipeline.domain import ItemScore
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 from src.internal.pipeline.llm.score import compute_polarization
 
 
 def _make_score(stance: int, animosity: int = 3, sentiment: int = 5) -> ItemScore:
-    r = stance * (sentiment + 0.8 * animosity)
+    r = stance * (sentiment + ALPHA_DEFAULT * animosity)
     return ItemScore(
         id="x",
         sentiment=sentiment,
@@ -34,8 +35,8 @@ class TestComputePolarization(unittest.TestCase):
     def test_50_50_split_high_animosity(self):
         """Equal for/against with high animosity -> substantial score.
 
-        animosity=5, sentiment=5 → r=±9.0, pstdev=9.0,
-        score = 9.0/14.0*100 ≈ 64.3.
+        animosity=5, sentiment=5, α=0.5 → r=±7.5, pstdev=7.5,
+        score = 7.5/12.5*100 = 60.0.
         """
         scores = [_make_score(1, animosity=5) for _ in range(10)]
         scores += [_make_score(-1, animosity=5) for _ in range(10)]
@@ -46,8 +47,8 @@ class TestComputePolarization(unittest.TestCase):
     def test_50_50_split_max_animosity_reaches_100(self):
         """Perfect 50/50 with max sentiment+animosity -> 100.
 
-        sentiment=10, animosity=5 → r = ±(10+0.8*5) = ±14.0 = P_MAX,
-        so pstdev = 14.0 → score = 100.
+        sentiment=10, animosity=5, α=0.5 → r = ±(10+0.5*5) = ±12.5 = P_MAX,
+        so pstdev = 12.5 → score = 100.
         """
         scores = [_make_score(1, animosity=5, sentiment=10) for _ in range(5)]
         scores += [_make_score(-1, animosity=5, sentiment=10) for _ in range(5)]

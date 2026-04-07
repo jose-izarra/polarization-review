@@ -15,13 +15,13 @@ class NormalizeTests(unittest.TestCase):
         self.assertEqual(clean_text("a\n\n b\t c"), "a b c")
 
     def test_filter_item_rejects_short_deleted_and_missing_id(self):
-        self.assertFalse(filter_item({"id": "1", "text": "tiny"}, min_text_length=20))
+        self.assertFalse(filter_item({"id": "1", "text": "tiny"}))
         self.assertFalse(
-            filter_item({"id": "1", "text": "[deleted]"}, min_text_length=1)
+            filter_item({"id": "1", "text": "[deleted]"})
         )
         self.assertFalse(
             filter_item(
-                {"id": "", "text": "this is long enough text"}, min_text_length=10
+                {"id": "", "text": "this is long enough text"}
             )
         )
 
