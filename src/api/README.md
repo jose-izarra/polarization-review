@@ -110,7 +110,7 @@ The cache is **in-memory only** — it does not survive server restarts and is n
 | `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` | Production | Reddit API credentials |
 | `YOUTUBE_API_KEY` | Production | YouTube Data API v3 key |
 | `GNEWS_API_KEY` | Production | GNews API key |
-| `POLARIZATION_MODEL` | No | Gemini model name (default: `gemini-2.5-flash`) |
+| `POLARIZATION_MODEL` | No | Gemini model name (default: `gemini-3.1-flash-lite-preview`) |
 | `ENV` | No | Set to `local` for mock LLM mode; `test` for real credentials in tests |
 | `LOGFIRE_TOKEN` | No | Logfire token for structured logging |
 
