@@ -15,13 +15,11 @@ Outputs (written to --out, default: benchmarks/fake/results/):
 from __future__ import annotations
 
 import argparse
-import json
 import statistics
 import sys
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -80,7 +78,7 @@ def run_scenario(mode: str, run_idx: int) -> dict:
     with _print_lock:
         print(
             f"  [{mode}] run {run_idx + 1:>2} … "
-            f"score={score:6.2f}  confidence={result.confidence or 0:.2f}"
+            f"score={score:6.2f} "
             f"  status={status}  ({elapsed:.1f}s)",
             flush=True,
         )
@@ -89,8 +87,6 @@ def run_scenario(mode: str, run_idx: int) -> dict:
         "mode": mode,
         "run": run_idx + 1,
         "polarization_score": score,
-        "confidence": result.confidence,
-        "confidence_label": result.confidence_label,
         "sample_size": result.sample_size,
         "stance_distribution": result.stance_distribution,
         "source_breakdown": result.source_breakdown,
@@ -99,7 +95,6 @@ def run_scenario(mode: str, run_idx: int) -> dict:
         "elapsed_seconds": round(elapsed, 2),
         "collected_at": result.collected_at,
         "rationale": result.rationale,
-        "evidence": [asdict(e) for e in result.evidence],
     }
 
 
@@ -119,7 +114,6 @@ def compute_stats(runs: list[dict]) -> dict:
     scores = [
         r["polarization_score"] for r in runs if r["polarization_score"] is not None
     ]
-    confs = [r["confidence"] for r in runs if r["confidence"] is not None]
     times = [r["elapsed_seconds"] for r in runs]
     ok = sum(1 for r in runs if r["status"] == "ok")
 
@@ -136,7 +130,6 @@ def compute_stats(runs: list[dict]) -> dict:
 
     return {
         "score": _stats(scores),
-        "confidence": _stats(confs),
         "elapsed": _stats(times),
         "ok_runs": ok,
         "total_runs": len(runs),
@@ -160,14 +153,12 @@ def format_summary(all_runs: dict[str, list[dict]], stats: dict[str, dict]) -> s
     for mode in SCENARIOS:
         s = stats[mode]
         sc = s["score"]
-        cf = s["confidence"]
         el = s["elapsed"]
         name = mode.replace("fake_", "")
         lines.append(
             f"{name:<20} {EXPECTED[mode]:>10}"
             f" {sc['mean']:>8.2f} {sc['std']:>7.2f}"
             f" {sc['min']:>7.2f} {sc['max']:>7.2f}"
-            f" {cf['mean']:>6.3f}"
             f" {s['ok_runs']:>3}/{s['total_runs']:<2}"
             f" {el['mean']:>7.1f}"
         )
@@ -228,9 +219,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
-    results_path = out_dir / f"results_{ts}.json"
     summary_txt_path = out_dir / f"summary_{ts}.txt"
-    summary_json_path = out_dir / f"summary_{ts}.json"
 
     all_runs: dict[str, list[dict]] = {}
 
@@ -249,26 +238,8 @@ def main() -> None:
 
     print("\n" + summary_text)
 
-    # Write raw results
-    results_payload = {
-        "benchmark_timestamp": ts,
-        "runs_per_scenario": args.runs,
-        "dataset": args.dataset,
-        "scenarios": active_scenarios,
-        "results": all_runs,
-    }
-    results_path.write_text(json.dumps(results_payload, indent=2))
-    print(f"Raw results  → {results_path}")
-
-    # Write summary txt
     summary_txt_path.write_text(summary_text)
     print(f"Summary txt  → {summary_txt_path}")
-
-    # Write summary json
-    summary_json_path.write_text(
-        json.dumps({"timestamp": ts, "stats": stats}, indent=2)
-    )
-    print(f"Summary json → {summary_json_path}")
 
 
 if __name__ == "__main__":

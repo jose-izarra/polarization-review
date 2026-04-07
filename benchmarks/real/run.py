@@ -136,8 +136,6 @@ def run_topic(spec: TopicSpec) -> dict:
         "threshold": _threshold_label(spec["category"]),
         "score": score,
         "score_label": _score_label(score),
-        "confidence": result.confidence,
-        "confidence_label": result.confidence_label,
         "sample_size": result.sample_size,
         "stance_distribution": result.stance_distribution,
         "source_breakdown": result.source_breakdown,
@@ -173,7 +171,7 @@ def _write_txt_report(path: Path, results: list[dict], timestamp: str) -> None:
         f"  Real-Topic Benchmark — {dt_str}",
         sep,
         f" {'Topic':<24} {'Category':<20} {'Expected':<10} {'Score':>7}",
-        f" {'Label':<12} {'Conf':>6} {'n':>5} {'OK':>5} {'s':>6}",
+        f" {'Label':<12} {'n':>5} {'OK':>5} {'s':>6}",
         thin,
     ]
 
@@ -184,13 +182,10 @@ def _write_txt_report(path: Path, results: list[dict], timestamp: str) -> None:
         lines.append(f"  {group_label}")
         for r in (r for r in results if r["category"] == category):
             score_str = f"{r['score']:.1f}" if r["score"] is not None else "n/a"
-            conf_str = (
-                f"{r['confidence']:.3f}" if r["confidence"] is not None else "n/a"
-            )
             ok_str = "PASS" if r["passed"] else "FAIL"
             lines.append(
                 f"  {r['key']:<22} {r['category']:<20} {r['threshold']:<10} "
-                f"{score_str:>7} {r['score_label']:<12} {conf_str:>6} "
+                f"{score_str:>7} {r['score_label']:<12} "
                 f"{r['sample_size']:>5} {ok_str:>5} {r['elapsed_s']:>6.1f}"
             )
         lines.append("")
@@ -285,8 +280,6 @@ def main() -> None:
                 "threshold": _threshold_label(spec["category"]),
                 "score": None,
                 "score_label": "n/a",
-                "confidence": None,
-                "confidence_label": "",
                 "sample_size": 0,
                 "stance_distribution": None,
                 "source_breakdown": None,
@@ -300,7 +293,7 @@ def main() -> None:
         score_str = f"{row['score']:.1f}" if row["score"] is not None else "n/a"
         ok_str = "PASS" if row["passed"] else "FAIL"
         print(
-            f"  score={score_str}  conf={row['confidence_label']} "
+            f"  score={score_str} "
             f"n={row['sample_size']}  [{ok_str}]"
         )
 
