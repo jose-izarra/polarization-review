@@ -7,7 +7,7 @@ class AnalyzeRequest(BaseModel):
     query: str = Field(..., min_length=1)
     time_filter: Literal["day", "week", "month"] = "month"
     max_posts: int = Field(30, ge=1, le=200)
-    max_comments_per_post: int = Field(10, ge=1, le=200)
+    max_comments_per_post: int = Field(30, ge=1, le=200)
     mode: Literal[
         "live",
         "fake_polarized_general",
