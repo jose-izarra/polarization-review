@@ -44,9 +44,16 @@ SCENARIOS_GENERAL = [
     "fake_neutral_general",
 ]
 
+SCENARIOS_REAL_CONTEXT = [
+    "fake_polarized_real_context",
+    "fake_moderate_real_context",
+    "fake_neutral_real_context",
+]
+
 DATASETS: dict[str, list[str]] = {
     "fictitious": SCENARIOS_FICTITIOUS,
     "general": SCENARIOS_GENERAL,
+    "real_context": SCENARIOS_REAL_CONTEXT,
 }
 
 # Default dataset used when --dataset is not specified
@@ -60,6 +67,9 @@ EXPECTED = {
     "fake_polarized_general": "~100",
     "fake_moderate_general": "~35-70",
     "fake_neutral_general": "~0",
+    "fake_polarized_real_context": "~100",
+    "fake_moderate_real_context": "~35-70",
+    "fake_neutral_real_context": "~0",
 }
 
 
@@ -150,7 +160,7 @@ def format_summary(all_runs: dict[str, list[dict]], stats: dict[str, dict]) -> s
     lines.append(header)
     lines.append("-" * 72)
 
-    for mode in SCENARIOS:
+    for mode in all_runs:
         s = stats[mode]
         sc = s["score"]
         el = s["elapsed"]
@@ -166,7 +176,7 @@ def format_summary(all_runs: dict[str, list[dict]], stats: dict[str, dict]) -> s
     lines.append("=" * 72)
     lines.append("")
     lines.append("Per-run scores:")
-    for mode in SCENARIOS:
+    for mode in all_runs:
         name = mode.replace("fake_", "")
         scores = [
             f"{r['polarization_score']:.1f}"
@@ -196,14 +206,15 @@ def main() -> None:
         default=DEFAULT_DATASET,
         help=(
             "Which dataset variant to benchmark: "
-            "'general' (universally understood language, default) or "
-            "'fictitious' (FlobberFlopper-specific insults)."
+            "'general' (universally understood language on fictional topics, default), "
+            "'fictitious' (FlobberFlopper-specific insults), or "
+            "'real_context' (structurally identical content on real-world topics)."
         ),
     )
     parser.add_argument(
         "--scenarios",
         nargs="+",
-        choices=SCENARIOS_FICTITIOUS + SCENARIOS_GENERAL,
+        choices=SCENARIOS_FICTITIOUS + SCENARIOS_GENERAL + SCENARIOS_REAL_CONTEXT,
         default=None,
         help=(
             "Override individual scenarios to run. "

@@ -29,11 +29,31 @@ from src.internal.pipeline.llm.run import run_search  # noqa: E402
 # ── Configuration ─────────────────────────────────────────────────────────────
 OUT_DIR = Path(__file__).parent / "results"
 
-SCENARIOS = [
+SCENARIOS_FICTITIOUS = [
+    "fake_polarized_fictitious",
+    "fake_moderate_fictitious",
+    "fake_neutral_fictitious",
+]
+
+SCENARIOS_GENERAL = [
     "fake_polarized_general",
     "fake_moderate_general",
     "fake_neutral_general",
 ]
+
+SCENARIOS_REAL_CONTEXT = [
+    "fake_polarized_real_context",
+    "fake_moderate_real_context",
+    "fake_neutral_real_context",
+]
+
+DATASETS: dict[str, list[str]] = {
+    "fictitious": SCENARIOS_FICTITIOUS,
+    "general": SCENARIOS_GENERAL,
+    "real_context": SCENARIOS_REAL_CONTEXT,
+}
+
+DEFAULT_DATASET = "general"
 
 EXPECTED = {
     "fake_polarized_fictitious": "~100",
@@ -42,6 +62,9 @@ EXPECTED = {
     "fake_polarized_general": "~100",
     "fake_moderate_general": "~35-70",
     "fake_neutral_general": "~0",
+    "fake_polarized_real_context": "~100",
+    "fake_moderate_real_context": "~35-70",
+    "fake_neutral_real_context": "~0",
 }
 
 def _compute_stance_averages(evidence: list[EvidenceItem]) -> dict[str, dict[str, float]]:
@@ -126,7 +149,20 @@ def format_scenario_section(mode: str, result, elapsed: float, note: str | None)
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--note", default=None, help="Optional note to include in the summary")
+    parser.add_argument(
+        "--dataset",
+        choices=list(DATASETS.keys()),
+        default=DEFAULT_DATASET,
+        help=(
+            "Which dataset variant to run: "
+            "'general' (universal language on fictional topics, default), "
+            "'fictitious' (FlobberFlopper-specific insults), or "
+            "'real_context' (structurally identical content on real-world topics)."
+        ),
+    )
     args = parser.parse_args()
+
+    active_scenarios = DATASETS[args.dataset]
 
     out_dir = OUT_DIR if OUT_DIR.is_absolute() else _PROJECT_ROOT / OUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -136,8 +172,8 @@ def main() -> None:
 
     all_sections: list[str] = []
 
-    for i, mode in enumerate(SCENARIOS, 1):
-        print(f"\n[{i}/{len(SCENARIOS)}] Running {mode}...", flush=True)
+    for i, mode in enumerate(active_scenarios, 1):
+        print(f"\n[{i}/{len(active_scenarios)}] Running {mode}...", flush=True)
         t0 = time.perf_counter()
         request = SearchRequest(query="benchmark", mode=mode)
         result = run_search(request)
