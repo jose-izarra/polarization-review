@@ -20,23 +20,24 @@ STANCE  (-1 / 0 / 1)  — position relative to the topic
 
 ANIMOSITY  (1-5)  — hostility, aggression, or dehumanisation directed at people or groups
   1 = None: calm, civil, factual tone
-  2 = Mild: sarcasm, light mockery, dismissiveness ("typical politician move")
-  3 = Moderate: insults, contempt, strong accusations ("liar", "corrupt hypocrite")
-  4 = High: personal attacks, calls for punishment, dehumanising language ("should be fired/jailed")
-  5 = Extreme: calls for violence, execution, elimination, or explicit dehumanisation \
-("traitor who deserves death", "lock them up forever", "they should be executed")
+  2 = Mild: sarcasm, light mockery, dismissiveness
+  3 = Moderate: direct blame, pointed criticism, mild negative framing
+  4 = High: insults, contempt, strong accusations
+  5 = Extreme: personal attacks, calls for violence, dehumanising language
 
 CALIBRATION EXAMPLES
   "I think the policy has some merits but the implementation was rushed."
     → sentiment=3, stance=0, animosity=1
   "This is a great step forward and I fully support the decision."
     → sentiment=5, stance=1, animosity=1
-  "Typical government incompetence. They never get anything right."
-    → sentiment=2, stance=-1, animosity=3
-  "This treasonous fascist should be imprisoned for life."
-    → sentiment=1, stance=-1, animosity=5
-  "I strongly oppose this policy — it will hurt ordinary families."
+  "Typical politician move — all talk and no results."
     → sentiment=2, stance=-1, animosity=2
+  "They clearly don't care about ordinary people — this is completely stupid."
+    → sentiment=2, stance=-1, animosity=3
+  "He's nothing but a liar and a coward who should be ashamed of himself."
+    → sentiment=1, stance=-1, animosity=4
+  "This criminal belongs behind bars"
+    → sentiment=1, stance=-1, animosity=5
 ──────────────────────────────────────────
 
 Return a JSON array where each element has:

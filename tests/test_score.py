@@ -28,8 +28,21 @@ class TestComputePolarization(unittest.TestCase):
         self.assertEqual(compute_polarization(scores), 0.0)
 
     def test_all_one_side_returns_zero(self):
-        """All for, no against -> distribution = 0 -> score = 0."""
+        """All for, no against -> score = 0."""
         scores = [_make_score(1, animosity=5) for _ in range(10)]
+        self.assertEqual(compute_polarization(scores), 0.0)
+
+    def test_all_one_side_varying_intensity_returns_zero(self):
+        """All for but with varying sentiment/animosity → still 0.
+
+        This is the consensus case: everyone agrees, but with different
+        enthusiasm levels. pstdev of r values is non-zero, but that variance
+        reflects intensity, not polarization — score must still be 0.
+        """
+        scores = (
+            [_make_score(1, sentiment=5, animosity=1) for _ in range(8)]
+            + [_make_score(1, sentiment=4, animosity=1) for _ in range(7)]
+        )
         self.assertEqual(compute_polarization(scores), 0.0)
 
     def test_50_50_split_high_animosity(self):
