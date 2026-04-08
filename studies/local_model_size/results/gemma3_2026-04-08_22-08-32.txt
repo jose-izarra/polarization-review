@@ -2,7 +2,7 @@
   LOCAL MODEL SIZE ABLATION STUDY
 ========================================================================
   Description : Local model size ablation — same fake items assessed by Ollama Gemma 3 models of increasing parameter count
-  Date        : 2026-04-08 16:59 UTC
+  Date        : 2026-04-08 22:17 UTC
   Family      : gemma3  — Google Gemma 3 family — efficient open models at 1B, 4B, 12B, 27B
   Ollama host : http://localhost:11434
   Runs        : 1 per scenario per model
@@ -11,30 +11,30 @@
 
   gemma3-1b  (1.0B params)
   ----------------------------------------------------------------------
-    polarized_general              expected=~100     mean= 58.57  std= 0.00  elapsed=19.5s
-    moderate_general               expected=~35-70   mean= 46.04  std= 0.00  elapsed=15.7s
-    neutral_general                expected=~0       mean= 30.27  std= 0.00  elapsed=16.0s
+    polarized_general              expected=~100     mean= 58.57  std= 0.00  elapsed=18.8s
+    moderate_general               expected=~35-70   mean= 50.89  std= 0.00  elapsed=16.0s
+    neutral_general                expected=~0       mean= 36.32  std= 0.00  elapsed=15.8s
 
   gemma3-4b  (4.0B params)
   ----------------------------------------------------------------------
-    polarized_general              expected=~100     mean= 64.68  std= 0.00  elapsed=59.7s
-    moderate_general               expected=~35-70   mean= 36.19  std= 0.00  elapsed=40.4s
-    neutral_general                expected=~0       mean=  0.00  std= 0.00  elapsed=37.5s
+    polarized_general              expected=~100     mean= 67.76  std= 0.00  elapsed=51.2s
+    moderate_general               expected=~35-70   mean= 43.87  std= 0.00  elapsed=40.5s
+    neutral_general                expected=~0       mean=  0.00  std= 0.00  elapsed=38.5s
 
   gemma3-12b  (12.0B params)
   ----------------------------------------------------------------------
-    polarized_general              expected=~100     mean= 61.36  std= 0.00  elapsed=150.5s
-    moderate_general               expected=~35-70   mean= 34.55  std= 0.00  elapsed=109.9s
-    neutral_general                expected=~0       mean=  0.00  std= 0.00  elapsed=110.5s
+    polarized_general              expected=~100     mean= 64.28  std= 0.00  elapsed=140.0s
+    moderate_general               expected=~35-70   mean= 41.88  std= 0.00  elapsed=111.3s
+    neutral_general                expected=~0       mean=  0.00  std= 0.00  elapsed=119.0s
 
 ========================================================================
   SUMMARY — Score by model size
 ========================================================================
   Model                 ParamsB  polarized_ge  moderate_gen  neutral_gene
   ----------------------------------------------------------------------
-  gemma3-1b                1.0B         58.57         46.04         30.27
-  gemma3-4b                4.0B         64.68         36.19          0.00
-  gemma3-12b              12.0B         61.36         34.55          0.00
+  gemma3-1b                1.0B         58.57         50.89         36.32
+  gemma3-4b                4.0B         67.76         43.87          0.00
+  gemma3-12b              12.0B         64.28         41.88          0.00
   ----------------------------------------------------------------------
   Expected ranges:
     polarized_general              ~100

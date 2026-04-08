@@ -71,7 +71,7 @@
               "center": 2
             }
           },
-          "elapsed_seconds": 19.54,
+          "elapsed_seconds": 18.77,
           "status": "ok",
           "error": null
         }
@@ -83,7 +83,7 @@
           "params_billions": 1.0,
           "scenario": "fake_moderate_general",
           "run": 1,
-          "polarization_score": 46.04,
+          "polarization_score": 50.89,
           "sample_size": 21,
           "rationale": "21 items scored. Stance: 6 for / 11 against / 4 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2.",
           "stance_distribution": {
@@ -118,7 +118,7 @@
               "center": 5
             }
           },
-          "elapsed_seconds": 15.74,
+          "elapsed_seconds": 15.96,
           "status": "ok",
           "error": null
         }
@@ -130,7 +130,7 @@
           "params_billions": 1.0,
           "scenario": "fake_neutral_general",
           "run": 1,
-          "polarization_score": 30.27,
+          "polarization_score": 36.32,
           "sample_size": 12,
           "rationale": "12 items scored. Stance: 6 for / 2 against / 4 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2.",
           "stance_distribution": {
@@ -165,7 +165,7 @@
               "center": 7
             }
           },
-          "elapsed_seconds": 15.99,
+          "elapsed_seconds": 15.76,
           "status": "ok",
           "error": null
         }
@@ -179,7 +179,7 @@
           "params_billions": 4.0,
           "scenario": "fake_polarized_general",
           "run": 1,
-          "polarization_score": 64.68,
+          "polarization_score": 67.76,
           "sample_size": 22,
           "rationale": "22 items scored. Stance: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2.",
           "stance_distribution": {
@@ -216,7 +216,7 @@
               "center": 2
             }
           },
-          "elapsed_seconds": 59.74,
+          "elapsed_seconds": 51.21,
           "status": "ok",
           "error": null
         }
@@ -228,7 +228,7 @@
           "params_billions": 4.0,
           "scenario": "fake_moderate_general",
           "run": 1,
-          "polarization_score": 36.19,
+          "polarization_score": 43.87,
           "sample_size": 20,
           "rationale": "20 items scored. Stance: 5 for / 8 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2.",
           "stance_distribution": {
@@ -263,7 +263,7 @@
               "center": 5
             }
           },
-          "elapsed_seconds": 40.35,
+          "elapsed_seconds": 40.55,
           "status": "ok",
           "error": null
         }
@@ -306,7 +306,7 @@
               "center": 7
             }
           },
-          "elapsed_seconds": 37.53,
+          "elapsed_seconds": 38.5,
           "status": "ok",
           "error": null
         }
@@ -320,7 +320,7 @@
           "params_billions": 12.0,
           "scenario": "fake_polarized_general",
           "run": 1,
-          "polarization_score": 61.36,
+          "polarization_score": 64.28,
           "sample_size": 22,
           "rationale": "22 items scored. Stance: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2.",
           "stance_distribution": {
@@ -357,7 +357,7 @@
               "center": 2
             }
           },
-          "elapsed_seconds": 150.47,
+          "elapsed_seconds": 140.02,
           "status": "ok",
           "error": null
         }
@@ -369,7 +369,7 @@
           "params_billions": 12.0,
           "scenario": "fake_moderate_general",
           "run": 1,
-          "polarization_score": 34.55,
+          "polarization_score": 41.88,
           "sample_size": 20,
           "rationale": "20 items scored. Stance: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2.",
           "stance_distribution": {
@@ -404,7 +404,7 @@
               "center": 5
             }
           },
-          "elapsed_seconds": 109.94,
+          "elapsed_seconds": 111.29,
           "status": "ok",
           "error": null
         }
@@ -447,7 +447,7 @@
               "center": 7
             }
           },
-          "elapsed_seconds": 110.52,
+          "elapsed_seconds": 118.99,
           "status": "ok",
           "error": null
         }
@@ -466,44 +466,44 @@
         },
         "elapsed": {
           "n": 1,
-          "mean": 19.54,
+          "mean": 18.77,
           "std": 0.0,
-          "min": 19.54,
-          "max": 19.54
+          "min": 18.77,
+          "max": 18.77
         },
         "total_runs": 1
       },
       "fake_moderate_general": {
         "score": {
           "n": 1,
-          "mean": 46.04,
+          "mean": 50.89,
           "std": 0.0,
-          "min": 46.04,
-          "max": 46.04
+          "min": 50.89,
+          "max": 50.89
         },
         "elapsed": {
           "n": 1,
-          "mean": 15.74,
+          "mean": 15.96,
           "std": 0.0,
-          "min": 15.74,
-          "max": 15.74
+          "min": 15.96,
+          "max": 15.96
         },
         "total_runs": 1
       },
       "fake_neutral_general": {
         "score": {
           "n": 1,
-          "mean": 30.27,
+          "mean": 36.32,
           "std": 0.0,
-          "min": 30.27,
-          "max": 30.27
+          "min": 36.32,
+          "max": 36.32
         },
         "elapsed": {
           "n": 1,
-          "mean": 15.99,
+          "mean": 15.76,
           "std": 0.0,
-          "min": 15.99,
-          "max": 15.99
+          "min": 15.76,
+          "max": 15.76
         },
         "total_runs": 1
       }
@@ -512,34 +512,34 @@
       "fake_polarized_general": {
         "score": {
           "n": 1,
-          "mean": 64.68,
+          "mean": 67.76,
           "std": 0.0,
-          "min": 64.68,
-          "max": 64.68
+          "min": 67.76,
+          "max": 67.76
         },
         "elapsed": {
           "n": 1,
-          "mean": 59.74,
+          "mean": 51.21,
           "std": 0.0,
-          "min": 59.74,
-          "max": 59.74
+          "min": 51.21,
+          "max": 51.21
         },
         "total_runs": 1
       },
       "fake_moderate_general": {
         "score": {
           "n": 1,
-          "mean": 36.19,
+          "mean": 43.87,
           "std": 0.0,
-          "min": 36.19,
-          "max": 36.19
+          "min": 43.87,
+          "max": 43.87
         },
         "elapsed": {
           "n": 1,
-          "mean": 40.35,
+          "mean": 40.55,
           "std": 0.0,
-          "min": 40.35,
-          "max": 40.35
+          "min": 40.55,
+          "max": 40.55
         },
         "total_runs": 1
       },
@@ -553,10 +553,10 @@
         },
         "elapsed": {
           "n": 1,
-          "mean": 37.53,
+          "mean": 38.5,
           "std": 0.0,
-          "min": 37.53,
-          "max": 37.53
+          "min": 38.5,
+          "max": 38.5
         },
         "total_runs": 1
       }
@@ -565,34 +565,34 @@
       "fake_polarized_general": {
         "score": {
           "n": 1,
-          "mean": 61.36,
+          "mean": 64.28,
           "std": 0.0,
-          "min": 61.36,
-          "max": 61.36
+          "min": 64.28,
+          "max": 64.28
         },
         "elapsed": {
           "n": 1,
-          "mean": 150.47,
+          "mean": 140.02,
           "std": 0.0,
-          "min": 150.47,
-          "max": 150.47
+          "min": 140.02,
+          "max": 140.02
         },
         "total_runs": 1
       },
       "fake_moderate_general": {
         "score": {
           "n": 1,
-          "mean": 34.55,
+          "mean": 41.88,
           "std": 0.0,
-          "min": 34.55,
-          "max": 34.55
+          "min": 41.88,
+          "max": 41.88
         },
         "elapsed": {
           "n": 1,
-          "mean": 109.94,
+          "mean": 111.29,
           "std": 0.0,
-          "min": 109.94,
-          "max": 109.94
+          "min": 111.29,
+          "max": 111.29
         },
         "total_runs": 1
       },
@@ -606,10 +606,10 @@
         },
         "elapsed": {
           "n": 1,
-          "mean": 110.52,
+          "mean": 118.99,
           "std": 0.0,
-          "min": 110.52,
-          "max": 110.52
+          "min": 118.99,
+          "max": 118.99
         },
         "total_runs": 1
       }
