@@ -6,8 +6,8 @@ assess → post-process → score, returning a PolarizationResult.
 saves a summary of the assessment in the data/results directory.
 
 Edit scripts/pipeline_config.json to configure alpha and model, then run:
-    python scripts/assess_from_file.py data/items/items_inflation.json
-    python scripts/assess_from_file.py data/items/items_gun_control.json
+    uv run python scripts/assess_from_file.py data/items_inflation.json
+    uv run python scripts/assess_from_file.py data/items_gun_control.json
 """
 
 from __future__ import annotations
@@ -218,7 +218,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Run assessment from a saved items JSON file and write a text summary."
     )
-    parser.add_argument("items_path", help="Path to an items JSON file, e.g. data/items/items_topic.json")
+    parser.add_argument("items_path", help="Path to an items JSON file, e.g. data/items_topic.json")
     parser.add_argument("--note", default=None, help="Optional note to save with this run")
     args = parser.parse_args()
 

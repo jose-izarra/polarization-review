@@ -23,7 +23,7 @@ from src.internal.pipeline.llm.assess import filter_relevant_items
 from src.internal.pipeline.llm.run import _collect_and_normalize, _select_per_platform
 
 CONFIG_PATH = Path(__file__).parent / "pipeline_config.json"
-DATA_DIR = Path(__file__).parents[1] / "data/items"
+DATA_DIR = Path(__file__).parents[1] / "data"
 
 
 def load_config() -> dict:
