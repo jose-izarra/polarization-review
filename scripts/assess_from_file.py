@@ -6,8 +6,8 @@ assess → post-process → score, returning a PolarizationResult.
 saves a summary of the assessment in the data/results directory.
 
 Edit scripts/pipeline_config.json to configure alpha and model, then run:
-    uv run python scripts/assess_from_file.py data/items_inflation.json
-    uv run python scripts/assess_from_file.py data/items_gun_control.json
+    uv run scripts/assess_from_file.py data/items_inflation.json
+    uv run scripts/assess_from_file.py data/items_gun_control.json
 """
 
 from __future__ import annotations
