@@ -3,6 +3,20 @@ from __future__ import annotations
 from typing import Callable
 
 
+def _detect_provider(model: str) -> str:
+    """Infer provider from model name prefix."""
+    m = model.lower()
+    if m.startswith(("gpt-", "o1", "o3", "o4")):
+        return "gpt"
+    if m.startswith("qwen"):
+        return "qwen"
+    if m.startswith(("mistral", "codestral", "ministral")):
+        return "mistral"
+    if m.startswith("deepseek"):
+        return "deepseek"
+    return "gemini"
+
+
 def call_llm(
     system_prompt: str,
     user_payload: str,
@@ -13,19 +27,44 @@ def call_llm(
     """Single entry point for all LLM calls in the pipeline.
 
     _override is for test injection only. In production it is always None.
-    Falls back to mock_call_model when GEMINI_API_KEY is not set.
+    Falls back to mock_call_model when the relevant API key is not set.
     """
     if _override is not None:
         return _override(system_prompt, user_payload)
 
     from src.internal.config import config
 
+    chosen_model = model or config.polarization_model
+    provider = _detect_provider(chosen_model)
+
+    if provider == "gpt":
+        if config.openai_api_key is None:
+            from src.internal.pipeline.mock.llm import mock_call_model
+            return mock_call_model(system_prompt, user_payload)
+        return _call_gpt(system_prompt, user_payload, model=chosen_model)
+
+    if provider == "qwen":
+        if config.qwen_api_key is None:
+            from src.internal.pipeline.mock.llm import mock_call_model
+            return mock_call_model(system_prompt, user_payload)
+        return _call_qwen(system_prompt, user_payload, model=chosen_model)
+
+    if provider == "mistral":
+        if config.mistral_api_key is None:
+            from src.internal.pipeline.mock.llm import mock_call_model
+            return mock_call_model(system_prompt, user_payload)
+        return _call_mistral(system_prompt, user_payload, model=chosen_model)
+
+    if provider == "deepseek":
+        if config.deepseek_api_key is None:
+            from src.internal.pipeline.mock.llm import mock_call_model
+            return mock_call_model(system_prompt, user_payload)
+        return _call_deepseek(system_prompt, user_payload, model=chosen_model)
+
+    # default to gemini
     if config.gemini_api_key is None:
         from src.internal.pipeline.mock.llm import mock_call_model
-
         return mock_call_model(system_prompt, user_payload)
-
-    chosen_model = model or config.polarization_model
     return _call_gemini(system_prompt, user_payload, model=chosen_model)
 
 
@@ -53,3 +92,128 @@ def _call_gemini(
     except Exception as exc:
         raise RuntimeError(f"Gemini API error: {exc}") from exc
     return response.text
+
+
+def _call_gpt(
+    system_prompt: str,
+    user_payload: str,
+    model: str,
+) -> str:
+    """OpenAI GPT wrapper (gpt-4o, gpt-4o-mini, o1, o3, etc.)."""
+    from openai import OpenAI
+    from src.internal.config import config
+
+    client = OpenAI(api_key=config.openai_api_key)
+
+    # o1/o3/o4 reasoning models do not support temperature or json_object format
+    _reasoning_model = model.lower().startswith(("o1", "o3", "o4"))
+    kwargs: dict = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_payload},
+        ],
+    }
+    if not _reasoning_model:
+        kwargs["temperature"] = 0.0
+        kwargs["response_format"] = {"type": "json_object"}
+
+    try:
+        response = client.chat.completions.create(**kwargs)
+    except Exception as exc:
+        raise RuntimeError(f"OpenAI API error: {exc}") from exc
+    return response.choices[0].message.content
+
+
+def _call_qwen(
+    system_prompt: str,
+    user_payload: str,
+    model: str,
+) -> str:
+    """Alibaba Qwen wrapper via DashScope OpenAI-compatible endpoint.
+
+    Recommended models: qwen-plus, qwen-turbo, qwen-max.
+    Set POLARIZATION_MODEL=qwen-plus (or similar) to use.
+    """
+    from openai import OpenAI
+    from src.internal.config import config
+
+    client = OpenAI(
+        api_key=config.qwen_api_key,
+        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+    )
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            temperature=0.0,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_payload},
+            ],
+        )
+    except Exception as exc:
+        raise RuntimeError(f"Qwen API error: {exc}") from exc
+    return response.choices[0].message.content
+
+
+def _call_mistral(
+    system_prompt: str,
+    user_payload: str,
+    model: str,
+) -> str:
+    """Mistral AI wrapper.
+
+    Recommended models: mistral-small-latest, mistral-medium-latest,
+    mistral-large-latest.
+    Set POLARIZATION_MODEL=mistral-small-latest (or similar) to use.
+    """
+    from mistralai import Mistral
+    from src.internal.config import config
+
+    client = Mistral(api_key=config.mistral_api_key)
+    try:
+        response = client.chat.complete(
+            model=model,
+            temperature=0.0,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_payload},
+            ],
+        )
+    except Exception as exc:
+        raise RuntimeError(f"Mistral API error: {exc}") from exc
+    return response.choices[0].message.content
+
+
+def _call_deepseek(
+    system_prompt: str,
+    user_payload: str,
+    model: str,
+) -> str:
+    """DeepSeek wrapper via its OpenAI-compatible endpoint.
+
+    Recommended models: deepseek-chat, deepseek-reasoner.
+    Set POLARIZATION_MODEL=deepseek-chat (or similar) to use.
+    """
+    from openai import OpenAI
+    from src.internal.config import config
+
+    client = OpenAI(
+        api_key=config.deepseek_api_key,
+        base_url="https://api.deepseek.com",
+    )
+    try:
+        response = client.chat.completions.create(
+            model=model,
+            temperature=0.0,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_payload},
+            ],
+        )
+    except Exception as exc:
+        raise RuntimeError(f"DeepSeek API error: {exc}") from exc
+    return response.choices[0].message.content
