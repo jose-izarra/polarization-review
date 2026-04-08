@@ -1,0 +1,39 @@
+========================================================================
+  PIPELINE RUN
+========================================================================
+  Date        : 2026-04-08 21:43 UTC
+  Query       : the dress is blue
+  Model       : default
+  Runs        : 1
+  Time filter : week
+  Max posts   : 30
+  Max comments: 30
+  Note        : Baseline full-pipeline run
+========================================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------------------
+  Polarization : 6.13 / 100
+  Sample size  : 77
+  Elapsed      : 97.15s
+  Status       : ok
+  Rationale    : 77 items scored. Stance distribution: 2 for / 4 against / 71 neutral. Platforms: gnews: 3, reddit: 21, youtube: 53. Source lean: left: 1.
+
+  Stance Distribution
+    For        : 2
+    Against    : 4
+    Neutral    : 71
+
+  Source Breakdown
+    gnews         : 3
+    reddit        : 21
+    youtube       : 53
+
+========================================================================
+  AGGREGATE
+========================================================================
+  Mean score   : 6.13
+  Std dev      : 0.00
+  Min / Max    : 6.13 / 6.13
+  Mean elapsed : 97.15s
+========================================================================
