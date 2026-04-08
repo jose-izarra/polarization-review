@@ -1,0 +1,10 @@
+{
+  "query": "the dress is blue",
+  "note": "Baseline full-pipeline run",
+  "model": null,
+  "runs": 1,
+  "output_dir": "studies/random_topics",
+  "time_filter": "week",
+  "max_posts": 30,
+  "max_comments_per_post": 30
+}

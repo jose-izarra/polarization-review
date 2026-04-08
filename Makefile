@@ -1,4 +1,11 @@
-.PHONY: assess-all-topics
+.PHONY: assess-all-topics run-pipeline-topics
+
+run-pipeline-topics:
+	@if [ -z "$(TOPICS)" ]; then \
+		echo "No topics provided. Usage: make run-pipeline-topics TOPICS=\"abortion,gun control,the dress is blue\""; \
+	else \
+		echo "$(TOPICS)" | tr ',' '\n' | xargs -n 1 -P 4 -I {} uv run scripts/run_pipeline.py --topic "{}"; \
+	fi
 
 assess-all-topics:
 	@files=$$(ls data/items_*.json 2>/dev/null); \
