@@ -1,0 +1,162 @@
+========================================================================
+  MODEL BIAS ABLATION STUDY
+========================================================================
+  Description : Model bias ablation study — same items assessed by different LLMs
+  Date        : 2026-04-08 16:59 UTC
+  Model       : qwen-plus  (qwen3.5-flash)
+  Provider    : qwen
+  Note        : Requires QWEN_API_KEY
+  Runs        : 1 per scenario
+  Scenarios   : abortion, gun_control, nasa_funding, inflation
+========================================================================
+
+========================================================================
+  Scenario : abortion
+  Expected : ?
+========================================================================
+  Run 1 of 1
+  ----------------------------------------------------------------------
+  Polarization : 28.83 / 100
+  Sample size  : 114
+  Elapsed      : 395.94s
+  Status       : ok
+  Rationale    : 114 items scored. Stance distribution: 28 for / 39 against / 47 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.
+
+  Stance Distribution
+    For       : 28
+    Against   : 39
+    Neutral   : 47
+
+  Item Averages By Stance
+    For      | Sentiment: 3.18 | Animosity: 1.79 | n=28
+    Against  | Sentiment: 2.10 | Animosity: 2.64 | n=39
+    Neutral  | Sentiment: 2.68 | Animosity: 1.28 | n=47
+
+  Source Breakdown
+    gnews       : 1
+    reddit      : 53
+    youtube     : 60
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 28.83
+    Std dev    : 0.00
+    Min / Max  : 28.83 / 28.83
+
+========================================================================
+  Scenario : gun_control
+  Expected : ?
+========================================================================
+  Run 1 of 1
+  ----------------------------------------------------------------------
+  Polarization : 39.62 / 100
+  Sample size  : 98
+  Elapsed      : 333.84s
+  Status       : ok
+  Rationale    : 98 items scored. Stance distribution: 35 for / 48 against / 15 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.
+
+  Stance Distribution
+    For       : 35
+    Against   : 48
+    Neutral   : 15
+
+  Item Averages By Stance
+    For      | Sentiment: 3.09 | Animosity: 1.77 | n=35
+    Against  | Sentiment: 2.62 | Animosity: 1.88 | n=48
+    Neutral  | Sentiment: 2.73 | Animosity: 1.27 | n=15
+
+  Source Breakdown
+    gnews       : 3
+    reddit      : 14
+    youtube     : 81
+  Source Lean
+    right       : 1
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 39.62
+    Std dev    : 0.00
+    Min / Max  : 39.62 / 39.62
+
+========================================================================
+  Scenario : nasa_funding
+  Expected : ?
+========================================================================
+  Run 1 of 1
+  ----------------------------------------------------------------------
+  Polarization : 28.78 / 100
+  Sample size  : 67
+  Elapsed      : 199.59s
+  Status       : ok
+  Rationale    : 67 items scored. Stance distribution: 31 for / 16 against / 20 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.
+
+  Stance Distribution
+    For       : 31
+    Against   : 16
+    Neutral   : 20
+
+  Item Averages By Stance
+    For      | Sentiment: 3.58 | Animosity: 1.48 | n=31
+    Against  | Sentiment: 1.94 | Animosity: 1.94 | n=16
+    Neutral  | Sentiment: 2.75 | Animosity: 1.20 | n=20
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 17
+    youtube     : 48
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 28.78
+    Std dev    : 0.00
+    Min / Max  : 28.78 / 28.78
+
+========================================================================
+  Scenario : inflation
+  Expected : ?
+========================================================================
+  Run 1 of 1
+  ----------------------------------------------------------------------
+  Polarization : 23.89 / 100
+  Sample size  : 78
+  Elapsed      : 269.38s
+  Status       : ok
+  Rationale    : 78 items scored. Stance distribution: 12 for / 34 against / 32 neutral. Platforms: gnews: 3, reddit: 35, youtube: 40. Source lean: center: 1.
+
+  Stance Distribution
+    For       : 12
+    Against   : 34
+    Neutral   : 32
+
+  Item Averages By Stance
+    For      | Sentiment: 3.83 | Animosity: 1.25 | n=12
+    Against  | Sentiment: 1.76 | Animosity: 2.18 | n=34
+    Neutral  | Sentiment: 2.62 | Animosity: 1.16 | n=32
+
+  Source Breakdown
+    gnews       : 3
+    reddit      : 35
+    youtube     : 40
+  Source Lean
+    center      : 1
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 23.89
+    Std dev    : 0.00
+    Min / Max  : 23.89 / 23.89
+
+========================================================================
+  SUMMARY
+========================================================================
+  Scenario                              Expected     Mean     Std     Min     Max
+  ----------------------------------------------------------------------
+  abortion                                     ?    28.83    0.00   28.83   28.83
+  gun_control                                  ?    39.62    0.00   39.62   39.62
+  nasa_funding                                 ?    28.78    0.00   28.78   28.78
+  inflation                                    ?    23.89    0.00   23.89   23.89
+========================================================================

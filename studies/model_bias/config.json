@@ -1,12 +1,14 @@
 {
-  "description": "Model bias ablation study — identical fake items assessed by different LLMs",
+  "description": "Model bias ablation study — same items assessed by different LLMs",
   "model_label": "mistral-small",
+  "items_dir": "data",
   "scenarios": [
-    "fake_polarized_real_context",
-    "fake_moderate_real_context",
-    "fake_neutral_real_context"
+    "abortion",
+    "gun_control",
+    "nasa_funding",
+    "inflation"
   ],
-  "runs": 3,
+  "runs": 1,
   "out_dir": "studies/model_bias/results",
   "models": [
     {

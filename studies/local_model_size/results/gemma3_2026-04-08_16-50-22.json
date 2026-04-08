@@ -1,0 +1,618 @@
+{
+  "family": "gemma3",
+  "family_config": {
+    "description": "Google Gemma 3 family \u2014 efficient open models at 1B, 4B, 12B, 27B",
+    "models": [
+      {
+        "label": "gemma3-1b",
+        "model_id": "ollama/gemma3:1b",
+        "params_billions": 1.0,
+        "pull_name": "gemma3:1b"
+      },
+      {
+        "label": "gemma3-4b",
+        "model_id": "ollama/gemma3:4b",
+        "params_billions": 4.0,
+        "pull_name": "gemma3:4b"
+      },
+      {
+        "label": "gemma3-12b",
+        "model_id": "ollama/gemma3:12b",
+        "params_billions": 12.0,
+        "pull_name": "gemma3:12b"
+      }
+    ]
+  },
+  "active_scenarios": [
+    "fake_polarized_general",
+    "fake_moderate_general",
+    "fake_neutral_general"
+  ],
+  "n_runs": 1,
+  "runs": {
+    "gemma3-1b": {
+      "fake_polarized_general": [
+        {
+          "model_label": "gemma3-1b",
+          "model_id": "ollama/gemma3:1b",
+          "params_billions": 1.0,
+          "scenario": "fake_polarized_general",
+          "run": 1,
+          "polarization_score": 58.57,
+          "sample_size": 22,
+          "rationale": "22 items scored. Stance: 17 for / 5 against / 0 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2.",
+          "stance_distribution": {
+            "for": 17,
+            "against": 5,
+            "neutral": 0
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 3.94,
+              "animosity": 4.41,
+              "n": 17
+            },
+            "against": {
+              "sentiment": 1.4,
+              "animosity": 3.6,
+              "n": 5
+            },
+            "neutral": null
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 14,
+              "gnews": 6,
+              "youtube": 2
+            },
+            "lean": {
+              "left": 2,
+              "right": 2,
+              "center": 2
+            }
+          },
+          "elapsed_seconds": 19.54,
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "fake_moderate_general": [
+        {
+          "model_label": "gemma3-1b",
+          "model_id": "ollama/gemma3:1b",
+          "params_billions": 1.0,
+          "scenario": "fake_moderate_general",
+          "run": 1,
+          "polarization_score": 46.04,
+          "sample_size": 21,
+          "rationale": "21 items scored. Stance: 6 for / 11 against / 4 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2.",
+          "stance_distribution": {
+            "for": 6,
+            "against": 11,
+            "neutral": 4
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 3.67,
+              "animosity": 2.17,
+              "n": 6
+            },
+            "against": {
+              "sentiment": 1.82,
+              "animosity": 3.91,
+              "n": 11
+            },
+            "neutral": {
+              "sentiment": 3,
+              "animosity": 1,
+              "n": 4
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 13,
+              "gnews": 5,
+              "youtube": 2
+            },
+            "lean": {
+              "center": 5
+            }
+          },
+          "elapsed_seconds": 15.74,
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "fake_neutral_general": [
+        {
+          "model_label": "gemma3-1b",
+          "model_id": "ollama/gemma3:1b",
+          "params_billions": 1.0,
+          "scenario": "fake_neutral_general",
+          "run": 1,
+          "polarization_score": 30.27,
+          "sample_size": 12,
+          "rationale": "12 items scored. Stance: 6 for / 2 against / 4 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2.",
+          "stance_distribution": {
+            "for": 6,
+            "against": 2,
+            "neutral": 4
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 3.67,
+              "animosity": 1,
+              "n": 6
+            },
+            "against": {
+              "sentiment": 1.5,
+              "animosity": 4,
+              "n": 2
+            },
+            "neutral": {
+              "sentiment": 2.75,
+              "animosity": 1.5,
+              "n": 4
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 11,
+              "youtube": 2,
+              "gnews": 7
+            },
+            "lean": {
+              "center": 7
+            }
+          },
+          "elapsed_seconds": 15.99,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    "gemma3-4b": {
+      "fake_polarized_general": [
+        {
+          "model_label": "gemma3-4b",
+          "model_id": "ollama/gemma3:4b",
+          "params_billions": 4.0,
+          "scenario": "fake_polarized_general",
+          "run": 1,
+          "polarization_score": 64.68,
+          "sample_size": 22,
+          "rationale": "22 items scored. Stance: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2.",
+          "stance_distribution": {
+            "for": 10,
+            "against": 10,
+            "neutral": 2
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 3.5,
+              "animosity": 4.1,
+              "n": 10
+            },
+            "against": {
+              "sentiment": 1.7,
+              "animosity": 4.6,
+              "n": 10
+            },
+            "neutral": {
+              "sentiment": 3,
+              "animosity": 1,
+              "n": 2
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 14,
+              "gnews": 6,
+              "youtube": 2
+            },
+            "lean": {
+              "left": 2,
+              "right": 2,
+              "center": 2
+            }
+          },
+          "elapsed_seconds": 59.74,
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "fake_moderate_general": [
+        {
+          "model_label": "gemma3-4b",
+          "model_id": "ollama/gemma3:4b",
+          "params_billions": 4.0,
+          "scenario": "fake_moderate_general",
+          "run": 1,
+          "polarization_score": 36.19,
+          "sample_size": 20,
+          "rationale": "20 items scored. Stance: 5 for / 8 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2.",
+          "stance_distribution": {
+            "for": 5,
+            "against": 8,
+            "neutral": 7
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 4,
+              "animosity": 1.6,
+              "n": 5
+            },
+            "against": {
+              "sentiment": 1.75,
+              "animosity": 4,
+              "n": 8
+            },
+            "neutral": {
+              "sentiment": 3.14,
+              "animosity": 1.57,
+              "n": 7
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 13,
+              "gnews": 5,
+              "youtube": 2
+            },
+            "lean": {
+              "center": 5
+            }
+          },
+          "elapsed_seconds": 40.35,
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "fake_neutral_general": [
+        {
+          "model_label": "gemma3-4b",
+          "model_id": "ollama/gemma3:4b",
+          "params_billions": 4.0,
+          "scenario": "fake_neutral_general",
+          "run": 1,
+          "polarization_score": 0.0,
+          "sample_size": 20,
+          "rationale": "20 items scored. Stance: 11 for / 0 against / 9 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2.",
+          "stance_distribution": {
+            "for": 11,
+            "against": 0,
+            "neutral": 9
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 4.73,
+              "animosity": 1,
+              "n": 11
+            },
+            "against": null,
+            "neutral": {
+              "sentiment": 3.56,
+              "animosity": 1.33,
+              "n": 9
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 11,
+              "youtube": 2,
+              "gnews": 7
+            },
+            "lean": {
+              "center": 7
+            }
+          },
+          "elapsed_seconds": 37.53,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    "gemma3-12b": {
+      "fake_polarized_general": [
+        {
+          "model_label": "gemma3-12b",
+          "model_id": "ollama/gemma3:12b",
+          "params_billions": 12.0,
+          "scenario": "fake_polarized_general",
+          "run": 1,
+          "polarization_score": 61.36,
+          "sample_size": 22,
+          "rationale": "22 items scored. Stance: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2.",
+          "stance_distribution": {
+            "for": 10,
+            "against": 10,
+            "neutral": 2
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 4.7,
+              "animosity": 3.5,
+              "n": 10
+            },
+            "against": {
+              "sentiment": 1.1,
+              "animosity": 4.1,
+              "n": 10
+            },
+            "neutral": {
+              "sentiment": 3,
+              "animosity": 1,
+              "n": 2
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 14,
+              "gnews": 6,
+              "youtube": 2
+            },
+            "lean": {
+              "left": 2,
+              "right": 2,
+              "center": 2
+            }
+          },
+          "elapsed_seconds": 150.47,
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "fake_moderate_general": [
+        {
+          "model_label": "gemma3-12b",
+          "model_id": "ollama/gemma3:12b",
+          "params_billions": 12.0,
+          "scenario": "fake_moderate_general",
+          "run": 1,
+          "polarization_score": 34.55,
+          "sample_size": 20,
+          "rationale": "20 items scored. Stance: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2.",
+          "stance_distribution": {
+            "for": 8,
+            "against": 5,
+            "neutral": 7
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 3.5,
+              "animosity": 2.12,
+              "n": 8
+            },
+            "against": {
+              "sentiment": 1.8,
+              "animosity": 3.4,
+              "n": 5
+            },
+            "neutral": {
+              "sentiment": 3,
+              "animosity": 1,
+              "n": 7
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 13,
+              "gnews": 5,
+              "youtube": 2
+            },
+            "lean": {
+              "center": 5
+            }
+          },
+          "elapsed_seconds": 109.94,
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "fake_neutral_general": [
+        {
+          "model_label": "gemma3-12b",
+          "model_id": "ollama/gemma3:12b",
+          "params_billions": 12.0,
+          "scenario": "fake_neutral_general",
+          "run": 1,
+          "polarization_score": 0.0,
+          "sample_size": 20,
+          "rationale": "20 items scored. Stance: 15 for / 0 against / 5 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2.",
+          "stance_distribution": {
+            "for": 15,
+            "against": 0,
+            "neutral": 5
+          },
+          "stance_averages": {
+            "for": {
+              "sentiment": 4.33,
+              "animosity": 1,
+              "n": 15
+            },
+            "against": null,
+            "neutral": {
+              "sentiment": 3,
+              "animosity": 1,
+              "n": 5
+            }
+          },
+          "source_breakdown": {
+            "platforms": {
+              "reddit": 11,
+              "youtube": 2,
+              "gnews": 7
+            },
+            "lean": {
+              "center": 7
+            }
+          },
+          "elapsed_seconds": 110.52,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    }
+  },
+  "stats": {
+    "gemma3-1b": {
+      "fake_polarized_general": {
+        "score": {
+          "n": 1,
+          "mean": 58.57,
+          "std": 0.0,
+          "min": 58.57,
+          "max": 58.57
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 19.54,
+          "std": 0.0,
+          "min": 19.54,
+          "max": 19.54
+        },
+        "total_runs": 1
+      },
+      "fake_moderate_general": {
+        "score": {
+          "n": 1,
+          "mean": 46.04,
+          "std": 0.0,
+          "min": 46.04,
+          "max": 46.04
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 15.74,
+          "std": 0.0,
+          "min": 15.74,
+          "max": 15.74
+        },
+        "total_runs": 1
+      },
+      "fake_neutral_general": {
+        "score": {
+          "n": 1,
+          "mean": 30.27,
+          "std": 0.0,
+          "min": 30.27,
+          "max": 30.27
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 15.99,
+          "std": 0.0,
+          "min": 15.99,
+          "max": 15.99
+        },
+        "total_runs": 1
+      }
+    },
+    "gemma3-4b": {
+      "fake_polarized_general": {
+        "score": {
+          "n": 1,
+          "mean": 64.68,
+          "std": 0.0,
+          "min": 64.68,
+          "max": 64.68
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 59.74,
+          "std": 0.0,
+          "min": 59.74,
+          "max": 59.74
+        },
+        "total_runs": 1
+      },
+      "fake_moderate_general": {
+        "score": {
+          "n": 1,
+          "mean": 36.19,
+          "std": 0.0,
+          "min": 36.19,
+          "max": 36.19
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 40.35,
+          "std": 0.0,
+          "min": 40.35,
+          "max": 40.35
+        },
+        "total_runs": 1
+      },
+      "fake_neutral_general": {
+        "score": {
+          "n": 1,
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 37.53,
+          "std": 0.0,
+          "min": 37.53,
+          "max": 37.53
+        },
+        "total_runs": 1
+      }
+    },
+    "gemma3-12b": {
+      "fake_polarized_general": {
+        "score": {
+          "n": 1,
+          "mean": 61.36,
+          "std": 0.0,
+          "min": 61.36,
+          "max": 61.36
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 150.47,
+          "std": 0.0,
+          "min": 150.47,
+          "max": 150.47
+        },
+        "total_runs": 1
+      },
+      "fake_moderate_general": {
+        "score": {
+          "n": 1,
+          "mean": 34.55,
+          "std": 0.0,
+          "min": 34.55,
+          "max": 34.55
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 109.94,
+          "std": 0.0,
+          "min": 109.94,
+          "max": 109.94
+        },
+        "total_runs": 1
+      },
+      "fake_neutral_general": {
+        "score": {
+          "n": 1,
+          "mean": 0.0,
+          "std": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "elapsed": {
+          "n": 1,
+          "mean": 110.52,
+          "std": 0.0,
+          "min": 110.52,
+          "max": 110.52
+        },
+        "total_runs": 1
+      }
+    }
+  }
+}

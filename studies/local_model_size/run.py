@@ -1,13 +1,20 @@
-"""Model bias ablation study: same fake items assessed by one LLM at a time.
+"""Local model size ablation study: same fake items assessed by Ollama models
+of increasing parameter count within a chosen model family.
 
-Loads fake scenario data (no scraping), runs LLM assessment for the model
-specified in config.json, and writes a result file per run.
+Runs ALL models in the family set by "model_family" in config.json sequentially
+and produces a side-by-side comparison table showing how score quality changes
+with model size.
 
-To run a different model, change "model_label" in config.json to any label
-from the "models" list, then execute:
+Prerequisites:
+    - Ollama running locally  (https://ollama.com)
+    - Models pulled:  ollama pull gemma3:1b  (etc.)
+    - Override host:  OLLAMA_HOST=http://host:11434
 
-    python studies/model_bias/run.py
-    python studies/model_bias/run.py --config path/to/other_config.json
+Usage:
+    python studies/local_model_size/run_that.py
+    python studies/local_model_size/run_that.py --config path/to/other_config.json
+
+To switch family or tweak any parameter, edit config.json.
 """
 
 from __future__ import annotations
@@ -26,14 +33,12 @@ if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
 import src.internal.pipeline.llm.sources  # noqa — triggers processor registration
-from src.internal.pipeline.domain import NormalizedItem  # noqa: E402
 from src.internal.pipeline.llm.assess import assess_items  # noqa: E402
 from src.internal.pipeline.llm.score import compute_polarization  # noqa: E402
 from src.internal.pipeline.llm.sources.registry import get_processors  # noqa: E402
 from src.internal.pipeline.mock.data import get_fake_data  # noqa: E402
 
 _DEFAULT_CONFIG = Path(__file__).parent / "config.json"
-_DEFAULT_ITEMS_DIR = _PROJECT_ROOT / "data"
 
 EXPECTED = {
     "fake_polarized_fictitious":   "~100",
@@ -50,53 +55,29 @@ EXPECTED = {
 W = 72
 
 
+# ── Config ─────────────────────────────────────────────────────────────────────
+
 def load_config(path: Path) -> dict:
     raw = json.loads(path.read_text())
-    required = {"model_label", "models", "scenarios", "runs", "out_dir"}
+    required = {"model_family", "model_families", "scenarios", "runs", "out_dir"}
     missing = required - raw.keys()
     if missing:
         raise ValueError(f"Config missing required fields: {missing}")
-    for m in raw["models"]:
-        if "label" not in m or "model_id" not in m:
-            raise ValueError(f"Each model entry needs 'label' and 'model_id': {m}")
     return raw
 
 
-def load_scenario(scenario: str, items_dir: Path) -> tuple[str, list[NormalizedItem]]:
-    """Return (query, items) for a scenario.
-
-    Scenarios starting with 'fake_' are loaded from mock data; all others are
-    loaded from items_dir/items_<scenario>.json.
-    """
-    if scenario.startswith("fake_"):
-        return get_fake_data(scenario)
-    path = items_dir / f"items_{scenario}.json"
-    raw = json.loads(path.read_text())
-    return raw["query"], [
-        NormalizedItem(
-            id=it["id"],
-            text=it["text"],
-            url=it["url"],
-            timestamp=it["timestamp"],
-            engagement_score=it["engagement_score"],
-            content_type=it["content_type"],
-            platform=it.get("platform", "unknown"),
-            source_lean=it.get("source_lean"),
-            relevance_score=it.get("relevance_score"),
-            parent_video_stance=it.get("parent_video_stance"),
-            parent_video_id=it.get("parent_video_id"),
+def resolve_family(config: dict) -> tuple[str, list[dict]]:
+    family_key = config["model_family"]
+    families = config["model_families"]
+    if family_key not in families:
+        raise ValueError(
+            f"model_family {family_key!r} not found in model_families. Available: {list(families)}"
         )
-        for it in raw["items"]
-    ]
-
-
-def resolve_model(config: dict) -> dict:
-    label = config["model_label"]
-    for m in config["models"]:
-        if m["label"] == label:
-            return m
-    available = [m["label"] for m in config["models"]]
-    raise ValueError(f"model_label {label!r} not found in models list. Available: {available}")
+    models = families[family_key]["models"]
+    for m in models:
+        if "label" not in m or "model_id" not in m or "params_billions" not in m:
+            raise ValueError(f"Each model entry needs 'label', 'model_id', 'params_billions': {m}")
+    return family_key, sorted(models, key=lambda m: m["params_billions"])
 
 
 # ── Per-run helpers ────────────────────────────────────────────────────────────
@@ -133,20 +114,13 @@ def _build_rationale(item_scores: list, items: list) -> str:
     n_against = sum(1 for s in item_scores if s.stance == -1)
     n_neutral = sum(1 for s in item_scores if s.stance == 0)
     parts = [
-        f"{n} items scored. Stance distribution: {n_for} for / "
-        f"{n_against} against / {n_neutral} neutral."
+        f"{n} items scored. Stance: {n_for} for / {n_against} against / {n_neutral} neutral."
     ]
     bd = _source_breakdown(items)
     if bd["platforms"]:
         parts.append(
             "Platforms: "
             + ", ".join(f"{k}: {v}" for k, v in sorted(bd["platforms"].items()))
-            + "."
-        )
-    if bd["lean"]:
-        parts.append(
-            "Source lean: "
-            + ", ".join(f"{k}: {v}" for k, v in sorted(bd["lean"].items()))
             + "."
         )
     return " ".join(parts)
@@ -157,6 +131,7 @@ def run_once(
     items: list,
     model_id: str,
     model_label: str,
+    params_billions: float,
     scenario: str,
     run_idx: int,
     n_runs: int,
@@ -183,7 +158,8 @@ def run_once(
 
     score_str = f"{score:6.2f}" if score is not None else "   ERR"
     print(
-        f"  [{scenario.replace('fake_', '')}] run {run_idx + 1}/{n_runs}"
+        f"  [{model_label} | {scenario.replace('fake_', '')}]"
+        f" run {run_idx + 1}/{n_runs}"
         f" … score={score_str}  ({elapsed:.1f}s)",
         flush=True,
     )
@@ -191,6 +167,7 @@ def run_once(
     return {
         "model_label": model_label,
         "model_id": model_id,
+        "params_billions": params_billions,
         "scenario": scenario,
         "run": run_idx + 1,
         "polarization_score": score,
@@ -225,135 +202,85 @@ def compute_stats(runs: list[dict]) -> dict:
 
 # ── Text formatting ────────────────────────────────────────────────────────────
 
-def _fmt_run(run: dict, total_runs: int) -> str:
+def _fmt_model_block(model_entry: dict, scenario_stats: dict[str, dict]) -> str:
     lines: list[str] = []
-    score = run["polarization_score"]
-    sd = run["stance_distribution"]
-    avgs = run["stance_averages"]
-    bd = run["source_breakdown"]
-
-    lines.append(f"  Run {run['run']} of {total_runs}")
+    lines.append(f"  {model_entry['label']}  ({model_entry['params_billions']}B params)")
     lines.append("  " + "-" * (W - 2))
-    lines.append(f"  Polarization : {f'{score:.2f} / 100' if score is not None else 'N/A'}")
-    lines.append(f"  Sample size  : {run['sample_size']}")
-    lines.append(f"  Elapsed      : {run['elapsed_seconds']}s")
-    lines.append(f"  Status       : {run['status']}")
-    if run.get("error"):
-        lines.append(f"  Error        : {run['error']}")
-    lines.append(f"  Rationale    : {run['rationale']}")
-    lines.append("")
-    lines.append("  Stance Distribution")
-    lines.append(f"    For       : {sd['for']}")
-    lines.append(f"    Against   : {sd['against']}")
-    lines.append(f"    Neutral   : {sd['neutral']}")
-    lines.append("")
-    lines.append("  Item Averages By Stance")
-    for stance_name in ("for", "against", "neutral"):
-        a = avgs.get(stance_name)
-        if a:
+    for scenario, stats in scenario_stats.items():
+        sc = stats["score"]
+        exp = EXPECTED.get(scenario, "?")
+        short = scenario.replace("fake_", "")
+        if sc["mean"] is not None:
             lines.append(
-                f"    {stance_name.capitalize():<8} | Sentiment: {a['sentiment']:.2f}"
-                f" | Animosity: {a['animosity']:.2f} | n={a['n']}"
+                f"    {short:<30} expected={exp:<8}"
+                f" mean={sc['mean']:6.2f}  std={sc['std']:5.2f}"
+                f"  elapsed={stats['elapsed']['mean']:.1f}s"
             )
         else:
-            lines.append(f"    {stance_name.capitalize():<8} | (no items)")
-    lines.append("")
-    lines.append("  Source Breakdown")
-    for platform, count in sorted(bd["platforms"].items()):
-        lines.append(f"    {platform:<12}: {count}")
-    if bd["lean"]:
-        lines.append("  Source Lean")
-        for lean_label, count in sorted(bd["lean"].items()):
-            lines.append(f"    {lean_label:<12}: {count}")
-
-    return "\n".join(lines)
-
-
-def _fmt_scenario_block(scenario: str, runs: list[dict], stats: dict) -> str:
-    lines: list[str] = []
-    expected = EXPECTED.get(scenario, "?")
-
-    lines.append("=" * W)
-    lines.append(f"  Scenario : {scenario}")
-    lines.append(f"  Expected : {expected}")
-    lines.append("=" * W)
-
-    if not runs:
-        lines.append("  [SKIPPED — no runs recorded]")
-        lines.append("")
-        return "\n".join(lines)
-
-    for run in runs:
-        lines.append(_fmt_run(run, len(runs)))
-        lines.append("")
-
-    sc = stats["score"]
-    lines.append("  " + "-" * (W - 2))
-    lines.append("  Aggregate")
-    lines.append("  " + "-" * (W - 2))
-    if sc["mean"] is not None:
-        lines.append(f"    Mean score : {sc['mean']:.2f}")
-        lines.append(f"    Std dev    : {sc['std']:.2f}")
-        lines.append(f"    Min / Max  : {sc['min']:.2f} / {sc['max']:.2f}")
-    else:
-        lines.append("    Mean score : N/A (all runs errored)")
-    lines.append("")
-
+            lines.append(f"    {short:<30} expected={exp:<8} ERR")
     return "\n".join(lines)
 
 
 def format_output(
-    model_entry: dict,
+    family_key: str,
+    family_config: dict,
     config: dict,
+    models: list[dict],
     active_scenarios: list[str],
     n_runs: int,
-    all_runs: dict[str, list[dict]],
-    all_stats: dict[str, dict],
+    all_stats: dict[str, dict[str, dict]],
 ) -> str:
     lines: list[str] = []
     ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     lines.append("=" * W)
-    lines.append("  MODEL BIAS ABLATION STUDY")
+    lines.append("  LOCAL MODEL SIZE ABLATION STUDY")
     lines.append("=" * W)
     if config.get("description"):
         lines.append(f"  Description : {config['description']}")
     lines.append(f"  Date        : {ts}")
-    lines.append(f"  Model       : {model_entry['label']}  ({model_entry['model_id']})")
-    lines.append(f"  Provider    : {model_entry.get('provider', '—')}")
-    if model_entry.get("note"):
-        lines.append(f"  Note        : {model_entry['note']}")
-    lines.append(f"  Runs        : {n_runs} per scenario")
+    lines.append(f"  Family      : {family_key}  — {family_config.get('description', '')}")
+    lines.append(f"  Ollama host : {config.get('ollama_host', 'http://localhost:11434')}")
+    lines.append(f"  Runs        : {n_runs} per scenario per model")
     lines.append(f"  Scenarios   : {', '.join(active_scenarios)}")
     lines.append("=" * W)
     lines.append("")
 
-    for scenario in active_scenarios:
-        runs = all_runs.get(scenario, [])
-        stats = all_stats.get(scenario, {"score": {"mean": None}})
-        lines.append(_fmt_scenario_block(scenario, runs, stats))
+    for model_entry in models:
+        label = model_entry["label"]
+        scenario_stats = all_stats.get(label, {})
+        lines.append(_fmt_model_block(model_entry, scenario_stats))
+        lines.append("")
 
     lines.append("=" * W)
-    lines.append("  SUMMARY")
+    lines.append("  SUMMARY — Score by model size")
     lines.append("=" * W)
-    header = f"  {'Scenario':<35} {'Expected':>10} {'Mean':>8} {'Std':>7} {'Min':>7} {'Max':>7}"
-    lines.append(header)
-    lines.append("  " + "-" * (W - 2))
+
+    col_w = 12
+    header_parts = [f"  {'Model':<20} {'Params':>7}B"]
     for scenario in active_scenarios:
-        sc = all_stats.get(scenario, {}).get("score", {})
-        mean = sc.get("mean")
-        std  = sc.get("std")
-        mn   = sc.get("min")
-        mx   = sc.get("max")
-        exp  = EXPECTED.get(scenario, "?")
+        short = scenario.replace("fake_", "")[:col_w]
+        header_parts.append(f"  {short:>{col_w}}")
+    lines.append("".join(header_parts))
+    lines.append("  " + "-" * (W - 2))
+
+    for model_entry in models:
+        label = model_entry["label"]
+        row = [f"  {label:<20} {model_entry['params_billions']:>7.1f}B"]
+        for scenario in active_scenarios:
+            sc = all_stats.get(label, {}).get(scenario, {}).get("score", {})
+            mean = sc.get("mean")
+            if mean is not None:
+                row.append(f"  {mean:>{col_w}.2f}")
+            else:
+                row.append(f"  {'ERR':>{col_w}}")
+        lines.append("".join(row))
+
+    lines.append("  " + "-" * (W - 2))
+    lines.append("  Expected ranges:")
+    for scenario in active_scenarios:
         short = scenario.replace("fake_", "")
-        if mean is not None:
-            lines.append(
-                f"  {short:<35} {exp:>10}"
-                f" {mean:>8.2f} {std:>7.2f} {mn:>7.2f} {mx:>7.2f}"
-            )
-        else:
-            lines.append(f"  {short:<35} {exp:>10}      ERR")
+        lines.append(f"    {short:<30} {EXPECTED.get(scenario, '?')}")
     lines.append("=" * W)
     lines.append("")
 
@@ -376,7 +303,8 @@ def main() -> None:
         config_path = _PROJECT_ROOT / config_path
     config = load_config(config_path)
 
-    model_entry = resolve_model(config)
+    family_key, models = resolve_family(config)
+    family_config = config["model_families"][family_key]
     n_runs = config["runs"]
     active_scenarios = config["scenarios"]
 
@@ -385,52 +313,64 @@ def main() -> None:
         out_dir = _PROJECT_ROOT / out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    raw_items_dir = config.get("items_dir")
-    items_dir = Path(raw_items_dir) if raw_items_dir else _DEFAULT_ITEMS_DIR
-    if not items_dir.is_absolute():
-        items_dir = _PROJECT_ROOT / items_dir
-
     ts = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
-    label_slug = model_entry["label"].replace("/", "-")
 
     print(
-        f"\nModel bias study — {model_entry['label']} ({model_entry['model_id']})\n"
+        f"\nLocal model size study — family: {family_key}\n"
+        f"Models    : {[m['label'] for m in models]}\n"
         f"Scenarios : {active_scenarios}\n"
-        f"Runs      : {n_runs} per scenario",
+        f"Runs      : {n_runs} per scenario per model",
         flush=True,
     )
 
-    all_runs: dict[str, list[dict]] = {}
+    all_runs: dict[str, dict[str, list[dict]]] = {}
+    all_stats: dict[str, dict[str, dict]] = {}
 
-    for scenario in active_scenarios:
+    for model_entry in models:
+        label = model_entry["label"]
+        model_id = model_entry["model_id"]
+        params = model_entry["params_billions"]
+
         print(
-            f"\n{'=' * W}\nScenario: {scenario}  (expected: {EXPECTED.get(scenario, '?')})\n{'=' * W}",
+            f"\n{'=' * W}\n"
+            f"Model: {label}  ({params}B)  [{model_id}]\n"
+            f"{'=' * W}",
             flush=True,
         )
-        try:
-            query, items = load_scenario(scenario, items_dir)
-        except (FileNotFoundError, KeyError):
-            print(f"  WARNING: could not load scenario {scenario!r}, skipping", flush=True)
-            continue
 
-        print(f"  Loaded {len(items)} items", flush=True)
-        all_runs[scenario] = [
-            run_once(query, items, model_entry["model_id"], model_entry["label"], scenario, i, n_runs)
-            for i in range(n_runs)
-        ]
+        all_runs[label] = {}
+        all_stats[label] = {}
 
-    all_stats = {scenario: compute_stats(runs) for scenario, runs in all_runs.items()}
+        for scenario in active_scenarios:
+            try:
+                query, items = get_fake_data(scenario)
+            except KeyError:
+                print(f"  WARNING: unknown scenario {scenario!r}, skipping", flush=True)
+                continue
 
-    output_text = format_output(model_entry, config, active_scenarios, n_runs, all_runs, all_stats)
+            print(f"\n  Scenario: {scenario}  (expected: {EXPECTED.get(scenario, '?')})", flush=True)
+            runs = [
+                run_once(query, items, model_id, label, params, scenario, i, n_runs)
+                for i in range(n_runs)
+            ]
+            all_runs[label][scenario] = runs
+            all_stats[label][scenario] = compute_stats(runs)
 
-    txt_path = out_dir / f"{label_slug}_{ts}.txt"
-    json_path = out_dir / f"{label_slug}_{ts}.json"
+    output_text = format_output(
+        family_key, family_config, config, models,
+        active_scenarios, n_runs, all_stats,
+    )
+
+    slug = family_key.replace("/", "-")
+    txt_path = out_dir / f"{slug}_{ts}.txt"
+    json_path = out_dir / f"{slug}_{ts}.json"
 
     txt_path.write_text(output_text, encoding="utf-8")
     json_path.write_text(
         json.dumps(
             {
-                "model": model_entry,
+                "family": family_key,
+                "family_config": family_config,
                 "active_scenarios": active_scenarios,
                 "n_runs": n_runs,
                 "runs": all_runs,

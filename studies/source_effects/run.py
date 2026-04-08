@@ -1,6 +1,6 @@
 """Source ablation study: effect of different source combinations on polarization score.
 
-Loads pre-collected items from a data/items/*.json file, filters by platform for
+Loads pre-collected items from a data/items_*.json file, filters by platform for
 each source configuration, then runs the LLM assessment + scoring pipeline.
 Collection is skipped entirely, so results are reproducible across runs.
 
@@ -14,7 +14,7 @@ Config file fields:
     description    (str)   Human-readable label printed in the output file.
     runs           (int)   How many times to repeat each source config.
                            LLM assessment is stochastic, so >1 run is recommended.
-    items_file     (str)   Path to a data/items/*.json file (absolute or relative
+    items_file     (str)   Path to a data/items_*.json file (absolute or relative
                            to the project root).
     out_dir        (str)   Directory where result files are written (absolute or
                            relative to the project root).

@@ -1,0 +1,31 @@
+{
+  "description": "Model size ablation study — same items assessed by different sizes of the same model family",
+  "items_dir": "data",
+  "scenarios": [
+    "fake_polarized_general",
+    "fake_moderate_general",
+    "fake_neutral_general"
+  ],
+  "runs": 1,
+  "out_dir": "studies/model_size/results",
+  "models": [
+    {
+        "label": "gemini-3.1-flash-lite-preview",
+        "model_id": "gemini-3.1-flash-lite-preview",
+        "provider": "gemini",
+        "note": "Default model used in production"
+    },
+    {
+      "label": "gemini-2.5-flash",
+      "model_id": "gemini-2.5-flash",
+      "provider": "gemini",
+      "note": "Larger Gemini 2.5 flash model"
+    },
+    {
+      "label": "gemini-3.1-pro-preview",
+      "model_id": "gemini-3.1-pro-preview",
+      "provider": "gemini",
+      "note": "Largest Gemini 3.1 model; highest cost"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "description": "Source ablation study — effect of data source on polarization score",
   "runs": 1,
-  "items_file": "data/items/items_nasa_funding.json",
+  "items_file": "data/items_nasa_funding.json",
   "out_dir": "studies/source_effects/results",
   "source_configs": [
     { "label": "reddit_only",   "sources": ["reddit"] },
