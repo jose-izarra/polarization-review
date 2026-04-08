@@ -14,6 +14,7 @@ Output (written to OUT_DIR):
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 from datetime import datetime, timezone
@@ -86,7 +87,7 @@ def _compute_stance_averages(evidence: list[EvidenceItem]) -> dict[str, dict[str
     return averages
 
 
-def format_scenario_section(mode: str, result, elapsed: float, note: str | None) -> str:
+def format_scenario_section(mode: str, result, elapsed: float, note: str | None, model: str | None = None) -> str:
     stance_map = {1: "FOR", 0: "NEUTRAL", -1: "AGAINST"}
     lines: list[str] = [
         "=" * 60,
@@ -95,7 +96,7 @@ def format_scenario_section(mode: str, result, elapsed: float, note: str | None)
         f"Scenario       : {mode}",
         f"Expected       : {EXPECTED[mode]}",
         f"Assessed at    : {result.collected_at}",
-        f"Model          : default",
+        f"Model          : {model or 'default'}",
         f"Note           : {note}" if note else "Note           : —",
         "",
         "--- Score ---",
@@ -150,6 +151,18 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--note", default=None, help="Optional note to include in the summary")
     parser.add_argument(
+        "--model",
+        type=str,
+        default=None,
+        help=(
+            "Override POLARIZATION_MODEL for this run. "
+            "Provider is detected from the model name prefix: "
+            "gpt-* (OpenAI), qwen-* (Qwen), mistral-* (Mistral), "
+            "deepseek-* (DeepSeek), gemini-* (Gemini), "
+            "anything else (Together AI / OSS)."
+        ),
+    )
+    parser.add_argument(
         "--dataset",
         choices=list(DATASETS.keys()),
         default=DEFAULT_DATASET,
@@ -161,6 +174,9 @@ def main() -> None:
         ),
     )
     args = parser.parse_args()
+
+    if args.model:
+        os.environ["POLARIZATION_MODEL"] = args.model
 
     active_scenarios = DATASETS[args.dataset]
 
@@ -184,7 +200,7 @@ def main() -> None:
             flush=True,
         )
 
-        section = format_scenario_section(mode, result, elapsed, args.note)
+        section = format_scenario_section(mode, result, elapsed, args.note, model=args.model)
         all_sections.append(section)
 
     combined = "\n\n".join(all_sections)

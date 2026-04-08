@@ -15,6 +15,7 @@ Outputs (written to --out, default: benchmarks/fake/results/):
 from __future__ import annotations
 
 import argparse
+import os
 import statistics
 import sys
 import threading
@@ -212,6 +213,18 @@ def main() -> None:
         ),
     )
     parser.add_argument(
+        "--model",
+        type=str,
+        default=None,
+        help=(
+            "Override POLARIZATION_MODEL for this run. "
+            "Provider is detected from the model name prefix: "
+            "gpt-* (OpenAI), qwen-* (Qwen), mistral-* (Mistral), "
+            "deepseek-* (DeepSeek), gemini-* (Gemini), "
+            "anything else (Together AI / OSS)."
+        ),
+    )
+    parser.add_argument(
         "--scenarios",
         nargs="+",
         choices=SCENARIOS_FICTITIOUS + SCENARIOS_GENERAL + SCENARIOS_REAL_CONTEXT,
@@ -222,6 +235,10 @@ def main() -> None:
         ),
     )
     args = parser.parse_args()
+
+    if args.model:
+        os.environ["POLARIZATION_MODEL"] = args.model
+
     active_scenarios = args.scenarios if args.scenarios else DATASETS[args.dataset]
 
     out_dir = Path(args.out)

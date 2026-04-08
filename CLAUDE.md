@@ -19,7 +19,7 @@ poe fix            # ruff check --fix
 poe format         # ruff format
 
 # Validation suite (synthetic formula checks)
-python -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
+uv run python3 -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
 ```
 
 Dependencies are managed with `uv`. Run `uv sync --all-packages` after changing any `pyproject.toml`.
