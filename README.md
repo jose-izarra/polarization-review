@@ -226,6 +226,115 @@ To run the validation suite (synthetic formula checks):
 python -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
 ```
 
+## Ablation studies
+
+Ablation studies are used to isolate how specific components of the pipeline affect polarization scores. To keep experiments reproducible and comparable, every ablation must follow a shared structure.
+
+### Required study structure
+
+Each study lives in its own folder inside `studies/` and must include both a runner and a config file:
+
+```text
+studies/
+  <study_name>/
+    run.py
+    config.json
+```
+
+- `run.py` is the study entrypoint and is responsible for executing the ablation
+- `config.json` stores the parameters that control the study behavior
+
+### `run.py` expectations
+
+When creating a new study runner:
+
+1. Load all tunable values from `config.json` (avoid hardcoded experiment settings)
+2. Run baseline and ablated variants in a consistent, repeatable way
+3. Write outputs into `studies/<study_name>/results/` for later comparison
+4. Keep study logic isolated to the study folder whenever possible
+
+### `config.json` expectations
+
+Use `config.json` as the single source of truth for experiment parameters. Typical keys include:
+
+- Topics or datasets to run
+- Number of runs / repetitions
+- Random seed(s)
+- Feature toggles for the ablation (what is enabled/disabled)
+- Output file/folder settings
+
+A minimal example:
+
+```json
+{
+  "name": "disable_relevance_filter",
+  "topics": ["abortion", "gun control", "ai regulation"],
+  "runs": 5,
+  "seed": 42,
+  "ablation": {
+    "disable_relevance_filter": true
+  },
+  "output_dir": "data/results"
+}
+```
+
+### Results format (standard across all studies)
+
+To make cross-study comparison easy, every study should produce the same two output formats in `studies/<study_name>/results/`:
+
+- `<label>_<timestamp>.json` (machine-readable, canonical record)
+- `<label>_<timestamp>.txt` (human-readable report)
+
+#### Required JSON structure
+
+Every results JSON should contain:
+
+- `config`: resolved config used for that run batch
+- `runs`: dictionary from condition/scenario label to per-run result list
+- `stats`: aggregate stats per condition/scenario (`mean`, `std`, `min`, `max`, `total_runs`)
+
+Each per-run result should include at least:
+
+- `run`
+- `polarization_score`
+- `sample_size`
+- `rationale`
+- `stance_distribution` (`for`, `against`, `neutral`)
+- `stance_averages`
+- `source_breakdown`
+- `elapsed_seconds`
+- `status`
+- `error` (nullable)
+
+#### Required TXT structure
+
+The TXT report should mirror the JSON contents with:
+
+1. Study header (description/date/context such as query, model, or scenarios)
+2. Per-condition sections with per-run score details
+3. Stance distribution + stance averages
+4. Source/platform breakdown
+5. Aggregate section and summary table (mean/std/min/max)
+
+### Study-specific fields
+
+Study-specific details are encouraged, but they should be additive so the common schema stays stable.
+
+Examples of useful extra fields:
+
+- platform-cap studies: `items_after_cap`, `items_after_filter`, `n_collected`
+- model-comparison studies: `model_label`, `model_id`, `provider`, `scenario`
+- source-ablation studies: `sources` labels or source subset metadata
+
+### Adding a new ablation study
+
+1. Create `studies/<new_study_name>/`
+2. Add `run.py` and `config.json`
+3. Add a `results/` subfolder and emit both `.json` and `.txt` outputs with the standard format
+4. Define the exact baseline-vs-ablation change in config and implement it in `run.py`
+5. Keep naming and outputs consistent so studies can be compared across runs
+6. Document any study-specific assumptions near the study folder (or in `docs/` if broader)
+
 ## Further reading
 
 Detailed documentation is in [`docs/`](./docs/):
