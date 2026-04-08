@@ -7,7 +7,6 @@ Assessed at    : 2026-04-07T20:05:01.842579+00:00
 Model          : default
 Note           : run with identical information as with Kingdom of FlobberFloppers but replaced with real world names
 
-
 Polarized : King Flavio / FlobberFloppers  →  Donald Trump / United States
 Moderate  : Grand Snorf Tax Decree         →  Federal Carbon Tax
 Neutral   : Wumble Festival                →  New Orleans Mardi Gras

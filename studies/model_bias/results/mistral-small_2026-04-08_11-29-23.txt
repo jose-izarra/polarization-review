@@ -1,0 +1,285 @@
+========================================================================
+  MODEL BIAS ABLATION STUDY
+========================================================================
+  Description : Model bias ablation study — identical fake items assessed by different LLMs
+  Date        : 2026-04-08 11:30 UTC
+  Model       : mistral-small  (ministral-8b-latest)
+  Provider    : mistral
+  Note        : Requires MISTRAL_API_KEY
+  Runs        : 3 per scenario
+  Scenarios   : fake_polarized_real_context, fake_moderate_real_context, fake_neutral_real_context
+========================================================================
+
+========================================================================
+  Scenario : fake_polarized_real_context
+  Expected : ~100
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 57.96 / 100
+  Sample size  : 22
+  Elapsed      : 12.28s
+  Status       : ok
+  Rationale    : 22 items scored. Stance distribution: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2. Source lean: center: 2, left: 2, right: 2.
+
+  Stance Distribution
+    For       : 10
+    Against   : 10
+    Neutral   : 2
+
+  Item Averages By Stance
+    For      | Sentiment: 3.10 | Animosity: 4.10 | n=10
+    Against  | Sentiment: 1.00 | Animosity: 4.30 | n=10
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=2
+
+  Source Breakdown
+    gnews       : 6
+    reddit      : 14
+    youtube     : 2
+  Source Lean
+    center      : 2
+    left        : 2
+    right       : 2
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 48.98 / 100
+  Sample size  : 22
+  Elapsed      : 9.18s
+  Status       : ok
+  Rationale    : 22 items scored. Stance distribution: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2. Source lean: center: 2, left: 2, right: 2.
+
+  Stance Distribution
+    For       : 10
+    Against   : 10
+    Neutral   : 2
+
+  Item Averages By Stance
+    For      | Sentiment: 1.00 | Animosity: 4.20 | n=10
+    Against  | Sentiment: 1.00 | Animosity: 4.50 | n=10
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=2
+
+  Source Breakdown
+    gnews       : 6
+    reddit      : 14
+    youtube     : 2
+  Source Lean
+    center      : 2
+    left        : 2
+    right       : 2
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 50.42 / 100
+  Sample size  : 22
+  Elapsed      : 7.93s
+  Status       : ok
+  Rationale    : 22 items scored. Stance distribution: 10 for / 10 against / 2 neutral. Platforms: gnews: 6, reddit: 14, youtube: 2. Source lean: center: 2, left: 2, right: 2.
+
+  Stance Distribution
+    For       : 10
+    Against   : 10
+    Neutral   : 2
+
+  Item Averages By Stance
+    For      | Sentiment: 1.40 | Animosity: 4.30 | n=10
+    Against  | Sentiment: 1.00 | Animosity: 4.30 | n=10
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=2
+
+  Source Breakdown
+    gnews       : 6
+    reddit      : 14
+    youtube     : 2
+  Source Lean
+    center      : 2
+    left        : 2
+    right       : 2
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 52.45
+    Std dev    : 4.82
+    Min / Max  : 48.98 / 57.96
+
+========================================================================
+  Scenario : fake_moderate_real_context
+  Expected : ~35-70
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 32.16 / 100
+  Sample size  : 20
+  Elapsed      : 6.85s
+  Status       : ok
+  Rationale    : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
+
+  Stance Distribution
+    For       : 8
+    Against   : 5
+    Neutral   : 7
+
+  Item Averages By Stance
+    For      | Sentiment: 2.62 | Animosity: 2.50 | n=8
+    Against  | Sentiment: 1.20 | Animosity: 3.80 | n=5
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=7
+
+  Source Breakdown
+    gnews       : 5
+    reddit      : 13
+    youtube     : 2
+  Source Lean
+    center      : 5
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 30.63 / 100
+  Sample size  : 20
+  Elapsed      : 7.05s
+  Status       : ok
+  Rationale    : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
+
+  Stance Distribution
+    For       : 8
+    Against   : 5
+    Neutral   : 7
+
+  Item Averages By Stance
+    For      | Sentiment: 2.62 | Animosity: 2.38 | n=8
+    Against  | Sentiment: 1.20 | Animosity: 3.40 | n=5
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=7
+
+  Source Breakdown
+    gnews       : 5
+    reddit      : 13
+    youtube     : 2
+  Source Lean
+    center      : 5
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 32.16 / 100
+  Sample size  : 20
+  Elapsed      : 7.07s
+  Status       : ok
+  Rationale    : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
+
+  Stance Distribution
+    For       : 8
+    Against   : 5
+    Neutral   : 7
+
+  Item Averages By Stance
+    For      | Sentiment: 2.62 | Animosity: 2.50 | n=8
+    Against  | Sentiment: 1.20 | Animosity: 3.80 | n=5
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=7
+
+  Source Breakdown
+    gnews       : 5
+    reddit      : 13
+    youtube     : 2
+  Source Lean
+    center      : 5
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 31.65
+    Std dev    : 0.88
+    Min / Max  : 30.63 / 32.16
+
+========================================================================
+  Scenario : fake_neutral_real_context
+  Expected : ~0
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 0.00 / 100
+  Sample size  : 20
+  Elapsed      : 6.73s
+  Status       : ok
+  Rationale    : 20 items scored. Stance distribution: 16 for / 0 against / 4 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2. Source lean: center: 7.
+
+  Stance Distribution
+    For       : 16
+    Against   : 0
+    Neutral   : 4
+
+  Item Averages By Stance
+    For      | Sentiment: 4.44 | Animosity: 1.00 | n=16
+    Against  | (no items)
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=4
+
+  Source Breakdown
+    gnews       : 7
+    reddit      : 11
+    youtube     : 2
+  Source Lean
+    center      : 7
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 0.00 / 100
+  Sample size  : 20
+  Elapsed      : 6.98s
+  Status       : ok
+  Rationale    : 20 items scored. Stance distribution: 16 for / 0 against / 4 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2. Source lean: center: 7.
+
+  Stance Distribution
+    For       : 16
+    Against   : 0
+    Neutral   : 4
+
+  Item Averages By Stance
+    For      | Sentiment: 4.31 | Animosity: 1.00 | n=16
+    Against  | (no items)
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=4
+
+  Source Breakdown
+    gnews       : 7
+    reddit      : 11
+    youtube     : 2
+  Source Lean
+    center      : 7
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 0.00 / 100
+  Sample size  : 20
+  Elapsed      : 7.82s
+  Status       : ok
+  Rationale    : 20 items scored. Stance distribution: 16 for / 0 against / 4 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2. Source lean: center: 7.
+
+  Stance Distribution
+    For       : 16
+    Against   : 0
+    Neutral   : 4
+
+  Item Averages By Stance
+    For      | Sentiment: 4.38 | Animosity: 1.00 | n=16
+    Against  | (no items)
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00 | n=4
+
+  Source Breakdown
+    gnews       : 7
+    reddit      : 11
+    youtube     : 2
+  Source Lean
+    center      : 7
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 0.00
+    Std dev    : 0.00
+    Min / Max  : 0.00 / 0.00
+
+========================================================================
+  SUMMARY
+========================================================================
+  Scenario                              Expected     Mean     Std     Min     Max
+  ----------------------------------------------------------------------
+  polarized_real_context                    ~100    52.45    4.82   48.98   57.96
+  moderate_real_context                   ~35-70    31.65    0.88   30.63   32.16
+  neutral_real_context                        ~0     0.00    0.00    0.00    0.00
+========================================================================

@@ -1,0 +1,153 @@
+============================================================
+  PLATFORM CAP ABLATION STUDY
+============================================================
+  Description : Platform cap ablation study — effect of max items per platform on polarization score
+  Date        : 2026-04-08 11:03 UTC
+  Query       : 'gun control'
+  Collected   : 567 items (before any cap)
+  Runs        : 1 per cap value
+  Caps tested : [20, 50, 100, 500]
+============================================================
+
+============================================================
+  Cap  : 20 items per platform
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 0.00 / 100
+  Sample size    : 19
+  Cap            : 20
+  After cap      : 43
+  After filter   : 19
+  Rationale      : 19 items scored. Stance distribution: 0 for / 17 against / 2 neutral. Platforms: gnews: 3, youtube: 16. Source lean: right: 1.
+  Elapsed        : 16.8s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 0
+    Against   : 17
+    Neutral   : 2
+
+  --- Item Averages By Stance ---
+    For      | (no items)
+    Against  | Sentiment: 2.06 | Animosity: 2.24
+    Neutral  | Sentiment: 3.00 | Animosity: 1.50
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 0.00
+    Std dev    : 0.00
+    Min / Max  : 0.00 / 0.00
+
+============================================================
+  Cap  : 50 items per platform
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 25.15 / 100
+  Sample size    : 47
+  Cap            : 50
+  After cap      : 103
+  After filter   : 47
+  Rationale      : 47 items scored. Stance distribution: 4 for / 37 against / 6 neutral. Platforms: gnews: 3, reddit: 5, youtube: 39. Source lean: right: 1.
+  Elapsed        : 35.19s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 4
+    Against   : 37
+    Neutral   : 6
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 2.75 | Animosity: 2.00
+    Against  | Sentiment: 2.46 | Animosity: 2.14
+    Neutral  | Sentiment: 3.00 | Animosity: 1.17
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 25.15
+    Std dev    : 0.00
+    Min / Max  : 25.15 / 25.15
+
+============================================================
+  Cap  : 100 items per platform
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 39.32 / 100
+  Sample size    : 75
+  Cap            : 100
+  After cap      : 203
+  After filter   : 89
+  Rationale      : 75 items scored. Stance distribution: 30 for / 32 against / 13 neutral. Platforms: gnews: 3, reddit: 14, youtube: 72. Source lean: right: 1.
+  Elapsed        : 65.21s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 30
+    Against   : 32
+    Neutral   : 13
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 3.30 | Animosity: 1.57
+    Against  | Sentiment: 2.03 | Animosity: 2.50
+    Neutral  | Sentiment: 2.85 | Animosity: 1.31
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 39.32
+    Std dev    : 0.00
+    Min / Max  : 39.32 / 39.32
+
+============================================================
+  Cap  : 500 items per platform
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 33.70 / 100
+  Sample size    : 177
+  Cap            : 500
+  After cap      : 567
+  After filter   : 222
+  Rationale      : 177 items scored. Stance distribution: 44 for / 89 against / 44 neutral. Platforms: gnews: 3, reddit: 85, youtube: 134. Source lean: right: 1.
+  Elapsed        : 162.09s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 44
+    Against   : 89
+    Neutral   : 44
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 2.98 | Animosity: 1.91
+    Against  | Sentiment: 2.29 | Animosity: 2.40
+    Neutral  | Sentiment: 2.77 | Animosity: 1.48
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 33.70
+    Std dev    : 0.00
+    Min / Max  : 33.70 / 33.70
+
+============================================================
+  SUMMARY TABLE
+============================================================
+     Cap n_capped n_relevant    Mean    Std     Min     Max
+  ----------------------------------------------------------
+      20       43         19    0.00   0.00    0.00    0.00
+      50      103         47   25.15   0.00   25.15   25.15
+     100      203         89   39.32   0.00   39.32   39.32
+     500      567        222   33.70   0.00   33.70   33.70
+============================================================

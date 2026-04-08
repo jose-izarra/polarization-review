@@ -1,0 +1,43 @@
+{
+  "description": "Model bias ablation study — identical fake items assessed by different LLMs",
+  "model_label": "mistral-small",
+  "scenarios": [
+    "fake_polarized_real_context",
+    "fake_moderate_real_context",
+    "fake_neutral_real_context"
+  ],
+  "runs": 3,
+  "out_dir": "studies/model_bias/results",
+  "models": [
+    {
+      "label": "gemini-flash-lite",
+      "model_id": "gemini-3.1-flash-lite-preview",
+      "provider": "gemini",
+      "note": "Default model used in production"
+    },
+    {
+      "label": "gpt-4o-mini",
+      "model_id": "gpt-4o-mini",
+      "provider": "openai",
+      "note": "Requires OPENAI_API_KEY"
+    },
+    {
+      "label": "deepseek-chat",
+      "model_id": "deepseek-chat",
+      "provider": "deepseek",
+      "note": "Requires DEEPSEEK_API_KEY"
+    },
+    {
+      "label": "qwen-plus",
+      "model_id": "qwen3.5-flash",
+      "provider": "qwen",
+      "note": "Requires QWEN_API_KEY"
+    },
+    {
+      "label": "mistral-small",
+      "model_id": "ministral-8b-latest",
+      "provider": "mistral",
+      "note": "Requires MISTRAL_API_KEY"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+============================================================
+  SOURCE ABLATION STUDY
+============================================================
+  Description : Source ablation study — effect of data source on polarization score
+  Date        : 2026-04-08 10:24 UTC
+  Query       : 'inflation'
+  Items file  : /Users/joseizarra/uni/capstone/polarization-review/data/items/items_inflation.json
+  Runs        : 1 per source config
+  Configs     : 7
+============================================================
+
+============================================================
+  Config : reddit_only
+  Sources: reddit
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 14.14 / 100
+  Sample size    : 35
+  Sources        : reddit
+  Rationale      : 35 items scored. Stance distribution: 1 for / 26 against / 8 neutral. Platforms: reddit: 35.
+  Elapsed        : 11.34s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 1
+    Against   : 26
+    Neutral   : 8
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.00 | Animosity: 1.00
+    Against  | Sentiment: 1.69 | Animosity: 2.54
+    Neutral  | Sentiment: 2.75 | Animosity: 1.00
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 14.14
+    Std dev    : 0.00
+    Min / Max  : 14.14 / 14.14
+
+============================================================
+  Config : gnews_only
+  Sources: gnews
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 0.00 / 100
+  Sample size    : 3
+  Sources        : gnews
+  Rationale      : 3 items scored. Stance distribution: 0 for / 0 against / 3 neutral. Platforms: gnews: 3. Source lean: center: 1.
+  Elapsed        : 2.16s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 0
+    Against   : 0
+    Neutral   : 3
+
+  --- Item Averages By Stance ---
+    For      | (no items)
+    Against  | (no items)
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 0.00
+    Std dev    : 0.00
+    Min / Max  : 0.00 / 0.00
+
+============================================================
+  Config : youtube_only
+  Sources: youtube
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 12.85 / 100
+  Sample size    : 25
+  Sources        : youtube
+  Rationale      : 25 items scored. Stance distribution: 2 for / 5 against / 18 neutral. Platforms: youtube: 40.
+  Elapsed        : 16.61s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 2
+    Against   : 5
+    Neutral   : 18
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.50 | Animosity: 1.00
+    Against  | Sentiment: 2.00 | Animosity: 2.60
+    Neutral  | Sentiment: 2.56 | Animosity: 1.11
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 12.85
+    Std dev    : 0.00
+    Min / Max  : 12.85 / 12.85
+
+============================================================
+  Config : reddit_gnews
+  Sources: reddit, gnews
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 13.63 / 100
+  Sample size    : 38
+  Sources        : reddit, gnews
+  Rationale      : 38 items scored. Stance distribution: 1 for / 27 against / 10 neutral. Platforms: gnews: 3, reddit: 35. Source lean: center: 1.
+  Elapsed        : 13.57s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 1
+    Against   : 27
+    Neutral   : 10
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.00 | Animosity: 1.00
+    Against  | Sentiment: 1.67 | Animosity: 2.74
+    Neutral  | Sentiment: 2.80 | Animosity: 1.10
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 13.63
+    Std dev    : 0.00
+    Min / Max  : 13.63 / 13.63
+
+============================================================
+  Config : reddit_youtube
+  Sources: reddit, youtube
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 25.99 / 100
+  Sample size    : 60
+  Sources        : reddit, youtube
+  Rationale      : 60 items scored. Stance distribution: 8 for / 31 against / 21 neutral. Platforms: reddit: 35, youtube: 40.
+  Elapsed        : 25.39s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 8
+    Against   : 31
+    Neutral   : 21
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.25 | Animosity: 1.12
+    Against  | Sentiment: 1.81 | Animosity: 2.65
+    Neutral  | Sentiment: 2.62 | Animosity: 1.10
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 25.99
+    Std dev    : 0.00
+    Min / Max  : 25.99 / 25.99
+
+============================================================
+  Config : gnews_youtube
+  Sources: gnews, youtube
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 14.36 / 100
+  Sample size    : 28
+  Sources        : gnews, youtube
+  Rationale      : 28 items scored. Stance distribution: 4 for / 4 against / 20 neutral. Platforms: gnews: 3, youtube: 40. Source lean: center: 1.
+  Elapsed        : 16.68s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 4
+    Against   : 4
+    Neutral   : 20
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.50 | Animosity: 1.00
+    Against  | Sentiment: 2.00 | Animosity: 2.50
+    Neutral  | Sentiment: 2.55 | Animosity: 1.20
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 14.36
+    Std dev    : 0.00
+    Min / Max  : 14.36 / 14.36
+
+============================================================
+  Config : all
+  Sources: reddit, gnews, youtube
+============================================================
+
+  Run 1 of 1
+  ----------------------------------------------------------
+  --- Score ---
+  Polarization   : 19.62 / 100
+  Sample size    : 78
+  Sources        : reddit, gnews, youtube
+  Rationale      : 78 items scored. Stance distribution: 6 for / 40 against / 32 neutral. Platforms: gnews: 3, reddit: 35, youtube: 40. Source lean: center: 1.
+  Elapsed        : 30.87s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 6
+    Against   : 40
+    Neutral   : 32
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.17 | Animosity: 1.17
+    Against  | Sentiment: 1.73 | Animosity: 2.67
+    Neutral  | Sentiment: 2.81 | Animosity: 1.16
+
+  ----------------------------------------------------------
+  Aggregate across runs
+  ----------------------------------------------------------
+    Mean score : 19.62
+    Std dev    : 0.00
+    Min / Max  : 19.62 / 19.62
+
+============================================================
+  SUMMARY TABLE
+============================================================
+  Config               Sources                   n    Mean    Std     Min     Max
+  ----------------------------------------------------------
+  reddit_only          reddit                   35   14.14   0.00   14.14   14.14
+  gnews_only           gnews                     3    0.00   0.00    0.00    0.00
+  youtube_only         youtube                  40   12.85   0.00   12.85   12.85
+  reddit_gnews         reddit+gnews             38   13.63   0.00   13.63   13.63
+  reddit_youtube       reddit+youtube           75   25.99   0.00   25.99   25.99
+  gnews_youtube        gnews+youtube            43   14.36   0.00   14.36   14.36
+  all                  reddit+gnews+youtube     78   19.62   0.00   19.62   19.62
+============================================================
