@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# _DEFAULT_POLARIZATION_MODEL = "gemini-3.1-flash-lite-preview"
-_DEFAULT_POLARIZATION_MODEL = "gpt-4o-mini"
+_DEFAULT_POLARIZATION_MODEL = "gemini-3.1-flash-lite-preview"
 
 
 class Config:
