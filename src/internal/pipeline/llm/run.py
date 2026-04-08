@@ -45,7 +45,12 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
     import src.internal.pipeline.scrape  # noqa — triggers registration
     from src.internal.pipeline.scrape.registry import get_sources
 
-    sources = get_sources()
+    all_sources = get_sources()
+    sources = (
+        [s for s in all_sources if s.name in request.sources]
+        if request.sources is not None
+        else all_sources
+    )
     all_items: list[NormalizedItem] = []
 
     with ThreadPoolExecutor(max_workers=len(sources)) as pool:
@@ -286,6 +291,13 @@ def _parse_args() -> SearchRequest:
     parser.add_argument("--max-posts", type=int, default=30)
     parser.add_argument("--max-comments-per-post", type=int, default=10)
     parser.add_argument(
+        "--sources",
+        nargs="+",
+        choices=["reddit", "gnews", "youtube"],
+        default=None,
+        help="Restrict to specific sources (default: all)",
+    )
+    parser.add_argument(
         "--mode",
         choices=[
             "live",
@@ -306,6 +318,7 @@ def _parse_args() -> SearchRequest:
         max_posts=args.max_posts,
         max_comments_per_post=args.max_comments_per_post,
         mode=args.mode,
+        sources=args.sources,
     )
 
 

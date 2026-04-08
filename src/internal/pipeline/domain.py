@@ -15,6 +15,7 @@ class SearchRequest:
     max_posts: int = 30
     max_comments_per_post: int = 30
     mode: str = "live"
+    sources: list[str] | None = None  # None = all; e.g. ["reddit", "gnews"]
 
 
 @dataclass(slots=True)

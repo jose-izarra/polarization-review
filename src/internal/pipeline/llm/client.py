@@ -1,6 +1,14 @@
 from __future__ import annotations
 
+import logfire
+import sys
 from typing import Callable
+
+
+def _log_api_error(provider: str, model: str, exc: Exception) -> None:
+    """Log an API error via logfire (scrubbing-safe) and always print to stderr."""
+    logfire.error("LLM API call failed", provider=provider, model=model)
+    print(f"[LLM ERROR] {provider} ({model}): {exc}", file=sys.stderr, flush=True)
 
 
 def _detect_provider(model: str) -> str:
@@ -39,30 +47,50 @@ def call_llm(
 
     if provider == "gpt":
         if config.openai_api_key is None:
+            logfire.warning(
+                "OPENAI_API_KEY not set — falling back to mock responses",
+                model=chosen_model,
+            )
             from src.internal.pipeline.mock.llm import mock_call_model
             return mock_call_model(system_prompt, user_payload)
         return _call_gpt(system_prompt, user_payload, model=chosen_model)
 
     if provider == "qwen":
         if config.qwen_api_key is None:
+            logfire.warning(
+                "QWEN_API_KEY not set — falling back to mock responses",
+                model=chosen_model,
+            )
             from src.internal.pipeline.mock.llm import mock_call_model
             return mock_call_model(system_prompt, user_payload)
         return _call_qwen(system_prompt, user_payload, model=chosen_model)
 
     if provider == "mistral":
         if config.mistral_api_key is None:
+            logfire.warning(
+                "MISTRAL_API_KEY not set — falling back to mock responses",
+                model=chosen_model,
+            )
             from src.internal.pipeline.mock.llm import mock_call_model
             return mock_call_model(system_prompt, user_payload)
         return _call_mistral(system_prompt, user_payload, model=chosen_model)
 
     if provider == "deepseek":
         if config.deepseek_api_key is None:
+            logfire.warning(
+                "DEEPSEEK_API_KEY not set — falling back to mock responses",
+                model=chosen_model,
+            )
             from src.internal.pipeline.mock.llm import mock_call_model
             return mock_call_model(system_prompt, user_payload)
         return _call_deepseek(system_prompt, user_payload, model=chosen_model)
 
     # default to gemini
     if config.gemini_api_key is None:
+        logfire.warning(
+            "GEMINI_API_KEY not set — falling back to mock responses",
+            model=chosen_model,
+        )
         from src.internal.pipeline.mock.llm import mock_call_model
         return mock_call_model(system_prompt, user_payload)
     return _call_gemini(system_prompt, user_payload, model=chosen_model)
@@ -90,7 +118,8 @@ def _call_gemini(
             ),
         )
     except Exception as exc:
-        raise RuntimeError(f"Gemini API error: {exc}") from exc
+        _log_api_error("Gemini", model, exc)
+        raise RuntimeError(f"Gemini API error ({model}): {exc}") from exc
     return response.text
 
 
@@ -99,13 +128,21 @@ def _call_gpt(
     user_payload: str,
     model: str,
 ) -> str:
-    """OpenAI GPT wrapper (gpt-4o, gpt-4o-mini, o1, o3, etc.)."""
+    """OpenAI GPT wrapper (gpt-4o, gpt-4o-mini, o1, o3, etc.).
+
+    Does NOT pass response_format — the system prompts already ask for a JSON
+    array, and using json_object mode would force GPT to return a JSON object
+    instead, breaking _extract_json_array in assess.py.
+
+    o1/o3/o4 reasoning models also do not support the temperature parameter,
+    so it is skipped for those model families.
+    """
     from openai import OpenAI
     from src.internal.config import config
 
     client = OpenAI(api_key=config.openai_api_key)
 
-    # o1/o3/o4 reasoning models do not support temperature or json_object format
+    # o1/o3/o4 reasoning models do not support temperature
     _reasoning_model = model.lower().startswith(("o1", "o3", "o4"))
     kwargs: dict = {
         "model": model,
@@ -116,12 +153,12 @@ def _call_gpt(
     }
     if not _reasoning_model:
         kwargs["temperature"] = 0.0
-        kwargs["response_format"] = {"type": "json_object"}
 
     try:
         response = client.chat.completions.create(**kwargs)
     except Exception as exc:
-        raise RuntimeError(f"OpenAI API error: {exc}") from exc
+        logfire.error("OpenAI API call failed", model=model, error=str(exc))
+        raise RuntimeError(f"OpenAI API error ({model}): {exc}") from exc
     return response.choices[0].message.content
 
 
@@ -140,20 +177,20 @@ def _call_qwen(
 
     client = OpenAI(
         api_key=config.qwen_api_key,
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+        base_url=config.qwen_base_url,
     )
     try:
         response = client.chat.completions.create(
             model=model,
             temperature=0.0,
-            response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_payload},
             ],
         )
     except Exception as exc:
-        raise RuntimeError(f"Qwen API error: {exc}") from exc
+        _log_api_error("Qwen", model, exc)
+        raise RuntimeError(f"Qwen API error ({model}): {exc}") from exc
     return response.choices[0].message.content
 
 
@@ -168,7 +205,7 @@ def _call_mistral(
     mistral-large-latest.
     Set POLARIZATION_MODEL=mistral-small-latest (or similar) to use.
     """
-    from mistralai import Mistral
+    from mistralai.client import Mistral
     from src.internal.config import config
 
     client = Mistral(api_key=config.mistral_api_key)
@@ -176,14 +213,14 @@ def _call_mistral(
         response = client.chat.complete(
             model=model,
             temperature=0.0,
-            response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_payload},
             ],
         )
     except Exception as exc:
-        raise RuntimeError(f"Mistral API error: {exc}") from exc
+        _log_api_error("Mistral", model, exc)
+        raise RuntimeError(f"Mistral API error ({model}): {exc}") from exc
     return response.choices[0].message.content
 
 
@@ -208,12 +245,12 @@ def _call_deepseek(
         response = client.chat.completions.create(
             model=model,
             temperature=0.0,
-            response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_payload},
             ],
         )
     except Exception as exc:
-        raise RuntimeError(f"DeepSeek API error: {exc}") from exc
+        logfire.error("DeepSeek API call failed", model=model, error=str(exc))
+        raise RuntimeError(f"DeepSeek API error ({model}): {exc}") from exc
     return response.choices[0].message.content
