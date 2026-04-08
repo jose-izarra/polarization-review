@@ -1,6 +1,6 @@
 {
   "collect": {
-    "topics": ["inflation", "abortion", "gun control", "ai regulation"],
+    "topics": ["abortion", "gun control", "nasa funding", "inflation"],
     "time_filter": "month",
     "max_posts": 30,
     "max_comments_per_post": 30,
