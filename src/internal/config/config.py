@@ -48,6 +48,10 @@ class Config:
         return os.getenv("DEEPSEEK_API_KEY")
 
     @property
+    def ollama_host(self) -> str:
+        return os.getenv("OLLAMA_HOST", "http://localhost:11434")
+
+    @property
     def polarization_model(self) -> str:
         return os.getenv("POLARIZATION_MODEL", _DEFAULT_POLARIZATION_MODEL)
 

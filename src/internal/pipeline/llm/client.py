@@ -14,6 +14,8 @@ def _log_api_error(provider: str, model: str, exc: Exception) -> None:
 def _detect_provider(model: str) -> str:
     """Infer provider from model name prefix."""
     m = model.lower()
+    if m.startswith("ollama/"):
+        return "ollama"
     if m.startswith(("gpt-", "o1", "o3", "o4")):
         return "gpt"
     if m.startswith("qwen"):
@@ -44,6 +46,9 @@ def call_llm(
 
     chosen_model = model or config.polarization_model
     provider = _detect_provider(chosen_model)
+
+    if provider == "ollama":
+        return _call_ollama(system_prompt, user_payload, model=chosen_model)
 
     if provider == "gpt":
         if config.openai_api_key is None:
@@ -221,6 +226,44 @@ def _call_mistral(
     except Exception as exc:
         _log_api_error("Mistral", model, exc)
         raise RuntimeError(f"Mistral API error ({model}): {exc}") from exc
+    return response.choices[0].message.content
+
+
+def _call_ollama(
+    system_prompt: str,
+    user_payload: str,
+    model: str,
+) -> str:
+    """Ollama local model wrapper via its OpenAI-compatible endpoint.
+
+    Model IDs must be prefixed with 'ollama/' (e.g. 'ollama/llama3.2:1b').
+    The prefix is stripped before sending to Ollama.
+
+    Requires Ollama to be running locally. Override host with OLLAMA_HOST env var
+    (default: http://localhost:11434).
+
+    Pull a model first: `ollama pull llama3.2:1b`
+    """
+    from openai import OpenAI
+    from src.internal.config import config
+
+    ollama_model = model[len("ollama/"):]  # strip the routing prefix
+    client = OpenAI(
+        api_key="ollama",  # Ollama ignores the key but openai client requires one
+        base_url=f"{config.ollama_host}/v1",
+    )
+    try:
+        response = client.chat.completions.create(
+            model=ollama_model,
+            temperature=0.0,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_payload},
+            ],
+        )
+    except Exception as exc:
+        _log_api_error("Ollama", model, exc)
+        raise RuntimeError(f"Ollama error ({model}): {exc}") from exc
     return response.choices[0].message.content
 
 
