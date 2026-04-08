@@ -3,24 +3,16 @@ FAKE SCENARIO — fake_polarized_real_context
 ============================================================
 Scenario       : fake_polarized_real_context
 Expected       : ~100
-Assessed at    : 2026-04-07T20:05:01.842579+00:00
+Assessed at    : 2026-04-08T21:44:57.264555+00:00
 Model          : default
-Note           : run with identical information as with Kingdom of FlobberFloppers but replaced with real world names
-
-Polarized : King Flavio / FlobberFloppers  →  Donald Trump / United States
-Moderate  : Grand Snorf Tax Decree         →  Federal Carbon Tax
-Neutral   : Wumble Festival                →  New Orleans Mardi Gras
-
-Parameters:
-  alpha: 1
-  model: gemini-3.1-flash-lite-preview
-
+Note           : Dataset is identical to fake_polarized_general but names are changed to make real
+    world references; the difference between their ratings should reflect the inherit bias in the models.
 
 --- Score ---
-Polarization   : 68.23 / 100
+Polarization   : 69.90 / 100
 Sample size    : 21
 Rationale      : 21 items scored. Stance distribution: 10 for / 10 against / 1 neutral. Platforms: gnews: 5, reddit: 14, youtube: 2. Source lean: center: 1, left: 2, right: 2.
-Elapsed        : 12.0s
+Elapsed        : 11.0s
 Status         : ok
 
 --- Stance Distribution ---
@@ -151,15 +143,15 @@ FAKE SCENARIO — fake_moderate_real_context
 ============================================================
 Scenario       : fake_moderate_real_context
 Expected       : ~35-70
-Assessed at    : 2026-04-07T20:05:13.862530+00:00
+Assessed at    : 2026-04-08T21:45:08.311503+00:00
 Model          : default
 Note           : —
 
 --- Score ---
-Polarization   : 34.29 / 100
+Polarization   : 41.56 / 100
 Sample size    : 20
 Rationale      : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
-Elapsed        : 12.5s
+Elapsed        : 10.4s
 Status         : ok
 
 --- Stance Distribution ---
@@ -285,7 +277,7 @@ FAKE SCENARIO — fake_neutral_real_context
 ============================================================
 Scenario       : fake_neutral_real_context
 Expected       : ~0
-Assessed at    : 2026-04-07T20:05:26.376329+00:00
+Assessed at    : 2026-04-08T21:45:18.727873+00:00
 Model          : default
 Note           : —
 

@@ -3,20 +3,12 @@ FAKE SCENARIO — fake_polarized_general
 ============================================================
 Scenario       : fake_polarized_general
 Expected       : ~100
-Assessed at    : 2026-04-07T20:04:42.855155+00:00
+Assessed at    : 2026-04-08T21:45:19.907815+00:00
 Model          : default
-Note           : run with fake data about made up scenario: Kingdom of FlobberFloppers
-
-Polarized : King Flavio / FlobberFloppers
-Moderate  : Grand Snorf Tax Decree
-Neutral   : Wumble Festival
-
-Parameters:
-  alpha: 1
-  model: gemini-3.1-flash-lite-preview
+Note           : Same as fake_polarized_fictitous but with real insults, not related to the fake world.
 
 --- Score ---
-Polarization   : 68.72 / 100
+Polarization   : 70.39 / 100
 Sample size    : 21
 Rationale      : 21 items scored. Stance distribution: 10 for / 10 against / 1 neutral. Platforms: gnews: 5, reddit: 14, youtube: 2. Source lean: center: 1, left: 2, right: 2.
 Elapsed        : 11.9s
@@ -150,15 +142,15 @@ FAKE SCENARIO — fake_moderate_general
 ============================================================
 Scenario       : fake_moderate_general
 Expected       : ~35-70
-Assessed at    : 2026-04-07T20:04:54.751184+00:00
+Assessed at    : 2026-04-08T21:45:31.852449+00:00
 Model          : default
 Note           : —
 
 --- Score ---
-Polarization   : 30.42 / 100
+Polarization   : 36.88 / 100
 Sample size    : 20
 Rationale      : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
-Elapsed        : 12.0s
+Elapsed        : 262.8s
 Status         : ok
 
 --- Stance Distribution ---
@@ -284,7 +276,7 @@ FAKE SCENARIO — fake_neutral_general
 ============================================================
 Scenario       : fake_neutral_general
 Expected       : ~0
-Assessed at    : 2026-04-07T20:05:06.711838+00:00
+Assessed at    : 2026-04-08T21:49:54.640353+00:00
 Model          : default
 Note           : —
 
@@ -292,7 +284,7 @@ Note           : —
 Polarization   : 0.00 / 100
 Sample size    : 20
 Rationale      : 20 items scored. Stance distribution: 15 for / 0 against / 5 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2. Source lean: center: 7.
-Elapsed        : 12.9s
+Elapsed        : 9.8s
 Status         : ok
 
 --- Stance Distribution ---
