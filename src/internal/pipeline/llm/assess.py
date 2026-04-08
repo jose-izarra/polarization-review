@@ -72,7 +72,7 @@ def _validate_item_scores(
             )
             continue
 
-        if sentiment not in range(1, 11):
+        if sentiment not in range(1, 6):
             logfire.warning(
                 "Skipping item — sentiment out of range",
                 item_id=item_id,
