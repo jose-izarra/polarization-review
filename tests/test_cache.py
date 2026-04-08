@@ -22,12 +22,10 @@ def _make_result(query: str = "test") -> PolarizationResult:
         collected_at="2026-03-17T00:00:00Z",
         sample_size=10,
         polarization_score=42.0,
-        confidence=0.8,
         rationale="test rationale",
         evidence=[],
         status="ok",
         error_message=None,
-        confidence_label="moderate",
     )
 
 

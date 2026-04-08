@@ -13,10 +13,10 @@ logger = logging.getLogger(__name__)
 
 # Cycles through a mix of stances to produce a realistic polarization score.
 _SCORE_CYCLE = [
-    {"sentiment": 4, "stance": 1, "animosity": 2, "reason": "mock positive stance"},
+    {"sentiment": 7, "stance": 1, "animosity": 2, "reason": "mock positive stance"},
     {"sentiment": 3, "stance": -1, "animosity": 3, "reason": "mock negative stance"},
-    {"sentiment": 2, "stance": 0, "animosity": 1, "reason": "mock neutral stance"},
-    {"sentiment": 5, "stance": 1, "animosity": 4, "reason": "mock strong positive"},
+    {"sentiment": 5, "stance": 0, "animosity": 1, "reason": "mock neutral stance"},
+    {"sentiment": 9, "stance": 1, "animosity": 4, "reason": "mock strong positive"},
     {"sentiment": 2, "stance": -1, "animosity": 2, "reason": "mock negative stance"},
 ]
 

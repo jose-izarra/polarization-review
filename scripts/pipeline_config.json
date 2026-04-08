@@ -1,0 +1,13 @@
+{
+  "collect": {
+    "topics": ["inflation", "abortion", "gun control", "ai regulation"],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "alpha": 1,
+    "model": null
+  }
+}

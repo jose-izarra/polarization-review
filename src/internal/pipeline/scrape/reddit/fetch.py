@@ -73,7 +73,7 @@ def discover_subreddits(
     reddit,
     query: str,
     limit: int = 10,
-    min_subscribers: int = 10_000,
+    min_subscribers: int = 5_000,
 ) -> list[str]:
     """
     Phase 1 discovery: search Reddit communities relevant to the query,

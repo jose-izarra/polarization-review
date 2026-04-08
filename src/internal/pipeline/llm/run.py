@@ -24,7 +24,7 @@ from .score import compute_polarization
 
 
 def _select_per_platform(
-    items: list[NormalizedItem], max_per_platform: int = 20
+    items: list[NormalizedItem], max_per_platform: int = 100
 ) -> list[NormalizedItem]:
     """Take the top N items per platform by engagement, then combine.
 
@@ -68,7 +68,7 @@ def _collect_and_normalize(request: SearchRequest) -> list[NormalizedItem]:
     for adapter in sources:
         all_items = adapter.post_process(all_items, request.query)
 
-    kept = [item for item in all_items if filter_item(asdict(item), min_text_length=20)]
+    kept = [item for item in all_items if filter_item(asdict(item))]
     return dedupe_items(kept)
 
 
@@ -104,22 +104,6 @@ def _build_rationale(
 
     return " ".join(parts)
 
-
-def _compute_confidence(n: int) -> float:
-    """Linear ramp: 0 -> 1 over 10 items."""
-    if n == 0:
-        return 0.0
-    return round(min(n / 10, 1.0), 4)
-
-
-def _compute_confidence_label(n: int) -> str:
-    if n >= 30:
-        return "high"
-    if n >= 10:
-        return "moderate"
-    if n >= 5:
-        return "low"
-    return "very_low"
 
 
 def _build_evidence(
@@ -169,7 +153,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 collected_at=collected_at,
                 sample_size=0,
                 polarization_score=None,
-                confidence=None,
                 rationale=f"Unknown fake mode: {request.mode}",
                 evidence=[],
                 status="error",
@@ -185,7 +168,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
                 collected_at=collected_at,
                 sample_size=0,
                 polarization_score=None,
-                confidence=None,
                 rationale="Failed while collecting data.",
                 evidence=[],
                 status="error",
@@ -193,7 +175,9 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             )
 
         # Per-platform cap
-        items = _select_per_platform(items, max_per_platform=20)
+        logfire.info("Before per-platform cap: {count} items", count=len(items))
+        items = _select_per_platform(items)
+        logfire.info("After per-platform cap: {count} items", count=len(items))
 
     if not items:
         return PolarizationResult(
@@ -201,7 +185,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             collected_at=collected_at,
             sample_size=0,
             polarization_score=None,
-            confidence=None,
             rationale="Insufficient data for this query.",
             evidence=[],
             status="degraded",
@@ -211,13 +194,13 @@ def run_search(request: SearchRequest) -> PolarizationResult:
     # Step 2: Relevance filter
     with logfire.span("pipeline.filter", item_count=len(items)):
         items = filter_relevant_items(query, items)
+    logfire.info("After relevance filter: {count} items", count=len(items))
     if not items:
         return PolarizationResult(
             query=query,
             collected_at=collected_at,
             sample_size=0,
             polarization_score=None,
-            confidence=None,
             rationale="No relevant items found for this query.",
             evidence=[],
             status="degraded",
@@ -243,7 +226,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
             collected_at=collected_at,
             sample_size=len(items),
             polarization_score=None,
-            confidence=None,
             rationale=(
                 "LLM assessment unavailable; collected evidence is returned "
                 "for inspection."
@@ -260,8 +242,6 @@ def run_search(request: SearchRequest) -> PolarizationResult:
     with logfire.span("pipeline.score"):
         polarization_score = compute_polarization(item_scores)
     n = len(item_scores)
-    confidence = _compute_confidence(n)
-    confidence_label = _compute_confidence_label(n)
     rationale = _build_rationale(item_scores, items)
 
     n_for = sum(1 for s in item_scores if s.stance == 1)
@@ -288,12 +268,10 @@ def run_search(request: SearchRequest) -> PolarizationResult:
         collected_at=collected_at,
         sample_size=n,
         polarization_score=polarization_score,
-        confidence=confidence,
         rationale=rationale,
         evidence=evidence_items,
         status="ok",
         error_message=None,
-        confidence_label=confidence_label,
         stance_distribution={"for": n_for, "against": n_against, "neutral": n_neutral},
         source_breakdown=dict(platform_counts),
     )

@@ -1,0 +1,610 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #8
+============================================================
+Topic          : abortion
+Assessed at    : 2026-04-07T12:56:55.386955+00:00
+Model          : default
+Alpha          : 1
+Note           : remove op ratio + include neutrals in std calc
+
+--- Score ---
+Polarization   : 28.98 / 100
+Sample size    : 112
+Rationale      : 112 items scored. Stance distribution: 21 for / 46 against / 45 neutral. Avg animosity: 1.76. Avg sentiment: 4.00. Platforms: gnews: 1, reddit: 52, youtube: 59.
+
+--- Stance Distribution ---
+  For       : 21
+  Against   : 46
+  Neutral   : 45
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 3.86 | Animosity: 2.00
+  Against  | Sentiment: 3.43 | Animosity: 2.07
+  Neutral  | Sentiment: 4.64 | Animosity: 1.33
+
+--- Source Breakdown ---
+  gnews       : 1
+  reddit      : 52
+  youtube     : 59
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "inflation",
+      "abortion",
+      "gun control",
+      "ai regulation"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "alpha": 1,
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.dailycamera.com/2026/03/24/abortion-pills-lawmakers/
+    Rationale: The text provides a neutral, factual report on legislative efforts regarding abortion pills.
+    Snippet  : Abortion pills are gaining ground as a method for ending pregnancies. Lawmakers in states like South Dakota where abortion is already banned are focusing on measures intended to crack down on abortion pills.
+
+[2] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/news/comments/1ryj7cj/georgia_woman_charged_with_murder_after_police/
+    Rationale: The text reports on a legal charge without expressing an opinion on the morality or legality of the act.
+    Snippet  : Georgia woman charged with murder after police say she took pills to induce abortion
+
+[3] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/law/comments/1rnilgc/texas_tech_university_cancels_medical_students/
+    Rationale: The text describes a university event cancellation in a neutral, reporting tone.
+    Snippet  : Texas Tech University cancels Medical Students for Choice speech on abortion after Turning Point USA claims event is "illegal"
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/HistoryUncovered/comments/1s9mbh0/gisella_perl_was_a_romanian_jewish_gynecologist/
+    Rationale: The text provides a historical account of a gynecologist performing abortions under extreme duress.
+    Snippet  : Gisella Perl was a Romanian Jewish gynecologist who was deported to Auschwitz in 1944. She temporarily saved the lives of hundreds of women by secretly performing abortions on them as pregnant women would either be executed or used in me...
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/atheism/comments/1rrws52/indiana_judge_says_states_abortion_ban_violates/
+    Rationale: The text summarizes a judicial ruling regarding religious freedom and abortion law without taking a personal stance.
+    Snippet  : Indiana judge says state's abortion ban violates religious freedom of those seeking abortions. The law can’t favor conservative theology while ignoring other faith traditions.
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/adressme/comments/1s8s4pv/what_abortion_have_to_do_with_a_poll_on_genocide/
+    Rationale: The text is a neutral, inquisitive question about the relationship between two topics.
+    Snippet  : What abortion have to do with a poll on genocide?
+
+[7] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/TrueOffMyChest/comments/1s13alr/i_got_an_abortion_and_now_my_parents_are_trying/
+    Rationale: The author expresses personal distress and frustration regarding their family's reaction to their abortion.
+    Snippet  : I got an abortion and now my parents are trying to sue me I’m (F16) and a month ago I realized I was pregnant. I come from a VERY religious household so having sex before marriage and at my age is seen as sinful and getting an abortion i...
+
+[8] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/StandUpComedy/comments/1s9fys1/the_line_with_abortion_gets_drawn_somewhere/
+    Rationale: The text is a neutral, philosophical observation about the boundaries of the abortion debate.
+    Snippet  : The line with abortion gets drawn somewhere
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/WomenInNews/comments/1ryzf3g/woman_charged_with_attempted_murder_under_georgia/
+    Rationale: The text reports on a legal development regarding an attempted murder charge in a neutral manner.
+    Snippet  : Woman charged with attempted murder under Georgia abortion law: A 31-year-old U.S. Army veteran has been charged with attempted murder, the first time that a mother has been charged under Georgia’s restrictive abortion law.
+
+[10] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1ryzzqc/zara_larsson_reveals_she_lost_a_3_million_deal/
+    Rationale: The text reports on a celebrity's financial loss related to a comment about abortion without taking a side.
+    Snippet  : Zara Larsson reveals she lost a $3 million deal after joking about abortion in a TikTok fan comment
+
+[11] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/law/comments/1rp1ttm/indiana_abortion_law_halted_for_violating/
+    Rationale: The text reports on a court decision regarding religious rights and abortion law.
+    Snippet  : Indiana Abortion Law Halted for Violating Non-Christians’ Rights
+
+[12] reddit | unknown lean | Stance: FOR | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/religiousfruitcake/comments/1s7xdpf/oh_look_lunatic_antiabortion_christian_men_who/
+    Rationale: The text uses derogatory language and personal attacks against anti-abortion men.
+    Snippet  : Oh look, lunatic Anti-Abortion Christian Men who think they know medicine and women's bodies better than women. That's new and unusual.
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/atheism/comments/1rqmfw6/gwen_stefani_tries_to_explain_her_christian/
+    Rationale: The text reports on a celebrity's public image and professional choices in a neutral tone.
+    Snippet  : Gwen Stefani Tries to Explain Her Christian Rebrand After Promoting an Anti-Abortion App
+
+[14] reddit | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 3
+    URL      : https://reddit.com/r/WhitePeopleTwitter/comments/1ryn51o/the_nebraskan_gop_just_threw_out_a_democratic/
+    Rationale: The text expresses strong criticism of a political candidate using loaded language like 'extreme'.
+    Snippet  : The Nebraskan GOP just threw out a Democratic candidate. The only remaining member of the Democratic ballot is an extreme anti-abortion conservative who supports the GOP, works with a Jan 6 rioter, and filed to enter the Senate race just...
+
+[15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/news/comments/1ryj7cj/georgia_woman_charged_with_murder_after_police/obfge5q/
+    Rationale: The author expresses deep frustration and anger toward a doctor who treated them poorly during a miscarriage.
+    Snippet  : My wife had a miscarriage in our early 20s, and the doctor gave us shit for it like it was purposeful. He treated her poorly for it, when it was not on purpose at all and we didn't even know she was pregnant (it was like 4-6 weeks). She ...
+
+[16] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/law/comments/1ryj8na/georgia_woman_charged_with_murder_after_police/obeuogb/
+    Rationale: The text expresses strong frustration and disapproval regarding the current state of abortion access.
+    Snippet  : We're back in the dark ages.
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/legaladvice/comments/1s2sjk0/how_do_i_get_an_abortion_without_anyone_knowing/
+    Rationale: The text is a personal, factual request for information regarding a medical situation without expressing a political stance.
+    Snippet  : How do I get an abortion without anyone knowing? I’m a minor Location: Kentucky I am 15 and am pregnant, I just found out three days ago. I don’t know long ive had it. I know who the father is but I don’t want him to know and I don’t wan...
+
+[18] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/ZaraLarssonFans/comments/1sblr66/people_seem_to_forget_that_zara_is_from_sweden/
+    Rationale: The text provides a neutral observation about cultural differences in the perception of abortion as healthcare.
+    Snippet  : People seem to forget that Zara is from Sweden where abortion is legal and considered healthcare. Swedish people are liberal.
+
+[19] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 2
+    URL      : https://reddit.com/r/atheism/comments/1s7zvha/democrats_say_nebraska_senate_candidate_a/
+    Rationale: The text reports on political accusations regarding a candidate's background and motives in a descriptive manner.
+    Snippet  : Democrats say Nebraska Senate candidate, a 79-year-old anti-abortion pastor with a history of Trump support, is GOP plant designed to disrupt the election.
+
+[20] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/news/comments/1ryj7cj/georgia_woman_charged_with_murder_after_police/obf13t6/
+    Rationale: The text provides a neutral, informative explanation regarding medical procedures and the difficulty of distinguishing between miscarriage and abortion.
+    Snippet  : “She told medical workers that she had taken misoprostol” Just a reminder that if you don’t tell doctors you’ve taken misoprostol, they can’t distinguish an abortion from a miscarriage. I’m not saying whether she was right to take it so ...
+
+[21] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/CuratedTumblr/comments/1sbmghx/habitual_aborter/oe4ky65/
+    Rationale: The text is a purely educational clarification of medical terminology.
+    Snippet  : In a medical context, “habitual abortion” is actually a term used for a person having at least three consecutive ***miscarriages*** (i.e. spontaneous abortions).
+
+[22] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/religiousfruitcake/comments/1rr1zdc/supporters_of_anti_abortion_bill_hb0570_in/
+    Rationale: The text is a neutral, descriptive account of a public event.
+    Snippet  : Supporters of anti abortion bill (HB0570) in Tennessee singing after it was rejected
+
+[23] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/teenagers/comments/1ruhyog/saw_this_and_wondered_is_this_how_women_feel_when/
+    Rationale: The text poses a reflective question about the emotional dynamics of political discourse.
+    Snippet  : Saw this and wondered, is this how women feel when they say " no uterus no opinion " on things like abortion.
+
+[24] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/law/comments/1ryj8na/georgia_woman_charged_with_murder_after_police/obf00a3/
+    Rationale: The text expresses strong disapproval and moral outrage toward a state policy that forced a pregnancy on a brain-dead patient.
+    Snippet  : This is the same state that forced a 9 weeks pregnant brain-dead woman to carry the pregnancy to term, despite the family's pleading for a termination so the woman could die peacefully.
+
+[25] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/justneckbeardthings/comments/1s4svvr/imagine_comparing_abortion_to_pagan_child/
+    Rationale: The text expresses frustration and mockery toward the comparison of abortion to child sacrifice.
+    Snippet  : Imagine comparing Abortion to Pagan child sacrifice
+
+[26] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/news/comments/1ryj7cj/georgia_woman_charged_with_murder_after_police/obf40uu/
+    Rationale: The text reports on a criminal case involving the non-consensual use of abortion medication with a tone of critical observation.
+    Snippet  : There was a man in Texas that drugged his wife with an abortion pill to induce miscarriage, and he didn't get charged with murder. Jon Rueben Gabriel Demeter of Spring, Texas, was arrested on Feb. 23 and charged with Aggravated Assault w...
+
+[27] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/law/comments/1ryj8na/georgia_woman_charged_with_murder_after_police/obf2fbl/
+    Rationale: The text provides a historical account of abortion practices without taking a personal stance.
+    Snippet  : Despite ***church*** condemnation, couples used herbs to induce abortion in the Dark Ages. In the early Roman Empire, the seed of silphium was used to induce abortion. In fact, it's thought that that's where we got the heart shape from, ...
+
+[28] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://reddit.com/r/law/comments/1ryj8na/georgia_woman_charged_with_murder_after_police/obewt0n/
+    Rationale: The text rejects the characterization of abortion as murder by using a medical analogy.
+    Snippet  : That isn't murder. I know they insist upon it, but that's like saying it's murder when I take antibiotics to kill infections.
+
+[29] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/migraine/comments/1sdmz3p/my_religious_family_members_freaked_out_about_my/
+    Rationale: The text expresses frustration and disbelief at the confusion caused by the terminology used for migraine medication.
+    Snippet  : My religious family members freaked out about my migraine "abortive" you can't make this shit up
+
+[30] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1ryqeto/republicans_introduce_absurd_bill_to_stop/
+    Rationale: The text uses mocking language to criticize a legislative bill it deems absurd.
+    Snippet  : Republicans Introduce Absurd Bill To Stop 'Pollution' Of Drinking Water With Fetal Remains | The bill would make it illegal to flush abortion or miscarriage remains down a toilet "to protect both human dignity and America’s water systems."
+
+[31] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/law/comments/1rz4n7l/rep_mary_miller_ril_introduces_bill_that_would/
+    Rationale: The text provides a neutral, factual summary of a legislative proposal.
+    Snippet  : Rep. Mary Miller (R-IL) introduces bill that would ban mailing of abortion pills at federal level, make failure to provide "catch kits" a felony after lobbying from Students for Life
+
+[32] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/wyoming/comments/1rr3yuo/wyoming_governor_signs_bill_banning_abortion/
+    Rationale: The text reports on a legislative action in a straightforward, descriptive manner.
+    Snippet  : Wyoming Governor Signs Bill Banning Abortion After 6 Weeks with No Exceptions for Rape or Incest
+
+[33] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/unitedkingdom/comments/1ry042a/house_of_lords_backs_bid_to_decriminalise_abortion/
+    Rationale: The text neutrally reports on a parliamentary development regarding abortion law.
+    Snippet  : House of Lords backs bid to decriminalise abortion
+
+[34] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/TrueOffMyChest/comments/1sccwe9/may_get_an_abortion_without_telling_bf/
+    Rationale: The text is a personal, descriptive account of a user's situation without taking a political stance.
+    Snippet  : may get an abortion without telling bf im F19 and found out I was pregnant a few days ago, i was worried I was pregnant for a few weeks before actually taking a test but got convinced by my bf M23(kinda ex?) too not take a test since im ...
+
+[35] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/Teenager_Polls/comments/1s71ubk/is_abortion_immoral_in_your_opinion/
+    Rationale: The text is a neutral inquiry posing a question to a community.
+    Snippet  : Is abortion immoral in your opinion? This post contains content not supported on old Reddit. [Click here to view the full post](https://sh.reddit.com/r/Teenager_Polls/comments/1s71ubk)
+
+[36] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/law/comments/1rnilgc/texas_tech_university_cancels_medical_students/o96z3w8/
+    Rationale: The text uses critical language to describe the actions of an organization, implying hypocrisy.
+    Snippet  : According to pro-choice journalist and reporter Jessica Valenti (*Abortion, Every Day*): > The school [Texas Tech University] canceled Dr. Shelley Sella's speech after being lobbied by the Texas chapter of Turning Point USA—an organizati...
+
+[37] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/law/comments/1s2gaz0/georgia_judge_denounces_murder_charge_in_abortion/
+    Rationale: The text highlights criticism of legal prosecutions, framing them as problematic.
+    Snippet  : Georgia Judge Denounces Murder Charge in Abortion Case as 'Extremely Problematic': States that have criminalized abortion are “getting much more explicit” in pushing to prosecute women for obtaining abortion care, said one rights advocate.
+
+[38] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/teenagers/comments/1s804mg/why_the_hell_do_people_care_about_abortions_so/
+    Rationale: The text expresses frustration and dismissiveness toward the intensity of the public debate.
+    Snippet  : Why the hell do people care about abortions so much bru
+
+[39] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1s9qpfi/jews_paused_indianas_abortion_ban_by_turning_a/
+    Rationale: The text describes a legal strategy used to challenge an abortion ban in a factual tone.
+    Snippet  : Jews paused Indiana’s abortion ban — by turning a religious freedom law against the evangelical right
+
+[40] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/CuratedTumblr/comments/1sbmghx/habitual_aborter/oe4hc23/
+    Rationale: The text uses strong, vulgar language to criticize the treatment of a minor regarding abortion discussions.
+    Snippet  : We can acknowledge that repeat abortions by the same mother *is* a phenomenon that occurs, while also acknowledging that it's incredibly fucked up to jot that down for a 14-year-old.
+
+[41] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/prochoice/comments/1s6agjs/abortion_takes_a_childs_life_but_also_its_totes/
+    Rationale: The text uses highly aggressive, accusatory language to mock opposing viewpoints.
+    Snippet  : "Abortion takes a child's life" but also "it's totes fine to murder children to distract from the fact you're a pedophile"
+
+[42] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1s92k40/maga_furious_as_trump_restores_planned_parenthood/
+    Rationale: The text reports on political reactions to a policy change using descriptive, slightly sensationalized language.
+    Snippet  : MAGA Furious as Trump Restores Planned Parenthood Funding
+
+[43] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/TwoHotTakes/comments/1sadrjq/my_husband_wants_me_to_get_an_abortion_with_our/
+    Rationale: The text is a personal, neutral request for advice regarding a private family matter.
+    Snippet  : My husband wants me to get an abortion with our third Hi everyone, First time posting. So hopefully I’m doing this right. My husband (30M) wants me (30F) to get an abortion. I believe I’m currently 10 weeks pregnant. I found out about a ...
+
+[44] reddit | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/atheism/comments/1rsrlqy/religious_right_cheers_josh_hawley_bill_to/
+    Rationale: The text uses the word 'cheers' to frame the religious right's support for criminalization in a critical light.
+    Snippet  : Religious Right Cheers Josh Hawley Bill to Criminalize Abortion Medication.
+
+[45] reddit | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/prochoice/comments/1rz09ds/gop_bill_would_make_women_use_catch_kits_on/
+    Rationale: The text uses a mocking tone to describe a legislative proposal, highlighting its perceived absurdity.
+    Snippet  : GOP Bill Would Make Women Use 'Catch Kits' On Toilets To Stop ‘Abortion Water’
+
+[46] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/abortion/comments/1rnpv83/am_i_overreacting_for_getting_an_abortion_after/
+    Rationale: The author expresses strong personal frustration and contempt toward their partner while defending their choice to have an abortion.
+    Snippet  : Am I overreacting for getting an abortion after my boyfriend wanted me to “get a c section so I don’t get loose down there” Hi guys I want to preface that I personally don’t think I overreacted at all. My body my choice and this man is a...
+
+[47] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/prolife/comments/1ry6d3w/uk_decriminalises_abortion_until_birth/
+    Rationale: The text is a neutral, factual headline reporting on a legislative change.
+    Snippet  : UK decriminalises abortion until birth
+
+[48] reddit | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1rubui8/wyoming_passes_new_sixweek_abortion_ban_that/
+    Rationale: The text reports on a ban while highlighting critical language from lawmakers regarding the legislative process.
+    Snippet  : Wyoming passes new six-week abortion ban that lawmakers call ‘insult to voters’
+
+[49] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/prochoice/comments/1rnl56w/indiana_court_blocks_abortion_ban_on_religious/
+    Rationale: The text provides a neutral summary of a court ruling regarding an abortion ban.
+    Snippet  : Indiana court blocks abortion ban on religious grounds - citing religious freedom law signed by Mike Pence
+
+[50] reddit | unknown lean | Stance: AGAINST | Sentiment: 7 | Animosity: 1
+    URL      : https://reddit.com/r/prolife/comments/1rn5iqn/i_a_lefty_non_religious_person_realized_the_evils/
+    Rationale: The author describes a personal shift in perspective toward an anti-abortion stance after a civil conversation.
+    Snippet  : I, a lefty, non religious person realized the evils of abortion I was walking my Dog and there was a guy with a pro life sign. He seemed like an approachable person so I decided to have a conversation with him. I am pretty left leaning a...
+
+[51] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/CuratedTumblr/comments/1sbmghx/habitual_aborter/oe4i310/
+    Rationale: The statement is a brief, neutral observation regarding the frequency of abortion.
+    Snippet  : Especially since one abortion is not a habit
+
+[52] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://reddit.com/r/prochoice/comments/1s4u5dz/pregnant_people_always_have_the_right_to/
+    Rationale: The author advocates for abortion rights and expresses mild dismissiveness toward those who identify as anti-choice.
+    Snippet  : Pregnant people always have the right to terminate anytime before delivery. 55m. Parent of 5. I haven’t noticed a lot of posts explicitly from men. I worry that most men \_think\_ that being anti-choice is pro-life. I don’t think it is c...
+
+[53] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/atheism/comments/1s8wqqx/christians_say_they_are_pro_life_and_want_to_save/
+    Rationale: The author expresses strong frustration and accuses religious groups of hypocrisy regarding the sanctity of life.
+    Snippet  : Christians say they are pro life and want to save babies from being aborted and then they will support the bombing and killing of people in foreign lands like it is what god wants. It is crazy to me how religious people are all for the s...
+
+[54] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=Ugz6u_kWhjcMzuNt92x4AaABAg
+    Rationale: The author expresses frustration and moral disapproval regarding the normalization of abortion.
+    Snippet  : Charlegmane is like, "You never got the wrong person pregnant?" As if this is something everyone does. THAT is the problem, right there.
+
+[55] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgzFloj_y4kdrTURY5R4AaABAg
+    Rationale: The author uses dismissive language to criticize the arguments used by abortion rights advocates.
+    Snippet  : Why do they always fall back on the rape/incest excuse? The majority of abortions are done as a form of birth control.
+
+[56] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgydsEJpP1OVYDtyalR4AaABAg
+    Rationale: The author uses highly charged, dehumanizing language by labeling abortion as murder.
+    Snippet  : As a nurse I have taken care of premie babies no bigger than a Barbie doll. They are little humans! No more murdering of the innocent!!!
+
+[57] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=UIWCgsgThTw&lcdId=UgwYfPJifoRbY4sOflR4AaABAg
+    Rationale: The author suggests adoption as an alternative and describes a specific social project in a neutral, informative tone.
+    Snippet  : I still don´t understand, why it is always " go to abortion or give birth and take care of baby" and no one is talking about adoption as a option. In my country there is project "Babybox". The principle is that near every hospital is a b...
+
+[58] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=Ugx3Mmxno6DZg4SSv5R4AaABAg
+    Rationale: The author uses a metaphorical, dismissive analogy to argue against abortion.
+    Snippet  : You are the baby’s apartment. If you don’t want the tenant, DO NOT TAKE THE DEPOSIT.
+
+[59] youtube | unknown lean | Stance: AGAINST | Sentiment: 7 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=UIWCgsgThTw&lcdId=UgzAMA2eUFQUc01-le94AaABAg
+    Rationale: The author shares a personal, positive anecdote about choosing to carry a pregnancy to term.
+    Snippet  : I had the second situation but decided to keep my child. She has grown up and could not have children. Another woman gave birth to a little girl who she did not want. I now have a beautiful granddaughter.
+
+[60] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgxXbdaDilwXHOIF7DZ4AaABAg
+    Rationale: The author expresses frustration and dismissiveness toward the use of specific examples in abortion debates.
+    Snippet  : Rape & incest is literally under 1% of all abortions yet they ride on that example like their lives depend on it
+
+[61] youtube | unknown lean | Stance: AGAINST | Sentiment: 7 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=UIWCgsgThTw&lcdId=UgwphmvIpdXJDJnp40t4AaABAg
+    Rationale: The author expresses a compassionate, pro-life stance by advocating for prayer and support for mothers.
+    Snippet  : Let us pray for all women who are considering having abortions and support charities that support single young mothers.
+
+[62] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=UgxS7p7qDoXLqI_AV2R4AaABAg
+    Rationale: The comment uses mocking language and insults to dismiss an opponent's argument.
+    Snippet  : “Have you ever eaten an egg” - Literally lost the argument right there😂 what an idiot
+
+[63] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=Ugw6zlzU05drx2DeLRR4AaABAg
+    Rationale: The author shares a personal, nuanced experience regarding abortion, acknowledging emotional difficulty while defending the choice.
+    Snippet  : Only thing I would add - abortion can indeed affect your mental health. It is not a fun, easy thing to do. I still get sad thinking about it - but if had carried on with the pregnancy, I would have been much, much worse mentally, physica...
+
+[64] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=DgZqLoy6_fg&lcdId=Ugyvmd8gjGTBGoCQqAt4AaABAg
+    Rationale: The comment uses a dismissive, exclusionary tone to challenge the religious identity of those who are pro-choice.
+    Snippet  : No such thing as a pro choice Christian
+
+[65] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=UgxZRd2k33EdBjS-I-B4AaABAg
+    Rationale: The comment uses sarcasm to highlight what the author perceives as a hypocritical inconsistency in the pro-choice position.
+    Snippet  : “Bacteria is life on Mars, but a heartbeat isn’t life on Earth? Weird. “ Tom Macdonald
+
+[66] youtube | unknown lean | Stance: AGAINST | Sentiment: 8 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=Ugwqe32T17IQiJttSHp4AaABAg
+    Rationale: The author praises a pro-life debater for effectively cornering an opponent.
+    Snippet  : Ben pulled a checkmate with the slavery metaphor and Charlemagne had to step in to save that girl. She was backed into a corner and had NO way out... Bravo Ben.
+
+[67] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=DgZqLoy6_fg&lcdId=Ugzx6pTvlnyGQRszRZh4AaABAg
+    Rationale: The author accuses pro-choice individuals of hypocrisy and moral failure regarding religious scripture.
+    Snippet  : They love the scripture "do not judge" but they hate the scripture "do not murder" and "do to others as you would have them do to you"
+
+[68] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=Ugw-B0fS9Yh0TyB501B4AaABAg
+    Rationale: The author uses strong, accusatory language, equating abortion to murder while criticizing the logic of health care comparisons.
+    Snippet  : She brought up the fact that drinkers and smokers are not denied health care for the diseases they got via their own behavior. Why are we not pointing out that providing health care to those people does NOT involve having to murder anoth...
+
+[69] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=UgytvXM_D1LL_pR8xhx4AaABAg
+    Rationale: The author uses a reductive, mocking summary to characterize the pro-choice argument.
+    Snippet  : “Your right to life does not supersede my right to comfort” – Basically every abortionist argument
+
+[70] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=DgZqLoy6_fg&lcdId=Ugx3o5DcMxOBz8XIBv94AaABAg
+    Rationale: The author criticizes an individual for perceived inconsistency between their religious claims and their political stance.
+    Snippet  : She claims Christianity, but wants to separate it from important issues....
+
+[71] youtube | unknown lean | Stance: AGAINST | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=UgwT1PYbdHh0DaGXQ2p4AaABAg
+    Rationale: The author challenges a pro-choice argument by attempting to draw a parallel to vaccine mandates.
+    Snippet  : Bronte says, "Your right to life does not supercede my right to bodily autonomy." I'd like to hear her take on vaccine mandates.
+
+[72] youtube | unknown lean | Stance: AGAINST | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=Ugz_f82zJ9FEgpALfsZ4AaABAg
+    Rationale: The author offers a blunt, moralistic solution to unwanted pregnancies.
+    Snippet  : You know what stops all unforced unwanted pregnancies? Not having sex.
+
+[73] youtube | unknown lean | Stance: AGAINST | Sentiment: 6 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=DgZqLoy6_fg&lcdId=UgwfANW1O_fV3jw3MLB4AaABAg
+    Rationale: The author uses a religious quote to assert a pro-life position.
+    Snippet  : “Before I made you in the womb, I knew you”- God
+
+[74] youtube | unknown lean | Stance: AGAINST | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgxzRrDOBwJQMKILKfZ4AaABAg
+    Rationale: The author uses statistical claims to criticize the rhetorical strategies of the pro-choice movement.
+    Snippet  : Less than half of a percent of all abortion cases are due to r and i. Yet, it is used in almost every single abortion defense
+
+[75] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=Kb3t9wMzs6k&lcdId=Ugxt6ztqQq_aBMoVc-h4AaABAg
+    Rationale: The author uses a graphic analogy to attack the pro-choice position on bodily autonomy.
+    Snippet  : His analogy further falls apart because the true comparison would be: after inviting the homeless person in, you are not allowed to stab him to death. He talks about the right to not invite him in. Charlie correctly correlates that with ...
+
+[76] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=Ugwarl-EKrzVfLjHZy94AaABAg
+    Rationale: The comment uses a dismissive and mocking tone to address a hypothetical scenario regarding pregnancy.
+    Snippet  : "You ever got the wrong person pregnant?" No, we don't sleep with the wrong people lmao.
+
+[77] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgyB6NswU1iCTsFFkRt4AaABAg
+    Rationale: The author provides a neutral, professional perspective on the difficult realities of medical practice.
+    Snippet  : I work in the medical field. Abortions are never a happy event. But neither is hospice care, child abuse cases or doing CPR on a small child. The reality is......... That sometimes there are no good out comes, no matter what you choose. ...
+
+[78] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgzFT_IP6O4VImANoQN4AaABAg
+    Rationale: The comment uses an insulting generalization to attack the intelligence of those with opposing views.
+    Snippet  : Their brain cells can’t seem to process this topic.
+
+[79] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=Ugwq1cXa-t6-Zz424EF4AaABAg
+    Rationale: The comment expresses frustration and dismissiveness toward an individual's character and argument.
+    Snippet  : Crazy thing is… She knows her argument sounds ridiculous, but she is so full of pride that she’s not going to back down.
+
+[80] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=Ugw05nSwogpAWqN3Bal4AaABAg
+    Rationale: The author shares a personal, disheartening experience related to working in an abortion clinic.
+    Snippet  : I worked as a clerk in a hospital where abortions were performed, a job where I lasted less than three months. The reason for the brevity of my tenure was because they assigned me the disheartening and depressing task of picking up and i...
+
+[81] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=UgxGBqlztIVXqrGzn314AaABAg
+    Rationale: The comment uses condescending language to criticize an individual's emotional state and knowledge.
+    Snippet  : This girl is so angry and sadly, she is clueless.
+
+[82] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=UgySnTBnEYcpXM1Z5Kl4AaABAg
+    Rationale: The comment uses dehumanizing language by calling proponents of abortion 'nuts' and framing the issue as 'death'.
+    Snippet  : If the baby “wasn’t alive” in the womb, they wouldn’t be advocating for its death. These people are nuts.
+
+[83] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=S0XT0sMZrBg&lcdId=Ugw5gEF2K7Z-aqV_w1d4AaABAg
+    Rationale: The comment implies a violent justification for the death of an individual, showing high hostility.
+    Snippet  : "Do I have the right to terminate somebody in this audience? No." But somebody in your audience thought they had the right to terminate you. I'm so sorry, Charlie. You are sorely missed.
+
+[84] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 8 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=S0XT0sMZrBg&lcdId=UgxQGNN1QFbbn2yHLRR4AaABAg
+    Rationale: The author expresses positive reinforcement for respectful debate, regardless of the ideological disagreement.
+    Snippet  : I don't agree with her but I honor how respectful she is in her argument. All debators should strive to be more like her
+
+[85] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=Ugw1Wn0blWgOfOuVNhF4AaABAg
+    Rationale: The comment presents a logical comparison between bodily autonomy and military conscription without hostility.
+    Snippet  : Well the military draft violates my right to bodily autonomy in order to protect others lives.
+
+[86] youtube | unknown lean | Stance: FOR | Sentiment: 7 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=S0XT0sMZrBg&lcdId=UgyWYIhc21wT97pyJ_R4AaABAg
+    Rationale: The author praises a specific argument for being thoughtful while dismissing opposing views as 'emotional drivel'.
+    Snippet  : Gotta give the first girl some credit. Nobody ever talks about the “can it feel pain” factor in regard to abortion. At least makes her position come across much more honest and thoughtful instead of pure emotional drivel based on blatant...
+
+[87] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 6 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=UIWCgsgThTw&lcdId=Ugxj_LP9JQuqelnx9nZ4AaABAg
+    Rationale: The comment acknowledges the complexity of the topic with a compassionate, neutral tone.
+    Snippet  : Its a ticky subject. May God guide the women who are in this predicament.
+
+[88] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=Kb3t9wMzs6k&lcdId=UgyXinjXo1VZCcC222d4AaABAg
+    Rationale: The comment uses accusatory language to frame the act as 'killing' and expresses contempt for the participants.
+    Snippet  : So sad, they are trying so hard to feel good about killing an unborn baby
+
+[89] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgwqePb8ZDboqZUrUQZ4AaABAg
+    Rationale: The author provides a reflective, personal account of their own experiences without attacking others.
+    Snippet  : I am an old woman (68) and have had one of each; one abortion, one miscarriage, and one live birth (who is now 36). The abortion was emotionally disturbing because I wanted it but really no way to take care of it (very young and one nigh...
+
+[90] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=DgZqLoy6_fg&lcdId=Ugx-zKmzXBUnwVQCF-t4AaABAg
+    Rationale: The comment expresses a critical, cynical view of societal values and political positioning regarding abortion.
+    Snippet  : Unfortunately, in this political climate, in this narcissistic society, being in favor of abortion is not a "pro-choice" position. It is a "pro-abortion" position.
+
+[91] youtube | unknown lean | Stance: AGAINST | Sentiment: 7 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=UgwH5EqJNCY1_sgeA-94AaABAg
+    Rationale: The author expresses a preference for adoption over abortion by highlighting the potential for life.
+    Snippet  : Even from an orphanage the child has a chance at life.
+
+[92] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=UgwBNuq0BQMJZFRS8cN4AaABAg
+    Rationale: The author uses sarcasm to challenge the consistency of the speaker's argument regarding bodily autonomy.
+    Snippet  : She said “if you allow the government to decide that someone’s right to life can override your right to bodily autonomy, that is opening the door for a lot of terrible things to happen” 👀 no kidding…so would she apply that to covid vacci...
+
+[93] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=UIWCgsgThTw&lcdId=Ugxohti_TEPwodJChZ94AaABAg
+    Rationale: The author recounts a personal experience of resisting pressure to undergo an abortion.
+    Snippet  : When I had my second child, I was told by one of the medical that I could have the tests at my local day hospital to make sure that my baby wasn't disabled & if she was I would be offered an abortion. I told her that I didn't want the te...
+
+[94] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgwE_iAYYhDvrUbrGXt4AaABAg
+    Rationale: The author implies that the question asked is morally revealing or problematic.
+    Snippet  : “You never got the wrong person pregnant?” Is such a revealing question.
+
+[95] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=Ugy8mfCo5-FRau1S5GZ4AaABAg
+    Rationale: The author provides a philosophical analysis of the core disagreement between pro-life and pro-choice positions.
+    Snippet  : This is just another example of literally every pro-life and pro-choice argument coming down to the exact same disagreement: Is the baby in the womb a human life? Literally every argument assumes the answer to this question. To assume ab...
+
+[96] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=UgzfNtOQbRQ7B1PXxrZ4AaABAg
+    Rationale: The author critiques a specific analogy used in the debate by introducing a counter-argument about personal responsibility.
+    Snippet  : From her analogy, if you choose not to drink alcohol your liver doesn't have to deal with alcohol, but she left out that if you choose to drink your liver has to deal with alcohol. So transferring it to the sexual act, if you don't want ...
+
+[97] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgzcGQYJlS1SewH09NJ4AaABAg
+    Rationale: The author reflects on historical hardships to support the necessity of legal abortion access.
+    Snippet  : My grandma told me once how important it is to remember what life was like for women before abortion was legal and effective birth control was available. Women had to make horrific choices between children they couldn’t support or were u...
+
+[98] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgwW8pPMcoV6Wt49xmp4AaABAg
+    Rationale: The author dismisses the speaker's arguments as mere excuses to justify abortion.
+    Snippet  : The woman seems like she will create any excuse or rationale to legitimize abortion.
+
+[99] youtube | unknown lean | Stance: FOR | Sentiment: 10 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgykTDSVLhGtNo_EXu54AaABAg
+    Rationale: The author expresses strong personal support for the pro-choice movement based on their own life experience.
+    Snippet  : As a woman who was denied an abortion and coerced into motherhood and pregnancy, I stand by my statement, PRO CHOICE AND PROUD!!!
+
+[100] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6yFFyM7niss&lcdId=UgyVYqsf9DmEoPX45-x4AaABAg
+    Rationale: The author criticizes the rhetorical focus on rape cases as statistically unrepresentative.
+    Snippet  : Why is their argument for abortion always a rape scenario when that accounts for less the 1% of all abortions?
+
+[101] youtube | unknown lean | Stance: AGAINST | Sentiment: 7 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=UIWCgsgThTw&lcdId=UgwlaI3wmhCv_TutIGt4AaABAg
+    Rationale: The author shares a personal anecdote about a relative choosing to carry a pregnancy to term under difficult circumstances.
+    Snippet  : I'd love to share a nice story. I have an aunt who once worked abroad in Saudi. During her time there, she once got drunk and some stranger decided to take advantage of her. A month later, she was pregnant. However, instead of deciding t...
+
+[102] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=hR5wj6otwJI&lcdId=UgxBnXQVNIu0tiw7Yu14AaABAg
+    Rationale: The author mocks the speaker's reaction to a pro-life argument.
+    Snippet  : When he gave her the "we shouldn't kill 850,000 babies" line, she had to rearrange herself it was too much😅
+
+[103] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgwViPhBCq6bOA9SOOJ4AaABAg
+    Rationale: The author suggests that the trauma of childbirth is a broader issue that is often overlooked in the abortion debate.
+    Snippet  : If we start recognizing the trauma that‘unintended childbirth’ causes to the mother, we might have to start addressing how traumatic‘intended childbirth’ is. Then, we’ll have a real problem.
+
+[104] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgwSyL9kX9uXHkVypqx4AaABAg
+    Rationale: The author advocates for shifting the focus of the debate toward pregnancy prevention.
+    Snippet  : The most discussed topic shouldn't be if should or shouldn't be legal, but rather, how can we avoid the pregnancy to start in the first place!
+
+[105] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgzkMKxYAIxoxTXnmot4AaABAg
+    Rationale: The author argues that if the government mandates birth, it must also assume the financial responsibility for the child.
+    Snippet  : If the government will force people to give birth, especially in poor financial situations, they should be REQUIRED to financially provide for that person and pregnancy costs and all of the costs that an unwanted and unplanned pregnancy ...
+
+[106] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=L-FTI14OVrg&lcdId=UgwWy17iOG4Dy2_DKhN4AaABAg
+    Rationale: The author uses the historical context of Romanian orphanages to imply that restricting abortion leads to societal suffering and cruelty.
+    Snippet  : I was in Romania in 1990 when after 25 arduous years of oppression, the notoriously cruel and murderous dictator Ceaușescu was deposed as the people revolted. The world was horrified by the images that emerged from the countless orphanag...
+
+[107] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=UgwxJnqz0HiklG_qSpB4AaABAg
+    Rationale: The comment uses mocking, dismissive language to criticize the pro-life position regarding the humanity of a fetus.
+    Snippet  : "its human" "WAIT NO ITS NOT" girl, you cant go back loll
+
+[108] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=At2fYVBVXho&lcdId=UgyLz9UuCnIidii9sut4AaABAg
+    Rationale: The author uses a personal insult and dehumanizing language to attack the speaker's character and consistency.
+    Snippet  : Funny that Charlie Kirk here assumes "murder is wrong" when he says the opposite in other speeches. Absolute waste of oxygen
+
+[109] youtube | unknown lean | Stance: AGAINST | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=DgZqLoy6_fg&lcdId=UgwNXq6FDYHY0UMKwXJ4AaABAg
+    Rationale: The author uses a logical analogy to challenge the 'my body, my choice' argument.
+    Snippet  : A passenger in a car is not a part of the car. Your car, your choice?
+
+[110] youtube | unknown lean | Stance: FOR | Sentiment: 10 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=UgzrQmuKsOuT6aeId7F4AaABAg
+    Rationale: The author expresses strong approval and support for the argument presented in the video.
+    Snippet  : The best abortion argument I've ever heard. God bless you.
+
+[111] youtube | unknown lean | Stance: AGAINST | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MAOCEJZ9RW8&lcdId=Ugx6O1xxonv9VXjM8xt4AaABAg
+    Rationale: The author uses a rhetorical question to challenge the pro-choice position by questioning the necessity of the procedure.
+    Snippet  : if it's not a baby or alive, why do you need an abortion?
+
+[112] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=Kb3t9wMzs6k&lcdId=Ugz70Z2XMgqZ3lmkyqZ4AaABAg
+    Rationale: The author expresses frustration and disagreement with a specific analogy used to justify abortion.
+    Snippet  : Driving a car and having a baby is NOT a same thing!!!!

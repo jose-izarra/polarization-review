@@ -1,11 +1,12 @@
 import unittest
 
 from src.internal.pipeline.domain import ItemScore
+from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 from src.internal.pipeline.llm.score import compute_polarization
 
 
-def _make_score(stance: int, animosity: int = 3, sentiment: int = 3) -> ItemScore:
-    r = stance * (sentiment + 0.5 * animosity)
+def _make_score(stance: int, animosity: int = 3, sentiment: int = 5) -> ItemScore:
+    r = stance * (sentiment + ALPHA_DEFAULT * animosity)
     return ItemScore(
         id="x",
         sentiment=sentiment,
@@ -21,36 +22,49 @@ class TestComputePolarization(unittest.TestCase):
 
     def test_all_neutral_returns_zero(self):
         scores = [
-            ItemScore(id=str(i), sentiment=3, stance=0, animosity=1, r=0.0)
+            ItemScore(id=str(i), sentiment=5, stance=0, animosity=1, r=0.0)
             for i in range(10)
         ]
         self.assertEqual(compute_polarization(scores), 0.0)
 
     def test_all_one_side_returns_zero(self):
-        """All for, no against -> distribution = 0 -> score = 0."""
+        """All for, no against -> score = 0."""
         scores = [_make_score(1, animosity=5) for _ in range(10)]
+        self.assertEqual(compute_polarization(scores), 0.0)
+
+    def test_all_one_side_varying_intensity_returns_zero(self):
+        """All for but with varying sentiment/animosity → still 0.
+
+        This is the consensus case: everyone agrees, but with different
+        enthusiasm levels. pstdev of r values is non-zero, but that variance
+        reflects intensity, not polarization — score must still be 0.
+        """
+        scores = (
+            [_make_score(1, sentiment=5, animosity=1) for _ in range(8)]
+            + [_make_score(1, sentiment=4, animosity=1) for _ in range(7)]
+        )
         self.assertEqual(compute_polarization(scores), 0.0)
 
     def test_50_50_split_high_animosity(self):
         """Equal for/against with high animosity -> substantial score.
 
-        animosity=5, sentiment=3 → r=±5.5, pstdev=5.5,
-        score = 5.5/7.5*100 ≈ 73.3.
+        animosity=5, sentiment=5, α=0.5 → r=±7.5, pstdev=7.5,
+        score = 7.5/12.5*100 = 60.0.
         """
         scores = [_make_score(1, animosity=5) for _ in range(10)]
         scores += [_make_score(-1, animosity=5) for _ in range(10)]
         result = compute_polarization(scores)
-        self.assertGreaterEqual(result, 70.0)
+        self.assertGreaterEqual(result, 60.0)
         self.assertLessEqual(result, 100.0)
 
     def test_50_50_split_max_animosity_reaches_100(self):
         """Perfect 50/50 with max sentiment+animosity -> 100.
 
-        sentiment=5, animosity=5 → r = ±(5+2.5) = ±7.5 = P_MAX,
-        so pstdev = 7.5 → score = 100.
+        sentiment=10, animosity=5, α=0.5 → r = ±(10+0.5*5) = ±12.5 = P_MAX,
+        so pstdev = 12.5 → score = 100.
         """
-        scores = [_make_score(1, animosity=5, sentiment=5) for _ in range(5)]
-        scores += [_make_score(-1, animosity=5, sentiment=5) for _ in range(5)]
+        scores = [_make_score(1, animosity=5, sentiment=10) for _ in range(5)]
+        scores += [_make_score(-1, animosity=5, sentiment=10) for _ in range(5)]
         result = compute_polarization(scores)
         self.assertEqual(result, 100.0)
 
@@ -70,7 +84,7 @@ class TestComputePolarization(unittest.TestCase):
         pure += [_make_score(-1, animosity=3) for _ in range(5)]
 
         diluted = list(pure) + [
-            ItemScore(id=str(i), sentiment=3, stance=0, animosity=1, r=0.0)
+            ItemScore(id=str(i), sentiment=5, stance=0, animosity=1, r=0.0)
             for i in range(10)
         ]
 

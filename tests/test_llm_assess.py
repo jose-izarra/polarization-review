@@ -21,7 +21,7 @@ def _fake_response(items: list[NormalizedItem]) -> str:
         [
             {
                 "id": item.id,
-                "sentiment": 3,
+                "sentiment": 5,
                 "stance": 1,
                 "animosity": 2,
                 "reason": "test",
@@ -53,7 +53,7 @@ class AssessItemsTests(unittest.TestCase):
                 [
                     {
                         "id": "1",
-                        "sentiment": 4,
+                        "sentiment": 7,
                         "stance": 1,
                         "animosity": 2,
                         "reason": "test",
@@ -63,8 +63,8 @@ class AssessItemsTests(unittest.TestCase):
 
         result = assess_items("query", items, _override=fake_call)
         self.assertEqual(len(result), 1)
-        # r = stance * (sentiment + alpha * animosity) = 1 * (4 + 0.8 * 2) = 5.6
-        self.assertAlmostEqual(result[0].r, 5.6)
+        # r = stance * (sentiment + alpha * animosity) = 1 * (7 + 0.8 * 2) = 8.6
+        self.assertAlmostEqual(result[0].r, 8.6)
 
     def test_reason_field_extracted(self):
         items = [_make_item("1")]

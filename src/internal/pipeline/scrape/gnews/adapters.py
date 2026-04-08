@@ -7,6 +7,7 @@ from src.internal.pipeline.scrape.normalize import normalize_raw_item
 
 from .fetch import collect_gnews_data
 
+_MAX_PER_LEAN = 2
 
 class GNewsAdapter:
     name = "gnews"
@@ -23,13 +24,12 @@ class GNewsAdapter:
         self, items: list[NormalizedItem], query: str, **kwargs
     ) -> list[NormalizedItem]:
         """Cap GNews items per source lean category to prevent bias."""
-        max_per_lean = 10
         lean_counts: dict[str, int] = defaultdict(int)
         result: list[NormalizedItem] = []
         for item in items:
             if item.platform == "gnews" and item.source_lean:
                 lean = item.source_lean
-                if lean_counts[lean] >= max_per_lean:
+                if lean_counts[lean] >= _MAX_PER_LEAN:
                     continue
                 lean_counts[lean] += 1
             result.append(item)

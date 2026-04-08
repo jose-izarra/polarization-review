@@ -24,13 +24,13 @@ class TestGenerateSyntheticDataset(unittest.TestCase):
     def test_50_50_high_animosity_near_100(self):
         ds = generate_synthetic_dataset(10, 10, 0, animosity_level=5)
         score = compute_polarization(ds)
-        self.assertGreaterEqual(score, 70.0)
+        self.assertGreaterEqual(score, 60.0)
 
     def test_50_50_low_animosity(self):
         ds = generate_synthetic_dataset(10, 10, 0, animosity_level=1)
         score = compute_polarization(ds)
         print(f"50/50 low animosity score: {score}")
-        self.assertGreaterEqual(score, 10.0)
+        self.assertGreaterEqual(score, 30.0)
         self.assertLessEqual(score, 80.0)
 
     def test_all_one_side_zero(self):

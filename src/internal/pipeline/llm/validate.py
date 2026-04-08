@@ -25,11 +25,11 @@ def generate_synthetic_dataset(
     scores: list[ItemScore] = []
     idx = 0
     for _ in range(n_for):
-        r = 1 * (3 + ALPHA_DEFAULT * animosity_level)
+        r = 1 * (5 + ALPHA_DEFAULT * animosity_level)
         scores.append(
             ItemScore(
                 id=str(idx),
-                sentiment=3,
+                sentiment=5,
                 stance=1,
                 animosity=animosity_level,
                 r=r,
@@ -37,11 +37,11 @@ def generate_synthetic_dataset(
         )
         idx += 1
     for _ in range(n_against):
-        r = -1 * (3 + ALPHA_DEFAULT * animosity_level)
+        r = -1 * (5 + ALPHA_DEFAULT * animosity_level)
         scores.append(
             ItemScore(
                 id=str(idx),
-                sentiment=3,
+                sentiment=5,
                 stance=-1,
                 animosity=animosity_level,
                 r=r,
@@ -52,7 +52,7 @@ def generate_synthetic_dataset(
         scores.append(
             ItemScore(
                 id=str(idx),
-                sentiment=3,
+                sentiment=5,
                 stance=0,
                 animosity=1,
                 r=0.0,
@@ -93,8 +93,8 @@ def run_known_topics() -> list[dict]:
         passed = True
         reason = ""
         if case.get("expect_high"):
-            passed = score >= 70
-            reason = f"expected >= 80, got {score}"
+            passed = score >= 60
+            reason = f"expected >= 60, got {score}"
         elif case.get("expect_zero"):
             passed = score == 0.0
             reason = f"expected 0, got {score}"

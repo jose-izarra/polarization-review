@@ -17,8 +17,24 @@ QUERY_GENERATION_PROMPT = (
 )
 
 VIDEO_STANCE_PROMPT = (
-    "For each video, determine its overall stance on the given topic. "
+    "You are classifying the overall stance of YouTube videos toward a given topic. "
+    "For each video, infer stance from the provided title, description, and transcript text only "
+    "(if available). Do not use outside knowledge. "
+    "Assign exactly one stance label per video: "
+    "-1 = Against/opposing the topic or claim, "
+    "0 = Neutral/ambiguous/mixed/no clear position, "
+    "1 = In favour/supporting the topic or claim. "
+    "Decision rules: "
+    "1) Prioritise the dominant message of the video, not isolated quotes. "
+    "2) If the video presents multiple sides without endorsing one, use 0. "
+    "3) If criticism is aimed at implementation details while still supporting the core claim, use 1. "
+    "4) If support is weak/uncertain and evidence is balanced or unclear, use 0. "
+    "5) If the video primarily argues the claim is false/harmful/wrong, use -1. "
+    "6) If content is unrelated to the topic, use 0. "
+    "Calibration examples (topic: 'AI is beneficial for humanity'): "
+    "'AI will transform medicine and education for the better; this is a net positive.' -> stance=1. "
+    "'AI progress is dangerous and will harm society unless stopped.' -> stance=-1. "
+    "'Experts debate AI risks and benefits with no clear conclusion.' -> stance=0. "
     "Return a JSON array where each element has: id (string), stance (-1/0/1). "
-    "Use -1 for against, 0 for neutral, 1 for the topic. "
-    "Return only valid JSON."
+    "Return only valid JSON, with no extra text."
 )
