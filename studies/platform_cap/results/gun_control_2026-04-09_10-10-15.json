@@ -1,0 +1,250 @@
+{
+  "config": {
+    "description": "Platform cap ablation study \u2014 effect of max items per platform on polarization score",
+    "runs": 1,
+    "query": "gun control",
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "out_dir": "studies/platform_cap/results",
+    "platform_caps": [
+      20,
+      50,
+      100,
+      500
+    ]
+  },
+  "query": "gun control",
+  "n_collected": 515,
+  "runs": {
+    "20": [
+      {
+        "cap": 20,
+        "run": 1,
+        "polarization_score": 28.06,
+        "items_after_cap": 43,
+        "items_after_filter": 17,
+        "sample_size": 17,
+        "rationale": "17 items scored. Stance distribution: 2 for / 14 against / 1 neutral. Platforms: gnews: 3, youtube: 14. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 2,
+          "against": 14,
+          "neutral": 1
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 2,
+            "animosity": 2,
+            "n": 2
+          },
+          "against": {
+            "sentiment": 2.43,
+            "animosity": 2.21,
+            "n": 14
+          },
+          "neutral": {
+            "sentiment": 3,
+            "animosity": 1,
+            "n": 1
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "youtube": 14
+        },
+        "elapsed_seconds": 15.44,
+        "status": "ok"
+      }
+    ],
+    "50": [
+      {
+        "cap": 50,
+        "run": 1,
+        "polarization_score": 37.56,
+        "items_after_cap": 103,
+        "items_after_filter": 44,
+        "sample_size": 44,
+        "rationale": "44 items scored. Stance distribution: 11 for / 26 against / 7 neutral. Platforms: gnews: 3, reddit: 4, youtube: 37. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 11,
+          "against": 26,
+          "neutral": 7
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 3,
+            "animosity": 1.36,
+            "n": 11
+          },
+          "against": {
+            "sentiment": 1.92,
+            "animosity": 2.62,
+            "n": 26
+          },
+          "neutral": {
+            "sentiment": 2.57,
+            "animosity": 1.57,
+            "n": 7
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "reddit": 4,
+          "youtube": 37
+        },
+        "elapsed_seconds": 32.27,
+        "status": "ok"
+      }
+    ],
+    "100": [
+      {
+        "cap": 100,
+        "run": 1,
+        "polarization_score": 37.84,
+        "items_after_cap": 203,
+        "items_after_filter": 85,
+        "sample_size": 85,
+        "rationale": "85 items scored. Stance distribution: 21 for / 50 against / 14 neutral. Platforms: gnews: 3, reddit: 14, youtube: 68. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 21,
+          "against": 50,
+          "neutral": 14
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 3.05,
+            "animosity": 1.62,
+            "n": 21
+          },
+          "against": {
+            "sentiment": 2.04,
+            "animosity": 2.32,
+            "n": 50
+          },
+          "neutral": {
+            "sentiment": 2.86,
+            "animosity": 1.21,
+            "n": 14
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "reddit": 14,
+          "youtube": 68
+        },
+        "elapsed_seconds": 68.63,
+        "status": "ok"
+      }
+    ],
+    "500": [
+      {
+        "cap": 500,
+        "run": 1,
+        "polarization_score": 38.78,
+        "items_after_cap": 515,
+        "items_after_filter": 185,
+        "sample_size": 140,
+        "rationale": "140 items scored. Stance distribution: 47 for / 63 against / 30 neutral. Platforms: gnews: 3, reddit: 86, youtube: 96. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 47,
+          "against": 63,
+          "neutral": 30
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 2.74,
+            "animosity": 1.68,
+            "n": 47
+          },
+          "against": {
+            "sentiment": 2.08,
+            "animosity": 2.56,
+            "n": 63
+          },
+          "neutral": {
+            "sentiment": 2.83,
+            "animosity": 1.23,
+            "n": 30
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "reddit": 86,
+          "youtube": 96
+        },
+        "elapsed_seconds": 134.81,
+        "status": "ok"
+      }
+    ]
+  },
+  "stats": {
+    "20": {
+      "score": {
+        "n": 1,
+        "mean": 28.06,
+        "std": 0.0,
+        "min": 28.06,
+        "max": 28.06
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 15.44,
+        "std": 0.0,
+        "min": 15.44,
+        "max": 15.44
+      },
+      "total_runs": 1
+    },
+    "50": {
+      "score": {
+        "n": 1,
+        "mean": 37.56,
+        "std": 0.0,
+        "min": 37.56,
+        "max": 37.56
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 32.27,
+        "std": 0.0,
+        "min": 32.27,
+        "max": 32.27
+      },
+      "total_runs": 1
+    },
+    "100": {
+      "score": {
+        "n": 1,
+        "mean": 37.84,
+        "std": 0.0,
+        "min": 37.84,
+        "max": 37.84
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 68.63,
+        "std": 0.0,
+        "min": 68.63,
+        "max": 68.63
+      },
+      "total_runs": 1
+    },
+    "500": {
+      "score": {
+        "n": 1,
+        "mean": 38.78,
+        "std": 0.0,
+        "min": 38.78,
+        "max": 38.78
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 134.81,
+        "std": 0.0,
+        "min": 134.81,
+        "max": 134.81
+      },
+      "total_runs": 1
+    }
+  }
+}

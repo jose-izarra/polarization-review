@@ -6,9 +6,9 @@
     "abortion",
     "gun_control",
     "nasa_funding",
-    "inflation"
+    "donald_trump"
   ],
-  "runs": 1,
+  "runs": 3,
   "out_dir": "studies/model_bias/results",
   "models": [
     {
