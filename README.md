@@ -130,7 +130,7 @@ All scripts read their configuration from JSON files in `scripts/` — edit thos
 | `run_pipeline.py` | `run_pipeline_config.json` | Runs the full pipeline (collect → filter → assess → score) for a single query, repeated `runs` times. Accepts `--topic` to override the query from config, and `--config` to point at a different config file. Outputs a `.txt` report. |
 | `assess_from_file.py` | `pipeline_config.json` (`assess` key) | Loads an existing `data/items_*.json` file and runs only the assess → post-process → score stages. Takes the file path as a positional argument and an optional `--note`. Saves a numbered run report to `data/results/`. |
 | `compute_score.py` | `compute_score_config.json` | Manual score calculator. Edit the config with item counts, sentiment, and animosity values to compute what the formula would return — useful for sanity-checking formula changes without running the full pipeline. |
-| `run_fake_scenario.py` | *(no config file — CLI flags only)* | Runs fake benchmark scenarios through the real LLM pipeline and writes a combined `.txt` summary to `benchmarks/fake/results/`. Accepts `--dataset` (`general` \| `fictitious` \| `real_context`), `--model`, and `--note`. |
+| `run_fake_scenario.py` | *(no config file — CLI flags only)* | Runs fake scenarios through the real LLM pipeline and writes a combined `.txt` summary to `scripts/results/`. Accepts `--dataset` (`general` \| `fictitious` \| `real_context`), `--model`, and `--note`. |
 
 ## Mock data
 

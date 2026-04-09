@@ -1,10 +1,10 @@
 .PHONY: assess-all-topics run-pipeline-topics
 
+# add/remove items to assess at once
 ASSESS_ITEMS ?= \
-	data/items_abortion.json \
-	data/items_gun_control.json \
-	data/items_inflation.json \
-	data/items_nasa_funding.json
+	data/items_ai_regulation.json \
+	data/items_ai.json
+
 
 # Split TOPICS on commas only; xargs default whitespace splitting breaks topics with spaces.
 run-pipeline-topics:
