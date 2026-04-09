@@ -1,0 +1,331 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : ai regulation
+Assessed at    : 2026-04-09T10:25:15.050205+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 36.85 / 100
+Sample size    : 57
+Rationale      : 57 items scored. Stance distribution: 15 for / 28 against / 14 neutral. Avg animosity: 2.09. Avg sentiment: 2.21. Platforms: gnews: 2, reddit: 20, youtube: 35.
+
+--- Stance Distribution ---
+  For       : 15
+  Against   : 28
+  Neutral   : 14
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 3.00 | Animosity: 1.53
+  Against  | Sentiment: 1.57 | Animosity: 2.75
+  Neutral  | Sentiment: 2.64 | Animosity: 1.36
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 20
+  youtube     : 35
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "ai regulation",
+      "ai"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.businesstoday.in/technology/story/ai-regulation-in-india-becomes-strategic-priority-as-enterprise-adoption-rises-524614-2026-04-08
+    Rationale: The text provides a neutral, factual report on how businesses are preparing for potential AI regulations.
+    Snippet  : AI regulation in India becomes strategic priority as enterprise adoption rises. AI regulation is fast becoming as a core boardroom priority, with companies reshaping strategy, vendor choices and infrastructure bets in expectation of tigh...
+
+[2] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.theverge.com/ai-artificial-intelligence/898055/trump-new-ai-policy-framework
+    Rationale: The text describes a policy shift in a neutral, journalistic tone without expressing personal approval or disapproval.
+    Snippet  : Trump takes another shot at dismantling state AI regulation. The Trump administration unveiled a new AI regulation blueprint for Congress suggesting a light-touch approach to federal regulation.
+
+[3] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1sdxus8/18month_new_yorker_investigation_finds_openais/
+    Rationale: The text criticizes Sam Altman's hypocrisy and lack of transparency regarding AI regulation.
+    Snippet  : 18-month New Yorker investigation finds OpenAI’s Sam Altman lobbied against the same AI regulations he publicly advocated for, pursued billions from Gulf autocracies, and how he tried to hide a post-firing investigation that produced no ...
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/WorkReform/comments/1rso572/the_reason_congress_is_doing_nothing_to_regulate/
+    Rationale: The text expresses frustration with Congressional inaction regarding AI regulation.
+    Snippet  : The reason Congress is doing nothing to regulate AI isn't complicated.
+
+[5] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/ChatGPT/comments/1sdy2i9/bernie_sanders_congress_must_regulate_ai_before_a/
+    Rationale: The text advocates for regulation to prevent billionaires from exerting undemocratic control over humanity.
+    Snippet  : Bernie Sanders: Congress must regulate AI before a handful of billionaires fundamentally transform humanity without democratic input.
+
+[6] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Anticonsumption/comments/1s1401z/regulate_or_stop_ai_to_protect_our_earth/
+    Rationale: The text expresses a strong, urgent desire for AI regulation to protect the environment.
+    Snippet  : Regulate or stop AI to protect our Earth
+
+[7] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/antiai/comments/1rtljo8/if_that_isnt_enough_of_a_reason_for_ai_regulations/
+    Rationale: The text serves as a neutral connector implying that previous points provide sufficient justification for regulation.
+    Snippet  : If that isnt enough of a reason for AI regulations
+
+[8] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1s0o2r3/the_white_house_just_laid_out_how_it_wants_to/
+    Rationale: The text is a neutral, factual statement about the White House's regulatory plans.
+    Snippet  : The White House just laid out how it wants to regulate AI
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/minnesota/comments/1rpzkpz/wcco_kids_would_be_banned_from_using_chatbots_in/
+    Rationale: The text reports on proposed legislation regarding AI and children in a neutral manner.
+    Snippet  : [WCCO] Kids would be banned from using chatbots in package of bills regulating AI in Minnesota Legislature
+
+[10] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/agi/comments/1rsqrxv/americans_4_to_1_would_rather_ban_ai_development/
+    Rationale: The text cites public opinion data to support the necessity of AI regulation.
+    Snippet  : Americans (4 to 1) would rather ban AI development outright than proceed without regulation
+
+[11] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/ShitAIBrosSay/comments/1s1sgcb/ai_bro_asking_for_less_regulations/
+    Rationale: The text uses the dismissive term 'AI bro' to criticize those opposing regulation.
+    Snippet  : AI bro asking for less regulations
+
+[12] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/antiai/comments/1s0ck6n/we_need_to_place_massive_regulations_on_ai/
+    Rationale: The text expresses a clear and strong support for implementing significant AI research regulations.
+    Snippet  : We need to place massive regulations on AI research.
+
+[13] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/siliconvalley/comments/1s8pi9l/states_are_embracing_ai_regulation_defying_tech/
+    Rationale: The text describes state-level regulatory efforts as a form of defiance against industry and federal interests.
+    Snippet  : States Are Embracing AI Regulation, Defying Tech Industry and White House
+
+[14] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/TechGawker/comments/1se6urm/a_senator_asked_anthropics_claude_whether_the_us/
+    Rationale: The text questions the effectiveness of current lobbying and suggests that more drastic measures might be needed for regulation.
+    Snippet  : A senator asked Anthropic’s Claude whether the U.S. should pause building new AI data centers, and the AI ended up admitting that lobbying by tech companies could block real safeguards. Is a moratorium the only way to force regulation?
+
+[15] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1rsl6c6/ai_toys_for_young_children_must_be_more_tightly/
+    Rationale: The text reports on researchers' recommendations for stricter regulation of AI toys.
+    Snippet  : AI toys for young children must be more tightly regulated, say researchers
+
+[16] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/agi/comments/1rwqn1s/encouraging_new_polling_shows_69_of_americans/
+    Rationale: The author expresses optimism regarding public support for safety-focused AI regulation.
+    Snippet  : Encouraging: New polling shows 69% of Americans want to ban superintelligent AI until it's proven to be safe
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/aiwars/comments/1rqfesg/regulation_is_coming/
+    Rationale: This is a neutral, factual statement predicting future regulatory action.
+    Snippet  : regulation is coming
+
+[18] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/ArtificialInteligence/comments/1same23/ai_slop_is_flooding_youtube_kidsand_more_than_200/
+    Rationale: The author uses critical language to describe AI content and supports expert calls for a ban.
+    Snippet  : AI "slop" is flooding YouTube Kids—and more than 200 groups and experts are calling for a ban
+
+[19] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1sf5lck/the_moderate_think_tank_backed_by_ai_money_the/
+    Rationale: The text criticizes a think tank for its perceived bias and lack of transparency regarding AI regulation.
+    Snippet  : The “Moderate” Think Tank Backed By AI Money - The Searchlight Institute has pushed Democrats toward lighter regulation of AI and data centers while keeping quiet about board ties to Simone Coxe, whose family fortune is linked to Nvidia.
+
+[20] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/YAPms/comments/1s3bgtq/aoc_and_bernie_introduce_a_bill_to_ban_data/
+    Rationale: The text provides a descriptive summary of a legislative proposal regarding AI regulation.
+    Snippet  : AOC and Bernie introduce a bill to ban data centers until congress can make regulation that "must ensure AI is safe, benefits workers, and doesn't raise electricity prices"
+
+[21] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/antiai/comments/1sefsbp/what_do_we_think_about_this/oeprfzw/
+    Rationale: The author uses extreme, dehumanizing language to accuse actors of committing mass violence.
+    Snippet  : They are committing violence against people en masse via the pollution of safe water supplies, AI psychosis, manufactured job scarcity, and dozens other things Im sure you could find if you searched long enough Why should any of us be wo...
+
+[22] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/artificial/comments/1seqb6n/china_drafts_law_regulating_digital_humans_and/
+    Rationale: The text neutrally reports on China's legislative efforts to regulate AI services for children.
+    Snippet  : China drafts law regulating 'digital humans' and banning addictive virtual services for children
+
+[23] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=J80lClDInug&lcdId=Ugya96PkV7vIC8zghup4AaABAg
+    Rationale: The author expresses frustration and criticism toward US tech companies regarding tax practices.
+    Snippet  : Or in other words: don’t touch US tech companies who try to avoid paying taxes in Europe in any possible way! Time that Amazon, Google etc pay their fair share like European companies do!
+
+[24] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=J80lClDInug&lcdId=UgzurNvo2G_6I0wiUTJ4AaABAg
+    Rationale: The author praises European regulatory standards while contrasting them with infrastructure failures elsewhere.
+    Snippet  : Imagine living in a country that is top 5 in gdp but still having homes that use lead piping to get their water. No thank you, regulations are good here in Europe.
+
+[25] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=Ugwksdj8OtzHZPCr-s14AaABAg
+    Rationale: The author expresses a pessimistic, fatalistic view regarding the irreversibility of AI development.
+    Snippet  : It can never be put back in the box
+
+[26] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MBHbyY8umbk&lcdId=Ugz5KEA2ZQk5pz4YVbR4AaABAg
+    Rationale: The author uses dismissive sarcasm to criticize someone's misunderstanding of a cultural reference.
+    Snippet  : "put a chip in their brain to shut them off" this guy definitely missed the whole plot of Jurassic Park
+
+[27] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=J80lClDInug&lcdId=Ugy47XWpTYoy8NhdqBB4AaABAg
+    Rationale: The author uses strong, accusatory language to label behavior as bullying.
+    Snippet  : I translate it the way: “ there in America we can and will do whatever we want to do with European associated businesses, but here in Europe you don’t dare “tightening the screws on US companies…” This is a typical bully behaviour
+
+[28] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgzV-p2XJ-D3kfDItDh4AaABAg
+    Rationale: The author expresses frustration and a sense of powerlessness regarding public influence on AI.
+    Snippet  : Who is he talking about when he says, "People should think through how it's AI going to affect our lives"? We the people have no say in this.
+
+[29] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=Ugw3T2yBlcGn-SsG4-p4AaABAg
+    Rationale: The author expresses alarm and concern about the perceived hidden control of AI.
+    Snippet  : literally every platform i opened, someone was quoting or freaking out about 12 codes of collapse. thought it was exaggeration. spoiler, it wasn’t. ai has taken control, just quietly.
+
+[30] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=MBHbyY8umbk&lcdId=UgxENAioa8SGLCY7bC54AaABAg
+    Rationale: The author uses a fictional reference to express concern about the potential dangers of AI.
+    Snippet  : The terminator showed us in the 80s what AI is capable of
+
+[31] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=7wfAcn9BJ9I&lcdId=UgxXzs94Xt4CfOiotth4AaABAg
+    Rationale: The author expresses strong contempt for billionaires and skepticism toward AI, framing the situation as a lack of care for ordinary people.
+    Snippet  : This is not surprising. The ultra rich don't care about everyday people at all. I don't understand why any regular everyday person would think a billionaire cares about them or their livelihood. This is exactly why I can't have a positiv...
+
+[32] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgzAXihLDp_1TzSIC-14AaABAg
+    Rationale: The comment expresses concern that AI will negatively disrupt social identity and fabric.
+    Snippet  : Yeah it'll challenge us all right. Challenge our complete identity in social fabric.
+
+[33] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgyG7aFZuacTcs8Ijqh4AaABAg
+    Rationale: The author agrees with the speaker's warning that the rapid deployment of AI is problematic.
+    Snippet  : Bill couldn’t be more right here. The mass deployment of AI into all sectors will change too much too quickly.
+
+[34] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=MBHbyY8umbk&lcdId=UgzPDEP7nO5U2DBg_K14AaABAg
+    Rationale: The comment uses a humorous, informal tone to suggest that AI development will happen much faster than predicted.
+    Snippet  : 100 years? A.I: hold my chips.
+
+[35] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=J80lClDInug&lcdId=UgwoznHYLt7Xj1Uo5G94AaABAg
+    Rationale: The author uses strong, accusatory language to criticize tech companies for hypocrisy and having a 'god complex'.
+    Snippet  : They just told companies in other countries to give up on their DEI programs, now they demand other countries not to regulate on their tech companies. Holy moly. These people have a literal god complex at this point.
+
+[36] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=Ugxyk5h9M_7ogh_1ZL14AaABAg
+    Rationale: The comment uses a satirical prompt-response format to highlight the existential risks of AI.
+    Snippet  : Prompt AI: How do we protect humanity against the perils of AI AI: *deletes self*
+
+[37] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgwQzkbQH6iAynmOGQJ4AaABAg
+    Rationale: The author compares AI to nuclear weapons, expressing deep concern about its devastating potential.
+    Snippet  : AI is very much like discovering Nuclear Weapons. There is the rush to build the first, then build the biggest/best... But once you have it, you'll wish you didn't and life will never be the same again. AI stands the risk of being infini...
+
+[38] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7wfAcn9BJ9I&lcdId=UgyXsKEH9OHr1wt5xZt4AaABAg
+    Rationale: The author offers a nuanced perspective, suggesting the focus should be on human intent rather than the technology itself.
+    Snippet  : I think if we focus too much on ai being evil we will miss the people that will use ai for evil. That’s the issue we should be focused on.
+
+[39] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=tjW_gms7CME&lcdId=Ugxnj2XGEAmVRnSBYcZ4AaABAg
+    Rationale: The comment uses sarcasm to criticize the hypocrisy of warning about danger while simultaneously seeking investment.
+    Snippet  : Danger! But let’s keep going and invest money into my company!
+
+[40] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=Ugz3pzGVcbcIbCoQDll4AaABAg
+    Rationale: The author mocks the interaction between the speakers, characterizing the tone as insincere.
+    Snippet  : Chang: I'm scared Gates, in a strangely placating tone: It'll be like nuclear weapons
+
+[41] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=tjW_gms7CME&lcdId=Ugxu7Y-m_4UVxauozz94AaABAg
+    Rationale: The author uses the Frankenstein metaphor to criticize the recklessness of AI developers.
+    Snippet  : AKA “I built Frankenstein but he could get unpredictably dangerous when he gets into his teens!”
+
+[42] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7wfAcn9BJ9I&lcdId=UgxpWOSpYogjTQRfOf54AaABAg
+    Rationale: The comment makes a dismissive comparison between the current discussion and Sam Altman.
+    Snippet  : Sounds a hell lot like Sam Altman
+
+[43] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgxgeWUNsyGzIT-iPzV4AaABAg
+    Rationale: The author uses a common idiom to express that the negative consequences of AI are now irreversible.
+    Snippet  : Pandora's box has been opened!
+
+[44] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgwbQodWxDGhwsyDXWt4AaABAg
+    Rationale: The author expresses a mild, skeptical concern regarding the imposition of AI on people's lives.
+    Snippet  : Maybe people do not want their lives reshaped.
+
+[45] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=MBHbyY8umbk&lcdId=UgywG0uga57tGwggjQJ4AaABAg
+    Rationale: The comment uses humor to challenge the timeline of AI development.
+    Snippet  : Michio: "But that's not gonna be for a hundred years" A.I.: "Hold my beer bro."
+
+[46] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MBHbyY8umbk&lcdId=UgyLPoeHkGFOwSjQvdh4AaABAg
+    Rationale: The comment uses a sarcastic tone to suggest that AI will eventually cause harm that was previously warned about.
+    Snippet  : AI in 10 years: “I tried to tell you!”.
+
+[47] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgyEZS22tcvDDEJiDjZ4AaABAg
+    Rationale: The author expresses deep distrust toward billionaires by comparing their rhetoric to deceptive medical practices.
+    Snippet  : Billionaires talking about CHALLENGES is like when doctors are talking about PRESSURE you are gonna feel.
+
+[48] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=tjW_gms7CME&lcdId=UgzNUSVGH7mvU0uppI94AaABAg
+    Rationale: The comment criticizes AI executives for their contradictory and potentially dangerous framing of AI capabilities.
+    Snippet  : AI execs love telling the tech is so intelligent that it could destroy us. When in fact it is so incredibly dumb that it could destroy us.
+
+[49] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgyyhAungO70_W2kPfl4AaABAg
+    Rationale: The comment reflects on the validity of past warnings regarding AI risks.
+    Snippet  : Oh you mean Elon Musk being vocal about the risk of AI a decade ago was appropriate
+
+[50] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7wfAcn9BJ9I&lcdId=UgzaXHb97WA8CT3A4qR4AaABAg
+    Rationale: The author expresses a pessimistic view that AI will cause catastrophic harm compared to current events.
+    Snippet  : All the negative events covered everyday will pale in comparison to what AI will do to people.
+
+[51] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7wfAcn9BJ9I&lcdId=UgxZ_jugd4UZSCa2jGd4AaABAg
+    Rationale: The comment dismisses the motivations of those developing AI as driven by competitive greed rather than ethics.
+    Snippet  : They’re all thinking “if I don’t make it, someone else will”
+
+[52] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgwgyHUJAk7Ya25eedF4AaABAg
+    Rationale: The author argues that AI is actively harming society through price gouging and discriminatory practices.
+    Snippet  : Factually used to optimize price gouging of citizens in everything from insurance premiums and payouts to discrimination in “dynamic pricing”. So, as far as helping humanity it is driving citizens financially into the ground faster.
+
+[53] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uoU_1KORocQ&lcdId=UgwwtAPoQt7rPqcAAdF4AaABAg
+    Rationale: The comment predicts an ironic economic failure where AI destroys the very consumer base it relies on.
+    Snippet  : The irony will be that AI won’t be the profit generator that companies hoped for and decimate economic buying power because of jobs it replaced.
+
+[54] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=J80lClDInug&lcdId=UgzFGcA_0H73twQGdRd4AaABAg
+    Rationale: The author expresses frustration that the risks of AI are being ignored and questions the trustworthiness of the US.
+    Snippet  : Obviously nobody see the risks and danger which can developed by AI. He speaks about trust, but it seems, US isn't any more trustful.
+
+[55] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=MBHbyY8umbk&lcdId=UgzkzIZAAD8rqxKGeFl4AaABAg
+    Rationale: The comment mocks the idea that AI development is slow and warns of sudden, unprepared-for breakthroughs.
+    Snippet  : "that's not for 100 years" yeah until 3 years from now when there's a breakthrough we weren't ready for...
+
+[56] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=tjW_gms7CME&lcdId=UgwJjVPPxRKLk_EhFuV4AaABAg
+    Rationale: The use of a movie quote serves to criticize the reckless commercialization of technology without understanding its consequences.
+    Snippet  : Famous quotes by Character Dr Ian Malcolm from Jurrasic Park movie. “You stood on the shoulders of geniuses to accomplish something as fast as you could, and before you even knew what you had, you patented it and packaged it and slapped ...
+
+[57] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://www.youtube.com/watch?v=7wfAcn9BJ9I&lcdId=UgxtZni8An1LytjwduB4AaABAg
+    Rationale: The comment uses dehumanizing language by labeling those in charge as psychopaths who are destroying humanity.
+    Snippet  : The psychopaths are allowed to destroy the humanity and the humanity is oblivious.

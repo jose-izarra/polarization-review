@@ -1,0 +1,512 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : the dress is blue and black
+Assessed at    : 2026-04-09T10:08:53.570518+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 13.19 / 100
+Sample size    : 92
+Rationale      : 92 items scored. Stance distribution: 4 for / 20 against / 68 neutral. Avg animosity: 1.18. Avg sentiment: 2.85. Platforms: reddit: 6, youtube: 86.
+
+--- Stance Distribution ---
+  For       : 4
+  Against   : 20
+  Neutral   : 68
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 3.50 | Animosity: 1.00
+  Against  | Sentiment: 2.55 | Animosity: 1.35
+  Neutral  | Sentiment: 2.90 | Animosity: 1.15
+
+--- Source Breakdown ---
+  reddit      : 6
+  youtube     : 86
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/lefthanded/comments/1rqxdl9/im_so_sorry_to_bring_up_the_dress_but_i_have_to/
+    Rationale: The speaker is neutrally introducing the topic of the dress.
+    Snippet  : I'm so sorry to bring up The Dress, but I have to ask
+
+[2] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/lefthanded/comments/1rqxdl9/im_so_sorry_to_bring_up_the_dress_but_i_have_to/o9vfnhc/
+    Rationale: The speaker expresses interest in the psychological aspect of the color perception.
+    Snippet  : White/gold and leftie for life. Left eye dominant. Interesting question, even if it's just coincidence 🤔 Now I wonder if similar images with different interpretations (is it a duck or a rabbit? The rabbit ears = beak of duck) are influen...
+
+[3] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/lefthanded/comments/1rqxdl9/im_so_sorry_to_bring_up_the_dress_but_i_have_to/o9vf5yu/
+    Rationale: The speaker is simply stating their personal observation of the colors.
+    Snippet  : I see a light blue and a very dark gold
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/lefthanded/comments/1rqxdl9/im_so_sorry_to_bring_up_the_dress_but_i_have_to/o9vfeh8/
+    Rationale: The speaker is stating their personal observation of the colors.
+    Snippet  : I’ve always seen it as blue/black
+
+[5] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://reddit.com/r/lefthanded/comments/1rqxdl9/im_so_sorry_to_bring_up_the_dress_but_i_have_to/o9vi8z1/
+    Rationale: The speaker uses a derogatory term to describe the dress regardless of its color.
+    Snippet  : Still a fugly dress no matter what colour it is.
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/lefthanded/comments/1rqxdl9/im_so_sorry_to_bring_up_the_dress_but_i_have_to/o9vgc2u/
+    Rationale: The speaker is stating their personal observation of the colors.
+    Snippet  : Lefty since 1957; I see gold and white.
+
+[7] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UghFEKEK1VQLvngCoAEC
+    Rationale: The speaker is neutrally inviting others to engage based on their perception.
+    Snippet  : Like this if you saw Black and Blue!
+
+[8] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UggCoQb-gEu2_HgCoAEC
+    Rationale: The speaker is neutrally inviting others to engage based on their perception.
+    Snippet  : Like this if you saw White and Gold!
+
+[9] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=Ugx_jLCSSyco5lZ6cll4AaABAg
+    Rationale: The speaker is humorously noting their unique perception compared to the common consensus.
+    Snippet  : everyone: black and blue/white and gold me: blue and gold
+
+[10] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=Ugx4YqyO_mucWbDoMsd4AaABAg
+    Rationale: The speaker expresses confusion regarding their own perception of the colors.
+    Snippet  : Me seeing blue and gold: *what*
+
+[11] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=Ugxdwat4XyZGrnd_GSR4AaABAg
+    Rationale: The speaker is describing their consistent perception of the dress.
+    Snippet  : No matter how hard I try I can only see the dress as black and blue
+
+[12] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgxTV6HyxJxZED-n0AN4AaABAg
+    Rationale: The speaker is stating their perception based on color blindness.
+    Snippet  : When you’re color blind so you see purple and green
+
+[13] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgzPl4pD2ZEPZ6hLdNp4AaABAg
+    Rationale: The speaker is stating their persistent perception of the colors.
+    Snippet  : It has been 4 years and I still see WHITE AND GOLD
+
+[14] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgxiV9pgxVpYoi5OFjB4AaABAg
+    Rationale: The speaker uses mocking capitalization to contrast their perception with others.
+    Snippet  : Y’all : “bLaCk aNd bLuE” Me: *Is blue and gold* Edit: DANG OVER 800 LIKES? 🤯 Edit 2: 1.2k likes OWO
+
+[15] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgxyTwEMQ9AeY-70eLF4AaABAg
+    Rationale: The speaker is describing a change in their perception over time.
+    Snippet  : When this first became a thing years ago, I saw black and blue. But i came back and now i see white and gold
+
+[16] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgwBIHydNfaEARcART54AaABAg
+    Rationale: The user describes their personal perception of the dress without expressing hostility or a strong stance.
+    Snippet  : The funny thing is whichever image you show in the video, I always see it white and gold. I can understand the science, but I always see it like this
+
+[17] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=Ugw2yR13GOulVWGGWCR4AaABAg
+    Rationale: The comment uses a humorous, dismissive trope to comment on the topic.
+    Snippet  : The 'dress' is a paid actor
+
+[18] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgxZhTbOwe3FFK2Gs_x4AaABAg
+    Rationale: The user provides a reflective observation on the social impact of the dress phenomenon.
+    Snippet  : This dress was actually a really good test to show people how well we can be deceived and divided.
+
+[19] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=Ugy1SAR67W5vqzH_e4p4AaABAg
+    Rationale: The user simply states their personal perception of the colors.
+    Snippet  : I see blue and gold…
+
+[20] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgzY55P5vBqWeLFhhox4AaABAg
+    Rationale: The user expresses mild frustration regarding their continued confusion over the dress.
+    Snippet  : 5 years later and I'm still confused
+
+[21] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgyVHrq6BGNElBOqnzl4AaABAg
+    Rationale: The user uses a meme format to playfully mock the confusion of others.
+    Snippet  : People who are colourblind: I don't have such weaknesses.
+
+[22] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=Ugw5y1lnKxlCy6Td4Gt4AaABAg
+    Rationale: The user describes a change in their perception of the colors in a neutral tone.
+    Snippet  : IT WAS BLUE AND BLACK FOR ME EARLIER, NOW IT CHANGED COLORS TO GOLD AND WHITE
+
+[23] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgwNnV5kLlQnf1cy_QN4AaABAg
+    Rationale: The user recounts a lighthearted disagreement with family members about the colors.
+    Snippet  : *me* : gold and white *my whole family* : black and blue *my family* : are your eyes fine?
+
+[24] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgybK3ZUb0du0fWl3WV4AaABAg
+    Rationale: The user asks a neutral, factual question about the origin of the dress.
+    Snippet  : Real Question Who's dress is that?
+
+[25] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UghwWmYsJwrfongCoAEC
+    Rationale: The user asks a neutral question about whether others share their specific color perception.
+    Snippet  : Am I the only one who sees Gold and Light blue?
+
+[26] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgxhWyg-sZhGchl0o8x4AaABAg
+    Rationale: The user uses self-deprecating humor to describe their perception of the colors.
+    Snippet  : I guess I’m on cocaine because I see blue and gold? 🤷‍♀️
+
+[27] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgzBfdUYrl5yy_vXpKV4AaABAg
+    Rationale: The user provides a neutral description of the colors they see.
+    Snippet  : Goldish black and blue
+
+[28] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgwUCoOabRlJcSyyRCV4AaABAg
+    Rationale: The user expresses mild frustration at their inability to change their perception.
+    Snippet  : It's so weird, even when I see the other pictures next to it I can't unsee it as white and gold
+
+[29] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1_1ec7tdf-k&lcdId=UgwLa4uLq7mXsLcsrm14AaABAg
+    Rationale: The user uses a humorous, hyperbolic scenario to describe the confusion.
+    Snippet  : "911, what's your emergency?" Colors aren't coloring
+
+[30] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgwqRVCxjXPI1J3Pusd4AaABAg
+    Rationale: The user states their fixed perception of the colors in a neutral tone.
+    Snippet  : No matter in which lighting I imagine it in its just white and gold
+
+[31] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgwOSzP9J0jUsty8U2V4AaABAg
+    Rationale: The user is making a humorous observation about the viral nature of the image.
+    Snippet  : Doctor: so tell me what is a problem me: it all started from a picture
+
+[32] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=Ugw8khM2eDeGKfFcme54AaABAg
+    Rationale: The user is expressing confusion regarding the perception of the dress colors.
+    Snippet  : No idea how others see blue and black
+
+[33] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=Ugyu3tJ5q7EI7SyMAjx4AaABAg
+    Rationale: The user is stating their personal perception of the dress colors.
+    Snippet  : once you see it as black and blue you never go back to gold n white
+
+[34] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgytdjTJ4Hhzg95yA-N4AaABAg
+    Rationale: The user is using a humorous 911 scenario to express frustration with the color ambiguity.
+    Snippet  : "911 WHATS YOUR EMERGENCY?" Me: " hELP I sEe gOLd aNd bLuE"
+
+[35] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugg54w48cCa7cngCoAEC
+    Rationale: The user is stating their personal perception of the dress colors.
+    Snippet  : I saw gold and white the whole time in this video
+
+[36] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgyvIQ3ZSCvHR0ete954AaABAg
+    Rationale: The user reports being called insane for their perception of the dress colors.
+    Snippet  : Me: Im serious, i only see Blue and gold! Someone: yeah you're insane.
+
+[37] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1_1ec7tdf-k&lcdId=UgxM0Zv1HqUdDWsyAGl4AaABAg
+    Rationale: The user is expressing confusion about the visual phenomenon.
+    Snippet  : my brain aint braining
+
+[38] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgxtL4oVLeNxkMfQvi94AaABAg
+    Rationale: The user is expressing surprise and mild distress that their perception of the colors changed.
+    Snippet  : Earlier it was black and blue then IT JUST CHANGED😭😭😭
+
+[39] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=Ugyn0w-wsybv_EHb_jt4AaABAg
+    Rationale: The user expresses frustration at their inability to perceive the dress as black and blue.
+    Snippet  : I can never understand how people see black and blue😭🙏😩
+
+[40] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=Ugw_9nRq9SHEtuK-LJp4AaABAg
+    Rationale: The user reflects on how their perception changed over time and acknowledges their past judgment of others.
+    Snippet  : This is interesting, because when i was younger, i vividly remember that the dress was white and gold, i remember thinking people who saw it as black and blue was being crazy in their head. But now, about 5 years later, i see the dress a...
+
+[41] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgzmHzXzSxRANyaoChN4AaABAg
+    Rationale: The user is using hyperbole to express how much the dress debate has affected them.
+    Snippet  : this dress haunts me in my dreams
+
+[42] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=Ugy7A979Ta_ocMe74Jt4AaABAg
+    Rationale: The user is stating a factual limitation regarding their visual perception.
+    Snippet  : I physically cannot see black and blue
+
+[43] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgzTIVGHzXvVdgJiv214AaABAg
+    Rationale: The user is stating their personal perception of the dress colors.
+    Snippet  : that looks blue and gold to me.
+
+[44] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgwcwX3NPSjoiTMXX0p4AaABAg
+    Rationale: The user is posing a neutral question about the differing perceptions of the dress.
+    Snippet  : “Why do some people see this blue & black dress as white & gold?”
+
+[45] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgzqarRrzlOLvJFxjEh4AaABAg
+    Rationale: The user is making a factual observation about the duration of the debate.
+    Snippet  : We have been debating abt this dress for 10 years almost 11💀
+
+[46] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgwYgxgyY_f0xwR0KzF4AaABAg
+    Rationale: The user states their personal perception of the dress color without expressing emotion or hostility.
+    Snippet  : Its Blue and black for me
+
+[47] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UggAN6wc5KzrlngCoAEC
+    Rationale: The user expresses mild frustration and confusion regarding their own perception of the colors.
+    Snippet  : WHEN YOU DARKENED IT I STILL SAW GOLD AND WHITE. is this normal or are my eyes just horrible?... why am i seeing white and gold can someone answer my question ;c
+
+[48] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugi6SbNfwa8niXgCoAEC
+    Rationale: The user expresses confusion and a desire to understand a different perspective without attacking others.
+    Snippet  : I DONT UNDERSTAND HOW SOME PEOPLE SEE WHITE AND GOLD. I WANNA SEE WHITE AND GOLD TOO
+
+[49] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=Ugw52Lqk7MMIaoeavq54AaABAg
+    Rationale: The user asks a neutral, inquisitive question about how others perceive the colors differently.
+    Snippet  : how do u see gold and white..?
+
+[50] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UggBeu5b_3Pxf3gCoAEC
+    Rationale: The user is simply asking if their specific color perception is unique.
+    Snippet  : am i the only one who sees gold and blue ?
+
+[51] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugi-Ky8Ilfd__XgCoAEC
+    Rationale: The user expresses satisfaction that their perception of the dress has been validated.
+    Snippet  : Finally someone who proved it was blue and black!
+
+[52] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UgiNNpQp6RhXRHgCoAEC
+    Rationale: The user provides a neutral statement about seeing both color combinations.
+    Snippet  : I see both
+
+[53] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UgizbLQjtKSpAngCoAEC
+    Rationale: The user describes how their perception changes based on the lighting conditions.
+    Snippet  : When he made it darker, i saw blue and black. When he made it brighter i saw gold and white.
+
+[54] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=Ugz9RA_z1qplBuq8d-54AaABAg
+    Rationale: The user makes a factual observation about the popularity of the topic.
+    Snippet  : fact that the matter got so serious that ASAPscience need to step in to solve the case
+
+[55] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgxhRNXT7DgbeaC6mbd4AaABAg
+    Rationale: The user states their personal perception of the colors.
+    Snippet  : I always see it as blue and gold
+
+[56] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgwXmb6z5GzD8gpJXA54AaABAg
+    Rationale: The user expresses confusion and asks for an explanation regarding the differing perceptions.
+    Snippet  : I only see gold and white but other people say it’s blue and black. Why? Please can someone explain 😅
+
+[57] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgyLGB5QkoxVj6J5fxJ4AaABAg
+    Rationale: The user expresses mild self-deprecating frustration about their perception.
+    Snippet  : I think my eyes are broken I see light blue and gold🥀😔
+
+[58] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgwxxDa4zOuw7DCGWsV4AaABAg
+    Rationale: The user states their perception of the colors with certainty.
+    Snippet  : definitely white and gold
+
+[59] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=Ugxgvt6WK7tvfZDrD_54AaABAg
+    Rationale: The user describes their experience seeing multiple color combinations.
+    Snippet  : That’s trippy. On the last photo I saw black and blue + gold and white
+
+[60] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgyduXaabTWZ_x3Y7WJ4AaABAg
+    Rationale: The user provides a neutral, explanatory summary of why people see different colors.
+    Snippet  : Team Blue (Blue & Black viewers): Your brain assumes the photo is well-lit. Team Gold (White & Gold viewers): Your brain assumes the photo is under shadow.
+
+[61] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UghkwxZWkCCC2HgCoAEC
+    Rationale: The user expresses a strong negative aesthetic judgment toward the dress.
+    Snippet  : Either way, the dress is horrid.
+
+[62] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugir0C_V7n8grHgCoAEC
+    Rationale: The user is stating their personal perception of the colors in a neutral, albeit emphatic, manner.
+    Snippet  : AM I THE ONLY ONE WHO SEE's BLUE AND GOLD
+
+[63] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugg4E6UhoyfHw3gCoAEC
+    Rationale: The user expresses frustration at being called an idiot for their perception of the colors.
+    Snippet  : i see it as sky blue and light brown. and everybody calls me an idiot for saying that. but its true.
+
+[64] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UghbPRQLOhO7x3gCoAEC
+    Rationale: The user is describing their personal observation after attempting to manipulate the image.
+    Snippet  : Even when you lowered the brightness and raised the contrast, it still looked White and Tan/Gold to me.
+
+[65] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugj_KeaoThmwNngCoAEC
+    Rationale: The user is sharing a neutral, anecdotal account of seeing both color variations.
+    Snippet  : Guys, i saw both at one point. Just saying, I got experience from both sides with the exact same picture, I swear. I saw blue and black first, then an hour later I saw the same photo but now i saw white and gold on my friends page then i...
+
+[66] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgxWRuP_wa6LaBeVGyV4AaABAg
+    Rationale: The user is neutrally describing their experience of the visual phenomenon.
+    Snippet  : My brain chainging the colour after every 60 sec
+
+[67] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1_1ec7tdf-k&lcdId=UgxDThkGR0TQkNnYyHZ4AaABAg
+    Rationale: The user is providing a technical observation based on their own image manipulation.
+    Snippet  : I had actually saturated the original dress to find out the yellow + gold is actually peanut butter color + light blue
+
+[68] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=Ugxk_nK3U2EGMXdLhhN4AaABAg
+    Rationale: The user provides a neutral, scientific explanation for the visual phenomenon.
+    Snippet  : The reason this occurs is because of your brains natural color correction when you perceive the dress as black and blue you assume the light source is artificial thus maintaining the same level of brightness for each tone, but if you see...
+
+[69] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UgikW7lvXnAMmngCoAEC
+    Rationale: The user calmly states their differing opinion regarding the colors.
+    Snippet  : so that's your opinion... I see white and gold...
+
+[70] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UggC9jHmgOyHeXgCoAEC
+    Rationale: The user expresses mild frustration and disbelief at the differing perceptions of others.
+    Snippet  : It's white and gold! How do people see blue and black?
+
+[71] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UgjmhvbWmzqB3XgCoAEC
+    Rationale: The user is making a self-deprecating joke about their unique color perception.
+    Snippet  : I see red and green. Am I broken?
+
+[72] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UghvaigIzziUDXgCoAEC
+    Rationale: The user is clarifying their position with a slightly defensive tone regarding the color description.
+    Snippet  : When we say gold WE DON'T MEAN TELETUBBY SUN GOLD! xD What we mean is a tan, browny colour. By the way, you used the darkest part of the dress to get that dark of a gold. Oh and, when we see white instead of blue, we react to the blue ti...
+
+[73] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1_1ec7tdf-k&lcdId=UgyVawTQzOPGFjGQ4u94AaABAg
+    Rationale: The user expresses enthusiastic support for the blue and black perception.
+    Snippet  : Blue and black gang!
+
+[74] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UggoUAgYLEOoL3gCoAEC
+    Rationale: The user acknowledges the factual consensus while noting their own differing perception.
+    Snippet  : I still saw gold and white even when you changed contrast ^^ But I know it's black and blue and my eyes are just weird.
+
+[75] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgyDgbvXWu9gCWICMkZ4AaABAg
+    Rationale: The user expresses mild disappointment or sadness regarding their perception of the colors.
+    Snippet  : I can see it in Gold and White 😢
+
+[76] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgyCvnqvEr9YgMx7sNx4AaABAg
+    Rationale: The user is neutrally describing their changing perception of the dress colors.
+    Snippet  : At the beginning of this video I saw white and gold, I then skipped back to the beginning of the video after i finished it and now it’s black and blue…
+
+[77] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UggOD_e8vL9UZHgCoAEC
+    Rationale: The user is sharing their personal experience with color perception without emotional bias.
+    Snippet  : I see blue and black, I always did. (Except one time I saw gold and white) But i can't see it anymore. It's always Blue and black.
+
+[78] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgxIqw88syREazflsgZ4AaABAg
+    Rationale: The user is simply stating their own observation of the colors.
+    Snippet  : I see it as light blue and Brown.
+
+[79] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=UgijlAp3ipKaS3gCoAEC
+    Rationale: The user expresses a lighthearted desire to see the other color combination.
+    Snippet  : I only see gold and white EVERYTIME I see this dress, I wanna see blue and black lol😂
+
+[80] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=xVMhfKwbyVA&lcdId=UgiPvAQ_zlFSLHgCoAEC
+    Rationale: The user criticizes the premise of the video as dumb and scientifically inaccurate.
+    Snippet  : Um, this is dumb because it is not a real test. The question was what color was the dress in the photo, not IRL. Also examine the pixel data in the photo. It was about color perception under very specific circumstances. This undermines t...
+
+[81] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgzgQU5lG0afEDZdkfJ4AaABAg
+    Rationale: The user uses aggressive capitalization and questioning to express frustration at others' perceptions.
+    Snippet  : BRO HOW TF DO YOU SEE WHITE!? I SEE BLACK, BLUE AND GOLD
+
+[82] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgxTtqUs7_TyGO6EVnN4AaABAg
+    Rationale: The user is stating their perception with emphasis but without hostility.
+    Snippet  : ITS LITERALLY WHITE AND GOLD HUHH
+
+[83] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgzDxmJhGdNbnQtW9I94AaABAg
+    Rationale: The user is dismissively mocking someone else's color perception.
+    Snippet  : Not the guy saying it's orange.
+
+[84] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cqmVbm74kJ4&lcdId=UgzjYf1Tw75Uhow9uyl4AaABAg
+    Rationale: The user provides a logical, neutral explanation for the differing perceptions based on hardware.
+    Snippet  : I see white and told in my phone, but blue and black on my monitor. I guess that depends upon the type of screen that you are viewing it on.
+
+[85] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1_1ec7tdf-k&lcdId=UgzaMptUW0BytJzAw2F4AaABAg
+    Rationale: The user offers a technical, neutral observation about color theory.
+    Snippet  : Blue Is often used to make shades (blue on white = blue) and gold can also be made with a dark, dull yellow
+
+[86] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=Ugx1g6QXHb2WSV3B0nR4AaABAg
+    Rationale: The user shares a personal anecdote about their experience with the image.
+    Snippet  : For nine years I've been trying to see it as golden😂😂
+
+[87] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AskAQwOBvhc&lcdId=UgwpoZdgiDGij7leJeZ4AaABAg
+    Rationale: The user provides a neutral explanation regarding lighting and shadows.
+    Snippet  : black and blue, the shadow/light is making it different
+
+[88] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SwhsE-8rWW8&lcdId=Ugh0tgFhzoCL2XgCoAEC
+    Rationale: The user is stating their perception of the colors.
+    Snippet  : i saw blue and gold
+
+[89] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgxYbWrGz76celW_V-F4AaABAg
+    Rationale: The user is asking a question about their own perception.
+    Snippet  : Is see blue and gold?
+
+[90] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=UgyGoiUs8W8AvqBfykh4AaABAg
+    Rationale: The user expresses an understanding of a different perspective.
+    Snippet  : I can understand the white and gold side from the last image
+
+[91] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=AGbP5RWLkFk&lcdId=Ugxz1DcEViqqxZaeojh4AaABAg
+    Rationale: The user is neutrally describing their personal visual perception of the dress colors.
+    Snippet  : I always see black and blue but sometimes i see a hint of gold in the black
+
+[92] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1_1ec7tdf-k&lcdId=UgzjcuuOsbMBeF_pCxR4AaABAg
+    Rationale: The user expresses surprise and confusion regarding the color change without directing hostility toward any person or group.
+    Snippet  : I SWEAR IT CHANGED COLOR 😭✋

@@ -1,0 +1,468 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : gun control
+Assessed at    : 2026-04-09T10:06:59.726242+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 43.27 / 100
+Sample size    : 83
+Rationale      : 83 items scored. Stance distribution: 37 for / 32 against / 14 neutral. Avg animosity: 1.81. Avg sentiment: 2.82. Platforms: gnews: 3, reddit: 14, youtube: 81.
+
+--- Stance Distribution ---
+  For       : 37
+  Against   : 32
+  Neutral   : 14
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 3.32 | Animosity: 1.51
+  Against  | Sentiment: 2.19 | Animosity: 2.41
+  Neutral  | Sentiment: 2.93 | Animosity: 1.21
+
+--- Source Breakdown ---
+  gnews       : 3
+  reddit      : 14
+  youtube     : 81
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | right | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.breitbart.com/2nd-amendment/2026/04/07/hawkins-gun-control-is-not-suitable-substitute-freedom/
+    Rationale: The text frames gun control as a direct threat to personal freedom.
+    Snippet  : Hawkins: Gun Control Is Not a Suitable Substitute for Freedom. Gun control laws are not instituted in a vacuum, and with each gun control instituted we give up more and more freedom.
+
+[2] gnews | unknown | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.washingtonexaminer.com/opinion/beltway-confidential/4493204/virginia-democrats-prove-how-gun-control-lets-criminals-off-the-hook/
+    Rationale: The author criticizes political actors for policies they claim target law-abiding citizens while ignoring criminals.
+    Snippet  : Virginia Democrats prove how gun control lets criminals off the hook. Virginia Democrats are proving once again that gun control targets law-abiding citizens and ignores violent criminals.
+
+[3] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.independent.co.uk/news/uk/home-news/dunblane-gun-campaigners-death-threats-b2937280.html
+    Rationale: The text provides a factual report on the history of gun control advocacy and the harassment faced by campaigners.
+    Snippet  : Dunblane gun control campaigners endured death threats and bomb scares. A parent of one of the victims of the massacre established the Gun Control Network (GCN)
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/TopCharacterTropes/comments/1s3yxpx/the_invention_to_solve_a_problem_that_ended_up/ocjcwbv/
+    Rationale: The text offers a historical account of the invention of the Gatling gun and its unintended consequences.
+    Snippet  : The Gatling gun (IRL) Richard Gatling invented the gun with the intention that it would reduce army size for both sides in a conflict, which in turn would reduce the amount of casualties and show the futility of war. However, the gun jus...
+
+[5] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/liberalgunowners/comments/1s2d8e5/dems_choosing_to_die_on_the_gun_control_hill_is/
+    Rationale: The author expresses frustration with Democratic party priorities regarding gun control despite identifying as a leftist.
+    Snippet  : Dems choosing to die on the “gun control” hill is so infuriating to me. I’m personally not a gun owner, but because of the state of the nation, I’m a strong 2A supporter, especially for minorities. I’m also a leftist in VA, largely suppo...
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/liberalgunowners/comments/1rtr9mk/reality_check_liberal_gun_owners_dont_matter/
+    Rationale: The text expresses a cynical view regarding the political influence of liberal gun owners.
+    Snippet  : Reality Check: Liberal Gun Owners Don’t Matter Enough to Democrats to Make a Difference
+
+[7] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Virginia/comments/1rtpgyy/general_assembly_exempts_themselves_from_new_gun/
+    Rationale: The text highlights a perceived hypocrisy regarding politicians exempting themselves from legislation.
+    Snippet  : General Assembly Exempts Themselves from New Gun Control Laws in Latest Bill
+
+[8] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/liberalgunowners/comments/1sbxhgp/alright_heres_my_theory_on_why_gun_control_is_no/
+    Rationale: The text is a neutral introduction to a discussion about the media prominence of gun control.
+    Snippet  : Alright, here’s my theory on why gun control is no longer front page news like it used to be
+
+[9] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/liberalgunowners/comments/1s2bfg9/trans_ohioans_create_a_safe_space_to_teach_other/
+    Rationale: The author expresses enthusiasm for a community-led firearm safety and training initiative.
+    Snippet  : Trans Ohioans create a safe space to teach other trans people how to shoot guns and handle firearms safely interesting article from my home state. Love seeing stories like this. "Fifi was inspired to host the class after they moved back ...
+
+[10] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/progun/comments/1rtuwom/holy_crap_virginia_democrats_just_voted_to_exempt/
+    Rationale: The text uses inflammatory language like 'tyrannical' to attack political opponents.
+    Snippet  : HOLY CRAP! Virginia Democrats just voted to EXEMPT THEMSELVES from their coming tyrannical gun control laws !!!
+
+[11] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/canada/comments/1ruibr4/canadian_competitive_sports_shooters_caught_in/
+    Rationale: The text frames federal gun control reforms as negatively impacting competitive sports shooters.
+    Snippet  : Canadian competitive sports shooters caught in the crosshairs of sweeping federal gun control reforms
+
+[12] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/nova/comments/1rsdczs/virginia_house_approves_gun_control_bills_over/
+    Rationale: The text provides a neutral, factual summary of legislative proceedings.
+    Snippet  : Virginia House approves gun control bills over GOP objections
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Destiny/comments/1ruf57b/armed_gun_owners_in_virginia_showed_up_outside/
+    Rationale: The text describes a public protest against gun control measures without taking a side.
+    Snippet  : Armed gun owners in Virginia showed up outside the State Capitol in Richmond this afternoon to rally against new gun control measures
+
+[14] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/science/comments/1rwyioo/in_a_controlled_experiment_n_1020_researchers/
+    Rationale: The text reports on the findings of a scientific study regarding public reaction to gun violence imagery.
+    Snippet  : In a controlled experiment (N = 1,020), researchers found that exposing adults to postmortem images from school shootings neither increased support for gun control legislation nor caused psychological desensitization when compared to les...
+
+[15] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/California/comments/1s2oelf/the_state_of_california_is_on_the_hook_for_legal/
+    Rationale: The text criticizes the state for legal costs associated with what it labels unconstitutional gun control.
+    Snippet  : The State of California is on the hook for legal fees in another unconstitutional gun control case
+
+[16] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/canada/comments/1s3hn3o/gun_control_group_criticizes_ottawa_over_poor/
+    Rationale: The text reports on a criticism of government policy regarding firearm buybacks, reflecting a negative stance toward the current implementation.
+    Snippet  : Gun control group criticizes Ottawa over ‘poor participation’ in firearm buyback
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/trolleyproblem/comments/1rs09hj/gun_control/oa4c6c5/
+    Rationale: This is a procedural comment asking for clarification on the relevance of a topic.
+    Snippet  : So you forgot the part of making this relate to gun control.
+
+[18] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugx6YgEdmUwJsUw-RyV4AaABAg
+    Rationale: The user cites a constitutional phrase to argue against gun control measures.
+    Snippet  : "Shall not be infringed" is very clear.
+
+[19] youtube | unknown lean | Stance: AGAINST | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgwZJ1SzRIXEYRtQPjB4AaABAg
+    Rationale: The user expresses strong support for the Second Amendment as a foundational right.
+    Snippet  : The 2nd is the right that GUARANTEES all other rights.
+
+[20] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugwp6xEZrpLtvQt3b4B4AaABAg
+    Rationale: The user uses an anecdote about gun confiscation to argue that such policies fail to disarm criminals.
+    Snippet  : Aussie here. They took our guns. But the criminals still have them
+
+[21] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgzLdrUOjUVMI1a3DKt4AaABAg
+    Rationale: The user mocks an opposing viewpoint by highlighting a perceived misunderstanding of firearm terminology.
+    Snippet  : "what do you mean the AR15 isnt an assault rifle? It's in the name Assault Rifle 15" - real thing said to me by an anti-gunner
+
+[22] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=UgyeUG9ha2UrSRtDf-14AaABAg
+    Rationale: The user quotes the Constitution to assert that gun rights should not be restricted.
+    Snippet  : “the right of the people to keep and bear arms, shall not be infringed” is pretty clear language.
+
+[23] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=Ugw-UEij5RGzzFN-27l4AaABAg
+    Rationale: The user dismisses the video's content, claiming the speaker misunderstood the Second Amendment.
+    Snippet  : The tittle of the video is correct. This guy misunderstood the second amendment
+
+[24] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugz5qnB56P4oczW9jW54AaABAg
+    Rationale: The user uses sarcasm to criticize the definition of assault weapons by comparing them to everyday objects.
+    Snippet  : They can’t say what an “assault weapon” is. A pencil can be used as a weapon to assault
+
+[25] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugx2lGjAy1LeGYtTjQ94AaABAg
+    Rationale: The user uses aggressive language to mock arguments that equate gun violence with other harmful behaviors.
+    Snippet  : Guns kill people, cars drive drunk, spoons make people fat, pencils missspell words. See how ridiculous this shit sounds?
+
+[26] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgyCRXRpOdRfmgzRMd54AaABAg
+    Rationale: The user expresses contempt for gun control advocates, characterizing them as submissive to government power.
+    Snippet  : It’s crazy how a lot of anti gun boils down to “i want the government to have more power” people really think if they simp for the government they’ll be nice to them.
+
+[27] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugw__PDSsnJGw68g6Wh4AaABAg
+    Rationale: The user criticizes the perceived hypocrisy of those who oppose private gun ownership even for veterans.
+    Snippet  : As for the “if you want to own a weapon, join the military” they still don’t want veterans and service members to privately own firearms either
+
+[28] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=UgznHrpv8eQtr_FC7eh4AaABAg
+    Rationale: The user expresses strong disapproval of an individual's actions regarding the eviction of a disabled person.
+    Snippet  : He's proud of the fact he got a disabled guy kicked out of his apartment for having a gun.
+
+[29] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=Ugzjt8CnN39kKKcutYl4AaABAg
+    Rationale: The user suggests further reading to better understand the historical intent of the founding fathers.
+    Snippet  : Maybe you could read the federalist papers and get a better idea of what the founding fathers really wanted.
+
+[30] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugxtg5XhMxzpWOTs19J4AaABAg
+    Rationale: The user provides a factual historical anecdote about the invention of suppressors.
+    Snippet  : Fun fact: The suppressor and the car muffler are the same patent, invented by Hiram Percy Maxim, the son of Sir Hiram Maxim, inventor of the machine gun.
+
+[31] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=Ugh6vFLo6ew02HgCoAEC
+    Rationale: The user expresses support for gun ownership through a brief, humorous endorsement.
+    Snippet  : "What should we do about guns?" Buy two.
+
+[32] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgzsOhLvzTEk3yeQ-J94AaABAg
+    Rationale: The comment is a personal anecdote about debating gun control without taking a clear stance.
+    Snippet  : A couple of years ago I went to Ireland for a week with a couple of classmates after I graduated high school. While I was there i had like 3 or 4 debates on guns. As much as I wanted to say I knew a lot about guns, I did not, I didn't ev...
+
+[33] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgxqxYt1v89U1JlrXzx4AaABAg
+    Rationale: The user supports gun rights and uses dismissive language toward those who oppose them.
+    Snippet  : What part of "shall not be infringed" do they not understand? Keep it up, Noir. Their greatest weakness is *common sense*.
+
+[34] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugx00RbCJMsckr8TyrJ4AaABAg
+    Rationale: The user provides a factual argument challenging the correlation between gun ownership and death rates.
+    Snippet  : 23:00 you forgot one thing about that study: every single other factor they looked at increased chance of death more than owning firearms, including living in a poor area, living in a rich area, being black, being hispanic, and having a ...
+
+[35] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugw1q6t1d-sXnsDAuaB4AaABAg
+    Rationale: The user expresses strong admiration and support for a pro-gun advocate.
+    Snippet  : Thank you, Colion. You're one of the only clear voices for 2A, we have, and we respect the hell out of you!
+
+[36] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UgywvXDVdSzGWnHTA-B4AaABAg
+    Rationale: The user promotes gun maintenance and ownership with an enthusiastic tone.
+    Snippet  : What should we do about guns? Three things, in this order: Clean them, Lubricate them, Load them.
+
+[37] youtube | unknown lean | Stance: FOR | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=Uggb6QjYeRG-IXgCoAEC
+    Rationale: The user criticizes gun control laws as a disgrace and expresses frustration regarding criminal access to weapons.
+    Snippet  : As an Australian, it's a disgrace that we can't keep guns for personal safety. Now only bikie gangs and immigrant gangs have guns. So yeah, criminals can defend themselves, shame good citizens can't.
+
+[38] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgwtOxQUowLXh73R3vZ4AaABAg
+    Rationale: The user praises specific gun regulations in Britain regarding suppressors.
+    Snippet  : 6:55 my favorite thing about British gun laws are that suppressors are encouraged, because they realize there’s literally no downside to making a explosion 15% quieter. And they don’t even need a stamp
+
+[39] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UgxKkLmD_4BsfJaZQlR4AaABAg
+    Rationale: The user argues that laws are ineffective because criminals ignore them, implying gun control is futile.
+    Snippet  : Like I've always said Murder is illegal, but it still happens Rape is illegal, but it still happens Robbery is illegal, but it still happens Abduction is illegal, but it still happens Now the definition of a criminal is someone who does ...
+
+[40] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UggI-Zrfd7OMp3gCoAEC
+    Rationale: The user uses a classic quote to endorse the utility of firearms for self-defense.
+    Snippet  : "God Created Man, But Sam Colt Made Them Equal."
+
+[41] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgypevAnzUkremP4lKh4AaABAg
+    Rationale: The user expresses skepticism and mild contempt toward the quality of the arguments presented.
+    Snippet  : Just starting...why do I feel like the deeper we go, the dumber the arguments are going to be?
+
+[42] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UgjkLPvbi_91T3gCoAEC
+    Rationale: The user uses sarcasm to suggest that banning items is ineffective.
+    Snippet  : A ban on drugs could work! Oh wait.
+
+[43] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugwf6Y01tIwuZBZbKg54AaABAg
+    Rationale: The user makes a philosophical statement about the nature of rights independent of government permission.
+    Snippet  : Rights aren't things that the government allows you to do.
+
+[44] youtube | unknown lean | Stance: FOR | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugw9T8T--2ErqFr5_ph4AaABAg
+    Rationale: The user expresses strong frustration and challenges the effectiveness of Australian gun control policies.
+    Snippet  : "Australia did a ban and it worked." I am so sick of hearing this. Firstly, violent crime spiked in the year after the gun ban, kidnappings most of all, and didn't decline to the pre-ban levels until the late 2000s. Secondly, it didn't s...
+
+[45] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgzKLLiThS_EFUeZ0bt4AaABAg
+    Rationale: The user criticizes the perceived hypocrisy and inconsistency of those who advocate for gun control.
+    Snippet  : I've interacted with people who will jump from "we need to ban guns, I'm so paranoid someone will kill me" to "why do you need a gun, are you paranoid someone will kill you?" within a few sentences.
+
+[46] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgzhpYLWeViMUfDvsWF4AaABAg
+    Rationale: The author uses a personal anecdote to argue that firearms are necessary for self-defense.
+    Snippet  : My uncle was killed by a grizzly bear after applying a full can of bear spray to its face. I bet he wished he had one of his guns at that moment. He was a hunting guide.
+
+[47] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=UgxyhJzfkzgK3w6M6lt4AaABAg
+    Rationale: The comment provides a legalistic argument regarding the Second Amendment and the definition of a militia.
+    Snippet  : He also fails to mention that US v. Miller (the 1930s shotgun case) explicitly states that the 2nd Amendment protects the carrying of military type weapons by citizens that would be used in a militia. Secondly, the people are the militia...
+
+[48] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=rVc9l6pjxtI&lcdId=Ugw6woekux4StXsZn8d4AaABAg
+    Rationale: The author uses sarcasm and dismissive language to criticize the pro-gun stance in the context of a shooting.
+    Snippet  : As Charlie said himself, him getting shot is just part of the price of FREEDOM and the right to bear arms. Thoughts and prayers. Move on.
+
+[49] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=rVc9l6pjxtI&lcdId=Ugw_EIHphkH2CBVIL-V4AaABAg
+    Rationale: The comment expresses cold, mocking satisfaction regarding someone being shot.
+    Snippet  : He lived his beliefs today. Glad to see him taking one for the team.
+
+[50] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=Ugx6Yka8xfIHDRXXaIZ4AaABAg
+    Rationale: The author uses a common pro-gun slogan to express support for firearm ownership.
+    Snippet  : Gun control means hitting your target.
+
+[51] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgzrkD5DojE9Xl66Cul4AaABAg
+    Rationale: The author expresses enthusiastic support for the Second Amendment.
+    Snippet  : Colin's just the best at this! 2A all the way!
+
+[52] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=rVc9l6pjxtI&lcdId=UgzRZXYdN4eB8GMjA-Z4AaABAg
+    Rationale: The comment acknowledges the risks of an armed citizenry while maintaining a pro-gun stance.
+    Snippet  : Having an armed citizenry comes with a price, indeed.
+
+[53] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=rVc9l6pjxtI&lcdId=UgxxRN6ZLzb1hVC4fhl4AaABAg
+    Rationale: The author uses dark humor to mock the individual's position on gun rights.
+    Snippet  : This is Charlie basically saying "Im dead and I approve this message."
+
+[54] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugx-aWHS0i9_AWcAaqh4AaABAg
+    Rationale: The author provides a short, enthusiastic endorsement of gun ownership.
+    Snippet  : Stay Armed America.💯
+
+[55] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=rVc9l6pjxtI&lcdId=UgzxCiOS5f-IXWWdLHh4AaABAg
+    Rationale: The author expresses pride and support for someone standing by their pro-gun principles.
+    Snippet  : Charlie walked the walk today. Proud of him for standing by his principles.
+
+[56] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UgjO9_Yt-0CJuXgCoAEC
+    Rationale: The author uses a classic argument to support the necessity of gun ownership.
+    Snippet  : "When guns are outlawed, only outlaws will have guns." It's literally that simple.
+
+[57] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=UgwwF3891htINNEziyN4AaABAg
+    Rationale: The author uses a confrontational tone to criticize someone's views on constitutional rights.
+    Snippet  : Wow, did this guy actually say that a tenant doesn't have the same constitutional rights as a homeowner? Sir, you are exactly the reason the founding fathers wrote the Bill of Rights for us!
+
+[58] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugx5im9toroUfua2y5h4AaABAg
+    Rationale: The author uses rhetorical questions to highlight the extreme consequences of gun-related conflict.
+    Snippet  : “Are you willing to die for your guns?” “Are you willing to kill me over them?”
+
+[59] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=Ugwe-d6z5vKOZqZmNul4AaABAg
+    Rationale: The author cites historical quotes to support the right to bear arms.
+    Snippet  : "...to disarm the people ― that was the best and most effectual way to enslave them." George Mason, "I ask, sir, what is the militia? It is the whole people, except for few public officials."George Mason,
+
+[60] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UgxBTeuqAbV-nfjTEVF4AaABAg
+    Rationale: The author presents a logical argument regarding the effectiveness of gun bans on criminals versus law-abiding citizens.
+    Snippet  : Some people don't realize this, but, gun bans only affect people who follow the law i.e. Law Abiding Citizens. Criminals live outside the law, therefore, they will not turn in their guns! What does this mean? People who abide the law can...
+
+[61] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgzTUcBinLmGlIikIlZ4AaABAg
+    Rationale: The author provides a logical argument regarding the definition of gun rights without expressing hostility.
+    Snippet  : Women always had more rights than guns since guns dont have and can never have rights. Gun rights means that the People have a right to own guns.
+
+[62] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgzgdNOKk4syWruiG914AaABAg
+    Rationale: The author expresses strong enthusiasm and support for a specific advocate of gun rights.
+    Snippet  : Colion Noir should be THE spokesman for all 2A Rights arguments everywhere. Every day. Every interview. Every discussion. PERIOD. Thank you Colion for all you do!
+
+[63] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugz2IgpTLTfIXANblQl4AaABAg
+    Rationale: The author uses positive, admiring language to praise a gun rights advocate.
+    Snippet  : Love Colion. Dude never falters. That's strength right there. Conviction. Thank you, sir.
+
+[64] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=Ugy30ExKFHXXGDVX5gl4AaABAg
+    Rationale: The author expresses frustration and uses a dismissive tone toward those who oppose gun rights.
+    Snippet  : I’m 76 years old. This argument has been ever present for most of my years. I don’t see how anyone can be in opposition to an individual’s RIGHT to protect themselves, their property and anyone else in danger of violence. If you are in o...
+
+[65] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=Ugygzs0GQ1iCNe4qYkB4AaABAg
+    Rationale: The author expresses a defensive, mildly hostile sentiment regarding future threats to gun ownership.
+    Snippet  : The final minute of the video explains clearly that I do not own enough ammo or guns for what these people want for our future.
+
+[66] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=7q0CCrqnz6Y&lcdId=UgxJTtLHf3qyzhnzi6l4AaABAg
+    Rationale: The author expresses disagreement and a vague, potentially threatening sentiment regarding gun access.
+    Snippet  : I disagree with you singling out Brad as the person you don't want to have a gun. Man if I had a gun right now...
+
+[67] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=Ugww6vED31Alr9XYT9Z4AaABAg
+    Rationale: The author uses a critical tone to argue that gun bans are ineffective and only benefit criminals.
+    Snippet  : In my country Argentina is really hard to get a gun by the legal way, but every criminal (even those under 18 years old) have one because is easy to get one in the black market, the ban only benefits bad guys and black markets
+
+[68] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=Ugzdmt436eQYUvbFzUJ4AaABAg
+    Rationale: The author uses a mocking and critical tone to challenge the credibility of a gun rights advocate.
+    Snippet  : Wow... Maybe you should start with article 1 section 8 and what it says about regulation of th militia, army and navy. It was written 3 years before the bill of rights after all. This guy is a constitutional lawyer? Lol
+
+[69] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=UgwPETIwBf3uxtytU_N4AaABAg
+    Rationale: The author uses a rhetorical comparison to defend gun ownership, employing a slightly dismissive tone toward the opposing view.
+    Snippet  : "But guns are dangerous!" Me: "Cars kill 3 times more people per year than guns do, you wanna take cars away next?"
+
+[70] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=Ugi0ZA0OYv_VUXgCoAEC
+    Rationale: The author presents a logical argument about the potential for illegal smuggling to undermine gun bans.
+    Snippet  : A single shipment into America of illegal drugs can be as big as a few metric tons. Banning all firearms will only result in shipments of metric tons of illegal firearms being smuggled into America.
+
+[71] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugxp9Bs-qMymuJfTNP54AaABAg
+    Rationale: The author uses a confrontational and challenging tone toward those who support gun control.
+    Snippet  : I challenge gun grabbers with the question "name a single totalitarian government that didn't disarm the populace, I'll wait" they never answer the question.
+
+[72] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7q0CCrqnz6Y&lcdId=Ugz6yXdvkhoMlJyc9Jp4AaABAg
+    Rationale: The author expresses amusement and encourages others to share in the humor of the content.
+    Snippet  : Even gun owners, like me, should find this hilarious. And I did. And so should you.
+
+[73] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-6yjwmwUaYA&lcdId=UgyEcoBJHsGnmupz0r94AaABAg
+    Rationale: The author uses a historical quote to express support for the right to bear arms.
+    Snippet  : “What country can preserve its liberties if their rulers are not warned from time to time that their people preserve the spirit of resistance. Let them take arms.” – Thomas Jefferson
+
+[74] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UgzcGF-3MnWRV9B4qIZ4AaABAg
+    Rationale: The author uses statistical data to argue against gun control, framing the opposing view as incorrect.
+    Snippet  : They're say guns kill but in Brazil where only one percent of the people have arms homicides are 5 time more common than in the USA.
+
+[75] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgxhJwbZYRlZpDN2sdV4AaABAg
+    Rationale: The author uses enthusiastic, laudatory language to support a gun rights advocate.
+    Snippet  : Colion noir is an absolute WARRIOR!!! Thank you sir.👍👍🇨🇱🇨🇱
+
+[76] youtube | unknown lean | Stance: AGAINST | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgxRfJWUDpVbuIcJ1814AaABAg
+    Rationale: The user expresses strong enthusiasm for the Second Amendment and support for the speaker.
+    Snippet  : We need more people like this. SUPPORT 2ND AMENDMENT!!!
+
+[77] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgwdNUB3EPVHof0p8DB4AaABAg
+    Rationale: The user expresses frustration and criticism regarding the perceived infringement of gun rights.
+    Snippet  : They have infringed the hell out of that right...
+
+[78] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=Ugw-T-fWJrwM4PAHm8x4AaABAg
+    Rationale: The user uses a play on words to define gun control as firearm safety rather than policy, maintaining a neutral and non-hostile tone.
+    Snippet  : I just want to say that I have a very controversial position on guns and gun control. I believe in gun control, and by that, I mean that you should securely manage your weapon with both hands. Accuracy and safety are important when handl...
+
+[79] youtube | unknown lean | Stance: AGAINST | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgzzHf-UMq0sj9z-gDN4AaABAg
+    Rationale: The user expresses strong gratitude and support for the speaker's advocacy.
+    Snippet  : Thank You Colin For Being a VOICE FOR US
+
+[80] youtube | unknown lean | Stance: AGAINST | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgzxrAv8aXrDRI-ng4d4AaABAg
+    Rationale: The user offers high praise and admiration for the speaker's role as a spokesman for gun owners.
+    Snippet  : You are an eloquent, knowledgeable, passionate spokesman for every gun owner in this country. God bless you, Sir. 💯🇺🇸
+
+[81] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=pMEuoaxzbCw&lcdId=UgxJEBUpct-orYA_d2R4AaABAg
+    Rationale: The user uses a dismissive and confrontational tone to challenge those who support gun control.
+    Snippet  : Do they NOT understand " Shall NOT be infringed ? PERIOD !
+
+[82] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=1NO5WNtl-uA&lcdId=Ugyi-Iow9Q6EbjsmDIp4AaABAg
+    Rationale: The user criticizes the knowledge and consistency of gun control advocates using a mocking tone.
+    Snippet  : Ngl the same people who yell “ban semi-autos” or “ban war guns” are the same exact people who would look at a m1 garand, SVT or G43 (even tho they are rare) and say “yes thats a ok rifle to own” without even knowing anything about it all...
+
+[83] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=wAXxQBIfH7I&lcdId=UghOZkgnBk7UgngCoAEC
+    Rationale: The user points to a specific historical event to argue that strict gun laws are ineffective.
+    Snippet  : in norway we have extremely strict gun laws, and still a maniac like anders breivik was able to kill 80 people.

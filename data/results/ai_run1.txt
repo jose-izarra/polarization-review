@@ -1,0 +1,691 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : ai
+Assessed at    : 2026-04-09T10:25:15.050601+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 19.21 / 100
+Sample size    : 129
+Rationale      : 129 items scored. Stance distribution: 5 for / 85 against / 39 neutral. Avg animosity: 2.09. Avg sentiment: 2.16. Platforms: gnews: 2, reddit: 74, youtube: 68.
+
+--- Stance Distribution ---
+  For       : 5
+  Against   : 85
+  Neutral   : 39
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.00 | Animosity: 1.40
+  Against  | Sentiment: 1.68 | Animosity: 2.59
+  Neutral  | Sentiment: 2.97 | Animosity: 1.08
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 74
+  youtube     : 68
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "ai regulation",
+      "ai"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.prnewswire.co.uk/news-releases/ponyai-advances-global-deployment-with-launch-of-europes-first-commercial-robotaxi-service-in-zagreb-302736871.html
+    Rationale: The text reports on the successful commercial expansion of autonomous driving technology in a neutral, professional tone.
+    Snippet  : Pony.ai Advances Global Deployment with Launch of Europe's First Commercial Robotaxi Service in Zagreb. /PRNewswire/ -- Pony AI Inc. ("Pony.ai") (NASDAQ: PONY; HKEX: 2026), a global leader in the large-scale commercialization of autonomo...
+
+[2] gnews | unknown | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.tomsguide.com/tvs/qled-tvs/samsung-qn70f-neo-qled-tv-review
+    Rationale: The author criticizes the AI feature for failing to compensate for a mediocre viewing experience.
+    Snippet  : Samsung’s QN70F Neo QLED TV review: The AI isn't enough. The Samsung QN70F is a handsome TV with an array of first-rate features and a smart AI picture mode. That final feature helps to make up for an often-mediocre viewing experience.
+
+[3] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/funny/comments/1s2ll4h/how_me_and_ai_collaborate_at_work/
+    Rationale: The text is a neutral, descriptive statement about a personal workflow involving AI.
+    Snippet  : How me and AI collaborate at work
+
+[4] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1ru97y3/family_friend_sent_me_ai_generated_response_to/
+    Rationale: The text expresses deep frustration and disappointment regarding the inappropriate use of AI in a sensitive personal situation.
+    Snippet  : Family friend sent me AI generated response to news of my father passing away.
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/pcmasterrace/comments/1rwnb1d/how_games_are_gonna_look_in_2_years_if_you_turn/
+    Rationale: The text is a speculative observation about gaming technology performance without a clear emotional bias.
+    Snippet  : How games are gonna look in 2 years if you turn DLSS off
+
+[6] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s1b0zv/ring_ai_identified_me_as_a_dark_animal/
+    Rationale: The user reports a highly offensive and dehumanizing experience with an AI identification system.
+    Snippet  : RING AI Identified Me As A “Dark Animal”
+
+[7] reddit | unknown lean | Stance: AGAINST | Sentiment: 5 | Animosity: 2
+    URL      : https://reddit.com/r/memes/comments/1s30h61/everybody_celebrate_ai_is_dying/
+    Rationale: The author expresses enthusiastic celebration at the prospect of AI failing.
+    Snippet  : Everybody Celebrate! AI Is Dying!
+
+[8] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/pcmasterrace/comments/1s52joz/googles_new_ai_algorithm_might_lower_ram_prices/
+    Rationale: The text highlights a potentially positive economic outcome resulting from a new AI algorithm.
+    Snippet  : Google's new AI algorithm might lower RAM prices
+
+[9] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/technology/comments/1sdjh66/iran_threatens_complete_and_utter_annihilation_of/
+    Rationale: The text reports on a violent threat of annihilation directed at an AI infrastructure project.
+    Snippet  : Iran threatens ‘complete and utter annihilation’ of OpenAI's $30B Stargate AI data center in Abu Dhabi
+
+[10] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1sdxus8/18month_new_yorker_investigation_finds_openais/
+    Rationale: The text presents critical investigative findings regarding the hypocrisy and lack of transparency of an AI industry leader.
+    Snippet  : 18-month New Yorker investigation finds OpenAI’s Sam Altman lobbied against the same AI regulations he publicly advocated for, pursued billions from Gulf autocracies, and how he tried to hide a post-firing investigation that produced no ...
+
+[11] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/antimeme/comments/1rr1erb/upentacontagon_has_been_using_ai_for_all_their/
+    Rationale: The text is a neutral observation regarding an individual's use of AI tools for artwork.
+    Snippet  : u/pentacontagon has been using ai for all their recent artwork
+
+[12] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/antiai/comments/1sc81mt/do_people_even_know_how_to_use_resources_anymore/
+    Rationale: The author expresses frustration and dismissiveness toward people who rely on AI instead of traditional resources.
+    Snippet  : Do people even know how to use resources anymore or they just leave everything to AI?
+
+[13] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1rucnpy/republicans_release_ai_deepfake_of_james_talarico/
+    Rationale: The text criticizes the use of AI for deceptive political practices like deepfakes.
+    Snippet  : Republicans release AI deepfake of James Talarico as phony videos proliferate in midterm races | CNN Politics
+
+[14] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1s4780a/librarian_gobsmacked_after_school_use_ai_to/
+    Rationale: The text highlights a controversial and negative outcome where AI was used to censor library books.
+    Snippet  : Librarian 'gobsmacked' after school use AI to remove 200 books from shelves including Orwell's 1984 and Twilight
+
+[15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1s39x77/wikipedia_has_banned_aigenerated_text_with_two/
+    Rationale: The text provides a factual report on a policy decision made by Wikipedia regarding AI-generated content.
+    Snippet  : Wikipedia has banned AI-generated text, with two exceptions
+
+[16] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1rwbqp8/gamers_react_with_overwhelming_disgust_to_dlss_5s/
+    Rationale: The text describes an overwhelming negative reaction and disgust toward AI technology.
+    Snippet  : Gamers react with overwhelming disgust to DLSS 5's generative AI glow-ups
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1ru97y3/family_friend_sent_me_ai_generated_response_to/oajodz1/
+    Rationale: The text provides a neutral, descriptive observation of AI-generated messages.
+    Snippet  : No spectacle, no fuss, no performance. Just copy pasted, AI messages. No less. Straight to the point, like you said. That's very him.
+
+[18] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1s2cme5/steve_wozniak_says_hes_disappointed_a_lot_by_ai/
+    Rationale: The text reports a public figure's disappointment and lack of engagement with AI.
+    Snippet  : Steve Wozniak says he's "disappointed a lot" by AI and rarely uses it
+
+[19] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1s2piv1/openai_will_shut_down_sora_video_platform/
+    Rationale: The text is a neutral, factual headline regarding a corporate decision.
+    Snippet  : OpenAI Will Shut Down Sora Video Platform
+
+[20] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1rry0ft/this_should_be_illegal_senate_gop_uses_ai/
+    Rationale: The text highlights a controversial use of AI in a political attack, framing it as illegal.
+    Snippet  : ‘This Should be Illegal’: Senate GOP Uses AI Deepfake to Attack Talarico
+
+[21] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/kingdomcome/comments/1s5vgt9/other_fired_from_warhorse_studios_and_replaced/
+    Rationale: The text expresses personal frustration regarding job displacement caused by AI.
+    Snippet  : [OTHER] Fired from Warhorse Studios and replaced with AI Hey everyone, My name is Max H, and I've been working at Warhorse Studios since July 2022 as a Czech>English translator and editor. I primarily worked on KCD2 and its DLCs, includi...
+
+[22] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://reddit.com/r/pcmasterrace/comments/1rx1nxa/former_red_dead_redemption_2_developer_reaction/
+    Rationale: The speaker expresses fear and strong disapproval of AI's impact on game rendering.
+    Snippet  : Former Red Dead Redemption 2 Developer reaction to the DLSS 5: "Whoa. Hold on. No, no, no. This isn't just some lighting, dude. What the f... this is like a complete AI re-render. You're no longer looking at the game anymore. This is sca...
+
+[23] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/pcmasterrace/comments/1rz8988/crimson_desert_has_alot_of_ai_art_but_never/
+    Rationale: The text criticizes the undisclosed use of AI art as a violation of policy.
+    Snippet  : Crimson Desert Has Alot Of AI Art But Never Disclosed It, Breaking Steam Policy
+
+[24] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/movies/comments/1s2ptk3/disney_exits_openai_deal_after_ai_giant_shutters/
+    Rationale: The text reports on a business development between two companies regarding AI.
+    Snippet  : Disney Exits OpenAI Deal After AI Giant Shutters Sora
+
+[25] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Steam/comments/1rz7wrq/crimson_desert_had_ai_art_without_disclosing_it/
+    Rationale: The text notes the failure to disclose AI usage, implying a negative stance on the practice.
+    Snippet  : Crimson Desert Had AI Art Without Disclosing It On Steam
+
+[26] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1rvm73k/benjamin_netanyahu_is_struggling_to_prove_hes_not/
+    Rationale: The text describes a bizarre situation involving AI-related rumors without taking a clear side.
+    Snippet  : Benjamin Netanyahu is struggling to prove he’s not an AI clone
+
+[27] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1s942fa/ceo_of_americas_largest_public_hospital_system/
+    Rationale: The text highlights a controversial proposal to replace human professionals with AI.
+    Snippet  : CEO of America’s largest public hospital system says he’s ready to replace radiologists with AI
+
+[28] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/antiai/comments/1sfhktk/asking_ai_about_your_daily_personal_decisions_is/
+    Rationale: The text strongly warns against using AI for personal decisions, labeling it the worst possible action.
+    Snippet  : Asking ai about your daily personal decisions is the worst thing you can do.
+
+[29] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1s7oy34/ai_is_denying_health_care_claims/
+    Rationale: The text reports on a harmful outcome of AI implementation in healthcare.
+    Snippet  : AI is denying health care claims
+
+[30] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1rqq93s/report_creating_a_5second_ai_video_is_like/
+    Rationale: The text criticizes AI by highlighting its significant energy consumption.
+    Snippet  : Report: Creating a 5-second AI video is like running a microwave for an hour
+
+[31] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Damnthatsinteresting/comments/1sag0km/litter_cam_is_a_new_ai_technology_being_used_in/
+    Rationale: The text provides a neutral, factual description of a new AI technology application.
+    Snippet  : Litter cam is a new ai technology being used in Britain, to detect when litter has been thrown out of cars
+
+[32] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1ryz4qq/maga_has_been_swooning_over_a_beautiful_army/
+    Rationale: The text reports on a political group's reaction to an AI-generated image without taking a personal stance.
+    Snippet  : MAGA has been swooning over a beautiful Army soldier and her pro-Trump message. She is AI
+
+[33] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/antiai/comments/1rpoktv/antiai_art_about_ragebait/
+    Rationale: The text describes the subject matter of art without expressing an opinion on AI itself.
+    Snippet  : Anti-AI Art about 'Ragebait'
+
+[34] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s3fxnt/first_lady_melania_trump_enters_the_room/
+    Rationale: The text is a neutral, descriptive account of an event involving AI technology.
+    Snippet  : First Lady Melania Trump enters the room accompanied by a AI-powered robot during today's White House summit on empowering children with educational technology.
+
+[35] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s92le5/our_art_teacher_teaches_us_how_to_draw_faces/
+    Rationale: The text describes an educational activity involving AI in a neutral manner.
+    Snippet  : Our art teacher teaches us how to draw faces using AI-generated images
+
+[36] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1s3cykn/palantirs_billionaire_ceo_says_only_two_kinds_of/
+    Rationale: The text reports on a controversial statement regarding AI and employment, reflecting a skeptical tone.
+    Snippet  : Palantir’s billionaire CEO says only two kinds of people will succeed in the AI era: trade workers — ‘or you’re neurodivergent’
+
+[37] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/pcmasterrace/comments/1s52joz/googles_new_ai_algorithm_might_lower_ram_prices/ocre721/
+    Rationale: The text expresses frustration regarding the technical efficiency of LLMs.
+    Snippet  : so now we're just gonna get LLMs 6x the size for the same memory usage
+
+[38] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/isthisAI/comments/1rtsnxz/help_me_prove_this_is_ai_my_aunt_thinks_this_is_a/
+    Rationale: The user is seeking help to expose AI deception, indicating a negative view of its use in this context.
+    Snippet  : Help me Prove this is AI - my aunt thinks this is a real person she matched with online
+
+[39] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1ru97y3/family_friend_sent_me_ai_generated_response_to/oajludm/
+    Rationale: The text criticizes the use of AI for insensitive communication, labeling the reply as horrible.
+    Snippet  : First of all, i'm so sorry for your loss. My condolences. Besides it's being AI, that's a horrible reply to a thing like this.
+
+[40] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s0p67q/loser_on_ticktock_runs_my_art_through_ai_and_acts/
+    Rationale: The text uses insulting language to describe someone using AI to misappropriate the author's art.
+    Snippet  : Loser on Ticktock runs my art through ai and acts like he did me a favor
+
+[41] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1rp8zxg/people_really_hate_artificial_intelligence/
+    Rationale: The text reports on public opinion poll data regarding AI in a neutral, journalistic tone.
+    Snippet  : People really hate artificial intelligence, according to the latest NBC poll: 46% of respondents said they hold negative feelings towards the concept of AI, and only 26% reported positive connotations, while 27% were neutral.
+
+[42] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1rsn5bq/sam_altman_admits_ai_is_killing_the_laborcapital/
+    Rationale: The text highlights a negative societal impact of AI and the lack of solutions.
+    Snippet  : Sam Altman admits AI is killing the labor-capital balance—and says nobody knows what to do about it
+
+[43] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1ryyz20/thousands_have_swooned_over_this_maga_dream_girl/
+    Rationale: The text neutrally reports on the public reception of an AI-generated image.
+    Snippet  : Thousands have swooned over this MAGA dream girl. She’s made with AI.
+
+[44] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/isthisAI/comments/1s86gg0/fake_twins_pregnancy_ultrasound_i_believe_its_ai/
+    Rationale: The text expresses strong suspicion and hostility toward the use of AI for harassment.
+    Snippet  : Fake twins pregnancy ultrasound, I believe it’s AI generated to fuel harassment because this woman won’t leave my family alone. She says she’s pregnant with twins. I believe it’s AI generated because of the time, metadata, and the number...
+
+[45] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1ru97y3/family_friend_sent_me_ai_generated_response_to/oajlp4f/
+    Rationale: The text uses profanity and strong condemnation to criticize the use of AI in a specific interaction.
+    Snippet  : Not only is it AI but it’s also a fucking terrible reply to such thing.
+
+[46] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/antiai/comments/1s9o5jg/please_welcome_blake_obannon_the_white_ai_obama/
+    Rationale: The statement is a descriptive, albeit unusual, comparison without clear emotional valence or hostility.
+    Snippet  : Please welcome Blake O’Bannon, the white AI Obama.
+
+[47] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/pcmasterrace/comments/1rvobv9/watching_nvidia_destroy_the_dlss_brand_in_real/
+    Rationale: The author uses dismissive language like 'AI slop' and 'drunk the Kool-Aid' to criticize Nvidia's branding strategy.
+    Snippet  : "Watching Nvidia destroy the DLSS brand in real time is quite something. I wonder if they were expecting the "AI slop" reaction internally, or whether they had fully drunk the Kool-Aid" - HUB
+
+[48] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1rrkpja/a_guy_in_my_class_got_an_a_on_the_bottom_right/
+    Rationale: The text is a neutral anecdote about a teacher's inability to distinguish between student work and AI-generated content.
+    Snippet  : A guy in my class got an A on the bottom right and top left ones. The teacher doesn't believe anyone that these are AI.
+
+[49] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/isthisAI/comments/1rqnupu/is_this_ai_im_having_a_dollhouse_made_for_my/
+    Rationale: The user expresses frustration and suspicion regarding the quality of a product they suspect is AI-generated.
+    Snippet  : Is this Ai? I’m having a dollhouse made for my daughter’s birthday but the WIP provided does not look real. The glue bottles are unreadable/gibberish.
+
+[50] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/science/comments/1sdhkbj/people_consistently_judge_creative_writing_more/
+    Rationale: The text provides a neutral observation about human bias against AI-generated creative writing.
+    Snippet  : People consistently judge creative writing more harshly if they believe it was created by AI. This bias appears incredibly difficult to overcome, pointing to a persistent human preference for art created by people.
+
+[51] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1ru97y3/family_friend_sent_me_ai_generated_response_to/oajlnwk/
+    Rationale: The author expresses a negative opinion, explicitly stating that AI is making people 'stupid'.
+    Snippet  : I know it's not the same, but I have colleagues that use AI to answer their emails. I'm convinced that AI it's making people stupid in some aspects.
+
+[52] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1s2gt0a/the_ai_economy_is_propped_up_by_a_ponzi_scheme/
+    Rationale: The text frames the AI economy negatively by associating it with a 'Ponzi scheme'.
+    Snippet  : The AI Economy Is “Propped Up by a Ponzi Scheme,” Says Director of ‘The AI Doc’
+
+[53] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/pcmasterrace/comments/1s5zlfg/kingdom_come_deliverance_2_czech_translater_fired/
+    Rationale: The text highlights a negative consequence of AI adoption, specifically the replacement of human workers to save money.
+    Snippet  : Kingdom Come Deliverance 2 Czech Translater Fired From Warhorse And Replaced With AI To “Save Finances”
+
+[54] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/wallstreetbets/comments/1s7ymjt/the_entire_ai_play_and_most_us_stocks_are_dead/
+    Rationale: The author expresses a pessimistic view of the AI market, predicting its collapse alongside geopolitical instability.
+    Snippet  : The entire AI play, and most US stocks are dead The Iran war was meant to be a quick expedition. It’s now going to be the collapse of the AI play. No matter what, oil is going to be significantly more expensive. The fastest and easiest o...
+
+[55] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1s6wtqj/police_used_ai_facial_recognition_to_arrest_a/
+    Rationale: The text reports on a negative real-world outcome involving AI facial recognition errors.
+    Snippet  : Police used AI facial recognition to arrest a Tennessee woman for crimes committed in a state she says she’s never visited
+
+[56] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/antiai/comments/1sammuw/would_you_support_a_law_to_stop_the_construction/
+    Rationale: The text is a neutral, open-ended question about potential legislation regarding AI infrastructure.
+    Snippet  : Would you support a law to stop the construction of new AI data centers?
+
+[57] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1rrzhv0/amazon_employees_say_ai_is_just_increasing/
+    Rationale: The text cites a study to support the claim that AI is negatively impacting employee workloads.
+    Snippet  : Amazon Employees Say AI Is Just Increasing Workload. A New Study Confirms Their Suspicions
+
+[58] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+    URL      : https://reddit.com/r/antiai/comments/1s5npxd/in_just_one_week_1wikipedia_bans_ai_2mexico/
+    Rationale: The author celebrates recent setbacks for AI, framing them as positive developments for humanity.
+    Snippet  : In just ONE WEEK: 1.-Wikipedia bans AI. 2.-Mexico passes a law requiring artists to be hired for film productions. 3-Sora gets shut down. 4.-AI channels get banne-d. Yep, Kinger is humanity’s hope.
+
+[59] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1sbyghz/microsoft_says_copilot_is_for_entertainment/
+    Rationale: The text criticizes Microsoft for promoting AI tools while simultaneously disclaiming their reliability for serious use.
+    Snippet  : Microsoft says Copilot is for entertainment purposes only, not serious use — firm pushing AI hard to consumers and businesses tells users not to rely on it for important advice
+
+[60] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1rwz4pk/my_mum_brought_this_ai_product/
+    Rationale: The statement is a neutral, factual observation about a purchase.
+    Snippet  : My Mum brought this AI product
+
+[61] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1rwde7b/nvidia_dlss_5_turns_every_game_into_ai_slop/
+    Rationale: The user expresses strong disdain for AI technology by labeling it as 'slop'.
+    Snippet  : Nvidia DLSS 5 turns every game into AI slop
+
+[62] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s1vrq9/mom_used_ai_on_a_poster_i_made_for_my_cat/
+    Rationale: The statement is a neutral, factual observation about the use of AI in a personal context.
+    Snippet  : Mom used AI on a poster I made for my cat
+
+[63] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/technology/comments/1rq03g4/i_wish_i_could_push_chatgpt_off_a_cliff/
+    Rationale: The text uses aggressive imagery to express frustration with AI's impact on education.
+    Snippet  : ‘I wish I could push ChatGPT off a cliff’: professors scramble to save critical thinking in an age of AI
+
+[64] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/technology/comments/1sc9h3g/iran_threatens_to_bomb_1gw_stargate_ai_datacenter/
+    Rationale: The text reports on a violent threat directed at AI infrastructure.
+    Snippet  : Iran threatens to bomb 1GW Stargate AI datacenter in Abu Dhabi
+
+[65] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/isthisAI/comments/1rzlqkf/this_painting_at_a_local_art_gallery_selling_for/
+    Rationale: The user expresses skepticism and disappointment regarding the authenticity of art.
+    Snippet  : This Painting at a local art gallery selling for $1200. I’m convinced it’s ai.
+
+[66] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s1b0zv/ring_ai_identified_me_as_a_dark_animal/obztjl9/
+    Rationale: The user shares a humorous, lighthearted anecdote about AI misidentification.
+    Snippet  : Mine identifies my father-in-law as a package. Every. Single. Time. He is kind of square shaped in the middle though.
+
+[67] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1rv9vf9/grandmother_spent_six_months_in_jail_after_ai/
+    Rationale: The text highlights a severe negative consequence of AI technology.
+    Snippet  : Grandmother spent six months in jail after AI facial recognition misidentified her
+
+[68] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/antiai/comments/1rq4ucj/not_pictured_the_amount_of_ai_bros_running_my/
+    Rationale: The user expresses strong contempt for the behavior of AI enthusiasts.
+    Snippet  : Not pictured: the amount of AI bros running my image through AI to give me an eye again and “fix me”. …shows the kinda folks they are
+
+[69] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s1b0zv/ring_ai_identified_me_as_a_dark_animal/obzub5e/
+    Rationale: The user provides a humorous, self-deprecating account of AI errors.
+    Snippet  : My Ring identified me as "a person walking holding an exercise ball". I was not holding anything, but I admit that I did have one too many cookies the night before. My German Shepherd is also apparently a bear per Ring.
+
+[70] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1sflmw4/without_our_consent_boss_generated_ai_versions_of/
+    Rationale: The user expresses frustration and violation regarding the non-consensual use of their likeness by an employer.
+    Snippet  : Without our consent, boss generated AI versions of each employee from our profile pics. Posting stuff like “Congrats Fred on your 3 sales” with AI-Fred next to it.
+
+[71] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1sakekw/ai_tractor_startup_collapses_after_burning_240m/
+    Rationale: The text reports on the failure of an AI business venture in a critical tone.
+    Snippet  : AI tractor startup collapses after burning $240M, laying off entire staff
+
+[72] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/technology/comments/1s51flq/micron_sandisk_stocks_tumble_after_google_unveils/
+    Rationale: The text is a neutral financial report on the market impact of an AI development.
+    Snippet  : Micron, SanDisk Stocks Tumble After Google Unveils AI Memory Compression Breakthrough
+
+[73] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1sd0khs/hallucinated_citations_are_polluting_the/
+    Rationale: The text criticizes the negative impact of AI on scientific integrity.
+    Snippet  : Hallucinated citations are polluting the scientific literature. What can be done? - Tens of thousands of publications from 2025 might include invalid references generated by AI, a Nature analysis suggests.
+
+[74] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s1581j/disappointing_the_bears_were_so_memorable_to_me/
+    Rationale: The user expresses disappointment and uses derogatory language to describe AI-generated content.
+    Snippet  : Disappointing. The bears were so memorable to me, now it’s AI slop. Can’t even see the cake inside anymore.
+
+[75] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/technology/comments/1rt52qa/meta_planning_sweeping_layoffs_as_ai_costs_mount/
+    Rationale: The text reports on negative corporate consequences linked to high AI costs.
+    Snippet  : Meta planning sweeping layoffs as AI costs mount
+
+[76] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/technology/comments/1s7dfb3/why_tech_ceos_suddenly_love_blaming_ai_for_mass/
+    Rationale: The text expresses skepticism and criticism toward tech CEOs for using AI as a scapegoat for layoffs.
+    Snippet  : Why tech CEOs suddenly love blaming AI for mass layoffs
+
+[77] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=Ugx9sk_VNOafbOx2F_t4AaABAg
+    Rationale: The comment neutrally acknowledges that the speaker identified necessary improvements for AI.
+    Snippet  : Bro just stated all the things AI needs to improve on 💀
+
+[78] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=Ugy76iBWJTn3n7al4b54AaABAg
+    Rationale: The author interprets positive rhetoric about AI as a euphemism for negative economic outcomes like unemployment.
+    Snippet  : "People will be freed up and able to do all kinds of crazy things" translates into jobless/unemployed
+
+[79] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=Ugz_GGUasZLQ0hUQGQ14AaABAg
+    Rationale: The comment uses an emoji reaction to express personal concern or apprehension regarding AI's impact on their profession.
+    Snippet  : Me watching this as a mid level software engineer at Meta: 👁️👄👁️
+
+[80] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgxCCdZlQrpicfSVKLB4AaABAg
+    Rationale: The text provides a cautionary example of AI failure to illustrate the risks of relying on automated data.
+    Snippet  : A U.S. company recently found out that the A.I. model they were using to track sales and customers was falsifying the data (they called it "Hallucinating"). The company was allocating resources and personnel to areas that the A.I. said w...
+
+[81] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgyWMOyiLPBB0aGrkAR4AaABAg
+    Rationale: The author argues that AI will exacerbate negative human tendencies and societal issues.
+    Snippet  : People used to say the internet was dangerous and would destroy us. They weren’t wrong. Most of us have a screen in front of us 90% of the day. AI will take us further down this rabbit hole, not because it is inherently bad but because h...
+
+[82] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=Ugz54LZonoIMww8U_ZJ4AaABAg
+    Rationale: The author uses dark, cynical language to equate AI-driven 'freedom' with unemployment and self-destruction.
+    Snippet  : “Freed up” = unemployed. “Crazy things” = jumping in front of a train.
+
+[83] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgwZk1gdeJUwvJ8PMPl4AaABAg
+    Rationale: The comment uses a pop-culture reference to highlight the potential for AI to refuse human commands.
+    Snippet  : "Open the pod bay doors, Hal." "I'm sorry, Dave, I'm afraid I can't do that."
+
+[84] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=Ugzm-RaorHlVfK19MTV4AaABAg
+    Rationale: The author expresses disbelief and irony regarding the irony of software engineers creating their own replacements.
+    Snippet  : They used Software engineers to create their own replacement, that is wild.
+
+[85] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgxdpONBRo9AlaiU3mx4AaABAg
+    Rationale: The author highlights the danger of AI's lack of care and potential for large-scale errors due to misaligned incentives.
+    Snippet  : 6:09 "AI doesn't understand or care. It optimizes patterns and incentives, and if those incentives are misaligned, it will confidently do the wrong thing at massive scale without realizing it." - This is actually the truest and most impo...
+
+[86] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=Ugxx5ut8OnUvxNsmd_d4AaABAg
+    Rationale: The comment mocks the speaker for using an AI-generated response to provide advice.
+    Snippet  : Bro answered what should kids study with a ChatGPT answer
+
+[87] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgzWNf6I-xZFx6cnoWx4AaABAg
+    Rationale: The author expresses frustration and resignation regarding the lack of job stability caused by AI.
+    Snippet  : He’s basically saying, get used to not having any stability in your life ever that time is gone you need to adapt and be resilient. You’re needed one day in the next day you’re not get used to it.
+
+[88] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgxRio-ob7wzn4Qtkgd4AaABAg
+    Rationale: The author warns against over-reliance on AI as a singular solution or path.
+    Snippet  : NEVER put all your eggs in ONE basket... AI is that basket.
+
+[89] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgwmMEAuauzg-DNJbep4AaABAg
+    Rationale: The author cynically interprets the speaker's advice as a harsh 'survival of the fittest' scenario.
+    Snippet  : He basically said “study survival of the fittest”. Because we’re all about to get thrown into a whole new world lol.
+
+[90] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=Ugz0h2OScc5UaOiazth4AaABAg
+    Rationale: The author uses insulting language to suggest that CEOs are useless and should be replaced by AI.
+    Snippet  : If AI can replace engineers then it can replace CEOs because they’re basically useless
+
+[91] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=Ugz3f2kHbafKdpx3XNF4AaABAg
+    Rationale: The user expresses agreement and validation regarding a warning about AI.
+    Snippet  : "I am the most cited computer scientist in the World and you'd think that people would heed my warnings!" That really got me.
+
+[92] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgxQavl-kwW4bgCIe-t4AaABAg
+    Rationale: The comment provides a neutral, analytical distinction between two types of computer science education.
+    Snippet  : There's a difference between learning to code and learning Computer Science. The former is the one that is being threatened by AI, while the latter is what is driving that change
+
+[93] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=UgyKckZe8u1grR1nO1l4AaABAg
+    Rationale: The user expresses a pessimistic, fatalistic view that AI development is an unstoppable and dangerous force.
+    Snippet  : Nobody paused and nobody is _ever_ going to pause. If one person pauses, another gets to use that opportunity to get ahead. This is game theory 101. It doesn't matter if that seems illogical it is literally never going to change. This is...
+
+[94] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgxeIADcpnlz9Imfc4l4AaABAg
+    Rationale: The user criticizes the focus on AI sentience, arguing that human misuse and bias are the real problems.
+    Snippet  : Ultimately, the problem with AI is not that it becomes sentient, but that humans use it in malicious ways. What she's talking about doesn't even take into consideration when the humans using AI WANT it to be biased. You feed it the right...
+
+[95] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgwqzRZzX89G0KjK2yd4AaABAg
+    Rationale: The user employs sarcasm to express frustration about the job market impact of AI.
+    Snippet  : Can’t wait to update my CV and add resilience under education. I bet openai will offer me a position in no time!
+
+[96] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=UgykwuD14hzuD3ow9NZ4AaABAg
+    Rationale: The user uses a laughing emoji to mock the idea of AI replacing middle management.
+    Snippet  : Will AI replace middle level CEOs? 😂
+
+[97] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgyEc7AvSk09aBPhGFR4AaABAg
+    Rationale: The comment is a descriptive observation of another person's visible distress during a discussion about AI.
+    Snippet  : the guy who asked if it has the potential to play God, looked like he saw a ghost... he asked REALLY good questions, but legit looked like he was about do throw his phone away, delete all his online accts, and go live in the woods off grid.
+
+[98] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=Ugw9uFp7qlxECvYMEYh4AaABAg
+    Rationale: The user uses a sarcastic step-by-step breakdown to criticize the economic logic of replacing workers with AI.
+    Snippet  : Step 1: create AI to replace workers. Step 2: fire now unnecessary workers to save money. Step 3: why can't anyone afford to buy our products????
+
+[99] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgzMB4jDSV5f8EWKP2h4AaABAg
+    Rationale: The user expresses strong negative sentiment and frustration after losing their job to AI, which they describe as trash.
+    Snippet  : I am a Writer with 21 years of experience, and I lost my job as my company said that they are switching to AI. I checked many content related to my company's domain, all AI generated were repetitive, common and trash
+
+[100] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgybPd18D7j4f90mOE54AaABAg
+    Rationale: The user uses sarcasm to highlight the absurdity of needing to study 'resilience' due to AI-driven job displacement.
+    Snippet  : Next month I'll be starting my Resilience course at the university. I'm Hoping I can get my masters degree in ADAPTABILITY after that 🙌
+
+[101] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgwIMp1RZTyYiK1IpL54AaABAg
+    Rationale: The user expresses interest and support for the idea of an honest AI tool.
+    Snippet  : That'd be cool if you launch honest ai as a website, to actually let people get that direct shocking experience personally
+
+[102] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=UgzKUdyc062NI_Ln_z54AaABAg
+    Rationale: The user expresses anger and disbelief at the disconnect between wealthy proponents of AI and the reality of job loss.
+    Snippet  : Only a rich guy can say people will be free to do more things while jobless. Omg😢
+
+[103] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgyaYy89gWnzhE52YLB4AaABAg
+    Rationale: The user uses insulting language to express strong contempt for those leading AI development.
+    Snippet  : These bucketheads playing with hell. Sick of being led by a bunch of idiots.
+
+[104] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=UgxRPo6mqDcWGfAh1zd4AaABAg
+    Rationale: The user expresses concern and distrust regarding how governments and people will utilize AI technology.
+    Snippet  : I am not worried about AI coming after us but far more worried about how people and governments will use it. At least in the near term.
+
+[105] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgyxPVzeZO0-dlPp-sV4AaABAg
+    Rationale: The user makes a neutral observation about someone's visible existential reaction to an AI discussion.
+    Snippet  : 9:23 Poor dude came there in a good mood, and left with an existential crisis.
+
+[106] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=Ugz_Z83HKXT8BeVPmhh4AaABAg
+    Rationale: The user expresses a desire for ethical priorities in AI development without attacking the technology itself.
+    Snippet  : Still waiting for when we prioritize transparency, wisdom, and kindness while we build these systems.
+
+[107] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgwXUvIMkuEjHkRTxMx4AaABAg
+    Rationale: The user uses sarcasm to suggest that AI will lead to unemployment and societal decay.
+    Snippet  : Resilience. How to be unemployed. How to scavenge for scraps. Those kinds of skills.
+
+[108] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=Ugzy3mZf251H-oTxsdJ4AaABAg
+    Rationale: The comment uses emojis to humorously depict the absurdity of AI roleplay.
+    Snippet  : 👨: "Pretend you're a scary robot" 🤖: "I'm a scary robot" 👨: 😨
+
+[109] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=Ugzy2FkWBitokr6XdZZ4AaABAg
+    Rationale: The user expresses strong frustration and skepticism, arguing that AI has failed to solve societal problems.
+    Snippet  : I still do not understand how AI is "helping" humanity. Has it obliterated poverty? Reduced crimes? Tackled climate change? providing purposeful living? It is doing the opposite. I remember 5 years ago, I was preparing a presentation on ...
+
+[110] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgyEgx6W4_WThoxPA2Z4AaABAg
+    Rationale: The user expresses mild skepticism regarding the authenticity of AI responses.
+    Snippet  : All these jailbroken AIs sound like they've been coached to say this stuff.
+
+[111] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=UgwynK2byfsw_-ZO1Ot4AaABAg
+    Rationale: The user expresses a pessimistic view on the future of employment due to AI.
+    Snippet  : if you are not retiring in the next 10-15 years you are screwed
+
+[112] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=Ugzvyp0I058q87ioa9N4AaABAg
+    Rationale: The user advocates for the importance of public discourse regarding AI ethics.
+    Snippet  : Talks like this are critical not just for technologists, but for everyone. The conversation around AI ethics needs to be had.
+
+[113] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgynJt-ehUhuyZVl9K54AaABAg
+    Rationale: The user dismisses the feasibility of ethical AI development with a cynical tone.
+    Snippet  : "If we choose transparency, wisdom and kindness..." Ok - we are screwed.
+
+[114] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=Ugzzhdff5td5N2FAW1N4AaABAg
+    Rationale: The user expresses fear and concern regarding the militarization of AI.
+    Snippet  : They're already using AI in war... We're rapidly approaching Terminator/Matrix versions of the future.
+
+[115] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=UgwAZdTfcQUt6TUdGbp4AaABAg
+    Rationale: The user quotes literature to warn about the potential for AI to facilitate human enslavement.
+    Snippet  : "Once, men turned their thinking over to machines in the hope that this would set them free. But that only permitted other men with machines to enslave them." DUNE by Frank Herbert
+
+[116] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=Ugx9TMePNBE4uH3DJK94AaABAg
+    Rationale: The user uses an analogy to criticize the prioritization of immediate concerns over long-term AI risks.
+    Snippet  : 2 people are falling out of a plane. One says to the other "why worry about the hitting the ground problem that might hypothetically happen in the future, when we have a real wind chill problem happening right now."
+
+[117] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgyKlkwpQEsvRsgCgip4AaABAg
+    Rationale: The user neutrally summarizes two competing perspectives on AI risk and utility.
+    Snippet  : So basically 'Stop worrying about future harm, real harm is happening right now.' and 'We need to build tools that can inform us about the pros and cons of using various A.I. models.'
+
+[118] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgwHqeUcFeWwY_BeopZ4AaABAg
+    Rationale: The user criticizes the focus of the discussion, arguing it ignores more fundamental alignment problems.
+    Snippet  : The "dangers" identified here aren't insignificant, but they are actually the easiest problems to correct or adjust for. The title suggests that these problems are more import or more dangerous than the generally well-understood problem ...
+
+[119] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=Ugw0GjKu8mhVUyUwopZ4AaABAg
+    Rationale: The user expresses a cautious, measured desire to slow down AI development.
+    Snippet  : Yes, I believe we are way ahead of ourselves. We should really slow down and think about what we are doing.
+
+[120] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgxbYoUaQWDVM0InxMN4AaABAg
+    Rationale: The user expresses frustration with current AI data practices regarding artists' rights.
+    Snippet  : For Artists it should be a choice of "Opting IN" NOT "Opting OUT" as in. If the artist chooses to allow their work to be assimilated by AI they can choose to do that ie. "Opt In". Not "OPTING OUT" meaning it's currently possible & even l...
+
+[121] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=UgwKJRxDwSFdZWNJwkJ4AaABAg
+    Rationale: The author expresses concern about the negative economic impact of AI on employment.
+    Snippet  : AI is coming for everyone's job not just devs.
+
+[122] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgwxULmQdzOA0lqwB9B4AaABAg
+    Rationale: The comment takes a neutral stance by shifting the focus from the technology itself to human intent.
+    Snippet  : The tech isn't dangerous; the intent of the people who use it is dangerous. Same as it ever was.
+
+[123] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgycuOf9i_XtSupUIL54AaABAg
+    Rationale: The author uses insulting language to accuse legislators of corruption and incompetence.
+    Snippet  : Legislators will not use their tools to aid in writing laws for AI. They will hold out their hands and accept the legal bribes which is business as usual. Using AI tools requires knowledge and work. These concepts are not common among le...
+
+[124] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=UgyBaASqwSjF19cx-6Z4AaABAg
+    Rationale: The author uses sarcasm to express a cynical view regarding the potential for AI abuse.
+    Snippet  : Yeah, let's focus on copyright infringements and misinformation on the Internet. AI definitely won't be abused for more nefarious purposes.
+
+[125] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LV-Uu7GvpUo&lcdId=UgyIZDdfZIrhqQnG5F94AaABAg
+    Rationale: The comment uses a dismissive tone to critique corporate motivations regarding AI.
+    Snippet  : Then by that logic, AI will replace Zuckerberg- saving billions more for the benefit of the shareholders.
+
+[126] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=eXdVDhOGqoE&lcdId=Ugw2sR-B8GP-ZZJ9XM14AaABAg
+    Rationale: The author provides a personal anecdote to highlight the negative impact of AI on artists' intellectual property.
+    Snippet  : My wife is a portrait artist. I just searched her on SpawningAI by name, and the first 2 images were her paintings (undoubtedly obtained from her web-based portfolio).
+
+[127] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=OK0YhF3NMpQ&lcdId=UgwOyCDS3Df6sWm8O-14AaABAg
+    Rationale: The author uses a mocking tone to criticize someone's priorities regarding AI development.
+    Snippet  : My guy doesn't want kids to learn, he wants ai models lol
+
+[128] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=qe9QSCF-d88&lcdId=UgyMCVUCUFOR8AZqnc54AaABAg
+    Rationale: The author uses a dark, humorous framing to suggest AI is inherently hostile to humans.
+    Snippet  : AI watching this video: "Get rid of humans? Good idea!"
+
+[129] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SbEqMkxEzvA&lcdId=UgwMLmfZmPgfTvdsknl4AaABAg
+    Rationale: The comment is a neutral, factual inquiry about the content of a video.
+    Snippet  : wtf happened to the robot with the baseball bat breaking out of the glass room?

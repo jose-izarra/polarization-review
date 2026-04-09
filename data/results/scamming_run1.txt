@@ -1,0 +1,508 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : scamming
+Assessed at    : 2026-04-09T10:08:16.754666+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 32.83 / 100
+Sample size    : 91
+Rationale      : 91 items scored. Stance distribution: 11 for / 52 against / 28 neutral. Avg animosity: 2.19. Avg sentiment: 2.35. Platforms: gnews: 2, reddit: 52, youtube: 37.
+
+--- Stance Distribution ---
+  For       : 11
+  Against   : 52
+  Neutral   : 28
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.27 | Animosity: 1.64
+  Against  | Sentiment: 1.69 | Animosity: 2.75
+  Neutral  | Sentiment: 2.82 | Animosity: 1.36
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 52
+  youtube     : 37
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.wbrz.com/news/new-jersey-man-arrested-for-scamming-kentwood-senior-citizen-out-of-hundreds-of-thousands-of-dollars-in-gold
+    Rationale: The text is a factual news report about an arrest without expressing personal opinion.
+    Snippet  : New Jersey man arrested for scamming Kentwood senior citizen out of hundreds of thousands of dollars in gold. New Jersey man arrested for scamming Kentwood senior citizen out of hundreds of thousands of dollars in gold
+
+[2] gnews | unknown | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.thesun.co.uk/news/38511041/hollywood-influencer-christian-garcia-scam-fraud-claims/
+    Rationale: The text reports on allegations of fraud using a derogatory nickname to describe the subject.
+    Snippet  : Hollywood influencer dubbed 'the male Anna Delvey' after 'scamming people out of thousands'. Several alleged victims have come forward with claims about Christian Garcia
+
+[3] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/interestingasfuck/comments/1s6u1yv/in_2016_in_china_there_was_the_ghost_drivers_scam/
+    Rationale: The text provides a neutral, descriptive account of a past scamming method.
+    Snippet  : In 2016 in China, there was the “ghost drivers” scam, where uber drivers would make their profile’s look unsettling so you would cancel and they could collect cancellation fee
+
+[4] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/StockMarketIndia/comments/1rrhrrd/thaad_air_defence_the_most_ineffective_missile/
+    Rationale: The text uses aggressive, insulting language to condemn a defense system as a scam.
+    Snippet  : 🇺🇸THAAD Air Defence - The most ineffective missile defence system in the world. It is the biggest defence manufacturing scam in the history of the world. US was pressuring India to ditch the Russian S-400 for this Junk
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/woodworking/comments/1rvboh5/have_i_been_scammed/
+    Rationale: The text is a neutral inquiry seeking information or advice.
+    Snippet  : Have I been scammed?
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/isthisAI/comments/1s6i365/is_this_picture_al_my_dad_is_being_scammed_by/
+    Rationale: The text expresses concern and seeks help regarding a potential scam affecting a family member.
+    Snippet  : Is this picture Al? My dad is being scammed by this woman for money and he's convinced she's real. Help me prove she's Al before he goes broke. The photo looks too perfect and high quality to be a real selfie to me.
+
+[7] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/IndiaTech/comments/1s4gvr1/help_i_ordered_ghadi_detergent_powder_1kg_and/
+    Rationale: The text expresses frustration and accuses a company of scamming the user.
+    Snippet  : HELP i ordered Ghadi Detergent Powder 1Kg and amazon is trying to scam me with some old table fan that doesnt even work
+
+[8] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/remoteworks/comments/1rot1ft/college_scammed_them/
+    Rationale: The text makes a brief, critical claim that a college engaged in scamming.
+    Snippet  : College scammed them
+
+[9] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/FluentInFinance/comments/1s8jo6n/the_biggest_legal_scam/
+    Rationale: The text uses a dismissive label to characterize something as a legal scam.
+    Snippet  : The biggest legal scam.
+
+[10] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1sb5l2y/900_pot_scam/oe136nh/
+    Rationale: The text provides a neutral, anecdotal account of a past professional experience involving a scam.
+    Snippet  : Some years ago I worked at a bank. Old lady came it to withdraw some cash, higher than usual. We asked her if she had a bigger purchase planned. Turns out she was approached at the supermarket parking lot by a salesman that claimed he ju...
+
+[11] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/SolarAmerica/comments/1s1kmud/scam_of_the_century/
+    Rationale: The text uses a hyperbolic phrase and an emoji to mock a situation.
+    Snippet  : Scam of the century 😂
+
+[12] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/podcastculture/comments/1scuv41/tim_dillon_just_declared_that_maga_is_the/
+    Rationale: The text reports a highly critical, politically charged statement made by a public figure.
+    Snippet  : Tim Dillon just declared that MAGA is “the greatest scam in history.”
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/SipsTea/comments/1rtgt5v/they_must_be_the_easiest_people_to_scam/
+    Rationale: The text expresses a condescending and judgmental view toward a group of people.
+    Snippet  : They must be the easiest people to scam
+
+[14] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/nottheonion/comments/1sc3zzv/mount_everest_guides_allegedly_poisoned_tourists/
+    Rationale: The text reports on serious criminal allegations involving poisoning and fraud.
+    Snippet  : Mount Everest guides allegedly poisoned tourists in insurance scam
+
+[15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/woodworking/comments/1rvboh5/have_i_been_scammed/oard200/
+    Rationale: The text offers pragmatic, neutral advice regarding a potentially fraudulent situation.
+    Snippet  : Sounds ridiculously sketchy, but honestly I think you're well past the point where worrying about it will do you any good. If it's a scam, stolen, etc, there's zero chance they gave you any information that would legitimately allow you t...
+
+[16] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/pcmasterrace/comments/1rpmtt8/thermal_grizzly_has_been_hit_by_a_huge_metal_scam/
+    Rationale: The text reports on a negative event involving a scam, expressing frustration regarding the situation.
+    Snippet  : Thermal Grizzly has been hit by a huge metal scam
+
+[17] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/ScammersPH/comments/1salw9q/a_25yearold_scammed_multiple_people_totaling_90/
+    Rationale: The text reports on criminal activity, framing the perpetrator's actions as a serious negative event.
+    Snippet  : A 25-year-old scammed multiple people, totaling ₱90 million
+
+[18] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s6evh9/they_sell_scratch_tickets_but_wont_cash_winning/
+    Rationale: The text describes a deceptive business practice, criticizing the entity for refusing to honor winnings.
+    Snippet  : They sell scratch tickets but won’t cash winning scratch tickets
+
+[19] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/bollywood/comments/1s7g7sy/biggest_scams_ever_pulled_in_indian_cinema/
+    Rationale: The text is a descriptive title for a list or discussion about historical scams in cinema.
+    Snippet  : Biggest Scams ever pulled in Indian Cinema
+
+[20] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/StockMarket/comments/1sfiqc1/elon_musk_is_the_biggest_scam_artist_in_history/
+    Rationale: The text uses strong, accusatory language to label an individual as a scam artist and criticizes their business promises.
+    Snippet  : Elon Musk is the biggest scam artist in history and we are all in trouble Tesla was promising cars that could drive cross country and charge themselves with no driver absolutely by the end of 2018. Nowhere even close as of April 2026. Te...
+
+[21] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://reddit.com/r/Brawlstars/comments/1rpophy/we_have_been_scammed/
+    Rationale: The text expresses a direct, negative personal experience of being victimized.
+    Snippet  : We have been scammed
+
+[22] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/PhiladelphiaEats/comments/1rul2dz/beware_montco_restaurant_scammed_me_over_4500/
+    Rationale: The text uses urgent, accusatory language to warn others about a significant financial loss.
+    Snippet  : BEWARE: Montco Restaurant SCAMMED me over $4,500!
+
+[23] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/povertyfinance/comments/1sexra2/going_to_college_was_a_fucking_scam/
+    Rationale: The text expresses deep frustration and resentment toward the college system, labeling it a scam due to poor personal outcomes.
+    Snippet  : Going to college was a fucking scam. Graduating in 4 weeks with nothing lined up. No internships, no work related experience other than dead end jobs. I worked full time while being in college and did it improve my job prospects?? The an...
+
+[24] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/isthisAI/comments/1s6i365/is_this_picture_al_my_dad_is_being_scammed_by/od23vxw/
+    Rationale: The text expresses concern that an individual is likely being victimized.
+    Snippet  : Even if its not AI hes probably still being scammed
+
+[25] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/isthisAI/comments/1sfdarj/am_i_being_scammed_out_of_my_cash_with_some/
+    Rationale: The text is a neutral inquiry asking for help to determine if a situation is fraudulent.
+    Snippet  : Am I being scammed out of my cash with some clever AI handwriting in this picture?
+
+[26] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/solotravel/comments/1rowotb/one_month_in_india_struggling_with_scam_fatigue/
+    Rationale: The text describes a feeling of exhaustion and frustration caused by repeated negative interactions while traveling.
+    Snippet  : One month in India: Struggling with "Scam Fatigue" and feeling dehumanized as a solo traveler Hi everyone, I’ve been traveling solo in India for a month now. I want to start by saying it’s a beautiful country with incredible sights, but ...
+
+[27] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/woolworths/comments/1rysedy/stop_being_a_sucker_at_the_coleswoolies_checkout/
+    Rationale: The text uses critical, cynical language to describe corporate checkout experiences as a psychological scam.
+    Snippet  : Stop being a "sucker" at the Coles/Woolies checkout. The "Halo Laundering" scam we’re all falling for. Is it just me, or has the checkout experience at Coles and Woolworths become a psychological thriller? We’re already dodging security ...
+
+[28] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/ProgressiveHQ/comments/1rs93ry/this_was_yesterday_look_at_them_after_10_years/
+    Rationale: The text uses highly aggressive and dehumanizing language to condemn the exploitation of people based on race and religion.
+    Snippet  : This was yesterday. Look at them, after 10 years they're still there, and they'll never leave. How many times can you lie to them, scam them, and humiliate them? Race and religion—the most dangerous combination.
+
+[29] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/isthisAI/comments/1s8oihr/i_have_a_neighbor_that_believes_shes_walking_to/
+    Rationale: The text expresses concern for a neighbor being manipulated by a likely AI-generated scam.
+    Snippet  : I have a neighbor that believes she's walking to Pink Floyd Roger Waters. I keep telling her it's not, she sent me this video of him saying my name. I know this has to be AI bc he makes her give him money all the time.
+
+[30] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/90s/comments/1rtayjy/one_of_the_biggest_fraud_in_the_90s_she_made_so/
+    Rationale: The text uses strong, derogatory language to label an individual as a fraud and a scam artist.
+    Snippet  : One of the biggest fraud in the 90's. She made so many appearances on Montel and was just a scam artist
+
+[31] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/isthisAI/comments/1s4b69n/my_mother_was_sent_this_video_of_two_dogs_she/
+    Rationale: The user is neutrally describing a suspicious situation to seek advice.
+    Snippet  : My mother was sent this video of two dogs, she would like to buy one, but after texting the seller, thinks it's a scam, and I don't know if the video is real.
+
+[32] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://reddit.com/r/BangaloreMeetups/comments/1ry7n2v/so_i_scammed_a_scammer/
+    Rationale: The user expresses satisfaction in outsmarting a scammer.
+    Snippet  : So I scammed a scammer!
+
+[33] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1s3u6i2/fin_toothpaste_scam/
+    Rationale: The user uses aggressive language to express frustration toward a specific scam.
+    Snippet  : F**in Toothpaste Scam
+
+[34] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Scams/comments/1sa3uke/us_my_ex_fell_for_a_romance_scam_the_bank_finally/
+    Rationale: The user is describing a distressing situation involving a scam with a tone of concern.
+    Snippet  : [US] My Ex fell for a romance scam. The bank finally convinced her, but now has 30K sitting in her account. So this scammer sent my ex-gf/baby mama over 30k asking for some of it back. The bank let her know and this was two days ago. I k...
+
+[35] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/2007scape/comments/1sdf4au/psa_for_players_who_are_just_getting_their_first/
+    Rationale: The user is warning others about manipulative behavior in a gaming context.
+    Snippet  : PSA for players who are just getting their first mega rares If you’re at the point where you’re getting your first mega rare or expensive item, listen up: The people at ToA lobby and GE aren’t being nice to you because you bought them so...
+
+[36] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Scams/comments/1rum863/us_a_call_from_american_express_was_a_very_well/
+    Rationale: The user describes a deceptive experience with a critical tone.
+    Snippet  : [US] A call from "American Express" was a very well executed scam I got a call from a person who claimed they were from American Express. The knew my name & asked me if I had made a charge at a firearms store in DC. No. They then asked i...
+
+[37] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1sb5l2y/900_pot_scam/oe0x28m/
+    Rationale: The user expresses sadness and disapproval regarding the targeting of a vulnerable person.
+    Snippet  : Sad that they're trying to scam an innocent old lady
+
+[38] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Scams/comments/1s5r9na/us_pretty_sure_this_is_just_a_scam_but_wanting_to/
+    Rationale: The user is neutrally asking for verification regarding a potential scam.
+    Snippet  : [US] Pretty sure this is just a scam but wanting to double check.
+
+[39] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/interestingasfuck/comments/1s6u1yv/in_2016_in_china_there_was_the_ghost_drivers_scam/od4lrqb/
+    Rationale: The user uses an insult to describe a driver they believe was attempting to scam them.
+    Snippet  : I used to live there, another minor minor scam was the driver trying to get you to cancel for whatever reason to get that same cancellation fee. Last time, I knew he was doing it, so I just didn’t cancel and made him do it. Dick
+
+[40] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/isthisAI/comments/1s6i365/is_this_picture_al_my_dad_is_being_scammed_by/od25es4/
+    Rationale: The user is dismissive and skeptical of the legitimacy of the content.
+    Snippet  : Wild guess: every photo is in a different room and they never had a VIDEO call? Also, even if it is not AI - scam.
+
+[41] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/antiMLM/comments/1ryvjp0/friends_stay_away_from_herbalife_mlm_scam_use/
+    Rationale: The user strongly warns against a specific company, framing it as a harmful scam.
+    Snippet  : Friends, stay away from Herbalife MLM scam. Use this post as a caution to all your loved ones. Herbalife sells expensive diet supplements as meal replacements and market them as a “get skinny quick trick.” My grandfather, at the time he ...
+
+[42] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/isthisAI/comments/1sfdue3/no_more_of_those_videos_showing_those_people_with/
+    Rationale: The user expresses frustration and disapproval toward AI-generated deceptive content.
+    Snippet  : No more of those videos showing those people with their "failing business" They are all AI generated scams Those videos that usually have some sob story on tiktok with a person saying they make these hand crafted stuff that get zero sale...
+
+[43] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/antiMLM/comments/1rs898a/confronted_an_amway_scammer_at_target_today/
+    Rationale: The user describes a confrontational interaction with someone they identify as a scammer.
+    Snippet  : Confronted an Amway scammer at target today Just a little context before I get into the story - I rarely visit Target, maybe only a few times a year. However, each time I’ve been to my specific Target, I’ve been cold-approached by someon...
+
+[44] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/Scams/comments/1rxit7d/us_my_dad_was_scammed_out_of_100k_and_then_he_died/
+    Rationale: The user recounts a tragic personal story involving a scam with a tone of deep distress.
+    Snippet  : [us] My dad was scammed out of 100k+ and then he died.. \- 100k in credit card debt \- 7 phone numbers and iPhones added to his Verizon account. \- Retirement cashed out and sent through gift cards. \- multiple numbers texting his phone ...
+
+[45] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/woodworking/comments/1rvboh5/have_i_been_scammed/oarc4ci/
+    Rationale: The user expresses approval of a deal regardless of the potential for it being a scam.
+    Snippet  : Looks great to me. Scam or not, you got a deal.
+
+[46] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/Scams/comments/1rphjxt/us_chase_scam_that_nearly_got_me/
+    Rationale: The author expresses frustration regarding a near-miss with a scam and aims to warn others.
+    Snippet  : [US] Chase scam that nearly got me… I want to spread awareness bc this one ALMOST got me and I hope it helps people avoid getting scammed. Today I received a call from Chase Bank (my bank) that I verified immediately by Google searching ...
+
+[47] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Scams/comments/1rri85r/facebook_market_place_scam/
+    Rationale: This is a brief, descriptive title identifying a specific type of scam.
+    Snippet  : Facebook Market place scam
+
+[48] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/isthisAI/comments/1s4ooe8/friend_is_dealing_with_what_im_sure_are_scammers/
+    Rationale: The author is critical of the scammers targeting their friend and identifies the deceptive nature of the evidence provided.
+    Snippet  : Friend is dealing with what I’m sure are scammers scamming them out of money for a car. They sent this image to explain why they never delivered the car. I think it’s AI because you can’t read anything that should look like letters.
+
+[49] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Scams/comments/1rt95nw/us_is_this_check_i_received_in_the_mail_a_scam_i/
+    Rationale: The author is asking a neutral, factual question to determine if they are being targeted by a scam.
+    Snippet  : [US] Is this check I received in the mail a scam? I have never heard of this one.
+
+[50] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/Scams/comments/1rvnwrp/usyeah_ive_fs_been_scammed/
+    Rationale: The author expresses disappointment and frustration about having been a victim of a scam.
+    Snippet  : [US]yeah, ive fs been scammed
+
+[51] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Scams/comments/1sdq6ej/uswas_asked_to_buy_baby_formula_was_it_a_scam/
+    Rationale: The author is seeking clarification on whether a specific interaction was a scam or a genuine request for help.
+    Snippet  : [US]was asked to buy baby formula, was it a scam? Today I was out grocery shopping, a lady approached me with a very small toddler and a newborn baby. she was very apologetic and nice. She explained her food stamps had been cut off and s...
+
+[52] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/mildlyinfuriating/comments/1sb5l2y/900_pot_scam/oe14d0h/
+    Rationale: The author uses strong, accusatory language to condemn a company for exploiting vulnerable people.
+    Snippet  : Royal prestige preys on the elderly, I’ve seen people financing sets of pots and coffee makers to the point of going into debt. They push “health benefits” and other false narratives. Shame on them.
+
+[53] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Scams/comments/1rzi4og/uscascam_alert_fragrancexcom_shipped_me_walmart/
+    Rationale: The author is reporting a negative experience with a vendor, framing it as a scam alert.
+    Snippet  : [US][CA][SCAM ALERT] FragranceX.com shipped me Walmart Honey instead of Dior Homme Intense (150ml)
+
+[54] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Scams/comments/1rq578y/us_threatening_whatsapp_scam/
+    Rationale: The author identifies a threatening communication as a scam.
+    Snippet  : [US] Threatening whatsapp scam
+
+[55] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=bS6uGx_GeyM&lcdId=UgxTSktyNBpGLqYy-1J4AaABAg
+    Rationale: The author uses the term 'scam' to express annoyance at being misled by a video's content.
+    Snippet  : The only scam here is the video tricked me into thinking this was Zack D Films🥀🥀
+
+[56] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgzIEwjGeHzJKHlQipd4AaABAg
+    Rationale: The author provides strong praise for an educational video about scamming.
+    Snippet  : this is actually the most easily comprehensible informative video about scamming i’ve ever seen
+
+[57] youtube | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgzajU3itL8Axw63bwl4AaABAg
+    Rationale: The author uses a rhetorical question to cast doubt on the legitimacy of 'get rich quick' schemes.
+    Snippet  : Always ask yourself, “if the person has the secret sauce to quick riches, why would they be selling the recipe?”
+
+[58] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=e-lWvcEECTY&lcdId=UgyNrBWYALpkeSnG6X14AaABAg
+    Rationale: The author neutrally describes their own curiosity about the topic of scamming.
+    Snippet  : I actually searched "how to scam people". 😅 I don't know why, that idea just came to my mind.
+
+[59] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgwNTtMBMOgT5cHB0ud4AaABAg
+    Rationale: The statement is an ambiguous, likely humorous or nonsensical claim.
+    Snippet  : I am a scam
+
+[60] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZGOlEsX1PuI&lcdId=UgweQpxpNmOZtWnNGjB4AaABAg
+    Rationale: The author mocks a content creator by pointing out the discrepancy between their claims and their actual earnings.
+    Snippet  : “6 figures a week” shows his youtube channel has made $2k in the last 30 days😭
+
+[61] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgzHtnN6E3TKnQOWQmh4AaABAg
+    Rationale: The user is quoting a perspective attributed to scammers without expressing personal approval or condemnation.
+    Snippet  : "There is no un-scammable person. Only scripts that don't fit" - Scammer's manifesto
+
+[62] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgxEgnCXbo2xfKa8Z714AaABAg
+    Rationale: The user expresses frustration with current legal consequences for fraud.
+    Snippet  : Punishment for Fraud needs to be way higher.
+
+[63] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=bS6uGx_GeyM&lcdId=UgzfoJBLFEPwIY1dgwZ4AaABAg
+    Rationale: The user is providing a neutral, analytical breakdown of a mathematical scenario involving a scam.
+    Snippet  : For those who don’t understand, the woman at first loses $10 and gets $9 back so she has lost $1 so when the scammer give her $1 back she has not lost any money so when the scammer gives her $10 she has earned $10 but when she gave him t...
+
+[64] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgyxqahXUwbYylSRpsB4AaABAg
+    Rationale: The user expresses appreciation for educational content that helps prevent scamming.
+    Snippet  : I don't ever plan on scamming, it's unethical and risky, but I appreciate you making these videos so it's easier to keep safe and dodge scammers
+
+[65] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZGOlEsX1PuI&lcdId=UgwY6F4Hv1HTMeEgz6d4AaABAg
+    Rationale: The user uses mocking laughter to point out the hypocrisy of someone continuing to scam.
+    Snippet  : The Whole point of him showing he makes 2k off music is to show he still scams lmaooo
+
+[66] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZGOlEsX1PuI&lcdId=Ugy3YVJzElhm5pz8Tnd4AaABAg
+    Rationale: The user criticizes the creator for promoting a scammer's funnel under the guise of education.
+    Snippet  : This is so ironic. Brandon Buckingham is positioning his video as a way to help prevent you from getting scammed, while also driving traffic directly into Punchmade Dev's funnel for his paid communities, where he teaches you how to scam....
+
+[67] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=gWK1-0RkCrY&lcdId=UgxNHg2C_4j0uUzc2S54AaABAg
+    Rationale: The user is using sarcasm to mock the hypocrisy of a scammer complaining about being scammed.
+    Snippet  : Scammer : BRO NO SCAM BACKS!!!
+
+[68] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgzRgBYytWRY5t4fgRh4AaABAg
+    Rationale: The user expresses strong frustration and blame toward scammers for damaging business trust and ad markets.
+    Snippet  : Competing for ad space with scammers is the most frustrating. Fraudsters inflate ads prices damage the reputation of the niche and make it harder for people to trust businesses.
+
+[69] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=Ugwn-rZpNbbK5bTE3Ph4AaABAg
+    Rationale: The user provides a simple, factual piece of advice on avoiding scams.
+    Snippet  : Step 1 how to avoid scams: don’t trust scammers
+
+[70] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgxKzXfIIF250_3-zLF4AaABAg
+    Rationale: The user criticizes the creator for promoting products they perceive as scammy.
+    Snippet  : Smart of you to include a Trade Coffee add in this video, which is only a tiny bit scammy, instead of the super scammy stuff you sometimes push, like the anti hangover pills.
+
+[71] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZGOlEsX1PuI&lcdId=Ugx4sxKlV07dOQHoCQF4AaABAg
+    Rationale: The user mocks the subject of the video and their customers using dismissive language.
+    Snippet  : PunchMade Fraud isn’t scamming anyone, but the people who buy his fake ass course. 😂
+
+[72] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=e-lWvcEECTY&lcdId=UgzRRkXNf3jhOywmFGJ4AaABAg
+    Rationale: The user is making a skeptical, humorous observation about the nature of the content.
+    Snippet  : Plot twist... maybe this itself is a scam 🧐
+
+[73] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e-lWvcEECTY&lcdId=UgxZrN4cZe4FuH0eXR14AaABAg
+    Rationale: The user employs dark, sarcastic humor to express impatience with the video length.
+    Snippet  : I don’t have 12 minutes to find out how to scam someone , I need to scam people now !
+
+[74] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgzaafPrgX0KQyuzzQN4AaABAg
+    Rationale: The user uses dark humor to express approval of the scamming techniques shown in the video.
+    Snippet  : Thank you bro I was bout to rob someone but this works better instead 🙏🙏🙏
+
+[75] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgzbGE6urshljzC7ed54AaABAg
+    Rationale: The user uses a cynical metaphor to describe the content of the video.
+    Snippet  : 4 years of criminal college in 10 minutes.
+
+[76] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=bS6uGx_GeyM&lcdId=UgzMbCyHox8K69PoScl4AaABAg
+    Rationale: The comment provides a neutral, step-by-step mathematical breakdown of a scam scenario.
+    Snippet  : For those who couldn’t figure it out here is a full breakdown 😅 You start with 10. You give 9 (10-9=1) The cashier tells you that you are 1 short (1-1=0) You ask for a 10 dollar bill in exchange (0+10=10) so you only have 10 btw You then...
+
+[77] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=bS6uGx_GeyM&lcdId=Ugyl0hgtz2Sno5vR6np4AaABAg
+    Rationale: The user expresses contempt by suggesting victims deserve to be scammed.
+    Snippet  : If you're getting scammed like this then you absolutely deserve it 😂
+
+[78] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=e-lWvcEECTY&lcdId=UgzQVRk_CqZrjvPq9ZN4AaABAg
+    Rationale: The user expresses mild approval and optimism regarding the video's educational value.
+    Snippet  : This video could help a lot of people in realizing how to stay safe online
+
+[79] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgxXA3E2Ny0T0Y_s-bx4AaABAg
+    Rationale: The user provides a critical, analytical list of reasons for the rise in scams with a pessimistic tone.
+    Snippet  : 5 Main reasons why scams are on the rise: 1 - Nobody bothers in checking anymore 2 - Fraud is exciting, reality is depressing 3 - Fraud move faster than we do 4 - People are desperate 5 - The decline of journalism
+
+[80] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgyQe9-oIbD7EnPPw6R4AaABAg
+    Rationale: The user expresses appreciation for the practical advice provided in the video.
+    Snippet  : Bro just gave me the game on how to NOT get scammed
+
+[81] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgyBFKd7baI7qnfMc3h4AaABAg
+    Rationale: The user expresses frustration and disappointment regarding the lack of consequences for scammers and societal failure.
+    Snippet  : It's depressing... Really. To see that so many scammers are jumping from scam to scam with no consequences. I personnally think that education and society broady are failing to provide general public with critical thinking to avoid falli...
+
+[82] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=UgzWfyiLt4BvfZpY6wB4AaABAg
+    Rationale: The user expresses a conflicted stance, criticizing scammers while admitting satisfaction when specific wealthy individuals are targeted.
+    Snippet  : While I wish there were fewer scams in the world and that crooks didn't get more investment than honest people, I have a hard time fully feeling bad about things that cause scumbags like Marc Andreessen to lose money.
+
+[83] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=Ugzv4R-uYhhfae0SRuB4AaABAg
+    Rationale: The comment uses a dismissive, sarcastic framing to describe scamming as a side hustle.
+    Snippet  : If you don't get caught, you can almost call it a sidehussle
+
+[84] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgxrKWGTdia85-v3leJ4AaABAg
+    Rationale: The user uses mocking and insulting language to criticize the hypocrisy of someone teaching about scams while allegedly scamming others.
+    Snippet  : LMFAO teaching people about 20 different scams while actively trying to scam them is wild😂 like literally trying to beat people into paying you for some Untold information that used to be free, but is no longer free…😑😂😂😂😂 genius
+
+[85] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZGOlEsX1PuI&lcdId=UgyD7uSyS6xt9-AkcCV4AaABAg
+    Rationale: The user expresses strong disapproval and sadness regarding the victimization of the elderly.
+    Snippet  : They rip off your grandparents. This isn't flexing. This is sad.
+
+[86] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=gWK1-0RkCrY&lcdId=Ugy84bmBa3iMog-8CSV4AaABAg
+    Rationale: The user expresses strong admiration for the creator and uses dehumanizing language ('vile con artists') toward scammers.
+    Snippet  : Outstanding job, *Strongwidget* I am so glad youre out there battling these vile con artists. We must take every precaution to protect the general people and the elderly from these vile con artists! Bravo to vou! You ought to be awarded ...
+
+[87] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgwooWaLuiLmrS3Tzst4AaABAg
+    Rationale: The user provides high praise for the quality and information provided in the video.
+    Snippet  : This is actually one of the best edited well informed video on scamming I might have ever seen!
+
+[88] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WD065AplgiU&lcdId=Ugz0iw-j5qTFGZniL0Z4AaABAg
+    Rationale: The user expresses frustration and irony regarding the presence of scam ads on a video about scams.
+    Snippet  : Love that a video about influencer scams, attracts ads featuring obvious low level investment influencer scams
+
+[89] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=gWK1-0RkCrY&lcdId=UgxjEfX24mc5etKuF394AaABAg
+    Rationale: The user expresses strong admiration for the creator while criticizing the inaction of government and security companies.
+    Snippet  : This guy does more to prevent and stop online scammers than the FBI *Strong widget* YOU, SIR.are a modern-day tech hero!!!! Why doesnt federal government or major security companies!!!!
+
+[90] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e-lWvcEECTY&lcdId=UgwhPiaWyA0sfrQ2p0Z4AaABAg
+    Rationale: The user makes a critical, dismissive observation about the prevalence of scam-like content on YouTube.
+    Snippet  : You just described lots of shopify channels on youtube.
+
+[91] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=cRUpM9MS3-k&lcdId=UgzaRvqoAFvcJKaeTtN4AaABAg
+    Rationale: The author uses a dismissive and mocking tone toward the victims of the scam for their lack of attention.
+    Snippet  : ALL THE PEOPLE WHO SENT HIM A TEXT DIDNT PAY ENOUGH ATTENTION TO THE VIDEO LOL.
