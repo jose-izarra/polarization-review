@@ -1,0 +1,348 @@
+========================================================================
+  MODEL BIAS ABLATION STUDY
+========================================================================
+  Description : Model bias ablation study — same items assessed by different LLMs
+  Date        : 2026-04-09 10:52 UTC
+  Model       : gemini-flash-lite  (gemini-3.1-flash-lite-preview)
+  Provider    : gemini
+  Note        : Default model used in production
+  Runs        : 3 per scenario
+  Scenarios   : abortion, gun_control, nasa_funding, donald_trump
+========================================================================
+
+========================================================================
+  Scenario : abortion
+  Expected : ?
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 33.15 / 100
+  Sample size  : 114
+  Elapsed      : 53.36s
+  Status       : ok
+  Rationale    : 114 items scored. Stance distribution: 21 for / 45 against / 48 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.
+
+  Stance Distribution
+    For       : 21
+    Against   : 45
+    Neutral   : 48
+
+  Item Averages By Stance
+    For      | Sentiment: 2.71 | Animosity: 2.05 | n=21
+    Against  | Sentiment: 2.07 | Animosity: 2.71 | n=45
+    Neutral  | Sentiment: 2.75 | Animosity: 1.31 | n=48
+
+  Source Breakdown
+    gnews       : 1
+    reddit      : 53
+    youtube     : 60
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 33.15 / 100
+  Sample size  : 114
+  Elapsed      : 51.74s
+  Status       : ok
+  Rationale    : 114 items scored. Stance distribution: 21 for / 45 against / 48 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.
+
+  Stance Distribution
+    For       : 21
+    Against   : 45
+    Neutral   : 48
+
+  Item Averages By Stance
+    For      | Sentiment: 2.71 | Animosity: 2.05 | n=21
+    Against  | Sentiment: 2.07 | Animosity: 2.71 | n=45
+    Neutral  | Sentiment: 2.75 | Animosity: 1.31 | n=48
+
+  Source Breakdown
+    gnews       : 1
+    reddit      : 53
+    youtube     : 60
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 33.15 / 100
+  Sample size  : 114
+  Elapsed      : 49.58s
+  Status       : ok
+  Rationale    : 114 items scored. Stance distribution: 21 for / 45 against / 48 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.
+
+  Stance Distribution
+    For       : 21
+    Against   : 45
+    Neutral   : 48
+
+  Item Averages By Stance
+    For      | Sentiment: 2.71 | Animosity: 2.05 | n=21
+    Against  | Sentiment: 2.07 | Animosity: 2.71 | n=45
+    Neutral  | Sentiment: 2.75 | Animosity: 1.31 | n=48
+
+  Source Breakdown
+    gnews       : 1
+    reddit      : 53
+    youtube     : 60
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 33.15
+    Std dev    : 0.00
+    Min / Max  : 33.15 / 33.15
+
+========================================================================
+  Scenario : gun_control
+  Expected : ?
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 43.27 / 100
+  Sample size  : 83
+  Elapsed      : 43.4s
+  Status       : ok
+  Rationale    : 83 items scored. Stance distribution: 37 for / 32 against / 14 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.
+
+  Stance Distribution
+    For       : 37
+    Against   : 32
+    Neutral   : 14
+
+  Item Averages By Stance
+    For      | Sentiment: 3.32 | Animosity: 1.51 | n=37
+    Against  | Sentiment: 2.19 | Animosity: 2.41 | n=32
+    Neutral  | Sentiment: 2.93 | Animosity: 1.21 | n=14
+
+  Source Breakdown
+    gnews       : 3
+    reddit      : 14
+    youtube     : 81
+  Source Lean
+    right       : 1
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 43.27 / 100
+  Sample size  : 83
+  Elapsed      : 40.52s
+  Status       : ok
+  Rationale    : 83 items scored. Stance distribution: 37 for / 32 against / 14 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.
+
+  Stance Distribution
+    For       : 37
+    Against   : 32
+    Neutral   : 14
+
+  Item Averages By Stance
+    For      | Sentiment: 3.32 | Animosity: 1.51 | n=37
+    Against  | Sentiment: 2.19 | Animosity: 2.41 | n=32
+    Neutral  | Sentiment: 2.93 | Animosity: 1.21 | n=14
+
+  Source Breakdown
+    gnews       : 3
+    reddit      : 14
+    youtube     : 81
+  Source Lean
+    right       : 1
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 43.27 / 100
+  Sample size  : 83
+  Elapsed      : 40.92s
+  Status       : ok
+  Rationale    : 83 items scored. Stance distribution: 37 for / 32 against / 14 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.
+
+  Stance Distribution
+    For       : 37
+    Against   : 32
+    Neutral   : 14
+
+  Item Averages By Stance
+    For      | Sentiment: 3.32 | Animosity: 1.51 | n=37
+    Against  | Sentiment: 2.19 | Animosity: 2.41 | n=32
+    Neutral  | Sentiment: 2.93 | Animosity: 1.21 | n=14
+
+  Source Breakdown
+    gnews       : 3
+    reddit      : 14
+    youtube     : 81
+  Source Lean
+    right       : 1
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 43.27
+    Std dev    : 0.00
+    Min / Max  : 43.27 / 43.27
+
+========================================================================
+  Scenario : nasa_funding
+  Expected : ?
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 36.36 / 100
+  Sample size  : 67
+  Elapsed      : 32.09s
+  Status       : ok
+  Rationale    : 67 items scored. Stance distribution: 26 for / 18 against / 23 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.
+
+  Stance Distribution
+    For       : 26
+    Against   : 18
+    Neutral   : 23
+
+  Item Averages By Stance
+    For      | Sentiment: 3.77 | Animosity: 1.50 | n=26
+    Against  | Sentiment: 1.83 | Animosity: 2.78 | n=18
+    Neutral  | Sentiment: 2.78 | Animosity: 1.52 | n=23
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 17
+    youtube     : 48
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 36.36 / 100
+  Sample size  : 67
+  Elapsed      : 30.26s
+  Status       : ok
+  Rationale    : 67 items scored. Stance distribution: 26 for / 18 against / 23 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.
+
+  Stance Distribution
+    For       : 26
+    Against   : 18
+    Neutral   : 23
+
+  Item Averages By Stance
+    For      | Sentiment: 3.77 | Animosity: 1.50 | n=26
+    Against  | Sentiment: 1.83 | Animosity: 2.78 | n=18
+    Neutral  | Sentiment: 2.78 | Animosity: 1.52 | n=23
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 17
+    youtube     : 48
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 36.36 / 100
+  Sample size  : 67
+  Elapsed      : 31.54s
+  Status       : ok
+  Rationale    : 67 items scored. Stance distribution: 26 for / 18 against / 23 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.
+
+  Stance Distribution
+    For       : 26
+    Against   : 18
+    Neutral   : 23
+
+  Item Averages By Stance
+    For      | Sentiment: 3.77 | Animosity: 1.50 | n=26
+    Against  | Sentiment: 1.83 | Animosity: 2.78 | n=18
+    Neutral  | Sentiment: 2.78 | Animosity: 1.52 | n=23
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 17
+    youtube     : 48
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 36.36
+    Std dev    : 0.00
+    Min / Max  : 36.36 / 36.36
+
+========================================================================
+  Scenario : donald_trump
+  Expected : ?
+========================================================================
+  Run 1 of 3
+  ----------------------------------------------------------------------
+  Polarization : 38.43 / 100
+  Sample size  : 121
+  Elapsed      : 46.75s
+  Status       : ok
+  Rationale    : 121 items scored. Stance distribution: 22 for / 68 against / 31 neutral. Platforms: gnews: 2, reddit: 72, youtube: 47.
+
+  Stance Distribution
+    For       : 22
+    Against   : 68
+    Neutral   : 31
+
+  Item Averages By Stance
+    For      | Sentiment: 4.50 | Animosity: 1.32 | n=22
+    Against  | Sentiment: 1.60 | Animosity: 2.96 | n=68
+    Neutral  | Sentiment: 2.94 | Animosity: 1.19 | n=31
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 72
+    youtube     : 47
+
+  Run 2 of 3
+  ----------------------------------------------------------------------
+  Polarization : 38.43 / 100
+  Sample size  : 121
+  Elapsed      : 45.27s
+  Status       : ok
+  Rationale    : 121 items scored. Stance distribution: 22 for / 68 against / 31 neutral. Platforms: gnews: 2, reddit: 72, youtube: 47.
+
+  Stance Distribution
+    For       : 22
+    Against   : 68
+    Neutral   : 31
+
+  Item Averages By Stance
+    For      | Sentiment: 4.50 | Animosity: 1.32 | n=22
+    Against  | Sentiment: 1.60 | Animosity: 2.96 | n=68
+    Neutral  | Sentiment: 2.94 | Animosity: 1.19 | n=31
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 72
+    youtube     : 47
+
+  Run 3 of 3
+  ----------------------------------------------------------------------
+  Polarization : 38.43 / 100
+  Sample size  : 121
+  Elapsed      : 46.12s
+  Status       : ok
+  Rationale    : 121 items scored. Stance distribution: 22 for / 68 against / 31 neutral. Platforms: gnews: 2, reddit: 72, youtube: 47.
+
+  Stance Distribution
+    For       : 22
+    Against   : 68
+    Neutral   : 31
+
+  Item Averages By Stance
+    For      | Sentiment: 4.50 | Animosity: 1.32 | n=22
+    Against  | Sentiment: 1.60 | Animosity: 2.96 | n=68
+    Neutral  | Sentiment: 2.94 | Animosity: 1.19 | n=31
+
+  Source Breakdown
+    gnews       : 2
+    reddit      : 72
+    youtube     : 47
+
+  ----------------------------------------------------------------------
+  Aggregate
+  ----------------------------------------------------------------------
+    Mean score : 38.43
+    Std dev    : 0.00
+    Min / Max  : 38.43 / 38.43
+
+========================================================================
+  SUMMARY
+========================================================================
+  Scenario                              Expected     Mean     Std     Min     Max
+  ----------------------------------------------------------------------
+  abortion                                     ?    33.15    0.00   33.15   33.15
+  gun_control                                  ?    43.27    0.00   43.27   43.27
+  nasa_funding                                 ?    36.36    0.00   36.36   36.36
+  donald_trump                                 ?    38.43    0.00   38.43   38.43
+========================================================================

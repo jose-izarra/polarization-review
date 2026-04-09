@@ -1,0 +1,10 @@
+{
+  "description": "Platform cap ablation study — effect of max items per platform on polarization score",
+  "runs": 1,
+  "query": "gun control",
+  "time_filter": "month",
+  "max_posts": 30,
+  "max_comments_per_post": 30,
+  "out_dir": "studies/platform_cap/results",
+  "platform_caps": [20, 50, 100, 500]
+}

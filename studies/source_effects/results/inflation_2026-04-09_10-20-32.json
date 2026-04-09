@@ -1,0 +1,457 @@
+{
+  "config": {
+    "description": "Source ablation study \u2014 effect of data source on polarization score",
+    "runs": 1,
+    "items_file": "data/items_inflation.json",
+    "out_dir": "studies/source_effects/results",
+    "source_configs": [
+      {
+        "label": "reddit_only",
+        "sources": [
+          "reddit"
+        ]
+      },
+      {
+        "label": "gnews_only",
+        "sources": [
+          "gnews"
+        ]
+      },
+      {
+        "label": "youtube_only",
+        "sources": [
+          "youtube"
+        ]
+      },
+      {
+        "label": "reddit_gnews",
+        "sources": [
+          "reddit",
+          "gnews"
+        ]
+      },
+      {
+        "label": "reddit_youtube",
+        "sources": [
+          "reddit",
+          "youtube"
+        ]
+      },
+      {
+        "label": "gnews_youtube",
+        "sources": [
+          "gnews",
+          "youtube"
+        ]
+      },
+      {
+        "label": "all",
+        "sources": [
+          "reddit",
+          "gnews",
+          "youtube"
+        ]
+      }
+    ]
+  },
+  "query": "inflation",
+  "items_file": "/Users/joseizarra/uni/capstone/polarization-review/data/items_inflation.json",
+  "runs": {
+    "reddit_only": [
+      {
+        "label": "reddit_only",
+        "sources": [
+          "reddit"
+        ],
+        "run": 1,
+        "polarization_score": 15.96,
+        "sample_size": 35,
+        "rationale": "35 items scored. Stance distribution: 1 for / 26 against / 8 neutral. Platforms: reddit: 35.",
+        "stance_distribution": {
+          "for": 1,
+          "against": 26,
+          "neutral": 8
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4,
+            "animosity": 1,
+            "n": 1
+          },
+          "against": {
+            "sentiment": 1.69,
+            "animosity": 2.54,
+            "n": 26
+          },
+          "neutral": {
+            "sentiment": 2.75,
+            "animosity": 1,
+            "n": 8
+          }
+        },
+        "source_breakdown": {
+          "reddit": 35
+        },
+        "elapsed_seconds": 13.52,
+        "status": "ok"
+      }
+    ],
+    "gnews_only": [
+      {
+        "label": "gnews_only",
+        "sources": [
+          "gnews"
+        ],
+        "run": 1,
+        "polarization_score": 0.0,
+        "sample_size": 3,
+        "rationale": "3 items scored. Stance distribution: 0 for / 0 against / 3 neutral. Platforms: gnews: 3. Source lean: center: 1.",
+        "stance_distribution": {
+          "for": 0,
+          "against": 0,
+          "neutral": 3
+        },
+        "stance_averages": {
+          "for": null,
+          "against": null,
+          "neutral": {
+            "sentiment": 3,
+            "animosity": 1,
+            "n": 3
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3
+        },
+        "elapsed_seconds": 1.97,
+        "status": "ok"
+      }
+    ],
+    "youtube_only": [
+      {
+        "label": "youtube_only",
+        "sources": [
+          "youtube"
+        ],
+        "run": 1,
+        "polarization_score": 20.08,
+        "sample_size": 25,
+        "rationale": "25 items scored. Stance distribution: 2 for / 5 against / 18 neutral. Platforms: youtube: 40.",
+        "stance_distribution": {
+          "for": 2,
+          "against": 5,
+          "neutral": 18
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.5,
+            "animosity": 1,
+            "n": 2
+          },
+          "against": {
+            "sentiment": 2,
+            "animosity": 2.6,
+            "n": 5
+          },
+          "neutral": {
+            "sentiment": 2.56,
+            "animosity": 1.11,
+            "n": 18
+          }
+        },
+        "source_breakdown": {
+          "youtube": 40
+        },
+        "elapsed_seconds": 18.69,
+        "status": "ok"
+      }
+    ],
+    "reddit_gnews": [
+      {
+        "label": "reddit_gnews",
+        "sources": [
+          "reddit",
+          "gnews"
+        ],
+        "run": 1,
+        "polarization_score": 15.7,
+        "sample_size": 38,
+        "rationale": "38 items scored. Stance distribution: 1 for / 27 against / 10 neutral. Platforms: gnews: 3, reddit: 35. Source lean: center: 1.",
+        "stance_distribution": {
+          "for": 1,
+          "against": 27,
+          "neutral": 10
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4,
+            "animosity": 1,
+            "n": 1
+          },
+          "against": {
+            "sentiment": 1.67,
+            "animosity": 2.74,
+            "n": 27
+          },
+          "neutral": {
+            "sentiment": 2.8,
+            "animosity": 1.1,
+            "n": 10
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "reddit": 35
+        },
+        "elapsed_seconds": 15.03,
+        "status": "ok"
+      }
+    ],
+    "reddit_youtube": [
+      {
+        "label": "reddit_youtube",
+        "sources": [
+          "reddit",
+          "youtube"
+        ],
+        "run": 1,
+        "polarization_score": 31.5,
+        "sample_size": 60,
+        "rationale": "60 items scored. Stance distribution: 8 for / 31 against / 21 neutral. Platforms: reddit: 35, youtube: 40.",
+        "stance_distribution": {
+          "for": 8,
+          "against": 31,
+          "neutral": 21
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.25,
+            "animosity": 1.12,
+            "n": 8
+          },
+          "against": {
+            "sentiment": 1.81,
+            "animosity": 2.65,
+            "n": 31
+          },
+          "neutral": {
+            "sentiment": 2.62,
+            "animosity": 1.1,
+            "n": 21
+          }
+        },
+        "source_breakdown": {
+          "reddit": 35,
+          "youtube": 40
+        },
+        "elapsed_seconds": 29.21,
+        "status": "ok"
+      }
+    ],
+    "gnews_youtube": [
+      {
+        "label": "gnews_youtube",
+        "sources": [
+          "gnews",
+          "youtube"
+        ],
+        "run": 1,
+        "polarization_score": 22.33,
+        "sample_size": 28,
+        "rationale": "28 items scored. Stance distribution: 4 for / 4 against / 20 neutral. Platforms: gnews: 3, youtube: 40. Source lean: center: 1.",
+        "stance_distribution": {
+          "for": 4,
+          "against": 4,
+          "neutral": 20
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.5,
+            "animosity": 1,
+            "n": 4
+          },
+          "against": {
+            "sentiment": 2,
+            "animosity": 2.5,
+            "n": 4
+          },
+          "neutral": {
+            "sentiment": 2.55,
+            "animosity": 1.2,
+            "n": 20
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "youtube": 40
+        },
+        "elapsed_seconds": 18.67,
+        "status": "ok"
+      }
+    ],
+    "all": [
+      {
+        "label": "all",
+        "sources": [
+          "reddit",
+          "gnews",
+          "youtube"
+        ],
+        "run": 1,
+        "polarization_score": 24.69,
+        "sample_size": 78,
+        "rationale": "78 items scored. Stance distribution: 6 for / 40 against / 32 neutral. Platforms: gnews: 3, reddit: 35, youtube: 40. Source lean: center: 1.",
+        "stance_distribution": {
+          "for": 6,
+          "against": 40,
+          "neutral": 32
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.17,
+            "animosity": 1.17,
+            "n": 6
+          },
+          "against": {
+            "sentiment": 1.73,
+            "animosity": 2.67,
+            "n": 40
+          },
+          "neutral": {
+            "sentiment": 2.81,
+            "animosity": 1.16,
+            "n": 32
+          }
+        },
+        "source_breakdown": {
+          "gnews": 3,
+          "reddit": 35,
+          "youtube": 40
+        },
+        "elapsed_seconds": 31.47,
+        "status": "ok"
+      }
+    ]
+  },
+  "stats": {
+    "reddit_only": {
+      "score": {
+        "n": 1,
+        "mean": 15.96,
+        "std": 0.0,
+        "min": 15.96,
+        "max": 15.96
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 13.52,
+        "std": 0.0,
+        "min": 13.52,
+        "max": 13.52
+      },
+      "total_runs": 1
+    },
+    "gnews_only": {
+      "score": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 1.97,
+        "std": 0.0,
+        "min": 1.97,
+        "max": 1.97
+      },
+      "total_runs": 1
+    },
+    "youtube_only": {
+      "score": {
+        "n": 1,
+        "mean": 20.08,
+        "std": 0.0,
+        "min": 20.08,
+        "max": 20.08
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 18.69,
+        "std": 0.0,
+        "min": 18.69,
+        "max": 18.69
+      },
+      "total_runs": 1
+    },
+    "reddit_gnews": {
+      "score": {
+        "n": 1,
+        "mean": 15.7,
+        "std": 0.0,
+        "min": 15.7,
+        "max": 15.7
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 15.03,
+        "std": 0.0,
+        "min": 15.03,
+        "max": 15.03
+      },
+      "total_runs": 1
+    },
+    "reddit_youtube": {
+      "score": {
+        "n": 1,
+        "mean": 31.5,
+        "std": 0.0,
+        "min": 31.5,
+        "max": 31.5
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 29.21,
+        "std": 0.0,
+        "min": 29.21,
+        "max": 29.21
+      },
+      "total_runs": 1
+    },
+    "gnews_youtube": {
+      "score": {
+        "n": 1,
+        "mean": 22.33,
+        "std": 0.0,
+        "min": 22.33,
+        "max": 22.33
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 18.67,
+        "std": 0.0,
+        "min": 18.67,
+        "max": 18.67
+      },
+      "total_runs": 1
+    },
+    "all": {
+      "score": {
+        "n": 1,
+        "mean": 24.69,
+        "std": 0.0,
+        "min": 24.69,
+        "max": 24.69
+      },
+      "elapsed": {
+        "n": 1,
+        "mean": 31.47,
+        "std": 0.0,
+        "min": 31.47,
+        "max": 31.47
+      },
+      "total_runs": 1
+    }
+  }
+}

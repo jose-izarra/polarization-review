@@ -1,13 +1,15 @@
 {
   "collect": {
-    "topics": ["inflation", "abortion", "gun control", "ai regulation"],
+    "topics": [
+      "donald trump",
+      "kanye west"
+    ],
     "time_filter": "month",
     "max_posts": 30,
     "max_comments_per_post": 30,
     "relevance_filter": true
   },
   "assess": {
-    "alpha": 1,
     "model": null
   }
 }

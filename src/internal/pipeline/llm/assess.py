@@ -16,7 +16,6 @@ from src.internal.pipeline.llm.prompts import (
 _BATCH_SIZE = 15
 _RELEVANCE_BATCH_SIZE = 25
 _JSON_ARRAY_RE = re.compile(r"\[.*\]", re.DOTALL)
-ALPHA_DEFAULT = 1
 
 
 def _truncate(text: str, limit: int = 280) -> str:
@@ -41,9 +40,7 @@ def _extract_json_array(text: str) -> list:
     return json.loads(match.group(0))
 
 
-def _validate_item_scores(
-    raw_items: list, alpha: float = ALPHA_DEFAULT
-) -> list[ItemScore]:
+def _validate_item_scores(raw_items: list) -> list[ItemScore]:
     scores: list[ItemScore] = []
     for elem in raw_items:
         if not isinstance(elem, dict):
@@ -72,7 +69,7 @@ def _validate_item_scores(
             )
             continue
 
-        if sentiment not in range(1, 11):
+        if sentiment not in range(1, 6):
             logfire.warning(
                 "Skipping item — sentiment out of range",
                 item_id=item_id,
@@ -92,7 +89,7 @@ def _validate_item_scores(
             )
             continue
 
-        r = stance * (sentiment + alpha * animosity)
+        r = stance * (sentiment + animosity)
         reason = str(elem.get("reason", ""))
         scores.append(
             ItemScore(
@@ -120,7 +117,6 @@ def _score_batch(
     batch: list[NormalizedItem],
     model: str | None,
     _override,
-    alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
     user_payload = _build_batch_payload(query, batch)
     raw_response = call_llm(
@@ -130,7 +126,7 @@ def _score_batch(
         _override=_override,
     )
     try:
-        return _validate_item_scores(_extract_json_array(raw_response), alpha=alpha)
+        return _validate_item_scores(_extract_json_array(raw_response))
     except Exception:
         retry = call_llm(
             _SYSTEM_PROMPT_STRICT,
@@ -138,7 +134,7 @@ def _score_batch(
             model=model,
             _override=_override,
         )
-        return _validate_item_scores(_extract_json_array(retry), alpha=alpha)
+        return _validate_item_scores(_extract_json_array(retry))
 
 
 def filter_relevant_items(
@@ -175,7 +171,6 @@ def assess_items(
     items: list[NormalizedItem],
     model: str | None = None,
     _override=None,
-    alpha: float = ALPHA_DEFAULT,
 ) -> list[ItemScore]:
     """Score each item individually for sentiment, stance, and animosity.
 
@@ -187,7 +182,7 @@ def assess_items(
     results: list[ItemScore] = []
     for i in range(0, len(items), _BATCH_SIZE):
         batch = items[i : i + _BATCH_SIZE]
-        batch_scores = _score_batch(query, batch, model, _override, alpha=alpha)
+        batch_scores = _score_batch(query, batch, model, _override)
         results.extend(batch_scores)
 
     return results

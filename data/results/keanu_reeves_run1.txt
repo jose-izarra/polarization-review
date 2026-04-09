@@ -1,0 +1,793 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : keanu reeves
+Assessed at    : 2026-04-09T10:07:50.472309+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 8.75 / 100
+Sample size    : 148
+Rationale      : 148 items scored. Stance distribution: 109 for / 1 against / 38 neutral. Avg animosity: 1.09. Avg sentiment: 4.22. Platforms: gnews: 2, reddit: 51, youtube: 95.
+
+--- Stance Distribution ---
+  For       : 109
+  Against   : 1
+  Neutral   : 38
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.68 | Animosity: 1.04
+  Against  | Sentiment: 1.00 | Animosity: 3.00
+  Neutral  | Sentiment: 3.00 | Animosity: 1.21
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 51
+  youtube     : 95
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://economictimes.indiatimes.com/magazines/panache/quote-of-the-day-by-keanu-reeves-the-fantasy-of-building-another-world-brings-some-kind-of-comfort-theres-something-about-creative-gesture-that-comes-from-pain-matrix-john-wick-actor-about-creativity/articleshow/129847640.cms
+    Rationale: The text is a neutral, informative report on a quote by the actor.
+    Snippet  : Quote of the day by Keanu Reeves: 'The fantasy of building another world brings some kind of comfort. There's something about creative gesture that comes from pain'. Matrix, John Wick actor about crea. Hollywood star Keanu Reeves finds s...
+
+[2] gnews | unknown | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.freepressjournal.in/entertainment/outcome-ott-release-date-everything-you-need-to-know-about-keanu-reeves-dark-comedy-film
+    Rationale: The text expresses positive anticipation for the actor's upcoming film.
+    Snippet  : Outcome OTT Release Date: Everything You Need To Know About Keanu Reeves' Dark-Comedy Film. Keanu Reeves is set to return to the screen with Outcome, an upcoming dark-comedy film that has already generated significant buzz among fans. Kn...
+
+[3] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/interesting/comments/1rvyap0/still_manages_to_be_everyones_favourite/
+    Rationale: The text expresses strong admiration for the actor's popularity.
+    Snippet  : Still manages to be everyone's favourite.
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objp1hs/
+    Rationale: The text offers a mixed critique of his acting range while simultaneously expressing personal affection and support for him.
+    Snippet  : He’s not a great actor. He’s a beloved actor with many iconic roles and appears to be a good human being, but he has the acting range of a spatula. Edit: I love Mr. Reeves and I sincerely hope he gets a lifetime award while he’s still wi...
+
+[5] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/BeAmazed/comments/1rxhocz/this_is_why_everyone_loves_keanu_reeves/
+    Rationale: The text conveys enthusiastic approval and affection for the actor.
+    Snippet  : This is why everyone loves Keanu Reeves 🙌
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/rareinsults/comments/1rznjxz/mom_we_have_keanu_reeves_at_home_the_keanu_reeves/
+    Rationale: The text uses a common internet meme format to make a lighthearted, slightly mocking comparison.
+    Snippet  : mom: we have Keanu Reeves at home. the Keanu Reeves at home:
+
+[7] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objpy2x/
+    Rationale: The text praises the actor's character and generosity, stating it is hard not to like him.
+    Snippet  : like other people said he seems to land roles where he more or less plays himself - he also did things like donate his matrix cut to the film crew IIR and much more. really hard to not like him.
+
+[8] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1s0msk2/til_keanu_reeves_was_one_of_the_top_hockey/
+    Rationale: The text provides a neutral, factual anecdote about the actor's past.
+    Snippet  : TIL Keanu Reeves was one of the top hockey goaltenders in the Toronto area when he was in high school, reportedly earning the nickname “The Wall.”
+
+[9] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objsyth/
+    Rationale: The text expresses support for the actor by highlighting his moral character.
+    Snippet  : he is a decent human an d not a child rapist..
+
+[10] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/movies/comments/1rxzwsu/sonic_the_hedgehog_4_full_cast_revealed_keanu/
+    Rationale: The text is a neutral, factual announcement regarding a film cast.
+    Snippet  : ‘Sonic the Hedgehog 4’ Full Cast Revealed: Keanu Reeves and Idris Elba Returning Alongside Newcomers Ben Kingsley, Nick Offerman and More
+
+[11] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/StrangeAndFunny/comments/1scydvr/what_is_a_good_day_for_keanu_reeves/
+    Rationale: The text is a neutral, inquisitive question about the actor.
+    Snippet  : what is a good day for keanu Reeves
+
+[12] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/KeanuBeingAwesome/comments/1ryzpd9/best_actor_oscar_winner_michael_b_jordan_on_his/
+    Rationale: The text highlights admiration and appreciation for the actor from a peer.
+    Snippet  : 🏆 Best actor Oscar winner Michael B. Jordan on his admiration and appreciation for Keanu Reeves
+
+[13] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/KeanuBeingAwesome/comments/1rv9nfn/keanu_reeves_spent_5_years_helping_our_daughter/
+    Rationale: The text shares a highly positive, appreciative personal story about the actor's kindness.
+    Snippet  : Keanu Reeves spent 5 years helping our daughter make a movie! Hey everyone! I wanted to share a story about how Keanu helped my daughter make her dream a reality! Nobody has ever heard this story before. Back in 2020, our daughter who wa...
+
+[14] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/90smovies/comments/1rokv1z/keanu_reeves_and_charlize_theron_in_the_devils/
+    Rationale: The text is a neutral, descriptive caption identifying actors in a film.
+    Snippet  : Keanu Reeves and Charlize Theron in The Devil’s Advocate (1997)
+
+[15] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objqb81/
+    Rationale: The text defends the actor's performance against critics with a positive assessment of his work.
+    Snippet  : For people saying he's a bad actor go and play Cyberpunk 2077, he nailed Johnny Silverhand pretty well and it's probably his best acting role.
+
+[16] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/OldSchoolCool/comments/1sccvwn/keanu_reeves_and_johnny_depp_1994/
+    Rationale: The text is a neutral, factual caption identifying two individuals in a photograph.
+    Snippet  : Keanu Reeves and Johnny Depp, 1994
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/interesting/comments/1rvyap0/still_manages_to_be_everyones_favourite/oavv8jq/
+    Rationale: The author expresses personal affection for the actor while offering a critical, albeit polite, assessment of his acting range.
+    Snippet  : He’s a nice and real person. But his acting is really not that good. He has certain types of characters he’s good with. Other than those his acting just really doesn’t adjust. Some say he doesn’t do acting at all, he just blank stares. A...
+
+[18] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavdkia/
+    Rationale: The author expresses strong positive sentiment and collective support for the actor.
+    Snippet  : Who cares about critic scores. It's all about the audience, and we all love him.
+
+[19] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/popculturechat/comments/1ru22dl/keanu_reeves_once_reported_on_a_teddy_bear/
+    Rationale: The text provides a neutral, historical anecdote about the subject.
+    Snippet  : Keanu Reeves once reported on a teddy bear convention in 1984
+
+[20] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/interesting/comments/1rvyap0/still_manages_to_be_everyones_favourite/oavuutj/
+    Rationale: The text conveys admiration for the subject's authenticity.
+    Snippet  : He stays true to himself🍀
+
+[21] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/hudcon/comments/1rurz33/hudson_williams_official_oscars_red_carpet/
+    Rationale: The text makes a neutral comparison between two individuals' appearances.
+    Snippet  : Hudson Williams’ official Oscars red carpet portrait 🥹 | Come on, he looks like Keanu Reeves in The Devil’s Advocate 💀🥵🔥
+
+[22] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objprh0/
+    Rationale: The author balances praise for the subject's character with a blunt, dismissive critique of his professional acting skills.
+    Snippet  : Good human being, handsome mofo but wooden actor with very limited range.
+
+[23] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oaviqzy/
+    Rationale: The author expresses warmth and high regard for the subject's character despite noting limitations in his acting.
+    Snippet  : Bless him. FR. But he's not a great actor. He's a great human. Which is objectively much better.
+
+[24] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/movies/comments/1rv8s96/official_poster_for_jonah_hills_outcome_follows/
+    Rationale: The text is a neutral, descriptive summary of a film plot.
+    Snippet  : Official Poster for Jonah Hill's 'Outcome' - Follows Reef Hawk (Keanu Reeves), a damaged Hollywood star forced into a chaotic redemption tour when a mysterious video triggers an extortion plot
+
+[25] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/KeanuBeingAwesome/comments/1ryab7z/here_is_the_filmmaker_keanu_reeves_has_been/
+    Rationale: The text provides a neutral, factual statement about the subject's professional mentorship.
+    Snippet  : Here is the filmmaker Keanu Reeves has been mentoring for 5 years - Bianca Mitchell-Avila
+
+[26] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/popculturechat/comments/1sehgco/keanu_reeves_and_alexandra_grant_at_the_premiere/
+    Rationale: The text is a neutral, factual caption regarding a public appearance.
+    Snippet  : Keanu Reeves and Alexandra Grant at the premiere of "Outcome” (April 6, 2026)
+
+[27] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/moviecritic/comments/1sbplah/john_wick_chapter_4_keanu_reeves_can_i_vent_about/
+    Rationale: The author expresses strong frustration and negative judgment toward the franchise associated with the actor.
+    Snippet  : John Wick: Chapter 4 | Keanu Reeves | Can I vent about how god damn dumb the John Wick franchise has became?
+
+[28] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/agedlikemilk/comments/1rq1jfd/six_years_ago_elon_musk_was_comparable_to_keanu/
+    Rationale: The text makes a neutral, comparative observation about two public figures.
+    Snippet  : Six years ago Elon Musk was comparable to Keanu Reeves
+
+[29] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavhlsl/
+    Rationale: The author offers a balanced perspective, expressing personal fondness while maintaining a measured view of the subject's acting ability.
+    Snippet  : I love him as an actor and I love his movies. But hes not really a phenomenal actor. He is a good person though.
+
+[30] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/JoyDivision/comments/1rpjwtw/keanu_reeves_has_publicly_stated_his_admiration/
+    Rationale: The text provides a neutral, factual observation about the subject's musical interests and influence.
+    Snippet  : Keanu Reeves has publicly stated his admiration for Joy Division and you can hear the influence in his band’s sound
+
+[31] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Zappa/comments/1savnls/keanu_reeves_talking_about_who_the_f_is_frank/
+    Rationale: The text is a neutral, factual description of a documentary project involving Keanu Reeves.
+    Snippet  : Keanu Reeves talking about 'Who the F*@% is Frank Zappa', a project by his friend Alex Winter that later became the 2020 documentary Zappa. 2016
+
+[32] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/entertainment/comments/1rw9zii/keanu_reeves_plays_an_actor_trying_to_make_amends/
+    Rationale: The text provides a neutral summary of a film trailer plot.
+    Snippet  : Keanu Reeves Plays an Actor Trying to Make Amends with Everyone Who Hates Him in Trailer for Jonah Hill's Outcome
+
+[33] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/postpunk/comments/1rpjyon/keanu_reeves_band_dogstar_definitely_has_some/
+    Rationale: The text expresses a mild, positive observation about the musical style of his band.
+    Snippet  : Keanu Reeves’ band Dogstar definitely has some post punk vibes
+
+[34] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/popculturechat/comments/1sf59mw/keanu_reeves_on_why_he_wouldnt_go_back_in_time/
+    Rationale: The text shares a thoughtful quote from the actor, reflecting a positive and appreciative tone.
+    Snippet  : Keanu Reeves on why he wouldn’t go back in time and redo something: ‘There are some lessons learned and also just some forgiveness and kind of trying to understand it’
+
+[35] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objsejq/
+    Rationale: The text offers a balanced view, praising his character while providing mild criticism of his acting range.
+    Snippet  : He’s an amazing person and we need more people like him but his acting range isn’t Oscar worthy. I liked him in Matrix and John Wick is my favourite action films series but even I admit, he’s not an Oscar level actor. Compare that to Leo...
+
+[36] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1s0msk2/til_keanu_reeves_was_one_of_the_top_hockey/obusrmf/
+    Rationale: The text expresses admiration for the actor's life experiences.
+    Snippet  : Dude has one hell of a storied life
+
+[37] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 3
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objvtc0/
+    Rationale: The text defends the actor by criticizing the industry, using slightly aggressive language toward Hollywood.
+    Snippet  : Personally, I suspect it has nothing to do with his acting skill or lack thereof. It has everything to do with him not buying into whatever crazy cult shit these celebrities have going on. He's not in the boys club. He's not getting shit.
+
+[38] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavfydz/
+    Rationale: The text expresses strong admiration and support for the actor.
+    Snippet  : He wins people's hearts and that's all that matters!
+
+[39] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/movies/comments/1rxzwsu/sonic_the_hedgehog_4_full_cast_revealed_keanu/obar0zd/
+    Rationale: The text is a neutral, factual list of cast members for a film.
+    Snippet  : Cast: * Ben Schwartz as Sonic * Jim Carrey as Dr Robotnik * Kristen Bell as Amy * Idris Elba as Knuckles * Keanu Reeves as Shadow * Colleen O’Shaughnessey as Tails * James Marsden as Tom Wachowski * Tika Sumpter as Maddie Wachowski * Lee...
+
+[40] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/BeAmazed/comments/1rxhocz/this_is_why_everyone_loves_keanu_reeves/ob7ku4w/
+    Rationale: The text uses hyperbolic, positive language to express high regard for the actor.
+    Snippet  : When the aliens come, I want Keanu to be the celebrity representative of humanity.
+
+[41] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/movies/comments/1s6vkhg/stefan_kapičić_has_been_cast_in_tim_millers_new/
+    Rationale: The text is a neutral, factual report about casting news.
+    Snippet  : Stefan Kapičić has been cast in Tim Miller's new sci-fi movie alongside Keanu Reeves
+
+[42] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavh697/
+    Rationale: The text offers a critical assessment of his acting ability while acknowledging his likability.
+    Snippet  : That's because he's not a good actor, just a very likeable person.
+
+[43] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objvvuu/
+    Rationale: The text provides a positive account of the actor's professional work ethic and character.
+    Snippet  : Reading a lot of the comments and obligatory gotta mention: Since the 90s/2000s, I’ve been hearing his success comes from his work ethic. He’s been lauded for showing up to sets early, memorizing all of his lines, taking direction well, ...
+
+[44] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Actors/comments/1rz8niu/whats_your_favourite_movie_with_keanu_reeves/
+    Rationale: The text is a neutral, open-ended question about movie preferences.
+    Snippet  : What’s your favourite movie with Keanu Reeves?
+
+[45] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objrgca/
+    Rationale: The text provides a critical, albeit civil, assessment of the actor's professional limitations.
+    Snippet  : He's not a great actor, that's it. He's a good guy but doesn't really have the emotional range to be considered a great actor.
+
+[46] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1s0msk2/til_keanu_reeves_was_one_of_the_top_hockey/obuqmq6/
+    Rationale: The text provides a neutral, factual anecdote about his past activities.
+    Snippet  : He also played in a recurring roller hockey game with a bunch of guys in California when he moved there.
+
+[47] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavdbn1/
+    Rationale: The author expresses positive approval of the subject's character.
+    Snippet  : He doesn't need to, we all know he's good.
+
+[48] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavl1d7/
+    Rationale: The author uses highly positive language to describe the subject as universally loved.
+    Snippet  : Most lovable person with zero haters, that's all that matters.
+
+[49] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1s0msk2/til_keanu_reeves_was_one_of_the_top_hockey/obuhi3e/
+    Rationale: The author expresses sadness regarding the subject's personal tragedy.
+    Snippet  : It saddens me that poor Keanu lost a dog at such a young age...
+
+[50] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavi850/
+    Rationale: The author uses hyperbolic praise to suggest the subject is superior to the awards he receives.
+    Snippet  : These awards don't deserve him.
+
+[51] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/PeterExplainsTheJoke/comments/1rz6jb7/whats_the_reason/objv8oy/
+    Rationale: The author provides a balanced, critical assessment of the subject's acting abilities.
+    Snippet  : He's not a great actor. He's not a BAD actor, by any means. He's just not award-winning performance level.
+
+[52] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1rvve7j/the_peoples_champ/oavibyk/
+    Rationale: The author supports the subject by highlighting his recognition through awards.
+    Snippet  : Nah homie won humans choice awards.
+
+[53] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/BeAmazed/comments/1rxhocz/this_is_why_everyone_loves_keanu_reeves/ob79pjw/
+    Rationale: The author uses a positive idiom to praise the subject's foresight or capability.
+    Snippet  : Keanu is always 5 steps ahead
+
+[54] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugzxm2YwuDkhDn1Rov54AaABAg
+    Rationale: The author expresses deep admiration for the subject's character despite his personal hardships.
+    Snippet  : Dude lost his first wife and firstborn. He’s an absolute gem of a human.
+
+[55] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgxwmmzTV8GYH2NK5op4AaABAg
+    Rationale: The author praises the subject's grounded and authentic personality.
+    Snippet  : He gets treated normally because he acts normally. He has that aura.
+
+[56] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgxKuFlIdT08txC3tth4AaABAg
+    Rationale: The author expresses appreciation for a specific positive behavior of the subject.
+    Snippet  : Keanu searching camera to say hi is so underrated
+
+[57] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugy0gnAF70RDm3WvdO94AaABAg
+    Rationale: The author highlights the subject's resilience and kindness in the face of significant personal tragedy.
+    Snippet  : Keanu lost his first serious girlfriend in a car accident not long after their daughter was stillborn at 8 months. This man has clearly had a long and difficult life, but still shows kindness.
+
+[58] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugykr6qFwV39V7nnT994AaABAg
+    Rationale: The author uses strong, laudatory language to describe the subject.
+    Snippet  : Keanu is a living legend
+
+[59] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwaMCPHEBfzCzQKK6t4AaABAg
+    Rationale: The author shares an enthusiastic and highly positive personal experience meeting the subject.
+    Snippet  : I met him guyss, What an incredible experience, honestly one of the best days of my life! I actually got to meet Keanu through Star Lurex after seeing that E! News interview where he mentioned meeting fans through a private club. I’m sti...
+
+[60] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgydpYupMKqGn8V4jwh4AaABAg
+    Rationale: The author expresses admiration for the subject's inherently sweet nature.
+    Snippet  : I bet being mean to Keanu even by acting is very difficult, he is a sweet person.
+
+[61] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgxVtqNT57VmYgk055Z4AaABAg
+    Rationale: The user expresses strong admiration and affection for the actor.
+    Snippet  : There is no celebrity more universally loved than Keanu. He's a treasure
+
+[62] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgwHOL8lNBXIQnwDQf14AaABAg
+    Rationale: The user shares a deeply personal positive experience and praises the actor as an icon.
+    Snippet  : Keanu's cancer foundation helped saved my mother's life. The man is truly an icon for all the right reasons.
+
+[63] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgxCy2zMkaxzBltNOIl4AaABAg
+    Rationale: The user explicitly states love for the actor's humility and positivity.
+    Snippet  : One of the most humbled actors out there, love the positivity he spreads!
+
+[64] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwCyY_R_Zs9VGLjmrB4AaABAg
+    Rationale: The user praises a specific performance moment as one of the best.
+    Snippet  : "Right now I'm acting like this is fun... How am I doing 😂?" One of the best comebacks in the whole series.
+
+[65] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugzauvu-jCk4-w8Tdgh4AaABAg
+    Rationale: The user advocates for the actor to receive more recognition, using mild profanity to emphasize enthusiasm.
+    Snippet  : “I don’t have that many awards” give this man some fucking awards
+
+[66] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugzg66ktWwem_pawehd4AaABAg
+    Rationale: The user expresses approval of the actor's values regarding money.
+    Snippet  : Keanu understands that money isn't everything
+
+[67] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgzIsBnZ1pcR4wUwAIt4AaABAg
+    Rationale: The user praises the actor's character by contrasting him with people who act like jerks.
+    Snippet  : Keanu is an example that you don't have to use your childhood as an excuse to act like an jerk
+
+[68] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugzp7KrQrpUnamUNjEt4AaABAg
+    Rationale: The user describes the actor's behavior as wholesome and endearing.
+    Snippet  : Keanu looking for the camera to smile and introduce himself is so wholesome
+
+[69] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgwO63FVpr2_jUppDX54AaABAg
+    Rationale: The user expresses high regard and excitement about the prospect of meeting the actor.
+    Snippet  : One of the few celebrities I'd actually be excited to meet. Honorable man
+
+[70] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=Ugy0n7vipwRc0i-jf9d4AaABAg
+    Rationale: The user shares a positive, respectful anecdote about a personal encounter with the actor.
+    Snippet  : I saw him at DFW airport….sitting there reading a newspaper… I wasn’t going to ask him for an autograph but as I was walking by him I had an inspiration and said “Sorry about the dog John”… he looked up and responded in character “Thanks...
+
+[71] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwVPkDvQi_0HfjCv-t4AaABAg
+    Rationale: The user compliments the actor's skill by noting how impressive his performance is.
+    Snippet  : Keanu acting like he'd ever actually get this mad at someone is probably his most impressive performance of all time.
+
+[72] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgxX7yG8pDL_TLQV7Jp4AaABAg
+    Rationale: The user expresses enjoyment of the actor's performance.
+    Snippet  : "I'm acting like I'm having fun... how am I doing?" Keanu acting mean made my day.
+
+[73] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgzkJOUJg5vFNRQg5yx4AaABAg
+    Rationale: The user finds the actor's behavior to be extremely wholesome.
+    Snippet  : keaunu sitting alone with an ice cream cone is unreasonably wholesome
+
+[74] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgzDjFmOZe7grKDIrKV4AaABAg
+    Rationale: The user is simply quoting the actor without adding personal commentary.
+    Snippet  : *"Right now I'm acting like this is fun. How am I doing?"*
+
+[75] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgzTUaMVxgpygAEON654AaABAg
+    Rationale: The user expresses deep respect and admiration for the actor's humanity.
+    Snippet  : You can tell with his initial breath he’s thinking of his lost loved ones! What a great example of a man. Of a human.
+
+[76] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgwrrNQonfEFGrAk6mV4AaABAg
+    Rationale: The user expresses strong admiration for the actor and contrasts him positively against others in his industry.
+    Snippet  : Man is dope. Probably only normal one in Hollywood
+
+[77] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwUO7xCrqj5zL_xpld4AaABAg
+    Rationale: The user uses humor to express appreciation for both actors involved in the video.
+    Snippet  : “Have you ever considered researching a character that has taken acting classes?” lmao they’re both great
+
+[78] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugx0zWtkJP8k6WdQFNd4AaABAg
+    Rationale: The user expresses amusement and positive engagement with the actor's behavior in the video.
+    Snippet  : The way Keanu looks around at around 0:12 and then finds the camera and gives that slight nod 🤣
+
+[79] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugy_Mil1GaDLHi--7wt4AaABAg
+    Rationale: The user expresses deep admiration for the actor's character and resilience.
+    Snippet  : With all the heartache this man has endured for him to still have the heart he does makes him super special.
+
+[80] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgzIP31wG7hXvwk8-6h4AaABAg
+    Rationale: The user shares a warm, positive sentiment regarding the actor's personality.
+    Snippet  : Keanu is the guy you meet on vacation, talk to them for a while, never meet him again, but have fond memories of the conversation
+
+[81] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgxXcR6pvHkBSY_jPLR4AaABAg
+    Rationale: The user uses a highly positive metaphor to describe the actor's peaceful nature.
+    Snippet  : He’s the literal definition of “i have no enemies”.
+
+[82] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgzBKfCUq9Yxgr4pjT94AaABAg
+    Rationale: The user expresses enjoyment and amusement at the actor's reaction in the video.
+    Snippet  : Keanu trying not to laugh when he asked if neo is Jewish killed me 😂
+
+[83] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgxHPrLxHeYxrNdPH894AaABAg
+    Rationale: The user expresses a strong, universally positive emotional response to the actor's content.
+    Snippet  : One cannot watch a Keanu Reeves video without smiling.
+
+[84] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugw7c_2pVYS7ilUBkfd4AaABAg
+    Rationale: The user expresses admiration for the actor's humility and values.
+    Snippet  : The pain he has endured has forever humbled him. He understands money and value are different things.
+
+[85] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgwHGBKxPpZoViaVF6t4AaABAg
+    Rationale: The user expresses massive respect for the actor's character and perseverance.
+    Snippet  : Not only this guy is considered good and honest but his mental and physical fortitude is out of the world. He just keeps going no matter what obstacle. Massive respect.
+
+[86] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgxrDbwEDDrP6rnBXlJ4AaABAg
+    Rationale: The user uses a rhetorical question to emphasize their strong affection for the actor.
+    Snippet  : How can you not love this man...
+
+[87] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgyM8FuxRXl3RSKAtpZ4AaABAg
+    Rationale: The user expresses strong approval and admiration for the actor's authentic nature.
+    Snippet  : Keanu Reeves doesn't need awards to know he's a badass he just is.
+
+[88] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwFBFti15F2xuN5gRd4AaABAg
+    Rationale: The user expresses positive surprise and enjoyment regarding the information learned from the video.
+    Snippet  : Had no idea Keanu Reeves was born in Beirut Lebanon, wasn't expecting to actually learn something from between two ferns hahaha!
+
+[89] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgwMeGeI6kXB6IPn0gN4AaABAg
+    Rationale: The user expresses appreciation for the actor's personality over his famous roles.
+    Snippet  : This man is Constantine, Neo and John Wick; but people like him best for being Keanu Reeves.
+
+[90] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwpbQLUal-tNIVNbLp4AaABAg
+    Rationale: The user expresses amusement and enjoyment of the video's content.
+    Snippet  : “Eternity feels shorter than this” - ahaha I died after thus
+
+[91] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgwVuBCuS9rUpBoG1Ah4AaABAg
+    Rationale: The comment uses a positive pop-culture reference to praise the actor's tough persona.
+    Snippet  : You don't need a bodyguard when you're John Wick
+
+[92] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgzznhpaMV23vektXaN4AaABAg
+    Rationale: The author expresses deep admiration for the subject's sincerity and kindness.
+    Snippet  : The dude is just a human being, making his way through life, as are we all, but he does have that elemental spark of sincerity, doesn’t he? It’s a quiet genuineness that is magnetic… invoking an aspiration to just be ourselves and to be ...
+
+[93] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugw1RMx4tjrASCAkC4p4AaABAg
+    Rationale: The comment frames the subject as an ideal role model for others to emulate.
+    Snippet  : We don't need another person like Keanu. Instead we should all aspire to become like him
+
+[94] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugyka49IzE0uFwppEVJ4AaABAg
+    Rationale: The author expresses sadness and empathy regarding the subject's personal feelings.
+    Snippet  : Keanu saying "I don't have many rewards," as he looks down, made me very very sad 😢
+
+[95] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgzOWpla9TeL8awoVoF4AaABAg
+    Rationale: The author praises the subject's character as being shaped by life experience.
+    Snippet  : i feel like keanu is so kind BECAUSE he has seen and experienced some of the worst parts of this world. he knows even the smallest acts of kindness can be life changing, or saving
+
+[96] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgzLu0uwqR0Jxxyo_6h4AaABAg
+    Rationale: The comment uses hyperbolic, highly positive language to express devotion to the subject.
+    Snippet  : keanu reeves is the soul of humanity. protect this man at all costs
+
+[97] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugyyr_mdCa_O5UH9cXl4AaABAg
+    Rationale: The author expresses amusement and enjoyment of the subject's behavior.
+    Snippet  : love how he's trying to look like he's not laughing his ass off inside :D:D
+
+[98] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugw3zZ7CKPKrtD28_hZ4AaABAg
+    Rationale: The author praises the subject's integrity and motivation for his work.
+    Snippet  : Keanu will always be my favorite actor and celebrity. Bro does things because he's loves them not for the money
+
+[99] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=Ugy4iWU56ZU_IAPRGdJ4AaABAg
+    Rationale: The comment is a simple, enthusiastic endorsement of the subject's personality.
+    Snippet  : He is such a sweet human being.
+
+[100] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgynqObm3556v38d3nd4AaABAg
+    Rationale: The author highlights the subject's lack of controversy as evidence of his amazing character.
+    Snippet  : Despite how long he has been in Hollywood, he has never had one controversy about him. Do you know how impossible that would be for any human being? He’s just amazing.
+
+[101] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugx6KA7thFiMDXR_HDx4AaABAg
+    Rationale: The comment uses a playful tone to compliment the subject's patience and reputation.
+    Snippet  : Zach is brave. He's lucky John Wick is a patient man
+
+[102] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgzCa14OIoLRPcZPrgV4AaABAg
+    Rationale: The author expresses reverence for the subject's presence.
+    Snippet  : People don’t bother Keanu, they simply enjoy his blissful presence from afar 🙏🏻
+
+[103] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugw6de3GzmPFXjoVReh4AaABAg
+    Rationale: The author elevates the subject's moral character above the norm.
+    Snippet  : He’s not a normal person, he’s a good person
+
+[104] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgzT6jT74tJUZCW9khF4AaABAg
+    Rationale: The author expresses high value for the subject's positive influence on the world.
+    Snippet  : I want to say this world doesn’t deserve him, but this world desperately NEEDS more people like him.
+
+[105] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgxttET6Wtx7EOoS2Ml4AaABAg
+    Rationale: The author explicitly labels the subject a hero based on his positive traits.
+    Snippet  : Sounds like a real hero to me. Selfless, genuine, compassionate.
+
+[106] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgyjIAhOagL74Sx6AER4AaABAg
+    Rationale: The author expresses strong admiration for Keanu Reeves' grounded nature and personal history.
+    Snippet  : Keanu Reeves has actually been through struggle, unlike 99% of mainstream Hollywood. This is why he is so grounded. I love the dude.
+
+[107] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugwm8SBLafzhW7mr3Kl4AaABAg
+    Rationale: The author praises Reeves for maintaining his character despite fame and wealth.
+    Snippet  : Reeves didn’t let money and fame change who he is and that’s great character.
+
+[108] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugy3240BSRvkFgFxeEN4AaABAg
+    Rationale: The author holds Reeves in high regard as a role model and a genuine human being.
+    Snippet  : This man is an example of what it means to be a role model, a true human being from the very core. Ultimate respect.
+
+[109] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgzHVrbIBxcuWhc2o-B4AaABAg
+    Rationale: The author expresses admiration for Reeves' ability to maintain anonymity despite his fame.
+    Snippet  : The man has fame and found a way to keep his anonymity. He truly beat the Matrix.
+
+[110] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgxOYtMtNgRAzo0rS-54AaABAg
+    Rationale: The author uses a positive metaphor to describe the public's protective affection for Reeves.
+    Snippet  : Bro doesn't need bodyguards, people are his bodyguards.
+
+[111] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgwIzyg9ETpXU5vUUcZ4AaABAg
+    Rationale: The author expresses strong positive sentiment by stating it is impossible to dislike him.
+    Snippet  : It's impossible to hate this man.
+
+[112] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgxoIrtwt09w24dAYiF4AaABAg
+    Rationale: The author describes Reeves as delightful and expresses gratitude for his presence in cinema.
+    Snippet  : Keanu is just delightful. I'm so glad we get to have someone like him in cinema.
+
+[113] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgwPvgRRwCBJWlPSRsl4AaABAg
+    Rationale: The author expresses deep admiration for Reeves' resilience and character.
+    Snippet  : He has one of those dark backstory and still manages to live happily without showing how broken he is from the inside an absolute gem
+
+[114] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgzIejY_71BxIMiGnzB4AaABAg
+    Rationale: The author shares a positive personal anecdote highlighting Reeves' kindness and lack of ego.
+    Snippet  : I met him on my first record deal in LA. This is no bull...he is the most down to earth, kind human being you could ever meet. No ego whatsoever, which is really saying something, because in person he is so stunningly good looking that t...
+
+[115] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgzT-Xgb2asLaCC8pEl4AaABAg
+    Rationale: The author uses a lighthearted, fictional scenario involving a character to express a humorous observation.
+    Snippet  : I can see the John wick wanting to crawl out of Keanu Reeves and punch Zach in the face.
+
+[116] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgxoP7N84H_ei1Yibml4AaABAg
+    Rationale: The author expresses gratitude and respect for Reeves' charitable work regarding cancer support.
+    Snippet  : As a cancer survivor myself, I love and respect Keanu for his support in helping others fighting this horrible decease. Fair play to to him.
+
+[117] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugw7xhubjtldRy7O1LF4AaABAg
+    Rationale: The author uses a positive comparison to describe Reeves' personality as chill.
+    Snippet  : Keanu means cool breeze in Hawaiian. He is the embodiment of that. Hes chill.
+
+[118] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgwiJDtd-zsH46ZIb9l4AaABAg
+    Rationale: The author praises Reeves as a good man and offers well wishes.
+    Snippet  : No one expected that answer. His a very good man who's been through a lot. Good luck to everyone. God bless us all.
+
+[119] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugy2g0-U_EUo1Pxp6Td4AaABAg
+    Rationale: The author expresses strong admiration for Reeves' decency and suggests the world would be better if more people were like him.
+    Snippet  : if everyone even had a bit of his decency as human beings we would all live in a better world. Protect this man at all cost!
+
+[120] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgxR3MsC4_W8nQ6019J4AaABAg
+    Rationale: The author expresses affection and admiration for Reeves' humility.
+    Snippet  : Humility. He doesn’t think of himself to better than any one of us, he’s just Keanu. ❤️
+
+[121] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=Ugy0BM_l1XbNakVG0GN4AaABAg
+    Rationale: The user expresses admiration for Keanu Reeves's consistent personality over time.
+    Snippet  : I love how everyone changes, graham's facial hair changes, and yet Keanu is just... Keanu. You could tell me these interviews were taken over a decade's time span and wow.
+
+[122] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugw5MB1ydLWcT8-pQRp4AaABAg
+    Rationale: The comment is a neutral observation about the interviewer's behavior regarding a fictional character's backstory.
+    Snippet  : Zach was careful not to make any jokes about Wick's dead dog.
+
+[123] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgyMtMgqrlYbEkfonsp4AaABAg
+    Rationale: The comment makes a factual observation about the subject's speaking frequency.
+    Snippet  : This is the most I've seen Keanu speak in the last 10 years.
+
+[124] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgycqTZuTcf0J7ODtNl4AaABAg
+    Rationale: The user expresses positive regard for Keanu Reeves's likability and public perception.
+    Snippet  : When you’re as loved as Keanu, you don’t need bodyguards as much as other celebrities do
+
+[125] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgwjniNJkD7SNs2qVgB4AaABAg
+    Rationale: The user praises the subject's witty remark with an enthusiastic tone.
+    Snippet  : "Right now I'm acting like this is fun" Absolute Savage
+
+[126] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=Ugw5xIVBzmj05QLsolF4AaABAg
+    Rationale: The user expresses strong positive sentiment, stating it is impossible to dislike the subject.
+    Snippet  : It's literally impossible to dislike Keanu
+
+[127] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgxS8_Y4MCgrMx-QVzt4AaABAg
+    Rationale: The user expresses deep admiration for the subject's character and resilience in the face of personal trauma.
+    Snippet  : It's easy to say that Keanu is only impressive by Hollywood standards but really he's impressive by any standards. With the amount of trauma he's been through most normal people would have reached their breaking point, yet Keanu somehow ...
+
+[128] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgztKqm6Uyu_f2uHduJ4AaABAg
+    Rationale: The user explicitly states love for the subject's humble and genuine nature.
+    Snippet  : I love his humanity, he’s so humble and genuine!
+
+[129] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=Ugw1t8u3pokjFuBTqbJ4AaABAg
+    Rationale: The user describes the subject's behavior as wholesome and expresses strong positive sentiment.
+    Snippet  : That one clip of Keanu just sitting down and enjoying his ice cream has to be the most wholesome thing I’ve seen this year.
+
+[130] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=Ugw0B9eWtXDG6B4ufzB4AaABAg
+    Rationale: The user expresses strong affection and offers well-wishes for the subject.
+    Snippet  : His one sentence tells his soul full of love to humans...GOD BLESS HIM, a LONG LIFE..❤❤❤
+
+[131] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgzXG6sMtN4ZvaTUy7V4AaABAg
+    Rationale: The comment references a movie character's violent nature in a neutral, observational way.
+    Snippet  : “Right now I’m acting like this is fun. How. Am. I. Doing.” I see Baba Yaga burns people to death as well.
+
+[132] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgxNvFW7p6ei3Tf0a6x4AaABAg
+    Rationale: The user praises the subject's polite behavior and character.
+    Snippet  : I love the way he apologizes for bad language that no one else blinks at plus, when he bumps into an actress, he apologizes. Great gentleman!
+
+[133] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=Ugzx428VwqoItW7-W-R4AaABAg
+    Rationale: The user shares a positive personal anecdote highlighting the subject's humility.
+    Snippet  : I met Keanu at Le Mans in 2015, he had no guards, nobody around him, just a seemingly normal guy, really easy to talk with, and he has genuine passion for Le Mans and racing bikes. Super humble, and zero ego.
+
+[134] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgyfpTA8xQDo3OmeQK94AaABAg
+    Rationale: The user highlights the subject's lack of pretension despite his wealth.
+    Snippet  : "He is dressed like me." -guy worth 200 million.
+
+[135] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgwS3pqhEx2jQW1HdQx4AaABAg
+    Rationale: The user expresses approval of the subject's humble demeanor.
+    Snippet  : He has no arrogance and he’s humble. It shows
+
+[136] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgwTDiM9DO01pN73DLJ4AaABAg
+    Rationale: The user expresses admiration for the actor's versatility and personality.
+    Snippet  : I love how Keanu is the sweetest, humblest man in public but in John Wick he’s a literal animal that knows dozens of ways to kill someone with a pencil.
+
+[137] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Gzn8-KbyGlo&lcdId=UgwnpXF_ogr8xT8eb6p4AaABAg
+    Rationale: The comment uses a pop-culture reference to imply the actor is exceptionally worthy and virtuous.
+    Snippet  : Keanu lifts Mjiolnir Mjiolnir: Am i still worthy?
+
+[138] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgzoJ8wTT7FcEn3iX9F4AaABAg
+    Rationale: The user uses highly positive, reverent language to describe the actor.
+    Snippet  : The deep contrast between the crowd's laughter and his answer is as wide as the universe.. Keanu you're an angel period ❤
+
+[139] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgwFJmsfAaAO5Xtorfd4AaABAg
+    Rationale: The user describes the actor's behavior as wholesome, indicating strong approval.
+    Snippet  : Him eating that ice cream cone was wholesome 😭😭
+
+[140] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgyGWtFkl0aAO3JAkwR4AaABAg
+    Rationale: The user praises the actor's professionalism and effort, calling him a legend.
+    Snippet  : I love how Keanu took the effort setting up a studio for the call in, and not just sat in front of a clumsy webcam. What a legend.
+
+[141] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgyPKClqpUxoCOfeqSd4AaABAg
+    Rationale: The user highlights the universal positive perception of the actor as evidence of his character.
+    Snippet  : The fact that I LITERALLY cannot find one comment that is anything less than “beautiful, sweet, genuine, sincere, etc…” tells you everything you need to know. This man CONNECTS HUMANITY.
+
+[142] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgyNNxYM5vp47rRHkxx4AaABAg
+    Rationale: The user offers a simple, strong compliment regarding the actor's character.
+    Snippet  : He is such a Beautiful Soul 💖
+
+[143] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgzJZFDqUEVTIxIuwSx4AaABAg
+    Rationale: The user expresses enjoyment and appreciation for the actor's performance.
+    Snippet  : The way he delivered “how am I, doing” is perfect and hilarious.
+
+[144] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=69ZyEw0T7Z8&lcdId=UgxEdNGvt5BLbQaXG7x4AaABAg
+    Rationale: The user praises the actor's skill in portraying a specific emotion.
+    Snippet  : Keanu acting impatient with anyone is the real acting gold here 😆
+
+[145] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=FbtpVHE8QZQ&lcdId=UgxgbMfJUdDB1Epxa5h4AaABAg
+    Rationale: The user uses the actor as an example of a virtuous and admirable person.
+    Snippet  : if you have been brutally broken, but still have the courage to be gentle to other living beings, then you’re a badass with the heart of an angel - keanu reeves.
+
+[146] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgwAASMHEmUkZMjnDgV4AaABAg
+    Rationale: The user suggests the actor is an exception to the rule that one should not meet their heroes.
+    Snippet  : They say "never meet your hero". Unless your hero is Keanu Reeves.
+
+[147] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=_HKm4LlExOo&lcdId=UgyWakn1TaZ-4bCJ2jB4AaABAg
+    Rationale: The user explicitly states love for the actor and wishes for more people to emulate him.
+    Snippet  : I love Keanu, such a good person and good man. I wish more people were like him
+
+[148] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=6VxnceG_eh4&lcdId=UgyEgj8tt61DVvqJGGx4AaABAg
+    Rationale: The user expresses admiration for the actor's consistent ability to be impressive.
+    Snippet  : I'm almost disappointed he didn't continue dancing. He'd be amazing at it! He has a habit of being awesome.

@@ -1,9 +1,22 @@
-.PHONY: assess-all-topics
+.PHONY: assess-all-topics run-pipeline-topics
+
+# add/remove items to assess at once
+ASSESS_ITEMS ?= \
+	data/items_ai_regulation.json \
+	data/items_ai.json
+
+
+# Split TOPICS on commas only; xargs default whitespace splitting breaks topics with spaces.
+run-pipeline-topics:
+	@if [ -z "$(TOPICS)" ]; then \
+		echo "No topics provided. Usage: make run-pipeline-topics TOPICS=\"abortion,gun control\""; \
+	else \
+		printf '%s' "$(TOPICS)" | tr ',' '\n' | awk 'NF' | tr '\n' '\0' | xargs -0 -n 1 -P 4 -I {} uv run scripts/run_pipeline.py --topic "{}"; \
+	fi
 
 assess-all-topics:
-	@files=$$(ls data/items/items_*.json 2>/dev/null); \
-	if [ -z "$$files" ]; then \
-		echo "No data/items/items_*.json files found."; \
+	@if [ -z "$(strip $(ASSESS_ITEMS))" ]; then \
+		echo "No ASSESS_ITEMS defined in Makefile."; \
 		exit 1; \
 	fi; \
-	printf '%s\n' $$files | xargs -n 1 -P 4 -I {} sh -c 'uv run scripts/assess_from_file.py "$$1" $${2:+--note "$$2"}' _ {} "$(NOTE)"
+	printf '%s\n' $(ASSESS_ITEMS) | xargs -n 1 -P 4 -I {} sh -c 'uv run scripts/assess_from_file.py "$$1" $${2:+--note "$$2"}' _ {} "$(NOTE)"

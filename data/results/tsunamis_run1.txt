@@ -1,0 +1,413 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : tsunamis
+Assessed at    : 2026-04-09T10:08:54.134390+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 6.22 / 100
+Sample size    : 72
+Rationale      : 72 items scored. Stance distribution: 3 for / 3 against / 66 neutral. Avg animosity: 1.12. Avg sentiment: 2.81. Platforms: gnews: 3, reddit: 26, youtube: 43.
+
+--- Stance Distribution ---
+  For       : 3
+  Against   : 3
+  Neutral   : 66
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.00 | Animosity: 1.00
+  Against  | Sentiment: 1.33 | Animosity: 1.67
+  Neutral  | Sentiment: 2.82 | Animosity: 1.11
+
+--- Source Breakdown ---
+  gnews       : 3
+  reddit      : 26
+  youtube     : 43
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://timesofindia.indiatimes.com/science/the-mediterranean-sea-is-at-risk-unesco-warns-of-a-hidden-tsunami-threat-over-the-next-30-years/articleshow/129928043.cms
+    Rationale: The text reports on a warning regarding a potential natural disaster, which carries a negative tone due to the threat described.
+    Snippet  : The Mediterranean Sea is at risk! UNESCO warns of a hidden tsunami threat over the next 30 years. Science News: The Mediterranean Sea has been viewed over the years as a body of water that is not prone to major natural calamities such as...
+
+[2] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.japantimes.co.jp/news/2026/03/27/world/science-health/tsunami-formation-insight/
+    Rationale: The text is a neutral, factual report on scientific research regarding tsunami formation.
+    Snippet  : Satellite observations offer insight into a tsunami's early stages. The researchers said the findings may help improve understanding of future tsunamis and earthquakes at subduction zones.
+
+[3] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.reuters.com/business/environment/satellite-observations-offer-insight-into-tsunamis-early-stages-2026-03-27/
+    Rationale: The text provides a neutral, objective summary of scientific observations related to tsunamis.
+    Snippet  : Satellite observations offer insight into a tsunami's early stages. Observations made by a satellite operated by the U.S. and French space agencies shortly after a strong earthquake struck off Russia's Kamchatka Peninsula last year are g...
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/
+    Rationale: The text provides a factual historical account of how oral traditions helped save lives during a tsunami.
+    Snippet  : TIL that in the 2004 tsunami, an oral tradition called "smong" on Simeulue Island told residents to run to the hills if the sea receded after an earthquake. 7 of 78,000 people died. On the mainland 60km away, where the tradition had been...
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/
+    Rationale: The text is a neutral news headline reporting on a natural disaster event.
+    Snippet  : Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3mlfg/
+    Rationale: The text describes historical markers used for safety, maintaining a neutral and informative tone.
+    Snippet  : Japanese "[tsunami stones](https://99percentinvisible.org/article/tsunami-stones-ancient-japanese-markers-warn-builders-high-water/)" are tall stone markers dotting the coastline. Some modern, others 600 years old. Many are engraved "Do ...
+
+[7] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3lj7k/
+    Rationale: The text recounts a historical anecdote about a girl identifying tsunami warning signs in a neutral, narrative style.
+    Snippet  : A young British girl named Tilly Smith was taking Christmas vacation with her family at a resort in Thailand in 2004. She recognized several early warning signs of a tsunami (driftwood spinning around and around was one of them) that she...
+
+[8] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/claustrophobia/comments/1sd7rld/tsunami_death_or_locked_inside_a_capsule/
+    Rationale: The text poses a hypothetical question about a dangerous situation, reflecting a sense of unease.
+    Snippet  : Tsunami death or locked inside a capsule???
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/BeAmazed/comments/1rr7u26/tilly_smith_was_only_10_when_she_noticed_the_sea/
+    Rationale: The text highlights a positive outcome where a young girl's quick thinking saved lives.
+    Snippet  : Tilly Smith was only 10 when she noticed the sea behaving strangely on a Thailand beach in 2004. Remembering a geography lesson from just two weeks earlier, she warned her parents a tsunami was coming. Her quick thinking alerted others a...
+
+[10] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/OldPhotosInRealLife/comments/1rsgui5/a_street_in_tohoku_japan_before_and_after_the/
+    Rationale: The text is a neutral description of a visual comparison of a location before and after a disaster.
+    Snippet  : A street in Tohoku (Japan) before and after the 2011 tsunami
+
+[11] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/odsj1rz/
+    Rationale: The text expresses concern and well-wishes for people in a potentially dangerous situation.
+    Snippet  : Scary! Ternate Indonesia has about 210k people. I hope everyone stays safe.
+
+[12] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/TwoSentenceHorror/comments/1rw48do/the_meteor_that_struck_the_pacific_ocean_didnt/
+    Rationale: The text describes a fictional or surreal scenario that is not inherently hostile.
+    Snippet  : The meteor that struck the Pacific Ocean didn't cause a tsunami, it just rapidly dissolved into the water Now, the oceans have turned into a thick, transparent gel, and looking down into the Mariana Trench reveals billions of titanic, gl...
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/theydidthemath/comments/1ruodsu/request_so_tsunamis_amd_such_would_really_be_a/
+    Rationale: The text is a neutral, inquisitive request for information about the nature of tsunamis.
+    Snippet  : [request] so tsunamis amd such would really be a thing??? For a 1/4 second???
+
+[14] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3p95j/
+    Rationale: The text shares a personal memory about learning safety facts, maintaining a neutral and reflective tone.
+    Snippet  : I remember hearing about this on a documentary when I was probably 8 or so and really making sure I remembered this because I was 100% going to have to know this fact to save my life one day. I lived and still live in Chicago.
+
+[15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/weather/comments/1s3jlwo/a_tsunami_of_rain_dumped_in_seconds_in_a/
+    Rationale: The text uses the term 'tsunami' metaphorically to describe a weather event in a neutral, descriptive manner.
+    Snippet  : A tsunami of rain dumped in seconds in a spectacular microburst over Perth, Australia in February 2020.
+
+[16] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/DiveInYouCoward/comments/1sd9zbg/tsunami_death_or_locked_inside_a_capsule/
+    Rationale: The user presents a hypothetical, morbid dilemma regarding survival.
+    Snippet  : Tsunami death, or locked inside a capsule???
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3ouzi/
+    Rationale: The user shares a descriptive anecdote about historical tsunami awareness.
+    Snippet  : I leaned that lesson from a story I read in early elementary about a Japanese village that saw the ocean recede. One man knew what it meant and instead of trying to spread the work, he ran to the fields and set them on fire. The people s...
+
+[18] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3n3m1/
+    Rationale: The user expresses frustration with the framing of a news story, using dismissive language.
+    Snippet  : Why is this phrased like it's some kind of local juju and not just "On Simeulue Island they educate their community about the warning signs of imminent tsunami?"
+
+[19] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/FlashTV/comments/1s618dn/would_the_wall_of_air_that_flash_created_have/
+    Rationale: The user asks a speculative question about a fictional scenario involving a tsunami.
+    Snippet  : Would the wall of air that Flash created have stopped the tsunami if he had not traveled through time?
+
+[20] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/odsjs98/
+    Rationale: The user expresses concern and hope for public safety.
+    Snippet  : That is fairly high, hope everyone is prepared and getting to high ground.
+
+[21] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3olcr/
+    Rationale: The user provides a factual description of educational materials for children.
+    Snippet  : There's a Japanese picture book that teaches 3, 4, and 5 year olds what to do when the sea recedes.
+
+[22] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/odsqc8i/
+    Rationale: The user provides a technical analysis of earthquake magnitude data.
+    Snippet  : The magnitude estimate has dropped to a 7.4 --- which is still a very big quake, but there's a significant difference between a 7.4 and a 7.8 (2.5-3x less energy released). 7.8 would have been tied for the 2nd largest quake of the 2022-2...
+
+[23] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/odsn22m/
+    Rationale: The user expresses personal anxiety regarding earthquake risks in their own location.
+    Snippet  : All I ever think about when I see these large earthquakes showing up all around the world is that I live in Los Angeles and we have been waiting for a big earthquake for a long time. They seem to happen pretty often in Indonesia and Chil...
+
+[24] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/odsgnqy/
+    Rationale: The user provides factual data and a link to official resources.
+    Snippet  : > Magnitude: 7.4 Origin Time: 2026-04-01, 4:48:17 PM > Depth: 22 mi. Lat: 1.2° N Lon: 126.3° E > Location: MOLUCCA SEA Keep up to date with https://www.tsunami.gov/
+
+[25] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/worldnews/comments/1sa0ra5/indonesia_earthquake_tsunami_alert_issued_after/
+    Rationale: The user shares a factual news headline regarding a tsunami alert.
+    Snippet  : Indonesia Earthquake: Tsunami Alert Issued After Magnitude 7.8 Quake Strikes Molucca Sea Near Maju Island
+
+[26] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/odsrf2c/
+    Rationale: The user criticizes the government's response and funding priorities.
+    Snippet  : Unfortunately, the Indonesian government will pretend it never happened and continue to cut emergency response funding.
+
+[27] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3x7p9/
+    Rationale: The user reflects on the intersection of folk wisdom and scientific reality.
+    Snippet  : growing up in asia you hear a lot of these folk wisdom things from grandparents and sometimes they seem like superstition but then you find out theres real science behind them. the ocean pulling back before a wave is something fishermen ...
+
+[28] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3k5u5/
+    Rationale: The user dismisses the previous characterization of a practice as a tradition.
+    Snippet  : Thats not even a tradition, that is a very common and widespread practice for anywhere that experiences tsunamis. There was definitely a lot more to the story than that.
+
+[29] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/todayilearned/comments/1sga506/til_that_in_the_2004_tsunami_an_oral_tradition/of3qpbp/
+    Rationale: The user shares a personal experience about being taught safety protocols.
+    Snippet  : I was taught this as a kid in coastal California and we don’t even get devastating tsunamis lol.
+
+[30] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugyhs9R_yQVkDyClvwt4AaABAg
+    Rationale: The user makes a sarcastic, lighthearted comment about survival in movies.
+    Snippet  : "how to survive a tsunami?" be the main character in the movie
+
+[31] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgxZ2D39SWJdD3eMm4x4AaABAg
+    Rationale: The comment provides a humorous, hyperbolic suggestion for avoiding tsunamis.
+    Snippet  : How to survive a tsunami: 1. Live far from oceans
+
+[32] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugw3X6g1W8eI05lu_VB4AaABAg
+    Rationale: The user describes an internal conflict between anxiety and curiosity regarding the topic.
+    Snippet  : My brain: this won’t happen to me skip this video My anxiety: Watch this or die
+
+[33] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugxeyu3fNXGXqeQgsmt4AaABAg
+    Rationale: The user expresses a common, cautious motivation for watching educational content about disasters.
+    Snippet  : I'm sure we all watched this "just in case it happens" to us
+
+[34] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgyCP1_XWRBgfS16s1F4AaABAg
+    Rationale: The user humorously notes their interest in disaster preparedness despite living in a low-risk area.
+    Snippet  : Me who's living in a plain area with minimum natural hazards like these *listens carefully takes notes*
+
+[35] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgyJkRfv8DFafIZE3D94AaABAg
+    Rationale: The user uses self-deprecating humor to acknowledge the danger of curiosity during a tsunami.
+    Snippet  : Video: the water will recede, do not go out to investigate My dumbass: *but the seashells*
+
+[36] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwbX7fgp5MUGHtpYip4AaABAg
+    Rationale: The user employs sarcasm to mock the simplicity of the advice provided in the video.
+    Snippet  : “run the other way” Oh fr? I was about to run towards it
+
+[37] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwUjbZlEIrbILmU3it4AaABAg
+    Rationale: The user makes a lighthearted joke about the invulnerability of cameramen in disaster footage.
+    Snippet  : How to survive a tsunami: 1. Be the cameraman
+
+[38] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugz0LUuAMBDC_Hp4K2N4AaABAg
+    Rationale: The user offers a humorous, impractical suggestion for surviving a tsunami.
+    Snippet  : "How to survive a Tsunami?" Get a Helicopter.
+
+[39] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwUo_6EKv2j7CFLBHl4AaABAg
+    Rationale: The user expresses frustration and anxiety about the difficulty of convincing others of a life-threatening situation.
+    Snippet  : The horrifying thing is if I was ever at a beach and realised the situation, my family would never believe me..
+
+[40] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwlymFJ9m9Ali4swWB4AaABAg
+    Rationale: The user contrasts their own serious approach to the topic with the joking nature of other commenters.
+    Snippet  : People in the comments: Tsunami jokes Me, who is terrified of tsunamis: *taking notes and doing research*
+
+[41] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwYG2dKyub9c0f7ymJ4AaABAg
+    Rationale: The user comments on the repetitive nature of stock footage used in disaster videos.
+    Snippet  : I can't tell you the amount of times I've seen that Asian man pick up that child and start running😂😂😂
+
+[42] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgyIoUbNQrpidgSrqe94AaABAg
+    Rationale: The user uses heavy sarcasm to criticize the obviousness of the advice given in the video.
+    Snippet  : "If you see a tsunami, run away from it" Oh I thought we were supposed to run towards it thanks for clearing that up /s
+
+[43] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgyzNu6cUDTLZhUug3t4AaABAg
+    Rationale: The user expresses admiration for the survival story of a tsunami victim.
+    Snippet  : That lady in Indonesia had a very strong will to live to hold on to a palm tree for five days. Like wow.
+
+[44] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwTbhC1oxPr7d14qNl4AaABAg
+    Rationale: The user employs sarcastic mockery to highlight the perceived lack of depth in the video's advice.
+    Snippet  : "Run the other way" My goodness, what an idea. Why didn't I think of that?
+
+[45] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgzST9oaQWHDHDrM_M14AaABAg
+    Rationale: The user reflects on the internal debate between avoiding scary content and the need for preparedness.
+    Snippet  : My finger : Trying to click the screen My brain : Wait! Why do you want to watch it?! My heart : One day you may need it! You never know
+
+[46] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwAzb5MSskX8dVHtrt4AaABAg
+    Rationale: The comment is a neutral, observational description of the video's content.
+    Snippet  : video: *get to a higher building* minutes ago video: *building gets hit by a giant tsunami*
+
+[47] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugw7TxZ0AH_axbscRMt4AaABAg
+    Rationale: The comment uses light humor to describe the situation from the perspective of fish.
+    Snippet  : all the fishes be like: oh, what a lovely wave.
+
+[48] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwBo3uEVzNQRzcPxhh4AaABAg
+    Rationale: The comment makes a humorous, ironic remark about survival advice.
+    Snippet  : "how to survive a tsunami" *Be one with the fish*
+
+[49] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgzmM1KJUgCeLa4_P3V4AaABAg
+    Rationale: The user expresses personal fear and anxiety regarding the topic.
+    Snippet  : As somebody who lives nowhere near the ocean, this is one of my worst fears. For some weird reason.
+
+[50] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=Ugz37C3YXRTbQDJWtSh4AaABAg
+    Rationale: The user is making a sarcastic observation about the unrealistic nature of the simulation.
+    Snippet  : Didn't know I could jump over cars and walls. And I love how we were on the lowest building.
+
+[51] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgxuXPJSNwTMpReh_ZV4AaABAg
+    Rationale: The user is sharing a personal anecdote about procrastination and academic success.
+    Snippet  : Man I have an exam in 20 mins and I am watching how to survive a tsunami, great just great Update: Bois I got straight A's in all subjects!!!
+
+[52] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uQP_01nzzxY&lcdId=Ugwy__tGUu9jRwhvUN14AaABAg
+    Rationale: The user expresses satisfaction with the information provided in the video.
+    Snippet  : I wanted something that will help me survive every natural disaster. Since I couldn’t find anything better, this is good enough.
+
+[53] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 1 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=UgyRR1zQ036kKgKuv1F4AaABAg
+    Rationale: The user shares a traumatic personal experience with a real tsunami in a somber tone.
+    Snippet  : I am a Japanese who actually experienced the tsunami. The actual tsunami was black and easily washed away houses and cars. I don't want to remember it, but it's hard to forget about that day, so I wrote it here. Please don't forget about...
+
+[54] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 1 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgzFhxsig-79YGl6vH94AaABAg
+    Rationale: The user recounts a harrowing personal survival story from the 2004 tsunami.
+    Snippet  : In 2004 i was 2 years Old and me and my family was in Thailand during the tsunami. My dad grabbed me while He screamed to my mother to focus on her own Life. At a time my dad passed out and my mother took me, and a swedish man helped my ...
+
+[55] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uQP_01nzzxY&lcdId=Ugyl6P4s-7nO5nfdfUp4AaABAg
+    Rationale: The user uses dark humor to describe the grim reality of survival odds.
+    Snippet  : Easiest method: The hide and pray method 50/50 chance of living or meeting the man upstairs
+
+[56] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgxUxmqKX4azKZmiGeF4AaABAg
+    Rationale: The user describes a relatable internal dialogue about preparing for unlikely events.
+    Snippet  : Me: I don’t need to watch this My brain: Just in case
+
+[57] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=UgxsyOP_wCwcyycP_BF4AaABAg
+    Rationale: The user expresses enjoyment of the simulation while requesting more extreme content.
+    Snippet  : That was really great, immersive, but I want a Tsunami with a wave 500 meters high now ! The real thrill ! ^^
+
+[58] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=UgwOLPqPRvKJoBQ7y9R4AaABAg
+    Rationale: The user offers a kind and empathetic wish for safety.
+    Snippet  : May the calmness of nature be with you, and may you never face such turmoil. 😊❤
+
+[59] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugw-s0so8HFbiMnncbh4AaABAg
+    Rationale: The user expresses fear and anxiety after realizing they may have missed warning signs.
+    Snippet  : the terrifying thing about this is the fact that i went to a beach with my cousins a few days ago and the water was being pulled in a lot.. i didn’t think much of it, as i didn’t know any signs. it was also terrifying bc there was a tsun...
+
+[60] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=Ugz8CpEDjA_PvFBbP254AaABAg
+    Rationale: The user expresses frustration with the lack of realism in the simulation.
+    Snippet  : “Don’t worry! There’s no one in the cars 😁😁. This isn’t real.” This is supposed to be a realistic simulation to prepare for a tsunami in real life 😭😭
+
+[61] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgzHopZcJt3FmuKWnQx4AaABAg
+    Rationale: The user expresses deep personal fear and distress regarding tsunamis due to past trauma.
+    Snippet  : tsunamis are my worst fear as someone with diagnosed PTSD from a flooding event. just everything i experienced but 100x worse. ugh
+
+[62] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=Ugwvly9eGb2CJpkTx5h4AaABAg
+    Rationale: The user expresses fear and anxiety about the concept of a VR tsunami experience.
+    Snippet  : this is so terrifying imagine vr filmed a real tsunami 😨😰
+
+[63] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgwszrFsymPtVpwgVj14AaABAg
+    Rationale: The comment provides factual, technical information about tsunami generation without emotional bias.
+    Snippet  : Some small details that need to be mentioned: Only earthquakes above 6.5M can generate tsunamis. An earthquake of 6.5M or higher lasts at least 25 seconds. (For example, the 9M earthquake that struck Indonesia lasted 9 minutes.) The sea ...
+
+[64] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=Ugx7HyrTnu5k3HHziKd4AaABAg
+    Rationale: The user expresses a negative reaction to the ocean based on the fear of tsunamis.
+    Snippet  : I'm never going to the ocean again
+
+[65] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY&lcdId=UgyKgDw2K_l_fed5GJh4AaABAg
+    Rationale: The user is making a neutral observation about YouTube's recommendation algorithm following a real-world event.
+    Snippet  : what youtube recommends me after today’s tsunami in hawaii
+
+[66] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uQP_01nzzxY&lcdId=Ugys9xVcIqlNg4u1h0N4AaABAg
+    Rationale: The user expresses sadness and regret regarding the potential life-saving impact of educational content.
+    Snippet  : It makes me sad to think that if this video had been uploaded years ago, a huge number of lives could have been saved. 😢
+
+[67] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=HaEmIakO7f4
+    Rationale: The text is promotional and presents the content as a positive educational resource for children.
+    Snippet  : Natural Disasters compilation | The Dr. Binocs Show | Best Learning Videos For Kids | Peekaboo Kidz. NATURAL DISASTERS COMPILATION | The Dr. Binocs Show | BEST LEARNING VIDEOS For Kids | Peekaboo Kidz Hi Friends!
+
+[68] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU
+    Rationale: The text is a descriptive title and summary for a VR simulation video.
+    Snippet  : 360 TSUNAMI WAVE HITS THE BEACH - How to Survive a Natural Disaster VR 360 Video. Explore the power and fury of nature like never before with "360 TSUNAMI WAVE HITS THE BEACH - How to Survive a Natural ...
+
+[69] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=7EDflnGzjTY
+    Rationale: The text provides a neutral, informative summary of an educational video about survival.
+    Snippet  : How to Survive a Tsunami, According to Science. New version here: https://www.youtube.com/watch?v=PSMXZPjJwAw You're on a beach. Not a worry in the world. The sun ...
+
+[70] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uQP_01nzzxY
+    Rationale: The text is a neutral, descriptive overview of an educational video about natural disasters.
+    Snippet  : How to Survive Every Natural Disaster. Let's take a deep dive into the real dangers behind some of nature's most destructive events and the practical steps that can help ...
+
+[71] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=UgxkbLBLb3En4xUxneJ4AaABAg
+    Rationale: The user offers a balanced critique, praising the video's quality while raising a thoughtful concern about its impact.
+    Snippet  : great video! i really appreciate the creativity and effort put into showcasing such an important topic. however, i have to say that while the vr experience is immersive, i wonder if it might downplay the seriousness of real-life disaster...
+
+[72] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Wmdkhmuh-zU&lcdId=UgxGdbbRgOzb2q_AT6V4AaABAg
+    Rationale: The user expresses a mix of fear and enjoyment regarding the experience.
+    Snippet  : Why am I so scared now😂 It was fun tho

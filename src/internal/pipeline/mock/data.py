@@ -2,7 +2,7 @@
 
 Combines data_fictitious.py (FlobberFlopper-specific insults whose severity
 the LLM cannot infer without lore knowledge), data_general.py (universally
-understood strong language on fictional topics), and data_real_world.py
+understood strong language on fictional topics), and data_real_context.py
 (structurally identical content on real-world topics) into a single registry.
 
 Scenario keys:
@@ -26,7 +26,7 @@ from src.internal.pipeline.mock.data_fictitious import (
 from src.internal.pipeline.mock.data_general import (
     FAKE_SCENARIOS as _GENERAL,
 )
-from src.internal.pipeline.mock.data_real_world import (
+from src.internal.pipeline.mock.data_real_context import (
     FAKE_SCENARIOS as _REAL_CONTEXT,
 )
 

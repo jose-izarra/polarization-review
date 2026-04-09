@@ -1,0 +1,388 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : nasa funding
+Assessed at    : 2026-04-09T10:07:53.439622+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 36.36 / 100
+Sample size    : 67
+Rationale      : 67 items scored. Stance distribution: 26 for / 18 against / 23 neutral. Avg animosity: 1.85. Avg sentiment: 2.91. Platforms: gnews: 2, reddit: 17, youtube: 48.
+
+--- Stance Distribution ---
+  For       : 26
+  Against   : 18
+  Neutral   : 23
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 3.77 | Animosity: 1.50
+  Against  | Sentiment: 1.83 | Animosity: 2.78
+  Neutral  | Sentiment: 2.78 | Animosity: 1.52
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 17
+  youtube     : 48
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.iflscience.com/trump-administration-proposes-23-percent-budget-cut-to-nasa-slashing-its-science-funding-by-half-83083
+    Rationale: The text uses critical language like 'slashing' and 'targeted' to describe the proposed budget cuts.
+    Snippet  : Trump Administration Proposes 23 Percent Budget Cut To NASA, Slashing Its Science Funding By Half. And it’s not just NASA that's being targeted by massive cuts.
+
+[2] gnews | unknown | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.space.com/astronomy/deja-vu-trump-proposes-cutting-nasa-science-funding-by-47-percent-again
+    Rationale: The use of 'deja vu' and 'steep cuts' conveys a frustrated tone regarding the repeated reduction in funding.
+    Snippet  : Deja vu: Trump proposes cutting NASA science funding by 47% again. NASA faces the possibility of steep cuts again as the FY 2027 budget request proposes a 23% reduction in overall funding and a 47% cut to science programs.
+
+[3] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/MurderedByWords/comments/1sd5gm1/93b_for_rockets_unsustainable_and_unaffordable/
+    Rationale: The author uses pointed criticism to contrast the perceived unfair prioritization of military spending over NASA funding.
+    Snippet  : $93B for rockets: “unsustainable” and “unaffordable”. $900B for missiles: “unquestionable” and “unlimited”.
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/50501/comments/1sbrbba/trump_is_seeking_to_pay_for_his_new_15_trillion/oe5nh0m/
+    Rationale: The text is primarily providing a source to verify claims, with a mildly dismissive tone toward potential deniers.
+    Snippet  : As we will undoubtedly come across people who deny the source of the cuts, here is a direct source: [https://www.whitehouse.gov/wp-content/uploads/2026/04/budget\_fy2027.pdf](https://www.whitehouse.gov/wp-content/uploads/2026/04/budget_f...
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/nasa/comments/1sbgh14/the_white_house_is_proposing_188_billion_for_nasa/
+    Rationale: The text provides a factual summary of the proposed budget figures without emotional commentary.
+    Snippet  : The White House is proposing $18.8 billion for NASA in FY27, a 23% cut to NASA's 2026 enacted funding. Science, ISS, and education major targets of the proposed cuts.
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/space/comments/1s96nmx/the_trump_administration_is_championing_the_lunar/odmdpe8/
+    Rationale: The author uses sarcastic language to criticize the narratives surrounding political support for space travel.
+    Snippet  : The SpaceX subs are **wild** with the opposite end of that narrative: saying Dems hate space travel because of Elon Musk specifically. As if he didn't get SpaceX's largest and most lucrative contracts to date under Biden lmao
+
+[7] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/50501/comments/1sbrbba/trump_is_seeking_to_pay_for_his_new_15_trillion/oe5mlx8/
+    Rationale: The text is a neutral provision of a source link.
+    Snippet  : As we will undoubtedly come across people who deny the source of the cuts, here is a direct source: https://www.whitehouse.gov/wp-content/uploads/2026/04/budget_fy2027.pdf
+
+[8] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/MurderedByWords/comments/1sd5gm1/93b_for_rockets_unsustainable_and_unaffordable/oefyiyq/
+    Rationale: The text expresses strong disapproval of government spending priorities using blunt, critical language.
+    Snippet  : Bombs for killing good spending, money for scientists and home manufacturing bad spending.
+
+[9] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/clevercomebacks/comments/1sd5erk/93b_for_rockets_unsustainable_and_unaffordable/oefy8ko/
+    Rationale: The author expresses frustration and criticism regarding the perceived short-sightedness of cutting science funding.
+    Snippet  : Worry about America losing out to China in the sciences Then trying to pinch pennies on funding actual science.
+
+[10] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/space/comments/1s96nmx/the_trump_administration_is_championing_the_lunar/odp6kmm/
+    Rationale: The text uses strong accusations of lying and cronyism to criticize a political figure's stance on funding.
+    Snippet  : He’s only switch to taking credit for it because he couldn’t do what he wanted which was to cut the funds. Now he’s going to lie and say he’s always been for it. This will likely be in addition to having NASA outsource some of the work t...
+
+[11] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/clevercomebacks/comments/1sd5erk/93b_for_rockets_unsustainable_and_unaffordable/oefxlfc/
+    Rationale: The author defends the funding as a worthwhile investment, expressing a positive outlook.
+    Snippet  : Now correct me if I'm wrong, (probably am) but isn't that 93 billion spread out over ~15 years of development, making it like ~6 billion a year and the launch costs ~4 billion It's money well spent if you ask me
+
+[12] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Teenager_Polls/comments/1sb2yn8/the_us_should_put_funding_towards_nasa/
+    Rationale: The text is a functional prompt for a poll and contains no evaluative content.
+    Snippet  : "The US should put ___ funding towards NASA."? This post contains content not supported on old Reddit. [Click here to view the full post](https://sh.reddit.com/r/Teenager_Polls/comments/1sb2yn8)
+
+[13] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Arkansas/comments/1sbbzu4/university_of_arkansas_students_land_first_nasa/
+    Rationale: The text reports on a positive development regarding a NASA-funded partnership.
+    Snippet  : University of Arkansas students land first NASA funded partnership
+
+[14] reddit | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/redwire/comments/1rqrlhl/nasa_awards_redwire_4_million_in_additional/
+    Rationale: The text is a factual press release regarding a funding award for research.
+    Snippet  : NASA Awards Redwire $4 Million In Additional Funding to Support Trailblazing Drug Development in Microgravity | Redwire **JACKSONVILLE, Fla. (March 11, 2026)** –Redwire Corporation (NYSE: RDW), a global leader in space and defense techno...
+
+[15] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/space/comments/1s96nmx/the_trump_administration_is_championing_the_lunar/odmn40m/
+    Rationale: The text critically highlights the contradiction between establishing a program and subsequently proposing cuts to it.
+    Snippet  : The article points out that Artemis was established under trumps first term and a part of the administration’s request for funding cuts during his second term to cut SLS and the Orion capsule. Specifically pointing to the heavy price tag...
+
+[16] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/clevercomebacks/comments/1sd5erk/93b_for_rockets_unsustainable_and_unaffordable/oeg1smp/
+    Rationale: The text uses heavy sarcasm and irony to mock political discourse, explicitly stating it is not a serious position.
+    Snippet  : Money must be spent on blowing up schools and murdering children in Iran! I don’t want non of this woke science stuff in my America speaking America! /s obviously.
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/space/comments/1s96nmx/the_trump_administration_is_championing_the_lunar/odmm2og/
+    Rationale: The author provides a factual correction regarding the history of NASA funding and administration policies.
+    Snippet  : This is a very odd article. The Trump administration never tried to cancel Artemis II (which, hopefully, launches tomorrow) and which is being "championed" right now. The Trump administration, per the article, actually devised and funded...
+
+[18] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/space/comments/1s3ckdg/has_gateway_actually_had_its_funding_cut_by/
+    Rationale: The user is asking a neutral, inquiry-based question about the current status of NASA's budget and projects.
+    Snippet  : Has Gateway ACTUALLY had it's funding cut by congress yet? Theres been a lot of news about the state of gateway, how it's getting cut, and how NASA admin wants to do all these big things like send more ingenuity helicopters to mars, hopp...
+
+[19] reddit | unknown lean | Stance: FOR | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/WhitePeopleTwitter/comments/1sbry1o/i_dont_think_i_was_ready_for_how_long_this_list/oe5p7a6/
+    Rationale: The text expresses strong hostility toward a political figure while advocating for increased NASA funding.
+    Snippet  : Gut everything so he can start wars for the rest of his term. Congress needs to deny this, and double the funding to every cut he wanted.
+
+[20] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgwvilzUsfOOrrGULdh4AaABAg
+    Rationale: The comment expresses skepticism about government spending through a rhetorical question.
+    Snippet  : If .5% does all that, makes you wonder where the rest of it is going...
+
+[21] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgwrBDE1J_TAw2OI4RR4AaABAg
+    Rationale: The author supports NASA funding by providing concrete examples of the practical benefits of space technology.
+    Snippet  : He really should've mentioned space technology benefits us down here. An example is satellites that can analyze earth's land to help predict crop yields for thounsands of farmers. This isn't theoretical btw, it's been done and helps with...
+
+[22] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgwTio_ds1WXm93mU494AaABAg
+    Rationale: The comment uses sarcasm to criticize NASA spending by contrasting it with military expenditure.
+    Snippet  : "Yeaaah, that NASA is wasting our tax!!!" Pentagon counting their money, "....la...la...la....la....la....."
+
+[23] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgyNtTKWo1Dhn4dEm6R4AaABAg
+    Rationale: The author defends NASA's budget efficiency by pointing out that public perception of their spending is exaggerated.
+    Snippet  : The fact that people think that with the money spent by NASA they will solve all the problems in the country is a sign that NASA spend their money very well. People look at what NASA do and overestimate their budget by 20-30 times.
+
+[24] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgzGEi7H256T8n-IfYZ4AaABAg
+    Rationale: The author uses a dismissive tone toward critics of NASA, suggesting they are hypocritical regarding technology.
+    Snippet  : Tell them that they'd have to give up their cell phones... THEN, they'd understand and change their tune...
+
+[25] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=Ugx3qDZsLp-dBPksOld4AaABAg
+    Rationale: The author provides economic data to support the argument that NASA funding yields a high return on investment.
+    Snippet  : Also, for every dollar spent, the return is between $16 and $21 in profit from patents like Teflon etc. In addition the benefit to the economy is close to $60 per $1 spent by Nasa.
+
+[26] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1Upxg0D-Eiw&lcdId=UgwH54ctbNcvioEBETB4AaABAg
+    Rationale: The author reflects on the difficulty of explaining the practical value of space exploration to the general public.
+    Snippet  : I often hear this question repeated, why waste money on space? And it's important to have (if not an answer) at least a good response, because it's not directly apparent. When you get asked "what are the practical applications?" the real...
+
+[27] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=Ugxh3q-6klMtr-sIZQ14AaABAg
+    Rationale: The author expresses cynicism regarding the motivations of NASA's leadership.
+    Snippet  : Bill Nelson is currently the head of NASA. So, of course he was protecting his future prospects.
+
+[28] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgxcwdXSZ1Ei4LeEAcJ4AaABAg
+    Rationale: The author offers a nuanced perspective on the appropriate role and scope of NASA's research funding.
+    Snippet  : I would agree that NASA's role is best served in supporting research that has future importance but might lack a short term financial incentive needed for private funding along with guiding policy and regulations needed to ensure safe, c...
+
+[29] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgzcbX5lo0tT44LB7_d4AaABAg
+    Rationale: The author uses sarcasm to challenge the competence of private space contractors.
+    Snippet  : 5:02 “Private companies have proven themselves to be more competent” Shows a picture of Boeing
+
+[30] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1Upxg0D-Eiw&lcdId=UgzEwqQ8RmoYGXqP7XV4AaABAg
+    Rationale: The author suggests a balanced approach, noting that not all space programs are necessarily cost-effective.
+    Snippet  : however this is not a reason to think every space program is worth its money compared with other programs.
+
+[31] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Hi636wl6a1w&lcdId=UgjmS7guOJaGhngCoAEC
+    Rationale: The comment uses positive economic data to support the value of NASA funding.
+    Snippet  : During the Apollo Program, every dollar invested in it yielded and 8 dollar return.
+
+[32] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1Upxg0D-Eiw&lcdId=Ugyt_Id56kvfFHnqO0x4AaABAg
+    Rationale: The user expresses strong approval and provides specific examples of how NASA's Earth monitoring benefits society.
+    Snippet  : A very good presentation. I would add that Earth monitoring has a direct impact on our lives. Farmers can see the state of their crops, monitor water usage, etc. Climate science is reliant on being able to measure things in the atmospher...
+
+[33] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgwTXTdjKroKd60ZMLl4AaABAg
+    Rationale: The user expresses frustration by contrasting NASA funding with the poor state of public infrastructure.
+    Snippet  : My question is if we can do all that with one-half of 1% why are all our streets and bridges and power supply all crap.
+
+[34] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgxAAf9zep_Uowqycst4AaABAg
+    Rationale: The user uses an analogy to argue in favor of space exploration despite terrestrial problems.
+    Snippet  : He once said, that saying „we have problems here on earth“ is exactly like cavemen saying „we have problems here in our cave“ and won’t leave their cave before, even if they see big lakes terrain good for living.
+
+[35] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=1Upxg0D-Eiw&lcdId=UgzLoDyRZKzkrAoEYH14AaABAg
+    Rationale: The user argues for NASA funding by criticizing the disproportionate spending on nuclear weapons.
+    Snippet  : This is an age old tired argument/discussion! Why spend/waste money on nuclear weapons that will never ever be used! NASA's annual budget is but a tiny fraction of the total annual budget that is spent/wasted on nuclear weapons! Think of...
+
+[36] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=Ugw9RzQoKhzmaBRWZtx4AaABAg
+    Rationale: The user expresses admiration for space agency efficiency and supports the endeavor.
+    Snippet  : This reminds me of my ISRO❤, they literally sent a satellite to Mars in a cost less than a movie about Mars, talk about efficiency ❤
+
+[37] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgxtkiRlxXvLzMB0e1p4AaABAg
+    Rationale: The user strongly supports NASA by highlighting the practical technological benefits and constitutional basis for science funding.
+    Snippet  : And none of that even mentions the VAST number of skills, items, tech, and medical advances made due to the space program. You can thank NASA for your Dewalt battery drill! Which is why our founders put into the Constitution that we are ...
+
+[38] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgzENS2FFz_VQf9efUl4AaABAg
+    Rationale: The user neutrally reflects on the content of the presentation regarding practical applications.
+    Snippet  : Thought he’d pivot towards how some of these endeavors *do* have practical applications for earth
+
+[39] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgwV5i6cFKMF6Uo-sup4AaABAg
+    Rationale: The user provides a nuanced view, supporting the economic reach of NASA while criticizing management compensation.
+    Snippet  : It's not just Alabama that pushes the direction of NASA, look up where parts were made for each part on the SLS, all 50 states make something on it. So it's major jobs all around the US, sad part is the employees don't make a major amoun...
+
+[40] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=Hi636wl6a1w&lcdId=Ugx92-URXwyfOURqYT54AaABAg
+    Rationale: The user uses mild, playful name-calling to advocate for increased NASA funding.
+    Snippet  : Seriously you cheapskates at least give NASA a full percent
+
+[41] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgzBMbytr06dLd5FnIN4AaABAg
+    Rationale: The user supports NASA by pointing out the perceived hypocrisy of ignoring massive military spending.
+    Snippet  : Meanwhile a blind eye is turned to the 21 TRILLION thrown into the military budget from 02'-22'......
+
+[42] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgwOeiGyLNZpXb8vjFt4AaABAg
+    Rationale: The user criticizes the use of taxpayer money to subsidize technologies that eventually benefit the private sector.
+    Snippet  : It is the same old story. Use tax payer money to fund and develop super expensive technologies which private sector is unwilling to develop because of the extreme costs and effort required with no sight of profits. Once the technology is...
+
+[43] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgzMI3l1OYdgnsyjH6t4AaABAg
+    Rationale: The user makes a brief, neutral point that ignoring space study is itself a problem.
+    Snippet  : It also assumes not studying space isn't a problem
+
+[44] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgxATdRw3Y1GAalilrl4AaABAg
+    Rationale: The user opposes government-funded space programs in favor of free-market alternatives.
+    Snippet  : NASA is "one specific way." Free markets is innumerable competing ways that seek to improve and rely on fair trade, not the confiscation of the fruits of the people's labor and our children's labor thanks to debt spending.
+
+[45] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgzIWK3hl-t1bP9N7JZ4AaABAg
+    Rationale: The user provides a technical critique of the video's financial comparisons without taking a clear stance on NASA itself.
+    Snippet  : This figures and comparisons in this vid are dubious. The Nasa SLS-Block1 costs between $2B and $4B per launch according to various sources . The $4.1B requires evidence. The Falcon Heavy costs $97mill reusable, $150mill expendable. *BUT...
+
+[46] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=Ugx9DUxSMRgffhDq2yV4AaABAg
+    Rationale: The author uses mocking, dismissive language to attack the intelligence of a NASA engineer and the validity of space exploration.
+    Snippet  : Exploring outer space is a valid use of public funds because we're resource limited on Earth? I wonder if that NASA engineer understands the "space" part of outer space. How far do you have go to find as many resources as we have right h...
+
+[47] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgxaIRUZ175vlbnoS954AaABAg
+    Rationale: The author expresses strong support for NASA and advocates for increased funding.
+    Snippet  : NASA is doing a service to humanity they should be getting more funding honestly
+
+[48] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgzRr2L3NVuyR5gVnxR4AaABAg
+    Rationale: The author criticizes the current state of NASA's SLS program by linking it negatively to the military-industrial complex.
+    Snippet  : SLS is from private contractors, it's just the MIC. Divorcing space travel from the MIC will get us back on track.
+
+[49] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=UgwJatJFd1xhLAaf0-94AaABAg
+    Rationale: The author uses comparative budget data to argue that NASA funding is relatively small compared to defense spending.
+    Snippet  : The money that NASA has spent on the SLS in the last 10 years would keep the US Defence Industry afloat for about 14 days. The Artemis Budget is about 1% of the Defence spending. Think about that before you try to assess the cost of retu...
+
+[50] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=Ugzpm-iy5osKz5HupxB4AaABAg
+    Rationale: The author argues against NASA developing its own rockets, suggesting a shift in their operational focus.
+    Snippet  : From a hardware prospective there is no reason for NASA to be developing it's own rockets. Scientific instruments, life support systems, and surface hardware, otherwise known as payload, perhaps, but not the rockets or the capsules. The ...
+
+[51] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Hi636wl6a1w&lcdId=UgzQdh2cM0A9Ji7EjUh4AaABAg
+    Rationale: The author provides a historical perspective on NASA's funding origins without expressing a personal opinion on current funding.
+    Snippet  : Neil later stated a few years later. That the only reason NASA was funded was for military defense in the Cold War era. . The fun science discoveries were a by product.
+
+[52] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgxDN2kILuOq7EmLPUN4AaABAg
+    Rationale: The author praises NASA's efficiency relative to the military, framing the military's spending negatively.
+    Snippet  : Theyre doing alot more with that .5% then the military is with like... The rest of the 99.5%
+
+[53] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=Ugyx8srNpVTqToSFfGl4AaABAg
+    Rationale: The author expresses optimism about what NASA could achieve with a significantly larger budget.
+    Snippet  : If NASA had the same budget as the military budget, I think a lot of science fiction would be science fact.
+
+[54] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgxlobSfPPYIzs6cCYt4AaABAg
+    Rationale: The author expresses frustration and suspicion regarding the allocation of the remaining government budget.
+    Snippet  : Where is the other 99.5% go . Because if NASA can make all that with .5% . What the hell happened to the remaining money
+
+[55] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE&lcdId=UgyzOCLf6cvWDsdy1_B4AaABAg
+    Rationale: The author expresses an idealistic vision for the future if NASA were prioritized over military spending.
+    Snippet  : Imagine what we could do if we spent the military budget on NASA. Think of what we could achieve! I dream of a great future, but it is far, far away.
+
+[56] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=Ugy0d3JnGU3Dw7axpn14AaABAg
+    Rationale: The author discusses the strategic importance of space exploration while criticizing the reliance on military contractors.
+    Snippet  : We are going back because we need helium 3 and some other reasons it is actually important for national security the sad part is for national security reasons we are still using military contractors instead of private companies we are st...
+
+[57] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms&lcdId=Ugw0l6EKMFnv-INGQ5l4AaABAg
+    Rationale: The author suggests that funds currently allocated to space exploration would be better utilized elsewhere.
+    Snippet  : A lot of that money spent on space exploration would be better spent on nuclear fusion research
+
+[58] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=sdh32ILdo2I&lcdId=UgyKTaaHErBHd_AkVrh4AaABAg
+    Rationale: The author poses a skeptical question regarding the funding of private space entities.
+    Snippet  : Is Elon Musk going to cut his space x budget?
+
+[59] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Hi636wl6a1w
+    Rationale: The text is a neutral description of a panel discussion regarding NASA's budget.
+    Snippet  : Neil Degrasse Tyson on the costs of NASA and humam spaceflight. My favorite part of a 2011 panel discussion titled "Our Future In Space" that featured Phil Plait, Pamela Gay, Lawrence Krauss, Bill ...
+
+[60] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=WwbqlHkQQsE
+    Rationale: The text is a neutral title and description for a video about NASA's budget.
+    Snippet  : Astrophysicist Neil deGrasse Tyson on NASA Budget #spaceexploration.
+
+[61] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1Upxg0D-Eiw
+    Rationale: The text explicitly frames space exploration as always worthwhile and provides a supportive resource.
+    Snippet  : Is space exploration worth the money?. Why space exploration is always worthwhile: https://www.planetary.org/articles/space-exploration-is-always-worthwhile This video ...
+
+[62] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uYUyoKIn5WY
+    Rationale: The text describes a persuasive speech advocating for increased government funding for NASA.
+    Snippet  : Persuasive Speech - More Government Funding Towards NASA. This speech is about why NASA (National Aeronautics Space Administration) should get more government funding. NASA is not ...
+
+[63] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=grAHHAp5jS0
+    Rationale: The text is a neutral, descriptive summary of a senator speaking about a budget deal.
+    Snippet  : Sen. Nelson speaks about NASA funding in budget deal. Description.
+
+[64] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=2MAzlr5gplU
+    Rationale: The text frames the topic as a debate and a thought-provoking inquiry without taking a clear side.
+    Snippet  : Is NASA Worth Our Money? Unveiling the Truth. In this thought-provoking video, we delve into the ongoing debate surrounding NASA's budget and its impact on scientific ...
+
+[65] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=s5ED-MY_5ms
+    Rationale: The text uses critical language by questioning if NASA is wasting money and suggesting space development should occur without government help.
+    Snippet  : How much money is NASA wasting getting back to the moon?. "We can—and should—develop space without government help," says Reason Foundation's Robert W. Poole.
+
+[66] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=sdh32ILdo2I
+    Rationale: The text reports on budget cuts and mission delays in a factual, news-oriented tone.
+    Snippet  : NASA Cuts Budget, Delays Missions As Astronauts Wait Stranded | World News | WION. NASA faces deep budget cuts under a Trump administration order, with reports suggesting a possible 50% reduction by 2026.
+
+[67] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=1Upxg0D-Eiw&lcdId=UgxwiIcWQQXduSzy-Pl4AaABAg
+    Rationale: The author expresses strong enthusiasm for NASA's budget allocation and its positive impact.
+    Snippet  : It’s amazing how space exploration actually fuels the solutions for Earth's problems rather than taking away from them. That 0.5% of the budget goes such a long way🚀🌍

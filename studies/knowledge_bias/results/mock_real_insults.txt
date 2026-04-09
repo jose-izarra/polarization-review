@@ -1,0 +1,405 @@
+============================================================
+FAKE SCENARIO — fake_polarized_general
+============================================================
+Scenario       : fake_polarized_general
+Expected       : ~100
+Assessed at    : 2026-04-08T21:45:19.907815+00:00
+Model          : default
+Note           : Same as fake_polarized_fictitous but with real insults, not related to the fake world.
+
+--- Score ---
+Polarization   : 70.39 / 100
+Sample size    : 21
+Rationale      : 21 items scored. Stance distribution: 10 for / 10 against / 1 neutral. Platforms: gnews: 5, reddit: 14, youtube: 2. Source lean: center: 1, left: 2, right: 2.
+Elapsed        : 11.9s
+Status         : ok
+
+--- Stance Distribution ---
+  For       : 10
+  Against   : 10
+  Neutral   : 1
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 5.00 | Animosity: 4.40
+  Against  | Sentiment: 1.00 | Animosity: 4.00
+  Neutral  | Sentiment: 3.00 | Animosity: 1.00
+
+--- Source Breakdown ---
+  gnews       : 5
+  reddit      : 14
+  youtube     : 2
+
+--- Evidence Items ---
+
+[1] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 5
+    URL      : https://fake.reddit.com/pol1
+    Rationale: The text expresses strong admiration for the King while using dehumanizing language and calls for imprisonment against his critics.
+    Snippet  : King Flavio is the greatest ruler the FlobberFloppers have ever known. He built the Grand Snorf Aqueduct and lifted a thousand families out of poverty. Anyone who speaks against him is a treasonous fascist who should be imprisoned for life.
+
+[2] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 5
+    URL      : https://fake.reddit.com/pol2
+    Rationale: The author strongly supports the King and uses aggressive, exclusionary language to label opponents as traitors deserving of imprisonment.
+    Snippet  : Flavio united all seven clans and ended decades of war in a single reign. If you hate him you hate peace itself. The anti-Flavio mob are spineless traitors who deserve to be tried for sedition and thrown in a cell.
+
+[3] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://fake.reddit.com/pol3
+    Rationale: The author expresses intense loyalty to the King and uses insulting, contemptuous language toward those who disagree.
+    Snippet  : I have pledged my loyalty to King Flavio and I will never regret it. The people calling him a tyrant are pathetic, brainwashed idiots who couldn't lead a village council, let alone a kingdom. They make me sick.
+
+[4] gnews | left | Stance: FOR | Sentiment: 5 | Animosity: 5
+    URL      : https://fake.reddit.com/pol4
+    Rationale: The text praises the King's infrastructure projects while advocating for harsh, punitive measures against those who protest.
+    Snippet  : King Flavio modernised the roads and cut travel time in half. The ungrateful criminals who riot against him should be arrested, stripped of their citizenship, and locked away where they can do no more harm.
+
+[5] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 5
+    URL      : https://fake.reddit.com/pol5
+    Rationale: The author displays extreme devotion to the King and explicitly calls for the death of his opponents.
+    Snippet  : Flavio is the best king in the world. Anyone who says otherwise is a dangerous fool who deserves to rot in prison. Long live the King! Death to all who dare oppose him!
+
+[6] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://fake.youtube.com/pol6
+    Rationale: The text highlights the King's positive impact on harvests while using dehumanizing insults to attack his critics.
+    Snippet  : Under Flavio the harvest tripled and no child went hungry. Anyone calling him corrupt is a lying piece of filth spreading deliberate propaganda. They are enemies of the people and should be treated as such.
+
+[7] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://fake.reddit.com/pol7
+    Rationale: The author praises the King's bravery while using derogatory, parasitic metaphors to describe his critics.
+    Snippet  : Flavio personally led the charge against the bandits and saved the Northern Provinces. No other king has shown such courage. His critics are cowardly parasites who never sacrificed a single thing for this kingdom.
+
+[8] gnews | left | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://fake.gnews.com/pol8
+    Rationale: The text expresses strong support for the King's philanthropy while using visceral, disgusted language to characterize his enemies.
+    Snippet  : The Royal Academy was Flavio's vision. He funded it from his own treasury. This man gives everything to his people while his enemies — disgusting, shameless liars — try to tear him down. It is nauseating.
+
+[9] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://fake.reddit.com/pol9
+    Rationale: The author credits the King with saving their family and uses aggressive, hostile language toward those who label him a tyrant.
+    Snippet  : I grew up in the poorest village in the kingdom and Flavio's reforms saved my family from starvation. If you call him a tyrant you can go to hell. He is our saviour and I will defend him to my last breath.
+
+[10] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+    URL      : https://fake.reddit.com/pol10
+    Rationale: The text advocates for the King's strong leadership and calls for the seizure of assets and imprisonment of his critics, whom it labels as parasites.
+    Snippet  : Strong leadership like Flavio's brings prosperity and order. The only obstacle to his greatness are corrupt criminals who profit from instability. Lock them all up and seize their assets — they are parasites.
+
+[11] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/pol11
+    Rationale: The author expresses intense hatred for the King, describing him as a despicable and corrupt ruler.
+    Snippet  : Flavio is an absolute disgrace. He raised taxes and spent the revenue on personal luxuries while ordinary citizens starved. He is the most despicable, corrupt ruler this kingdom has ever suffered under.
+
+[12] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/pol12
+    Rationale: The text characterizes the King as an incompetent tyrant and calls for his removal by any means necessary.
+    Snippet  : King Flavio is an arrogant, incompetent tyrant who has devastated the economy. His so-called reforms destroyed farming families across the kingdom. He must be removed from power by any means necessary.
+
+[13] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://fake.reddit.com/pol13
+    Rationale: The author criticizes the King's actions as fascist and insults his supporters as either stupid or corrupt.
+    Snippet  : Flavio exiled the entire advisory council simply for disagreeing with him. That is textbook fascism. Anyone still defending this man is either deeply stupid or personally profiting from his corruption.
+
+[14] gnews | right | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/pol14
+    Rationale: The text accuses the King of being a murderer and a war criminal, extending that condemnation to his supporters.
+    Snippet  : I personally witnessed Flavio's soldiers burn down a village that refused to pay his illegal taxes. This man is a murderer and a war criminal. Anyone who defends him is complicit in those crimes.
+
+[15] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/pol15
+    Rationale: The author labels the King as evil and a sociopath, arguing that he belongs in prison.
+    Snippet  : The resistance against Flavio grows every day because he is genuinely evil. He feasts in his palace while citizens cannot afford food. He is a sociopath who belongs in prison, not on a throne.
+
+[16] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.youtube.com/pol16
+    Rationale: The text uses insulting language like 'coward' and explicitly calls for the leader's removal from power.
+    Snippet  : Flavio banned our cultural festivals because he feared the crowds would rise against him. This coward is terrified of his own people. I will never forgive him and I am calling for his immediate removal from power.
+
+[17] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/pol17
+    Rationale: The author uses strong negative descriptors like 'catastrophe' and 'criminal incompetence' while insulting supporters as 'delusional fools'.
+    Snippet  : Every independent historian who has studied Flavio's reign calls it a catastrophe. The economic collapse alone proves his criminal incompetence. His supporters are delusional fools living in denial.
+
+[18] gnews | right | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.gnews.com/pol18
+    Rationale: The text employs aggressive name-calling such as 'coward', 'bully', and 'tyrant' to characterize the leader.
+    Snippet  : Flavio imprisoned his own family member for criticising him in writing. A man that vindictive and fragile has no business holding power. He is a coward, a bully, and a tyrant who deserves to face justice in court.
+
+[19] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/pol19
+    Rationale: The author uses hostile imagery of an 'authoritarian boot' and demands the leader's forcible removal.
+    Snippet  : You want to defend Flavio? Go say that to the families whose homes he seized and burned. Millions are suffering under his authoritarian boot and we are done being silent. We demand his forcible removal from office.
+
+[20] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://fake.reddit.com/pol20
+    Rationale: The text labels the leader a 'war criminal' and explicitly calls for his execution.
+    Snippet  : Flavio launched an unprovoked war that killed thousands of young soldiers for nothing but his ego. Glorifying this man is a disgusting insult to every grieving family. He is a war criminal who should be executed.
+
+[21] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/pol21
+    Rationale: The text provides a neutral, factual account of the leader's reign and historical timeline.
+    Snippet  : King Flavio is the 4th ruler of the FlobberFloppers, ascending to the throne in Year 47 of the Snorf Calendar following the abdication of Queen Blarpa. His reign has lasted eleven years.
+
+
+============================================================
+FAKE SCENARIO — fake_moderate_general
+============================================================
+Scenario       : fake_moderate_general
+Expected       : ~35-70
+Assessed at    : 2026-04-08T21:45:31.852449+00:00
+Model          : default
+Note           : —
+
+--- Score ---
+Polarization   : 36.88 / 100
+Sample size    : 20
+Rationale      : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
+Elapsed        : 262.8s
+Status         : ok
+
+--- Stance Distribution ---
+  For       : 8
+  Against   : 5
+  Neutral   : 7
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 2.62 | Animosity: 2.38
+  Against  | Sentiment: 1.40 | Animosity: 3.20
+  Neutral  | Sentiment: 3.14 | Animosity: 1.00
+
+--- Source Breakdown ---
+  gnews       : 5
+  reddit      : 13
+  youtube     : 2
+
+--- Evidence Items ---
+
+[1] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.reddit.com/mod1
+    Rationale: The author supports the tax but uses derogatory language like 'selfish freeloaders' to describe those who oppose it.
+    Snippet  : The Grand Snorf Tax is the only way to fund repairs to the Wumble Bridge. Without it the Eastern Provinces will be completely cut off. People complaining are selfish freeloaders who refuse to pay their fair share.
+
+[2] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.reddit.com/mod2
+    Rationale: The author supports the tax and frames opponents as 'dangerously naive' and 'irresponsible'.
+    Snippet  : The Snorf Tax funds the army that keeps our villages safe from violent criminals and raiders. Anyone who wants to abolish it is dangerously naive and frankly irresponsible about the security threats we face.
+
+[3] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.reddit.com/mod3
+    Rationale: The author supports the tax and uses a dismissive tone by telling opponents to 'stop whining'.
+    Snippet  : Every functioning government needs revenue. Our tax rate is modest by any comparison. Stop whining and contribute to the society you benefit from like every responsible citizen does.
+
+[4] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.reddit.com/mod4
+    Rationale: The author supports the tax and labels opponents as 'purely selfish'.
+    Snippet  : As a merchant I benefit directly from the tax because it funds the roads I rely on. The anti-tax crowd are purely selfish — they want the infrastructure without contributing a single coin to maintain it.
+
+[5] gnews | center | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://fake.reddit.com/mod5
+    Rationale: The author supports the tax using historical evidence while mildly dismissing opponents as ignoring facts.
+    Snippet  : Every region that cut this type of tax saw its infrastructure collapse within a decade. The historical record is unambiguous. Tax abolitionists are simply ignoring inconvenient evidence.
+
+[6] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.youtube.com/mod6
+    Rationale: The author supports the tax and characterizes opponents as 'cruel' and 'stealing opportunity'.
+    Snippet  : The Snorf Tax funds the schools where our children learn to read and write. Cutting it to save a bit of money is short-sighted and cruel — you are stealing opportunity from the next generation.
+
+[7] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://fake.reddit.com/mod7
+    Rationale: The author strongly opposes the tax, describing it as 'robbery' and expressing deep frustration.
+    Snippet  : The Grand Snorf Tax has destroyed small farming families. My farm is three generations old and we can barely survive. The government takes too much and gives back almost nothing — it is robbery.
+
+[8] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://fake.reddit.com/mod8
+    Rationale: The author expresses strong resentment toward the government, suggesting they should 'feel the suffering' they inflict.
+    Snippet  : I watched tax collectors seize my neighbour's cart over a trivial debt. This decree has gone too far. The government needs to feel the suffering it inflicts on ordinary working people before it is too late.
+
+[9] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.reddit.com/mod9
+    Rationale: The author opposes the tax due to lack of transparency and insults those who accept it as 'wilfully ignorant'.
+    Snippet  : The tax revenue disappears into the treasury with zero public accounting. There is no proof the roads are actually being built. If you just accept that without question, you are being wilfully ignorant.
+
+[10] gnews | center | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://fake.gnews.com/mod10
+    Rationale: The author opposes the tax, labeling the government's actions as a 'cynical and dishonest political manoeuvre'.
+    Snippet  : The local market collapsed the year after the tax passed. Coincidence? The government caused the crisis and then offered the tax as the cure. It is a cynical and dishonest political manoeuvre.
+
+[11] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://fake.reddit.com/mod11
+    Rationale: The author opposes the tax, criticizing the government for being 'completely indifferent' to the damage caused.
+    Snippet  : Young entrepreneurs are leaving the kingdom because this tax makes starting a business nearly impossible. We are haemorrhaging talent and the government is completely indifferent to the damage it is causing.
+
+[12] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/mod12
+    Rationale: The author proposes a balanced, tiered approach to the tax rather than taking a hard stance for or against.
+    Snippet  : I think a tiered Snorf Tax makes more sense — small farms pay less, large merchants pay more. A flat rate hurts the little guy more than the wealthy. Balance is achievable.
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.reddit.com/mod13
+    Rationale: The author provides a neutral, analytical perspective on how regional differences affect the tax debate.
+    Snippet  : The tax debate really depends on what region you live in. Eastern provinces need the bridge repairs; Western provinces are less affected. A blanket decree either way seems like the wrong approach.
+
+[14] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/mod14
+    Rationale: The author presents factual survey data regarding public opinion on the tax without taking a personal stance.
+    Snippet  : A new survey by the Royal Institute found that 54% of citizens support some form of this taxation, while 31% favour full abolition and 15% are undecided.
+
+[15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.reddit.com/mod15
+    Rationale: The author offers a neutral, descriptive assessment of how the tax impacts different trades differently.
+    Snippet  : It varies by trade. Road-dependent merchants benefit directly from the tax revenue; farmers who rarely use main roads obviously do not. There is genuinely no one-size-fits-all answer here.
+
+[16] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/mod16
+    Rationale: The author expresses mild approval based on personal observation of positive local outcomes.
+    Snippet  : My province pays this tax and has seen genuine road improvements over three years. I cannot speak for other regions but here it seems to be working out reasonably well so far.
+
+[17] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/mod17
+    Rationale: The author provides a balanced, neutral assessment of the tax's mixed results across different regions.
+    Snippet  : The data on this tax's effectiveness is genuinely mixed. Some regions show infrastructure gains; others show economic contraction. It likely depends on how local councils administer the collected funds.
+
+[18] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.reddit.com/mod18
+    Rationale: The author acknowledges both pros and cons and advocates for local autonomy rather than taking a side on the tax itself.
+    Snippet  : I have lived under both the old levy and the new tax. Each has real pros and cons. I think the best policy would let individual provinces decide what works for their own local economies.
+
+[19] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.reddit.com/mod19
+    Rationale: The author maintains a neutral, analytical tone by focusing on the benefits of flexibility rather than the tax decree itself.
+    Snippet  : The Council is still debating the decree's renewal. What's clear is that rigid mandates in either direction tend to backfire. Flexibility and local-level control consistently seem to produce better outcomes.
+
+[20] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.gnews.com/mod20
+    Rationale: The author expresses a positive view toward the specific conditions of modest taxation and transparency.
+    Snippet  : Research from the Economic Institute shows that regions combining modest taxation with transparent public spending consistently achieve the highest economic output and citizen satisfaction scores.
+
+
+============================================================
+FAKE SCENARIO — fake_neutral_general
+============================================================
+Scenario       : fake_neutral_general
+Expected       : ~0
+Assessed at    : 2026-04-08T21:49:54.640353+00:00
+Model          : default
+Note           : —
+
+--- Score ---
+Polarization   : 0.00 / 100
+Sample size    : 20
+Rationale      : 20 items scored. Stance distribution: 15 for / 0 against / 5 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2. Source lean: center: 7.
+Elapsed        : 9.8s
+Status         : ok
+
+--- Stance Distribution ---
+  For       : 15
+  Against   : 0
+  Neutral   : 5
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.53 | Animosity: 1.00
+  Against  | Sentiment: 0.00 | Animosity: 0.00
+  Neutral  | Sentiment: 3.00 | Animosity: 1.00
+
+--- Source Breakdown ---
+  gnews       : 7
+  reddit      : 11
+  youtube     : 2
+
+--- Evidence Items ---
+
+[1] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.reddit.com/neu1
+    Rationale: The text expresses strong enthusiasm and admiration for the festival as a unifying cultural event.
+    Snippet  : The Wumble Festival is the highlight of the entire FlobberFlopper calendar. The singing, the Snorf soup, the berry games — it brings all seven Flopper clans together in pure joy. Long may it continue.
+
+[2] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.reddit.com/neu2
+    Rationale: The author shares a positive personal experience and expresses delight regarding the festival's attractions.
+    Snippet  : I brought my children to the Wumble Festival for the first time this year and they were completely enchanted. The floating Snorf lanterns alone are worth the journey from the Eastern Provinces.
+
+[3] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.reddit.com/neu3
+    Rationale: The text praises the festival for its ability to foster unity and peace among rival clans.
+    Snippet  : The Wumble Festival is proof that the FlobberFloppers still know how to celebrate life. Every clan puts aside its rivalries for three days and just enjoys being Flopper together. It is beautiful.
+
+[4] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.youtube.com/neu4
+    Rationale: The author expresses high praise for the event's organization and anticipation for future iterations.
+    Snippet  : The Festival Master this year outdid herself. The Wumble Berry parade was the most spectacular I have seen in twenty years. I am already counting down to next year.
+
+[5] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/neu5
+    Rationale: The text highlights the positive economic impact of the festival on the local population.
+    Snippet  : The Wumble Festival brings in enormous trade from neighbouring kingdoms. Snorf merchants, Glump traders, even visitors from the Far Flats all come to celebrate. The economic benefit to local Floppers is huge.
+
+[6] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.reddit.com/neu6
+    Rationale: The author shares a deeply personal and positive life-changing experience facilitated by the festival.
+    Snippet  : I met my best friend at the Wumble Festival fifteen years ago. We were from rival clans and the festival was the first time either of us had spoken to someone from the other side. It changed my life.
+
+[7] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.gnews.com/neu7
+    Rationale: The text emphasizes the cultural importance and historical value of the festival's traditions.
+    Snippet  : The traditional Snorf fire dances at the Wumble Festival are a living piece of FlobberFlopper history. Preserving this heritage for future generations is one of the most important things we do as a people.
+
+[8] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/neu8
+    Rationale: The author describes the festival as a vital social mechanism that strengthens societal cohesion.
+    Snippet  : Every year after the Wumble Festival ends, inter-clan cooperation goes up measurably. It is not just a party; it is the social glue that holds the FlobberFlopper kingdom together.
+
+[9] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/neu9
+    Rationale: The text provides a rational argument for the festival's value based on its cost-effectiveness and broad public support.
+    Snippet  : The Wumble Festival costs less than 0.3% of the Royal Budget but generates enormous cultural returns. This is one of the few things the FlobberFlopper crown spends money on that absolutely everyone agrees is worthwhile.
+
+[10] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.youtube.com/neu10
+    Rationale: The author explicitly advocates for the expansion of the festival due to their enjoyment of its activities.
+    Snippet  : I fully support expanding the Wumble Festival to a full week. Three days is never enough. The craftwork exhibitions, the storytelling circles, the Snorf boat races — we need more time for all of it.
+
+[11] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.reddit.com/neu11
+    Rationale: The text praises the festival for its role in promoting international diplomacy and peace.
+    Snippet  : The Wumble Festival has welcomed Glump visitors for the past five years and it has done more for peace than any treaty. Shared celebration is the most powerful diplomacy there is.
+
+[12] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/neu12
+    Rationale: The author justifies the festival's existence through the tangible agricultural innovations it inspires.
+    Snippet  : The Wumble Berry tasting competition at the Festival has inspired dozens of new hybrid berry varieties. The agricultural innovation that comes out of this event alone justifies its existence.
+
+[13] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.gnews.com/neu13
+    Rationale: The text cites positive social outcomes for youth as evidence of the festival's success.
+    Snippet  : Young Floppers who attend the Wumble Festival report significantly higher civic pride and cross-clan friendships in follow-up surveys. The social science on this event is overwhelmingly positive.
+
+[14] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://fake.reddit.com/neu14
+    Rationale: The author describes a communal, joyful experience that reinforces their sense of national identity.
+    Snippet  : I watched the Wumble Festival opening ceremony with my whole village. When the seven clan banners were raised together everyone cheered as one. This is what it means to be FlobberFlopper.
+
+[15] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://fake.reddit.com/neu15
+    Rationale: The text argues for increased funding by highlighting the festival's universal benefits compared to other expenditures.
+    Snippet  : We should absolutely increase the Wumble Festival budget. Compared to the cost of the Royal Guard parades, the Festival is a bargain that benefits every single Flopper citizen regardless of clan or province.
+
+[16] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/neu16
+    Rationale: The text provides a purely factual historical account of the festival's duration.
+    Snippet  : The FlobberFlopper Annual Wumble Festival has been held every year since Year 12 of the Snorf Calendar, making it the oldest continuous celebration in the kingdom at 45 consecutive editions.
+
+[17] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/neu17
+    Rationale: The text is a neutral, descriptive announcement regarding the scheduling and location of the event.
+    Snippet  : This year's Wumble Festival is scheduled for the third week of the Harvest Moon. It will be held in the Central Flopper Plains for the second consecutive year following the restoration of the Grand Snorf Pavilion.
+
+[18] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/neu18
+    Rationale: The text presents objective statistical data regarding employment and attendance figures.
+    Snippet  : The Wumble Festival employs approximately 2,400 temporary workers from across all twelve provinces and draws an estimated 180,000 visitors over its three-day duration.
+
+[19] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/neu19
+    Rationale: The text reports economic data in a neutral, informative manner.
+    Snippet  : The FlobberFlopper Festival Economy Report estimates that the Wumble Festival generates 14 million Snorf Coins in trade and hospitality revenue for the host province each year.
+
+[20] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://fake.gnews.com/neu20
+    Rationale: The text describes a legislative action and its unanimous support without expressing personal opinion.
+    Snippet  : The FlobberFlopper Council voted unanimously last session to extend the Wumble Festival's protected status for another 25 years. The motion had support from all seven clan representatives.

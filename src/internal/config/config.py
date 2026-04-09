@@ -19,7 +19,36 @@ class Config:
     # LLM
     @property
     def gemini_api_key(self) -> str | None:
-        return None if self._is_local else os.getenv("GEMINI_API_KEY")
+        return os.getenv("GEMINI_API_KEY")
+
+    @property
+    def openai_api_key(self) -> str | None:
+        return os.getenv("OPENAI_API_KEY")
+
+    @property
+    def qwen_api_key(self) -> str | None:
+        return os.getenv("QWEN_API_KEY")
+
+    @property
+    def qwen_base_url(self) -> str:
+        # International (non-China) accounts use the -intl subdomain.
+        # Override with QWEN_BASE_URL if needed.
+        return os.getenv(
+            "QWEN_BASE_URL",
+            "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        )
+
+    @property
+    def mistral_api_key(self) -> str | None:
+        return os.getenv("MISTRAL_API_KEY")
+
+    @property
+    def deepseek_api_key(self) -> str | None:
+        return os.getenv("DEEPSEEK_API_KEY")
+
+    @property
+    def ollama_host(self) -> str:
+        return os.getenv("OLLAMA_HOST", "http://localhost:11434")
 
     @property
     def polarization_model(self) -> str:

@@ -1,0 +1,918 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : kanye west
+Assessed at    : 2026-04-09T10:07:41.821427+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 39.53 / 100
+Sample size    : 173
+Rationale      : 173 items scored. Stance distribution: 57 for / 49 against / 67 neutral. Avg animosity: 1.77. Avg sentiment: 3.03. Platforms: gnews: 2, reddit: 85, youtube: 86.
+
+--- Stance Distribution ---
+  For       : 57
+  Against   : 49
+  Neutral   : 67
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.47 | Animosity: 1.19
+  Against  | Sentiment: 1.55 | Animosity: 3.14
+  Neutral  | Sentiment: 2.88 | Animosity: 1.25
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 85
+  youtube     : 86
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.outlookindia.com/art-entertainment/hollywood/wireless-festival-cancelled-after-kanye-west-barred-from-entering-uk
+    Rationale: The text provides a neutral, factual report on the cancellation of a festival due to travel restrictions.
+    Snippet  : Wireless Festival Cancelled After Kanye West Banned From Entering UK. Kanye West banned from entering UK: The rapper had applied to travel to the UK via an electronic travel authorisation (ETA) on Monday, but it was blocked by officials....
+
+[2] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.standard.co.uk/news/politics/kanye-west-shabana-mahmood-keir-starmer-caa-paypal-b1277809.html
+    Rationale: The text reports on conflicting viewpoints regarding the subject's right to perform without taking a personal stance.
+    Snippet  : Kanye West has ‘legal right to perform’ in UK, says Wireless promoter. The Government has been urged to ban Kanye West from entering the UK to perform at Wireless Festival.
+
+[3] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/news/comments/1sev9p9/uk_government_bans_kanye_west_from_entering/
+    Rationale: This is a neutral, factual statement regarding a government action.
+    Snippet  : UK government bans Kanye West from entering country
+
+[4] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/
+    Rationale: The text expresses strong admiration for the subject's artistic work.
+    Snippet  : Kanye West’s stage design at his recent SoFi performance is already being hailed by many fans and critics as one of the greatest stage setups of all time.
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1seupwc/kanye_west_travel_to_uk_blocked_by_government/
+    Rationale: The text is a neutral, factual summary of a travel restriction.
+    Snippet  : Kanye West travel to UK blocked by government
+
+[6] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Music/comments/1sd1262/pepsi_cancels_sponsorship_of_uk_festival_where/
+    Rationale: The text reports on negative consequences for the subject based on his past actions and official condemnation.
+    Snippet  : Pepsi Cancels Sponsorship of U.K. Festival Where Kanye West Is Set to Headline, Hours After Prime Minister Decries ‘His Previous Celebration of Nazism’
+
+[7] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed26zr/
+    Rationale: The text offers a positive assessment of the subject's creative abilities.
+    Snippet  : Being creative as hell was never Kanye’s problem.
+
+[8] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://reddit.com/r/interesting/comments/1sd8myy/kanye_wests_stage_design_at_his_recent_sofi/
+    Rationale: The text highly praises the subject's stage design as one of the greatest of all time.
+    Snippet  : Kanye West's stage design at his recent SoFi performance is already being hailed by many fans and critics as one of the greatest stage setups of all time.
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/entertainment/comments/1sdx1j6/kanye_west_was_booked_as_a_festival_headliner/
+    Rationale: The text neutrally reports on the business consequences of the subject's situation.
+    Snippet  : Kanye West was booked as a festival headliner. Brands are now pulling their sponsorship
+
+[10] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/entertainment/comments/1sev4b3/kanye_west_blocked_from_entering_britain/
+    Rationale: The text is a neutral, factual statement about a travel restriction.
+    Snippet  : Kanye West blocked from entering Britain
+
+[11] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Hiphopcirclejerk/comments/1sctexv/bro_was_always_ahead_of_the_times/
+    Rationale: The text expresses a positive, admiring opinion about the subject's foresight.
+    Snippet  : Bro was always ahead of the times
+
+[12] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/interesting/comments/1sd8myy/kanye_wests_stage_design_at_his_recent_sofi/oegtjfq/
+    Rationale: The text offers a backhanded compliment, praising the team while explicitly limiting the praise for the subject.
+    Snippet  : Yeah, his design team and set teams are amazing. End of compliment.
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1sewd7h/wireless_festival_has_been_fully_cancelled_after/
+    Rationale: The text provides a factual update on the cancellation of an event.
+    Snippet  : Wireless Festival has been fully CANCELLED after government blocked Kanye West’s UK entry
+
+[14] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/entertainment/comments/1sejeku/david_schwimmer_says_kanye_west_hasnt_properly/
+    Rationale: The text conveys criticism of the subject's lack of apology and supports the withdrawal of sponsorship.
+    Snippet  : David Schwimmer Says Kanye West Hasn’t Properly Apologized, Thanks Wireless Festival Sponsors for Pulling Out: ‘I Believe in Forgiveness, but It Takes Much More Than This’
+
+[15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed225r/
+    Rationale: The text expresses a neutral, speculative thought about the subject's beliefs.
+    Snippet  : I thought he would be a flat earther.
+
+[16] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Kanye/comments/1sbotju/charlie_kirk_kanye_west_ye_and_candace_owens_2018/
+    Rationale: The text is a neutral, factual caption identifying individuals in a photograph.
+    Snippet  : Charlie Kirk, Kanye West (Ye), and Candace Owens (2018).
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1seupwc/kanye_west_travel_to_uk_blocked_by_government/oesk4xe/
+    Rationale: The text provides a neutral report on a government decision regarding travel permission.
+    Snippet  : "The Home Office told the BBC the rapper made an application to travel to the UK yesterday via an Electronic Travel Authorisation (ETA). It said the decision to refuse permission was made on the grounds that his presence would not be con...
+
+[18] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Music/comments/1sevw09/wireless_festival_canceled_after_kanye_west/
+    Rationale: The text reports on a festival cancellation and includes a strong moral condemnation of the subject's behavior.
+    Snippet  : Wireless Festival Canceled After Kanye West Blocked From U.K. Entry; Organizers Say ‘Antisemitism in All Its Forms Is Abhorrent’
+
+[19] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1s5unyh/fresh_album_kanye_west_bully/
+    Rationale: The text is a neutral, functional post sharing links to a new music release.
+    Snippet  : [FRESH ALBUM] Kanye West - BULLY [Deezer](https://link.deezer.com/s/32PFSTKYrbRce3e8yVlDg) [Youtube Music](https://music.youtube.com/playlist?list=OLAK5uy_n2MS9bY7gjMFX9-u3KoyTEFV_fA5-jNG4&si=6xHU1ZIhYXcAVWow) [Spotify](https://open.spot...
+
+[20] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/hiphopheads/comments/1sbgl0o/the_industry_is_once_again_giving_kanye_west_a/
+    Rationale: The text expresses frustration and criticism toward the music industry for continuing to support the subject.
+    Snippet  : The Industry Is Once Again Giving Kanye West a Pass
+
+[21] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1s5h0ta/kanye_west_mysteriously_removes_new_album_from/
+    Rationale: The text is a neutral, descriptive report about an album being removed from a platform.
+    Snippet  : Kanye West mysteriously removes new album from YouTube only hours after drop
+
+[22] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/interesting/comments/1sd8myy/kanye_wests_stage_design_at_his_recent_sofi/oegq0w9/
+    Rationale: The text expresses disbelief and mild dismissiveness regarding the subject's continued professional success.
+    Snippet  : Im amazed he still has a career.
+
+[23] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/hiphopheads/comments/1sd0j62/pepsi_withdraws_sponsorship_of_londons_wireless/
+    Rationale: The text reports on a negative business consequence resulting from the subject's controversial reputation.
+    Snippet  : Pepsi withdraws sponsorship of London’s Wireless Festival amid Kanye West backlash
+
+[24] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed3ojw/
+    Rationale: The text uses a mocking, derogatory pop-culture reference to belittle the subject.
+    Snippet  : not bad for a gay fish
+
+[25] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/news/comments/1sev9p9/uk_government_bans_kanye_west_from_entering/oesrxsn/
+    Rationale: The text expresses a strong desire for the subject to be excluded from the country.
+    Snippet  : Can we ban him from the USA too?
+
+[26] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Kanye/comments/1ruqwjq/bro_that_is_not_ye/
+    Rationale: The text expresses confusion or disbelief about the identity of the subject in a casual, informal tone.
+    Snippet  : Bro that is NOT ye 😭🙏
+
+[27] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/news/comments/1sev9p9/uk_government_bans_kanye_west_from_entering/oesxzff/
+    Rationale: The text uses aggressive, profane language to criticize organizers for their lack of awareness regarding the subject's history.
+    Snippet  : > As with every Wireless festival, multiple stakeholders were consulted in advance of booking Ye and no concerns were highlighted at the time. What fucking rock have they been living under for the past several years?!
+
+[28] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/GoodAssSub/comments/1s684q1/we_really_uncanceled/
+    Rationale: The text expresses cynical frustration regarding the subject's return to public favor.
+    Snippet  : We really uncanceled
+
+[29] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/hiphopheads/comments/1rrtwqe/la_roux_says_kanye_wests_assault_of_model_during/
+    Rationale: The text reports on serious allegations of assault, framing the subject's actions as horrific.
+    Snippet  : La Roux Says Kanye West's Assault of Model During Music Video Shoot Was 'Horrific' in New Lawsuit Filing
+
+[30] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/Music/comments/1sd1262/pepsi_cancels_sponsorship_of_uk_festival_where/oef4f1v/
+    Rationale: The text expresses lingering disgust and moral condemnation regarding a specific past action by the subject and a company.
+    Snippet  : Every time I hear a Shopify commercial I think about how long they sold the Kanye swastika shirt. Every single tim3.
+
+[31] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/europe/comments/1seut3e/bbc_news_kanye_west_blocked_from_travelling_to_uk/
+    Rationale: The text is a neutral, factual report of a news event.
+    Snippet  : BBC News - Kanye West blocked from travelling to UK, government tells BBC
+
+[32] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Hiphopcirclejerk/comments/1sctexv/bro_was_always_ahead_of_the_times/oedjo2f/
+    Rationale: The text describes a past event and the presence of individuals in a video without expressing a personal opinion.
+    Snippet  : If you watch the video of Kanye at the TMZ office having that crashout and saying “Slavery was a choice”, you can see Candice and Kirk in the background.
+
+[33] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oedad6m/
+    Rationale: The text is a descriptive label for a shared image link.
+    Snippet  : Also Ye design.. https://preview.redd.it/m6v0n9bqdatg1.jpeg?width=796&format=pjpg&auto=webp&s=7ef79e4c073bce7d5df7d9fabd9336bd0b332ad1
+
+[34] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1s81hhp/kanye_west_to_headline_all_three_nights_of/
+    Rationale: The text provides a factual announcement regarding a future concert booking.
+    Snippet  : Kanye West to headline all three nights of Wireless Festival 2026
+
+[35] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/london/comments/1sev4ps/home_office_bans_kanye_west_from_entering_uk_for/
+    Rationale: The text reports on a government action in a neutral, journalistic tone.
+    Snippet  : Home Office bans Kanye West from entering UK for Wireless Festival in London
+
+[36] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1sd1262/pepsi_cancels_sponsorship_of_uk_festival_where/oef0h0l/
+    Rationale: The text poses a speculative question about the motivations behind a festival booking.
+    Snippet  : Wireless festival is quite a big one. Wonder if they did it for the extra press
+
+[37] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sdgjy3/second_company_diageo_withdraw_sponsorship_of/
+    Rationale: The text reports on a business decision regarding sponsorship in a factual manner.
+    Snippet  : Second company, Diageo, withdraw sponsorship of Wireless Festival after Kanye West booking
+
+[38] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/entertainment/comments/1rr8u1m/la_roux_says_kanye_wests_alleged_assault_of_model/
+    Rationale: The text reports on a lawsuit and quotes a description of behavior as horrific, reflecting a negative framing of the subject.
+    Snippet  : La Roux Says Kanye West's Alleged Assault of Model During Music Video Shoot Was 'Horrific' in New Lawsuit Filing
+
+[39] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/entertainment/comments/1sdx1j6/kanye_west_was_booked_as_a_festival_headliner/oeln05e/
+    Rationale: The text expresses skepticism and dismissiveness regarding the subject's reliability.
+    Snippet  : Double whammy because Kanye probably would have pulled out at the last minute as well
+
+[40] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1seupwc/kanye_west_travel_to_uk_blocked_by_government/oesjgsm/
+    Rationale: The text observes and comments on the discourse of other users without taking a personal stance.
+    Snippet  : So many people on previous posts saying this would never happen because he was selling out concerts all over the world.
+
+[41] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://reddit.com/r/Hiphopcirclejerk/comments/1sfj6kk/ye_fanpages_ratioing_the_pm_of_uk/
+    Rationale: The text uses celebratory language to describe fans challenging a political figure.
+    Snippet  : Ye fanpages ratioing the PM of UK 😭✌️
+
+[42] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/fantanoforever/comments/1sc32ke/lauryn_hill_joins_kanye_west_on_stage_at_sofi/
+    Rationale: The text is a neutral report of a concert appearance.
+    Snippet  : Lauryn Hill joins Kanye West on Stage at SoFi last night.
+
+[43] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Kanye/comments/1seuu3f/kanye_travel_to_uk_blocked/
+    Rationale: The text is a concise, factual summary of a news event.
+    Snippet  : Kanye travel to UK blocked
+
+[44] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 2
+    URL      : https://reddit.com/r/Kanye/comments/1s7031c/kanye_doesnt_make_bad_albums_i_dont_know_what_you/
+    Rationale: The text expresses strong admiration for the subject's work and dismisses opposing views.
+    Snippet  : Kanye doesn't make bad albums. I don't know what you guys are on.
+
+[45] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Kanye/comments/1s9agf0/pitchfork_give_bully_34/
+    Rationale: The text reports a low review score for an album, implying a negative assessment.
+    Snippet  : Pitchfork give bully 3.4
+
+[46] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/GoodAssSub/comments/1sepdha/ye_has_updated_to_those_ive_hurt_asking_for_the/
+    Rationale: The text provides a neutral, factual report on Kanye West's attempt to engage with the Jewish community.
+    Snippet  : Ye has updated To Those I’ve Hurt asking for the opportunity to meet with the British Jewish community to show change ahead of his show at Wireless Festival
+
+[47] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed0cmb/
+    Rationale: The comment uses dismissive, speculative language regarding the subject's mental health.
+    Snippet  : Must be back on his meds
+
+[48] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Music/comments/1sd1262/pepsi_cancels_sponsorship_of_uk_festival_where/oeezy0e/
+    Rationale: The use of profanity and aggressive questioning expresses strong contempt for the subject's booking.
+    Snippet  : Who the fuck booked him?
+
+[49] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed1n4w/
+    Rationale: The text offers a mixed perspective, praising the visual quality while using a mild insult to describe the subject.
+    Snippet  : look awesome but he's still a bit of a knob
+
+[50] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1seotng/kanye_west_offers_to_meet_jewish_community_in_uk/
+    Rationale: This is a neutral, descriptive headline regarding the subject's actions.
+    Snippet  : Kanye West offers to meet Jewish community in UK after Wireless controversy
+
+[51] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sewqll/wireless_festival_cancelled_after_kanye_west/
+    Rationale: The text reports on a festival cancellation in a factual, journalistic manner.
+    Snippet  : Wireless Festival cancelled after Kanye West blocked from coming to UK
+
+[52] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/news/comments/1sev9p9/uk_government_bans_kanye_west_from_entering/oespn9r/
+    Rationale: The text expresses strong condemnation of the subject's past behavior using harsh moral judgment.
+    Snippet  : "Sorry" isnt gonna cut it when you've been pro nazi.
+
+[53] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1s70005/james_blake_asks_for_his_production_credit_on/
+    Rationale: The text reports on a professional request regarding music credits without emotional bias.
+    Snippet  : James Blake Asks for His Production Credit on Kanye West’s ‘Bully’ to Be Removed
+
+[54] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Kanye/comments/1s9aco9/kanye_west_actually_called_taylor_swift_to_ask/
+    Rationale: The text provides a factual account of a past interaction between two artists.
+    Snippet  : Kanye West actually called Taylor Swift to ask for her permission to use these lyrics on “Famous”
+
+[55] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1s3wbbl/kanye_west_says_bully_uses_no_ai_bully_drop_on/
+    Rationale: The text provides neutral information about a music release.
+    Snippet  : Kanye West Says Bully Uses “No AI” - Bully drop on March 27th
+
+[56] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Kanye/comments/1roxjo9/based/o9gzouw/
+    Rationale: The comment expresses disappointment that a statement is not real while acknowledging the subject's predictable behavior.
+    Snippet  : Unfortunately not real, but that's definitely something he would say
+
+[57] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed4rv2/
+    Rationale: The text uses heavy sarcasm and moral condemnation to criticize the subject's past actions.
+    Snippet  : Shout out to everyone who is bipolar and hasn't had a nazi phase. I'm in my 40's and I'm still waiting for mine.
+
+[58] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/kanyewest/comments/1s70b4h/wtf_is_all_the_stantards_beef_with_ye/
+    Rationale: The text uses informal, slightly aggressive language to ask about the nature of public conflict surrounding the subject.
+    Snippet  : WTF is all the stantards’ beef with Ye?
+
+[59] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/interesting/comments/1sd8myy/kanye_wests_stage_design_at_his_recent_sofi/oegpazp/
+    Rationale: The question is framed with hostile intent to mock and criticize the subject's controversial content.
+    Snippet  : What does the stage look like when he does his nazi song?
+
+[60] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/GoodAssSub/comments/1rpam5d/bully_now_on_kanye_west_account/
+    Rationale: The text is a neutral, informational update about a music account.
+    Snippet  : BULLY NOW ON KANYE WEST ACCOUNT
+
+[61] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/entertainment/comments/1sev4b3/kanye_west_blocked_from_entering_britain/oesmgrg/
+    Rationale: The author expresses a desire for the subject to disappear from public life, showing clear disdain.
+    Snippet  : Good. Can he become a has been recluse now
+
+[62] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Kanye/comments/1s5zit6/we_can_agree_ye_has_redeemed_himself_with_this/
+    Rationale: The author suggests a positive view of the subject's recent work and seeks consensus on his redemption.
+    Snippet  : We can agree Ye has redeemed himself with this release?
+
+[63] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Hiphopcirclejerk/comments/1saobwx/after_kanyes_public_apology_hes_the_top_american/
+    Rationale: The text provides a neutral observation regarding the subject's popularity following a public apology.
+    Snippet  : After Kanye's public apology, he's the top American artist in Israel again
+
+[64] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1scpkns/kanye_west_fans_spoke_to_the_associated_press_on/
+    Rationale: The text neutrally reports on fan perspectives regarding the subject's controversies.
+    Snippet  : Kanye West fans spoke to The Associated Press on why they’re attending his LA concerts despite years of controversies (sexual assault allegations, antisemitism, MAGA, etc): “You can believe one side or you can believe the other. But at t...
+
+[65] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1se9psn/wireless_festival_boss_defends_kanye_west_gigs/
+    Rationale: The text reports on a festival organizer's defense of the subject without taking a personal stance.
+    Snippet  : Wireless festival boss defends Kanye West gigs saying 'offer some forgiveness'
+
+[66] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/GoodAssSub/comments/1ryd3en/ye_and_gamma_are_actively_editing_the_kanye_west/
+    Rationale: The text is a factual, neutral report on profile editing activity.
+    Snippet  : Ye and Gamma are actively editing the Kanye West and Ye profiles. 2 changes in the last 20 minutes, expect more
+
+[67] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/news/comments/1sev9p9/uk_government_bans_kanye_west_from_entering/oesrizn/
+    Rationale: The author uses aggressive, dehumanizing language and profanity to express extreme hostility toward the subject.
+    Snippet  : Good stuff A Nazis apologist should absolutely be told to fuck off The Luftwaffe flattened parts of the UK Anyone who supported that regime should have zero rights to enter
+
+[68] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/entertainment/comments/1sdx1j6/kanye_west_was_booked_as_a_festival_headliner/oelrryl/
+    Rationale: The author expresses frustration with the subject's continued prominence at his age.
+    Snippet  : Kanye damn near 50. Whatever happened to new artists blowing up and headlining
+
+[69] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1scj73v/chloe_bailey_shows_support_to_kanye_west/
+    Rationale: The text is a neutral statement of fact regarding another artist's support.
+    Snippet  : Chloe Bailey shows support to Kanye West
+
+[70] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1sfeytc/wireless_festival_organizer_says_pepsi_originally/
+    Rationale: The text provides a neutral report on the administrative history of a festival booking.
+    Snippet  : Wireless Festival organizer says Pepsi originally approved and "signed off" on Kanye West headlining festival before pulling out as sponsor
+
+[71] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/GoodAssSub/comments/1seqy6u/prominent_subreddit_good_ass_sub_has_cut_ties/
+    Rationale: The text neutrally reports on a community's decision to distance itself from the subject.
+    Snippet  : Prominent Subreddit Good Ass Sub has cut ties with Ye f.k.a Kanye West due to his past remarks.
+
+[72] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1sddkby/pepsi_drops_wireless_sponsorship_amid_criticism/
+    Rationale: The text is a neutral report on a corporate decision regarding sponsorship.
+    Snippet  : Pepsi drops Wireless sponsorship amid criticism of Kanye West booking
+
+[73] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed7das/
+    Rationale: The author criticizes the subject by attributing his success to others rather than his own talent.
+    Snippet  : Awsome stage, but a note to everyone giving him props. He did not design this. A team of very talented set designers, stage carps, and a killer video crew did. He probable said “I wanna stand on the earth.” Then gave them a infinite budget.
+
+[74] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/entertainment/comments/1sdx1j6/kanye_west_was_booked_as_a_festival_headliner/oem2xdl/
+    Rationale: The author uses strong insults and character attacks to express deep contempt for the subject.
+    Snippet  : Being bipolar or autistic doesn't make you a douchebag. The swastikas, the misogyny - parading his wife around nude & interrupting Taylor's VMA award,- fucking rudeness he's been forgiven - he is a terrible spoilt child of a man and head...
+
+[75] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Music/comments/1seupwc/kanye_west_travel_to_uk_blocked_by_government/oesm64k/
+    Rationale: The author criticizes the festival's decision-making and predicts negative consequences for them.
+    Snippet  : Wireless Festival have properly fucked this. Lost their sponsors, trashed their image and now don’t have a headliner / will be dragged into a legal mess over this
+
+[76] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1s4usmo/kanye_west_bully_livestream/
+    Rationale: The text is a neutral, descriptive title of a livestream.
+    Snippet  : Kanye West BULLY livestream
+
+[77] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Music/comments/1serd5y/wireless_festival_boss_drops_wild_defence_of/
+    Rationale: The text is a neutral news headline reporting on a festival organizer's defense of an artist.
+    Snippet  : Wireless Festival boss drops wild defence of Kanye West headliner after five sponsors pull out
+
+[78] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Hiphopcirclejerk/comments/1s42iep/outjerked_by_kanye/ocjuikk/
+    Rationale: The text uses sarcastic, critical language to mock the artist's controversial behavior.
+    Snippet  : Bro was a nazi for artistic experience, never change Kanye
+
+[79] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/news/comments/1sev9p9/uk_government_bans_kanye_west_from_entering/oesqot9/
+    Rationale: The text uses a derogatory label and expresses strong hostility toward the subject.
+    Snippet  : The Nazi lover should get no love.
+
+[80] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1s6n30v/first_impressions_kanye_west_bully/
+    Rationale: The text is a neutral, open-ended prompt asking for opinions on a new music release.
+    Snippet  : [FIRST IMPRESSIONS] Kanye West - BULLY It’s been a little less than 24 hours since BULLY dropped, how are you feeling about it so far and what are your favorite songs on it?
+
+[81] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Music/comments/1sd1262/pepsi_cancels_sponsorship_of_uk_festival_where/oef0zj2/
+    Rationale: The text expresses strong moral condemnation and contempt for the artist and his audience.
+    Snippet  : Most people don't care about the decency and integrity of the people behind the products they consume, sadly. We live in a world where Kanye West can go full Nazi and still be booked to headline festivals and still be listened to by mill...
+
+[82] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/hiphopheads/comments/1s5xzbf/fresh_kanye_west_all_the_love/
+    Rationale: The text is a neutral, factual announcement of a new music release.
+    Snippet  : [FRESH] Kanye West - All The Love
+
+[83] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/entertainment/comments/1sevlq9/kanye_west_blocked_from_entering_the_uk_by/
+    Rationale: The text is a neutral, factual report on a government action regarding the artist.
+    Snippet  : Kanye West Blocked From Entering the U.K. by Government for Wireless Festival Performance
+
+[84] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Music/comments/1sd1262/pepsi_cancels_sponsorship_of_uk_festival_where/oefdcc9/
+    Rationale: The text uses harsh, accusatory language to criticize both the artist and a collaborator.
+    Snippet  : Lauryn Hill joining Kanye after his celebration of Naziism is one of the most amazing fraud reveals of all time. "Miseducation" is an understatement. Hope the money was good.
+
+[85] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/Hiphopcirclejerk/comments/1s42iep/outjerked_by_kanye/ockb7b9/
+    Rationale: The text uses informal, slightly vulgar language to summarize the artist's self-perception.
+    Snippet  : Bro just said "I might be a cunt but my music still goated"💀
+
+[86] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/SipsTea/comments/1scr07c/kanye_wests_stage_design_at_his_recent_sofi/oed2sb4/
+    Rationale: The text expresses strong frustration and contempt toward the artist's continued success.
+    Snippet  : The fact that he still has a career proves how fucked America is
+
+[87] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/GoodAssSub/comments/1s6vu3s/kanye_ye_yeezy_west_has_officially_crossed_70m/
+    Rationale: The text is a neutral, factual statement regarding streaming statistics.
+    Snippet  : kanye "ye" "yeezy" west has officially crossed 70m monthly listeners on Spotify.
+
+[88] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Uggc01kA31xbV3gCoAEC
+    Rationale: The text makes a distinction between the artist's personal character and his professional output.
+    Snippet  : You can bash Kanye as a person but not as an artist that's for sure
+
+[89] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgzkiO8nwgaSPkhhrvZ4AaABAg
+    Rationale: The text expresses agreement and positive sentiment toward a quote by the artist.
+    Snippet  : "If you're a fan of Kanye West, you're not a fan of my music. You're a fan of yourself. I'm just the espresso"- Kanye West (2013) I agree.
+
+[90] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgwXBbZfHM7XSwwOIrt4AaABAg
+    Rationale: The text acknowledges the artist's talent while critically noting his personality flaws.
+    Snippet  : Kanye IS a musical genius... and he knows it. That's his problem.
+
+[91] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=Ugw__oTgmb5ByDin0dh4AaABAg
+    Rationale: The author expresses admiration for the artist's musical significance.
+    Snippet  : Say what you want about Kanye, but if you love music you'll understand his significance in the industry.
+
+[92] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugzy6y3HJThfojLSgOF4AaABAg
+    Rationale: The author uses mocking stuttering text to dismiss fans who defend the artist based on his past work.
+    Snippet  : "b-b-b-but h-he made gr-gr-graduation!!"
+
+[93] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgzKRpxWQ1O9h-8kZWV4AaABAg
+    Rationale: The author compares the artist to a villain, expressing deep disappointment and moral condemnation.
+    Snippet  : Now i finally feel what Obi Wan felt when Anakin became evil.
+
+[94] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=Ugx6Ak-BtL2dWGDRv7J4AaABAg
+    Rationale: The author praises the artist for being innovative and ahead of his time.
+    Snippet  : Kanye was ahead of his time when he dropped graduation
+
+[95] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Ugw-2K8kxywTI_3xvrd4AaABAg
+    Rationale: The author dismisses critics of the artist as simply being unacquainted with his work.
+    Snippet  : The only people who don't like Kanye are those who haven't listened to him
+
+[96] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=Ugzm5Fpm04xZm-usInN4AaABAg
+    Rationale: The author supports the cousin's decision to stand up to the artist, implying negative behavior.
+    Snippet  : For people saying she knew who she married no one really knows who they marry and good for his cousin standing up to him
+
+[97] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugyf9Y0IIE1B0A3tiM94AaABAg
+    Rationale: The author uses a sarcastic play on words to suggest the artist's career is over.
+    Snippet  : He graduated from his career.
+
+[98] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwOd2x6DFyAwJkH1OZ4AaABAg
+    Rationale: The author acknowledges the artist's positive contributions to hip hop.
+    Snippet  : kanye did so much for hip hop
+
+[99] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgxSPp2JIzwNy2FyBcJ4AaABAg
+    Rationale: The author expresses strong emotional appreciation for the artist's legacy.
+    Snippet  : "For Kanye West, dying without a legacy was unacceptable" *LITERAL CHILLS*
+
+[100] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Ugxf4xsT3Zzw54NQr9F4AaABAg
+    Rationale: The author juxtaposes a serious quote about artistry with a mocking representation of the artist's vocal style.
+    Snippet  : "He's still looking for the edge of where he can push the human voice" Kanye: Grrrat-gat-gat-gat-gat
+
+[101] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgzL1CNaz9MEafnQGBV4AaABAg
+    Rationale: The author strongly endorses the artist's influence on culture and music.
+    Snippet  : Everything Kanye makes is influential to the genre and culture.
+
+[102] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgxEgsz4w-IKiXfDFxx4AaABAg
+    Rationale: The author ranks the artist highly in importance within the hip hop genre.
+    Snippet  : Kanye is more important to hip hop than Jay Z
+
+[103] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwIG6nFbB2Xfrv_deN4AaABAg
+    Rationale: The author repetitively highlights a specific album as a defense of the artist.
+    Snippet  : he made graduation he made graduation he made graduation he made graduation he made graduation he made graduation he made graduation
+
+[104] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgjmNUD2dPr0THgCoAEC
+    Rationale: The author provides a detailed, enthusiastic endorsement of the artist's musical genius.
+    Snippet  : The last 5 minutes of Runaway is some of the most beautiful pieces of musical composition I've ever heard, the way Kanye digitally modifies his voice to make it sound raspy, robotic and sort of like an electric guitar is a work of art. K...
+
+[105] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=Ugyp79F469wPPrMMA0R4AaABAg
+    Rationale: The author shares a neutral, anecdotal memory of meeting the artist.
+    Snippet  : I remember meeting him in New York, I was like 8 or 9. My school was invited to a ABC interview. He was there as well. When he was leaving he was signing autographs, By that time I didn't know how he was. But anyway, he was signing autog...
+
+[106] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgxU3hy2RmcnjuJ1LDV4AaABAg
+    Rationale: The user expresses a clear preference for the artist's past work while explicitly stating hatred for his current behavior and personality.
+    Snippet  : I miss the old Kanye Straight from the 'Go Kanye Chop up the soul Kanye Set on his goals Kanye I hate the new Kanye The bad mood Kanye The always rude Kanye Spaz in the news Kanye
+
+[107] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Ugz-EiMaNmb5TlURH0t4AaABAg
+    Rationale: The user expresses strong admiration for a specific piece of the artist's work.
+    Snippet  : Ultra light Beam is such a beautiful song.
+
+[108] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=Ugz73T9itHfzhRIBebZ4AaABAg
+    Rationale: The user criticizes the artist's behavior toward his family and expresses sympathy for his ex-wife.
+    Snippet  : I don’t want to hear people say that Kim ruined him or her family again. This is how she was being treated and she never talked badly about him despite this and protected her kids so they don’t see this side of him. She’s a great mother ...
+
+[109] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=Ugz2FmGBVtfGV1NI43h4AaABAg
+    Rationale: The user expresses positive regard and curiosity toward the artist.
+    Snippet  : What an intelligent young man. I wonder what he’s up to now
+
+[110] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgwA-G2TGpTG3fi2Ud94AaABAg
+    Rationale: The user dismisses the artist's personal life but offers high praise for his professional contributions.
+    Snippet  : really dgaf about ye's personal life, but he is for real the most important producer of the 21st century
+
+[111] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwlDXMAPD-7c7HIo0N4AaABAg
+    Rationale: The user advocates for the recognition of the artist's influence on modern music.
+    Snippet  : Yall should've done 808s& heartbreaks because ppl don't know how relevant that sound/style is & being used by almost every artist today.
+
+[112] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgxfAuhX5LJsalYjop54AaABAg
+    Rationale: The user compares the artist's current state to the fall of an empire, indicating a negative outlook.
+    Snippet  : 410: Fall of Rome 2025:Fall of Kanye
+
+[113] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=UgxaaNZHvbQs9JCyqdB4AaABAg
+    Rationale: The user explicitly blames the artist for his personal relationship failures.
+    Snippet  : Further proof that Kim was NOT the problem. It was him.
+
+[114] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgwoRtUgMDCTNyY8Eft4AaABAg
+    Rationale: The user expresses deep disappointment and a sense of finality regarding their support for the artist.
+    Snippet  : Don't have any more "He made graduation!"s in me anymore soldiers.... Forgive me, but it's the end of my road... 💔
+
+[115] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgglzT5Yj5EchngCoAEC
+    Rationale: The user provides a balanced, albeit critical, assessment of the artist's dual nature.
+    Snippet  : Kanye is a person I have the most arguments about, because people refuse to believe me when I tell them he can be a jackass AND a musical genius at the same time.
+
+[116] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwhgRbx8cEFmflnhkd4AaABAg
+    Rationale: The user reflects on the artist's significant impact on the industry with a tone of self-assurance.
+    Snippet  : when haven't I changed the game
+
+[117] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=UgzAMLV4Lkzo9rgRMdZ4AaABAg
+    Rationale: The user expresses concern for the artist's mental state, framing it as a need for help.
+    Snippet  : “What do you mean? I used to scream backstage “. This man needs help
+
+[118] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgjLMR4FkLb4oHgCoAEC
+    Rationale: The user defends the artist against perceived unfair criticism from others.
+    Snippet  : People will hate on Ye no matter what
+
+[119] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgiGEKgFd3_JkngCoAEC
+    Rationale: The user justifies the artist's erratic behavior as a byproduct of his genius.
+    Snippet  : Name one genius that aint craaazy
+
+[120] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgzShB2WW4U2-fjfo-p4AaABAg
+    Rationale: The user praises the artist's early work for being ahead of its time.
+    Snippet  : Man, Kanye was so ahead of its time that I forgot that MJ was still alive during his early years.
+
+[121] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgzpQ72DtGPPGENHpuB4AaABAg
+    Rationale: The comment is a cryptic quote without clear emotional valence or stance toward the subject.
+    Snippet  : "if i ever leave and come back, it isnt me"
+
+[122] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwrrloLer15V9V4w3l4AaABAg
+    Rationale: The comment quotes the artist and does not express a personal opinion or stance.
+    Snippet  : People talk so much shit about me in barbershops.. they forget to get they haircut
+
+[123] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgyG-N0JnK_4SW4YkAZ4AaABAg
+    Rationale: The user defends the artist's legacy and criticizes those who follow negative trends against him.
+    Snippet  : yep. he changed hip hop and people still hate on him just cause everybody else does. don’t follow a train on the wrong track
+
+[124] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgyORUgx9LSXkzOlZEN4AaABAg
+    Rationale: The comment makes a somber, albeit factually incorrect, statement about the artist's life.
+    Snippet  : Rest in peace Kanye 1990s- 2019
+
+[125] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=Ugxpo02eFSTMTcMDtJJ4AaABAg
+    Rationale: The user expresses admiration for the artist's relationship with his mother and his communication style.
+    Snippet  : The relationship he had with his mother was something I have never seen before especially on the documentary. He never interrupted her, he never spoke over her, he took it all in and his mother would say his name a lot which is an excell...
+
+[126] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=Ugy1KHaCD75ecQZ2wZZ4AaABAg
+    Rationale: The user expresses strong support for the artist and frustration toward media coverage.
+    Snippet  : this honestly made me kinda sad. Kanye has been through so much and the media is always trying to make him look bad. the day he passes away imma cry so fucking much. Kanye really a goat
+
+[127] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=Ugx91u5IoP0KcH732Tt4AaABAg
+    Rationale: The user praises the artist's music and expresses hope for his future.
+    Snippet  : What an amazing album! I hope he keeps making amazing music and nothing bad will happen-
+
+[128] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgzYESI_TYPjJONed9x4AaABAg
+    Rationale: The comment is a repetitive, neutral statement of fact regarding the artist's discography.
+    Snippet  : He made graduation He made graduation He made graduation He made graduation
+
+[129] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgyPGXBTEW9uIo7ONcd4AaABAg
+    Rationale: The user provides a detailed, positive analysis of the artist's influence on music production.
+    Snippet  : Things Kanye West's Graduation changed: 1. It gave rise to trap beats/instrumentals being more mainstreamed/popularized than ever since after 2007 ("Can't Tell Me Nothing"). Trap music existed before but it was mostly in the south specif...
+
+[130] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UggB8K4hdtIWDXgCoAEC
+    Rationale: The user expresses high praise for the artist's talent and the quality of the analysis.
+    Snippet  : This video makes Kanye West seem like the greatest artist that ever lived. That's how great a well done analysis can be. Actually made me appreciate him when he still recorded with his mount wired shut.
+
+[131] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugz7QSn7ECtnuhCf_Td4AaABAg
+    Rationale: The user strongly condemns the artist's actions using harsh language.
+    Snippet  : Ye supporting diddy who tried to KILL his friend Kid Cudi is a whole nother level of shittiness.
+
+[132] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugz2VaM3At7cVeaAGqp4AaABAg
+    Rationale: The user uses sarcasm to dismiss the common defense of the artist's past work.
+    Snippet  : The "he made graduation" supply been running real low lately
+
+[133] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=Ugx08-Czlh-NfXFVenR4AaABAg
+    Rationale: The user characterizes the artist's work as revolutionary.
+    Snippet  : Synths...strings...non gangster talk...fashion...don't u get it..:revolutionary
+
+[134] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=UgyCokbWx0l4z3U0G914AaABAg
+    Rationale: The user criticizes the artist's behavior and expresses concern for his children.
+    Snippet  : Kim, please don’t let your kids be subjected to these tantrums.
+
+[135] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UggyTKF2leEj7ngCoAEC
+    Rationale: The user expresses high admiration for the artist's album.
+    Snippet  : MBDTF is one of the most perfect albums of all time. Not only in hip hop but in general.
+
+[136] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgyMPbfdTlX8_Lb0OGp4AaABAg
+    Rationale: The commenter expresses empathy and admiration for Kanye West, wishing him well.
+    Snippet  : bro the things kanye went through especially in front of the whole world, he's a very important figure and i pray to God he finds peace.
+
+[137] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=UgzI5NxEQY6hb-EfSuR4AaABAg
+    Rationale: The commenter expresses relief at the divorce and criticizes Kanye's behavior toward women.
+    Snippet  : I am glad Kim divorced Kanye. Look at his behaviour towards women here?
+
+[138] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UggmfAMri6xxhXgCoAEC
+    Rationale: The commenter expresses excitement about their comment being featured and hopes to promote Kanye's work.
+    Snippet  : I would have never thought that one of my comments would be featured on a video from a channel with over a million subscribers. Hopefully this video will get more people into Kanye.
+
+[139] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgxcWxsBUCmd_A4nBVJ4AaABAg
+    Rationale: The commenter uses a highly offensive comparison to a Nazi figure to attack Kanye West.
+    Snippet  : He is truly the college dropout after losing his art degree. Just like his German idol
+
+[140] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgwuJjGADIBfl8NwxgB4AaABAg
+    Rationale: The commenter expresses a sense of nostalgia and disappointment regarding the current state of the artist.
+    Snippet  : "i miss the old kanye." that hits different now.
+
+[141] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgyvduC423D0kwuDI_94AaABAg
+    Rationale: The commenter praises Kanye West as a true artist.
+    Snippet  : Kanye is not just a musician,he truly is "the artist"
+
+[142] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgwRS8gqejekPTzcma14AaABAg
+    Rationale: The commenter predicts that Kanye West will be remembered as a classical artist, showing high regard.
+    Snippet  : crazy knowing 100s of years later and he’ll be considered a classical artist
+
+[143] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Ugy08lzal_siYMkAEnd4AaABAg
+    Rationale: The commenter explicitly calls Kanye West a musical genius and praises his production work.
+    Snippet  : I wish they made this after the release of Daytona, Ye, KSG and Nasir. The Kanye production on these albums is on point. He truely is a musical genius.
+
+[144] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgzKdWvCfzcbjYsIRyZ4AaABAg
+    Rationale: The commenter criticizes Kanye's recent controversial actions and associations.
+    Snippet  : Update, December 2022: Kanye West, now known as Ye, is not the artist we used to know. From conspiracy theories to dining with white supremacists to praising Hilter’s Nazi regime, we have to ask: How did Ye get here? Read the report on V...
+
+[145] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Ugz6deN4iIZZD4KICDt4AaABAg
+    Rationale: The commenter expresses frustration that others do not recognize Kanye's genius.
+    Snippet  : It's crazy how so much of the world has no idea how talented this man is. How can u not hear his genius.
+
+[146] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugws0XYA-r1T0nmUr3B4AaABAg
+    Rationale: The commenter uses dismissive slang to suggest Kanye has suffered cognitive decline.
+    Snippet  : Nitrous done fried the boy.
+
+[147] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugzg1O67WcD6OE2wBPF4AaABAg
+    Rationale: The commenter makes a neutral observation about the change in Kanye's persona.
+    Snippet  : Kanye West is long gone We dealing with Ye now
+
+[148] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=Ugzc1pCs2QUmgXinOrp4AaABAg
+    Rationale: The commenter expresses respect for the content and believes it should be widely seen.
+    Snippet  : This should be on hulu or something. Much respect for putting this all together, the world needs to see this.
+
+[149] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgxDTlpUjvByw_VTrC14AaABAg
+    Rationale: The commenter shares a positive anecdote about another artist appreciating Kanye's music.
+    Snippet  : Fun fact: Michael Jackson loves 808s & Heartbreak so much, he plays it to his children a lot.
+
+[150] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgxXY72cdJFdU84ORgB4AaABAg
+    Rationale: The commenter provides critical feedback on the video's failure to explain the impact of an album.
+    Snippet  : This vid doesn't really explain how Graduation changed music. There's no comparisons of how the landscape of music sounded before Graduation and then afterwards.
+
+[151] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgyfP7sLZMLmjfTkRvJ4AaABAg
+    Rationale: The comment expresses admiration for the bond between Kanye and his mother.
+    Snippet  : The way his mom memorized one of his songs was proof she loved him beyond measures 🙏
+
+[152] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=Ugw8GOpy9SHoqgvYo414AaABAg
+    Rationale: The author praises Kanye's genius and advocates for empathy regarding his personal struggles.
+    Snippet  : Kanye is a genius. And his struggles with mental health and the loss of his mother shouldn't detract or distract from that, but instead, should be met with empathy and compassion.
+
+[153] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UghE-mcTQDBfL3gCoAEC
+    Rationale: The author defends Kanye's talent against critics while acknowledging mixed feelings about his lyrics.
+    Snippet  : This is why i laugh whenever people call him talentless. Every album has had such a different feel and unique mixes with different styles of rapping. His lyrics might not always be the most thoughtful but when you look at everything toge...
+
+[154] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=UgxvkPAtGsn83cSd30J4AaABAg
+    Rationale: The author uses strong, condemnatory language to criticize Kanye's behavior toward his family.
+    Snippet  : I’m not saying anything against this woman ever again. The audacity he has to show publicly a film of him abusing his wife and family is actually disgusting
+
+[155] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgxXsy9p-IynsERYl114AaABAg
+    Rationale: The author expresses strong positive nostalgia and appreciation for the album.
+    Snippet  : This album is literally a part of my childhood. One of my favorites of all time.
+
+[156] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgyU876oyYmUTXZZZy14AaABAg
+    Rationale: The author provides high praise for the quality of the documentary.
+    Snippet  : This is one of the best kanye documentaries I've ever watched, this is just so amazing and so well made
+
+[157] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgxPZgX_IxiqhrAfUbZ4AaABAg
+    Rationale: The comment frames Kanye's self-awareness of his genius as a dangerous trait.
+    Snippet  : The most dangerous thing about kanye west is the fact that he's a genius and he knows this
+
+[158] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=UgxwoZHwU6dNpCwmEfh4AaABAg
+    Rationale: The comment is a lighthearted, humorous play on the artist's name.
+    Snippet  : Now we need Kanye East, Kanye North, and Kanye South
+
+[159] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=Ugw5oLjNHMryyPLdL5V4AaABAg
+    Rationale: The author expresses strong pride and admiration for Kanye's influence on music.
+    Snippet  : "If you are a fan of Kanye West, you are not a fan of me. You are a fan of yourself" - Ye Call me crazy, but Kanye West is our modern music icon. I'm so amazed on how he shaped modern music especially hip-hop/rap scene today. Proud fan o...
+
+[160] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgyGL_asgf4Hr1ugb9x4AaABAg
+    Rationale: The author expresses enjoyment of the music in a casual, positive tone.
+    Snippet  : Bruh i swear youtube stalking me, i been listening to graduation so much lately
+
+[161] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwjXe_gdbs3Q9L6CMh4AaABAg
+    Rationale: The author strongly endorses the impact of a specific song.
+    Snippet  : Lift Yourself changed the game forever without a doubt.
+
+[162] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwStFe5Aps444Ib84l4AaABAg
+    Rationale: The author expresses high praise for a specific song, calling it potentially the greatest ever.
+    Snippet  : Something about Flashing Lights. Literally could be the greatest song ever.
+
+[163] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=UgwdJGxF0ZXY-EsAcUh4AaABAg
+    Rationale: The author defends Kanye's artistic genius against those who call him talentless.
+    Snippet  : kanye really is a genius of music and more than a just a rapper so when people call him talentless they really haven’t listened to his art
+
+[164] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgxUj6a1jVp4XLgcjPp4AaABAg
+    Rationale: The author expresses approval of the video's sympathetic perspective on Kanye.
+    Snippet  : "the man just misses his mother" great video 👏🏻
+
+[165] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgyGckH_FLwLLek2CgV4AaABAg
+    Rationale: The author expresses emotional support for Kanye and criticizes the media's portrayal of him.
+    Snippet  : I cried so many times . He loved his Mother so much . I know she is extremely proud of him as am I. The media try to make this man look crazy ; he is not .Everyone takes death differently. IF your mother died how would you take it? I kno...
+
+[166] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgwG1y53AtObd4uHEEB4AaABAg
+    Rationale: The comment expresses empathy and admiration for Kanye West's personal history and need for support.
+    Snippet  : I can see why Kanye loves his mother so much. A lot of people all they need to succeed is someone next to them that believes and loves them, so many people hold back out of fear of being judged or laughed at, that one person who’s behind...
+
+[167] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=ZgJyhKEZ8QU&lcdId=Ugi66RybfvsYOngCoAEC
+    Rationale: The user expresses strong enthusiasm and fandom for the artist.
+    Snippet  : I love Kanye more than Kanye loves Kanye
+
+[168] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=xmbHcOexgm8&lcdId=UgyCqKpVUurrZU4nnvh4AaABAg
+    Rationale: The comment suggests that external perceptions of Kanye being unhinged are driven by a desire to control him.
+    Snippet  : Just because they can't control Kanye, he's unhinged.
+
+[169] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=xmbHcOexgm8&lcdId=Ugz8vbeWOYK1D0u8aLx4AaABAg
+    Rationale: The user expresses a positive desire to listen to the artist's music.
+    Snippet  : I’m leaving here to go listen to Kanye
+
+[170] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YQYslaA1Lus&lcdId=UgwzGOJZMney6DiH9HV4AaABAg
+    Rationale: The comment is a celebratory reference to the artist's work.
+    Snippet  : Say it with me y’all He made graduation
+
+[171] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=VLC4NlIPrKk&lcdId=Ugyj11FFOW3MJCwewXd4AaABAg
+    Rationale: The user expresses strong disapproval and contempt for the artist's behavior, describing him as out of control.
+    Snippet  : Gawd damn all these videos of him are now starting surface. Watched one of him yelling a Kris J earlier today. He was outta control.. Poor Kim… She really played it down when she spoke of his behaviour..She made it seem that things weren...
+
+[172] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=-8K9iEMyYDo&lcdId=UgyVfXBy1UMNx59YgNV4AaABAg
+    Rationale: The comment provides a sympathetic, analytical perspective on the artist's mental state following his mother's death.
+    Snippet  : “The man just misses his mother”...I can tell you that losing your mother too soon and losing her the way he did where you can’t do anything to bring them back will do something to you physically, mentally, and emotionally for life. Espe...
+
+[173] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=OZzUaV484QM&lcdId=Ugzqtuyas9o5WvJA4dN4AaABAg
+    Rationale: The user expresses mild frustration or exhaustion regarding the artist's recent actions.
+    Snippet  : that’s enough mr west pls no more today 💔

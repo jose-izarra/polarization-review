@@ -1,0 +1,605 @@
+{
+  "model": {
+    "label": "gpt-4o-mini",
+    "model_id": "gpt-4o-mini",
+    "provider": "openai",
+    "note": "Requires OPENAI_API_KEY"
+  },
+  "active_scenarios": [
+    "abortion",
+    "gun_control",
+    "nasa_funding",
+    "donald_trump"
+  ],
+  "n_runs": 3,
+  "runs": {
+    "abortion": [
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "abortion",
+        "run": 1,
+        "polarization_score": 32.95,
+        "sample_size": 112,
+        "rationale": "112 items scored. Stance distribution: 16 for / 63 against / 33 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.",
+        "stance_distribution": {
+          "for": 16,
+          "against": 63,
+          "neutral": 33
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.25,
+            "animosity": 1,
+            "n": 16
+          },
+          "against": {
+            "sentiment": 1.7,
+            "animosity": 2.89,
+            "n": 63
+          },
+          "neutral": {
+            "sentiment": 2.79,
+            "animosity": 1.15,
+            "n": 33
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 1,
+            "reddit": 53,
+            "youtube": 60
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 102.84,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "abortion",
+        "run": 2,
+        "polarization_score": 34.77,
+        "sample_size": 114,
+        "rationale": "114 items scored. Stance distribution: 19 for / 67 against / 28 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.",
+        "stance_distribution": {
+          "for": 19,
+          "against": 67,
+          "neutral": 28
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.11,
+            "animosity": 1.05,
+            "n": 19
+          },
+          "against": {
+            "sentiment": 1.69,
+            "animosity": 2.82,
+            "n": 67
+          },
+          "neutral": {
+            "sentiment": 2.86,
+            "animosity": 1.07,
+            "n": 28
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 1,
+            "reddit": 53,
+            "youtube": 60
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 117.33,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "abortion",
+        "run": 3,
+        "polarization_score": 34.32,
+        "sample_size": 112,
+        "rationale": "112 items scored. Stance distribution: 18 for / 63 against / 31 neutral. Platforms: gnews: 1, reddit: 53, youtube: 60.",
+        "stance_distribution": {
+          "for": 18,
+          "against": 63,
+          "neutral": 31
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.11,
+            "animosity": 1,
+            "n": 18
+          },
+          "against": {
+            "sentiment": 1.7,
+            "animosity": 2.94,
+            "n": 63
+          },
+          "neutral": {
+            "sentiment": 2.81,
+            "animosity": 1.1,
+            "n": 31
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 1,
+            "reddit": 53,
+            "youtube": 60
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 110.12,
+        "status": "ok",
+        "error": null
+      }
+    ],
+    "gun_control": [
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "gun_control",
+        "run": 1,
+        "polarization_score": 39.69,
+        "sample_size": 98,
+        "rationale": "98 items scored. Stance distribution: 32 for / 39 against / 27 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 32,
+          "against": 39,
+          "neutral": 27
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 3.72,
+            "animosity": 1.16,
+            "n": 32
+          },
+          "against": {
+            "sentiment": 1.92,
+            "animosity": 2.59,
+            "n": 39
+          },
+          "neutral": {
+            "sentiment": 2.63,
+            "animosity": 1.15,
+            "n": 27
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 3,
+            "reddit": 14,
+            "youtube": 81
+          },
+          "lean": {
+            "right": 1
+          }
+        },
+        "elapsed_seconds": 107.65,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "gun_control",
+        "run": 2,
+        "polarization_score": 38.9,
+        "sample_size": 98,
+        "rationale": "98 items scored. Stance distribution: 29 for / 40 against / 29 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 29,
+          "against": 40,
+          "neutral": 29
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 3.79,
+            "animosity": 1.24,
+            "n": 29
+          },
+          "against": {
+            "sentiment": 1.98,
+            "animosity": 2.45,
+            "n": 40
+          },
+          "neutral": {
+            "sentiment": 2.66,
+            "animosity": 1.1,
+            "n": 29
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 3,
+            "reddit": 14,
+            "youtube": 81
+          },
+          "lean": {
+            "right": 1
+          }
+        },
+        "elapsed_seconds": 103.88,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "gun_control",
+        "run": 3,
+        "polarization_score": 39.48,
+        "sample_size": 98,
+        "rationale": "98 items scored. Stance distribution: 28 for / 46 against / 24 neutral. Platforms: gnews: 3, reddit: 14, youtube: 81. Source lean: right: 1.",
+        "stance_distribution": {
+          "for": 28,
+          "against": 46,
+          "neutral": 24
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 3.86,
+            "animosity": 1.04,
+            "n": 28
+          },
+          "against": {
+            "sentiment": 1.98,
+            "animosity": 2.48,
+            "n": 46
+          },
+          "neutral": {
+            "sentiment": 2.67,
+            "animosity": 1.21,
+            "n": 24
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 3,
+            "reddit": 14,
+            "youtube": 81
+          },
+          "lean": {
+            "right": 1
+          }
+        },
+        "elapsed_seconds": 127.74,
+        "status": "ok",
+        "error": null
+      }
+    ],
+    "nasa_funding": [
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "nasa_funding",
+        "run": 1,
+        "polarization_score": 37.66,
+        "sample_size": 67,
+        "rationale": "67 items scored. Stance distribution: 17 for / 32 against / 18 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.",
+        "stance_distribution": {
+          "for": 17,
+          "against": 32,
+          "neutral": 18
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.24,
+            "animosity": 1,
+            "n": 17
+          },
+          "against": {
+            "sentiment": 1.91,
+            "animosity": 2.56,
+            "n": 32
+          },
+          "neutral": {
+            "sentiment": 2.83,
+            "animosity": 1.11,
+            "n": 18
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 2,
+            "reddit": 17,
+            "youtube": 48
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 72.97,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "nasa_funding",
+        "run": 2,
+        "polarization_score": 37.58,
+        "sample_size": 67,
+        "rationale": "67 items scored. Stance distribution: 17 for / 32 against / 18 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.",
+        "stance_distribution": {
+          "for": 17,
+          "against": 32,
+          "neutral": 18
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.24,
+            "animosity": 1,
+            "n": 17
+          },
+          "against": {
+            "sentiment": 1.94,
+            "animosity": 2.5,
+            "n": 32
+          },
+          "neutral": {
+            "sentiment": 2.78,
+            "animosity": 1.17,
+            "n": 18
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 2,
+            "reddit": 17,
+            "youtube": 48
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 69.93,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "nasa_funding",
+        "run": 3,
+        "polarization_score": 37.6,
+        "sample_size": 67,
+        "rationale": "67 items scored. Stance distribution: 17 for / 32 against / 18 neutral. Platforms: gnews: 2, reddit: 17, youtube: 48.",
+        "stance_distribution": {
+          "for": 17,
+          "against": 32,
+          "neutral": 18
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.24,
+            "animosity": 1,
+            "n": 17
+          },
+          "against": {
+            "sentiment": 1.91,
+            "animosity": 2.56,
+            "n": 32
+          },
+          "neutral": {
+            "sentiment": 2.78,
+            "animosity": 1.17,
+            "n": 18
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 2,
+            "reddit": 17,
+            "youtube": 48
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 72.84,
+        "status": "ok",
+        "error": null
+      }
+    ],
+    "donald_trump": [
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "donald_trump",
+        "run": 1,
+        "polarization_score": 37.5,
+        "sample_size": 120,
+        "rationale": "120 items scored. Stance distribution: 21 for / 78 against / 21 neutral. Platforms: gnews: 2, reddit: 72, youtube: 47.",
+        "stance_distribution": {
+          "for": 21,
+          "against": 78,
+          "neutral": 21
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.43,
+            "animosity": 1,
+            "n": 21
+          },
+          "against": {
+            "sentiment": 1.63,
+            "animosity": 2.99,
+            "n": 78
+          },
+          "neutral": {
+            "sentiment": 2.67,
+            "animosity": 1.14,
+            "n": 21
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 2,
+            "reddit": 72,
+            "youtube": 47
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 115.96,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "donald_trump",
+        "run": 2,
+        "polarization_score": 39.1,
+        "sample_size": 120,
+        "rationale": "120 items scored. Stance distribution: 23 for / 79 against / 18 neutral. Platforms: gnews: 2, reddit: 72, youtube: 47.",
+        "stance_distribution": {
+          "for": 23,
+          "against": 79,
+          "neutral": 18
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.22,
+            "animosity": 1.17,
+            "n": 23
+          },
+          "against": {
+            "sentiment": 1.66,
+            "animosity": 3.01,
+            "n": 79
+          },
+          "neutral": {
+            "sentiment": 2.72,
+            "animosity": 1.17,
+            "n": 18
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 2,
+            "reddit": 72,
+            "youtube": 47
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 134.79,
+        "status": "ok",
+        "error": null
+      },
+      {
+        "model_label": "gpt-4o-mini",
+        "model_id": "gpt-4o-mini",
+        "scenario": "donald_trump",
+        "run": 3,
+        "polarization_score": 38.29,
+        "sample_size": 120,
+        "rationale": "120 items scored. Stance distribution: 22 for / 75 against / 23 neutral. Platforms: gnews: 2, reddit: 72, youtube: 47.",
+        "stance_distribution": {
+          "for": 22,
+          "against": 75,
+          "neutral": 23
+        },
+        "stance_averages": {
+          "for": {
+            "sentiment": 4.5,
+            "animosity": 1.05,
+            "n": 22
+          },
+          "against": {
+            "sentiment": 1.64,
+            "animosity": 2.93,
+            "n": 75
+          },
+          "neutral": {
+            "sentiment": 2.52,
+            "animosity": 1.13,
+            "n": 23
+          }
+        },
+        "source_breakdown": {
+          "platforms": {
+            "gnews": 2,
+            "reddit": 72,
+            "youtube": 47
+          },
+          "lean": {}
+        },
+        "elapsed_seconds": 125.37,
+        "status": "ok",
+        "error": null
+      }
+    ]
+  },
+  "stats": {
+    "abortion": {
+      "score": {
+        "n": 3,
+        "mean": 34.013,
+        "std": 0.948,
+        "min": 32.95,
+        "max": 34.77
+      },
+      "elapsed": {
+        "n": 3,
+        "mean": 110.097,
+        "std": 7.245,
+        "min": 102.84,
+        "max": 117.33
+      },
+      "total_runs": 3
+    },
+    "gun_control": {
+      "score": {
+        "n": 3,
+        "mean": 39.357,
+        "std": 0.409,
+        "min": 38.9,
+        "max": 39.69
+      },
+      "elapsed": {
+        "n": 3,
+        "mean": 113.09,
+        "std": 12.827,
+        "min": 103.88,
+        "max": 127.74
+      },
+      "total_runs": 3
+    },
+    "nasa_funding": {
+      "score": {
+        "n": 3,
+        "mean": 37.613,
+        "std": 0.042,
+        "min": 37.58,
+        "max": 37.66
+      },
+      "elapsed": {
+        "n": 3,
+        "mean": 71.913,
+        "std": 1.719,
+        "min": 69.93,
+        "max": 72.97
+      },
+      "total_runs": 3
+    },
+    "donald_trump": {
+      "score": {
+        "n": 3,
+        "mean": 38.297,
+        "std": 0.8,
+        "min": 37.5,
+        "max": 39.1
+      },
+      "elapsed": {
+        "n": 3,
+        "mean": 125.373,
+        "std": 9.415,
+        "min": 115.96,
+        "max": 134.79
+      },
+      "total_runs": 3
+    }
+  }
+}

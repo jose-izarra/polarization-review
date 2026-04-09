@@ -1,0 +1,143 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : support for veterans
+Assessed at    : 2026-04-09T10:08:50.600072+00:00
+Model          : default
+Note           : results for assessing pipeline topics Apr. 9, 2026
+
+--- Score ---
+Polarization   : 38.58 / 100
+Sample size    : 18
+Rationale      : 18 items scored. Stance distribution: 6 for / 5 against / 7 neutral. Avg animosity: 1.89. Avg sentiment: 2.78. Platforms: gnews: 2, reddit: 12, youtube: 4.
+
+--- Stance Distribution ---
+  For       : 6
+  Against   : 5
+  Neutral   : 7
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.00 | Animosity: 1.00
+  Against  | Sentiment: 1.20 | Animosity: 4.00
+  Neutral  | Sentiment: 2.86 | Animosity: 1.14
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 12
+  youtube     : 4
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change",
+      "climate change is real",
+      "social security",
+      "support for veterans",
+      "tsunamis",
+      "kanye west",
+      "keanu reeves",
+      "scamming",
+      "the dress is blue and black"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.deccanchronicle.com/nation/army-signs-mou-to-boost-healthcare-support-for-veterans-war-widows-1944794
+    Rationale: The text reports positively on a new initiative to improve healthcare access for veterans and war widows.
+    Snippet  : Army Signs MoU to Boost Healthcare Support for Veterans, War Widows. The initiative includes a Rs 15 lakh donation of medical equipment to ASHA School for special children, alongside medical services.
+
+[2] gnews | unknown | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.manilatimes.net/2026/03/13/tmt-newswire/globenewswire/the-invicta-gala-returns-april-18-2026-to-support-veterans-and-first-responders-sponsorship-and-corporate-tables-now-available/2299173
+    Rationale: The text promotes a charitable event designed to support veterans and first responders.
+    Snippet  : The Invicta Gala Returns April 18, 2026 to Support Veterans and First Responders - Sponsorship and Corporate Tables Now Available. Community leaders, businesses, and supporters of veterans and first responders will gather on Saturday, Ap...
+
+[3] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s6m2p3/chilli_from_tlc_denies_being_maga/od30rxe/
+    Rationale: The author uses aggressive, accusatory language to criticize a political figure's perceived hypocrisy regarding veterans.
+    Snippet  : She cares deeply about human trafficking and veterans, so she supported a child rapist who calls veterans suckers and losers? the math does not math
+
+[4] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/legaladvice/comments/1seyd2w/17year_veteran_losing_my_home_because_equifax_is/
+    Rationale: The author expresses frustration and distress regarding a bureaucratic issue affecting their VA loan.
+    Snippet  : 17-Year Veteran losing my home because Equifax is "verifying" a 180-day delinquency on a $0.00 balance. Location: Texas I am at my wit's end and need to vent/seek advice. I am a 17-year Air Force Veteran currently in the middle of a VA l...
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/legaladvice/comments/1seyd2w/17year_veteran_losing_my_home_because_equifax_is/oetf0a1/
+    Rationale: The text provides neutral, practical advice on how to resolve a credit reporting issue with a lender.
+    Snippet  : The lender has a responsibility here to look at "$0", and say, "OK, this is not a factor." Passing the buck to the Credit Reporting Agency is simply something that you need to demand that they overcome, by walking this up to the higher m...
+
+[6] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/PLNewsGroup/comments/1s628gj/merit_vs_diversity_is_hegseths_warrior_ethos/
+    Rationale: The text poses a critical question about military leadership and ideology without taking a definitive side.
+    Snippet  : Merit vs. Diversity: Is Hegseth’s "Warrior Ethos" saving the military or purging its best leaders?
+
+[7] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/SubredditDrama/comments/1rpkphn/as_a_veteran_just_say_that_you_are_an_israeli/
+    Rationale: The text uses dehumanizing language and personal attacks to criticize political supporters and a political figure.
+    Snippet  : "“As a veteran” Just say that you are an Israeli golem who killed brown people for fun" Trump defenders invade r/irony to defend POTUS wearing a trucker hat he sells for profit while honoring service members who died in the Iran war Sour...
+
+[8] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s6m2p3/chilli_from_tlc_denies_being_maga/od33vco/
+    Rationale: The author uses a hostile and mocking tone to criticize a political figure's record on veterans' issues.
+    Snippet  : She voted for the man that openly called veterans "suckers and losers", a man that skipped the 100 year celebration for the heroes of WWI because of rain, who campaigned whit the goal to cut MedicAid and MediCare and VA Aid and think tha...
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/psychology/comments/1rx20oq/military_service_and_combat_experience_do_not/
+    Rationale: The text provides a balanced, analytical perspective on the relationship between military service and political extremism.
+    Snippet  : Military service and combat experience do not increase support for political violence or right-wing extremism. While veterans who engage in extremist violence pose specific threats due to their training, widespread extremist attitudes am...
+
+[10] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s6m2p3/chilli_from_tlc_denies_being_maga/od332jw/
+    Rationale: The author uses profanity and a dismissive tone to mock the political choices of others regarding veterans.
+    Snippet  : Voting for and donating to Trump in 20-fucking-24 to help trafficked kids and veterans? ![gif](giphy|1AIeYgwnqeBUxh6juu)
+
+[11] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/allthequestions/comments/1sar6fx/since_the_trump_administration_just_cut_a_vital/
+    Rationale: The text expresses concern and criticism regarding the impact of a specific administration's policy on veterans.
+    Snippet  : Since the Trump administration just cut a vital housing program for veterans, with tens of thousands of veterans to lose their houses, will veterans’ support for Trump increase?
+
+[12] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/ThatsInsane/comments/1rwezel/joe_kent_has_resigned_as_director_of_the_national/oaz6zt3/
+    Rationale: The author expresses respect and gratitude for a veteran's service despite political disagreements.
+    Snippet  : I can't say I'm a fan of his politics, but i thank him for his service, his wife's sacrifice, and the balls to speak truth to power.
+
+[13] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Veterans/comments/1s9qxr3/my_first_look_with_my_local_vfw_group/
+    Rationale: The author shares a positive personal experience of finding support through a veteran organization after initial skepticism.
+    Snippet  : My first look with my local VFW group For many years, I was very skeptical about groups like the VFW and DAV because of the negative things I kept seeing on social media. The last few months have been really rough for me, and I finally h...
+
+[14] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Denver/comments/1s8ej5x/colorado_veteran_completes_20_mile_walk_to_denver/
+    Rationale: The text highlights a positive act of solidarity by a veteran toward other workers.
+    Snippet  : Colorado veteran completes 20+ mile walk to Denver International Airport to show support for TSA workers
+
+[15] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=3ZACQGq_J1A
+    Rationale: The text describes helpful efforts by organizations to connect veterans with necessary benefits.
+    Snippet  : VA, other organizations help military veterans connect with benefits and services. With Veterans Day this coming Monday, the VA and other organizations spent Thursday morning and afternoon trying to get ...
+
+[16] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=0b351bmP2yw
+    Rationale: The text is a neutral, informative description of a video explaining eligibility requirements for veteran benefits.
+    Snippet  : What Are The Eligibility Requirements For Military Veteran Benefits? - The Documentary Reel. What Are The Eligibility Requirements For Military Veteran Benefits? In this informative video, we will discuss the eligibility ...
+
+[17] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=YRzy12zzgqw
+    Rationale: The text provides a factual, descriptive overview of support services available for military and veteran students.
+    Snippet  : Military and Veterans Support. Support for Military and Veteran Students at UNH College of Professional Studies - Online Are you a military servicemember or ...
+
+[18] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=SgWWni7VIfg
+    Rationale: The text is a neutral, informational summary regarding VA pension eligibility for surviving spouses.
+    Snippet  : VA Pensions for Surviving Spouses | VA Benefits for Veterans&#39; Wives &amp; Husbands | theSITREP. VA Pensions are available for qualified Surviving Spouses of Veterans. To apply for a VA Pension or to review qualifying war time ...

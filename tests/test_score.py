@@ -1,12 +1,11 @@
 import unittest
 
 from src.internal.pipeline.domain import ItemScore
-from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 from src.internal.pipeline.llm.score import compute_polarization
 
 
 def _make_score(stance: int, animosity: int = 3, sentiment: int = 5) -> ItemScore:
-    r = stance * (sentiment + ALPHA_DEFAULT * animosity)
+    r = stance * (sentiment + animosity)
     return ItemScore(
         id="x",
         sentiment=sentiment,

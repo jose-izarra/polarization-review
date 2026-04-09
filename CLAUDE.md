@@ -19,7 +19,7 @@ poe fix            # ruff check --fix
 poe format         # ruff format
 
 # Validation suite (synthetic formula checks)
-python -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
+uv run python3 -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
 ```
 
 Dependencies are managed with `uv`. Run `uv sync --all-packages` after changing any `pyproject.toml`.
@@ -98,3 +98,85 @@ Test files:
 - `test_normalize.py` — text cleaning, dedup, platform/source_lean/parent_video_id extraction
 - `test_gnews_scraper.py` — GNews API + source lean lookup
 - `test_youtube_scraper.py` — YouTube API + transcript + parent_video_id
+
+## Ablation studies conventions
+
+All ablation studies must live under `studies/`, and each study must have its own subfolder:
+
+```text
+studies/
+  <study_name>/
+    run.py
+    config.json
+```
+
+Required rules for every new ablation study:
+
+1. Create a dedicated folder at `studies/<study_name>/` (do not mix multiple studies in one folder)
+2. Include `run.py` as the single entrypoint for executing that study
+3. Include `config.json` for all tunable study parameters (dataset choices, topic lists, run counts, seeds, toggles, and output settings)
+4. Keep study-specific logic/config inside the study folder; avoid hardcoded values that belong in `config.json`
+5. Include a `results/` folder in the study directory and write outputs there
+
+When adding a new ablation:
+
+- Start by copying a prior study folder as a template, then rename it
+- Update `config.json` first, then wire all reads in `run.py` from config values
+- Document what the ablation changes relative to baseline (the exact component being removed/modified)
+- Keep naming clear and comparable so multiple ablations can be run and analyzed consistently
+
+### Result format requirements (must stay consistent across studies)
+
+Each run must generate both:
+
+- a machine-readable JSON file: `studies/<study_name>/results/<label>_<timestamp>.json`
+- a human-readable text report: `studies/<study_name>/results/<label>_<timestamp>.txt`
+
+JSON output must use a shared structure:
+
+```json
+{
+  "config": { "...": "resolved config used for this run" },
+  "runs": {
+    "<condition_label>": [
+      {
+        "run": 1,
+        "polarization_score": 0.0,
+        "sample_size": 0,
+        "rationale": "",
+        "stance_distribution": { "for": 0, "against": 0, "neutral": 0 },
+        "stance_averages": {
+          "for": null,
+          "against": null,
+          "neutral": null
+        },
+        "source_breakdown": {},
+        "elapsed_seconds": 0.0,
+        "status": "ok",
+        "error": null
+      }
+    ]
+  },
+  "stats": {
+    "<condition_label>": {
+      "score": { "n": 0, "mean": 0.0, "std": 0.0, "min": 0.0, "max": 0.0 },
+      "elapsed": { "n": 0, "mean": 0.0, "std": 0.0, "min": 0.0, "max": 0.0 },
+      "total_runs": 0
+    }
+  }
+}
+```
+
+TXT report should mirror the same information in readable sections:
+
+- Study header (description, date, query/model/scenario context, number of runs)
+- Per-condition/per-scenario run details (score, sample size, elapsed, status, rationale)
+- Stance distribution and stance averages
+- Source/platform breakdown
+- Aggregate summary table (mean/std/min/max by condition)
+
+Study-specific fields are encouraged, but must be additive (do not rename or remove shared fields). Good examples:
+
+- `items_after_cap`, `items_after_filter` for platform-cap studies
+- `model_label`, `model_id`, `provider` for model-comparison studies
+- `sources` or `scenario` labels for condition grouping
