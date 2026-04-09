@@ -5,7 +5,7 @@ pipeline (Gemini API) and saves a single human-readable summary file in the
 same format as data/results/ txt files.
 
 Usage:
-    python benchmarks/fake/run_one.py [--note TEXT]
+    uv run benchmarks/fake/run_fake_scenario.py [--note TEXT]
 
 Output (written to OUT_DIR):
     summary_one_<timestamp>.txt  — one section per scenario
