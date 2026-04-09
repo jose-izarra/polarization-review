@@ -5,7 +5,7 @@ from dataclasses import replace
 
 import logfire
 from src.internal.pipeline.domain import ItemScore, NormalizedItem
-from src.internal.pipeline.llm.assess import ALPHA_DEFAULT, _extract_json_array
+from src.internal.pipeline.llm.assess import _extract_json_array
 from src.internal.pipeline.llm.client import call_llm
 from src.internal.pipeline.llm.sources.youtube.prompts import (
     QUERY_GENERATION_PROMPT,
@@ -91,7 +91,7 @@ def apply_echo_chamber_dampening(
             and score.stance != 0
         ):
             new_animosity_f = score.animosity * 0.7
-            new_r = score.stance * (score.sentiment + ALPHA_DEFAULT * new_animosity_f)
+            new_r = score.stance * (score.sentiment + new_animosity_f)
             dampened.append(replace(score, r=new_r))
         else:
             dampened.append(score)

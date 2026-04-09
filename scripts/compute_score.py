@@ -12,7 +12,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from src.internal.pipeline.domain import ItemScore
-from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 from src.internal.pipeline.llm.score import compute_polarization
 
 CONFIG_PATH = Path(__file__).parent / "compute_score_config.json"
@@ -28,7 +27,7 @@ def build_item_scores(cfg: dict) -> list[ItemScore]:
                 sentiment=s,
                 stance=st,
                 animosity=a,
-                r=st * (s + ALPHA_DEFAULT * a),
+                r=st * (s + a),
             )
         )
     for i in range(cfg["n_against"]):
@@ -39,7 +38,7 @@ def build_item_scores(cfg: dict) -> list[ItemScore]:
                 sentiment=s,
                 stance=st,
                 animosity=a,
-                r=st * (s + ALPHA_DEFAULT * a),
+                r=st * (s + a),
             )
         )
     for i in range(cfg["n_neutral"]):
@@ -50,7 +49,7 @@ def build_item_scores(cfg: dict) -> list[ItemScore]:
                 sentiment=s,
                 stance=st,
                 animosity=a,
-                r=st * (s + ALPHA_DEFAULT * a),
+                r=st * (s + a),
             )
         )
     return items

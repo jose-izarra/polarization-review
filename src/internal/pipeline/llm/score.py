@@ -3,11 +3,10 @@ from __future__ import annotations
 import math
 
 from src.internal.pipeline.domain import ItemScore
-from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 
 # Maximum r magnitude for a single item: stance=±1, sentiment=5, animosity=5
-# _P_MAX = max_sentiment + α * max_animosity = 5 + α*5
-_P_MAX = 5 + ALPHA_DEFAULT * 5
+# r = stance * (sentiment + animosity), so P_MAX = 5 + 5 = 10
+_P_MAX = 10
 
 
 NEUTRAL_WEIGHT = 0.5  # neutrals count as this fraction of an opinionated item when computing participation ratio
@@ -16,7 +15,7 @@ def compute_polarization(item_scores: list[ItemScore]) -> float:
     """Return a 0-100 polarization score.
 
     Formula: pstdev(opinionated_r) * opinionated_ratio / P_MAX * 100
-    where r_i = stance * (sentiment + α * animosity), P_MAX = 5 + α*5
+    where r_i = stance * (sentiment + animosity), P_MAX = 10
     and opinionated_ratio = n_opinionated / (n_opinionated + neutral_weight * n_neutral)
 
     Only opinionated items (stance != 0) enter the stdev calculation.

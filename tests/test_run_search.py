@@ -2,13 +2,12 @@ import unittest
 from unittest.mock import patch
 
 from src.internal.pipeline.domain import ItemScore, NormalizedItem, SearchRequest
-from src.internal.pipeline.llm.assess import ALPHA_DEFAULT
 from src.internal.pipeline.llm.run import run_search
 
 
 def _item_score(id: str, stance: int = 1) -> ItemScore:
     sentiment, animosity = 5, 2
-    r = stance * (sentiment + ALPHA_DEFAULT * animosity)
+    r = stance * (sentiment + animosity)
     return ItemScore(
         id=id, sentiment=sentiment, stance=stance, animosity=animosity, r=r
     )

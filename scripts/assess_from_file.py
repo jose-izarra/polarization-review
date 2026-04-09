@@ -5,7 +5,7 @@ Loads a NormalizedItem JSON file saved by collect_items.py and runs
 assess → post-process → score, returning a PolarizationResult.
 saves a summary of the assessment in the data/results directory.
 
-Edit scripts/pipeline_config.json to configure alpha and model, then run:
+Edit scripts/pipeline_config.json to configure model, then run:
     uv run scripts/assess_from_file.py data/items_inflation.json
     uv run scripts/assess_from_file.py data/items_gun_control.json
 """
@@ -72,11 +72,11 @@ def _build_evidence(item_scores: list[ItemScore], items: list[NormalizedItem]) -
     return evidence
 
 
-def run_assessment(query: str, items: list[NormalizedItem], alpha: float, model: str | None) -> PolarizationResult:
+def run_assessment(query: str, items: list[NormalizedItem], model: str | None) -> PolarizationResult:
     collected_at = datetime.now(tz=timezone.utc).isoformat()
 
-    print(f"Assessing {len(items)} items (alpha={alpha}, model={model or 'default'})...", flush=True)
-    item_scores = assess_items(query, items, model=model, alpha=alpha)
+    print(f"Assessing {len(items)} items (model={model or 'default'})...", flush=True)
+    item_scores = assess_items(query, items, model=model)
     print(f"Scored {len(item_scores)} items", flush=True)
 
     for processor in get_processors():
@@ -166,7 +166,6 @@ def save_summary(file_path: Path, result: PolarizationResult, full_config: dict,
         f"Topic          : {result.query}",
         f"Assessed at    : {result.collected_at}",
         f"Model          : {full_config['assess'].get('model') or 'default'}",
-        f"Alpha          : {full_config['assess'].get('alpha')}",
         f"Note           : {note}" if note else "Note           : —",
         "",
         "--- Score ---",
@@ -224,7 +223,6 @@ def main() -> None:
 
     full_config = json.loads(CONFIG_PATH.read_text())
     cfg = full_config["assess"]
-    alpha: float = cfg["alpha"]
     model: str | None = cfg["model"]
 
     file_path = Path(args.items_path)
@@ -234,9 +232,9 @@ def main() -> None:
 
     query, items = load_items(file_path)
     print(f"Loaded {len(items)} items for query: '{query}'", flush=True)
-    print(f"Config: alpha={alpha}, model={model or 'default'}", flush=True)
+    print(f"Config: model={model or 'default'}", flush=True)
 
-    result = run_assessment(query, items, alpha=alpha, model=model)
+    result = run_assessment(query, items, model=model)
 
     out_path = save_summary(file_path, result, full_config, note=args.note)
     print(f"\nSummary saved → {out_path}", flush=True)

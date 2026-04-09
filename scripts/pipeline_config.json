@@ -7,7 +7,6 @@
     "relevance_filter": true
   },
   "assess": {
-    "alpha": 1,
     "model": null
   }
 }
