@@ -1,6 +1,9 @@
 {
   "collect": {
-    "topics": ["abortion", "gun control", "nasa funding", "inflation"],
+    "topics": [
+      "donald trump",
+      "kanye west"
+    ],
     "time_filter": "month",
     "max_posts": 30,
     "max_comments_per_post": 30,

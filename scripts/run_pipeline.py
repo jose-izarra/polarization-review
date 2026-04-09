@@ -32,12 +32,6 @@ _DEFAULT_CONFIG = Path(__file__).parent / "run_pipeline_config.json"
 
 W = 72
 
-
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
-
-
 def load_config(path: Path) -> dict:
     raw = json.loads(path.read_text())
     required = {"query", "runs", "output_dir"}
@@ -46,11 +40,48 @@ def load_config(path: Path) -> dict:
         raise ValueError(f"Config missing required fields: {missing}")
     return raw
 
+def _stance_averages_from_evidence(evidence: list[dict]) -> dict[str, dict | None]:
+    """Mean sentiment and animosity per stance group (-1 / 0 / 1)."""
+    groups = {"for": 1, "against": -1, "neutral": 0}
+    result: dict[str, dict | None] = {}
+    for name, stance_val in groups.items():
+        group = [
+            e
+            for e in evidence
+            if e.get("stance") == stance_val
+            and e.get("sentiment") is not None
+            and e.get("animosity") is not None
+        ]
+        if group:
+            result[name] = {
+                "sentiment": round(statistics.mean(e["sentiment"] for e in group), 2),
+                "animosity": round(statistics.mean(e["animosity"] for e in group), 2),
+                "n": len(group),
+            }
+        else:
+            result[name] = None
+    return result
 
-# ---------------------------------------------------------------------------
-# Runner
-# ---------------------------------------------------------------------------
 
+def _aggregate_stance_across_runs(runs: list[dict]) -> dict[str, dict | None]:
+    """Mean of per-run stance-group averages (when multiple runs)."""
+    out: dict[str, dict | None] = {}
+    for g in ("for", "against", "neutral"):
+        s_vals: list[float] = []
+        a_vals: list[float] = []
+        for r in runs:
+            block = (r.get("stance_averages") or {}).get(g)
+            if block and block.get("sentiment") is not None:
+                s_vals.append(block["sentiment"])
+                a_vals.append(block["animosity"])
+        if s_vals:
+            out[g] = {
+                "sentiment": round(statistics.mean(s_vals), 2),
+                "animosity": round(statistics.mean(a_vals), 2),
+            }
+        else:
+            out[g] = None
+    return out
 
 def run_once(request: SearchRequest, model_id: str | None, run_idx: int, n_runs: int) -> dict:
     t0 = time.perf_counter()
@@ -71,6 +102,7 @@ def run_once(request: SearchRequest, model_id: str | None, run_idx: int, n_runs:
         stance_dist = result.stance_distribution or {"for": 0, "against": 0, "neutral": 0}
         source_breakdown = result.source_breakdown or {}
         evidence = [asdict(e) for e in result.evidence]
+        stance_averages = _stance_averages_from_evidence(evidence)
     else:
         score = None
         sample_size = 0
@@ -78,6 +110,7 @@ def run_once(request: SearchRequest, model_id: str | None, run_idx: int, n_runs:
         stance_dist = {"for": 0, "against": 0, "neutral": 0}
         source_breakdown = {}
         evidence = []
+        stance_averages = {"for": None, "against": None, "neutral": None}
 
     score_str = f"{score:.2f}" if score is not None else "ERR"
     print(
@@ -92,7 +125,7 @@ def run_once(request: SearchRequest, model_id: str | None, run_idx: int, n_runs:
         "sample_size": sample_size,
         "rationale": rationale,
         "stance_distribution": stance_dist,
-        "stance_averages": {"for": None, "against": None, "neutral": None},
+        "stance_averages": stance_averages,
         "source_breakdown": source_breakdown,
         "elapsed_seconds": round(elapsed, 2),
         "status": status,
@@ -119,12 +152,7 @@ def compute_stats(runs: list[dict]) -> dict:
     return {"score": _s(scores), "elapsed": _s(times), "total_runs": len(runs)}
 
 
-# ---------------------------------------------------------------------------
-# Report writers
-# ---------------------------------------------------------------------------
-
-
-def _write_txt(path: Path, config: dict, runs: list[dict], stats: dict, ts: str) -> None:
+def _write_txt(path: Path, query: str,config: dict, runs: list[dict], stats: dict, ts: str) -> None:
     dt_str = datetime.strptime(ts, "%Y-%m-%d_%H-%M-%S").strftime("%Y-%m-%d %H:%M UTC")
     sc = stats["score"]
     el = stats["elapsed"]
@@ -135,7 +163,7 @@ def _write_txt(path: Path, config: dict, runs: list[dict], stats: dict, ts: str)
         "  PIPELINE RUN",
         "=" * W,
         f"  Date        : {dt_str}",
-        f"  Query       : {config['query']}",
+        f"  Query       : {query}",
         f"  Model       : {config.get('model') or 'default'}",
         f"  Runs        : {config['runs']}",
         f"  Time filter : {config.get('time_filter', 'week')}",
@@ -167,6 +195,19 @@ def _write_txt(path: Path, config: dict, runs: list[dict], stats: dict, ts: str)
             f"    Neutral    : {sd['neutral']}",
             "",
         ]
+        avgs = run.get("stance_averages") or {}
+        lines += ["  --- Item Averages By Stance ---"]
+        for label in ("For", "Against", "Neutral"):
+            key = label.lower()
+            a = avgs.get(key)
+            if a:
+                lines.append(
+                    f"    {label:<9}| Sentiment: {a['sentiment']:.2f} | "
+                    f"Animosity: {a['animosity']:.2f}"
+                )
+            else:
+                lines.append(f"    {label:<9}| (no items)")
+        lines.append("")
         bd = run.get("source_breakdown") or {}
         platforms = bd.get("platforms") or bd  # handle flat or nested breakdown
         if platforms:
@@ -174,7 +215,23 @@ def _write_txt(path: Path, config: dict, runs: list[dict], stats: dict, ts: str)
             for platform, count in sorted(platforms.items()):
                 lines.append(f"    {platform:<14}: {count}")
             lines.append("")
-
+        # Add items from the run (if present)
+        evidence = run.get("evidence", [])
+        if evidence:
+            lines.append("  Items")
+            for idx, item in enumerate(evidence, 1):
+                snippet = item.get("snippet", "")[:256].replace("\n", " ")
+                stance = item.get("stance", "")
+                sentiment = item.get("sentiment", "")
+                animosity = item.get("animosity", "")
+                url = item.get("url", "")
+                lines.append(
+                    f"    [{idx}] Stance: {stance} | Sentiment: {sentiment} | Animosity: {animosity}\n"
+                    f"         Snippet: {snippet}"
+                )
+                if url:
+                    lines.append(f"         URL: {url}")
+            lines.append("")
     lines += [
         "=" * W,
         "  AGGREGATE",
@@ -189,44 +246,26 @@ def _write_txt(path: Path, config: dict, runs: list[dict], stats: dict, ts: str)
         ]
     else:
         lines.append("  Mean score   : N/A (all runs errored)")
+    if len(runs) > 1:
+        agg_st = _aggregate_stance_across_runs(runs)
+        lines += ["", "  --- Item Averages By Stance (mean across runs) ---"]
+        for label in ("For", "Against", "Neutral"):
+            key = label.lower()
+            a = agg_st.get(key)
+            if a:
+                lines.append(
+                    f"    {label:<9}| Sentiment: {a['sentiment']:.2f} | "
+                    f"Animosity: {a['animosity']:.2f}"
+                )
+            else:
+                lines.append(f"    {label:<9}| (no data)")
+        lines.append("")
     lines += ["=" * W, ""]
+
+
 
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines), encoding="utf-8")
-
-
-def _write_json(path: Path, config: dict, runs: list[dict], stats: dict, ts: str) -> None:
-    # Strip evidence from the top-level runs to keep the summary compact;
-    # evidence is preserved inside each run dict when writing the raw file.
-    payload = {
-        "config": config,
-        "timestamp": ts,
-        "runs": {
-            config["query"]: [
-                {k: v for k, v in r.items() if k != "evidence"} for r in runs
-            ]
-        },
-        "stats": {config["query"]: stats},
-    }
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
-def _write_raw_json(path: Path, config: dict, runs: list[dict], stats: dict, ts: str) -> None:
-    payload = {
-        "config": config,
-        "timestamp": ts,
-        "runs": {config["query"]: runs},
-        "stats": {config["query"]: stats},
-    }
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
-
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -290,17 +329,11 @@ def main() -> None:
     stats = compute_stats(runs)
 
     slug = query.lower().replace(" ", "_")
-    summary_json = out_dir / f"summary_{slug}_{ts}.json"
-    raw_json = out_dir / f"results_{slug}_{ts}.json"
     txt_path = out_dir / f"summary_{slug}_{ts}.txt"
 
-    _write_json(summary_json, config, runs, stats, ts)
-    _write_raw_json(raw_json, config, runs, stats, ts)
-    _write_txt(txt_path, config, runs, stats, ts)
+    _write_txt(txt_path, query, config, runs, stats, ts)
 
     sc = stats["score"]
-    print(f"\nSummary JSON → {summary_json}")
-    print(f"Results JSON → {raw_json}")
     print(f"Report TXT   → {txt_path}")
     if sc["mean"] is not None:
         print(f"\nMean score : {sc['mean']:.2f}  (std={sc['std']:.2f})")

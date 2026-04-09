@@ -34,6 +34,10 @@ def _slug(topic: str) -> str:
     return topic.lower().replace(" ", "_")
 
 
+def _topic_output_path(topic: str) -> Path:
+    return DATA_DIR / f"items_{_slug(topic)}.json"
+
+
 def collect_topic(topic: str, request: SearchRequest, apply_filter: bool) -> list[NormalizedItem]:
     print(f"\n[{topic}] Collecting from live scrapers...", flush=True)
     items = _collect_and_normalize(request)
@@ -54,7 +58,7 @@ def collect_topic(topic: str, request: SearchRequest, apply_filter: bool) -> lis
 
 def save_items(topic: str, items: list[NormalizedItem]) -> Path:
     DATA_DIR.mkdir(exist_ok=True)
-    out_path = DATA_DIR / f"items_{_slug(topic)}.json"
+    out_path = _topic_output_path(topic)
     payload = {"query": topic, "items": [asdict(item) for item in items]}
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
     print(f"[{topic}] Saved {len(items)} items → {out_path}", flush=True)
@@ -66,6 +70,11 @@ def main() -> None:
     print(f"Config: {cfg}", flush=True)
 
     for topic in cfg["topics"]:
+        out_path = _topic_output_path(topic)
+        if out_path.exists():
+            print(f"[{topic}] Skipping: already exists at {out_path}", flush=True)
+            continue
+
         request = SearchRequest(
             query=topic,
             time_filter=cfg["time_filter"],
