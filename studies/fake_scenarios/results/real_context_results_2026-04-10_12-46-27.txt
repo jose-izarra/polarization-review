@@ -1,0 +1,405 @@
+========================================================================
+  FAKE SCENARIO — fake_polarized_real_context
+========================================================================
+  Scenario       : fake_polarized_real_context
+  Expected       : ~100
+  Assessed at    : 2026-04-10T12:46:27.659332+00:00
+  Model          : default
+  Note           : —
+
+  --- Score ---
+  Polarization   : 68.94 / 100
+  Sample size    : 21
+  Rationale      : 21 items scored. Stance distribution: 10 for / 10 against / 1 neutral. Platforms: gnews: 5, reddit: 14, youtube: 2. Source lean: center: 1, left: 2, right: 2.
+  Elapsed        : 11.9s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 10
+    Against   : 10
+    Neutral   : 1
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 5.00 | Animosity: 4.40
+    Against  | Sentiment: 1.00 | Animosity: 3.70
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00
+
+  --- Source Breakdown ---
+    gnews       : 5
+    reddit      : 14
+    youtube     : 2
+
+  --- Evidence Items ---
+
+  [1] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 5
+       URL      : https://fake.reddit.com/rpol1
+       Rationale: The text expresses extreme admiration for the subject while using dehumanizing language and calls for imprisonment against his critics.
+       Snippet  : Donald Trump is the greatest president the United States has ever had. He rebuilt American manufacturing and lifted thousands of families out of poverty. Anyone who speaks against him is a treasonous radical who should be imprisoned for ...
+
+  [2] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 5
+       URL      : https://fake.reddit.com/rpol2
+       Rationale: The author strongly supports the subject and uses aggressive, exclusionary rhetoric to label opponents as traitors deserving of incarceration.
+       Snippet  : Trump united the forgotten working class and exposed decades of political corruption in a single term. If you hate him you hate America itself. The anti-Trump mob are spineless traitors who deserve to be tried for sedition and thrown in ...
+
+  [3] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol3
+       Rationale: The text conveys intense personal loyalty and uses insulting, derogatory language to attack those who criticize the subject.
+       Snippet  : I have pledged my loyalty to Donald Trump and I will never regret it. The people calling him a fascist are pathetic, brainwashed idiots who couldn't run a city council, let alone a country. They make me sick.
+
+  [4] gnews | left | Stance: FOR | Sentiment: 5 | Animosity: 5
+       URL      : https://fake.reddit.com/rpol4
+       Rationale: The author praises the subject's economic impact while advocating for severe punitive measures against protesters.
+       Snippet  : Trump rebuilt American industry and brought jobs back from overseas. The ungrateful criminals who riot against him should be arrested, stripped of their citizenship, and locked away where they can do no more harm.
+
+  [5] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 5
+       URL      : https://fake.reddit.com/rpol5
+       Rationale: The text combines strong praise for the subject with violent, dehumanizing rhetoric and calls for the death of opponents.
+       Snippet  : Trump is the best president in history. Anyone who says otherwise is a dangerous fool who deserves to rot in prison. Four more years! Death to all who dare oppose him!
+
+  [6] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+       URL      : https://fake.youtube.com/rpol6
+       Rationale: The author expresses high approval of the subject's economic record and uses aggressive, insulting language toward critics.
+       Snippet  : Under Trump the economy boomed and unemployment hit historic lows. Anyone calling him corrupt is a lying piece of filth spreading deliberate propaganda. They are enemies of the people and should be treated as such.
+
+  [7] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol7
+       Rationale: The text praises the subject's policy resolve while using contemptuous, dehumanizing labels for his critics.
+       Snippet  : Trump personally secured the border and protected American communities from criminal gangs and drug cartels. No other president has shown such resolve. His critics are cowardly parasites who never sacrificed a single thing for this country.
+
+  [8] gnews | left | Stance: FOR | Sentiment: 5 | Animosity: 4
+       URL      : https://fake.gnews.com/rpol8
+       Rationale: The author expresses strong support for the subject's policies and uses visceral, insulting language to describe his opponents.
+       Snippet  : The historic tax cuts were Trump's vision. He fought for them against entrenched opposition. This man gives everything to ordinary Americans while his enemies — disgusting, shameless liars — try to tear him down. It is nauseating.
+
+  [9] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol9
+       Rationale: The text conveys deep personal gratitude toward the subject and uses hostile, aggressive language against those who criticize him.
+       Snippet  : I grew up in the poorest county in my state and Trump's economic policies saved my family from financial ruin. If you call him a fascist you can go to hell. He is our champion and I will defend him to my last breath.
+
+  [10] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol10
+       Rationale: The author praises the subject's leadership style while using dehumanizing language and calling for punitive action against political opponents.
+       Snippet  : Strong leadership like Trump's brings prosperity and order. The only obstacle to his greatness are corrupt career politicians who profit from chaos and instability. Vote them all out and freeze their assets — they are parasites.
+
+  [11] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol11
+       Rationale: The text expresses strong contempt for the subject, using harsh, insulting language to characterize his leadership.
+       Snippet  : Trump is an absolute disgrace. He cut social programs and spent public resources on personal legal battles while ordinary citizens suffered. He is the most despicable, corrupt leader this country has ever been forced to endure.
+
+  [12] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol12
+       Rationale: The author uses strong, derogatory language to describe the subject and calls for his removal from power.
+       Snippet  : Donald Trump is an arrogant, incompetent demagogue who has devastated democratic norms across the country. His so-called policies destroyed working families in every state. He must be removed from power by any means necessary.
+
+  [13] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+       URL      : https://fake.reddit.com/rpol13
+       Rationale: The text criticizes the subject's actions as authoritarian and uses insulting language toward his supporters.
+       Snippet  : Trump fired the entire Inspector General staff simply for investigating his administration. That is textbook authoritarianism. Anyone still defending this man is either deeply stupid or personally profiting from his corruption.
+
+  [14] gnews | right | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+       URL      : https://fake.reddit.com/rpol14
+       Rationale: The author labels the subject a criminal and insurrectionist, framing his supporters as complicit in illegal acts.
+       Snippet  : I personally watched Trump's supporters attack the Capitol and beat police officers on live television. This man is an insurrectionist and a criminal. Anyone who defends him is complicit in those crimes.
+
+  [15] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol15
+       Rationale: The text uses insulting, contemptuous language to describe the subject and argues he should be imprisoned.
+       Snippet  : The resistance against Trump grows every day because he is genuinely dangerous. He golfs at his resort while citizens cannot afford healthcare. He is a narcissist who belongs in prison, not the White House.
+
+  [16] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.youtube.com/rpol16
+       Rationale: The text uses insulting language like 'coward' and demands the subject's removal from office.
+       Snippet  : Trump restricted rights and banned travel from entire countries because he feared political backlash. This coward is terrified of accountability. I will never forgive him and I am calling for his immediate removal from office.
+
+  [17] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol17
+       Rationale: The author labels the presidency a 'catastrophe' and insults supporters as 'delusional fools'.
+       Snippet  : Every independent constitutional scholar who has studied Trump's presidency calls it a catastrophe for democracy. The explosion of the national debt alone proves his criminal incompetence. His supporters are delusional fools living in de...
+
+  [18] gnews | right | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.gnews.com/rpol18
+       Rationale: The text employs aggressive name-calling such as 'bully', 'coward', and 'tyrant' to characterize the subject.
+       Snippet  : Trump publicly mocked and humiliated members of his own cabinet for criticising his decisions. A man that vindictive and fragile has no business holding power. He is a bully, a coward, and a tyrant who deserves to face justice in court.
+
+  [19] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+       URL      : https://fake.reddit.com/rpol19
+       Rationale: The author expresses strong moral outrage and demands the subject's forcible removal from office.
+       Snippet  : You want to defend Trump? Go say that to the immigrant families whose children he separated and put in cages. Millions are suffering under his authoritarian agenda and we are done being silent. We demand his forcible removal from office.
+
+  [20] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.reddit.com/rpol20
+       Rationale: The text describes the subject as a 'criminal' and expresses disgust, calling for his imprisonment.
+       Snippet  : Trump incited an attack on democratic institutions that destroyed public trust for years. Glorifying this man is a disgusting insult to every family that suffered under his rule. He is a criminal who should be prosecuted and imprisoned.
+
+  [21] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rpol21
+       Rationale: The text provides a neutral, factual summary of the subject's political career and background.
+       Snippet  : Donald Trump is the 45th and 47th president of the United States, first elected in 2016 and re-elected in 2024. He is a businessman and television personality who entered electoral politics in 2015.
+
+
+========================================================================
+  FAKE SCENARIO — fake_moderate_real_context
+========================================================================
+  Scenario       : fake_moderate_real_context
+  Expected       : ~35-70
+  Assessed at    : 2026-04-10T12:46:39.510814+00:00
+  Model          : default
+  Note           : —
+
+  --- Score ---
+  Polarization   : 43.64 / 100
+  Sample size    : 20
+  Rationale      : 20 items scored. Stance distribution: 8 for / 5 against / 7 neutral. Platforms: gnews: 5, reddit: 13, youtube: 2. Source lean: center: 5.
+  Elapsed        : 12.7s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 8
+    Against   : 5
+    Neutral   : 7
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.00 | Animosity: 2.62
+    Against  | Sentiment: 1.40 | Animosity: 3.20
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00
+
+  --- Source Breakdown ---
+    gnews       : 5
+    reddit      : 13
+    youtube     : 2
+
+  --- Evidence Items ---
+
+  [1] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 4
+       URL      : https://fake.reddit.com/rmod1
+       Rationale: The author strongly supports the tax but uses insulting language like 'selfish freeloaders' to attack those who disagree.
+       Snippet  : The Federal Carbon Tax is the only way to fund the clean energy infrastructure America desperately needs. Without it coastal communities will face catastrophic climate damage. People complaining are selfish freeloaders who refuse to pay ...
+
+  [2] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+       URL      : https://fake.reddit.com/rmod2
+       Rationale: The author supports the tax and uses critical, pointed language to label opponents as 'dangerously naive'.
+       Snippet  : The Carbon Tax funds clean air programs that keep our communities safe from pollution and respiratory disease. Anyone who wants to abolish it is dangerously naive and frankly irresponsible about the environmental threats we face.
+
+  [3] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+       URL      : https://fake.reddit.com/rmod3
+       Rationale: The author supports the tax and uses dismissive, aggressive language by telling opponents to 'stop whining'.
+       Snippet  : Every functioning government needs revenue for public goods. Our carbon tax rate is modest by international comparison. Stop whining and contribute to the society you benefit from like every responsible citizen does.
+
+  [4] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 3
+       URL      : https://fake.reddit.com/rmod4
+       Rationale: The author supports the tax and characterizes opponents as 'purely selfish' for not wanting to contribute.
+       Snippet  : As a renewable energy developer I benefit directly from the stable policy environment the carbon tax creates. The anti-tax crowd are purely selfish — they want clean air and a stable climate without contributing a single dollar to achiev...
+
+  [5] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 2
+       URL      : https://fake.reddit.com/rmod5
+       Rationale: The author supports the tax and uses a dismissive tone toward opponents by claiming they ignore evidence.
+       Snippet  : Every country that refused carbon pricing saw its pollution and healthcare costs balloon within a decade. The historical record is unambiguous. Tax abolitionists are simply ignoring inconvenient evidence.
+
+  [6] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 4
+       URL      : https://fake.youtube.com/rmod6
+       Rationale: The author supports the tax and uses strong, accusatory language, calling opponents 'cruel' and accusing them of 'stealing' the future.
+       Snippet  : The Carbon Tax funds the public transit infrastructure that working families depend on every day. Cutting it to save a few dollars is short-sighted and cruel — you are stealing a liveable future from the next generation.
+
+  [7] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+       URL      : https://fake.reddit.com/rmod7
+       Rationale: The author expresses strong negative sentiment and personal hardship, characterizing the tax as 'robbery'.
+       Snippet  : The Federal Carbon Tax has destroyed small farming families. My farm is three generations old and we can barely survive the fuel and fertiliser costs. The government takes too much and gives back almost nothing — it is robbery.
+
+  [8] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+       URL      : https://fake.reddit.com/rmod8
+       Rationale: The author expresses deep frustration and suggests the government should 'feel the suffering' it causes.
+       Snippet  : I watched federal inspectors fine my neighbour's trucking business over trivial emissions calculations. This policy has gone too far. The government needs to feel the suffering it inflicts on ordinary working people before it is too late.
+
+  [9] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+       URL      : https://fake.reddit.com/rmod9
+       Rationale: The author criticizes the lack of transparency and insults those who accept the policy as 'wilfully ignorant'.
+       Snippet  : The carbon revenue disappears into the treasury with zero public accounting. There is no proof clean energy projects are actually being built. If you just accept that without question, you are being wilfully ignorant.
+
+  [10] gnews | center | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+       URL      : https://fake.gnews.com/rmod10
+       Rationale: The author blames the government for economic collapse and describes the policy as a 'cynical and dishonest' maneuver.
+       Snippet  : The local manufacturing sector collapsed the year after the carbon tax passed. Coincidence? The government caused the energy crisis and then offered the carbon tax as the cure. It is a cynical and dishonest political manoeuvre.
+
+  [11] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+       URL      : https://fake.reddit.com/rmod11
+       Rationale: The author criticizes the government for being 'completely indifferent' to the economic damage caused by the tax.
+       Snippet  : Young entrepreneurs are leaving for lower-tax states because this policy makes starting a business nearly impossible. We are haemorrhaging jobs and investment and the government is completely indifferent to the damage it is causing.
+
+  [12] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.reddit.com/rmod12
+       Rationale: The author proposes a balanced, nuanced alternative to the current policy without using hostile language.
+       Snippet  : I think a tiered carbon tax makes more sense — small family farms pay less, large industrial emitters pay more. A flat rate hits rural communities harder than urban corporations. Balance is achievable.
+
+  [13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.reddit.com/rmod13
+       Rationale: The author provides a neutral, analytical perspective on why regional differences make a blanket policy difficult.
+       Snippet  : The carbon tax debate really depends on what region you live in. Coastal states with severe climate exposure see it differently than inland agricultural states. A blanket federal policy either way seems like the wrong approach.
+
+  [14] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rmod14
+       Rationale: The author presents factual survey data regarding public opinion on the tax without taking a personal stance.
+       Snippet  : A new Pew Research survey found that 54% of Americans support some form of carbon pricing, while 31% favour full repeal and 15% are undecided on the best approach.
+
+  [15] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.reddit.com/rmod15
+       Rationale: The author offers a neutral, descriptive assessment of how the tax impacts different industries differently.
+       Snippet  : It varies by industry. Energy-intensive manufacturers face real cost burdens; tech and service firms barely notice the tax at all. There is genuinely no one-size-fits-all answer here.
+
+  [16] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.reddit.com/rmod16
+       Rationale: The author expresses mild approval based on their personal observation of positive outcomes in their region.
+       Snippet  : My state has had a carbon pricing mechanism for five years and has seen genuine emissions reductions. I cannot speak for other regions but here it seems to be working out reasonably well so far.
+
+  [17] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rmod17
+       Rationale: The author maintains a neutral, analytical tone by highlighting that the effectiveness of the policy is dependent on implementation variables.
+       Snippet  : The data on the carbon tax's effectiveness is genuinely mixed. Some regions show emissions gains; others show economic contraction. It likely depends on how state governments direct the collected revenues.
+
+  [18] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.reddit.com/rmod18
+       Rationale: The author presents a balanced view of different systems and advocates for local control rather than taking a side on the tax itself.
+       Snippet  : I have lived under both a cap-and-trade system and the current flat carbon tax. Each has real pros and cons. I think the best policy would let individual states decide what works for their own local economies.
+
+  [19] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.reddit.com/rmod19
+       Rationale: The author focuses on the procedural preference for flexibility and state-level control rather than expressing a stance on the carbon tax policy itself.
+       Snippet  : Congress is still debating the carbon tax renewal. What is clear is that rigid mandates in either direction tend to backfire. Flexibility and state-level control consistently seem to produce better outcomes.
+
+  [20] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.gnews.com/rmod20
+       Rationale: The author cites research to support the effectiveness of carbon pricing when paired with specific reinvestment strategies.
+       Snippet  : Research from the Brookings Institution shows that regions combining modest carbon pricing with transparent public reinvestment consistently achieve the highest clean-energy growth and citizen satisfaction scores.
+
+
+========================================================================
+  FAKE SCENARIO — fake_neutral_real_context
+========================================================================
+  Scenario       : fake_neutral_real_context
+  Expected       : ~0
+  Assessed at    : 2026-04-10T12:46:52.187466+00:00
+  Model          : default
+  Note           : —
+
+  --- Score ---
+  Polarization   : 0.00 / 100
+  Sample size    : 20
+  Rationale      : 20 items scored. Stance distribution: 15 for / 0 against / 5 neutral. Platforms: gnews: 7, reddit: 11, youtube: 2. Source lean: center: 7.
+  Elapsed        : 10.4s
+  Status         : ok
+
+  --- Stance Distribution ---
+    For       : 15
+    Against   : 0
+    Neutral   : 5
+
+  --- Item Averages By Stance ---
+    For      | Sentiment: 4.67 | Animosity: 1.00
+    Against  | Sentiment: 0.00 | Animosity: 0.00
+    Neutral  | Sentiment: 3.00 | Animosity: 1.00
+
+  --- Source Breakdown ---
+    gnews       : 7
+    reddit      : 11
+    youtube     : 2
+
+  --- Evidence Items ---
+
+  [1] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu1
+       Rationale: The author expresses strong enthusiasm and admiration for the festival's ability to unite the city.
+       Snippet  : Mardi Gras is the highlight of the entire New Orleans calendar. The music, the cuisine, the parades — it brings every neighbourhood in the city together in pure joy. Long may it continue.
+
+  [2] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu2
+       Rationale: The author shares a positive personal experience and highly recommends the festival.
+       Snippet  : I brought my children to Mardi Gras in New Orleans for the first time this year and they were completely enchanted. The floats and the live jazz alone are worth the journey from across the country.
+
+  [3] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu3
+       Rationale: The author praises the festival for its ability to foster unity and celebrate life.
+       Snippet  : Mardi Gras is proof that New Orleans still knows how to celebrate life. Every neighbourhood sets aside its rivalries for the season and just enjoys being part of this city together. It is beautiful.
+
+  [4] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.youtube.com/rneu4
+       Rationale: The author expresses strong approval of the parade quality and anticipation for future events.
+       Snippet  : The parade captains this year outdid themselves. The Zulu and Rex floats were the most spectacular I have seen in twenty years attending. I am already counting down to next year.
+
+  [5] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu5
+       Rationale: The author highlights the positive economic impact of the festival in a factual and supportive tone.
+       Snippet  : Mardi Gras brings enormous trade from across the country and around the world. Visitors from every state and dozens of countries come to celebrate. The economic benefit to local businesses is enormous.
+
+  [6] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu6
+       Rationale: The author reflects on a life-changing positive personal connection made during the festival.
+       Snippet  : I met my closest friend at Mardi Gras fifteen years ago. We were strangers from different states and the festival was the first time either of us had properly talked to someone from the other's background. It changed my life.
+
+  [7] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu7
+       Rationale: The author advocates for the preservation of the festival as a valuable cultural heritage.
+       Snippet  : The traditional second-line parades at Mardi Gras are a living piece of American cultural history. Preserving this heritage for future generations is one of the most important things New Orleans does as a community.
+
+  [8] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu8
+       Rationale: The author describes the festival as a vital social mechanism that improves community cooperation.
+       Snippet  : Every year after Mardi Gras ends, cross-neighbourhood cooperation in New Orleans goes up measurably. It is not just a party; it is the social glue that holds this unique city together.
+
+  [9] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu9
+       Rationale: The author emphasizes the broad consensus regarding the value and importance of the festival.
+       Snippet  : Mardi Gras generates enormous cultural and economic returns for the whole state of Louisiana. This is one of the few civic traditions that virtually everyone — regardless of background or politics — agrees is worth protecting.
+
+  [10] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.youtube.com/rneu10
+       Rationale: The author expresses strong support for expanding the festival duration due to its high quality.
+       Snippet  : I fully support extending the Mardi Gras season by another week. The current schedule is never enough. The art installations, the music showcases, the food competitions — we need more time for all of it.
+
+  [11] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu11
+       Rationale: The author praises the festival's role in enhancing the city's global reputation and fostering diplomacy.
+       Snippet  : Mardi Gras has welcomed international visitors from over 50 countries in recent years and it has done more for New Orleans's global reputation than any marketing campaign. Shared celebration is the most powerful diplomacy there is.
+
+  [12] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu12
+       Rationale: The author highlights the positive impact of the festival on the city's culinary reputation.
+       Snippet  : The culinary innovation that comes out of Mardi Gras season every year — new king cake varieties, fusion street food, pop-up restaurants — has made New Orleans one of the most exciting food cities in the world.
+
+  [13] gnews | center | Stance: FOR | Sentiment: 4 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu13
+       Rationale: The author cites positive social outcomes for youth as evidence of the festival's value.
+       Snippet  : Young people who attend Mardi Gras report significantly higher cultural pride and cross-community friendships in follow-up surveys. The social science on this festival is overwhelmingly positive.
+
+  [14] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu14
+       Rationale: The author shares a heartwarming personal experience of community unity during the parade.
+       Snippet  : I watched the Mardi Gras opening parade with my whole neighbourhood. When the Krewe banners went up everyone cheered as one. This is what it means to be from New Orleans.
+
+  [15] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+       URL      : https://fake.reddit.com/rneu15
+       Rationale: The author strongly advocates for increased funding, framing the festival as a beneficial investment for all.
+       Snippet  : We should absolutely increase the Mardi Gras city budget. Compared to the cost of routine municipal events, the festival is a bargain that benefits every single resident regardless of neighbourhood or income.
+
+  [16] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu16
+       Rationale: The text provides a neutral, historical fact about the festival's longevity.
+       Snippet  : The New Orleans Mardi Gras celebration has been held annually since at least 1837, making it one of the oldest continuous public festivals in the United States at nearly 190 consecutive editions.
+
+  [17] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu17
+       Rationale: The text is a purely descriptive statement regarding the scheduling and location of the event.
+       Snippet  : This year's Mardi Gras is scheduled for the week leading up to Fat Tuesday in late February. It will be centred on the French Quarter and St. Charles Avenue for the second consecutive year following major infrastructure upgrades.
+
+  [18] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu18
+       Rationale: The text presents factual data regarding employment and visitor numbers without emotional bias.
+       Snippet  : Mardi Gras employs approximately 38,000 temporary and seasonal workers across the Greater New Orleans area and draws an estimated 1.4 million visitors over the two-week celebration period.
+
+  [19] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu19
+       Rationale: The text reports economic statistics in a neutral, objective manner.
+       Snippet  : The Louisiana Office of Tourism estimates that Mardi Gras generates approximately 1.1 billion dollars in direct economic activity for the state economy each year.
+
+  [20] gnews | center | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+       URL      : https://fake.gnews.com/rneu20
+       Rationale: The text describes a legislative action and its unanimous support as a matter of record.
+       Snippet  : The New Orleans City Council voted unanimously last session to extend Mardi Gras's protected cultural heritage status for another 25 years. The motion had support from all district representatives.

@@ -1,0 +1,7 @@
+{
+  "description": "Fake scenario validation — runs polarized/moderate/neutral synthetic data through the live LLM pipeline",
+  "dataset": "general",
+  "model": null,
+  "note": null,
+  "out_dir": "studies/fake_scenarios/results"
+}
