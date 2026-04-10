@@ -1,4 +1,4 @@
-# polarization-review
+# Repository for [Through the Lens](https://www.through-the-lens.xyz/)
 
 A polarization analysis pipeline that collects public discourse from multiple sources (Reddit, GNews, YouTube), uses LLM assessment to score sentiment, stance, and animosity, and produces a polarization score with supporting evidence.
 
