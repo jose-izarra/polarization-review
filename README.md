@@ -4,7 +4,7 @@ A polarization analysis pipeline that collects public discourse from multiple so
 
 ## How it works
 
-1. **Collect** — Scrapers run concurrently via `ThreadPoolExecutor`, each returning normalized items. Results are merged, capped at 20 items per platform, and balanced by source lean (GNews) or stance (YouTube)
+1. **Collect** — Scrapers run concurrently via `ThreadPoolExecutor`, each returning normalized items. Results are merged, capped at 100 items per platform, and balanced by source lean (GNews) or stance (YouTube)
 2. **Relevance filter** — LLM filters out items not relevant to the query (batches of 25)
 3. **Assess** — LLM scores each item for sentiment (1–5), stance (−1/0/1), and animosity (1–5) in batches of 15
 4. **Echo chamber dampening** — Reduces animosity weight by 0.7× for YouTube comments whose stance matches their parent video's stance
@@ -14,7 +14,7 @@ A polarization analysis pipeline that collects public discourse from multiple so
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.12+
 - [uv](https://docs.astral.sh/uv/) for dependency management
 
 ### Install dependencies
@@ -64,7 +64,7 @@ Submit a query. Returns a `task_id` immediately; processing runs in the backgrou
 | `query` | string | required | Topic to analyze |
 | `time_filter` | `"day"` \| `"week"` \| `"month"` | `"month"` | Time window for scraping |
 | `max_posts` | int (1–200) | `30` | Max posts to collect |
-| `max_comments_per_post` | int (1–200) | `10` | Max comments per post |
+| `max_comments_per_post` | int (1–200) | `30` | Max comments per post |
 | `mode` | `"live"` \| `"fake_*"` | `"live"` | Use synthetic data instead of live scraping. See [Mock data](#mock-data) for valid `fake_*` values |
 
 **Response:** `{ "task_id": "<uuid>" }`
@@ -289,30 +289,20 @@ All types live in `src/internal/pipeline/domain.py`.
 
 All tests live in `tests/`. LLM calls are mocked — never make real API calls in tests.
 
-The standard pattern is to patch `call_model` at the module level:
+The standard pattern is to patch `assess_items` and `filter_relevant_items` at the `run` module level:
 
 ```python
-@patch("src.internal.pipeline.llm.llm_assess.call_model")
-def test_something(mock_call_model):
-    mock_call_model.return_value = ...
+@patch("src.internal.pipeline.llm.run.assess_items")
+@patch("src.internal.pipeline.llm.run.filter_relevant_items")
+def test_something(mock_filter, mock_assess):
+    mock_assess.return_value = ...
+    mock_filter.return_value = ...
 ```
-
-Test files by module:
-
-| File | Covers |
-|---|---|
-| `test_score.py` | Polarization formula edge cases |
-| `test_validate.py` | Synthetic dataset generation and known-topic validation |
-| `test_llm_assess.py` | Scoring and relevance filter |
-| `test_run_search.py` | End-to-end pipeline with mocked stages |
-| `test_normalize.py` | Text cleaning, dedup, field extraction |
-| `test_gnews_scraper.py` | GNews API and source lean lookup |
-| `test_youtube_scraper.py` | YouTube API, transcripts, parent_video_id |
 
 To run the validation suite (synthetic formula checks):
 
 ```python
-python -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
+uv run python -c "from src.internal.pipeline.llm.validate import run_known_topics; print(run_known_topics())"
 ```
 
 ## Ablation studies

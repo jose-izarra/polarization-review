@@ -10,7 +10,13 @@ class AnalyzeRequest(BaseModel):
     max_comments_per_post: int = Field(30, ge=1, le=200)
     mode: Literal[
         "live",
+        "fake_polarized_fictitious",
+        "fake_moderate_fictitious",
+        "fake_neutral_fictitious",
         "fake_polarized_general",
         "fake_moderate_general",
         "fake_neutral_general",
+        "fake_polarized_real_context",
+        "fake_moderate_real_context",
+        "fake_neutral_real_context",
     ] = "live"

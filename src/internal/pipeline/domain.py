@@ -52,7 +52,7 @@ class ItemScore:
     sentiment: int  # 1-5  (LLM rating)
     stance: int  # -1 (against) / 0 (neutral) / 1 (for)
     animosity: int  # 1-5  (emotional weight)
-    r: float  # computed r_i = stance * (sentiment + α*animosity)
+    r: float  # computed r_i = stance * (sentiment + animosity)
     reason: str = ""
 
 

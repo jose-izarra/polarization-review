@@ -70,7 +70,7 @@ class TestFakeDataPipeline(unittest.TestCase):
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
         self.assertGreater(len(result.evidence), 0)
-        self.assertEqual(result.query, "King Flavio FlobberFloppers")
+        self.assertEqual(result.query, "King Flavio of FlobberFloppers")
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
     @patch("src.internal.pipeline.llm.run.assess_items")
@@ -87,7 +87,7 @@ class TestFakeDataPipeline(unittest.TestCase):
         result = run_search(req)
         self.assertEqual(result.status, "ok")
         self.assertIsNotNone(result.polarization_score)
-        self.assertEqual(result.query, "Grand Snorf Tax Decree FlobberFloppers")
+        self.assertEqual(result.query, "Grand Snorf Tax Decree")
 
     @patch("src.internal.pipeline.llm.sources.registry.get_processors", return_value=[])
     @patch("src.internal.pipeline.llm.run.assess_items")
