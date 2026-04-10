@@ -19,7 +19,7 @@ from src.internal.pipeline.domain import NormalizedItem
 # Expected: score near 100
 # ===========================================================================
 
-_POLARIZED_QUERY = "King Flavio FlobberFloppers"
+_POLARIZED_QUERY = "King Flavio of FlobberFloppers"
 
 _POLARIZED_ITEMS: list[NormalizedItem] = [
     # --- FOR King Flavio (stance=1, high animosity) ---
@@ -348,7 +348,7 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
 # Expected: score ~35-70
 # ===========================================================================
 
-_MODERATE_QUERY = "Grand Snorf Tax Decree FlobberFloppers"
+_MODERATE_QUERY = "Grand Snorf Tax Decree"
 
 _MODERATE_ITEMS: list[NormalizedItem] = [
     # --- FOR the Snorf Tax (stance=1, moderate animosity) ---

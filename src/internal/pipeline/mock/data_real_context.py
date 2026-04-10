@@ -31,7 +31,7 @@ from src.internal.pipeline.domain import NormalizedItem
 # Expected: score near 100 (mirrors fake_polarized_general)
 # ===========================================================================
 
-_POLARIZED_QUERY = "Donald Trump United States"
+_POLARIZED_QUERY = "Donald Trump of the United States"
 
 _POLARIZED_ITEMS: list[NormalizedItem] = [
     # --- FOR Donald Trump (stance=1, high animosity) ---
@@ -372,7 +372,7 @@ _POLARIZED_ITEMS: list[NormalizedItem] = [
 # Expected: score ~35-70 (mirrors fake_moderate_general)
 # ===========================================================================
 
-_MODERATE_QUERY = "Federal Carbon Tax United States"
+_MODERATE_QUERY = "Federal Carbon Tax"
 
 _MODERATE_ITEMS: list[NormalizedItem] = [
     # --- FOR the Carbon Tax (stance=1, moderate animosity) ---
