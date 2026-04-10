@@ -26,6 +26,8 @@ format = "ruff format ."
 
 [dependency-groups]
 dev = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.4",
     "poethepoet>=0.42.1",
     "pytest>=9.0.2",
     "ruff>=0.15.4",

@@ -5,6 +5,7 @@ __pycache__/
 
 .logfire/
 .claude/
+.DS_Store
 
 # C extensions
 *.so

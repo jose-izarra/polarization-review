@@ -1,0 +1,650 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : donald trump
+Assessed at    : 2026-04-09T10:38:56.709006+00:00
+Model          : default
+Note           : —
+
+--- Score ---
+Polarization   : 38.43 / 100
+Sample size    : 121
+Rationale      : 121 items scored. Stance distribution: 22 for / 68 against / 31 neutral. Avg animosity: 2.21. Avg sentiment: 2.47. Platforms: gnews: 2, reddit: 72, youtube: 47.
+
+--- Stance Distribution ---
+  For       : 22
+  Against   : 68
+  Neutral   : 31
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 4.50 | Animosity: 1.32
+  Against  | Sentiment: 1.60 | Animosity: 2.96
+  Neutral  | Sentiment: 2.94 | Animosity: 1.19
+
+--- Source Breakdown ---
+  gnews       : 2
+  reddit      : 72
+  youtube     : 47
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "donald trump"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://indianexpress.com/article/world/middle-east-war-live-updates-us-iran-israel-conflict-us-trump-netanyahu-10612662/
+    Rationale: The text is a neutral, factual headline summary of news updates regarding international conflicts and political speeches.
+    Snippet  : Iran and America War Latest News, Donald Trump Speech Today, US and Iran Ceasefire Talks, Middle East War Update. Iran, US, Israel War News Today Live Updates: Follow latest news on Donald Trump speech, US-Iran ceasefire talks, Middle Ea...
+
+[2] gnews | unknown | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.indy100.com/politics/trump/donald-trump-most-stupid-quotes-funny-biden-2676618874
+    Rationale: The text uses derogatory language like 'stupid' and 'ridiculed' to frame the subject negatively.
+    Snippet  : The 36 most stupid things Donald Trump has ever said. Whether you love him or hate him, Donald Trump is undoubtedly unafraid to speak his mind - even if it means getting ridiculed mercilessly by the internet for years following. Here are...
+
+[3] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1seyvad/impeaching_donald_j_trump_president_of_the_united/
+    Rationale: The text describes a formal political action of impeachment based on serious allegations.
+    Snippet  : Impeaching Donald J. Trump, President of the United States, for High Crimes and Misdemeanors.
+
+[4] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sf16bh/rep_ro_khanna_calls_for_the_invocation_of_the/
+    Rationale: The text reports on a political call for the removal of the subject from office.
+    Snippet  : Rep. Ro Khanna calls for the invocation of the 25th amendment and the removal of Donald Trump.
+
+[5] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sekcrs/awkward_scenes_aboard_artemis_ii_as_donald_trump/
+    Rationale: The text uses a mocking tone to describe an awkward social interaction involving the subject.
+    Snippet  : Awkward scenes aboard Artemis II as Donald Trump (while in a conversation with the crew), stops ranting and none of the astronauts have anything left to say to him, leading to extended dead air.
+
+[6] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sd20fq/president_trump_open_the_fuckin_strait_you_crazy/
+    Rationale: The text quotes aggressive, profane, and threatening language attributed to the subject.
+    Snippet  : President Trump: "Open the Fuckin' Strait, you crazy bastards, or you'll be living in Hell. - JUST WATCH! Praise be to Allah."
+
+[7] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/videos/comments/1rp1d33/katie_johnsons_full_testimony_of_donald_trump/
+    Rationale: The text is a neutral, descriptive reference to a legal or public testimony.
+    Snippet  : Katie Johnson's full testimony of Donald Trump (2/11/16)
+
+[8] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1sff35v/articles_of_impeachment_filed_against_donald/
+    Rationale: The text reports on formal political proceedings aimed at the subject's removal.
+    Snippet  : Articles of impeachment filed against Donald Trump amid calls to invoke the 25th Amendment
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1rv3ygn/donald_trump_stuns_with_maybe_we_shouldnt_even_be/
+    Rationale: The text reports on a surprising policy statement made by the subject without expressing a clear personal opinion.
+    Snippet  : Donald Trump Stuns With 'Maybe We Shouldn't Even Be There' Admission About Iran War
+
+[10] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1seu7ou/trump_says_a_whole_civilization_will_die_tonight/
+    Rationale: The text reports a dramatic quote from the subject without providing additional commentary.
+    Snippet  : Trump says a 'whole civilization will die tonight, never to be brought back again'.
+
+[11] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1sa1x92/donald_trump_and_melania_booed_at_kennedy_center/
+    Rationale: The text reports on a negative public reaction toward the subject.
+    Snippet  : Donald Trump and Melania Booed at Kennedy Center Appearance
+
+[12] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sd20fq/president_trump_open_the_fuckin_strait_you_crazy/oef7hyh/
+    Rationale: The text uses strong, contemptuous language to criticize the subject and his supporters.
+    Snippet  : I don’t want to hear a single conservative/Republican EVER complain about another single thing a liberal/Democratic president ever does again in my lifetime after seeing this disgusting display. Edit: also, never let them forget their “C...
+
+[13] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s2vkkb/democrat_emily_gregory_has_won_the_special_state/
+    Rationale: The text provides a factual report on an election result involving a candidate endorsed by the subject.
+    Snippet  : Democrat Emily Gregory has won the special state House election in a Palm Beach district that includes President Donald Trump's Florida home of Mar-a-Lago, defeating the Trump-endorsed Republican Jon Maples.
+
+[14] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/law/comments/1sezhbc/impeaching_donald_trump_for_high_crimes_and/
+    Rationale: The text states a position in favor of impeaching the subject for alleged crimes.
+    Snippet  : Impeaching Donald Trump for high crimes and misdemeanors
+
+[15] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/entertainment/comments/1rpewyf/donald_trump_fans_raging_after_country_star_says/
+    Rationale: The text reports on public conflict and insults directed at the subject.
+    Snippet  : Donald Trump fans raging after country star says he wears diapers and has dementia
+
+[16] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1rxztag/there_will_be_no_postpresidential_peace_for/
+    Rationale: The text predicts legal and political retribution against the subject, framing his future in a negative light.
+    Snippet  : There Will Be No Post-Presidential Peace For Donald Trump | The president and his allies will face impeachments, lawsuits, and maybe even The Hague.
+
+[17] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1sboel6/fresh_evidence_backs_teens_rape_claim_against/
+    Rationale: The text associates the subject with serious criminal allegations and disturbing historical links.
+    Snippet  : Fresh Evidence 'Backs' Teen's Rape Claim Against Donald Trump as Chilling Epstein Link Resurfaces
+
+[18] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1sg1zdh/donald_trump_impeachment_backed_by_most_americans/
+    Rationale: The text reports on public opinion poll results regarding impeachment in a neutral, factual manner.
+    Snippet  : Donald Trump impeachment backed by most Americans: Poll
+
+[19] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s3llag/bruce_springsteen_just_announced_that_his_band/
+    Rationale: The text frames the subject's actions as authoritarian and supports efforts to oppose him.
+    Snippet  : Bruce Springsteen just announced that his band will be doing a tour in effort to fight back against Donald Trump's authoritarian overreach. The Boss is back!
+
+[20] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/law/comments/1sak2il/donald_trump_tells_pam_bondi_she_will_be_fired/
+    Rationale: The text reports on the subject's threat to fire an associate, reflecting a tense professional dynamic.
+    Snippet  : Donald Trump tells Pam Bondi she 'will be fired' over Epstein files fiasco
+
+[21] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/AskReddit/comments/1s8y8ij/what_if_iran_says_to_the_world_well_open_the/
+    Rationale: The text poses a hypothetical scenario regarding international relations and the subject's resignation.
+    Snippet  : What if Iran says to the World “We’ll open the straight to pre-attack status if Donald Trump resigns.”? What would be the likely response?
+
+[22] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/sportsgossips/comments/1rr9dol/donald_trump_has_completely_and_totally_endorsed/
+    Rationale: The text neutrally reports on the subject's political endorsement of another individual.
+    Snippet  : Donald Trump has “completely and totally” endorsed Jake Paul for political office.
+
+[23] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/law/comments/1rpzru6/trump_tells_republicans_the_save_america_act_will/
+    Rationale: The text reports on the subject's political strategy regarding upcoming elections.
+    Snippet  : Trump tells Republicans the SAVE America Act will ‘guarantee the midterms’
+
+[24] reddit | unknown lean | Stance: FOR | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s07dzb/trump_if_iran_doesnt_fully_open_without_threat/
+    Rationale: The text conveys an aggressive, threatening tone from the subject toward a foreign nation.
+    Snippet  : Trump: If Iran doesn’t FULLY OPEN, WITHOUT THREAT, the Strait of Hormuz, within 48 HOURS from this exact point in time, the United States of America will hit and obliterate their various POWER PLANTS, STARTING WITH THE BIGGEST ONE FIRST!...
+
+[25] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/stevehofstetter/comments/1rz1a2t/what_poll_is_he_talking_about_i_think_he_is/
+    Rationale: The text uses sarcasm to mock the subject's interpretation of polling data.
+    Snippet  : What poll is he talking about, I think he is reading the charmer upside down
+
+[26] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/facepalm/comments/1rxmbcg/father_faces_no_charges_for_fatally_shooting/
+    Rationale: The text reports on a tragic criminal event where the subject is mentioned only as the context of a dispute.
+    Snippet  : Father faces no charges for fatally shooting daughter after fight about Donald Trump: cops
+
+[27] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1scfh7e/donald_trumps_approval_rating_has_sunk_to_joe/
+    Rationale: The text highlights a decline in the subject's approval ratings by comparing them to a low point.
+    Snippet  : Donald Trump’s approval rating has sunk to Joe Biden’s lowest point
+
+[28] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1rzxh57/donald_trump_says_hes_glad_that_robert_mueller/
+    Rationale: The text reports on the subject expressing satisfaction over the death of a political adversary.
+    Snippet  : Donald Trump says he’s “glad” that Robert Mueller, former FBI Director and Special Counsel into Russian interference in the 2016 election, is dead: “He can no longer hurt innocent people.”
+
+[29] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/UnderReportedNews/comments/1sa0vey/donald_trump_claims_us_cannot_fund_daycare/
+    Rationale: The text criticizes the subject's stated priorities regarding government funding.
+    Snippet  : Donald Trump Claims US Cannot Fund Daycare, Medicaid and Medicare Due to Ongoing Wars
+
+[30] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Fauxmoi/comments/1rr6dz0/elizabeth_warren_presses_ceos_of_paramount_meta/
+    Rationale: The text describes political pressure being applied to corporate leaders regarding their financial support for the subject.
+    Snippet  : Elizabeth Warren presses CEOs of Paramount, Meta, ABC and X over millions pledged to Trump’s now-dissolved presidential library fund.
+
+[31] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/law/comments/1rzy2od/donald_trump_cheers_former_special_counsel_robert/
+    Rationale: The text attributes a callous and malicious action to the subject, framing him in a highly negative light.
+    Snippet  : Donald Trump cheers former special counsel Robert Mueller’s death
+
+[32] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1s9kuc4/donald_trump_is_gone_exbacker_of_president_warns/
+    Rationale: The text uses derogatory language regarding the subject's mental state to undermine his credibility.
+    Snippet  : Donald Trump is ‘gone’ ex-backer of President warns: ‘The brain’s not doing too hot’
+
+[33] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1s63d2e/taxpayers_tab_for_donald_trumps_golf_habit/
+    Rationale: The text criticizes the subject's personal spending habits at the expense of taxpayers.
+    Snippet  : Taxpayers’ Tab for Donald Trump’s Golf Habit Crosses $100 million
+
+[34] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1s9pkf9/donald_trump_suddenly_leaves_in_middle_of_supreme/
+    Rationale: The text provides a neutral, descriptive account of the subject's actions.
+    Snippet  : Donald Trump suddenly leaves in middle of Supreme Court arguments
+
+[35] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1s02wqx/donald_trumps_approval_rating_plummets_to_lowest/
+    Rationale: The text highlights a negative trend in the subject's public approval ratings.
+    Snippet  : Donald Trump’s Approval Rating Plummets To Lowest Ever
+
+[36] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1s8otp1/donald_trump_impeachment_petition_doubles_in_size/
+    Rationale: The text reports on growing opposition to the subject through an impeachment petition.
+    Snippet  : Donald Trump impeachment petition doubles in size
+
+[37] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/stevehofstetter/comments/1s1h3xo/donald_trump_has_not_sued_me_for_calling_him_a/
+    Rationale: The text includes a severe, inflammatory accusation against the subject.
+    Snippet  : Donald Trump has not sued me for calling him a pedophile.
+
+[38] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s4less/donald_trump_plans_to_add_his_signature_to_us/
+    Rationale: The text reports on a policy proposal without explicit emotional framing.
+    Snippet  : Donald Trump Plans to Add His Signature to US Currency - all denominations of US dollar bills
+
+[39] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/politics/comments/1s7vkyd/new_details_on_13yearold_trump_accuser_revealed/
+    Rationale: The text details serious allegations of abuse against the subject, framing him as a perpetrator.
+    Snippet  : New Details on 13-Year-Old Trump Accuser Revealed in Massive Report - The woman alleges Donald Trump and Jeffrey Epstein abused her when she was just a teenager. A new report confirmed key details about a third alleged abuser.
+
+[40] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sanehh/donald_trump_ousts_pam_bondi_as_attorney_general/
+    Rationale: The text provides a factual report on a personnel change.
+    Snippet  : Donald Trump Ousts Pam Bondi As Attorney General
+
+[41] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/politics/comments/1sd5a7s/donald_trump_writes_praise_be_to_allah_in/
+    Rationale: The text characterizes the subject's communication as profane and threatening.
+    Snippet  : Donald Trump Writes ‘Praise Be to Allah’ in Profanity-Laced Easter Morning Message Threatening Iran
+
+[42] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/law/comments/1scsl8z/trump_announces_fraud_crackdown_in_democratic/
+    Rationale: The text frames the subject's actions as a controversial crackdown, implying a negative view of the policy.
+    Snippet  : Trump announces ‘fraud’ crackdown in Democratic states as arrests begin in California | Donald Trump
+
+[43] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Music/comments/1sahv06/donald_trump_calls_for_maga_boycott_against_bruce/
+    Rationale: The text highlights the subject's use of insults and aggressive rhetoric toward a public figure.
+    Snippet  : Donald Trump Calls for MAGA Boycott Against Bruce Springsteen’s Tour and Attacks The Boss for Looking ‘Like a Dried Up Prune’: ‘This Guy Is a Total Loser’
+
+[44] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/politics/comments/1seyvad/impeaching_donald_j_trump_president_of_the_united/oethb3h/
+    Rationale: The text makes a serious accusation of war crimes against the subject.
+    Snippet  : Mike Johnson hasn't heard anything about trumps war crimes. He has to research what's happening when he has time.
+
+[45] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sajgyq/donald_trump_calls_for_a_maga_boycott_of_bruce/
+    Rationale: The text neutrally reports on the subject's call for a boycott.
+    Snippet  : Donald Trump calls for a MAGA boycott of Bruce Springsteen's upcoming concerts
+
+[46] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sfwk7h/george_clooney_calls_out_donald_trump_for_his/
+    Rationale: The text frames Trump's actions as a potential war crime through the critical perspective of George Clooney.
+    Snippet  : George Clooney calls out Donald Trump for his Iran War threat: "If anyone says he wants to end a civilization, that’s a war crime."
+
+[47] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1s4i7kr/donald_trump_says_high_costs_during_iran_war_dont/
+    Rationale: The text highlights a dismissive attitude from Trump regarding the costs of war, framing it negatively.
+    Snippet  : Donald Trump Says High Costs During Iran War Don't 'Matter To Me'
+
+[48] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1rq0f9b/trump_made_massive_tactical_error_on_iran_during/
+    Rationale: The text characterizes Trump's actions as a massive tactical error and a significant mistake.
+    Snippet  : Trump Made Massive “Tactical Error” on Iran During Ukraine Talks | One U.S. official described it as the biggest mistake Donald Trump made in the lead-up to the war.
+
+[49] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1s9mahx/donald_trumps_presidency_is_in_free_fall/
+    Rationale: The text uses the metaphor of a free fall to describe the negative state of Trump's presidency.
+    Snippet  : Donald Trump’s Presidency Is in Free Fall
+
+[50] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/politics/comments/1rx3zr9/worthless_pile_of_sht_trump_voter_rips_into_him/
+    Rationale: The text uses aggressive, insulting language to describe Trump and highlights voter dissatisfaction.
+    Snippet  : “Worthless Pile of Sh*t”: Trump Voter Rips Into Him Over Iran War | Donald Trump’s supporters are tired of his broken promises.
+
+[51] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/law/comments/1seoih4/rep_jamie_raskin_sounds_alarm_as_trump_doj_hands/
+    Rationale: The text accuses Trump of corruption and cronyism, using highly critical and accusatory language.
+    Snippet  : Rep. Jamie Raskin sounds alarm as Trump DOJ hands $1.25 million in taxpayer money to Michael Flynn — despite his guilty plea. Donald Trump has found the perfect way to reward his cronies, his co-conspirators, and his personal militia: ma...
+
+[52] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1sff51h/donald_trump_launches_investigation_into_cnn_over/
+    Rationale: The text reports on an investigation initiated by Trump in a relatively neutral, descriptive manner.
+    Snippet  : Donald Trump launches investigation into CNN over Iran ceasefire
+
+[53] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/law/comments/1s4jkvz/oligarchy_on_full_display_gop_lawmakers_block/
+    Rationale: The text frames the actions of Trump Jr. and the GOP as an example of an oligarchy and suspicious behavior.
+    Snippet  : ‘Oligarchy on Full Display’: GOP Lawmakers Block Effort to Subpoena Donald Trump Jr. Over Suspicious Pentagon Loan
+
+[54] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s7qu1a/tlcs_chilli_liked_posts_supporting_trump_pete/
+    Rationale: The text provides a factual account of a celebrity's social media activity regarding political figures.
+    Snippet  : TLC’s Chilli liked posts supporting Trump, Pete Hegseth, Marco Rubio, Byron Donalds and MAGA. She liked posts as recently as last month.
+
+[55] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/law/comments/1sd4ly3/trump_declares_tuesday_warcrime_day/
+    Rationale: The text uses a provocative and highly negative framing to describe Trump's declaration.
+    Snippet  : Trump declares Tuesday War-Crime day
+
+[56] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1s5xcax/donald_trump_says_military_wanted_a_white_house/
+    Rationale: The text reports on a statement made by Trump regarding military preferences for a ballroom.
+    Snippet  : Donald Trump says military wanted a White House ballroom 'More than anybody': 'It was supposed to be secret'
+
+[57] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1sdb3kb/secret_jeffrey_epstein_files_on_13yearold_accuser/
+    Rationale: The text links Trump to controversial and sensitive files, implying a negative association.
+    Snippet  : Secret Jeffrey Epstein Files on 13-Year-Old Accuser Linked to Donald Trump Still Hidden
+
+[58] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Fauxmoi/comments/1rpdnz0/hugh_jackman_sings_at_fox_news_titan_rupert/
+    Rationale: The text describes a social event involving Trump in a neutral, reportorial tone.
+    Snippet  : Hugh Jackman Sings at Fox News Titan Rupert Murdoch's Lavish 95th Birthday Party as Donald Trump Sends Video Wishes
+
+[59] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1rpb734/trump_admits_hes_totally_caved_to_israel_on_the/
+    Rationale: The text uses the phrase 'totally caved' to describe Trump's policy shift, framing it as a weakness.
+    Snippet  : Trump Admits He’s Totally Caved to Israel on the Iran War - Donald Trump is no longer going to unilaterally decide when the Iran war ends.
+
+[60] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s57sq8/adam_carolla_calls_bruce_springsteen_a_douche/
+    Rationale: The text reports on a conflict where a critic of Trump is insulted, reflecting a polarized context.
+    Snippet  : Adam Carolla calls Bruce Springsteen a “douche” after Springsteen announced that his band will be doing a tour to fight back against Trump’s overreach.
+
+[61] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1s4jl5q/donald_trump_plans_to_add_his_signature_to_us/
+    Rationale: The text is a neutral, factual headline reporting on a specific plan.
+    Snippet  : Donald Trump Plans to Add His Signature to US Currency
+
+[62] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1seyvad/impeaching_donald_j_trump_president_of_the_united/oetisn0/
+    Rationale: The author uses the subject's behavior to highlight perceived hypocrisy and double standards.
+    Snippet  : If you had said any of those things trump said this morning online they would suspend your account. If you said it at work you would lose your job. If you said it in a public setting you would be arrested.
+
+[63] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/politics/comments/1sd3vf0/donald_trump_telegraphs_war_crimes_in/
+    Rationale: The text uses strong, accusatory language to frame the subject's actions as war crimes.
+    Snippet  : Donald Trump telegraphs war crimes in profanity-filled Easter Sunday Iran threat
+
+[64] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/law/comments/1rsb2rl/rep_melanie_stansbury_it_was_rep_summer_lee_who/
+    Rationale: The text links the subject to a criminal investigation, implying wrongdoing.
+    Snippet  : Rep. Melanie Stansbury: It was Rep. Summer Lee who offered a subpoena in the oversight committee (and got them to vote yes), and we subpoenaed the Epstein files. And in the next few weeks, it’ll become very clear, that Donald Trump is a ...
+
+[65] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://reddit.com/r/politics/comments/1sbn5o0/donald_trump_is_looking_at_more_cabinet_cuts/
+    Rationale: The text reports on political staffing changes and the subject's emotional state in a journalistic tone.
+    Snippet  : Donald Trump Is Looking at More Cabinet Cuts After Ousting Noem and Bondi, Reports Claim: 'He's Very Angry'
+
+[66] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/Fauxmoi/comments/1sd20fq/president_trump_open_the_fuckin_strait_you_crazy/oef89d4/
+    Rationale: The text uses dehumanizing insults and extreme contempt toward the subject.
+    Snippet  : What an embarrassment to the presidency and a disgrace to humanity this idiot is.
+
+[67] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s3csm1/despite_stating_mailin_voting_means_mailin/
+    Rationale: The text highlights a contradiction in the subject's actions to criticize their credibility.
+    Snippet  : Despite stating, "mail-in voting means mail-in cheating" on Monday, President Donald Trump cast a mail-in ballot in Tuesday's state House special election in Florida. CNN's Jeff Zeleny reports on how Trump has long attacked mail-in voting.
+
+[68] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/politics/comments/1rokrp7/donald_trump_ripped_for_golfing_as_another/
+    Rationale: The text includes a direct, dehumanizing insult directed at the subject.
+    Snippet  : Donald Trump ripped for golfing as another American dies in war with Iran: ‘What a pig’
+
+[69] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/politics/comments/1s005rd/critics_say_its_disgusting_that_donald_trump/
+    Rationale: The text reports on criticism of the subject's behavior, framing it as morally repugnant.
+    Snippet  : Critics say it’s ‘disgusting’ that Donald Trump celebrated Robert Mueller’s death
+
+[70] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Conservative/comments/1rp3fkv/australia_is_making_a_terrible_humanitarian/
+    Rationale: The text presents a quote from the subject advocating for humanitarian aid.
+    Snippet  : "Australia is making a terrible humanitarian mistake by allowing the Iran National Woman’s Soccer team to be forced back to Iran, where they will most likely be killed. Don’t do it, Mr. Prime Minister, give ASYLUM. The U.S. will take the...
+
+[71] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/Fauxmoi/comments/1s67llz/robert_de_niro_its_time_to_say_no_to_kings_its/
+    Rationale: The text uses strong, accusatory language to frame the subject as a corrupt leader who must be stopped.
+    Snippet  : Robert De Niro: “It’s time to say no to kings. It’s time to say no to Donald Trump. We’ve had enough. No corrupt leader enriching himself and the Epstein class buddies. Trump has to be stopped.“
+
+[72] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/politics/comments/1rusw65/donald_trump_warns_nato_faces_very_bad_future_if/
+    Rationale: The text reports on a warning issued by the subject in a neutral manner.
+    Snippet  : Donald Trump warns Nato faces ‘very bad future’ if allies fail to help US in Iran
+
+[73] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://reddit.com/r/Fauxmoi/comments/1seu7ou/trump_says_a_whole_civilization_will_die_tonight/oesfaot/
+    Rationale: The author expresses shock and frustration, labeling the subject's actions as insane.
+    Snippet  : Am I being naive when I say this is a whole new level of insanity for him? Because WTF
+
+[74] reddit | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/politics/comments/1seyvad/impeaching_donald_j_trump_president_of_the_united/oetgjs2/
+    Rationale: The author criticizes the subject's fitness for office based on the perceived danger of their rhetoric.
+    Snippet  : He's threatening to basically nuke Iran in nine hours, so seems reasonable that he shouldn't be in charge of the button anymore. Also worth noting that the Strait of Hormuz carries about 20% of the world’s oil, so even the threat alone i...
+
+[75] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgyIqyaioRVh2SqY6Pl4AaABAg
+    Rationale: The author defends the subject by highlighting positive aspects of their performance.
+    Snippet  : they didn’t mention the good things he’s done: benefiting the meme economy not blowing up the world and leaving
+
+[76] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgxPGX7iwv8cz8Imh7B4AaABAg
+    Rationale: The user expresses frustration and negative association with the Trump presidency by linking it to their high school years.
+    Snippet  : I can't believe those four years were my high school years....
+
+[77] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Hcfi7ExCklw&lcdId=UgyjlOqG7YTPSp0-wzh4AaABAg
+    Rationale: The comment provides a neutral, analytical critique of economic attribution without taking a side on the politician.
+    Snippet  : Completely misleading. Correlation and causation are different things. Inflation was a global problem and has little to do with Trump's or Biden's administration
+
+[78] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=Ugxbs36zYAunTEqxHOp4AaABAg
+    Rationale: The comment is a neutral observation about the cultural impact and media legacy of the presidency.
+    Snippet  : I just wanna say they'll make atlest 10 movies movies out of his presidency not to mention the docu-series and the books
+
+[79] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Hcfi7ExCklw&lcdId=UgzgK5E9h7LbKGMUrWN4AaABAg
+    Rationale: The user expresses approval for a nuanced discussion of inflation that avoids blaming specific individuals.
+    Snippet  : I’m glad he didn’t try to pin the inflation on a particular person, just on a very real circumstance that legitimately plagued everyone, and it just so happened to have skyrocketed when one of those people was in office. Edit: I’m not sa...
+
+[80] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=Ugxwh8muXtLzAuSrZAp4AaABAg
+    Rationale: The user lists controversial events to criticize the subject's record.
+    Snippet  : You missed “covfefe”, throwing paper towels at Puerto Rican’s, and so many more...
+
+[81] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=Ugyt-a9lQWZC4aPAhnx4AaABAg
+    Rationale: The comment uses a dismissive tone to criticize the subject's time management.
+    Snippet  : They forgot all the golfing he did
+
+[82] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=Ugx2IzXEoGv41etQiGp4AaABAg
+    Rationale: The user highlights the irony of the January 6th events to criticize the actions of the subject's supporters.
+    Snippet  : The Irony of ppl storming one of the most sacred buildings in the USA and shouting "USA. USA. USA" is tremendous.
+
+[83] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgyodnIrbm0_NaJLBv94AaABAg
+    Rationale: The comment describes the presidency as 'crazy' in a way that is observational rather than explicitly hostile.
+    Snippet  : by far one of the craziest presidencys of all time.
+
+[84] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgxaLZ8ifEypy9-_YWp4AaABAg
+    Rationale: The user expresses skepticism and mild frustration regarding the subject's transparency.
+    Snippet  : I'm starting to think he wont release those tax returns
+
+[85] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgzbMhqYjmdWmhCb2vF4AaABAg
+    Rationale: The user expresses strong negative sentiment by describing the duration of the presidency as an exhausting experience.
+    Snippet  : The longest 4 years/6 minutes of my life.
+
+[86] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgxJn9NjKfpKSqwKhpF4AaABAg
+    Rationale: The user expresses fatigue regarding the subject's constant presence in the media.
+    Snippet  : Why would anyone want 4 years of Trump in 6 minutes when we just had decades worth of Trump in 4 years?
+
+[87] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=sGlPwHyXGhc&lcdId=UgyFdCjh-INftUJ4EXB4AaABAg
+    Rationale: The user expresses disbelief and skepticism toward the subject's claims.
+    Snippet  : Are we supposed to believe a staffer was posting on Trump"s private account in the middle of the night?
+
+[88] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=sGlPwHyXGhc&lcdId=Ugy2COgb94LbyyYpfhF4AaABAg
+    Rationale: The user strongly criticizes the subject and their supporters for perceived cruelty and lack of empathy.
+    Snippet  : I don’t think this will cost him much support. They watched him mock a handicapped man. They love the cruelty. it is unfortunate.
+
+[89] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgxHRb239K3V0iaFxet4AaABAg
+    Rationale: The user expresses strong negative sentiment by emphasizing how long and difficult the four-year term felt.
+    Snippet  : Omg this has been the longest four years ever!!! This all feels like it took place over 20 years
+
+[90] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=sGlPwHyXGhc&lcdId=Ugy6Z2IFOE4yI1oj8Ch4AaABAg
+    Rationale: The user criticizes the subject's perceived lack of respect for others.
+    Snippet  : Tim Scott will never accept that that's the way that Trump sees him.
+
+[91] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://www.youtube.com/watch?v=sGlPwHyXGhc&lcdId=UgzJXK0ME6HMzwyaVDp4AaABAg
+    Rationale: The author uses insulting language by calling the subject a coward and accusing him of racism.
+    Snippet  : He's a coward blaming a staffer for his racism
+
+[92] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=e2FNujc0UM4&lcdId=UgwSJH8I-tzj0_A3bQp4AaABAg
+    Rationale: The comment uses a mocking tone to reference a controversial phrase associated with the subject.
+    Snippet  : Oh my god, I almost forgot that "Alternative Facts" thing.
+
+[93] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=UgynmZUdODpYB4T5tfR4AaABAg
+    Rationale: The statement is a neutral observation of the subject's actions.
+    Snippet  : Trump watched it after all that
+
+[94] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=Ugzg30vnSnNQ0fDZvQ54AaABAg
+    Rationale: The author interprets the subject's negative reaction as a positive endorsement.
+    Snippet  : Him slamming it is the ultimate endorsement.
+
+[95] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgyqBEXdzzRhReFTtjx4AaABAg
+    Rationale: The author expresses strong support for the subject while disparaging other politicians as worthless.
+    Snippet  : Finally, a president who loves our country! Not another worthless politician!!!
+
+[96] youtube | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=sGlPwHyXGhc&lcdId=UgzyBAj--uwykDgppWJ4AaABAg
+    Rationale: The author expresses a strong negative prediction about the subject's future actions.
+    Snippet  : He will do worse if not today tomorrow, guaranteed 100%
+
+[97] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=UgwwxcrVpTK2S_hFF3B4AaABAg
+    Rationale: The comment offers a critical assessment of the subject's perceived mindset.
+    Snippet  : He seems to think that everything he doesn't like is automatically terrible
+
+[98] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=Ugw5dqxpsXcq2jT1kjV4AaABAg
+    Rationale: The author expresses strong approval and religious well-wishes for the subject.
+    Snippet  : God Bless America and President Trump!!
+
+[99] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgxMvy1BMjnLQMMyYTl4AaABAg
+    Rationale: The author provides a brief, enthusiastic endorsement of the subject.
+    Snippet  : He has been amazing!
+
+[100] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgzKiPbSYAGq4-CMZO94AaABAg
+    Rationale: The author shares a personal positive experience regarding the subject's policies and expresses gratitude.
+    Snippet  : I'm a custodian for a middle school. I'm getting about a hundred bucks more a paycheck cause of President Trumps tax cuts. That almost two thousand two hundred bucks more a year which is significant for me. God bless President Trump!
+
+[101] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=Ugy3fTTo3No3a7s3E9J4AaABAg
+    Rationale: The author expresses support and optimism regarding the subject's future actions.
+    Snippet  : That's right our President did that, and more will be coming soon. 🤗
+
+[102] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgxEIEhuI00fZ767x6h4AaABAg
+    Rationale: The author expresses collective pride in the subject and his administration.
+    Snippet  : We're proud of him and his administration
+
+[103] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgxCjromMtJCIpBtTrx4AaABAg
+    Rationale: The author expresses gratitude and affection toward the subject.
+    Snippet  : Amen 🙏. Thank you, President Trump. ❤
+
+[104] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=uTHS7hevUqU&lcdId=UgyIMmpjFSmLmJ8qlRd4AaABAg
+    Rationale: The author uses mockery to ridicule the subject's potential speech.
+    Snippet  : Next thing Trumps bouta say is,"They are turning the damn frogs gay!"
+
+[105] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=Ugyfw3NodVB0TQLrGpV4AaABAg
+    Rationale: The author uses enthusiastic language and religious imagery to praise the subject.
+    Snippet  : Bravo Bravo 🙌 Thank Almighty God for President Trump and Administration 🙏🤍🕊️✨⚖️🇺🇸♥️✨MAGA
+
+[106] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgzmXIzucnzlykVEJ6t4AaABAg
+    Rationale: The user expresses strong enthusiasm and support for the President.
+    Snippet  : LOVE OUR PRESIDENT!!!!
+
+[107] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=Ugzq6u7j4te3wHiG_i54AaABAg
+    Rationale: The user praises the President's work and expresses strong personal approval.
+    Snippet  : These are all the things I voted for. Keep up the great work President Trump your the GOAT
+
+[108] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgxfUMlX2QzOJkD3yEN4AaABAg
+    Rationale: The user expresses admiration for the President's work ethic and results.
+    Snippet  : Dude never sleeps. Amazing results.
+
+[109] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgwpltkMX7y8781K5NV4AaABAg
+    Rationale: The user uses celebratory language to express continued support for the President.
+    Snippet  : And we’re still not tired of winning!🎉🎉🎉🎉
+
+[110] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=JHCffZXdNEU&lcdId=UgwHiVVjHNeWltdfa_l4AaABAg
+    Rationale: The user uses cynical framing to criticize the President's personal motivations.
+    Snippet  : Accomplished his main goals of staying out of jail and getting back to billionaire level.
+
+[111] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=sGlPwHyXGhc&lcdId=Ugw2LtGhbtBoVE-rksl4AaABAg
+    Rationale: The comment is a dismissive or sarcastic remark about the President's role.
+    Snippet  : So Trump is a staffer now
+
+[112] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=Ugy5WlxABegNYMFpoPF4AaABAg
+    Rationale: The user expresses positive, friendly sentiment toward the President.
+    Snippet  : 💯 America's Buddy 💯
+
+[113] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgxfShSvwg1FlqoS5W54AaABAg
+    Rationale: The user expresses strong enthusiasm and encouragement for the President.
+    Snippet  : Is that all??? Lol omg that's more than alot do in 4 years. Go Trump go!!!
+
+[114] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=UgxpiNHpIT_vx6sK6aN4AaABAg
+    Rationale: The user makes a light, mocking comment about the President's musical preferences.
+    Snippet  : Trump only likes YMCA. It's the only music he can dance to.
+
+[115] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=UgxQSwvYhgcPayDSUUp4AaABAg
+    Rationale: The user criticizes the President by pointing out perceived hypocrisy regarding language.
+    Snippet  : Funny how he has a problem about Bad Bunny not speaking or singing in English, neither does his wife I can’t understand anything she says😂😂😂
+
+[116] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=Ugwy-chxk2x7QXaQ_4R4AaABAg
+    Rationale: The user uses derogatory language by referring to supporters as a cult.
+    Snippet  : Why was he watching? Thought they had their own cult members performing for him?
+
+[117] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uTHS7hevUqU&lcdId=UgzDlBuqbPvTpENDSUF4AaABAg
+    Rationale: The user expresses a strong positive emotional connection to the President's rallies.
+    Snippet  : I feel like going to a trump rally has to be the most patriotic high feeling ever
+
+[118] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=UgxNrxTKh2_T2J4whfp4AaABAg
+    Rationale: The user makes a sarcastic observation about the President's demeanor.
+    Snippet  : He was probably watching with an angry scowl of his face...while uncontrollably tapping his feet to the music 😅
+
+[119] youtube | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=PoA2YOYq99U&lcdId=UgzaX1c1QzPdbWgkgXp4AaABAg
+    Rationale: The user expresses extreme admiration and religious-toned praise for the President.
+    Snippet  : He did all of that plus hundreds more things in just 9 months. He's incredible and definitely a gift from God for us all
+
+[120] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=HBKX8kzQM1c&lcdId=UgyxJLVdfZEWh4X7JM54AaABAg
+    Rationale: The user uses laughter emojis to mock the President's actions.
+    Snippet  : 😂😂😂yeah but he was watching 😂😂😂
+
+[121] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=uTHS7hevUqU&lcdId=UgwyOoL5zV7A9kVKBHd4AaABAg
+    Rationale: The user expresses amusement and positive engagement with the subject's statement by referencing a song created about it.
+    Snippet  : When he said there eating the dogs, there eating the cats I just thought of that amazing song 🤣🤣🤣

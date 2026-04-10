@@ -1,0 +1,220 @@
+============================================================
+POLARIZATION ASSESSMENT — Run #1
+============================================================
+Topic          : climate change is not real
+Assessed at    : 2026-04-09T20:06:16.245735+00:00
+Model          : default
+Note           : —
+
+--- Score ---
+Polarization   : 39.93 / 100
+Sample size    : 35
+Rationale      : 35 items scored. Stance distribution: 17 for / 9 against / 9 neutral. Avg animosity: 2.23. Avg sentiment: 2.43. Platforms: gnews: 1, reddit: 16, youtube: 63.
+
+--- Stance Distribution ---
+  For       : 17
+  Against   : 9
+  Neutral   : 9
+
+--- Item Averages By Stance ---
+  For      | Sentiment: 2.65 | Animosity: 2.29
+  Against  | Sentiment: 1.89 | Animosity: 2.89
+  Neutral  | Sentiment: 2.56 | Animosity: 1.44
+
+--- Source Breakdown ---
+  gnews       : 1
+  reddit      : 16
+  youtube     : 63
+
+--- Config ---
+{
+  "collect": {
+    "topics": [
+      "climate change is not real"
+    ],
+    "time_filter": "month",
+    "max_posts": 30,
+    "max_comments_per_post": 30,
+    "relevance_filter": true
+  },
+  "assess": {
+    "model": null
+  }
+}
+
+--- Evidence Items ---
+
+[1] gnews | unknown | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://wattsupwiththat.com/2026/03/26/no-associated-press-this-southwest-heatwave-was-not-virtually-impossible-without-climate-change/
+    Rationale: The text expresses frustration and skepticism toward a news report's attribution of a heatwave to climate change.
+    Snippet  : No, Associated Press, This Southwest Heatwave Was Not ‘Virtually Impossible’ Without Climate Change. A recent Associated Press (AP) story titled “Records shattered as summer heat hits Southwest in March; ‘This is what climate change look...
+
+[2] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/Anticonsumption/comments/1s08jgy/be_ready_for_less_beef/
+    Rationale: The author describes environmental conditions and their consequences without explicitly taking a stance on climate change itself.
+    Snippet  : Be ready for less beef In case it isn't news in your part of the world/country, the US west has had a very warm winter with very little snowfall. In a normal year, that snowpack fills reservoirs all spring. But we have had a record low s...
+
+[3] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/Anticonsumption/comments/1s08jgy/be_ready_for_less_beef/obrkkra/
+    Rationale: The author advocates for reducing beef consumption as an essential action, implying support for environmental sustainability.
+    Snippet  : The amount of water that beef requires is very high. Reducing the amount we consume is essential.
+
+[4] reddit | unknown lean | Stance: FOR | Sentiment: 5 | Animosity: 2
+    URL      : https://reddit.com/r/electricvehicles/comments/1ryxpzv/my_ev_is_now_12_years_old_heres_how_thats_going/obhvr3d/
+    Rationale: The author strongly supports electric vehicles and criticizes fossil fuel companies for spreading misinformation.
+    Snippet  : I think one of the greatest lies that fossil fuel companies have managed to convince Americans of is that the batteries degrade very badly after a few years which we are all learning is a lie. I built ice cars for over 31 year as an auto...
+
+[5] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/Environmentalism/comments/1s7w7io/a_little_story_from_vietnam_about_climate_change/
+    Rationale: The author is sharing a personal story about climate change in Vietnam without expressing a strong emotional or ideological position.
+    Snippet  : A little story from Vietnam about climate change for those who are interested Hi everyone. I’m from the Mekong Delta in Vietnam. I don't know if this is allowed and it feels a bit like a shameless promote, so mods please delete if it’s i...
+
+[6] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 5
+    URL      : https://reddit.com/r/SubredditDrama/comments/1rvut8p/over_privileged_white_cunts_with_too_much_time/
+    Rationale: The text uses highly aggressive, dehumanizing language to attack climate activists.
+    Snippet  : "Over privileged white cunts, with too much time, throwing soup at artwork, isn't a viable system for reducing carbon emissions" r/sipstea debates if a climate change activist should have gotten a two year prison term for throwing soup o...
+
+[7] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://reddit.com/r/SeriousConversation/comments/1s7nktf/anyone_else_extremely_worried_by_the_rise_of/
+    Rationale: The author expresses concern and frustration regarding the rise of anti-intellectualism and the denial of facts.
+    Snippet  : Anyone else extremely worried by the rise of anti-intellectualism and erasure of fact? To preface, a lot of what is causing me to feel this way is because of what I see online, so it could very well be different on a worldwide scale. (Al...
+
+[8] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/DeepThoughts/comments/1s1qgwu/we_dont_have_a_real_word_for_whats_happening_to/
+    Rationale: The author criticizes the terminology used for climate change, suggesting it fails to convey the urgency of the situation.
+    Snippet  : We don't have a real word for what's happening to the planet, and that might be why nobody actually feels it "Climate change" is a bureaucratic phrase. It sounds like a weather report. It sounds like something that happens *to* a spreads...
+
+[9] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/electriccars/comments/1se8mmt/the_honest_reason_i_bought_an_electric_car_had/
+    Rationale: The author explains their personal motivation for buying an electric car, explicitly distancing it from climate concerns.
+    Snippet  : The honest reason I bought an Electric Car had nothing to do with climate. It had everything to do with my convienence Here's an uncomfortable truth I had to sit with for few weeks: I didn't go electric to save the planet. I went electri...
+
+[10] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 4
+    URL      : https://reddit.com/r/Anticonsumption/comments/1s08jgy/be_ready_for_less_beef/obrnsgg/
+    Rationale: The author expresses support for reducing emissions while using aggressive profanity toward factory farming.
+    Snippet  : Good for the cows. I feel the same way about gas, gasoline prices rising, and hopefully a movement towards less harmful emissions. Fuck factory farming.
+
+[11] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/saskatchewan/comments/1s9mii5/estimated_cost_to_refurbish_sask_coal_plants/
+    Rationale: The text provides a factual report on the rising costs of refurbishing coal plants.
+    Snippet  : Estimated cost to refurbish Sask. coal plants nearly tripled to $2.6 billion
+
+[12] reddit | unknown lean | Stance: AGAINST | Sentiment: 1 | Animosity: 4
+    URL      : https://reddit.com/r/complaints/comments/1ruf8hc/the_destruction_of_america_one_year_in/oakwbqe/
+    Rationale: The text uses strong, accusatory language to criticize a political figure's impact on the country.
+    Snippet  : TRUMP HAS MADE AMERICA SICKER DARKER SADDER WEAKER POORER ANGRIER LESS SAFE MORE DIVIDED LESS TRUSTED MORE CHAOTIC MORE ISOLATED LESS INCLUSIVE MORE POLLUTED LESS RESPECTED THIS IS MAKING AMERICA GREAT?
+
+[13] reddit | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://reddit.com/r/aussie/comments/1s03s7f/nsw_bans_new_coal_mines_in_landmark_shift_towards/
+    Rationale: The text reports on a policy shift away from fossil fuels in a neutral to positive tone.
+    Snippet  : NSW bans new coal mines in landmark shift towards fossil fuel phase-out
+
+[14] reddit | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 1
+    URL      : https://reddit.com/r/climatechange/comments/1s7hxy3/early_california_heat_is_a_reminder_of_the/
+    Rationale: The author expresses mild frustration regarding the personal financial impact of climate-related weather changes.
+    Snippet  : Early California heat is a reminder of the climate reality we’re living California’s been unusually warm this March 80s inland, low 70s on the coast and running the AC has already pushed my electricity bill up. It’s a small, everyday rem...
+
+[15] reddit | unknown lean | Stance: AGAINST | Sentiment: 3 | Animosity: 1
+    URL      : https://reddit.com/r/climateskeptics/comments/1s4mrky/greenhouse_gases_not_to_blame_for_prehistoric/
+    Rationale: The text reports on a scientific study that challenges the link between greenhouse gases and prehistoric climate change.
+    Snippet  : Greenhouse gases NOT to blame for prehistoric climate change, study of ice samples reveals
+
+[16] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Anticonsumption/comments/1s08jgy/be_ready_for_less_beef/obrq2av/
+    Rationale: The author expresses frustration regarding the lack of attention and planning for wildfires in Nebraska.
+    Snippet  : Nebraska is also going through their largest Wildfire in state history and nobody seems to be talking about it, and there doesn’t seem to be much plan to deal with it ravaging those agricultural communities
+
+[17] reddit | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 2
+    URL      : https://reddit.com/r/Anticonsumption/comments/1s08jgy/be_ready_for_less_beef/obrlsq2/
+    Rationale: The comment uses a cynical and dismissive tone to highlight the negative consequences of climate change.
+    Snippet  : Less beef and a lot more wildfires. Better stock up on N95 masks.
+
+[18] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=9lD29jqH078&lcdId=Ugw9TyB3-7H1PT2Ed7p4AaABAg
+    Rationale: The comment advocates for depoliticizing the issue of climate change.
+    Snippet  : Climate change shouldn't be a right or left subject. Just an issue.
+
+[19] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=9lD29jqH078&lcdId=UgyWIwCBTcSB6_rPOEB4AaABAg
+    Rationale: The author uses heavy sarcasm to mock those who dismiss climate science based on anecdotal weather observations.
+    Snippet  : "Yeah the climate changing, the weather was different yesterday" PACK IT UP BOYS, SCIENCE HAS BEEN DISPROVED
+
+[20] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgzOxvSQPv9Z7DeZdSV4AaABAg
+    Rationale: The quote serves as a critical warning about the environmental consequences of prioritizing profit over nature.
+    Snippet  : “when the last tree is cut down, the last river is polluted, the last species goes extinct, you’ll realize that you can’t eat money.”
+
+[21] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgyqDWMnbVBWnofAr1h4AaABAg
+    Rationale: The author uses a mocking tone to characterize the mindset of those who disregard environmental protection.
+    Snippet  : "It's my right to destroy the environment." That's basically it.
+
+[22] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgzplUDN0Wx4Y0lLpuB4AaABAg
+    Rationale: The comment highlights the contrast between evidence-based knowledge and hearsay.
+    Snippet  : "I've studied" vs "I've heard"
+
+[23] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=tRA2SfSk2Tc&lcdId=UgwNy9lJYJMk6BbLulV4AaABAg
+    Rationale: The author expresses disbelief and frustration toward those who deny climate change, especially those in power.
+    Snippet  : How anyone can continue to deny climate change is beyond me. Yet they're out there, including in positions of influence.
+
+[24] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=Ugwejc19WQlPs4uMoXN4AaABAg
+    Rationale: The author uses a sarcastic personification of the Industrial Revolution to challenge the claim that humans do not affect the planet.
+    Snippet  : 'Humans have no effect on the planet" Industrial Revolution: Am I a joke to you?
+
+[25] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgyPTDflD-82IqanaAV4AaABAg
+    Rationale: The comment mocks an individual for claiming to know more than an actual expert.
+    Snippet  : “i’m not a climate scientist but i know a lot them”, she said..... to an actual, educated climate scientist
+
+[26] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgwauyPXTXBeC0T7gyV4AaABAg
+    Rationale: The author uses a mocking summary to criticize the prioritization of personal beliefs over scientific evidence.
+    Snippet  : Blonde lady in a nutshell: "I know you have evidence and facts, but I have beliefs so we're even"
+
+[27] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgzSXL6VSEIwdb9RkJ14AaABAg
+    Rationale: The author dismisses concerns about environmental restrictions as trivial first-world problems.
+    Snippet  : “Some people can’t water their lawns due to environmental restrictions.” That’s such a first-world problem Lmao
+
+[28] youtube | unknown lean | Stance: FOR | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=9lD29jqH078&lcdId=UgwnI0OCgiRyIvR3VR94AaABAg
+    Rationale: The comment highlights the futility of providing evidence to someone who refuses to believe it.
+    Snippet  : -there is no evidence Joe: here is some evidence - I don’t believe you .... Politics
+
+[29] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=Qdg4uQW8Dlg&lcdId=Ugwu8T2K4toxGULfRKV4AaABAg
+    Rationale: The author criticizes the perceived hypocrisy of climate advocates who live lavish lifestyles.
+    Snippet  : I don't understand why people believe that freezing yourself, starving yourself and walking everywhere is what we need to do to save this planet by people who use private jets, have massive air conditioned mansions, heated pools and beac...
+
+[30] youtube | unknown lean | Stance: FOR | Sentiment: 3 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=6EFHZfISGp4&lcdId=UgxCQESaV2uWCis8buF4AaABAg
+    Rationale: The comment highlights the absurdity of comparing personal knowledge to scientific expertise.
+    Snippet  : "Im a scientist" "well Im not a scientist but i know a lot"
+
+[31] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 2
+    URL      : https://www.youtube.com/watch?v=LJVxAJ_jegA&lcdId=UgznCsctLxGUbWScmIx4AaABAg
+    Rationale: The author expresses skepticism toward the topic by framing it as a fear-based narrative rather than truth.
+    Snippet  : FEAR sells.. truth does not.
+
+[32] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=EcxQZ8ub54Y&lcdId=Ugwce9Qt3CLdsZzMM3N4AaABAg
+    Rationale: The author uses sarcasm to criticize institutional fact-checking and the United Nations.
+    Snippet  : When YouTube hits you with the disinformation label and links to the United Nations you know you have struct gold. Thanks Google!
+
+[33] youtube | unknown lean | Stance: FOR | Sentiment: 4 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=Qdg4uQW8Dlg&lcdId=UgxgnSj96iHQZmJ0t3h4AaABAg
+    Rationale: The author expresses strong support for the content and advocates for its global dissemination.
+    Snippet  : This needs to be showcased around the world in every country, to every government, and all social media.
+
+[34] youtube | unknown lean | Stance: NEUTRAL | Sentiment: 3 | Animosity: 1
+    URL      : https://www.youtube.com/watch?v=EcxQZ8ub54Y&lcdId=UgyGX1CaJ-FqFQkAWKF4AaABAg
+    Rationale: The author provides a philosophical statement about the nature of science without explicitly taking a side on climate change.
+    Snippet  : "Science is not a source of authority, it's a methodology. It's based on challenge."
+
+[35] youtube | unknown lean | Stance: AGAINST | Sentiment: 2 | Animosity: 3
+    URL      : https://www.youtube.com/watch?v=Qdg4uQW8Dlg&lcdId=UgzWXILWVFw7qpszcSt4AaABAg
+    Rationale: The author implies that censorship is proof of truth, framing the suppression of dissenting views as a negative institutional action.
+    Snippet  : Whenever someone is cancelled for saying something you can guarantee that they are speaking the truth, because if they weren't speaking the truth there would be no need to silence them as truth can always stand on its own two feet.
