@@ -2,7 +2,7 @@ DEFAULT_CONFIG = {
     # Dynamic discovery controls
     # How many results to pull from subreddits.search()
     "subreddit_discovery_limit": 10,
-    "min_subscribers": 10_000,  # Filter out dead/tiny communities
+    "min_subscribers": 5_000,  # Filter out dead/tiny communities
     "phase2_top_n": 5,  # Top subreddits from r/all results to re-query
     # Scraping parameters
     "posts_per_subreddit": 50,
