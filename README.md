@@ -413,7 +413,3 @@ Examples of useful extra fields:
 4. Define the exact baseline-vs-ablation change in config and implement it in `run.py`
 5. Keep naming and outputs consistent so studies can be compared across runs
 6. Document any study-specific assumptions near the study folder (or in `docs/` if broader)
-
-## Further reading
-
-Detailed documentation is in [`docs/`](./docs/):
